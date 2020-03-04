@@ -2094,13 +2094,59 @@ Action is supposed to be invariant, so laws of physics are covariant. We can der
 		\Gamma\indices{^\phi_{\phi\theta}} =& -\tan \theta \numberthis \label{eq:Gamma:pHpHtH}
 	\end{align*}
 	
-	\subsection{Riemann Tensor}
+	\subsection{Riemann \& Ricci Tensors}
 	
 	From \cite{akhmedov2016lectures}
 	\begin{align*}
 		R\indices{^\mu_{\nu\alpha\beta}} =& \partial_\alpha \Gamma\indices{^\mu_{\nu\beta}} - \partial_\beta \Gamma\indices{^\mu_{\nu\alpha}} + \Gamma\indices{^\mu_{\gamma\alpha}} \Gamma\indices{^\gamma_{\nu\beta}} - \Gamma\indices{^\mu_{\gamma\beta}} \Gamma\indices{^\gamma_{\nu\alpha}}\\
-		R_{\mu\nu} =& R\indices{^\alpha_{\nu\alpha\beta}}\\
+		R_{\mu\nu} =& R\indices{^\alpha_{\mu\alpha\nu}}\\
+		=& \partial_\alpha \Gamma\indices{^\alpha_{\mu\nu}} - \partial_\nu \Gamma\indices{^\alpha_{\mu\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\mu\nu}} - \Gamma\indices{^\alpha_{\gamma\nu}} \Gamma\indices{^\gamma_{\mu\alpha}}\\
 		R =& R_{\mu\nu} g^{\mu\nu}
+	\end{align*}
+	
+	\begin{align*}
+		R_{tt} =& \partial_\alpha \Gamma\indices{^\alpha_{tt}} - \partial_t \Gamma\indices{^\alpha_{t\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{tt}} - \Gamma\indices{^\alpha_{\gamma t}} \Gamma\indices{^\gamma_{t\alpha}} \\
+		=& \partial_r \Gamma\indices{^r_{tt}} - \partial_t \Gamma\indices{^r_{tr}} + \big[\Gamma\indices{^t_{rt}}+\Gamma\indices{^r_{rr}} + \Gamma\indices{^\theta_{r\theta}}\big] \Gamma\indices{^r_{tt}} - 2\Gamma\indices{^t_{r t}} \Gamma\indices{^r_{tt}} \\
+		=& - \frac{1}{2} \partial_r \big[ \nu^\prime(r) e^{\nu(r)-\lambda(r)}\big] - \cancel{\partial_t \Gamma\indices{^r_{tr}}} + \big[\bcancel{\Gamma\indices{^t_{rt}}}+\Gamma\indices{^r_{rr}} + \Gamma\indices{^\theta_{r\theta}}\big] \Gamma\indices{^r_{tt}} - \bcancel{2}\Gamma\indices{^t_{r t}} \Gamma\indices{^r_{tt}}\\
+		=& -\frac{1}{2}\big[\nu^{\prime\prime} + \nu^\prime\big(\nu^\prime - \lambda^\prime \big)\big]e^{\nu-\lambda} + \big[\frac{\lambda^\prime}{2} + \frac{1}{r}-\frac{\nu\prime}{2}  \big] \big[- \frac{1}{2} \nu^\prime e^{\nu-\lambda}\big]\\
+		=& -\frac{1}{2}\bigg[\nu^{\prime\prime} + \big(\nu^\prime\big)^2 - \nu^\prime\lambda^\prime + \frac{\nu^\prime\lambda^\prime}{2} + \frac{\nu^\prime}{r} - \frac{ \big(\nu^\prime\big)^2}{2}\bigg]e^{\nu-\lambda}\\
+		=& -\frac{1}{2}\bigg[\nu^{\prime\prime}  -  \frac{\nu^\prime\lambda^\prime}{2} + \frac{\nu^\prime}{r} + \frac{ \big(\nu^\prime\big)^2}{2}\bigg]e^{\nu-\lambda}
+	\end{align*}
+	
+	\begin{align*}
+		R_{rr} =& \partial_\alpha \Gamma\indices{^\alpha_{rr}} - \partial_\nu \Gamma\indices{^\alpha_{\mu\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\mu\nu}} - \Gamma\indices{^\alpha_{\gamma\nu}} \Gamma\indices{^\gamma_{\mu\alpha}}
+	\end{align*}
+	
+	\begin{align*}
+		R_{\theta\theta} =& \partial_\alpha \Gamma\indices{^\alpha_{\theta\theta}} - \partial_\nu \Gamma\indices{^\alpha_{\mu\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\mu\nu}} - \Gamma\indices{^\alpha_{\gamma\nu}} \Gamma\indices{^\gamma_{\mu\alpha}}
+	\end{align*}
+	
+	\begin{align*}
+		R_{\phi\phi} =& \partial_\alpha \Gamma\indices{^\alpha_{\phi\phi}} - \partial_\nu \Gamma\indices{^\alpha_{\mu\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\mu\nu}} - \Gamma\indices{^\alpha_{\gamma\nu}} \Gamma\indices{^\gamma_{\mu\alpha}}
+	\end{align*}
+	
+	\begin{align*}
+		R_{tr} =& \partial_\alpha \Gamma\indices{^\alpha_{tr}} - \partial_\nu \Gamma\indices{^\alpha_{\mu\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\mu\nu}} - \Gamma\indices{^\alpha_{\gamma\nu}} \Gamma\indices{^\gamma_{\mu\alpha}}
+	\end{align*}
+	
+	\begin{align*}
+		R_{t\theta} =& \partial_\alpha \Gamma\indices{^\alpha_{t\theta}} - \partial_\nu \Gamma\indices{^\alpha_{\mu\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\mu\nu}} - \Gamma\indices{^\alpha_{\gamma\nu}} \Gamma\indices{^\gamma_{\mu\alpha}}
+	\end{align*}
+	
+	\begin{align*}
+		R_{t\phi} =& \partial_\alpha \Gamma\indices{^\alpha_{t\phi}} - \partial_\nu \Gamma\indices{^\alpha_{\mu\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\mu\nu}} - \Gamma\indices{^\alpha_{\gamma\nu}} \Gamma\indices{^\gamma_{\mu\alpha}}
+	\end{align*}
+	
+	\begin{align*}
+		R_{r\theta} =& \partial_\alpha \Gamma\indices{^\alpha_{r\theta}} - \partial_\nu \Gamma\indices{^\alpha_{\mu\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\mu\nu}} - \Gamma\indices{^\alpha_{\gamma\nu}} \Gamma\indices{^\gamma_{\mu\alpha}}
+	\end{align*}
+	
+	\begin{align*}
+		R_{r\phi} =& \partial_\alpha \Gamma\indices{^\alpha_{r\phi}} - \partial_\nu \Gamma\indices{^\alpha_{\mu\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\mu\nu}} - \Gamma\indices{^\alpha_{\gamma\nu}} \Gamma\indices{^\gamma_{\mu\alpha}}
+	\end{align*}
+	
+	\begin{align*}
+		R_{\theta\phi} =& \partial_\alpha \Gamma\indices{^\alpha_{\theta\phi}} - \partial_\nu \Gamma\indices{^\alpha_{\mu\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\mu\nu}} - \Gamma\indices{^\alpha_{\gamma\nu}} \Gamma\indices{^\gamma_{\mu\alpha}}
 	\end{align*}
 	
 	\section{Gravitational waves}

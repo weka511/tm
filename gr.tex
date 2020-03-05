@@ -37,7 +37,7 @@
 
 \section{The Equivalence Principle \& Tensor Analysis}
 
-LS begins where Einstein started. Einstein started with the simplest things and deduced far racing conclusions.
+LS begins where Einstein started: ''Einstein started with the simplest things and deduced far ranging conclusions''.
 
 \subsection{The Equivalence Principle}
 
@@ -2022,7 +2022,7 @@ Action is supposed to be invariant, so laws of physics are covariant. We can der
 		g_{\phi\phi}=&-r^2 \cos^2 \theta\\
 	\end{align*}
 
-	The $g^{\mu\nu}$ are the inverse of the $g_\mu\nu$, so: 
+	The $g^{\mu\nu}$ are the inverse of the $g_{\mu\nu}$, so: 
 	\begin{align*}
 		g^{tt}=& e^{-\nu(r)}\\
 		g^{rr}=&-e^{-\lambda(r)}\\
@@ -2041,17 +2041,10 @@ Action is supposed to be invariant, so laws of physics are covariant. We can der
 
 	\subsection{Christoffel Symbols}
 	
-	We start be enquiring which Christoffel are not identically zero.
+	We start be enquiring which Christoffel are not identically zero. For each $\rho$ we ask whether there are any $(\mu,nu)$ for which the terms making up $\Gamma\indices{^\rho_{\mu\nu}}$ are non-zero.
 	
 	\begin{align*}
-		\Gamma\indices{^t_{\mu\nu}} =&\frac{1}{2} \big[\underbrace{ \partial_\mu g_{t\nu}}_\text{$=0$ unless $\mu=r,\nu=t$} + \underbrace{\partial_\nu g_{\mu t}}_\text{$=0$ unless $\mu=t,\nu=r$} - \underbrace{\partial_t g_{\mu\nu}}_\text{$=0$}\big] e^{-\nu(r)} \numberthis \label{eq:Gamma:t}\\
-		\Gamma\indices{^r_{\mu\nu}} =& \frac{1}{2} \big[\underbrace{ \partial_\mu g_{r\nu}}_\text{$=0$ unless $\mu=\nu=r$} + \underbrace{\partial_\nu g_{\mu r}}_\text{$=0$ unless $\mu=\nu=r$} - \underbrace{\partial_r g_{\mu\nu}}_\text{$=0$ unless $\mu=\nu$}\big] e^{-\lambda(r)}\numberthis \label{eq:Gamma:r}\\
-		\Gamma\indices{^\theta_{\mu\nu}} =&- \frac{1}{2} \big[\underbrace{ \partial_\mu g_{\theta\nu}}_\text{$=0$ unless $\mu=r,\nu=\theta$} + \underbrace{\partial_\nu g_{\mu \theta}}_\text{$=0$ unless $\mu=\theta,\nu=r$} - \underbrace{\partial_\theta g_{\mu\nu}}_\text{$=0$ unless $\mu=\nu=\phi$}\big] \frac{1}{r^2} \numberthis \label{eq:Gamma:tH}\\
-		\Gamma\indices{^\phi_{\mu\nu}} =&- \frac{1}{2} \big[\underbrace{ \partial_\mu g_{\phi\nu}}_\text{$=0$ unless $\mu=\theta,\nu=\phi$} + \underbrace{\partial_\nu g_{\mu \phi}}_\text{$=0$ unless $\mu=\phi,\nu=\theta$} - \underbrace{\partial_\phi g_{\mu\nu}}_\text{$=0$}\big] \frac{1}{r^2 \cos^2 \theta} \numberthis \label{eq:Gamma:pH}
-	\end{align*}
-	
-	From (\ref{eq:Gamma:t})
-	\begin{align*}
+		\Gamma\indices{^t_{\mu\nu}} =&\frac{1}{2} \big[\underbrace{ \partial_\mu g_{t\nu}}_\text{$\mu=r,\nu=t$} + \underbrace{\partial_\nu g_{\mu t}}_\text{$\mu=t,\nu=r$} - \underbrace{\partial_t g_{\mu\nu}}_\text{$\equiv0$}\big] e^{-\nu(r)}\\
 		\Gamma\indices{^t_{rt}}=&\frac{1}{2} \partial_r g_{tt}  e^{-\nu(r)}\\
 		=&\frac{1}{2}\nu^\prime(r) \cancel{e^{\nu(r)}}\cancel{e^{-\nu(r)}}\\
 		=&\frac{\nu^\prime(r)}{2}\\
@@ -2059,39 +2052,43 @@ Action is supposed to be invariant, so laws of physics are covariant. We can der
 		 \Gamma\indices{^t_{rt}}=&\Gamma\indices{^t_{tr}}=\frac{\nu^\prime(r)}{2} \numberthis \label{eq:Gamma:ttr}
 	\end{align*}
 	
-	From (\ref{eq:Gamma:r})	
 	\begin{align*}
-		\Gamma\indices{^r_{tt}} =&\frac{1}{2} \big[-\partial_r g_{tt}\big]e^{-\lambda(r)}\\
-		=&\frac{1}{2} \big[-\nu^\prime(r) e^{\nu(r)}\big] e^{-\lambda(r)}\\
-		=&- \frac{1}{2} \nu^\prime(r) e^{\nu(r)-\lambda(r)} \numberthis \label{eq:Gamma:rtt}\\
+		\Gamma\indices{^r_{\mu\nu}} =& - \frac{1}{2} \big[\underbrace{ \partial_\mu g_{r\nu}}_\text{$\mu=\nu=r$} + \underbrace{\partial_\nu g_{\mu r}}_\text{ $\mu=\nu=r$} - \underbrace{\partial_r g_{\mu\nu}}_\text{$\mu=\nu$}\big] e^{-\lambda(r)}\\
+		\Gamma\indices{^r_{tt}} =&-\frac{1}{2} \big[-\partial_r g_{tt}\big]e^{-\lambda(r)}\\
+		=&\frac{1}{2} \big[\nu^\prime(r) e^{\nu(r)}\big] e^{-\lambda(r)}\\
+		=& \frac{1}{2} \nu^\prime(r) e^{\nu(r)-\lambda(r)} \numberthis \label{eq:Gamma:rtt}\\
 		\Gamma\indices{^r_{rr}} =&-\frac{1}{2}\big[\partial_r g_{rr}\big] e^{-\lambda(r)}\\
-		=&-\frac{1}{2}\big[-\lambda^\prime(r) \cancel{e^{\lambda(r)}}\big] \cancel{e^{-\lambda(r)}}\\
+		=&\frac{1}{2}\big[\lambda^\prime(r) \cancel{e^{\lambda(r)}}\big] \cancel{e^{-\lambda(r)}}\\
 		=&\frac{\lambda^\prime(r)}{2} \numberthis \label{eq:Gamma:rrr}\\
-		\Gamma\indices{^r_{\theta\theta}} =&\frac{1}{2}\big[-\partial_r g_{\theta\theta}\big] e^{-\lambda(r)}\\
-		=&\frac{1}{\cancel{2}}\big[\cancel{2} r \big] e^{-\lambda(r)}\\
-		=& r  e^{-\lambda(r)}\numberthis \label{eq:Gamma:rtHtH}\\
-		\Gamma\indices{^r_{\phi\phi}} =&\frac{1}{2} \big[-\partial_r g_{\phi\phi}\big]e^{-\lambda(r)}\\
-		=&\frac{1}{\cancel{2}} \big[\cancel{2} r \cos^2 \theta\big]e^{-\lambda(r)}\\
-		=& r \cos^2 \theta e^{-\lambda(r)} \numberthis \label{eq:Gamma:rpHpH}
+		\Gamma\indices{^r_{\theta\theta}} =&-\frac{1}{2}\big[-\partial_r g_{\theta\theta}\big] e^{-\lambda(r)}\\
+		=&\frac{1}{\cancel{2}}\big[-\cancel{2} r \big] e^{-\lambda(r)}\\
+		=& -r  e^{-\lambda(r)}\numberthis \label{eq:Gamma:rtHtH}\\
+		\Gamma\indices{^r_{\phi\phi}} =&-\frac{1}{2} \big[-\partial_r g_{\phi\phi}\big]e^{-\lambda(r)}\\
+		=&\frac{1}{\cancel{2}} \big[-\cancel{2} r \cos^2 \theta\big]e^{-\lambda(r)}\\
+		=& -r \cos^2 \theta e^{-\lambda(r)} \numberthis \label{eq:Gamma:rpHpH}
 	\end{align*}
 	
-	From (\ref{eq:Gamma:tH})
 	\begin{align*}
+		\Gamma\indices{^\theta_{\mu\nu}} =&- \frac{1}{2} \big[\underbrace{ \partial_\mu g_{\theta\nu}}_\text{$\mu=r,\nu=\theta$} + \underbrace{\partial_\nu g_{\mu \theta}}_\text{$\mu=\theta,\nu=r$} - \underbrace{\partial_\theta g_{\mu\nu}}_\text{$\mu=\nu=\phi$}\big] \frac{1}{r^2} \\
 		\Gamma\indices{^\theta_{r\theta}} =& - \frac{1}{2} \big[\partial_r g_{\theta\theta} \big] \frac{1}{r^2}\\
 		=& - \frac{1}{2} \big[-2r \big] \frac{1}{r^2}\\
 		=& \frac{1}{r} \\
 		\Gamma\indices{^\theta_{r\theta}} =& \Gamma\indices{^\theta_{\theta r}} =\frac{1}{r} \numberthis \label{eq:Gamma:tHtHr}\\
-		\Gamma\indices{^\theta_{\phi\phi}} =&- \frac{1}{2} \big[-\partial_\theta g_{\mu\nu}\big] \frac{1}{r^2}\\
+		\Gamma\indices{^\theta_{\phi\phi}} =&- \frac{1}{2} \big[-\partial_\theta g_{\phi\phi}\big] \frac{1}{r^2}\\
 		=& \frac{1}{\cancel{2}} \big[\cancel{2} \bcancel{r^2} \cos \theta \sin \theta\big] \frac{1}{\bcancel{r^2}}\\
 		=& \cos \theta \sin \theta \numberthis \label{eq:Gamma:tHpHpH}		
 	\end{align*}
 	
-	From (\ref{eq:Gamma:pH})
 	\begin{align*}
+		\Gamma\indices{^\phi_{\mu\nu}} =&- \frac{1}{2} \big[\underbrace{ \partial_\mu g_{\phi\nu}}_\text{$\mu\in\{\theta,r\},\nu=\phi$} + \underbrace{\partial_\nu g_{\mu \phi}}_\text{$\mu=\phi,\nu\in\{\theta,r\}$} - \underbrace{\partial_\phi g_{\mu\nu}}_\text{$\equiv0$}\big] \frac{1}{r^2 \cos^2 \theta} \\
 		\Gamma\indices{^\phi_{\theta\phi}} =&- \frac{1}{2} \big[ \partial_\theta g_{\phi\phi} \big] \frac{1}{r^2 \cos^2 \theta}\\
 		=&- \frac{1}{2} \big[ 2 r^2 \cos \theta \sin \theta \big] \frac{1}{r^2 \cos^2 \theta}\\
-		=&-\tan \theta \numberthis \label{eq:Gamma:pHtHpH}\\
-		\Gamma\indices{^\phi_{\phi\theta}} =& -\tan \theta \numberthis \label{eq:Gamma:pHpHtH}
+		=&-\tan \theta \\
+		\Gamma\indices{^\phi_{\theta\phi}} =&\Gamma\indices{^\phi_{\phi\theta}} = -\tan \theta \numberthis \label{eq:Gamma:pHpHtH}\\
+		\Gamma\indices{^\phi_{r\phi}} =& - \frac{1}{2} \big[\partial_r g_{\phi\phi}\big] \frac{1}{r^2 \cos^2 \theta}	\\
+		=& \bcancel{-} \frac{1}{\cancel{2}} \big[\bcancel{-} \cancel{2} r \xcancel{\cos^2 \theta} \big] \frac{1}{r^2 \xcancel{\cos^2 \theta}}	\\
+		=& \frac{1}{r}\\
+		\Gamma\indices{^\phi_{r\phi}} =& \Gamma\indices{^\phi_{\phi r}} = \frac{1}{r} \numberthis \label{eq:Gamma:pHrpH}
 	\end{align*}
 	
 	\subsection{Riemann \& Ricci Tensors}
@@ -2104,13 +2101,14 @@ Action is supposed to be invariant, so laws of physics are covariant. We can der
 		R =& R_{\mu\nu} g^{\mu\nu}
 	\end{align*}
 	
+	We compute the components of $R_{\mu\nu}$
 	\begin{align*}
-		R_{tt} =& \partial_\alpha \Gamma\indices{^\alpha_{tt}} - \partial_t \Gamma\indices{^\alpha_{t\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{tt}} - \Gamma\indices{^\alpha_{\gamma t}} \Gamma\indices{^\gamma_{t\alpha}} \\
-		=& \partial_r \Gamma\indices{^r_{tt}} - \partial_t \Gamma\indices{^r_{tr}} + \big[\Gamma\indices{^t_{rt}}+\Gamma\indices{^r_{rr}} + \Gamma\indices{^\theta_{r\theta}}\big] \Gamma\indices{^r_{tt}} - 2\Gamma\indices{^t_{r t}} \Gamma\indices{^r_{tt}} \\
-		=& - \frac{1}{2} \partial_r \big[ \nu^\prime(r) e^{\nu(r)-\lambda(r)}\big] - \cancel{\partial_t \Gamma\indices{^r_{tr}}} + \big[\bcancel{\Gamma\indices{^t_{rt}}}+\Gamma\indices{^r_{rr}} + \Gamma\indices{^\theta_{r\theta}}\big] \Gamma\indices{^r_{tt}} - \bcancel{2}\Gamma\indices{^t_{r t}} \Gamma\indices{^r_{tt}}\\
-		=& -\frac{1}{2}\big[\nu^{\prime\prime} + \nu^\prime\big(\nu^\prime - \lambda^\prime \big)\big]e^{\nu-\lambda} + \big[\frac{\lambda^\prime}{2} + \frac{1}{r}-\frac{\nu\prime}{2}  \big] \big[- \frac{1}{2} \nu^\prime e^{\nu-\lambda}\big]\\
-		=& -\frac{1}{2}\bigg[\nu^{\prime\prime} + \big(\nu^\prime\big)^2 - \nu^\prime\lambda^\prime + \frac{\nu^\prime\lambda^\prime}{2} + \frac{\nu^\prime}{r} - \frac{ \big(\nu^\prime\big)^2}{2}\bigg]e^{\nu-\lambda}\\
-		=& -\frac{1}{2}\bigg[\nu^{\prime\prime}  -  \frac{\nu^\prime\lambda^\prime}{2} + \frac{\nu^\prime}{r} + \frac{ \big(\nu^\prime\big)^2}{2}\bigg]e^{\nu-\lambda}
+		R_{tt} =& \partial_\alpha \Gamma\indices{^\alpha_{tt}} - \underbrace{\partial_t \Gamma\indices{^\alpha_{t\alpha}}}_\text{$=0$} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{tt}} - \Gamma\indices{^\alpha_{\gamma t}} \Gamma\indices{^\gamma_{t\alpha}} \\
+		=& \partial_r \Gamma\indices{^r_{tt}}  + \big[\Gamma\indices{^t_{rt}}+\Gamma\indices{^r_{rr}} + \Gamma\indices{^\theta_{r\theta}}+ \Gamma\indices{^\phi_{r\phi}}\big] \Gamma\indices{^r_{tt}} - 2\Gamma\indices{^t_{r t}} \Gamma\indices{^r_{tt}} \\
+		=& \partial_r \Gamma\indices{^r_{tt}}  + \big[-\Gamma\indices{^t_{rt}}+\Gamma\indices{^r_{rr}} + \Gamma\indices{^\theta_{r\theta}}+ \Gamma\indices{^\phi_{r\phi}}\big] \Gamma\indices{^r_{tt}} \\
+		=& \partial_r \big[\frac{1}{2} \nu^\prime(r) e^{\nu(r)-\lambda(r)}\big]  + \big[-\frac{\nu^\prime(r)}{2}+\frac{\lambda^\prime(r)}{2} + \frac{1}{r} + \frac{1}{r}\big] \frac{1}{2} \nu^\prime(r) e^{\nu(r)-\lambda(r)}  \\
+		=& \frac{1}{2} \big[ \nu^{\prime\prime}(r) + \nu^\prime(r) \big(\nu^\prime(r)-\lambda^\prime(r)\big)\big] e^{\nu(r)-\lambda(r)}+ \big[-\frac{\nu^\prime(r)-\lambda^\prime(r)}{2} + \frac{2}{r}\big] \frac{1}{2} \nu^\prime(r) e^{\nu(r)-\lambda(r)} \\
+		=& \frac{1}{2} \bigg\{\nu^{\prime\prime}(r) + \frac{1}{2}\nu^\prime(r) \big(\nu^\prime(r)-\lambda^\prime(r)\big)+ \frac{2}{r}\nu^\prime(r)\bigg\} e^{\nu(r)-\lambda(r)} \numberthis \label{eq:Rtt}
 	\end{align*}
 	
 	\begin{align*}

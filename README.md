@@ -1,6 +1,6 @@
 # My Notes for [Theoretical Minimum Courses](http://theoreticalminimum.com/)
 
-Lecture Notes from Leonard Susskind's [Theoretical Minimum](http://theoreticalminimum.com/home)
+##Lecture Notes from Leonard Susskind's [Theoretical Minimum](http://theoreticalminimum.com/home)
 
 File|Description
 ----------------|-------------------------------------------------------------
@@ -12,6 +12,10 @@ File|Description
 |sm.tex|[Statistical Mechanics](http://theoreticalminimum.com/courses/statistical-mechanics/2013/spring)
 |tm.bib|Bibliography for Theoretical Minimum
 
+## Exercises 
+File|Description
+----------------|-------------------------------------------------------------
+|gr-exercises.tex|Worked examples from [General Relativity](http://theoreticalminimum.com/courses/general-relativity/2012/fall)|
 
 Helper programs
 

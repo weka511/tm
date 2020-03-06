@@ -1,6 +1,6 @@
 # My Notes for [Theoretical Minimum Courses](http://theoreticalminimum.com/)
 
-##Lecture Notes from Leonard Susskind's [Theoretical Minimum](http://theoreticalminimum.com/home)
+## Lecture Notes from Leonard Susskind's [Theoretical Minimum](http://theoreticalminimum.com/home)
 
 File|Description
 ----------------|-------------------------------------------------------------

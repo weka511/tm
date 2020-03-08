@@ -38,6 +38,7 @@
 	
 \section{Schwarzschild Metric}
 
+From \cite[Lecture 6]{susskind2012general}
 \subsection{Ansatz}
 We will seek a solution of the form\cite{Adler1965Introduction}:
 
@@ -121,7 +122,7 @@ We start be enquiring which Christoffel are not identically zero. For each $\rho
 
 \subsection{Riemann \& Ricci Tensors}
 
-From \cite{akhmedov2016lectures}
+From \cite[Lecture II]{akhmedov2016lectures}
 \begin{align*}
 	R\indices{^\mu_{\nu\alpha\beta}} =& \partial_\alpha \Gamma\indices{^\mu_{\nu\beta}} - \partial_\beta \Gamma\indices{^\mu_{\nu\alpha}} + \Gamma\indices{^\mu_{\gamma\alpha}} \Gamma\indices{^\gamma_{\nu\beta}} - \Gamma\indices{^\mu_{\gamma\beta}} \Gamma\indices{^\gamma_{\nu\alpha}}\\
 	R_{\mu\nu} =& R\indices{^\alpha_{\mu\alpha\nu}}\\
@@ -141,11 +142,10 @@ We compute the components of $R_{\mu\nu}$
 
 \begin{align*}
 	R_{rr} =& \partial_\alpha \Gamma\indices{^\alpha_{rr}} - \partial_r \Gamma\indices{^\alpha_{r\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{rr}} - \Gamma\indices{^\alpha_{\gamma r}} \Gamma\indices{^\gamma_{r\alpha}}\\
-	=& \cancel{\partial_r \Gamma\indices{^r_{rr}} }\\
+	=& \underbrace{\partial_t \Gamma\indices{^t_{rr}}}_\text{$=0$} + \cancel{\partial_r \Gamma\indices{^r_{rr}} } +\underbrace{\partial_\theta \Gamma\indices{^\theta_{rr}}}_\text{$=0$} + \underbrace{\partial_\phi \Gamma\indices{^\phi_{rr}}}_\text{$=0$}\\
 	&- \partial_r \Gamma\indices{^t_{rt}} - \cancel{\partial_r \Gamma\indices{^r_{rr}}} - \partial_r \Gamma\indices{^\theta_{r\theta}} - \partial_r \Gamma\indices{^\phi_{r\phi}}\\
 	&+ \big[\Gamma\indices{^t_{rt}} + \bcancel{\Gamma\indices{^r_{rr}}} + \Gamma\indices{^\theta_{r\theta}}  + \Gamma\indices{^\phi_{r\phi}}\big] \Gamma\indices{^r_{rr}}\\
 	&- \Gamma\indices{^t_{t r}} \Gamma\indices{^t_{rt}} - \bcancel{\Gamma\indices{^r_{r r}} \Gamma\indices{^r_{rr}}} - \Gamma\indices{^\theta_{\theta r}} \Gamma\indices{^\theta_{r\theta}} - \Gamma\indices{^\phi_{\phi r}} \Gamma\indices{^\phi_{r\phi}}\\
-	=& \partial_\alpha \Gamma\indices{^\alpha_{rr}} - \partial_r \Gamma\indices{^\alpha_{r\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{rr}} - \Gamma\indices{^\alpha_{\gamma r}} \Gamma\indices{^\gamma_{r\alpha}}\\
 	=& - \partial_r \frac{\nu^\prime(r)}{2}  - \partial_r \frac{1}{r} - \partial_r \frac{1}{r} + \big[\frac{\nu^\prime(r)}{2}  + \frac{1}{r}  + \frac{1}{r}\big] \frac{\lambda^\prime(r)}{2}- \big(\frac{\nu^\prime(r)}{2}\big)^2 -  \frac{1}{r^2}  - \frac{1}{r^2}\\
 	=& -\frac{\nu^{\prime\prime}(r)}{2} + \cancel{\frac{2}{r^2}} + \bigg(\frac{\nu^\prime(r)}{2}  + \frac{2}{r}  \bigg) \frac{\lambda^\prime(r)}{2}- \big(\frac{\nu^\prime(r)}{2}\big)^2 -  \cancel{\frac{2}{r^2}} \\
 	=& -\frac{1}{2}\bigg[\nu^{\prime\prime}(r) - \bigg(\frac{\nu^\prime(r)}{2}  + \frac{2}{r}  \bigg) \lambda^\prime(r) + \frac{\big(\nu^\prime(r)\big)^2}{2}\bigg] \numberthis \label{eq:Rrr}
@@ -190,16 +190,17 @@ We compute the components of $R_{\mu\nu}$
 
 \subsection{Linearized Field Equations}
 
+From \cite[Lecture 10]{susskind2012general}:
 \begin{align*}
 	\Gamma\indices{^{\tau}_{\mu\nu}} =&\frac{1}{2} \big[ \partial_\mu g_{\sigma\nu} + \partial_\nu g_{\mu\sigma} - \partial_\sigma g_{\mu\nu}\big] g^{\sigma\tau}\\
 	=& \frac{1}{2} \big[ \partial_\mu h_{\sigma\nu} + \partial_\nu h_{\mu\sigma} - \partial_\sigma h_{\mu\nu}\big] \big[\eta^{\sigma\tau }- O(h)\big]\\
-	=& \frac{1}{2} \big[ \partial_\mu h_{\sigma\nu} + \partial_\nu h_{\mu\sigma} - \partial_\sigma h_{\mu\nu}\big] \eta^{\sigma\tau }- O(h^2)
+	=& \frac{1}{2} \big[ \partial_\mu h_{\sigma\nu} + \partial_\nu h_{\mu\sigma} - \partial_\sigma h_{\mu\nu}\big] \eta^{\sigma\tau }- O(h^2) \numberthis \label{eq:Gamma:small}
 \end{align*}
 
 \subsection{Riemann and Ricci Tensors}
-
+From \cite[Lecture 3]{susskind2012general}:
 \begin{align*}
-	R\indices{^\alpha_{\beta\gamma\delta}} =& \partial_\gamma\Gamma\indices{^\alpha_{\beta\delta}}-\partial_\delta\Gamma\indices{^\alpha_{\beta\gamma}} + O(\Gamma^2)\\
+	R\indices{^\alpha_{\beta\gamma\delta}} =& \partial_\gamma\Gamma\indices{^\alpha_{\beta\delta}}-\partial_\delta\Gamma\indices{^\alpha_{\beta\gamma}} + O(\Gamma^2) \text{. Now using $o(\Gamma)=o(h)$ from (\ref{eq:Gamma:small})} \\
 	=& \frac{1}{2} \big[ \partial_\gamma\partial_\beta h_{\sigma\delta} + \partial_\gamma\partial_\delta h_{\beta\sigma} - \partial_\gamma\partial_\sigma h_{\beta\delta}\big] \eta^{\sigma\alpha }- \frac{1}{2} \big[ \partial_\delta\partial_\gamma h_{\sigma\beta} + \partial_\delta\partial_\beta h_{\gamma\sigma} - \partial_\delta\partial_\sigma h_{\beta\gamma}\big] \eta^{\sigma\alpha }+ O(h^2)\\
 	=& \frac{1}{2} \big[ \partial_\gamma\partial_\beta h_{\sigma\delta} + \partial_\gamma\partial_\delta h_{\beta\sigma} - \partial_\gamma\partial_\sigma h_{\beta\delta} - \partial_\delta\partial_\gamma h_{\sigma\beta} - \partial_\delta\partial_\beta h_{\gamma\sigma} + \partial_\delta\partial_\sigma h_{\beta\gamma}\big] \eta^{\sigma\alpha }+ O(h^2)
 \end{align*}
@@ -219,7 +220,8 @@ Now $\eta^{00}=-1$, $\eta^{ii}=+1$, and all other values are zero, so Einstein's
 
 \subsection{Ansatz}
 
-We will look for plane wave solutions propagating along the $z$ axis, of form (\ref{eq:sine_wave})
+We will look for plane wave solutions propagating along the $z$ axis.
+
 \begin{align*}
 	h_{\mu\nu}(x,t)=&h^0_{\mu\nu} \sin\big(k(t-z)\big)\\
 	\partial_0^2 h_{\mu\nu}=& -k^2 h_{\mu\nu}\\
@@ -259,7 +261,7 @@ Substituting $\beta=0,\delta=0$ in (\ref{eq:expanded_h}):
 \begin{align*}
 	\sum_i&\big[\underbrace{\partial_i\partial_\beta h_{i\delta}}_\text{(a)} - \underbrace{\partial_i\partial_i h_{\beta\delta}}_\text{(b)} -  \underbrace{\partial_\delta\partial_\beta h_{ii}}_\text{(c)} + \underbrace{\partial_\delta\partial_i h_{\beta i}\big]}_\text{(d)}\\
 	&=\underbrace{\partial_0\partial_\beta h_{0\delta}}_\text{(e)}- \underbrace{\partial_0\partial_0 h_{\beta\delta}}_\text{(f)} - \underbrace{\partial_\delta\partial_\beta h_{00}}_\text{(g)} + \underbrace{\partial_\delta\partial_0 h_{\beta 0}}_\text{(h)} \\
-	&\underbrace{\partial_z\partial_t h_{zt}}_\text{(a)} - \underbrace{\partial_z\partial_z h_{tt}}_\text{(b)} -  \underbrace{\partial_t\partial_t \sum_i h_{ii}}_\text{(c)} + \underbrace{\partial_t\partial_z h_{0t}}_\text{(d)}\\
+	&\underbrace{\partial_z\partial_t h_{zt}}_\text{(a)} - \underbrace{\partial_z\partial_z h_{tt}}_\text{(b)} -  \underbrace{\partial_t\partial_t \sum_i h_{ii}}_\text{(c)} + \underbrace{\partial_t\partial_z h_{tt}}_\text{(d)}\\
 	&=\underbrace{\cancel{\partial_t\partial_t h_{tt}}}_\text{(e)}- \underbrace{\cancel{\partial_t\partial_t h_{tt}}}_\text{(f)} - \underbrace{\bcancel{\partial_t\partial_t h_{tt}}}_\text{(g)} + \underbrace{\bcancel{\partial_t\partial_t h_{tt}}}_\text{(h)} \\
 	0=&\partial_z\partial_t h_{zt} - \partial_z\partial_z h_{tt} -  \partial_t\partial_t \sum_i h_{ii} + \partial_t\partial_z h_{t z}\\
 	=&k^2 \big[h^0_{zt}+h^0_{tt}+\sum_ih^0_{ii}+h^0_{tz}\big] \sin\big(k(t-z)\big)\\

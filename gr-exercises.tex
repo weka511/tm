@@ -43,8 +43,8 @@ From \cite[Lecture 6]{susskind2012general}
 We will seek a solution of the form\cite{Adler1965Introduction}:
 
 \begin{align*}
-	dt^2 =& e^{\nu(r)} dt^2 -e^{\lambda(r)} dr^2 -r^2 d \Omega^2 \text{, where}\\
-	&d \Omega^2 =d\theta^2 + cos^2 \theta d\phi^2 \text{, so}\\
+	dt^2 =& e^{\nu(r)} dt^2 -e^{\lambda(r)} dr^2 -r^2 d \Omega^2 \text{, where} \numberthis \label{eq:schwartzschild:ansatz}\\
+	&d \Omega^2 =d\theta^2 + cos^2 \theta d\phi^2 \text{, so} \\
 	g_{tt}=& e^{\nu(r)}\\
 	g_{rr}=&-e^{\lambda(r)}\\
 	g_{\theta\theta}=&-r^2\\
@@ -150,6 +150,37 @@ We compute the components of $R_{\mu\nu}$
 	=& -\frac{\nu^{\prime\prime}(r)}{2} + \cancel{\frac{2}{r^2}} + \bigg(\frac{\nu^\prime(r)}{2}  + \frac{2}{r}  \bigg) \frac{\lambda^\prime(r)}{2}- \big(\frac{\nu^\prime(r)}{2}\big)^2 -  \cancel{\frac{2}{r^2}} \\
 	=& -\frac{1}{2}\bigg[\nu^{\prime\prime}(r) - \bigg(\frac{\nu^\prime(r)}{2}  + \frac{2}{r}  \bigg) \lambda^\prime(r) + \frac{\big(\nu^\prime(r)\big)^2}{2}\bigg] \numberthis \label{eq:Rrr}
 \end{align*}
+
+From (\ref{eq:Rtt}) and (\ref{eq:Rrr})
+
+\begin{align*}
+	\nu^{\prime\prime}(r) + \frac{1}{2}\nu^\prime(r) \big(\nu^\prime(r)-\lambda^\prime(r)\big)+ \frac{2}{r}\nu^\prime(r)=&0 \numberthis \label{eq:Rtt:a}\\
+	\nu^{\prime\prime}(r) - \bigg(\frac{\nu^\prime(r)}{2}  + \frac{2}{r}  \bigg) \lambda^\prime(r) + \frac{\big(\nu^\prime(r)\big)^2}{2}=&0\\
+\end{align*}
+\begin{align*}
+	\cancel{\nu^{\prime\prime}(r)} + \frac{1}{2}\nu^\prime(r) \big(\nu^\prime(r)-\lambda^\prime(r)\big)+ \frac{2}{r}\nu^\prime(r)-\cancel{\nu^{\prime\prime}(r)} + \bigg(\frac{\nu^\prime(r)}{2}  + \frac{2}{r}  \bigg) \lambda^\prime(r) - \frac{\big(\nu^\prime(r)\big)^2}{2}=&0\\
+	 \frac{1}{2}\nu^\prime(r) \big(\cancel{\nu^\prime(r)}-\bcancel{\lambda^\prime(r)}\big)+ \frac{2}{r}\nu^\prime(r) + \bigg(\bcancel{\frac{\nu^\prime(r)}{2}}  + \frac{2}{r}  \bigg) \lambda^\prime(r) - \cancel{\frac{\big(\nu^\prime(r)\big)^2}{2}}=&0\\
+	 \frac{2}{r}\big(\nu^\prime(r)+\lambda^\prime(r)\big)=&0\\
+	 \nu^\prime(r)+\lambda^\prime(r)=&0
+\end{align*}
+
+Substituting in (\ref{eq:Rtt:a}):
+\begin{align*}
+	\nu^{\prime\prime}(r) + \nu^\prime(r)^2 + \frac{2}{r}\nu^\prime(r)=&0 \numberthis \label{eq:nu} \text{. Now}\\
+	\big[r e^{\nu(r)}\big]^{\prime\prime}=& \big[e^\nu+r \nu^\prime e^\nu\big]^\prime\\
+	=& \big[e^\nu \nu^\prime + e^\nu \nu^\prime + r \nu^{\prime\prime} e^\nu + r (\nu^\prime)^2 e^\nu\big]\\
+	=& r e^\nu\big[\frac{2}{r} + \nu^{\prime\prime} + (\nu^\prime)^2\big] \text{, so (\ref{eq:nu}) becomes:}\\
+	\big[r e^{\nu(r)}\big]^{\prime\prime}=&0, \text{, or}\\
+	r e^{\nu(r)} =&ar + b	\text{, for some constants $a$ and $b$}\\
+	e^{\nu(r)} =&a + \frac{b}{r}
+\end{align*}
+
+Now from (\ref{eq:schwartzschild:ansatz})
+\begin{align*}
+	dt^2 =& \big(a + \frac{b}{r}\big) dt^2 - \frac{c}{a + \frac{b}{r}} dr^2 -r^2 d  \Omega^2 \text{, which should be Minkowskian at infinity, i.e:}\\
+	a =& \frac{c}{a}=1
+\end{align*}
+
 
 \begin{align*}
 	R_{\theta\theta} =& \partial_\alpha \Gamma\indices{^\alpha_{\theta\theta}} - \partial_\theta \Gamma\indices{^\alpha_{\theta\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\theta\theta}} - \Gamma\indices{^\alpha_{\gamma\theta}} \Gamma\indices{^\gamma_{\theta\alpha}}\\

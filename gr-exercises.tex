@@ -27,7 +27,7 @@
 \maketitle
 
 \begin{abstract}
-	These are some exercises arising from the \emph{General Relativity}\cite{susskind2012general} lectures from Leonard Susskind's \emph{Theoretical Minimum} series\cite{susskind2007theoretical}.
+	These are some exercises arising from the \emph{General Relativity}\cite{susskind2012general} lectures from Leonard Susskind's \emph{Theoretical Minimum} series\cite{susskind2007theoretical}. Section \ref{sec:schwartzchild:metric} contains a derivation of the Schwarzschild metric. Section \ref{sec:gravitational:waves} examines lineratized solutions and gravitational waves.
 \end{abstract}
 
 \tableofcontents
@@ -36,7 +36,7 @@
 \listoftheorems
 
 	
-\section{Schwarzschild Metric}
+\section{Schwarzschild Metric}\label{sec:schwartzchild:metric}
 
 From \cite[Lecture 6]{susskind2012general}
 \subsection{Ansatz}
@@ -70,7 +70,7 @@ The only non-zero derivatives of $g^{\mu\nu}$ are:
 
 \subsection{Christoffel Symbols}
 
-We start be enquiring which Christoffel are not identically zero. For each $\rho$ we ask whether there are any $(\mu,nu)$ for which the terms making up $\Gamma\indices{^\rho_{\mu\nu}}$ are non-zero.
+We start be enquiring which Christoffel are not identically zero. For each $\rho$ we ask whether there are any $(\mu,\nu)$ for which the terms making up $\Gamma\indices{^\rho_{\mu\nu}}$ are non-zero.
 
 \begin{align*}
 	\Gamma\indices{^t_{\mu\nu}} =&\frac{1}{2} \big[\underbrace{ \partial_\mu g_{t\nu}}_\text{$\mu=r,\nu=t$} + \underbrace{\partial_\nu g_{\mu t}}_\text{$\mu=t,\nu=r$} - \underbrace{\partial_t g_{\mu\nu}}_\text{$\equiv0$}\big] e^{-\nu(r)}\\
@@ -131,6 +131,8 @@ From \cite[Lecture II]{akhmedov2016lectures}
 \end{align*}
 
 We compute the components of $R_{\mu\nu}$
+
+\subsubsection{$R_{tt}$ and $R_{rr}$}
 \begin{align*}
 	R_{tt} =& \partial_\alpha \Gamma\indices{^\alpha_{tt}} - \underbrace{\partial_t \Gamma\indices{^\alpha_{t\alpha}}}_\text{$=0$} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{tt}} - \Gamma\indices{^\alpha_{\gamma t}} \Gamma\indices{^\gamma_{t\alpha}} \\
 	=& \partial_r \Gamma\indices{^r_{tt}}  + \big[\Gamma\indices{^t_{rt}}+\Gamma\indices{^r_{rr}} + \Gamma\indices{^\theta_{r\theta}}+ \Gamma\indices{^\phi_{r\phi}}\big] \Gamma\indices{^r_{tt}} - 2\Gamma\indices{^t_{r t}} \Gamma\indices{^r_{tt}} \\
@@ -151,17 +153,24 @@ We compute the components of $R_{\mu\nu}$
 	=& -\frac{1}{2}\bigg[\nu^{\prime\prime}(r) - \bigg(\frac{\nu^\prime(r)}{2}  + \frac{2}{r}  \bigg) \lambda^\prime(r) + \frac{\big(\nu^\prime(r)\big)^2}{2}\bigg] \numberthis \label{eq:Rrr}
 \end{align*}
 
-From (\ref{eq:Rtt}) and (\ref{eq:Rrr})
+\subsubsection{$\nu$ and $\lambda$}
+
+We now have enough information to determine $\nu$ and $\lambda$. From (\ref{eq:Rtt}) and (\ref{eq:Rrr})
 
 \begin{align*}
 	\nu^{\prime\prime}(r) + \frac{1}{2}\nu^\prime(r) \big(\nu^\prime(r)-\lambda^\prime(r)\big)+ \frac{2}{r}\nu^\prime(r)=&0 \numberthis \label{eq:Rtt:a}\\
 	\nu^{\prime\prime}(r) - \bigg(\frac{\nu^\prime(r)}{2}  + \frac{2}{r}  \bigg) \lambda^\prime(r) + \frac{\big(\nu^\prime(r)\big)^2}{2}=&0\\
 \end{align*}
+Subtracting these equations:
 \begin{align*}
 	\cancel{\nu^{\prime\prime}(r)} + \frac{1}{2}\nu^\prime(r) \big(\nu^\prime(r)-\lambda^\prime(r)\big)+ \frac{2}{r}\nu^\prime(r)-\cancel{\nu^{\prime\prime}(r)} + \bigg(\frac{\nu^\prime(r)}{2}  + \frac{2}{r}  \bigg) \lambda^\prime(r) - \frac{\big(\nu^\prime(r)\big)^2}{2}=&0\\
+\end{align*}
+
+\begin{align*}
 	 \frac{1}{2}\nu^\prime(r) \big(\cancel{\nu^\prime(r)}-\bcancel{\lambda^\prime(r)}\big)+ \frac{2}{r}\nu^\prime(r) + \bigg(\bcancel{\frac{\nu^\prime(r)}{2}}  + \frac{2}{r}  \bigg) \lambda^\prime(r) - \cancel{\frac{\big(\nu^\prime(r)\big)^2}{2}}=&0\\
 	 \frac{2}{r}\big(\nu^\prime(r)+\lambda^\prime(r)\big)=&0\\
-	 \nu^\prime(r)+\lambda^\prime(r)=&0
+	 \nu^\prime(r)+\lambda^\prime(r)=&0 \text{, so for some constant $c$}\\
+	 e^\lambda(r) =& \frac{c}{e^\nu(r)}  \numberthis \label{eq:lambda:nu}
 \end{align*}
 
 Substituting in (\ref{eq:Rtt:a}):
@@ -175,22 +184,31 @@ Substituting in (\ref{eq:Rtt:a}):
 	e^{\nu(r)} =&a + \frac{b}{r}
 \end{align*}
 
-Now from (\ref{eq:schwartzschild:ansatz})
+Now we know that the metric (\ref{eq:schwartzschild:ansatz}) should be Minkowskian at infinity, which requires $\nu(r)\rightarrow 1$ as $r \rightarrow \infty$, so from:
 \begin{align*}
-	dt^2 =& \big(a + \frac{b}{r}\big) dt^2 - \frac{c}{a + \frac{b}{r}} dr^2 -r^2 d  \Omega^2 \text{, which should be Minkowskian at infinity, i.e:}\\
-	a =& \frac{c}{a}=1
+	dt^2 =& \big(a + \frac{b}{r}\big) dt^2 - \frac{c}{a + \frac{b}{r}} dr^2 -r^2 d  \Omega^2 \text{, for some we see that:}\\
+	a =& \frac{c}{a}=1 \text{, using (\ref{eq:lambda:nu}), i.e.} \\
+	c=1
 \end{align*}
 
+We saw in \cite[Lecture 5]{susskind2012general} that we need $g_{00}\approxeq1-\frac{2MG}{r}$ for small $r$, in order to get agreement with Newtonian gravity, hence $b=-2MG$, and (\ref{eq:schwartzschild:ansatz}) becomes:
 
+\begin{align*}
+	dt^2 =& \big(1-\frac{2MG}{R}\big) dt^2 - \frac{dr^2}{1-\frac{2MG}{R}}  -r^2 d  \Omega^2
+\end{align*}
+
+\subsubsection{The remaining $R_{\mu\nu}$}
 \begin{align*}
 	R_{\theta\theta} =& \partial_\alpha \Gamma\indices{^\alpha_{\theta\theta}} - \partial_\theta \Gamma\indices{^\alpha_{\theta\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\theta\theta}} - \Gamma\indices{^\alpha_{\gamma\theta}} \Gamma\indices{^\gamma_{\theta\alpha}}\\
 	=& \partial_r \Gamma\indices{^r_{\theta\theta}} - \partial_\theta \Gamma\indices{^\phi_{\theta\phi}} + \bigg(\Gamma\indices{^t_{rt}}+\Gamma\indices{^r_{rr}}+\cancel{\Gamma\indices{^\theta_{r\theta}}}+\Gamma\indices{^\phi_{r\phi}}\bigg) \Gamma\indices{^r_{\theta\theta}} - \cancel{2}\Gamma\indices{^r_{\theta\theta}} \Gamma\indices{^\theta_{\theta r}}\\
-	=& \partial_r \bigg[-r  e^{-\lambda(r)}\bigg] - \partial_\theta \bigg[-\tan \theta\bigg]  + \bigg(\frac{\nu^\prime(r)}{2}+\frac{\lambda^\prime(r)}{2}-\cancel{\frac{1}{r}}+\cancel{\frac{1}{r}}\bigg)\bigg[ -r  e^{-\lambda(r)}\bigg]\\
-	=& -  e^{-\lambda(r)} + r \lambda^\prime(r) e^{-\lambda(r)} + \sec^2 \theta -\frac{\nu^\prime(r)}{2}r  e^{-\lambda(r)}-\frac{\lambda^\prime(r)}{2}r  e^{-\lambda(r)} \numberthis \label{eq:RtHtH}
+	=& \partial_r \bigg[-r  e^{-\lambda(r)}\bigg] - \partial_\theta \bigg[-\tan \theta\bigg]  + \bigg(\underbrace{\frac{\nu^\prime(r)}{2}+\frac{\lambda^\prime(r)}{2}}_\text{$=0$ from (\ref{eq:lambda:nu})}-\cancel{\frac{1}{r}}+\cancel{\frac{1}{r}}\bigg)\bigg[ -r  e^{-\lambda(r)}\bigg]\\
+	=& -  e^{-\lambda(r)} + r \lambda^\prime(r) e^{-\lambda(r)} + \sec^2 \theta \text{ WTF?} \numberthis \label{eq:RtHtH}
 \end{align*}
 
 \begin{align*}
-	R_{\phi\phi} =& \partial_\alpha \Gamma\indices{^\alpha_{\phi\phi}} - \partial_\nu \Gamma\indices{^\alpha_{\mu\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\mu\nu}} - \Gamma\indices{^\alpha_{\gamma\nu}} \Gamma\indices{^\gamma_{\mu\alpha}}
+	R_{\phi\phi} =& \partial_\alpha \Gamma\indices{^\alpha_{\phi\phi}} - \partial_\phi \Gamma\indices{^\alpha_{\phi\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\phi\phi}} - \Gamma\indices{^\alpha_{\gamma\phi}} \Gamma\indices{^\gamma_{\phi\alpha}}\\
+	 =& \partial_r \Gamma\indices{^r_{\phi\phi}} + \partial_\theta \Gamma\indices{^\theta_{\phi\phi}} - \partial_\phi \Gamma\indices{^\theta_{\phi\theta}} - \partial_\phi \Gamma\indices{^r_{\phi r}} + \big[\Gamma\indices{^r_{rr}} + \Gamma\indices{^\theta_{r\theta}}+\cancel{\Gamma\indices{^\phi_{r\phi}}}\big] \Gamma\indices{^r_{\phi\phi}} - \cancel{\Gamma\indices{^r_{\phi\phi}} \Gamma\indices{^\phi_{\phi r}}} - \Gamma\indices{^\theta_{\phi\phi}} \Gamma\indices{^\phi_{\phi\theta}}\\
+	  =& \partial_r \big(-r \cos^2 \theta e^{-\lambda(r)} \big) + \partial_\theta \big(\cos \theta \sin \theta \big) - \partial_\phi \Gamma\indices{^\theta_{\phi\theta}} - \partial_\phi \Gamma\indices{^r_{\phi r}}\\ &+ \big[\Gamma\indices{^r_{rr}} + \Gamma\indices{^\theta_{r\theta}}\big] \big(-r \cos^2 \theta e^{-\lambda(r)} \big)  - \big(\cos \theta \sin \theta \big) \Gamma\indices{^\phi_{\phi\theta}}
 \end{align*}
 
 \begin{align*}
@@ -217,7 +235,7 @@ Now from (\ref{eq:schwartzschild:ansatz})
 	R_{\theta\phi} =& \partial_\alpha \Gamma\indices{^\alpha_{\theta\phi}} - \partial_\nu \Gamma\indices{^\alpha_{\mu\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\mu\nu}} - \Gamma\indices{^\alpha_{\gamma\nu}} \Gamma\indices{^\gamma_{\mu\alpha}}
 \end{align*}
 
-\section{Gravitational waves}
+\section{Gravitational waves}\label{sec:gravitational:waves}
 
 \subsection{Linearized Field Equations}
 

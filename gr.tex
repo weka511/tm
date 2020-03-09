@@ -377,9 +377,9 @@ LS presents usual properties, and shows that $g_{mn}$ is a symmetric tensor. He 
 
 \subsection{Flatness}
 
-A flat geometry is one where all Euclid's postulates are true. It is characterized in terms of the metric: not that $g_{i,j} = \delta_{i,j}$, but rather that coordinates can be found where the metric has such a simple form. More generally, given a metric that is smooth and has all the good differentiable properties, the problem of determining whether or not that space is flat is somewhat difficult. The bad way is to consider all coordinate systems, calculate the metric, and calculate whether it has the required form. The good way is to look for diagnostic quantities, things you can calculate which, if they are zero everywhere the space is flat; if they are non-zero anywhere it means the space is curved there. The diagnostic quantity is called the curvature tensor.
+A flat geometry is one where all Euclid's postulates are true. It is characterized in terms of the metric: not that $g_{i,j} = \delta_{i,j}$, but rather that coordinates can be found where the metric has such a simple form. More generally, given a metric that is smooth and has all the good differentiable properties, the problem of determining whether or not that space is flat is somewhat difficult. The bad way is to consider all coordinate systems, calculate the metric, and calculate whether it has the required form. The good way is to look for diagnostic quantities, things you can calculate which, if they are zero everywhere the space is flat; if they are non-zero anywhere it means the space is curved there. The diagnostic quantity is called the \emph{curvature tensor}.
 
-Where want to find a tensor $R$ such that $R=0$ in a flat space.
+We want to find a tensor $R$ such that $R=0$ in a flat space.
 
 \begin{align*}
 	ds^2 =& g\indices{_{mn}}(x) dx^m dx^n\\
@@ -389,6 +389,8 @@ Where want to find a tensor $R$ such that $R=0$ in a flat space.
 \end{align*}
  
  In Riemannian geometry, unlike Einsteinian, $ds^2 \ge 0$.
+ 
+ \subsection{Gaussian normal coordinates}
  
  \begin{thm}[Gaussian Normal coordinates--Figure \ref{fig:gr-4-gaussian-normal}]
  	At every point, $x_0$ you can choose coordinates such that:
@@ -413,9 +415,9 @@ Where want to find a tensor $R$ such that $R=0$ in a flat space.
 	In 4 dimensional space there are 40 combinations of $m$, $n$ and $r$; there are 40 coefficients $c\indices{^m_{nr}}$. Moreover (\ref{eq:gnf2}) is actually 40 equations, so we can choose the $c\indices{^m_{nr}}$ so (\ref{eq:gnf2})  is satisfied.
 	How do we get the flat metric?
 \end{proof}
-The problem is that we can't extend away from $x_0$, except in a flat space. The problem is the second derivatives. In general $\frac{\partial^2 g_{m,n}(x_0)}{\partial x^r \partial x^s}\ne0$. The metric is locally flat.
+We can't extend away from $x_0$, except in a flat space: the problem is the second derivatives. In general $\frac{\partial^2 g_{m,n}(x_0)}{\partial x^r \partial x^s}\ne0$. The metric is \emph{locally} flat.
 
-\subsection{Gaussian normal coordinates}
+
 
 \begin{itemize}
 	\item Can we construct a derivative of a tensor?
@@ -470,11 +472,13 @@ $\Gamma$ is known a "connection", or a Christoffel symbol; which contains variou
 	\end{align*}
 \end{thm}
 
+
 \begin{proof}
+	We apply (\ref{eq:covariant_2}) and Lemma \ref{thm:covariant_derivative:metric}, then cyclically permute the indices $(s,m,n)\rightarrow(m,n,s)$, and use (\ref{eq:symmetry:Gamma}) and the symmetry of $g_{\mu\nu}$.
 	\begin{align*}
-		D_s g_{mn} =& \partial_s g_{mn} - \Gamma\indices{^t_{sm}} g_{tn} - \Gamma\indices{^t_{sn}} g_{tm} 	=& 0 \numberthis \label{eq:D:d:1}\\
-		D_m g_{sn} =& \partial_m g_{sn} - \underbrace{\Gamma\indices{^t_{sm}}}_\text{From (\ref{eq:symmetry:Gamma})} g_{tn} - \Gamma\indices{^t_{mn}} g_{st} 	=& 0 \numberthis \label{eq:D:d:2}\\
-		D_n g_{sm} =& \partial_n g_{sm} - \Gamma\indices{^t_{sn}} g_{tm} - \Gamma\indices{^t_{mn}} g_{st} 	=& 0 \numberthis \label{eq:D:d:3}
+		D_s g_{mn} =& \partial_s g_{mn} - \Gamma\indices{^t_{sm}} g_{tn} - \Gamma\indices{^t_{sn}} g_{tm} 	= 0  \numberthis \label{eq:D:d:1}\\
+		D_m g_{sn} =& \partial_m g_{sn} -\Gamma\indices{^t_{sm}} g_{tn} - \Gamma\indices{^t_{mn}} g_{st} 	= 0 \numberthis \label{eq:D:d:2} \\
+		D_n g_{sm} =& \partial_n g_{sm} - \Gamma\indices{^t_{sn}} g_{tm} - \Gamma\indices{^t_{mn}} g_{st} 	= 0 \numberthis \label{eq:D:d:3}
 	\end{align*}
 	
 	Now we take (\ref{eq:D:d:3}) + (\ref{eq:D:d:2}) - (\ref{eq:D:d:1}).
@@ -482,7 +486,7 @@ $\Gamma$ is known a "connection", or a Christoffel symbol; which contains variou
 	\begin{align*}
 		\partial_n g_{sm} + \partial_m g_{sn}- \partial_s g_{mn} =& \bcancel{\Gamma\indices{^t_{sn}} g_{tm}} + \Gamma\indices{^t_{mn}} g_{st} + \cancel{\Gamma\indices{^t_{sm}}g_{tn}} + \Gamma\indices{^t_{mn}} g_{st} - \cancel{\Gamma\indices{^t_{sm}} g_{tn}} - \bcancel{\Gamma\indices{^t_{sn}} g_{tm}} \\
 		=&2 \Gamma\indices{^t_{mn}} g_{st} \text{, whence}\\
-		\Gamma\indices{^t_{mn}} =& \frac{1}{2}\big[\partial_n g_{sm} + \partial_m g_{sn}- \partial_s g_{mn}\big]  g^{st} \numberthis \label{eq:christoffel:g}  
+		\Gamma\indices{^t_{mn}} =& \frac{1}{2}\big[\partial_n g_{sm} + \partial_m g_{sn}- \partial_s g_{mn}\big]  g^{st}   
 	\end{align*}
 \end{proof}
 
@@ -562,27 +566,27 @@ The point of a covariant derivative is to write a tensor such that in Gaussian N
 
 \begin{thm}[Covariant Derivative of contravariant vector]
 	\begin{align*}
-		D_m V^n =& \partial m V_n + \Gamma\indices{^n_{mr}} V^r
+		D_m V^n =& \partial_m V_n + \Gamma\indices{^n_{mr}} V^r
 	\end{align*}
 \end{thm}
 
 \begin{proof}
 	\begin{align*}
 		D_m V^n =& D_m\big( g^{np} V_p\big)\\
-		=&  \cancel{\big(D_m g^{np}\big) V_p} +  g^{np} D_m V_p \text{,  using Lemma \ref{thm:covariant_derivative:metric}to cancel the first term} \\
+		=&  \cancel{\big(D_m g^{np}\big) V_p} +  g^{np} D_m V_p \text{,  using Lemma \ref{thm:covariant_derivative:metric} to cancel the first term} \\
 		=& g^{np} \big(\partial_m V_p -  \Gamma\indices{^r_{pm}} V_r\big) \text{, from (\ref{eq:covariant_1})}\\
 		=& g^{np} \big[\partial_m \big(g_{pq} V^q\big) -  \Gamma\indices{^r_{pm}} g_{rq} V^q\big]\\
 		=& g^{np} \big[ \partial_m \big(g_{pq} \big)V^q + g_{pq} \partial_m V^q -  \Gamma\indices{^r_{pm}} g_{rq} V^q\big]\\
 		=& \cancel{g^{np} g_{pq}} \partial_m V^q +  g^{np} \big[ \partial_m \big(g_{pq} \big) -   \Gamma\indices{^r_{pm}} g_{rq} \big] V^q \numberthis\label{eq:cov:contra}
 	\end{align*}
-	Now, using (\ref{eq:christoffel:g})
+	Now, using (\ref{eq:christoffel})
 	\begin{align*}
 		 \partial_m g_{pq} -   \Gamma\indices{^r_{pm}} g_{rq} =&\partial_m \big(g_{pq} \big) - \frac{1}{2}\big[\partial_m g_{sp} + \partial_p g_{sm}- \partial_s g_{pm}\big]  \cancel{g^{sr} g_{rq}}\\
 		=& \partial_m \big(g_{pq} \big) - \frac{1}{2}\big[\partial_m g_{sp} + \partial_p g_{sm}- \partial_s g_{pm}\big] \partial_m g_{pq} +   \Gamma\indices{^r_{pm}} g_{rq}\\
 		 =& \frac{1}{2}\big[\partial_m g_{qp} - \partial_p g_{qm}+ \partial_q g_{pm}\big] 
 	\end{align*}
 	
-	Using (\ref{eq:christoffel:g}) again:
+	Using (\ref{eq:christoffel}) again:
 	\begin{align*}
 		g^{np} \big[ \partial_m \big(g_{pq} \big) -   \Gamma\indices{^r_{pm}} g_{rq} \big] V^q =& g^{np} \frac{1}{2}\big[\partial_m g_{qp} - \partial_p g_{qm}+ \partial_q g_{pm}\big] V^q\\
 		=& \Gamma \indices{^n_{qm}} V^q \text{, and (\ref{eq:cov:contra}) becomes}\\
@@ -750,7 +754,7 @@ So far we have discussed 3 dimensional space, as Riemann knew it. We now move to
 In 4 dimensions, "flat" means that there is a coordinate system where the metric looks like (\ref{eq:minkowski:metric}).
 
 We want to define a uniformly accelerated motion, but there are problems. \begin{itemize}
-	\item If you have a bunch of points which are uniformly separated, \ref{fig:gr-4-uniform-acceleration}, they will maintain a uniform distance, but distances are supposed to transform when they accelerate. If we did this, we'd find the distances getting larger in the rest frame, stretching the strings joining the points, eventually breaking them.
+	\item If you have a bunch of points which are uniformly separated--Figure  \ref{fig:gr-4-uniform-acceleration}--they will maintain a uniform distance, but distances are supposed to transform when they accelerate. If we did this, we'd find the distances getting larger in the rest frame, stretching the strings joining the points, eventually breaking them.
 	\item Also the points eventually move faster than the speed of light.
 \end{itemize}
 
@@ -866,7 +870,7 @@ We can guess the effect of a real gravitating object--Figure \ref{fig:gr-4-gravi
 	d\tau^2 =& \big[1  -\frac{2GM}{y} \big] dt^2 - dy^2
 \end{align*}
 
-Something strange happens when $y-2GM$: $g_{tt}=0$. This has to do with the horizon of a black hole.
+Something strange happens when $y=2GM$: $g_{tt}=0$. This has to do with the horizon of a black hole.
 
 \begin{figure}[H]
 	\caption{A real gravitating object}\label{fig:gr-4-gravitating-object}
@@ -981,7 +985,7 @@ We start with the following metric.
 	m\ddot{X} =& -m \nabla U \text{, Newton's second law.}
 \end{align*}
 
-We learn from this that the $g_00$ term in (\ref{eq:sch:ansatz}) gives riser to Newton's 2nd law for motion in a gravitational field for small velocity.
+We learn from this that the $g_{00}$ term in (\ref{eq:sch:ansatz}) gives riser to Newton's 2nd law for motion in a gravitational field for small velocity.
 
 Consider the gravitational field of the Sun.
 

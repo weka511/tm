@@ -38,13 +38,18 @@
 	
 \section{Schwarzschild Metric}\label{sec:schwartzchild:metric}
 
-From \cite[Lecture 6]{susskind2012general}
+The Schwarzschild Metric is presented, without proof, in \cite[Lecture 6]{susskind2012general}. In this section the coordinates are denoted: $(t,r,\theta,\phi)$. The summation convention is observed for all other indices: e.g. $\Gamma\indices{^\alpha_{\gamma\alpha}}$ denoted summation over the dummy index $\alpha$, but $\Gamma\indices{^\theta_{\gamma\theta}}$ is not summed.
+
 \subsection{Ansatz}
 We will seek a solution of the form\cite{Adler1965Introduction}:
 
 \begin{align*}
 	dt^2 =& e^{\nu(r)} dt^2 -e^{\lambda(r)} dr^2 -r^2 d \Omega^2 \text{, where} \numberthis \label{eq:schwartzschild:ansatz}\\
-	&d \Omega^2 =d\theta^2 + cos^2 \theta d\phi^2 \text{, so} \\
+	d \Omega^2 =&d\theta^2 + cos^2 \theta d\phi^2 
+\end{align*}
+
+The  non-zero $g_{\mu\nu}$ are:
+\begin{align*}
 	g_{tt}=& e^{\nu(r)}\\
 	g_{rr}=&-e^{\lambda(r)}\\
 	g_{\theta\theta}=&-r^2\\
@@ -53,7 +58,7 @@ We will seek a solution of the form\cite{Adler1965Introduction}:
 
 The $g^{\mu\nu}$ are the inverse of the $g_{\mu\nu}$, so: 
 \begin{align*}
-g^{tt}=& e^{-\nu(r)}\\
+	g^{tt}=& e^{-\nu(r)}\\
 	g^{rr}=&-e^{-\lambda(r)}\\
 	g^{\theta\theta}=&-\frac{1}{r^2}\\
 	g^{\phi\phi}=&-\frac{1}{r^2 \cos^2 \theta}
@@ -153,7 +158,7 @@ We compute the components of $R_{\mu\nu}$
 	=& -\frac{1}{2}\bigg[\nu^{\prime\prime}(r) - \bigg(\frac{\nu^\prime(r)}{2}  + \frac{2}{r}  \bigg) \lambda^\prime(r) + \frac{\big(\nu^\prime(r)\big)^2}{2}\bigg] \numberthis \label{eq:Rrr}
 \end{align*}
 
-\subsubsection{$\nu$ and $\lambda$}
+\subsubsection{Determination of $\nu$ and $\lambda$}
 
 We now have enough information to determine $\nu$ and $\lambda$. From (\ref{eq:Rtt}) and (\ref{eq:Rrr})
 
@@ -194,19 +199,25 @@ Now we know that the metric (\ref{eq:schwartzschild:ansatz}) should be Minkowski
 We saw in \cite[Lecture 5]{susskind2012general} that we need $g_{00}\approxeq1-\frac{2MG}{r}$ for small $r$, in order to get agreement with Newtonian gravity, hence $b=-2MG$, and (\ref{eq:schwartzschild:ansatz}) becomes:
 
 \begin{align*}
-	dt^2 =& \big(1-\frac{2MG}{R}\big) dt^2 - \frac{dr^2}{1-\frac{2MG}{R}}  -r^2 d  \Omega^2
+	dt^2 =& \big(1-\frac{2MG}{R}\big) dt^2 - \frac{dr^2}{1-\frac{2MG}{R}}  -r^2 d  \Omega^2 \numberthis \label{eq:schwartzschild:solved}
 \end{align*}
 
 \subsubsection{The remaining $R_{\mu\nu}$}
 \begin{align*}
 	R_{\theta\theta} =& \partial_\alpha \Gamma\indices{^\alpha_{\theta\theta}} - \partial_\theta \Gamma\indices{^\alpha_{\theta\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\theta\theta}} - \Gamma\indices{^\alpha_{\gamma\theta}} \Gamma\indices{^\gamma_{\theta\alpha}}\\
-	=& \partial_r \Gamma\indices{^r_{\theta\theta}} - \partial_\theta \Gamma\indices{^\phi_{\theta\phi}} + \bigg(\Gamma\indices{^t_{rt}}+\Gamma\indices{^r_{rr}}+\cancel{\Gamma\indices{^\theta_{r\theta}}}+\Gamma\indices{^\phi_{r\phi}}\bigg) \Gamma\indices{^r_{\theta\theta}} -\cancel{ \Gamma\indices{^r_{\theta\theta}} \Gamma\indices{^\theta_{\theta r}}}-\Gamma\indices{^r_{r\theta}} \Gamma\indices{^r_{\theta r}} - \Gamma\indices{^\phi_{\phi\theta}} \Gamma\indices{^\phi_{\phi\theta}}\\
-	=& \partial_r \bigg[-r  e^{-\lambda(r)}\bigg] - \partial_\theta \bigg[-\tan \theta\bigg]  + \bigg(\underbrace{\frac{\nu^\prime(r)}{2}+\frac{\lambda^\prime(r)}{2}}_\text{$=0$ from (\ref{eq:lambda:nu})}+\frac{1}{r}\bigg)\bigg[ -r  e^{-\lambda(r)}\bigg]
-	 -\frac{1}{r^2} - \tan^2 \theta\\
-	=& -  e^{-\lambda(r)} + r \lambda^\prime(r) e^{-\lambda(r)} + \underbrace{\sec^2 \theta}_\text{$=1+\tan^2 \theta$} -e^{-\lambda(r)} -\frac{1}{r^2} - \tan^2 \theta\\
-	=& -  e^{-\lambda(r)} + r \lambda^\prime(r) e^{-\lambda(r)} + 1 -e^{-\lambda(r)} -\frac{1}{r^2}  \numberthis \label{eq:RtHtH}
+	=& \partial_r \Gamma\indices{^r_{\theta\theta}} - \partial_\theta \big[\Gamma\indices{^\phi_{\theta\phi}}+\Gamma\indices{^r_{\theta r}}\big] + \bigg(\Gamma\indices{^t_{rt}}+\Gamma\indices{^r_{rr}}+\cancel{\Gamma\indices{^\theta_{r\theta}}}+\Gamma\indices{^\phi_{r\phi}}\bigg) \Gamma\indices{^r_{\theta\theta}} -\cancel{ \Gamma\indices{^r_{\theta\theta}} \Gamma\indices{^\theta_{\theta r}}}  - \Gamma\indices{^\theta_{r\theta}} \Gamma\indices{^r_{\theta\theta}} -\Gamma\indices{^r_{r\theta}} \Gamma\indices{^r_{\theta r}} - \Gamma\indices{^\phi_{\phi\theta}} \Gamma\indices{^\phi_{\phi\theta}}\\
+	=& \partial_r \bigg[-r  e^{-\lambda(r)}\bigg] - \partial_\theta \bigg[-\tan \theta +\frac{1}{r}\bigg]  + \bigg(\underbrace{\frac{\nu^\prime(r)}{2}+\frac{\lambda^\prime(r)}{2}}_\text{$=0$ from (\ref{eq:lambda:nu})}+\cancel{\frac{1}{\bcancel{r}}\bigg)\bigg[ -\bcancel{r}  e^{-\lambda(r)}\bigg]} + \cancel{\frac{r e^{-\lambda(r)}}{r}}	 -\frac{1}{r^2} - \tan^2 \theta 
 \end{align*}
 
+ Now, from (\ref{eq:schwartzschild:solved})
+\begin{align*}
+	e^{\lambda(r)} =& \frac{1}{1 - \frac{2MG}{r}} \text{, whence}\\
+	\partial_r \big[r  e^{-\lambda(r)}\big] =& \partial_r \big[r(1 - \frac{2MG}{r})\big]\\
+	=& \partial_r [r-2MG]\\
+	=& 1 \text{, whence}\\
+	R_{\theta\theta} =& - 1 + \underbrace{\sec^2 \theta}_\text{$=1+\tan^2 \theta$} + \cancel{\frac{1}{r^2}} -\cancel{\frac{1}{r^2}} - \tan^2 \theta \\
+	=& 0 \text{, as expected.}
+\end{align*}
 \begin{align*}
 	R_{\phi\phi} =& \partial_\alpha \Gamma\indices{^\alpha_{\phi\phi}} - \partial_\phi \Gamma\indices{^\alpha_{\phi\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\phi\phi}} - \Gamma\indices{^\alpha_{\gamma\phi}} \Gamma\indices{^\gamma_{\phi\alpha}}\\
 	 =& \partial_r \Gamma\indices{^r_{\phi\phi}} + \partial_\theta \Gamma\indices{^\theta_{\phi\phi}} - \partial_\phi \Gamma\indices{^\theta_{\phi\theta}} - \partial_\phi \Gamma\indices{^r_{\phi r}} + \big[\Gamma\indices{^r_{rr}} + \Gamma\indices{^\theta_{r\theta}}+\cancel{\Gamma\indices{^\phi_{r\phi}}}\big] \Gamma\indices{^r_{\phi\phi}} - \cancel{\Gamma\indices{^r_{\phi\phi}} \Gamma\indices{^\phi_{\phi r}}} - \Gamma\indices{^\theta_{\phi\phi}} \Gamma\indices{^\phi_{\phi\theta}}\\
@@ -254,6 +265,8 @@ It is easy to show that the of-diagonal terms vanish. With the exception of $R_{
 
 \section{Gravitational waves}\label{sec:gravitational:waves}
 
+Gravitational waves are presented, in \cite[Lecture 10]{susskind2012general}.
+In this section the coordinates are denoted: $(t,x,y,x)$. The summation convention is observed for all other indices: e.g. $\Gamma\indices{^\alpha_{\gamma\alpha}}$ denotes summation over the dummy index $\alpha$, but $\Gamma\indices{^x_{\gamma x}}$ is not summed.
 \subsection{Linearized Field Equations}
 
 From \cite[Lecture 10]{susskind2012general}:

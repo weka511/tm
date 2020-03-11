@@ -200,9 +200,11 @@ We saw in \cite[Lecture 5]{susskind2012general} that we need $g_{00}\approxeq1-\
 \subsubsection{The remaining $R_{\mu\nu}$}
 \begin{align*}
 	R_{\theta\theta} =& \partial_\alpha \Gamma\indices{^\alpha_{\theta\theta}} - \partial_\theta \Gamma\indices{^\alpha_{\theta\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\theta\theta}} - \Gamma\indices{^\alpha_{\gamma\theta}} \Gamma\indices{^\gamma_{\theta\alpha}}\\
-	=& \partial_r \Gamma\indices{^r_{\theta\theta}} - \partial_\theta \Gamma\indices{^\phi_{\theta\phi}} + \bigg(\Gamma\indices{^t_{rt}}+\Gamma\indices{^r_{rr}}+\cancel{\Gamma\indices{^\theta_{r\theta}}}+\Gamma\indices{^\phi_{r\phi}}\bigg) \Gamma\indices{^r_{\theta\theta}} - \cancel{2}\Gamma\indices{^r_{\theta\theta}} \Gamma\indices{^\theta_{\theta r}}\\
-	=& \partial_r \bigg[-r  e^{-\lambda(r)}\bigg] - \partial_\theta \bigg[-\tan \theta\bigg]  + \bigg(\underbrace{\frac{\nu^\prime(r)}{2}+\frac{\lambda^\prime(r)}{2}}_\text{$=0$ from (\ref{eq:lambda:nu})}-\cancel{\frac{1}{r}}+\cancel{\frac{1}{r}}\bigg)\bigg[ -r  e^{-\lambda(r)}\bigg]\\
-	=& -  e^{-\lambda(r)} + r \lambda^\prime(r) e^{-\lambda(r)} + \sec^2 \theta \text{ WTF?} \numberthis \label{eq:RtHtH}
+	=& \partial_r \Gamma\indices{^r_{\theta\theta}} - \partial_\theta \Gamma\indices{^\phi_{\theta\phi}} + \bigg(\Gamma\indices{^t_{rt}}+\Gamma\indices{^r_{rr}}+\cancel{\Gamma\indices{^\theta_{r\theta}}}+\Gamma\indices{^\phi_{r\phi}}\bigg) \Gamma\indices{^r_{\theta\theta}} -\cancel{ \Gamma\indices{^r_{\theta\theta}} \Gamma\indices{^\theta_{\theta r}}}-\Gamma\indices{^r_{r\theta}} \Gamma\indices{^r_{\theta r}} - \Gamma\indices{^\phi_{\phi\theta}} \Gamma\indices{^\phi_{\phi\theta}}\\
+	=& \partial_r \bigg[-r  e^{-\lambda(r)}\bigg] - \partial_\theta \bigg[-\tan \theta\bigg]  + \bigg(\underbrace{\frac{\nu^\prime(r)}{2}+\frac{\lambda^\prime(r)}{2}}_\text{$=0$ from (\ref{eq:lambda:nu})}+\frac{1}{r}\bigg)\bigg[ -r  e^{-\lambda(r)}\bigg]
+	 -\frac{1}{r^2} - \tan^2 \theta\\
+	=& -  e^{-\lambda(r)} + r \lambda^\prime(r) e^{-\lambda(r)} + \underbrace{\sec^2 \theta}_\text{$=1+\tan^2 \theta$} -e^{-\lambda(r)} -\frac{1}{r^2} - \tan^2 \theta\\
+	=& -  e^{-\lambda(r)} + r \lambda^\prime(r) e^{-\lambda(r)} + 1 -e^{-\lambda(r)} -\frac{1}{r^2}  \numberthis \label{eq:RtHtH}
 \end{align*}
 
 \begin{align*}
@@ -211,28 +213,43 @@ We saw in \cite[Lecture 5]{susskind2012general} that we need $g_{00}\approxeq1-\
 	  =& \partial_r \big(-r \cos^2 \theta e^{-\lambda(r)} \big) + \partial_\theta \big(\cos \theta \sin \theta \big) - \partial_\phi \Gamma\indices{^\theta_{\phi\theta}} - \partial_\phi \Gamma\indices{^r_{\phi r}}\\ &+ \big[\Gamma\indices{^r_{rr}} + \Gamma\indices{^\theta_{r\theta}}\big] \big(-r \cos^2 \theta e^{-\lambda(r)} \big)  - \big(\cos \theta \sin \theta \big) \Gamma\indices{^\phi_{\phi\theta}}
 \end{align*}
 
+It is easy to show that the of-diagonal terms vanish. With the exception of $R_{t\theta}$ there is no need to expand the $\Gamma$; we merely use our knowledge of which $\Gamma$ and $\partial_\alpha \Gamma$ are non-zero.
+
 \begin{align*}
-	R_{tr} =& \partial_\alpha \Gamma\indices{^\alpha_{tr}} - \partial_\nu \Gamma\indices{^\alpha_{\mu\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\mu\nu}} - \Gamma\indices{^\alpha_{\gamma\nu}} \Gamma\indices{^\gamma_{\mu\alpha}}
+	R_{tr} =& \partial_\alpha \Gamma\indices{^\alpha_{tr}} - \partial_r \Gamma\indices{^\alpha_{t\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{tr}} - \Gamma\indices{^\alpha_{\gamma r}} \Gamma\indices{^\gamma_{t\alpha}}\\
+	=&\partial_t \Gamma\indices{^t_{tr}} - \underbrace{\partial_r \Gamma\indices{^\alpha_{t\alpha}}}_\text{$=0$} + \underbrace{\Gamma\indices{^\alpha_{t\alpha}}}_\text{$=0$} \Gamma\indices{^t_{tr}} - \underbrace{\Gamma\indices{^t_{r r}}}_\text{$=0$} \Gamma\indices{^r_{tt}} -\underbrace{ \Gamma\indices{^r_{t r}}}_\text{$=0$} \Gamma\indices{^t_{tr}}\\
+	=&0
 \end{align*}
 
 \begin{align*}
-	R_{t\theta} =& \partial_\alpha \Gamma\indices{^\alpha_{t\theta}} - \partial_\nu \Gamma\indices{^\alpha_{\mu\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\mu\nu}} - \Gamma\indices{^\alpha_{\gamma\nu}} \Gamma\indices{^\gamma_{\mu\alpha}}
+	R_{t\theta} =& \underbrace{\partial_\alpha \Gamma\indices{^\alpha_{t\theta}} - \partial_\theta \Gamma\indices{^\alpha_{t\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{t\theta}}}_\text{These terms all vanish} - \Gamma\indices{^\alpha_{\gamma\theta}} \Gamma\indices{^\gamma_{t\alpha}}\\
+	=&  - \Gamma\indices{^r_{\theta\theta}} \underbrace{\Gamma\indices{^\theta_{tr}}}_\text{$=0$}  - \Gamma\indices{^\theta_{r\theta}} \underbrace{\Gamma\indices{^r_{t\theta}}}_\text{$=0$} \\
+	=&0 
 \end{align*}
 
 \begin{align*}
-	R_{t\phi} =& \partial_\alpha \Gamma\indices{^\alpha_{t\phi}} - \partial_\nu \Gamma\indices{^\alpha_{\mu\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\mu\nu}} - \Gamma\indices{^\alpha_{\gamma\nu}} \Gamma\indices{^\gamma_{\mu\alpha}}
+	R_{t\phi} =& \underbrace{\partial_\alpha \Gamma\indices{^\alpha_{t\phi}} - \partial_\phi \Gamma\indices{^\alpha_{t\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{t\phi}} }_\text{These terms all vanish}- \Gamma\indices{^\alpha_{\gamma\phi}} \Gamma\indices{^\gamma_{t\alpha}}\\
+	=& - \Gamma\indices{^r_{\phi\phi}} \underbrace{\Gamma\indices{^\phi_{tr}}}_\text{$=0$} - \Gamma\indices{^\phi_{\theta\phi}} \underbrace{\Gamma\indices{^\theta_{t\phi}}}_\text{$=0$}- \Gamma\indices{^\phi_{r\phi}} \underbrace{\Gamma\indices{^r_{t\phi}}}_\text{$=0$}\\
+	&=0
 \end{align*}
 
 \begin{align*}
-	R_{r\theta} =& \partial_\alpha \Gamma\indices{^\alpha_{r\theta}} - \partial_\nu \Gamma\indices{^\alpha_{\mu\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\mu\nu}} - \Gamma\indices{^\alpha_{\gamma\nu}} \Gamma\indices{^\gamma_{\mu\alpha}}
+	R_{r\theta} =& \partial_\alpha \Gamma\indices{^\alpha_{r\theta}} - \partial_\theta \Gamma\indices{^\alpha_{r\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{r\theta}} - \Gamma\indices{^\alpha_{\gamma\theta}} \Gamma\indices{^\gamma_{r\alpha}}\\
+	=& \underbrace{\partial_r \Gamma\indices{^r_{r\theta}}}_\text{$=0$} - \underbrace{\partial_\theta \big(\Gamma\indices{^\theta_{r\theta}}+\Gamma\indices{^r_{rr}}\big)}_\text{$=0$} + \Gamma\indices{^\phi_{\theta\phi}} \Gamma\indices{^\theta_{r\theta}} - \Gamma\indices{^r_{\theta\theta}} \underbrace{\Gamma\indices{^\theta_{rr}}}_\text{$=0$} - \Gamma\indices{^\theta_{r\theta}} \underbrace{\Gamma\indices{^r_{r\theta}}}_\text{$=0$}- \Gamma\indices{^\phi_{\phi\theta}} \Gamma\indices{^\phi_{r\phi}}\\
+	=&-\frac{1}{r^2} -\cancel{\frac{1}{r}\tan \theta} + \cancel{\frac{1}{r}\tan \theta}\\
+	=& 0
 \end{align*}
 
 \begin{align*}
-	R_{r\phi} =& \partial_\alpha \Gamma\indices{^\alpha_{r\phi}} - \partial_\nu \Gamma\indices{^\alpha_{\mu\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\mu\nu}} - \Gamma\indices{^\alpha_{\gamma\nu}} \Gamma\indices{^\gamma_{\mu\alpha}}
+	R_{r\phi} =& \partial_\alpha \Gamma\indices{^\alpha_{r\phi}} - \partial_\phi \Gamma\indices{^\alpha_{r\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{r\phi}} - \Gamma\indices{^\alpha_{\gamma\phi}} \Gamma\indices{^\gamma_{r\alpha}}\\
+	=& \underbrace{\partial_\phi \Gamma\indices{^\phi_{r\phi}}}_\text{$=0$} - \underbrace{\partial_\phi \Gamma\indices{^\alpha_{r\alpha}}}_\text{$=0$} + \underbrace{\Gamma\indices{^\alpha_{\phi\alpha}}}_\text{$=0$} \Gamma\indices{^\phi_{r\phi}} - \Gamma\indices{^\phi_{\theta\phi}} \underbrace{\Gamma\indices{^\theta_{r\phi}}}_\text{$=0$} - \Gamma\indices{^\phi_{r\phi}} \underbrace{\Gamma\indices{^r_{r\phi}}}_\text{$=0$}\\
+	=&0
 \end{align*}
 
 \begin{align*}
-	R_{\theta\phi} =& \partial_\alpha \Gamma\indices{^\alpha_{\theta\phi}} - \partial_\nu \Gamma\indices{^\alpha_{\mu\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\mu\nu}} - \Gamma\indices{^\alpha_{\gamma\nu}} \Gamma\indices{^\gamma_{\mu\alpha}}
+	R_{\theta\phi} =& \partial_\alpha \Gamma\indices{^\alpha_{\theta\phi}} - \partial_\phi \Gamma\indices{^\alpha_{\theta\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\theta\phi}} - \Gamma\indices{^\alpha_{\gamma\phi}} \Gamma\indices{^\gamma_{\theta\alpha}}\\
+	=& \underbrace{\partial_\phi \Gamma\indices{^\phi_{\theta\phi}}}_\text{$=0$} - \underbrace{\partial_\phi \Gamma\indices{^\alpha_{\theta\alpha}}}_\text{$=0$} + \underbrace{\Gamma\indices{^\alpha_{\phi\alpha}}}_\text{$=0$} \Gamma\indices{^\phi_{\theta\phi}} - \underbrace{\Gamma\indices{^\phi_{\phi\phi}}}_\text{$=0$} \Gamma\indices{^\phi_{\theta\phi}}\\
+	=&0
 \end{align*}
 
 \section{Gravitational waves}\label{sec:gravitational:waves}

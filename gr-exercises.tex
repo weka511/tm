@@ -205,25 +205,37 @@ We saw in \cite[Lecture 5]{susskind2012general} that we need $g_{00}\approxeq1-\
 \end{align*}
 
 \subsubsection{$R_{\theta\theta}$ and $R_{\phi\phi}$}
-We need to establish that the remaining diagonal elements are zero using the metric (\ref{eq:schwartzschild:solved}).
+We need to establish that the remaining diagonal elements are zero using the metric (\ref{eq:schwartzschild:solved}). We will find the following Lemma useful:
+\begin{lemma}$\partial_r \big[r  e^{-\lambda(r)}\big]=1$ \label{lemma:dL}
+\end{lemma}
+
+\begin{proof}
+	From (\ref{eq:schwartzschild:solved})
+	\begin{align*}
+	e^{\lambda(r)} =& \frac{1}{1 - \frac{2MG}{r}} \text{, whence}\\
+	\partial_r \big[r  e^{-\lambda(r)}\big] =& \partial_r \big[r(1 - \frac{2MG}{r})\big]\\
+	=& \partial_r [r-2MG]\\
+	=& 1
+	\end{align*}
+\end{proof}
 
 \begin{align*}
 	R_{\theta\theta} =& \partial_\alpha \Gamma\indices{^\alpha_{\theta\theta}} - \partial_\theta \Gamma\indices{^\alpha_{\theta\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\theta\theta}} - \Gamma\indices{^\alpha_{\gamma\theta}} \Gamma\indices{^\gamma_{\theta\alpha}}\\
 	=& \partial_r \Gamma\indices{^r_{\theta\theta}} - \partial_\theta \big[\Gamma\indices{^\phi_{\theta\phi}}+\Gamma\indices{^r_{\theta r}}\big] + \bigg(\Gamma\indices{^t_{rt}}+\Gamma\indices{^r_{rr}}+\cancel{\Gamma\indices{^\theta_{r\theta}}}+\Gamma\indices{^\phi_{r\phi}}\bigg) \Gamma\indices{^r_{\theta\theta}}\\ &-\cancel{ \Gamma\indices{^r_{\theta\theta}} \Gamma\indices{^\theta_{\theta r}}}  - \Gamma\indices{^\theta_{r\theta}} \Gamma\indices{^r_{\theta\theta}} -\Gamma\indices{^r_{r\theta}} \Gamma\indices{^r_{\theta r}} - \Gamma\indices{^\phi_{\phi\theta}} \Gamma\indices{^\phi_{\phi\theta}}\\
-	=& \partial_r \bigg[-r  e^{-\lambda(r)}\bigg] - \partial_\theta \bigg[-\tan \theta +\frac{1}{r}\bigg]  + \bigg(\underbrace{\frac{\nu^\prime(r)}{2}+\frac{\lambda^\prime(r)}{2}}_\text{$=0$ from (\ref{eq:lambda:nu})}+\cancel{\frac{1}{\bcancel{r}}\bigg)\bigg[ -\bcancel{r}  e^{-\lambda(r)}\bigg]} + \cancel{\frac{r e^{-\lambda(r)}}{r}}	 -\frac{1}{r^2} - \tan^2 \theta 
-\end{align*}
-
- Now, from (\ref{eq:schwartzschild:solved})
-\begin{align*}
-	e^{\lambda(r)} =& \frac{1}{1 - \frac{2MG}{r}} \text{, whence}\\
-	\partial_r \big[r  e^{-\lambda(r)}\big] =& \partial_r \big[r(1 - \frac{2MG}{r})\big]\\
-	=& \partial_r [r-2MG]\\
-	=& 1 \text{, whence} \numberthis \label{eq:dL}\\
-	R_{\theta\theta} =& - 1 + \underbrace{\sec^2 \theta}_\text{$=1+\tan^2 \theta$} + \cancel{\frac{1}{r^2}} -\cancel{\frac{1}{r^2}} - \tan^2 \theta \\
+	=& \partial_r \bigg[-r  e^{-\lambda(r)}\bigg] - \partial_\theta \bigg[-\tan \theta +\frac{1}{r}\bigg] \\
+	 &+ \bigg(\underbrace{\frac{\nu^\prime(r)}{2}+\frac{\lambda^\prime(r)}{2}}_\text{$=0$ from (\ref{eq:lambda:nu})}+\cancel{\frac{1}{\bcancel{r}}\bigg)\bigg[ -\bcancel{r}  e^{-\lambda(r)}\bigg]}\\
+	 & + \cancel{\frac{r e^{-\lambda(r)}}{r}}	 -\frac{1}{r^2} - \tan^2 \theta  \numberthis \label{eq:R:theta:theta}\\
+    & - \underbrace{1}_\text{\text{From Lemma \ref{lemma:dL}}} + \underbrace{\sec^2 \theta}_\text{$=1+\tan^2 \theta$} + \cancel{\frac{1}{r^2}} -\cancel{\frac{1}{r^2}} - \tan^2 \theta \\
 	=& 0 \text{, as expected.}
 \end{align*}
 
 Since the calculation of $R_{\phi\phi}$ has proved complex, I have expanded the terms, and used the cancel symbol to mark vanishing Christoffel symbols.
+
+\begin{align*}
+	\partial_\alpha \Gamma\indices{^\alpha_{\phi\phi}} - \partial_\phi \Gamma\indices{^\alpha_{\phi\alpha}} =& \partial_r \big[- \cos^2 \theta r e^{-\lambda(r)}\big]+ \partial_\theta \big[\cos\theta \sin\theta\big]-\underbrace{\partial_\phi \Gamma\indices{^\alpha_{\phi\alpha}}}_\text{= 0}\\
+	=& - \cos^2 \theta \cdot \underbrace{\partial_r \big[ r e^{-\lambda(r)}\big]}_\text{$=1$ from Lemma \ref{lemma:dL}}+ \partial_\theta \big[\cos\theta \sin\theta\big]\\
+	=& - \bcancel{\cos^2 \theta} -\sin^2\theta +\bcancel{\cos^2 \theta} \numberthis \label{eq:phi:phi:deriv}
+\end{align*}
 
 \begin{align*}
 	\Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\phi\phi}} =&\Gamma\indices{^\alpha_{t\alpha}} \cancel{\Gamma\indices{^t_{\phi\phi}}}+ \Gamma\indices{^\alpha_{r\alpha}} \Gamma\indices{^r_{\phi\phi}}+\Gamma\indices{^\alpha_{\theta\alpha}} \Gamma\indices{^\theta_{\phi\phi}}+\Gamma\indices{^\alpha_{\phi\alpha}} \cancel{\Gamma\indices{^\phi_{\phi\phi}}}\\
@@ -247,22 +259,18 @@ Since the calculation of $R_{\phi\phi}$ has proved complex, I have expanded the 
 	=& -2 \cos^2 \theta e^{- \lambda(r)}   - 2  \sin^2\theta  \numberthis \label{eq:prod:2}
 \end{align*}
 
-\begin{align*}
-	\partial_\alpha \Gamma\indices{^\alpha_{\phi\phi}} - \partial_\phi \Gamma\indices{^\alpha_{\phi\alpha}} =& \partial_r \big[- \cos^2 \theta r e^{-\lambda(r)}\big]+ \partial_\theta \big[\cos\theta \sin\theta\big]-\underbrace{\partial_\phi \Gamma\indices{^\alpha_{\phi\alpha}}}_\text{= 0}\\
-	=& - \cos^2 \theta \underbrace{\partial_r \big[ r e^{-\lambda(r)}\big]}_\text{$=1$}+ \partial_\theta \big[\cos\theta \sin\theta\big]\\
-	=& - \bcancel{\cos^2 \theta} -\sin^2\theta +\bcancel{\cos^2 \theta} \numberthis \label{eq:phi:phi:deriv}
-\end{align*}
 
+Combining these three equations:
 \begin{align*} 
 	R_{\phi\phi} =& \partial_\alpha \Gamma\indices{^\alpha_{\phi\phi}} - \partial_\phi \Gamma\indices{^\alpha_{\phi\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\phi\phi}} - \Gamma\indices{^\alpha_{\gamma\phi}} \Gamma\indices{^\gamma_{\phi\alpha}}\\
-	=&\underbrace{ -\sin^2\theta}_\text{ (\ref{eq:phi:phi:deriv})} - \underbrace{\big[\bcancel{2\cos^2\theta e^{-\lambda}} +\sin^2\theta\big]}_\text{(\ref{eq:prod:1})} + \underbrace{\bcancel{2 \cos^2 \theta e^{- \lambda(r)}}   + 2  \sin^2\theta}_\text{(\ref{eq:prod:2})}\\
+	=&\underbrace{ -\sin^2\theta}_\text{from (\ref{eq:phi:phi:deriv})} - \underbrace{\big[\bcancel{2\cos^2\theta e^{-\lambda}} +\sin^2\theta\big]}_\text{from (\ref{eq:prod:1})} + \underbrace{\bcancel{2 \cos^2 \theta e^{- \lambda(r)}}   + 2  \sin^2\theta}_\text{from (\ref{eq:prod:2})}\\
 	=&0
 \end{align*}
 
 
 
 \subsubsection{Off diagonal elements}
-It is easy to show that the of-diagonal terms vanish. With the exception of $R_{t\theta}$ there is no need to expand the $\Gamma$; we merely use our knowledge of which $\Gamma$ and $\partial_\alpha \Gamma$ are non-zero.
+It is easy to show that the off-diagonal terms vanish. With the exception of $R_{r\theta}$ there is no need to expand the $\Gamma$; we merely use our knowledge of which $\Gamma$ and $\partial_\alpha \Gamma$ are non-zero.
 
 \begin{align*}
 	R_{tr} =& \partial_\alpha \Gamma\indices{^\alpha_{tr}} - \partial_r \Gamma\indices{^\alpha_{t\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{tr}} - \Gamma\indices{^\alpha_{\gamma r}} \Gamma\indices{^\gamma_{t\alpha}}\\
@@ -282,6 +290,8 @@ It is easy to show that the of-diagonal terms vanish. With the exception of $R_{
 	&=0
 \end{align*}
 
+ $R_{r\theta}$ does not require a knowledge of $\mu(r)$ or $\nu(r)$.
+ 
 \begin{align*}
 	R_{r\theta} =& \partial_\alpha \Gamma\indices{^\alpha_{r\theta}} - \partial_\theta \Gamma\indices{^\alpha_{r\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{r\theta}} - \Gamma\indices{^\alpha_{\gamma\theta}} \Gamma\indices{^\gamma_{r\alpha}}\\
 	=& \underbrace{\partial_r \Gamma\indices{^r_{r\theta}}}_\text{$=0$} - \underbrace{\partial_\theta \big(\Gamma\indices{^\theta_{r\theta}}+\Gamma\indices{^r_{rr}}\big)}_\text{$=0$} + \Gamma\indices{^\phi_{\theta\phi}} \Gamma\indices{^\theta_{r\theta}} - \Gamma\indices{^r_{\theta\theta}} \underbrace{\Gamma\indices{^\theta_{rr}}}_\text{$=0$} - \Gamma\indices{^\theta_{r\theta}} \underbrace{\Gamma\indices{^r_{r\theta}}}_\text{$=0$}- \Gamma\indices{^\phi_{\phi\theta}} \Gamma\indices{^\phi_{r\phi}}\\

@@ -135,9 +135,11 @@ From \cite[Lecture II]{akhmedov2016lectures}
 	R =& R_{\mu\nu} g^{\mu\nu}
 \end{align*}
 
-We compute the components of $R_{\mu\nu}$
+We compute the components of $R_{\mu\nu}$.
 
 \subsubsection{$R_{tt}$ and $R_{rr}$}
+Since (\ref{eq:schwartzschild:ansatz}) contains two unknown functions, I expect to be able to determine them from two components of $R_{\mu\nu}$.
+
 \begin{align*}
 	R_{tt} =& \partial_\alpha \Gamma\indices{^\alpha_{tt}} - \underbrace{\partial_t \Gamma\indices{^\alpha_{t\alpha}}}_\text{$=0$} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{tt}} - \Gamma\indices{^\alpha_{\gamma t}} \Gamma\indices{^\gamma_{t\alpha}} \\
 	=& \partial_r \Gamma\indices{^r_{tt}}  + \big[\Gamma\indices{^t_{rt}}+\Gamma\indices{^r_{rr}} + \Gamma\indices{^\theta_{r\theta}}+ \Gamma\indices{^\phi_{r\phi}}\big] \Gamma\indices{^r_{tt}} - 2\Gamma\indices{^t_{r t}} \Gamma\indices{^r_{tt}} \\
@@ -221,14 +223,14 @@ We need to establish that the remaining diagonal elements are zero using the met
 	=& 0 \text{, as expected.}
 \end{align*}
 
-Since the calculation of $R_{\phi\phi}$ has proved complex, I have expanded the products, using the cancel symbol to mark vanishing Christoffel symbols.
+Since the calculation of $R_{\phi\phi}$ has proved complex, I have expanded the terms, and used the cancel symbol to mark vanishing Christoffel symbols.
 
 \begin{align*}
 	\Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\phi\phi}} =&\Gamma\indices{^\alpha_{t\alpha}} \cancel{\Gamma\indices{^t_{\phi\phi}}}+ \Gamma\indices{^\alpha_{r\alpha}} \Gamma\indices{^r_{\phi\phi}}+\Gamma\indices{^\alpha_{\theta\alpha}} \Gamma\indices{^\theta_{\phi\phi}}+\Gamma\indices{^\alpha_{\phi\alpha}} \cancel{\Gamma\indices{^\phi_{\phi\phi}}}\\
 	=&\big[\Gamma\indices{^t_{rt}}+\Gamma\indices{^r_{rr}}+\Gamma\indices{^\theta_{r\theta}}+\Gamma\indices{^\phi_{r\phi}}\big] \Gamma\indices{^r_{\phi\phi}}\\
 	+&\big[\cancel{\Gamma\indices{^t_{\theta t}}}+\cancel{\Gamma\indices{^r_{\theta r}}}+\cancel{\Gamma\indices{^\theta_{\theta\theta}}}+\Gamma\indices{^\phi_{\theta\phi}}\big] \Gamma\indices{^\theta_{\phi\phi}}\\
-	=& \big[\underbrace{\frac{\nu^\prime}{2} + \frac{\lambda^\prime}{2}}_\text{$=0$}+\frac{1}{r}-\tan \theta\big]\big[-r \cos^2\theta e^{-\lambda}\big] - \tan \theta \cos \theta \sin \theta\\
-	=& - \cos^2\theta e^{-\lambda} + r \sin\theta \cos \theta e^{-\lambda}-\sin^2\theta\numberthis \label{eq:prod:1}
+	=& \big[\underbrace{\frac{\nu^\prime}{2} + \frac{\lambda^\prime}{2}}_\text{$=0$}+\frac{1}{r}+\frac{1}{r}\big]\big[-r \cos^2\theta e^{-\lambda}\big] - \tan \theta \cos \theta \sin \theta\\
+	=& - 2 \cos^2\theta e^{-\lambda} -\sin^2\theta\numberthis \label{eq:prod:1}
 \end{align*}
 
 
@@ -253,12 +255,8 @@ Since the calculation of $R_{\phi\phi}$ has proved complex, I have expanded the 
 
 \begin{align*} 
 	R_{\phi\phi} =& \partial_\alpha \Gamma\indices{^\alpha_{\phi\phi}} - \partial_\phi \Gamma\indices{^\alpha_{\phi\alpha}} + \Gamma\indices{^\alpha_{\gamma\alpha}} \Gamma\indices{^\gamma_{\phi\phi}} - \Gamma\indices{^\alpha_{\gamma\phi}} \Gamma\indices{^\gamma_{\phi\alpha}}\\
-	=&\underbrace{ -\sin^2\theta}_\text{ (\ref{eq:phi:phi:deriv})} - \underbrace{\cos^2\theta e^{-\lambda} + r \sin\theta \cos \theta e^{-\lambda}-\sin^2\theta}_\text{(\ref{eq:prod:1})} + \underbrace{2 \cos^2 \theta e^{- \lambda(r)}   + 2  \sin^2\theta}_\text{(\ref{eq:prod:2})}
-%	=& \partial_r \big[- \cos^2 \theta r e^{-\lambda(r)}\big]+ \partial_\theta \big[\cos\theta \sin\theta\big]-\underbrace{\partial_\phi \Gamma\indices{^\alpha_{\phi\alpha}}}_\text{= 0} + \big[\Gamma\indices{^t_{rt}} + \Gamma\indices{^r_{rr}} + \Gamma\indices{^\theta_{r\theta}} + \cancel{\Gamma\indices{^\phi_{r\phi}}}\big] \Gamma\indices{^r_{\phi\phi}}\\
-%	 +&\big[\underbrace{\Gamma\indices{^t_{\theta t}}}_\text{$=0$}+ \Gamma\indices{^r_{\theta r}}+  \underbrace{\Gamma\indices{^\phi_{\theta \phi}}}_\text{$=0$}+\Gamma\indices{^\phi_{\theta\phi}}\big] \Gamma\indices{^\theta_{\phi\phi}} -2 \cos^2 \theta e^{- \lambda(r)}   - 2 \bcancel{cos\theta} \sin\theta \frac{\sin\theta}{\bcancel{cos\theta}}\\
-%	 =&\partial_r \big[- \cos^2 \theta r e^{-\lambda(r)}\big] + \big[ \frac{\overbrace{\nu^\prime(r)+\lambda^\prime(r)}^\text{=0}}{2}+\cancel{\frac{1}{r}}\big]\big[- r \cos^2 \theta e^{- \lambda(r)}\big]+ (- \tan \theta \cos \theta \sin\theta)\\
-%	  &- \cancel{\big[- r \cos^2 \theta e^{- \lambda(r)}\big]\frac{1}{r}} - \Gamma\indices{^\theta_{\theta\phi}} \Gamma\indices{^\theta_{\phi\theta}} \\
-%	  =&  - \underbrace{\cos^2 \theta}_\text{from (\ref{eq:dL})} - \sin^2 \theta
+	=&\underbrace{ -\sin^2\theta}_\text{ (\ref{eq:phi:phi:deriv})} - \underbrace{\big[\bcancel{2\cos^2\theta e^{-\lambda}} +\sin^2\theta\big]}_\text{(\ref{eq:prod:1})} + \underbrace{\bcancel{2 \cos^2 \theta e^{- \lambda(r)}}   + 2  \sin^2\theta}_\text{(\ref{eq:prod:2})}\\
+	=&0
 \end{align*}
 
 

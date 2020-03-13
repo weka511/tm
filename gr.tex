@@ -2076,28 +2076,48 @@ Action is supposed to be invariant, so laws of physics are covariant. We can der
 			dE =& T dS \text{. Anything with entropy and energy has temperature\cite{susskind2013statistical}}\\
 			T =& \frac{\hslash  c^3}{8 \pi M k_B G} \text{. Hawking temperature--\cite{hawking1975particle}.}
 		\end{align*}
-		This has negative specific heat, as temperature goes \emph{down} with energy. Notice that in classical limit, $\hslash \rightarrow 0$, S $\rightarrow \infty$, $\rightarrow 0$. Very often quantum mechanics takes things which are infinite classically and makes them finite.
-		 
-		Because it has a temperature, black hole radiates black body radiation. Since information is finite we have to modify our picture--see Figure \ref{fig:ibh-horizon-planck}.
-		\begin{figure}[H]
-			\begin{center}
-				\caption[Cannot store anything on a  scale smaller than Planck Length]{Cannot store anything on a vertical scale smaller than Planck Length}\label{fig:ibh-horizon-planck}
-				\includegraphics{ibh-horizon-planck}
-			\end{center}
-		\end{figure}
-		Another odd thing is that entropy is normally proportional to volume, not area: that is telling us that \emph{there is nothing inside the black hole.}
 	\end{proof}
+
+		This has negative specific heat, as temperature goes \emph{down} with energy. Notice that in classical limit, $\hslash \rightarrow 0$, S $\rightarrow \infty$, $\rightarrow 0$. Very often quantum mechanics takes things which are infinite classically and makes them finite.
+
+	That is the description of a black hole from outside. Because it has a temperature, it radiates. The Sun radiates energy whose wavelength is small compared to the solar radius, but a black hole radiates with a wavelengths comparable to size of black hole. If you try to look at one with its own radiation it looks fuzzy. Since information is finite we have to modify our picture--see Figure \ref{fig:ibh-horizon-planck}.
+	\begin{figure}[H]
+		\begin{center}
+			\caption[Cannot store anything on a  scale smaller than Planck Length]{One way to think of Bekenstein's argument is that you cannot store anything on a vertical scale smaller than Planck Length. There is a characteristic thickness on the event horizon.}\label{fig:ibh-horizon-planck}
+			\begin{subfigure}[t]{0.45\textwidth}
+				\caption{ From one perspective the black hole is just a hollow sphere, the stretched event horizon, with microscopic degrees of freedom. }\label{fig:ibh-horizon-outside}
+				\includegraphics[width=\textwidth]{ibh-horizon-planck}
+			\end{subfigure}
+			\;
+			\begin{subfigure}[t]{0.45\textwidth}
+				\caption{Einstein's gravity suggests we should be able to fall through. Inside there could be other objects, even stars ef the black hole is big enough.}\label{fig:ibh-horizon-inside}
+				\includegraphics[width=\textwidth]{ibh-horizon-inside}
+		\end{subfigure}
+		\end{center}
+	\end{figure}
+	Another odd thing is that entropy is normally proportional to volume, not area: that is telling us that \emph{there is nothing inside the black hole.}
 	OTOH, classical black hole physics tells us that it is meaningful to fall through the horizon: it takes a finite proper time. Now we \emph{are} getting into paradox land.
 	\begin{itemize}
-		\item From one perspective the black hole is just a hollow sphere, the stretched event horizon, with microscopic degrees of freedom. It is hot. Photons are redshifted so they appear cool from a distance, but event horizon is enormously hot.
-		\item What about infalling observer? Einstein's gravity suggest we should be able to fall through.
+		\item From one perspective the black hole is just a hollow sphere, the stretched event horizon, with microscopic degrees of freedom--Figure \ref{fig:ibh-horizon-outside}. It is hot. Photons are redshifted so they appear cool from a distance, but event horizon is enormously hot.
+		\item In all the years it took to develop these arguments, peple forgot to ask about the infalling observer. One possibility is that the black hole is just this hollow sphere with nothing inside, not even spacetime. But that isn't very satisfying, as Einstein's gravity suggests we should be able to fall through--Figure \ref{fig:ibh-horizon-inside}.
 	\end{itemize}
+
 	\begin{defn}[Holographic principle]
-		Boundary functions like a hologram.
+		Boundary structure functions something like a hologram. Yes, there are things on the inside, but their relationship to this structure that is holding the information about everything that ever fell through is roughly speaking a metaphor of a hologram.  The information can be thought of as being stored on the film, or the film can be thought of as a representation of the 3 dimensional reality.
 	\end{defn}
+
+	That is the picture as it was roughly 18 months before the date of the lecture\footnote{August 2013}.
+	
 	Since event horizon is hot, it radiates heat and evaporates.
 	
-	Infalling observer experiences empty space, and it may be entangled with something. Figure \ref{fig:ibh-horizon-alice-bob} shows Alice becoming entangled with the Hawking radiation. But there is a theorem, the monogamy of entanglement, which says that Alice can not be entangled with Bob. 
+	Let's come to the quantum mechanics, and what the dilemma is.
+	
+	Put yourself into an infalling frame of reference. 	Infalling observer experiences empty space, and it may be entangled with something. Entanglement means that two systems are highly correlated in a quantum mechanical sense. Figure \ref{fig:ibh-horizon-alice-bob} shows Alice becoming entangled with the Hawking radiation. But there is a theorem, the monogamy of entanglement, which says that Alice can not be entangled with Bob and Hawking. 
+	
+	\begin{thm}[Monogamy of entanglement]
+		Monogamy of entanglement means that an entangled state cannot be shared with many parties. The more parties, the less entanglement between them. In this paper, we give a simple proof of this property and provide an upper bound of the number of parties.\cite{Yang_2006} 
+	\end{thm}
+
 	\begin{itemize}
 		\item holographic principle requires Alice \& Bob entangled;
 		\item Alice becomes entangled with distant radiation;
@@ -2106,15 +2126,15 @@ Action is supposed to be invariant, so laws of physics are covariant. We can der
 	
 	\begin{figure}[H]
 		\begin{center}
-			\caption[Alice and Bob are entangled.]{Alice and Bob are entangled. What happens when black hole evaporates? After about half evaporates, Bob is entangled with distant Hawking radiation.}\label{fig:ibh-horizon-alice-bob}
+			\caption[Alice and Bob are entangled.]{Alice and Bob are entangled. You can find out about Alice by a Bob measurement, and vice versa. What happens when black hole evaporates? After about half evaporates, Alice is entangled with distant Hawking radiation.}\label{fig:ibh-horizon-alice-bob}
 			\includegraphics{ibh-horizon-alice-bob}
 		\end{center}
 	\end{figure}
 	That sounds like a disaster. Breaking Alice \& Bob's entanglement will perturb nature of vacuum between interior and exterior seriously. What if interior of black hole is really encoded in distant Hawking radiation? LS doesn't like this.
 	
-	Firewall? Once you disrupt entanglement there is no interior. It has been scooped up into Hawking radiation. There is no interior. LS doesn't like it either.
+	One possibility is the Firewall. Once you disrupt entanglement there is no interior. It has been scooped up into Hawking radiation. There is no interior. LS doesn't like it either.
 	
-	LS feels that we learn something really big.
+	LS feels that we learn something really big from this exercise.
 	
 \end{appendices}
 \bibliographystyle{unsrt}

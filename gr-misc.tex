@@ -428,6 +428,28 @@ Why is complexity important in QM? Feynman pointed out that Hilbert Space is eno
 
 
 
+Start with $K$ qbits,  a $2^K$ dimensional state space, so state is:
+\begin{align*}
+	\ket{\psi}=\sum_{i=1}^{2K}\alpha_i \ket{i}
+\end{align*}
+How big is this space? It is a continuous infinity, so let us regularise the $\alpha_i$ by picking them from some discrete set $\{\alpha_1, \alpha_m\}$. We than have $m^{2^k}$ states--$\#s$, say, which grows very fast.
+
+\begin{align*}
+	\ln \#s =& 2^K \ln m \text{--remember this pattern!} \numberthis \label{eq:pattern}
+\end{align*}
+
+This is strongly sensitive to $K$, but weakly sensitive to $m$ (cutoff parameter).
+
+Let's try to do more precise counting. What is the space of states of a $K$ qbit system? $CP(N)$, where $N=2^K$. Again we'll regularize it: fill hypersphere with $\epsilon$-balls. We coarse grain, and identify states with $\epsilon$-balls. Calculate volume:
+\begin{align*}
+	V_{CP}=& \frac{\pi^N}{N!} \text{, where $N=2^K$. Now volume $\epsilon$-ball is}\\
+	V_B =& \frac{\pi^N}{N!} \epsilon^{2N} \text{, because real dimensionality is $2N$}\\
+	\#s =& \bigg(\frac{1}{\epsilon}\bigg)^{2(2^K-1)} \text{, coarse graining}\\
+	\ln \#s \approx & 2^K \ln \frac{1}{\epsilon} \text{, same pattern as (\ref{eq:pattern} -- strong dependence on $K$, weak dependence on regulator)}
+\end{align*}
+
+\url{https://youtu.be/6OXdhV5BOcY?t=797}
+
 \bibliographystyle{unsrt}
 \addcontentsline{toc}{section}{Bibliography}
 \raggedright

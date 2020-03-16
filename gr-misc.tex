@@ -448,8 +448,39 @@ Let's try to do more precise counting. What is the space of states of a $K$ qbit
 	\ln \#s \approx & 2^K \ln \frac{1}{\epsilon} \text{, same pattern as (\ref{eq:pattern} -- strong dependence on $K$, weak dependence on regulator)}
 \end{align*}
 
-\url{https://youtu.be/6OXdhV5BOcY?t=797}
+How far apart can states be in this space? What is the diameter, and the distance between states. One notion is inner product distance.
 
+\begin{align*}
+	d_{AB}=&\arccos \left|\braket{A|B}\right| \text{, with thie metric distance is small}\\
+	d_{AB}<&\frac{\pi}{2}
+\end{align*}
+On the other hand, that seems a little ridiculous. It doesn't show all the difference between states. The other notion is \emph{relative complexity,} the number of small steps from one to the other, which bring us to the idea of a \emph{quantum circuit}.
+
+
+\begin{align*}
+	\ket{A} =& g_1 g_2 ... g_n \ket{B} \text{, where $g_i$ are single gates}
+\end{align*}
+
+\begin{defn}[Universal gates]
+	A universal collection of gates is one that allows us to get from any $\epsilon$-ball to another.
+\end{defn}
+
+\begin{defn}[Relative complexity]
+	The relative complexity of A and B, $\mathscr{C}$, is the minimum $n$ such that $\ket{A} =g_1 g_2 ... g_n \ket{B}$.
+\end{defn}
+
+This is the shortest path from A to B (in units of gates), so it is a geodesic with the right definition of distance. It is a \emph{metrical notion}. LS says this is a theme of the lecture, and that he considers it to be the right way to think about complexity.
+ 
+\url{https://youtu.be/6OXdhV5BOcY?t=1488}
+
+Now lets talk about unitary matrices. We can think of one as an operator, or as a maximally entangled state of two systems.
+\begin{align*}
+	U =& U_{ij}\ket{i}\bra{j} \text{, operator}\\
+	\ket{V} =& V_{ij}\ket{i} \ket{\bar{j}}
+\end{align*}
+When we talk about distance between operators we are also talking about distance between maximally entangled states.
+
+There are $2^{2K}$ matrix elements (number of constraints for unitary is much smaller)
 \bibliographystyle{unsrt}
 \addcontentsline{toc}{section}{Bibliography}
 \raggedright

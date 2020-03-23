@@ -1010,25 +1010,25 @@ When $r$ is less that the Schwartzchild radius, we have crossed into a region wi
 
 \subsection{Black holes and the Event horizon}
 
-We want to see how relativistic particles move in this metric. We choose units where $c=1$, and consider two types of orbits, radial and circular. In Figure \ref{fig:gr-5-falling-in}  The external observer uses time $t$, and the person falling in uses $\tau$.
+We want to see how relativistic particles move in this metric. We choose units where $c=1$, and consider two types of orbits, radial and circular. In Figure \ref{fig:gr-5-falling-in} the external observer measures coordinate time, $t$, and the person falling in measures proper time, $\tau$.
 
 \begin{figure}[H]
-	\caption[Falling into black hole]{Falling into black hole. The external observer uses $t$, and the person falling in uses $\tau$.}\label{fig:gr-5-falling-in}
+	\caption[Falling into black hole]{Falling into black hole. The external observer measures coordinate time, $t$, and the person falling in measures proper time, $\tau$.}\label{fig:gr-5-falling-in}
 	\includegraphics{gr-5-falling-in}	
 \end{figure}
 
 \begin{align*}
 d \tau^2 =& \bigg(1-\frac{2 MG}{ r}\bigg) dt^2 - \frac{dr^2}{\bigg(1-\frac{2 MG}{ r}\bigg)} - \underbrace{ r^2 d\Omega^2}_\text{, assume angle doesn't change}\\
-S =& -m \int \sqrt{\big(1-\frac{2 MG}{ r}\big)  - \frac{\dot{r}^2}{\big(1-\frac{2 MG}{ r}\big)}} dt\\
+\text{Action } S =& -m \int \sqrt{\big(1-\frac{2 MG}{ r}\big)  - \frac{\dot{r}^2}{\big(1-\frac{2 MG}{ r}\big)}} dt\\
 \Lagr  =& -m \sqrt{\big(1-\frac{2 MG}{ r}\big)  - \frac{\dot{r}^2}{\big(1-\frac{2 MG}{ r}\big)}} 
 \end{align*}
 Now Energy should be conserved: we can get this from the Hamiltonian.
 
 \begin{align*}
-	P_r =& \frac{\partial \Lagr}{\partial r}\\
-	P_r \dot{r} - \Lagr =& H\\
-	H =& \frac{\big(1-\frac{2MG}{r}\big)m}{\sqrt{\big(1-\frac{2 MG}{ r}\big)  - \frac{\dot{r}^2}{\big(1-\frac{2 MG}{ r}\big)}}}\\
-	=& E \text{, constant. Whence}\\
+	P_r =& \frac{\partial \Lagr}{\partial r} \text{, radial momentum.}\\
+	H =& P_r \dot{r} - \Lagr \\
+	 =&\frac{\big(1-\frac{2MG}{r}\big)m}{\sqrt{\big(1-\frac{2 MG}{ r}\big)  - \frac{\dot{r}^2}{\big(1-\frac{2 MG}{ r}\big)}}}\\
+	=& E \text{, which needs to be constant. Whence}\\
 	\dot{r}^2 =& \big(1-\frac{2MG}{r}\big)^2- \frac{\big(1-\frac{2MG}{r}\big)^3}{E^2}\\
 	\dot{r} \approx & \sqrt{\frac{r-2MG}{MG}} \text{ near the event horizon.}
 \end{align*}
@@ -1054,10 +1054,10 @@ So the speed of light is zero at the event horizon!
 \section{Black holes}
 
 
-The Schwarzschild solution is an idealization. $F = \frac{mMg}{r^2}$ is itself an idealization, based on the assumption that the mass $M$ is concentrated at a point. For a realistic mass this isn't return inside the object. For a real mass if you squeeze everything to be arbitrarily small it will spring back. This isn't so in the General Theory of Relativity. Figure \ref{fig:gr-6-centrifugal-force} illustrates the fact that in Newtonian mechanics an incoming particle is infinitely unlikely to hit a point mass, despite the very strong gravitational attraction. This isn't true in General Relativity; the black hole pulls anything into the centre..
+The Schwarzschild solution is an idealization. $F = \frac{mMg}{r^2}$ is itself an idealization, based on the assumption that the mass $M$ is concentrated at a point. If the mass is spread out, this equation is not true in the interior, but it is true in the exterior. It is an idealization for a point mass. In Newtonian mechanics you never really reach a point mass. Real materials have a certain stiffness; you can squeeze them, but never to a point.  And gravity is only so strong. For a real mass if you squeeze everything to be arbitrarily small it will spring back.  This isn't so in the General Theory of Relativity. Figure \ref{fig:gr-6-centrifugal-force} illustrates the fact that in Newtonian mechanics an incoming particle is infinitely unlikely to hit a point mass, despite the very strong gravitational attraction. This isn't true in General Relativity; the black hole pulls anything into the centre.
 
 \begin{figure}[H]
-	\caption[Centrifugal force]{In Newtonian physics, a particle heading for a massive particle will hit it only if it is aimed with absolute precision. Otherwise centrifugal force will cause it so swing past..}\label{fig:gr-6-centrifugal-force}
+	\caption[Centrifugal force]{In Newtonian physics, a particle heading for a massive particle will hit it only if it is aimed with absolute precision. Otherwise centrifugal force will cause it to swing past.}\label{fig:gr-6-centrifugal-force}
 	\includegraphics{gr-6-centrifugal-force}
 \end{figure} 
 
@@ -1086,7 +1086,7 @@ Notice that $1-\frac{2MG}{r}$ changes sign when $r=2MG$, but the signature of th
 	\end{center}
 \end{figure}
 
-Figure \ref{fig:gr-6-infalling} depicts a metre stick falling towards the event horizon. Imagine that the mere stick is also a clock, which will measure proper time $d\tau$, not coordinate time $dt$. When it is very far away, $r\approxeq\infty$, $d\tau\approxeq dt$. As it approaches we get less and less $\tau$ for $t$; we will see that there is only a finite $\tau$ elapsed to reach the Event Horizon, despite requiring an infinite $t$.
+Figure \ref{fig:gr-6-infalling} depicts a metre stick falling towards the event horizon. Imagine that the metre stick is also a clock, which will measure proper time $d\tau$, not coordinate time $dt$. When it is very far away, $r\approxeq\infty$, $d\tau\approxeq dt$. As it approaches we get less and less $\tau$ for $t$; we will see that there is only a finite $\tau$ elapsed to reach the Event Horizon, despite requiring an infinite $t$.
 
 
 \subsection{Light ray orbiting a black hole}
@@ -1210,14 +1210,14 @@ Consider a beam of light passing outside the event horizon and being bent by the
 \end{table}
 
 \begin{figure}[H]
-	\caption[Light beams going past Black Hole]{Light beams going past Black Hole. Top light beam is bent, so it appears to be coming from further out. Object behind Black Hole heas its beams bent, but they converge at the eye; they become a ring. Finally light ray from back, near black hole, is also bent so it can be seen. }\label{fig:gr-6-light-rays-black-hole}
+	\caption[Light beams going past Black Hole]{Light beams going past Black Hole. Top light beam is bent, so it appears to be coming from further out. Object behind Black Hole has its beams bent, but they converge at the eye; they become a ring. Finally light ray from back, near black hole, is also bent so it can be seen. }\label{fig:gr-6-light-rays-black-hole}
 	\includegraphics{gr-6-light-rays-black-hole}
 \end{figure}
 
 
 \subsection{Hyperbolic coordinates}
 
-Many things that happen in gravity an be understood via an uniformly accelerated coordinate system. Gravity is often not the same thing as a uniformly accelerated coordinate system, but the uniformly accelerated coordinate system is often useful in understanding gravity--Figure \ref{fig:gr-6-hyperbolic-coordinates}.
+Many things that happen in gravity can be understood via an uniformly accelerated coordinate system. Gravity is often not the same thing as a uniformly accelerated coordinate system, but the uniformly accelerated coordinate system is often useful in understanding gravity--Figure \ref{fig:gr-6-hyperbolic-coordinates}.
 
 \begin{figure}[H]
 	\caption[Hyperbolic coordinates. ]{Hyperbolic coordinates. Each dotted hyperbola is a surface on which $	X^2 - T^2 = constant$, and represents constant acceleration.}\label{fig:gr-6-hyperbolic-coordinates}
@@ -1278,7 +1278,7 @@ So all that happens is $(\xi,\omega)$ interchange their roles. The same thing is
 
 In Figure \ref{fig:gr-6-singularity} we see that the singularity is not a place; it's a time. The surface $r=0$ is spacelike, not timelike. You can't avoid it, because you can't avoid the future. If you are inside the event horizon, the singularity is in your future.
 
-We want to understand the discrepancy between the  time as perceived by an object falling  into a black hole, and the observer who is left behind. Figure \ref{fig:gr-6-alice-bob} depicts Alice throwing Bob into the Black Hole. Alice never sees Bob go throw the horizon, as this requires infinite $\omega$, hence infinite $t$. Bob just ticks off time and crosses the event horizon. Alice sees Bob slowed down: each heartbeat of Bob takes longer and longer. What does Bob see? Figure \ref{fig:gr-6-bobs-perspective} depicts the singularity. Anything that finds itself in the upper quadrant is doomed: it cannot escape the singularity. Anything in the right quadrant has the possibility of escaping, depending on the path.
+We want to understand the discrepancy between the  time as perceived by an object falling  into a black hole, and the observer who is left behind. Figure \ref{fig:gr-6-alice-bob} depicts Alice throwing Bob into the Black Hole. Alice never sees Bob go through the horizon, as this requires infinite $\omega$, hence infinite $t$. Bob just ticks off time and crosses the event horizon. Alice sees Bob slowed down: each heartbeat of Bob takes longer and longer. What does Bob see? Figure \ref{fig:gr-6-bobs-perspective} depicts the singularity. Anything that finds itself in the upper quadrant is doomed: it cannot escape the singularity. Anything in the right quadrant has the possibility of escaping, depending on the path.
 
 \begin{figure}[H]
 	\caption{Alice throws Bob into the Black Hole}
@@ -1287,7 +1287,7 @@ We want to understand the discrepancy between the  time as perceived by an objec
 		\includegraphics[width=\textwidth]{gr-6-alice-bob}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.3\textwidth}
-		\caption{Bob sees nothing special. He is able to see Alice as he falls, even though she can't see him past the event horizon. He sees her accelerating away from him, but otherwise noting special.}\label{fig:gr-6-bobs-perspective}
+		\caption{Bob sees nothing special. He is able to see Alice as he falls, even though she can't see him past the event horizon. He sees her accelerating away from him, but otherwise nothing special.}\label{fig:gr-6-bobs-perspective}
 		\includegraphics[width=\textwidth]{gr-6-bobs-perspective}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.3\textwidth}
@@ -1313,15 +1313,17 @@ What happens when a supernova collapses into a black hole? Alice sees the matter
 
 \begin{figure}[H]
 	\caption{Light rays and the Photonsphere}
-	\begin{subfigure}[t]{0.3\textwidth}
-		\caption{The photonsphere in detail. Light that is travelling parallel to the tangent (or inside it) cannot esacpe, but light travelling radially outwards will escape.}\label{fig:gr-6-photon-sphere1}
+	\begin{subfigure}[b]{0.3\textwidth}
+		\caption{The photonsphere in detail. Light that is travelling parallel to the tangent (or inside it) cannot escape, but light travelling radially outwards will escape.}\label{fig:gr-6-photon-sphere1}
 		\includegraphics[width=\textwidth]{gr-6-photon-sphere1}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.3\textwidth}
+	\;
+	\begin{subfigure}[b]{0.3\textwidth}
 		\caption{A light beam cannot enter photonsphere and escape the event horizon, as there will be some point where it is moving tangentially, and so will fall in.}\label{fig:gr-6-photon-sphere2}
 		\includegraphics[width=\textwidth]{gr-6-photon-sphere2}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.3\textwidth}
+	\;
+	\begin{subfigure}[b]{0.3\textwidth}
 		\caption{A doomed person can send a light ray beack from inside photonsphere, but not from inside event horizon.}\label{fig:gr-6-photon-sphere3}
 		\includegraphics[width=\textwidth]{gr-6-photon-sphere3}
 	\end{subfigure}
@@ -1373,7 +1375,7 @@ We define $	F(\rho)$ so that:
 	\omega \triangleq & \frac{t}{2} \text{. Our metric becomes }\\
 	d\tau^2 =& F(\rho) \rho^2 d\omega^2 - \underbrace{d\rho^2}_\text{see (\ref{eq:dr:drho}) below} -r^2(\rho) d\Omega^2 \numberthis \label{eq:tau:rho:omega}
 \end{align*}
-The reason for this transformation is to simplify the coefficient of $d\rho^2$, which follows comes from this argument:
+The reason for this transformation is to simplify the coefficient of $d\rho^2$, which follows from this argument:
 \begin{align*}
 	\frac{d\rho}{dr}=& \sqrt{\frac{r}{r-1}} \text{, whence} \\
 	d\rho^2 =& \frac{r}{r-1}dr^2 \numberthis \label{eq:dr:drho}
@@ -1459,7 +1461,7 @@ If we go far away we have to remember that $F(\rho)$ differs from flat space--Co
 As r decreases through 1, $\rho^2$ becomes negative. Eventually we get to $r=0$--Figure \ref{fig:gr-7-singularity}
 
 \begin{figure}[H]
-	\caption[The Singularity: you can't avoid it, as it is a time]{The Singularity is shown in green. It is a point of infinite curvature, infinite today forces, a place where "you wouldn't want to be". You can't avoid it, as it is a time.}\label{fig:gr-7-singularity}
+	\caption[The Singularity: you can't avoid it, as it is a time]{The Singularity is shown in green. It is a point of infinite curvature, infinite tidal forces, a place where "you wouldn't want to be". You can't avoid it, as it is a time.}\label{fig:gr-7-singularity}
 	\includegraphics[width=\textwidth]{gr-7-singularity}
 \end{figure}
 
@@ -1486,15 +1488,17 @@ He and Einstein thought that $r=1$ was a singularity.
  
  \begin{figure}[H]
  	\caption{Alice falls into the Black Hole}
- 	\begin{subfigure}{0.3\textwidth}
+ 	\begin{subfigure}[b]{0.3\textwidth}
  		\caption{Bob's perspective. Notice that event horizon is also $\omega=\infty$. \emph{In these coordinates} Alice doesn't pass horizon (although she does in hers!)}\label{fig:gr-7-alice-falls-in}
  		\includegraphics[width=\textwidth]{gr-7-alice-falls-in}
  	\end{subfigure}
-  	\begin{subfigure}{0.3\textwidth}
+ 	\;
+  	\begin{subfigure}[b]{0.3\textwidth}
 	 	\caption{Alice's perspective. Alice can keep seeing Bob until she hits the singularity.}\label{fig:gr-7-alice-falls-in-alice-POV}
 	 	\includegraphics[width=\textwidth]{gr-7-alice-falls-in-alice-POV}
 	 \end{subfigure}
-  	\begin{subfigure}{0.3\textwidth}
+ 	\;
+  	\begin{subfigure}[b]{0.3\textwidth}
 	 	\caption{Charlie follows Alice. They can keep seeing each other until they get terminated.}\label{fig:gr-7-alice-bob-charlie}
 	 	\includegraphics[width=\textwidth]{gr-7-alice-bob-charlie}
 	 \end{subfigure}
@@ -1509,17 +1513,17 @@ NB, we are assuming that the black hole has a large enough radius for tidal forc
 
 \begin{figure}[H]
 	\caption{Alice and Charlie at the Event Horizon}
-	\begin{subfigure}[t]{0.3\textwidth}
-		\caption{Elongation near horizon. Unlike tidal forces this is undetectable by Alice and Charlie, as it affect their measuring sticks.}\label{fig:gr-6-elongation}
+	\begin{subfigure}[b]{0.3\textwidth}
+		\caption{Elongation near horizon. Unlike tidal forces this is undetectable by Alice and Charlie, as it affects their measuring sticks.}\label{fig:gr-6-elongation}
 		\includegraphics[width=\textwidth]{gr-6-elongation}
 	\end{subfigure}
 	\;
-	\begin{subfigure}[t]{0.3\textwidth}
+	\begin{subfigure}[b]{0.3\textwidth}
 		\caption{Charlie sees Alice cross the horizon at the exact same time as he crosses. But she sees him cross later.}\label{fig:gr-7-alice-charlie-crossing-horizon} 
 		\includegraphics[width=\textwidth]{gr-7-alice-charlie-crossing-horizon}
 	\end{subfigure}
 	\;
-	\begin{subfigure}[t]{0.3\textwidth}
+	\begin{subfigure}[b]{0.3\textwidth}
 		\caption{Charlie accelerates out at last moment, so he doesn't see Alice cross the horizon.}\label{fig:gr-7-accelerating-charlie}
 		\includegraphics[width=\textwidth]{gr-7-accelerating-charlie}
 	\end{subfigure}
@@ -1536,11 +1540,12 @@ Figure \ref{fig:gr-8-4quadrants} shows the neighbourhood of a black hole. Anyone
 
 \begin{figure}[H]
 	\caption{Near the event horizon}
-	\begin{subfigure}[t]{0.45\textwidth}
-			\caption[Event Horizon]{Quadrants I and II are the only ones of physical significance. The boundary between I and II is the Event Horizon. Straight lines with slope $45^\circ$  represent possible trajectories for light rays.}\label{fig:gr-8-4quadrants}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\caption[Event Horizon]{Quadrants I and II are the only ones of physical significance. The boundary between I and II is the Event Horizon. Straight lines with slope $45^\circ$  represent possible trajectories for light rays.}\label{fig:gr-8-4quadrants}
 		\includegraphics[width=\textwidth]{gr-8-4quadrants}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.45\textwidth}
+	\;
+	\begin{subfigure}[b]{0.45\textwidth}
 		\caption[Event Horizon]{Showing lines of constant time (green) and position in quadrants I and II. The $45^\circ$ line represents $t=\infty$}.\label{fig:gr-8-2quadrants}
 		\includegraphics[width=\textwidth]{gr-8-2quadrants}
 	\end{subfigure}

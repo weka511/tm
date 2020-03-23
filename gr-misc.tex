@@ -471,7 +471,7 @@ On the other hand, that seems a little ridiculous. It doesn't show all the diffe
 
 This is the shortest path from A to B (in units of gates), so it is a geodesic with the right definition of distance. It is a \emph{metrical notion}. LS says this is a theme of the lecture, and that he considers it to be the right way to think about complexity.
  
-\url{https://youtu.be/6OXdhV5BOcY?t=1488}
+
 
 Now lets talk about unitary matrices. We can think of one as an operator, or as a maximally entangled state of two systems.
 \begin{align*}
@@ -480,7 +480,21 @@ Now lets talk about unitary matrices. We can think of one as an operator, or as 
 \end{align*}
 When we talk about distance between operators we are also talking about distance between maximally entangled states.
 
-There are $2^{2K}$ matrix elements (number of constraints for unitary is much smaller)
+There are $2^{2K}$ matrix elements (number of constraints for unitary is much smaller), so $m^{2^{2K}}$ unitaries. Let's do an $\epsilon$-ball calculation. First calculate the unitary group of dimension $2^K$, then calculate the volume of an $\epsilon$-ball and divide.
+\begin{align*}
+	\#unitaries =& \bigg(\frac{2^K}{\epsilon^2}\bigg)^\frac{4K}{2}\\
+	\ln \#unitaries =& 4^K\bigg(\frac{K \ln K}{2} + \ln\frac{1}{\epsilon}\bigg)\\
+	\approx 4^K
+\end{align*}
+
+Distance between unitaries.
+
+\begin{align*}
+	d_{UV}=& \arccos \left|Tr(U^\dagger V)\right|\\
+	\mathcal{C}_{UV}=& min_n \{U=g_n...g_1V\}
+\end{align*}
+\url{https://youtu.be/6OXdhV5BOcY?t=1732}
+
 \bibliographystyle{unsrt}
 \addcontentsline{toc}{section}{Bibliography}
 \raggedright

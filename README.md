@@ -5,6 +5,7 @@
 File|Description
 ----------------|-------------------------------------------------------------
 |aqm.tex|[Advanced Quantum Mechanics](http://theoreticalminimum.com/courses/advanced-quantum-mechanics/2013/fall)
+|cosmology.tex|[Cosmology](http://theoreticalminimum.com/courses/cosmology/2013/winter)
 |gr.tex|[General Relativity](http://theoreticalminimum.com/courses/general-relativity/2012/fall)|
 |gr-misc.tex|Miscellaneous lectures|
 ||[Inside Black Holes](https://www.youtube.com/watch?v=yMRYZMv0jRE)|

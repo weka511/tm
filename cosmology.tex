@@ -1,0 +1,66 @@
+\documentclass[]{article}
+
+\usepackage{caption,subcaption,graphicx,float,url,amsmath,amssymb,amsthm,tocloft,cancel,mathrsfs}
+\usepackage[toc,nonumberlist]{glossaries}
+\usepackage{glossaries-extra,thmtools,gensymb,braket,bm,tensor}
+\usepackage[toc,page]{appendix}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[toc,page]{appendix}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\newcommand{\Lagr}{\mathscr{L}}
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lemma}[thm]{Lemma}
+\graphicspath{{figs/}}
+\widowpenalty10000
+\clubpenalty10000
+\setcounter{tocdepth}{2}
+
+%opening
+\title{Theoretical Minimum\\Cosmology}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	These are my notes for the \emph{Cosmology}\cite{susskind2013cosmology} lectures from Leonard Susskind's \emph{Theoretical Minimum} series\cite{susskind2007theoretical}. 
+\end{abstract}
+
+\tableofcontents
+\listoffigures
+\listoftables
+\listoftheorems
+
+\section{The expanding (Newtonian) universe}
+
+Cosmology as a sciences dates back to the discovery of the microwave radiation from the Big Bank in the 1960s. Before that Cosmology was more like natural science--classifying oddities. Thinking of the universe as a physical system, as a system to study mathematically, with a set of physical principles and a set of equations is relatively new.
+
+We will study the universe as a physical system.
+
+First observation: the universe is isotropic. So it should be homogeneous.
+
+There are around $10^{11}$ galaxies within view oe Earth.
+ 
+\url{https://youtu.be/P-medYaqVak?t=870}
+
+\section{Matter and radiation dominated universes}
+\section{Geometries of space: flat, spherical, hyperbolic}
+\section{Cosmological Thermodynamics}
+\section{Vacuum energy}
+\section{Dark matter and allocation of energy density}
+\section{Temperature History of the Universe}
+\section{Baryogenesis}
+\section{Inflation}
+\section{Inhomogeneities and quantum fluctuations}
+
+
+\bibliographystyle{unsrt}
+\addcontentsline{toc}{section}{Bibliography}
+\raggedright
+\bibliography{tm}
+
+\end{document}

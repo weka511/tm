@@ -34,6 +34,10 @@
 		 chemical potential of a species is energy that can be absorbed or released due to a change of the particle number of the given species, e.g. in a chemical reaction or phase transition. The chemical potential of a species in a mixture is defined as the rate of change of free energy of a thermodynamic system with respect to the change in the number of atoms or molecules of the species that are added to the system.},
 	 symbol=\ensuremath{\mu}}
  
+\newglossaryentry{gls:control:parameter}{
+	name={control parameter},
+	description={a parameter that we, as experimenters, can easily change. A Control Parameter is a macroscopic parameter: we are not trying to change details of one molecule at a time.}}
+
 \newglossaryentry{gls:exact}{
 	name={exact},
 	description={
@@ -242,18 +246,22 @@ Z(\beta) =& \sum_{i=1}^{N} e^{-\beta E_i} \text{. $Z$ is known as the Partition 
 	\frac{\partial Z}{\partial \beta} =& - \sum_{i=1}^{N} e^{-\beta E_i} E_i \text{, from (\ref{eq:partition:function}), whence} \numberthis \label{eq:dZ}\\
 	E(\beta) =& - \frac{1}{Z} \frac{\partial Z}{\partial \beta} = - \frac{\partial \log(Z)}{\partial \beta} \numberthis \label{eq:E:beta}
 	\end{align*}
-	
+	Now, from (\ref{eq:entropy}) 
 	\begin{align*}
-	S =& -\sum_{i=1}^{N} p_i \log(p_i) \text{, from (\ref{eq:entropy})}\\
-	=& - \sum_{i=1}^{N} \frac{1}{Z} e^{- \beta E_i}\big[- \beta E_i -\log(Z)\big]\text{, from (\ref{eq:maximize:entropy})}\\
-	=& \beta E +  \bcancel{\frac{1}{Z}} \log(Z)  \bcancel{\sum_{i=1}^{N} e^{-\beta E_i}}\\
+	S =& -\sum_{i=1}^{N} p_i \log(p_i) \text{, which, using  (\ref{eq:maximize:entropy}) gives}\\
+	=& - \sum_{i=1}^{N} \frac{1}{Z} e^{- \beta E_i}\big[- \beta E_i -\log(Z)\big]\\
+	=& \beta \sum_{i=1}^{N} \frac{1}{Z} e^{- \beta E_i}  E_i +  \frac{1}{Z} \log(Z) \underbrace{\sum_{i=1}^{N}  e^{- \beta E_i}}_{Z} \\
+	=& \beta E +  \bcancel{\frac{1}{Z}} \log(Z)  \bcancel{Z}\\
 	=& \beta E +   \log(Z)  \numberthis \label{eq:S_Z}
 	\end{align*}
-	
+	Differentiating:
 	\begin{align*}
-	dS =& \beta dE + E d\beta + \frac{\partial \log(Z)}{\partial \beta} d\beta \text{, from (\ref{eq:S_Z})}\\
-	=& \beta dE \text{, using (\ref{eq:E:beta})}\\
-	=& \frac{1}{T} dE \text{, using (\ref{eq:T})}\text{, whence}\\
+	dS =& \beta dE + \cancel{E} d\beta + \underbrace{\frac{\partial \log(Z)}{\partial \beta}}_{=\cancel{-E(\beta)} \text{, using (\ref{eq:E:beta})}} d\beta\\
+	=& \beta dE \numberthis \label{eq:ds:Beta}
+	\end{align*}
+	Now (\ref{eq:T}) defines Temperature as follows:
+	\begin{align*}
+	dS =& \frac{1}{T} dE \text{, so comparing with (\ref{eq:ds:Beta})} \\
 	T =& \frac{1}{\beta}
 	\end{align*}
 \end{proof}
@@ -322,15 +330,13 @@ We want to determine the Equation of State.
 From (\ref{eq:S_Z}) and Theorem \ref{thm:inverseT}.
 \begin{align*}
 S =& \frac{E}{T} + \log(Z)\\
-A\triangleq &E - TS\tag*{Helmholtz Free Energy} \\
+A\triangleq &E - TS\text{. We call this the \emph{Helmholtz Free Energy}} \\
 =& -T \log(Z) \numberthis \label{eq:helmholtz}
 \end{align*}
 
-
-
 Variables come in pairs, e.g. (V,P):
 \begin{itemize}
-	\item Control Parameter--a parameters that w, as experimenters, can easily change. They are macroscopic parameters: we are not trying to change details of one molecule at a time. V is a control parameter;
+	\item \Gls{gls:control:parameter} --\glsdesc{gls:control:parameter} 
 	\item Conjugate Thermodynamic Variable (P).
 \end{itemize}
 
@@ -687,18 +693,18 @@ Boltzmann's Brain: most of the ways we could have gotten here are by random fluc
 
 \subsection{Magnetism}
 
-A normal magnet is made up of lots of little magnets (atoms). At a high enough temperature, orientation is random. If we cool it down, we get small domains: same direction within domain. Domains start to grow, may have ferromagnetic transition.
+A normal magnet is made up of lots of little magnets, each of which can be as small as a single atom, or they could be little crystal grains. At a high enough temperature, e.g. room temperature, orientation is random, not just over whole object but also in each little region. If we cool it down, and if the energy stored in each pair of magnets is such that the magnets like to line up in the same direction, then, as you cool it down you find that pairs of magnets in each region tend to be in alignment, but a nearby region may all be aligned in a different direction. As you cool it down you get we get small domains, with the same direction within domain. As you suck more and more enrgy out of the system, domains will want to align more and more. Domains start to grow: you may hit a point where magnets are all aligned in the same direction. That is a phase transition, called a ferromagnetic transition. It is the simplest kind of phase transition. At zero temperature we are in the lowest possible energy state, so all the magnets line up.\url{https://youtu.be/3hh0lJZbUfo?t=2455}
 
 $N$ simple magnets, either up or down. Assume magnetic field, no interaction. Spin up, $\sigma(1).$
 
 \begin{align*}
-E=&(n-m)\mu H\text{, where n are up, m down, $m+n=N$}\\
-\text{number of states} =&\frac{N!}{n!m!}\\
-Z =&\sum_{mn\mid m+n=N} e^{- \beta \mu H(n-m)}\\
-=&\sum_{n}\frac{N!}{n!(N-n)}X^nY^{N-n}\text{, where $X=e^{-\beta\mu H},Y=e^{\beta\mu H}$}\\
-=&\big(X+Y\big)^N\tag*{from the Binomial Theorem}\\
-=&\big(e^{-\beta\mu H}+e^{\beta\mu H}\big)^N\\
-=&2^N \big(\cosh(\beta\mu H)\big)^N\tag*{Definition of cosh}
+	E=&(n-m)\mu H\text{, where n are up, m down, $m+n=N$}\\
+	\text{number of states} =&\frac{N!}{n!m!}\\
+	Z =&\sum_{mn\mid m+n=N} e^{- \beta \mu H(n-m)}\\
+	=&\sum_{n}\frac{N!}{n!(N-n)}X^nY^{N-n}\text{, where $X=e^{-\beta\mu H},Y=e^{\beta\mu H}$}\\
+	=&\big(X+Y\big)^N\tag*{from the Binomial Theorem}\\
+	=&\big(e^{-\beta\mu H}+e^{\beta\mu H}\big)^N\\
+	=&2^N \big(\cosh(\beta\mu H)\big)^N\tag*{Definition of cosh}
 \end{align*}
 
 NB: biased by magnetic field!

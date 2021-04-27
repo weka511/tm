@@ -56,12 +56,35 @@ There are around $10^{11}$ galaxies within view of Earth.
 		\end{subfigure}
 		\;
 		\begin{subfigure}[t]{0.45\textwidth}
-			\caption{Define distance: $D=a\Delta x$, where scale parameter $a$ may or may not be a constant.}\label{fig:cosmo-1-distance}
+			\caption{Define distance: $D_{ab}=a(t) \Delta x_{ab}$, where scale parameter $a$ may or may not be a constant.}\label{fig:cosmo-1-distance}
 			\includegraphics[width=0.8\textwidth]{cosmo-1-distance}
 		\end{subfigure}
 	\end{center}
 \end{figure}
  
+ A more general formula for distance between two galaxies $a$ and $b$ is:
+ 
+ \begin{align*}
+ 	D_{ab}=&a(t) \sqrt{\Delta_{ab} x^2 + \Delta_{ab} y^2 + \Delta_{ab} z^2} \text{, now calculate velocity}\\
+ 	V_{ab}=&\dot{a} \Delta x_{ab} \text{, neglecting $y$ and $z$}\\
+ 	\frac{V_{ab}}{D_{ab}} =& \frac{\dot{a}}{a} \text{, independent of choice of galaxies!}\\
+ 	=& H \text{, Hubble constant at a given time.}\\
+ 	V =& H D \text{, Hubble's Law.}
+\end{align*}
+ 
+\subsection{How much mass is in $\Delta x \Delta y \Delta z$?}
+
+Let $M$ denote the mass within $\Delta x \Delta y \Delta z$: $M = \nu \Delta x \Delta y \Delta z$, and $V$ denote the volume.
+
+\begin{align*}
+	V =& a^3 \Delta x \Delta y \Delta z\\
+	M =& \nu \Delta x \Delta y \Delta z \text{, constant}\\
+	\rho =& \frac{\nu}{a^3}
+\end{align*}
+
+
+
+
 \url{https://youtu.be/P-medYaqVak?t=1170}
 
 \section{Matter and radiation dominated universes}

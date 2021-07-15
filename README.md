@@ -28,7 +28,7 @@ File|Description
 ----------------|-------------------------------------------------------------
 |gr-exercises.tex|Worked examples from [General Relativity](http://theoreticalminimum.com/courses/general-relativity/2012/fall)|
 
-Helper programs
+## Helper programs
 
 File|Description
 ----------------|-------------------------------------------------------------

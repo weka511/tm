@@ -10,7 +10,7 @@ The notes were created using [TexStudio](https://www.texstudio.org/), which I re
 File|Description
 ----------------|-------------------------------------------------------------
 aqm.tex|[Advanced Quantum Mechanics](http://theoreticalminimum.com/courses/advanced-quantum-mechanics/2013/fall)
-entanglement.tex|[Quantum Entanglement](http://theoreticalminimum.com/courses/quantum-entanglement/2006/fall)
+entanglement.tex|[Quantum Entanglement](http://theoreticalminimum.com/courses/quantum-entanglement/2006/fall) WIP
 cosmology.tex|[Cosmology](http://theoreticalminimum.com/courses/cosmology/2013/winter)
 gr.tex|[General Relativity](http://theoreticalminimum.com/courses/general-relativity/2012/fall)
 gr-misc.tex|Miscellaneous lectures

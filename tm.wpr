@@ -10,7 +10,7 @@ proj.file-type = 'normal'
 guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
                             'windows': [{'name': 'dtaAtJloNhSft7SabFzspl0xqE'\
         'mVIDbK',
-        'size-state': '',
+        'size-state': 'maximized',
         'type': 'dock',
         'view': {'area': 'tall',
                  'constraint': None,
@@ -39,8 +39,13 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
                               ('browser',
                                'tall',
                                0,
-                               {'all_tree_states': {loc('../../smac/book/README.md'): {'e'\
+                               {'all_tree_states': {loc('plot-quartic.py'): {'e'\
         'xpanded-nodes': [],
+        'selected-nodes': [],
+        'top-node': [('generic attribute',
+                      loc('plot-quartic.py'),
+                      'a')]},
+        loc('../../smac/book/README.md'): {'expanded-nodes': [],
         'selected-nodes': [],
         'top-node': None},
         loc('../../smac/book/direct-gamma.py'): {'expanded-nodes': [],
@@ -399,7 +404,7 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
                                {'attrib-starts': [],
                                 'code-line': '# but WITHOUT ANY WARRANTY; wi'\
         'thout even the implied warranty of\r\n',
-                                'first-line': 35L,
+                                'first-line': 29L,
                                 'folded-linenos': [],
                                 'sel-line': 8L,
                                 'sel-line-start': 367L,
@@ -426,10 +431,10 @@ guimgr.overall-gui-state = {'windowing-policy': 'combined-window',
                                     0),
                                    1575958706.309),
                  'user_data': {}},
-        'window-alloc': (-12,
-                         3,
-                         1378,
-                         749)}]}
+        'window-alloc': (319,
+                         0,
+                         1360,
+                         731)}]}
 guimgr.recent-documents = [loc('plot-quartic.py')]
 guimgr.visual-state = {loc('../../Anaconda3/Lib/site-packages/matplotlib/collections.py'): {'a'\
         'ttrib-starts': [('_CollectionWithSizes|0|',

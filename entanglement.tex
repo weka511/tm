@@ -16,7 +16,7 @@
 \setcounter{tocdepth}{2}
 \tikzfeynmanset{compat=1.0.0}
 %opening
-\title{Theoretical Minimum\ Quantum Entanglement}
+\title{Theoretical Minimum\ Quantum Entanglement, Part 1}
 \author{Simon Crase (compiler)\\simon@greenweaves.nz}
 
 \begin{document}
@@ -24,12 +24,12 @@
 \maketitle
 
 \begin{abstract}
-These are my notes from the Quantum Entanglement lectures\cite{susskind2013entanglement}  from Leonard Susskind's Theoretical Minimum series\cite{susskind2007theoretical}.
+These are my notes from the Quantum Entanglement Part 1, lectures\cite{susskind2013entanglement}  from Leonard Susskind's Theoretical Minimum series\cite{susskind2007theoretical}.
 
 Disclaimer: I have created these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended 
 as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
 
-The notes were created using TexStudio\cite{TexStudio}, which I recommend for compiling them to a PDF, and the bibliography was created using JabRef\cite{Jabref}.
+The notes were created using TexStudio\cite{TexStudio}, which I recommend for compiling them to a PDF; the bibliography was created using JabRef\cite{Jabref}.
 
 \end{abstract}
 
@@ -91,7 +91,57 @@ Review of vectors and matrices:
 
 We can represent a state by a "one hot" vector, and then represent the transitions of, say, Figure \ref{fig:state_transition_reversible}, by a matrix of ones and zeros.
 
-\section{Quantum Entanglement}
+\section{Review of Quantum Mechanics}
+
+\subsection{Spin of a single electron}
+
+Classical mechanics is based on classical logic. Classical logic means that the states are Boolean: a set of points, each representing a state, and all the logic is classical. Quantum mechanics depends on a completely different logic.
+
+We start with a quantum bit of Qbit, such as the spin of an electron.
+
+We need the concepts of \emph{preparing} a state, and \emph{detecting} a state.
+
+Classically we can \emph{prepare} an electron to point in a particular direction by placing it in a magnetic field. The electron will precess before aligning: the stronger the field the faster it emits electromagnetic radiation and aligns.
+
+To \emph{detect} we apply magnetic field, and measure radiation to see how much realignmnet was needed.
+
+This is \emph{not} the way a real electron works.
+
+A real electron behaves like this. No matter how we prepare the electron, when we turn on the magnetic field, either:
+\begin{itemize}
+	\item nothing happens; or
+	\item it emits a single photon corresponding to the flip from down to up.
+\end{itemize}
+It is almost as if the electron has only two possible configurations. But what if we prepare it at $45^\circ$ or $90^\circ$? Still we get up or down. What if we measure in some other direction?
+
+What if we prepare up, turn off field, and later measure? Up.
+
+What if we prepare at $45^\circ$, turn off field, then measure up/down? Then there is a probability of emitting photon. Probability has memory of previous state. Once you measure, state is fixed.
+
+In physics we have learned not to ask questions unless we can devise a way to measure the answer.
+
+
+\subsection{Spins of two Electrons}
+
+\begin{itemize}
+	\item The state space is an abstract vector space.
+
+	\item LS reviews vector spaces, bras and kets, and represents the electron pointing up as $\ket{+}$. The general representation for an electron is $a_+\ket{+}+a_-\ket{-}$, where $a_+^*a_+$ is the probability that we will find the electron in the up state. Normalized vectors represent physical states.
+	
+	\item We have to rewire ourselves to understand QM.
+
+	\item Linear combinations of states correspond to preparation in different directions.
+	
+	\item The two notions of vector (spatial and abstract) are related, but not simply.
+	
+	\item Anything that we can measure (with a number) is an observable.
+	
+	\item If we knew the rules for calculating averages for all possible observables, we would also know how to compute the probability distribution.
+	
+	\item Hermitian matrices are the quantum equivalent of observables.
+	
+\end{itemize}
+
 
 \section{Quantum Entanglement}
 

@@ -93,6 +93,7 @@ We can represent a state by a "one hot" vector, and then represent the transitio
 
 \section{Review of Quantum Mechanics}
 
+This section reviews material from \cite{susskind2013quantum}.
 \subsection{Spin of a single electron}
 
 Classical mechanics is based on classical logic. Classical logic means that the states are Boolean: a set of points, each representing a state, and all the logic is classical. Quantum mechanics depends on a completely different logic.
@@ -143,8 +144,61 @@ In physics we have learned not to ask questions unless we can devise a way to me
 \end{itemize}
 
 
-\section{Quantum Entanglement}
+\section{Postulates of Quantum mechanics}
+\subsection{Review (continued)}
+This section continues the review of material from \cite{susskind2013quantum}.
 
+\begin{itemize}
+	\item Complex numbers
+	\item The equation $e^{i\theta} = \cos{\theta} + i \sin{\theta}$ contains all of trigonometry.
+\end{itemize}
+
+\subsection{Postulates of Quantum mechanics}
+
+\begin{enumerate}
+	\item States are represented by normalized vectors.
+	\item Observables are represented by Hermitian matrices.
+	\item $\braket{a|M|a}$ - expectation
+	\item Eigenvalues and Eigenvectors
+\end{enumerate}
+
+
+We need complex numbers to handle evolution with time.
+
+Define:
+\begin{align*}
+	\sigma_3 =& \begin{bmatrix} 1&0\\
+	0&-1
+                \end{bmatrix}\\
+            \sigma_2 =& \begin{bmatrix}
+            	0 & -i\\
+            	i & 0
+            \end{bmatrix}\\
+     \sigma_1 =& \begin{bmatrix} 0&1\\
+         	1&0
+     \end{bmatrix} 
+\end{align*}
+Then
+\begin{align*}
+		\sigma_3^2 =& 1\\
+	\sigma_3^2 =& 1\\
+	\sigma_1^2 =& 1
+\end{align*}
+and the eigenvalues are $\pm1$.
+
+
+\begin{thm}[If $M$ is Hermitian and it has two different eigenvalues, then the eigenvectors are orthogonal.]
+	\begin{align*}
+		M =& M^\dagger \text{ and}\\
+		M \ket{a} =& \lambda_a \ket{a}\text{ and}\\
+		M \ket{b} =& \lambda_b \ket{b}\text{ and}\\
+		\lambda_a \ne& \lambda_b \\
+		\implies&\\
+		\braket{a|b} =& 0
+	\end{align*}
+\end{thm}
+
+https://youtu.be/CaTF4QZ94Fk?t=3707
 \section{Quantum Entanglement}
 
 \section{Quantum Entanglement}

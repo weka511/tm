@@ -34,4 +34,5 @@ gr-exercises.tex|Worked examples from [General Relativity](http://theoreticalmin
 File|Description
 ----------------|-------------------------------------------------------------
 Ising.nlogo| Demonstration of Domain walls|plot-quartic.py|Plot potential function for particles2.tex
+plot-quartic.py|Used to plot Maxican hat for Higgs boson
 tm.wpr|Python project for helper files

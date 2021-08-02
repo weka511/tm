@@ -321,7 +321,30 @@ There are four states: $\ket{u\;u}, \,\ket{d\;u}, \,\ket{u\;d}, \,\ket{d\;d}$.  
 
 How many ways to combine? 8-2 = 6, but this is more than we'd expect from $2\times2$! State space is richer than we'd expect. This is entanglement!
 
+The following \emph{product state} corresponds to a situation where the first electron has been carefully placed in one state, and the second in another.
+\begin{align*}
+	\big[\alpha_1\ket{u} + \beta_1\ket{d}\big]\big[\alpha_2\ket{u} + \beta_2\ket{d}\big] =& \alpha_1 \alpha_2 \ket{uu} + \alpha_1 \beta_2 \ket{ud} + \beta_1 \alpha_2 \ket{du} + \beta_1 \beta_2 \ket{dd}
+\end{align*}
+In such a case, there is always one direction in which the spin of the first electron is up, and similarly for the second electron (generally a different direction). LS exhibited an example where this is not true.
 
+\begin{align*}
+	\frac{1}{\sqrt{2}}\big[\ket{ud}+\ket{du}\big] \numberthis \label{eq:T1}
+\end{align*}
+
+If one electron is up, the other is down, and vice versa. We can learn something about one electron by measuring the other!.
+
+\begin{thm}[Any $\sigma_i$ or $\tau_i$ acts on the expression (\ref{eq:T1}) to give zero]
+	\begin{align*}
+		\big[\bra{ud}+\bra{du}\big]\sigma_i\big[\ket{ud}+\ket{du}\big]=&0 \text{ and}\\
+		\big[\bra{ud}+\bra{du}\big]\tau_i\big[\ket{ud}+\ket{du}\big]=&0
+	\end{align*}
+\end{thm}
+
+\begin{cor}
+	$\vec{\sigma}\cdot\vec{\hat{n}}$ and $\vec{\tau}\cdot\vec{\hat{n}}$ both  act on the expression (\ref{eq:T1}) to give zero; hence the probability of a spin being $+1$ (or $-1$) along any axis is $\frac{1}{2}$.
+\end{cor}
+
+This is very different from two independent elctrons.
 
 \section{Quantum Entanglement}
 

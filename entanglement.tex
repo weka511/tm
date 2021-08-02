@@ -169,18 +169,15 @@ Define:
 \begin{align*}
 	\sigma_3 =& \begin{bmatrix} 1&0\\
 	0&-1
-                \end{bmatrix}\\
+                \end{bmatrix} \numberthis \label{eq:sigmas} \\
             \sigma_2 =& \begin{bmatrix}
             	0 & -i\\
             	i & 0
             \end{bmatrix}\\
      \sigma_1 =& \begin{bmatrix} 0&1\\
          	1&0
-     \end{bmatrix} 
-\end{align*}
-Then
-\begin{align*}
-		\sigma_3^2 =& 1\\
+     \end{bmatrix} \text{, then}\\
+	\sigma_3^2 =& 1 \numberthis \label{eq:sigma_sq}\\
 	\sigma_3^2 =& 1\\
 	\sigma_1^2 =& 1
 \end{align*}
@@ -189,16 +186,28 @@ and the eigenvalues are $\pm1$.
 
 \begin{thm}[If $M$ is Hermitian and it has two different eigenvalues, then the eigenvectors are orthogonal.]
 	\begin{align*}
-		M =& M^\dagger \text{ and}\\
-		M \ket{a} =& \lambda_a \ket{a}\text{ and}\\
-		M \ket{b} =& \lambda_b \ket{b}\text{ and}\\
-		\lambda_a \ne& \lambda_b \\
+		M =& M^\dagger \text{ and} \numberthis \label{eq:hermitian}\\
+		M \ket{a} =& \lambda_a \ket{a}\text{ and} \numberthis \label{eq:sigma_ev1}\\
+		M \ket{b} =& \lambda_b \ket{b}\text{ and} \numberthis \label{eq:sigma_ev2}\\
+		\lambda_a \ne& \lambda_b \numberthis \label{eq:ne} \\
 		\implies&\\
-		\braket{a|b} =& 0
+		\braket{a \vert b} =& 0 \numberthis \label{eq:orthogonal}
 	\end{align*}
 \end{thm}
 
-\section{Quantum Entanglement}
+\begin{proof}
+	From (\ref{eq:sigma_ev1})
+	\begin{align*}
+		\braket{b \vert M \vert a} =& \lambda_a \braket{b\vert a} \text{, similary from (\ref{eq:sigma_ev2})}\\
+		\braket{a \vert M \vert b} =& \lambda_b \braket{a\vert b} \text{, or, using (\ref{eq:hermitian})}\\
+		\braket{b \vert M \vert a} =& \lambda_b \braket{b\vert a} \text{, whence}\\
+		(\lambda_1-\lambda_b)\braket{b\vert a} =& 0 \text{, so, using (\ref{eq:ne})}\\
+		\braket{b\vert a} =& 0\text{, which is (\ref{eq:orthogonal})}
+	\end{align*}
+\end{proof}
+\section{Spins \& Quantum Entanglement}
+
+\subsection{Review of spins of single electrons (continued)}
 
 Consider spin about an arbitrary "pointer" $(n_1,n_2,n_3)$
 
@@ -208,7 +217,7 @@ Consider spin about an arbitrary "pointer" $(n_1,n_2,n_3)$
 		n_3&n_1-i n_2\\
 		n_1 + i n_2&-n_3
 	\end{bmatrix}\\
-\text{where }&n_1^2 + n_2^2 +n_3^2 = 1		
+\text{where }n_1^2 + n_2^2 +n_3^2 =& 1		
 \end{align*}
 We define:
 \begin{align*}
@@ -224,7 +233,95 @@ We can show that $(\vec{\hat{n}}\cdot\vec{\sigma})^2=I$, whence eigenvalues are 
 	n_+ n_- =& n_1^2 + n_2^2 + n_3^2 -n_3^2\\
 	=& 1 - n_3^2
 \end{align*}
-https://youtu.be/5vfo512fvlE?t=730
+
+Figure \ref{fig:et-4-1} depicts the only interesting question we can ask about a single spin: what if we prepare along one axis, measure along another, what is the probability of positive versus negative?
+
+\begin{figure}[H]
+	\caption{Prepare Spin along $\vec{\hat{n}}$, measure along $\vec{\hat{m}}$}\label{fig:et-4-1}
+	\includegraphics[width=0.8\textwidth]{et-4-1}
+\end{figure}
+
+We need the eigenvectors of $\vec{\sigma} \cdot \vec{\hat{n}}$ and   $\vec{\sigma} \cdot \vec{\hat{m}}$.
+We have:
+\begin{align*}
+	(\vec{\sigma} \cdot \vec{\hat{n}}) \ket{\vec{\sigma} \cdot \vec{\hat{n}}=1} =& 1 \ket{\vec{\sigma} \cdot \vec{\hat{n}}=1} \text{ and}\\
+	(\vec{\sigma} \cdot \vec{\hat{m}}) \ket{\vec{\sigma} \cdot \vec{\hat{m}}=1} =& 1 \ket{\vec{\sigma} \cdot \vec{\hat{m}}=1} \text{. We need the probability amplitude:}\\
+	\vert \braket{\vec{\sigma} \cdot \vec{\hat{m}}=1\vert\vec{\sigma} \cdot \vec{\hat{n}}=1}\vert^2
+\end{align*}
+
+This is what quantum mechanics does: it answers the question, "What is the probability I'll get a measurement of this value, given that I prepared the experiment is such and such a manner?"
+
+\begin{align*}
+	\begin{bmatrix}
+		n_3 &n_-\\
+		n_+&-n_3
+	\end{bmatrix}\begin{bmatrix}
+		\alpha\\
+		\beta
+	\end{bmatrix}=&\begin{bmatrix}
+		\alpha\\
+		\beta
+\end{bmatrix} \text{. WLOG}\\
+	\begin{bmatrix}
+	n_3 &n_-\\
+	n_+&-n_3
+\end{bmatrix}\begin{bmatrix}
+	1\\
+	z
+\end{bmatrix}=&\begin{bmatrix}
+	1\\
+	z
+\end{bmatrix} \text{, whence}\\
+n_3 + n_- z =& 1\\
+x =& \frac{1-n_3}{n-}
+\end{align*}
+ Normalizing:
+ \begin{align*}
+ 	\ket{\vec{\sigma} \cdot \vec{\hat{n}}=1} =& \sqrt{\frac{1+n_3}{2}} \begin{bmatrix}
+ 		1\\\frac{1-n_3}{n_-}
+ 	\end{bmatrix}
+ \end{align*}
+
+Eventually we find:
+\begin{align*}
+	\vert \braket{\vec{\sigma} \cdot \vec{\hat{m}}=1\vert\vec{\sigma} \cdot \vec{\hat{n}}=1}\vert =& \frac{1 + \vec{\hat{n}} \cdot \vec{\hat{m}}}{2}\\
+	=& \frac{1 + \cos{\theta_{mn}}}{2}
+\end{align*}
+We would get the same result if we rotated the experiment.
+
+We can orient the system along any axis, and measure along any axis. We don't get fractional answers, we get fractional probabilities.
+
+When you measure something, you go into system, interact with it, and \emph{change its state.} You leave the system in the eigenstate that corresponds to the measurement. Can we perform an experiment that measures spin along $\sigma_1$ and $\sigma_2$ simultaneously? No, because $\sigma_1$ and $\sigma_2$ don't share eigenvalues. For simultaneous measurement to be possible, need to share eigenvectors, i.e. if they \emph{commute}.
+
+\begin{thm}[For simultaneous measurement to be possible, operators must commute.]
+	\begin{align*}
+			A\ket{\alpha_i} =& \lambda_i \ket{\alpha_i} \text{ and} \numberthis \label{eq:simultaneous1}\\
+			B\ket{\alpha_i} =& \mu_i \ket{\alpha_i} \numberthis\label{eq:simultaneous2}\\
+			\iff &\\
+			AB - BA =& 0& \numberthis \label{eq:simultaneous3}\\
+			[A,B] =& 0
+	\end{align*}
+\end{thm}
+
+\begin{proof}
+	From (\ref{eq:simultaneous1})
+	\begin{align*}
+		B A\ket{\alpha_i} =& \lambda_i B \ket{\alpha_i}\\
+		=& \lambda_i \mu_i \ket{\alpha_i} \text{, from (\ref{eq:simultaneous2})} \text{. Similarly}\\
+		A  B \ket{\alpha_i} =& \mu_i  lambda_i \ket{\alpha_i} \text{, whence}\\
+		B A\ket{\alpha_i} =& A  B \ket{\alpha_i} \text{ for every eigenvector $\ket{\alpha_i}$}
+	\end{align*}
+\end{proof}
+\begin{thm}[Any direction corresponds to an axis of spin.]
+	For any $\alpha$ and $\beta$ such that $\alpha^2$ + $\beta^2=1$, there exista a direction of space such that $(\alpha, \beta)$ is an eigenvector of $\vec{\sigma} \cdot\vec{\hat{n}}$ with eigenvalue 1.
+\end{thm}
+
+\subsection{Pairs of electrons--Entanglement at last}
+There are four states: $\ket{u\;u}, \,\ket{d\;u}, \,\ket{u\;d}, \,\ket{d\;d}$.  We will use $\sigma$ for the first electron, $\tau$ for the second:  $\sigma$ leaves the second spin unchanged, $\tau$ leaves the first unchanged.
+
+How many ways to combine? 8-2 = 6, but this is more than we'd expect from $2\times2$! State space is richer than we'd expect. This is entanglement!
+
+
 
 \section{Quantum Entanglement}
 

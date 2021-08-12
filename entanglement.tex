@@ -24,7 +24,7 @@
 \maketitle
 
 \begin{abstract}
-These are my notes from the Quantum Entanglement Part 1, lectures\cite{susskind2013entanglement}  from Leonard Susskind's Theoretical Minimum series\cite{susskind2007theoretical}.
+These are my notes from the Quantum Entanglement Part 1, lectures\cite{susskind2013entanglement}  from Leonard Susskind's Theoretical Minimum series\cite{susskind2007theoretical}. I have added heading based on the topic of each lecture, since each of the original lectures is has the same title, \emph{Quantum Entanglement}.
 
 Disclaimer: I have created these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended 
 as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
@@ -346,7 +346,7 @@ If one electron is up, the other is down, and vice versa. We can learn something
 
 This is very different from two independent electrons.
 
-\section{Bell's Inequality}
+\section{Bell's Theorem}
 
 \subsection{Einstein-Podolsky-Rosen Correlation}
 
@@ -380,14 +380,41 @@ We consider the class of objects that have certain properties $A$, $B$, and $C$.
 
 \begin{proof}
 	\begin{figure}[H]
-		\caption{Bell's Inequality--\cite{wiki2020bell}}\label{fig:bell}
+		\caption{Venn Diagram for Bell's Inequality--\cite{wiki2020bell}}\label{fig:bell}
 		\includegraphics[width=0.8\textwidth]{1200px-Bell's_Theorem_JCB.jpg}
 	\end{figure}
-See Figure \ref{fig:bell}.
+We use "proof by diagram"--Figure \ref{fig:bell}.
 \end{proof}
-What ia amazing is that Bell's Inequality can be violated!
+What is amazing is that Bell's Inequality can be violated! One of the students said that the violation is profound. But all of QM violates classical mechanics. 
 
-\url{https://youtu.be/XlLsTaJn9AQ?t=1430}
+We now take our system to be two spins, and we will define $A$, $B$, and $C$. We will start by assuming classical spins, and that they can be measured as classical objects, and we will write down Bell's inequality. We will talk only about spin 1. A proposition might be: spin 1 is up along the z axis. The negative would be "spin 1 is not up along the z-axis, i.e. down", which is equivalent to "spin 2 is up" (in the Singlet state).
+
+If classical logic made any sense we would measure (we have a beam of electron pairs. zillions of pairs, each of which are correlated) the first 100,000 in every possible manner, and we convince ourselves that the spins in each pair are opposite to each other. So the negative of "A is up" is "B is up."
+
+\begin{table}[H]
+	\caption{States for Classical Bell's inequality}
+	\begin{center}
+		\begin{tabular}{|l|l|l|}\hline
+			\#&Propositions& Negated\\ \hline 
+			A&1 $\ket{u}$ along z axis&2 $\ket{u}$ along z axis\\ \hline
+			B&1$ \ket{u}$ along $45^{\circ}$ angle in zx plane&2 $\ket{u}$ along $45^{\circ}$ angle in zx plane\\ \hline
+			C&1 $\ket{u}$ along $90^{\circ}$ angle in zx plane&2  $\ket{u}$ along $90^{\circ}$ angle in zx plane\\ \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+If the entities are pairs of electrons, the left hand side of (\ref{eq:bell:inequality}) becomes:
+\begin{align*}
+	\underbrace{N(A, \neg B)}_\text{1 up along z, 2 up along $45^\circ$} + \underbrace{N(B, \neg C)}_\text{N(A, \neg B) rotated $45^{\circ}$} =& 2N(A, \neg B)\text{ using rotational invariance of the Singlet.}
+\end{align*}
+The right hand side is 1 up along z, 2 up along $90^\circ$, so we have something we can test.
+\begin{align*}
+	2N(\text{1 up along z, 2 up along $45^\circ$}) \ge N(\text{1 up along z, 2 up along $90^\circ$}) \numberthis \label{eq:bell:ineq:classical}
+\end{align*}
+Note that we can replace numbers with probabilities, since we are working with zillions of electrons. When we calculate the probabilities for the singlet state, we find that the $\ge$ sign in (\ref{eq:bell:ineq:classical}) comes out <, violating Bell's inequality.
+
+\url{https://youtu.be/XlLsTaJn9AQ?t=2682}
+
 \section{Quantum Entanglement}
 
 \section{Quantum Entanglement}

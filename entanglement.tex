@@ -344,10 +344,50 @@ If one electron is up, the other is down, and vice versa. We can learn something
 	$\vec{\sigma}\cdot\vec{\hat{n}}$ and $\vec{\tau}\cdot\vec{\hat{n}}$ both  act on the expression (\ref{eq:T1}) to give zero; hence the probability of a spin being $+1$ (or $-1$) along any axis is $\frac{1}{2}$.
 \end{cor}
 
-This is very different from two independent elctrons.
+This is very different from two independent electrons.
 
-\section{Quantum Entanglement}
+\section{Bell's Inequality}
 
+\subsection{Einstein-Podolsky-Rosen Correlation}
+
+If we have two spins there are two interesting cases:
+\begin{align*}
+	\frac{1}{\sqrt{2}}\big[\ket{ud}\pm\ket{du}\big] \numberthis \label{eq:T1a}
+\end{align*}
+There is no way that either electron has a definite polarization. To see the difference between plus and minus in (\ref{eq:T1a}), consider the operator $\vec{\sigma} + \vec{\tau}$
+
+\begin{align*}
+\big(\vec{\sigma_z} + \vec{\tau_z}\big)\frac{1}{\sqrt{2}}\big[\ket{ud}\pm\ket{du}\big]=& 0\\
+\big(\vec{\sigma_x} + \vec{\tau_x}\big)\frac{1}{\sqrt{2}}\big[\ket{ud}+\ket{du}\big]=& 2 \big[\ket{uu}+\ket{dd}\big]\\
+\big(\vec{\sigma_x} + \vec{\tau_x}\big)\frac{1}{\sqrt{2}}\big[\ket{ud}-\ket{du}\big]=& 0\\
+\big(\vec{\sigma_y} + \vec{\tau_y}\big)\frac{1}{\sqrt{2}}\big[\ket{ud}-\ket{du}\big]=& 0
+\end{align*}
+So, for the singlet state, $\frac{1}{\sqrt{2}}\big[\ket{ud}\pm\ket{du}\big]$, if we measure $\vec{\sigma}$ we know $\vec{\tau}$. (Einstein, Podolsky, Rosen)
+
+\subsection{Bell's Theorem and Bell's Inequality}
+
+We now come to Bell's famous theorem. Is it profound or trivial? Sometimes it seems profound, at other times it just seems to be a consequence of quantum mechanics. John Bell and Richard Feynman shared this ambivalence. The theorem is absolutely classical; Bell's inequality violates Bells theorem.
+
+NB: entanglement doesn't violate causality; we can't use it to send an instantaneous message from Alice to Bob. Bob has to receive a message from Alice in order to use his measurement.
+
+
+\begin{thm}[Bell's Theorem]
+We consider the class of objects that have certain properties $A$, $B$, and $C$.
+	\begin{align*}
+		N(A, \neg B) + N(B, \neg C) \ge N(A,\neg C)\text{,  Bell's inequality} \numberthis \label{eq:bell:inequality}
+	\end{align*}
+\end{thm}
+
+\begin{proof}
+	\begin{figure}[H]
+		\caption{Bell's Inequality--\cite{wiki2020bell}}\label{fig:bell}
+		\includegraphics[width=0.8\textwidth]{1200px-Bell's_Theorem_JCB.jpg}
+	\end{figure}
+See Figure \ref{fig:bell}.
+\end{proof}
+What ia amazing is that Bell's Inequality can be violated!
+
+\url{https://youtu.be/XlLsTaJn9AQ?t=1430}
 \section{Quantum Entanglement}
 
 \section{Quantum Entanglement}

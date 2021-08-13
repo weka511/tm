@@ -370,7 +370,6 @@ We now come to Bell's famous theorem. Is it profound or trivial? Sometimes it se
 
 NB: entanglement doesn't violate causality; we can't use it to send an instantaneous message from Alice to Bob. Bob has to receive a message from Alice in order to use his measurement.
 
-
 \begin{thm}[Bell's Theorem]
 We consider the class of objects that have certain properties $A$, $B$, and $C$.
 	\begin{align*}
@@ -378,12 +377,43 @@ We consider the class of objects that have certain properties $A$, $B$, and $C$.
 	\end{align*}
 \end{thm}
 
+Figure \ref{fig:bell} illustrates the theorem.
+\begin{figure}[H]
+	\caption{Venn Diagram for Bell's Inequality--\cite{wiki2020bell}}\label{fig:bell}
+	\includegraphics[width=0.8\textwidth]{1200px-Bell's_Theorem_JCB.jpg}
+\end{figure}
+
 \begin{proof}
-	\begin{figure}[H]
-		\caption{Venn Diagram for Bell's Inequality--\cite{wiki2020bell}}\label{fig:bell}
-		\includegraphics[width=0.8\textwidth]{1200px-Bell's_Theorem_JCB.jpg}
-	\end{figure}
-We use "proof by diagram"--Figure \ref{fig:bell}.
+
+    Table \ref{table:possibilities} depicts 8 possibilities for an object, which either has or does not have properties $A$, $B$, and $C$.
+  
+	\begin{table}[H]
+		\caption{Bell's Theorem: each object either has or does not have properties $A$, $B$, and $C$}\label{table:possibilities}
+		\begin{center}
+			\begin{tabular}{|c|c|c|c|} \hline
+				\#&A&B&C \\ \hline
+				1&+&+&+ \\ \hline 
+				2&+&+&- \\ \hline
+				3&+&-&+ \\ \hline 
+				4&+&-&- \\ \hline
+				5&-&+&+ \\ \hline 
+				6&-&+&- \\ \hline
+				7&-&-&+ \\ \hline 
+				8&-&-&- \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{table}
+
+	From Table \ref{table:possibilities} we read off:
+	\begin{align*}
+		A \cap \neg B =& \{3, 4\} \\
+		B \cap \neg C =& \{2, 6\} \text{, whence}\\
+		(A \cap \neg B) \cup (B \cap \neg C) =&\{2,3,4, 6\}\\
+		A \cap \neg C =& \{2,4\} \text{, from Table \ref{table:possibilities} }\\
+		\subset& \{2,3,4, 6\} \text{, whence}\\
+		A \cap \neg C \subset&(A \cap \neg B) \cup (B \cap \neg C)
+	\end{align*}
+Equation (\ref{eq:bell:inequality}) follows on taking the cardinalities of all three sets.
 \end{proof}
 What is amazing is that Bell's Inequality can be violated! One of the students said that the violation is profound. But all of QM violates classical mechanics. 
 

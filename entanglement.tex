@@ -392,7 +392,7 @@ We now take our system to be two spins, and we will define $A$, $B$, and $C$. We
 If classical logic made any sense we would measure (we have a beam of electron pairs. zillions of pairs, each of which are correlated) the first 100,000 in every possible manner, and we convince ourselves that the spins in each pair are opposite to each other. So the negative of "A is up" is "B is up."
 
 \begin{table}[H]
-	\caption{States for Classical Bell's inequality}
+	\caption{States for Classical Bell's inequality}\label{table:classical:bell}
 	\begin{center}
 		\begin{tabular}{|l|l|l|}\hline
 			\#&Propositions& Negated\\ \hline 
@@ -411,9 +411,42 @@ The right hand side is 1 up along z, 2 up along $90^\circ$, so we have something
 \begin{align*}
 	2N(\text{1 up along z, 2 up along $45^\circ$}) \ge N(\text{1 up along z, 2 up along $90^\circ$}) \numberthis \label{eq:bell:ineq:classical}
 \end{align*}
-Note that we can replace numbers with probabilities, since we are working with zillions of electrons. When we calculate the probabilities for the singlet state, we find that the $\ge$ sign in (\ref{eq:bell:ineq:classical}) comes out <, violating Bell's inequality.
+Note that we can replace numbers with probabilities, since we are working with zillions of electrons. When we calculate the probabilities for the singlet state, we find that the $\ge$ sign in (\ref{eq:bell:ineq:classical}) comes out <, violating Bell's inequality. To calculate efficiently, we require projection operators.
 
-\url{https://youtu.be/XlLsTaJn9AQ?t=2682}
+\begin{align*}
+	\mathbb{P}_{\sigma_i} =& \frac{\sigma_i + I}{2} \text{, for $i \in \{1,2, 3\}$}
+\end{align*}
+
+Alternative definition  for probability postulate of quantum mechanics.
+If we have an arbitrary state $\psi$, and we want the probability that a certain thing is true, construct the projection operator for the eigenvector corresponding to that certain thing, $\mathbb{P}$; the probability is the expectation of $\mathbb{P}$, $\braket{\psi|\mathbb{P}|\psi}$.
+
+\begin{enumerate}
+	\item Projection operators correspond to statements.
+	\item In classical physics, properties are subsets: the set of all things \emph{such that}...; we use classical logic.
+	\item In quantum mechanics properties correspond to subspaces of a vector space; they are different from subsets of a set. 
+\end{enumerate}
+
+We'll recast Table \ref{table:classical:bell} in terms of projection operators.
+\begin{table}[H]
+	\caption{Projection operators for Bell's inequality}
+	\begin{center}
+		\begin{tabular}{|l|l|l|}\hline
+			\#&Propositions& Negated\\ \hline 
+			A&$\frac{1}{2}\big(\sigma_3 + I\big)$&\\ \hline
+			B&&$\frac{1}{2}\big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)$\\ \hline
+			C&&\\ \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+Whence $P(A, \neg B) = \frac{1}{4}\big(\sigma_3 + I\big) \big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)$. Applying this to the Singlet, the left side of (\ref{eq:bell:ineq:classical}) becomes:
+
+\begin{align*}
+	2 \frac{1}{\sqrt{2}}\big[\bra{ud}-\bra{du}\big]\frac{1}{4}\big(\sigma_3 + I\big) \big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)\frac{1}{\sqrt{2}}\big[\ket{ud}-\ket{du}\big]\approxeq 0.15
+\end{align*}
+
+
+
+\url{https://youtu.be/XlLsTaJn9AQ?t=3515}
 
 \section{Quantum Entanglement}
 

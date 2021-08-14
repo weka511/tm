@@ -17,7 +17,7 @@
 \tikzfeynmanset{compat=1.0.0}
 \definecolor{Gray}{gray}{0.5}
 %opening
-\title{Theoretical Minimum\ Quantum Entanglement, Part 1}
+\title{Theoretical Minimum\\Quantum Entanglement, Part 1}
 \author{Simon Crase (compiler)\\simon@greenweaves.nz}
 
 \begin{document}
@@ -45,14 +45,14 @@ The notes were created using TexStudio\cite{TexStudio}, which I recommend for co
 
 We, as animals, have inherited, through the process of evolution, certain intuitive ways of thinking about the physical world:
 \begin{enumerate}
-	\item Lioness pursuing antelope will stop as soon as relative velocity changes sign (physics calculation!);
-	\item Neanderthal pushing rock from door of cave aims body to maximize component of force in the right direction.
+	\item A lioness, pursuing an antelope, will stop as soon as relative velocity changes sign (physics calculation!);
+	\item A Neanderthal pushing rock from door of cave aims body to maximize component of force in the right direction.
 \end{enumerate}
 
 Everything in modern physics has to do with those things that are beyond these intuitions:
-speeds approaching speed of light; 4 D; the electron; the uncertainty principle. Why would natural selecton have given us the intuition of the uncertainty principle? Intuitions for particles come from rocks.
+speeds approaching speed of light; 4 D; the electron; the uncertainty principle. Why would natural selection have given us the intuition of the uncertainty principle? Intuitions for particles come from rocks.
 
-This course will try to expose some of the weirdness of quantum mechanics, the weirdness of the logic quantum mechanics, the weirdness of how quantum information works. 
+This course will try to expose some of the weirdness of quantum mechanics, the weirdness of the logic of quantum mechanics, the weirdness of how quantum information works. 
 
 This course will cover:
 \begin{enumerate}
@@ -61,9 +61,9 @@ This course will cover:
 	\item physics as information.
 \end{enumerate}
 
-Classical mechanics represents values as real numbers; QM often uses discrete values. Before we cover quantum bits we will look at classical bits, and we will use Dirac's notation\cite{susskind2014quantum} $\ket{0}$ or $\ket{1}$\cite{susskind2014quantum}. For an $n-bit$ \emph{classical} system, the number of configurations is $N_S=2^n$, so $n=\log_2(N_S)$.
+Classical mechanics represents values as real numbers; QM often uses discrete values. Before we cover quantum bits we will look at classical bits, using Dirac's notation $\ket{0}$ or $\ket{1}$--\cite{susskind2014quantum}. For an $n-bit$ \emph{classical} system, the number of configurations is $N_S=2^n$, so $n=\log_2(N_S)$.
 
-We can generalize definition of number of bits of information: it doesn't have to be an integer. We can represent the state of a physical system, to specified precision, by a string of bits (quantize space, etc). Figure \ref{fig:state_transition} shows how the laws of physics can be represented as a state transition diagram.
+We can generalize the definition of the number of bits of information: it doesn't have to be an integer. We can represent the state of a physical system, to a specified precision, by a string of bits (quantize space, etc). Figure \ref{fig:state_transition} shows how the laws of physics can be represented as a state transition diagram.
 
 \begin{figure}[H]
 	\caption[State transition diagram for laws of physics]{The laws of physics can be represented as a state transition diagram. In quantum mechanics there is no fundamental difference between forward in time and backward in time.}\label{fig:state_transition}
@@ -81,9 +81,9 @@ All real systems are quantum mechanical. In this course we will try to answer th
 
 A Newtonian system is one that is in a definite state, and that evolves deterministically.
 
-Second Law of Thermodynamics arises because we lose the ability to follow the evolution of a system in precise detail.
+The Second Law of Thermodynamics arises because we lose the ability to follow the evolution of a system in precise detail.
 
-Review of vectors and matrices:
+LS reviews vectors and matrices:
 \begin{itemize}
 	\item Row and column vectors as sequences of number;
 	\item Inner products;
@@ -363,11 +363,11 @@ There is no way that either electron has a definite polarization. To see the dif
 \big(\vec{\sigma_x} + \vec{\tau_x}\big)\frac{1}{\sqrt{2}}\big[\ket{ud}-\ket{du}\big]=& 0\\
 \big(\vec{\sigma_y} + \vec{\tau_y}\big)\frac{1}{\sqrt{2}}\big[\ket{ud}-\ket{du}\big]=& 0
 \end{align*}
-So, for the singlet state, $\frac{1}{\sqrt{2}}\big[\ket{ud}\pm\ket{du}\big]$, if we measure $\vec{\sigma}$ we know $\vec{\tau}$. (Einstein, Podolsky, Rosen)
+So, for the singlet state, $\frac{1}{\sqrt{2}}\big[\ket{ud}\pm\ket{du}\big]$, if we measure $\vec{\sigma}$ we know $\vec{\tau}$. (Einstein, Podolsky, Rosen)\cite{einstein1935can}
 
 \subsection{Bell's Theorem and Bell's Inequality}
 
-We now come to Bell's famous theorem. Is it profound or trivial? Sometimes it seems profound, at other times it just seems to be a consequence of quantum mechanics. John Bell and Richard Feynman shared this ambivalence. The theorem is absolutely classical; Bell's inequality violates Bells theorem.
+We now come to Bell's famous theorem\cite{bell1964einstein}. Is it profound or trivial? Sometimes it seems profound, at other times it just seems to be a consequence of quantum mechanics. John Bell and Richard Feynman shared this ambivalence. The theorem is absolutely classical:  Bell's theorem excludes quantum mechanics; in quantum mechanics you can find violations of Bell's inequality.
 
 NB: entanglement doesn't violate causality; we can't use it to send an instantaneous message from Alice to Bob. Bob has to receive a message from Alice in order to use his measurement.
 
@@ -452,7 +452,7 @@ Note that we can replace numbers with probabilities, since we are working with z
 	\mathbb{P}_{\sigma_i} =& \frac{\sigma_i + I}{2} \text{, for $i \in \{1,2, 3\}$}
 \end{align*}
 
-Alternative definition  for probability postulate of quantum mechanics.
+\subsubsection{Alternative definition  for probability postulate of quantum mechanics}
 If we have an arbitrary state $\psi$, and we want the probability that a certain thing is true, construct the projection operator for the eigenvector corresponding to that certain thing, $\mathbb{P}$; the probability is the expectation of $\mathbb{P}$, $\braket{\psi|\mathbb{P}|\psi}$.
 
 \begin{enumerate}
@@ -465,18 +465,18 @@ We'll recast Table \ref{table:classical:bell} in terms of projection operators.
 \begin{table}[H]
 	\caption{Projection operators for Bell's inequality}\label{table:projection:bell}
 	\begin{center}
-		\begin{tabular}{|l|l|l|}\hline
-			\#&Propositions& Negated\\ \hline 
-			A&$\frac{1}{2}\big(\sigma_3 + I\big)$&\\ \hline
-			B&$\frac{1}{2}\big(\frac{\sigma_1+\sigma_3}{\sqrt{2}}+I\big)$&$\frac{1}{2}\big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)$\\ \hline
-			C&&$\frac{1}{2}\big(\tau_1+1\big)$\\ \hline
+		\begin{tabular}{|l|l|l|l|}\hline
+			\#&Proposition&Projection & Projection Negated\\ \hline 
+			A& $\ket{u}$ along z axis&$\frac{1}{2}\big(\sigma_3 + I\big)$&\\ \hline
+			B&$ \ket{u}$ along $45^{\circ}$ angle in zx plane&$\frac{1}{2}\big(\frac{\sigma_1+\sigma_3}{\sqrt{2}}+I\big)$&$\frac{1}{2}\big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)$\\ \hline
+			C&$ \ket{u}$ along $90^{\circ}$ angle in zx plane&&$\frac{1}{2}\big(\tau_1+1\big)$\\ \hline
 		\end{tabular}
 	\end{center}
 \end{table}
 
+\subsubsection{Example calculation for violation of Bell's Inequality}
 
-
-Whence $P(A, \neg B) = \frac{1}{4}\big(\sigma_3 + I\big) \big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)$. Applying this to the Singlet, and using rotational invariance, the left side of (\ref{eq:bell:ineq:classical}) becomes:
+From Table \ref{table:projection:bell}, $P(A, \neg B) = \frac{1}{4}\big(\sigma_3 + I\big) \big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)$. Applying this to the Singlet, and using rotational invariance, the left side of (\ref{eq:bell:ineq:classical}) becomes:
 
 \begin{align*}
 	2& \frac{1}{\sqrt{2}}\big[\bra{ud}-\bra{du}\big]\frac{1}{4}\big(\sigma_3 + I\big) \big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)\frac{1}{\sqrt{2}}\big[\ket{ud}-\ket{du}\big]\\
@@ -492,9 +492,9 @@ We will build this expression up:
 	\big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)\ket{ud}=&\frac{\ket{uu}-\ket{ud}}{\sqrt{2}}+\ket{ud}\\
 	=& \frac{\ket{uu}}{\sqrt{2}} + \big(1-\frac{1}{\sqrt{2}}\big)\ket{ud} \text{, and}\\
 	\big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)\ket{du}=&\frac{\ket{dd}+\ket{du}}{\sqrt{2}}+\ket{du}\\
-	=&\frac{\ket{dd}}{\sqrt{2}} + \big(1+\frac{1}{\sqrt{2}}\big)\ket{du} \text{, and}
+	=&\frac{\ket{dd}}{\sqrt{2}} + \big(1+\frac{1}{\sqrt{2}}\big)\ket{du}
 \end{align*}
-Multiplying by $\sigma_3 + I$:
+We now apply $\sigma_3 + I$:
 \begin{align*}
 	\big(\sigma_3 + I\big) \big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)\ket{ud}=&\big(\sigma_3 + I\big) \big[\frac{\ket{uu}}{\sqrt{2}} + \big(1-\frac{1}{\sqrt{2}}\big)\ket{ud}\big]\\
 	=& 2 \big[\frac{\ket{uu}}{\sqrt{2}} + \big(1-\frac{1}{\sqrt{2}}\big)\ket{ud}\big] \text{, and}\\
@@ -504,8 +504,7 @@ Multiplying by $\sigma_3 + I$:
 So (\ref{eq:bell:lhs}) becomes:
 \begin{align*}
 	\frac{1}{4} \big[\bra{ud}-\bra{du}\big]  2 \big[\frac{\ket{uu}}{\sqrt{2}} + \big(1-\frac{1}{\sqrt{2}}\big)\ket{ud}\big] =& \frac{1}{2}\big(1-\frac{1}{\sqrt{2}}\big)\braket{ud|du}\\
-	 =& \frac{1}{2}\big(1-\frac{1}{\sqrt{2}}\big)\\
-	 \approx & 0.15 \numberthis \label{eq:bell:lhs:approx}
+	 =& \frac{1}{2}\big(1-\frac{1}{\sqrt{2}}\big) \numberthis \label{eq:bell:lhs:approx}
 \end{align*}
 
 Returning to Table \ref{table:projection:bell}, $P(A, \neg C) = \frac{1}{4}\big(\sigma_3 + I\big) \big(\tau_1+1\big)$. Applying this to the Singlet, and using rotational invariance, the right side of (\ref{eq:bell:ineq:classical}) becomes:
@@ -527,9 +526,18 @@ So (\ref{eq:bell:rhs}) becomes:
 	\frac{1}{8}\big[\bra{ud}-\bra{du}\big] 2 \big(\ket{uu} + \ket{ud}\big) =& \frac{1}{4}\braket{ud|ud}\\
 	=&\frac{1}{4}
 \end{align*}
-Substituting this and (\ref{eq:bell:lhs:approx}) in (\ref{eq:bell:ineq:classical}), we get $0.17 \ge 0.25$--a contradiction. The Singlet violates Bell's inequality, which means that there is no possibility of an underlying classical way of thinking about QM based on set theory. It can not be the statistical theory of some underlying complicated, chaotic, classical system. 
 
-Check Aspect's experiment!
+Substituting this and (\ref{eq:bell:lhs:approx}) in (\ref{eq:bell:ineq:classical}), we get 
+\begin{align*}
+	\frac{1}{2}\big(1-\frac{1}{\sqrt{2}}\big) \ge &\frac{1}{4}\\
+	2-\frac{2}{\sqrt{2}} \ge& 1\\
+	1 \ge& \sqrt{2} \text{, a contradiction!}
+\end{align*}
+
+Thus the Singlet violates Bell's inequality: there is no possibility of an underlying classical way of thinking about QM where properties are based on set theory. It can not be the statistical theory of some underlying classical system, no matter how complicated, jumbled, or chaotic. 
+
+\subsubsection{The Aspect Experiment\cite{aspect1982experimental}}
+This is a beautiful experiment, which taught us a lot about measuring electrons, but the result was certain beforehand. Aspect asked whether there is an out, a way for classical mechanics to somehow simulate quantum mechanics: the answer is "yes", but only if the system under discussion has wires to connect the left electron to the right electron, so the electron on the left is not independent of the one on the right, and there is a processor in the centre. But the signals have to go faster than the speed of light! (Bob needs to tell Alice what is going on: what if the times are synchronized to the extent that the signals need to travel faster than light?) Aspect managed to check that the inequality was violated, and he did it in such a way that there was no way that light could have propagated between Alice and Bob to explain the results: that was the hard part of the experiment.
 
 All attempts to simulate QM classically require signals to travel faster than the speed of light.
 

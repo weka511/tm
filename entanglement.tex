@@ -463,7 +463,7 @@ If we have an arbitrary state $\psi$, and we want the probability that a certain
 
 We'll recast Table \ref{table:classical:bell} in terms of projection operators.
 \begin{table}[H]
-	\caption{Projection operators for Bell's inequality}
+	\caption{Projection operators for Bell's inequality}\label{table:projection:bell}
 	\begin{center}
 		\begin{tabular}{|l|l|l|}\hline
 			\#&Propositions& Negated\\ \hline 
@@ -473,12 +473,55 @@ We'll recast Table \ref{table:classical:bell} in terms of projection operators.
 		\end{tabular}
 	\end{center}
 \end{table}
-Whence $P(A, \neg B) = \frac{1}{4}\big(\sigma_3 + I\big) \big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)$. Applying this to the Singlet, the left side of (\ref{eq:bell:ineq:classical}) becomes:
+
+
+
+Whence $P(A, \neg B) = \frac{1}{4}\big(\sigma_3 + I\big) \big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)$. Applying this to the Singlet, and using rotational invariance, the left side of (\ref{eq:bell:ineq:classical}) becomes:
 
 \begin{align*}
-	2 \frac{1}{\sqrt{2}}\big[\bra{ud}-\bra{du}\big]\frac{1}{4}\big(\sigma_3 + I\big) \big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)\frac{1}{\sqrt{2}}\big[\ket{ud}-\ket{du}\big]\approxeq 0.15
+	2& \frac{1}{\sqrt{2}}\big[\bra{ud}-\bra{du}\big]\frac{1}{4}\big(\sigma_3 + I\big) \big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)\frac{1}{\sqrt{2}}\big[\ket{ud}-\ket{du}\big]\\
+	=& 2 \frac{1}{\sqrt{2}} \frac{1}{4} \frac{1}{\sqrt{2}} \big[\bra{ud}-\bra{du}\big]\big(\sigma_3 + I\big) \big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)\big[\ket{ud}-\ket{du}\big]\\
+	=&\frac{1}{4} \big[\bra{ud}-\bra{du}\big]\big(\sigma_3 + I\big) \big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)\big[\ket{ud}-\ket{du}\big] \numberthis \label{eq:bell:lhs}
 \end{align*}
-LS gets 0.25 for RHS. contradicting (\ref{eq:bell:ineq:classical}). Verify calc! Singlet violates Bell's inequality, which mans thatthere is no possibility of an underlying classical way of thinking about QM based on set theory. It can not be the statistical theory of dome underlying complicated chaotic classical system. 
+We will build this expression up:
+\begin{align*}
+	\tau_3 \ket{ud} =& -\ket{ud}\\
+	\tau_1 \ket{ud} =& \ket{uu}\\
+	\tau_3 \ket{du} =& \ket{du}\\
+	\tau_1 \ket{du} =& \ket{dd} \text{, whence}\\
+	\big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)\ket{ud}=&\frac{\ket{uu}-\ket{ud}}{\sqrt{2}}+\ket{ud}\\
+	=& \frac{\ket{uu}}{\sqrt{2}} + \big(1-\frac{1}{\sqrt{2}}\big)\ket{ud} \text{, and}\\
+	\big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)\ket{du}=&\frac{\ket{dd}+\ket{du}}{\sqrt{2}}+\ket{du}\\
+	=&\frac{\ket{dd}}{\sqrt{2}} + \big(1+\frac{1}{\sqrt{2}}\big)\ket{du} \text{, and}
+\end{align*}
+Multiplying by $\sigma_3 + I$:
+\begin{align*}
+	\big(\sigma_3 + I\big) \big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)\ket{ud}=&\big(\sigma_3 + I\big) \big[\frac{\ket{uu}}{\sqrt{2}} + \big(1-\frac{1}{\sqrt{2}}\big)\ket{ud}\big]\\
+	=& 2 \big[\frac{\ket{uu}}{\sqrt{2}} + \big(1-\frac{1}{\sqrt{2}}\big)\ket{ud}\big] \text{, and}\\
+	\big(\sigma_3 + I\big) \big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)\ket{du}=&\big(\sigma_3 + I\big) \big[\frac{\ket{dd}}{\sqrt{2}} + \big(1+\frac{1}{\sqrt{2}}\big)\ket{du}\big]\\
+	=& 0
+\end{align*}
+So (\ref{eq:bell:lhs}) becomes:
+\begin{align*}
+	\frac{1}{4} \big[\bra{ud}-\bra{du}\big]  2 \big[\frac{\ket{uu}}{\sqrt{2}} + \big(1-\frac{1}{\sqrt{2}}\big)\ket{ud}\big] =& \frac{1}{2}\big(1-\frac{1}{\sqrt{2}}\big)\braket{ud|du}\\
+	 =& \frac{1}{2}\big(1-\frac{1}{\sqrt{2}}\big)\\
+	 \approx & 0.15 \numberthis \label{eq:bell:lhs:approx}
+\end{align*}
+
+Returning to Table \ref{table:projection:bell}, $P(A, \neg C) = \frac{1}{4}\big(\sigma_3 + I\big) \big(\tau_3+1\big)$. Applying this to the Singlet, and using rotational invariance, the right side of (\ref{eq:bell:ineq:classical}) becomes:
+\begin{align*}
+	\frac{1}{\sqrt{2}}&\big[\bra{ud}-\bra{du}\big]\frac{1}{4}\big(\sigma_3 + I\big) \big(\tau_3+I\big)\frac{1}{\sqrt{2}}\big[\ket{ud}-\ket{du}\big]\\
+	=&\frac{1}{8}\big[\bra{ud}-\bra{du}\big]\big(\sigma_3 + I\big) \big(\tau_3+I\big)\big[\ket{ud}-\ket{du}\big]
+\end{align*}
+
+\begin{align*}
+	\big(\tau_3+I\big) \ket{ud} =& 0\\
+	\big(\tau_3+I\big) \ket{du} =& 2\ket{du}\\
+	\big(\sigma_3 + I\big) \big(\tau_3+I\big)\big[\ket{ud}-\ket{du}\big]=&
+	-2 \big(\sigma_3 + I\big) \ket{du}\\
+	=& 0 \text{ WTF?}
+\end{align*}
+LS gets 0.25 for RHS. contradicting (\ref{eq:bell:ineq:classical}). Verify calc! Singlet violates Bell's inequality, which means that there is no possibility of an underlying classical way of thinking about QM based on set theory. It can not be the statistical theory of dome underlying complicated chaotic classical system. 
 
 Check Aspect's experiment!
 

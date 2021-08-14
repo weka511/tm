@@ -469,7 +469,7 @@ We'll recast Table \ref{table:classical:bell} in terms of projection operators.
 			\#&Propositions& Negated\\ \hline 
 			A&$\frac{1}{2}\big(\sigma_3 + I\big)$&\\ \hline
 			B&$\frac{1}{2}\big(\frac{\sigma_1+\sigma_3}{\sqrt{2}}+I\big)$&$\frac{1}{2}\big(\frac{\tau_1+\tau_3}{\sqrt{2}}+I\big)$\\ \hline
-			C&&$\frac{1}{2}\big(\tau_3+1\big)$\\ \hline
+			C&&$\frac{1}{2}\big(\tau_1+1\big)$\\ \hline
 		\end{tabular}
 	\end{center}
 \end{table}
@@ -508,20 +508,26 @@ So (\ref{eq:bell:lhs}) becomes:
 	 \approx & 0.15 \numberthis \label{eq:bell:lhs:approx}
 \end{align*}
 
-Returning to Table \ref{table:projection:bell}, $P(A, \neg C) = \frac{1}{4}\big(\sigma_3 + I\big) \big(\tau_3+1\big)$. Applying this to the Singlet, and using rotational invariance, the right side of (\ref{eq:bell:ineq:classical}) becomes:
+Returning to Table \ref{table:projection:bell}, $P(A, \neg C) = \frac{1}{4}\big(\sigma_3 + I\big) \big(\tau_1+1\big)$. Applying this to the Singlet, and using rotational invariance, the right side of (\ref{eq:bell:ineq:classical}) becomes:
 \begin{align*}
-	\frac{1}{\sqrt{2}}&\big[\bra{ud}-\bra{du}\big]\frac{1}{4}\big(\sigma_3 + I\big) \big(\tau_3+I\big)\frac{1}{\sqrt{2}}\big[\ket{ud}-\ket{du}\big]\\
-	=&\frac{1}{8}\big[\bra{ud}-\bra{du}\big]\big(\sigma_3 + I\big) \big(\tau_3+I\big)\big[\ket{ud}-\ket{du}\big]
+	\frac{1}{\sqrt{2}}&\big[\bra{ud}-\bra{du}\big]\frac{1}{4}\big(\sigma_3 + I\big) \big(\tau_1+I\big)\frac{1}{\sqrt{2}}\big[\ket{ud}-\ket{du}\big]\\
+	=&\frac{1}{8}\big[\bra{ud}-\bra{du}\big]\big(\sigma_3 + I\big) \big(\tau_1+I\big)\big[\ket{ud}-\ket{du}\big] \numberthis \label{eq:bell:rhs}
 \end{align*}
 
 \begin{align*}
-	\big(\tau_3+I\big) \ket{ud} =& 0\\
-	\big(\tau_3+I\big) \ket{du} =& 2\ket{du}\\
+	\big(\tau_1+I\big) \ket{ud} =& \ket{uu} + \ket{ud}\\
+	\big(\tau_1+I\big) \ket{du} =& \ket{dd} + \ket{du}\\
 	\big(\sigma_3 + I\big) \big(\tau_3+I\big)\big[\ket{ud}-\ket{du}\big]=&
-	-2 \big(\sigma_3 + I\big) \ket{du}\\
-	=& 0 \text{ WTF?}
+	\big(\sigma_3 + I\big) \big(\ket{uu} + \ket{ud}-\ket{dd} - \ket{du} \big)\\
+	=& \ket{uu} + \ket{ud}+\ket{dd} + \ket{du} + \ket{uu} + \ket{ud}-\ket{dd} - \ket{du}\\
+	=& 2 \big(\ket{uu} + \ket{ud}\big)
 \end{align*}
-LS gets 0.25 for RHS. contradicting (\ref{eq:bell:ineq:classical}). Verify calc! Singlet violates Bell's inequality, which means that there is no possibility of an underlying classical way of thinking about QM based on set theory. It can not be the statistical theory of dome underlying complicated chaotic classical system. 
+So (\ref{eq:bell:rhs}) becomes:
+\begin{align*}
+	\frac{1}{8}\big[\bra{ud}-\bra{du}\big] 2 \big(\ket{uu} + \ket{ud}\big) =& \frac{1}{4}\braket{ud|ud}\\
+	=&\frac{1}{4}
+\end{align*}
+Substituting this and (\ref{eq:bell:lhs:approx}) in (\ref{eq:bell:ineq:classical}), we get $0.17 \ge 0.25$--a contradiction. The Singlet violates Bell's inequality, which means that there is no possibility of an underlying classical way of thinking about QM based on set theory. It can not be the statistical theory of some underlying complicated, chaotic, classical system. 
 
 Check Aspect's experiment!
 

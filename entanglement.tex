@@ -572,16 +572,58 @@ Let us suppose that we have a machine that will take a system in an arbitrary st
 
 Our proof exploits the fact that cloning is quadratic, but time evolution is linear, to show that we can build a machine that clones $\ket{u}$ and $\ket{v}$, but not $\ket{r}$. There is some debate about building a machine to clone imperfectly: how good can it be?
 
-\url{https://youtu.be/XlLsTaJn9AQ?t=3515}
-
 \section{Bell's theorem and two-slit experiment}
 
+\subsection{Questions about entanglement}
+
+\begin{enumerate}
+	\item What happens if one member of an entangled pair is caught by a black hole? The outside electron becomes entangled with the degrees of freedom of the black hole. When the black hole evaporates, the photons are entangled with the electron that was outside.
+	\item What happens if two water molecules become entangled, and then one is placed in a bathtub full of water? The one outside becomes entangled with the state of the bathtub (the entangled molecule in the bathtub gets too mixed up with the others to have a clear identity). So what happens when the bathtub evaporates? The molecules remains entangled with the vapour, unless something comes over from the bathtub to interact with the molecules and break the entanglement. Disentanglement can take place, but only if the systems are close enough to interact.
+	\item What happens when we measure two entangles particles? That takes them out. What if we measure only one? It can? These measurements are called "observations", and we'll talk about them during this lecture.
+\end{enumerate}
+
 \subsection{Subspaces and Projection Operator}
+
+Review of several topics.
+\begin{enumerate}
+	\item Duality--bars and kets
+	\item Orthogonality
+	\item Linear Independence
+	\item Dimension
+\end{enumerate}
+
+\begin{thm}[Basis vectors]
+	In a $D$-dimensional space with orthogonality, we can always find $D$ mutually orthogonal, normalized basis vectors, $\ket{n} n=1,2,...D$.
+\end{thm}
+
+\begin{thm}[Expansion in basis vectors]
+	Any state vector can be written:
+	\begin{align*}
+		\psi =& \sum_{n=1}^{D} a_n \ket{n} \text{, where}\\
+		a_m =& \braket{m\vert\psi} \text{, and}\\
+		\psi =& \sum_{n=1}^{D} \ket{n} \braket{n\vert\psi} \numberthis \label{eq:psi_expanded}
+	\end{align*}
+\end{thm}
+Introducing the concept or a \emph{dyad}, $\ket{a}\bra{b}$:
+\begin{align*}
+	(\ket{a}\bra{b})\psi =& \ket{a}(\bra{b}\psi) \text{, we see from (\ref{eq:psi_expanded}):}\\
+	\ket{n}\bra{n} =& I \text{, the "Resolution of the Identity"}
+\end{align*}
+
+We will derive some interesting subspaces: subspaces correspond to observable questions that we might ask. Imagine an observable $K$, and consider the eigenvalue/eigenvector:
+\begin{align*}
+	K \ket{a} =& \lambda \ket{a} \text{. Suppose there is a linearly independednt eigenvector with the same eigenvalue}\\
+	K \ket{b} =& \lambda \ket{b} \text{, then any linrarly independent combination is also an eigenvalue}\\
+	K(\alpha \ket{a} + \beta \ket{b}) =& \lambda K(\alpha \ket{a} + \beta \ket{b})
+\end{align*}
 \subsection{Bell's theorem (rehearsal from the last lecture)}
+
 \subsection{Two slit and interference} 
+
 \subsection{Measurement and entanglement in the two-slit experiment}
 
 \section{Quantum Entanglement}
+
 \subsection{Two slit interference and measurement} 
 
 \subsection{High energy electrons emitting photons and destroying interference without explicit measurement} 
@@ -595,18 +637,29 @@ Our proof exploits the fact that cloning is quadratic, but time evolution is lin
 \section{Entropy \& Dynamics}
 
 \subsection{Entropy and Density matrix; Measuring Entanglement Entropy} 
+
 \subsection{Subsystems in pure states}
+
 \subsection{Entropy is not additive}
+
 \subsection{Dynamics in time - Schr\"odinger equation}
+
 \subsection{Unitary operators}
+
 \subsection{Hamiltonian}
 
 \section{Quantum Entanglement}
+
 \subsection{Dynamics of states in time; Hamiltonian is Energy}
+
 \subsection{Commutators, conservation}
+
 \subsection{Mixed state of energy}
+
 \subsection{Spin in a magnetic field}
+
 \subsection{Singlet vs Triplet states}
+
 \bibliographystyle{unsrt}
 \addcontentsline{toc}{section}{Bibliography}
 \raggedright

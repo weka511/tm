@@ -365,7 +365,7 @@ There is no way that either electron has a definite polarization. To see the dif
 \end{align*}
 So, for the singlet state, $\frac{1}{\sqrt{2}}\big[\ket{ud}\pm\ket{du}\big]$, if we measure $\vec{\sigma}$ we know $\vec{\tau}$. (Einstein, Podolsky, Rosen)\cite{einstein1935can}
 
-\subsection{Bell's Theorem and Bell's Inequality}
+\subsection{Bell's Theorem and Bell's Inequality}\label{sec:bell}
 
 We now come to Bell's famous theorem\cite{bell1964einstein}. Is it profound or trivial? Sometimes it seems profound, at other times it just seems to be a consequence of quantum mechanics. John Bell and Richard Feynman shared this ambivalence. The theorem is absolutely classical:  Bell's theorem excludes quantum mechanics; in quantum mechanics you can find violations of Bell's inequality.
 
@@ -622,12 +622,70 @@ There is a subspace corresponding to the eigenvalue. So the measurement $K=\lamb
 \begin{align*}
 	(\sum_a \ket{a} \bra{a}) \psi =& \psi \text{, if $\psi$ in subspace}\\
 	=& \text{ projection onto subspace otherwise}\\
-	\sum_a \ket{a} \bra{a} =& \mathbb{P}_{K=\lambda}
+	\sum_a \ket{a} \bra{a} =& \mathbb{P}_{K=\lambda} \numberthis \label{eq:projection}
 \end{align*}
 
-\url{https://youtu.be/xXBx8_19nyw?t=1721}
+To construct a projection operator for a values of a property:
+\begin{enumerate}
+	\item find subspace;
+	\item find basis in that subspace;
+	\item construct what would have been the identity--(\ref{eq:projection}).
+\end{enumerate}
+Any projection operator characterizes a property--the property that is true in that subspace.
 
-\subsection{Bell's theorem (rehearsal from the last lecture)}
+The probability postulate for quantum mechanics is most nicely expressed in terms of projection operators. Given an arbitrary, normalized, state $\psi$, which may or may not be in the subspace, the probability that $K$ has value $\lambda$ is the expectation $\braket{\psi\vert\mathbb{P}_{K=\lambda}\vert\psi}$
+
+\begin{align*}
+	\braket{\psi\vert\mathbb{P}_{K=\lambda}\vert\psi}=&\sum_a \braket{\psi\vert a}\braket{a \vert \psi} \text{, e.g.}\\
+	\mathbb{P}_\text{first spin up}=&\ket{uu}\bra{uu} + \ket{ud}\bra{ud}
+\end{align*}
+
+Two \emph{commuting} projection operators, $\mathbb{P}_{K=\lambda}$ and $\mathbb{P}_{L=\mu}$ enable simple definitions or "and" and "or" (we assume that the subspaces have non-zero vectors in common).
+
+\begin{thm}[Commuting projection operators]\label{thm:commuting}
+	If $\mathbb{P}_{K=\lambda}$ and $\mathbb{P}_{L=\mu}$ commute:
+	\begin{align*}
+		\mathbb{P}_{K=\lambda \land L=\mu} =& \mathbb{P}_{K=\lambda}\mathbb{P}_{L=\mu}\\
+		\mathbb{P}_{K=\lambda \lor L=\mu} =& \mathbb{P}_{K=\lambda} + \mathbb{P}_{L=\mu}
+	\end{align*}
+\end{thm}
+
+\begin{proof}
+	\begin{align*}
+		K (\mathbb{P}_K\ket{\psi}) =& \lambda (\mathbb{P}_K\ket{\psi}) \text{\because $\mathbb{P}_K\ket{\psi}$ subspace of things with property K}\\
+		\mathbb{P}_K\mathbb{P}_L \ket{\psi} =& \mathbb{P}_L\mathbb{P}_K \ket{\psi} \text{, has properties K \& L}
+	\end{align*}
+	So $\mathbb{P}_K\mathbb{P}_L$ corresponds to K \& L.
+\end{proof}
+
+Spins operators for two particles, $\sigma_i$ and $\tau_j$, are compatible.
+
+\subsection{Bell's theorem review}\label{sec:bell:review}
+
+NB: Bell not always violated. It is often true for some properties, not others. 
+
+In Section \ref{sec:bell}, we saw from (\ref{eq:bell:inequality}), that, for a classical system $$N(A, \neg B) + N(B, \neg C) \ge N(A,\neg C)$$
+We consider a two electron system with spins:
+\begin{itemize}
+	\item A $\uparrow$;
+	\item B $\nearrow$;
+	\item C $\rightarrow$.
+\end{itemize}
+Negating a property for one electron is the same as asserting it for the other electron if system is a Singlet. We can recast (\ref{eq:bell:inequality}):
+$$N(\uparrow \nearrow) + N(\nearrow \rightarrow) \ge N(\uparrow\rightarrow)$$
+Or, in terms of projection operators.
+\begin{table}[H]
+	\begin{center}
+		\caption{Recast (\ref{eq:bell:inequality}) in terms of projection operators, using Theorem \ref{thm:commuting}}
+		\begin{tabular}{|c|c|c|} \hline
+			$\uparrow\nearrow$&$\nearrow\rightarrow$&$\uparrow\rightarrow$ \\ \hline
+			$\frac{1+\sigma_3}{2} \Big(\frac{1+\frac{\tau_1+\tau_3}{\sqrt{2}}}{2}\Big)$&$\Big(\frac{1+\frac{\sigma_1+\sigma_3}{\sqrt{2}}}{2}\Big)\frac{\tau_1+1}{2}$&$\frac{1+\sigma_3}{2} \frac{1+\tau_1}{2}$ \\ \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+
+\url{https://youtu.be/xXBx8_19nyw?t=3836}
 
 \subsection{Two slit and interference} 
 

@@ -25,10 +25,14 @@
 \maketitle
 
 \begin{abstract}
-These are my notes from the Quantum Entanglement Part 1, lectures\cite{susskind2013entanglement}  from Leonard Susskind's Theoretical Minimum series\cite{susskind2007theoretical}. I have added headings based on the topics covered in each lecture, since each of the original lectures is has the same title, \emph{Quantum Entanglement}.
+These are my notes from the Quantum Entanglement Part 1, lectures\cite{susskind2013entanglement}  from Leonard Susskind's Theoretical Minimum series\cite{susskind2007theoretical}.
+
+	\begin{quotation}
+		The old Copenhagen interpretation of quantum mechanics associated with Niels Bohr is giving way to a more profound interpretation based on the idea of quantum entanglement. Entanglement not only replaces the obsolete notion of the collapse of the wave function but it is also the basis for Bell's famous theorem, the new paradigm of quantum computing, and finally the widely discussed "many-worlds" interpretation of quantum mechanics originated by Everett.
+	\end{quotation}
 
 Disclaimer: I have created these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended 
-as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
+as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own. I have added headings based on the topics covered in each lecture, since each of the original lectures is has the same title, \emph{Quantum Entanglement}.
 
 The notes were created using TexStudio\cite{TexStudio}, which I recommend for compiling them to a PDF; the bibliography was created using JabRef\cite{Jabref}.
 
@@ -536,8 +540,8 @@ Substituting this and (\ref{eq:bell:lhs:approx}) in (\ref{eq:bell:ineq:classical
 
 Thus the Singlet violates Bell's inequality: there is no possibility of an underlying classical way of thinking about QM where properties are based on set theory. It can not be the statistical theory of some underlying classical system, no matter how complicated, jumbled, or chaotic. 
 
-\subsubsection{The Aspect Experiment\cite{aspect1982experimental}}
-This is a beautiful experiment, which taught us a lot about measuring electrons, but the result was certain beforehand. Aspect asked whether there is an out, a way for classical mechanics to somehow simulate quantum mechanics: the answer is "yes", but only if the system under discussion has wires to connect the left electron to the right electron, so the electron on the left is not independent of the one on the right, and there is a processor in the centre. But the signals have to go faster than the speed of light! (Bob needs to tell Alice what is going on: what if the times are synchronized to the extent that the signals need to travel faster than light?) Aspect managed to check that the inequality was violated, and he did it in such a way that there was no way that light could have propagated between Alice and Bob to explain the results: that was the hard part of the experiment.
+\subsubsection{The Aspect Experiment}
+Alain Aspect performed  a beautiful experiment\cite{aspect1982experimental}, which taught us a lot about measuring electrons, but the result was certain beforehand. Aspect asked whether there is an out, a way for classical mechanics to somehow simulate quantum mechanics: the answer is "yes", but only if the system under discussion has wires to connect the left electron to the right electron, so the electron on the left is not independent of the one on the right, and there is a processor in the centre. But the signals have to go faster than the speed of light! (Bob needs to tell Alice what is going on: what if the times are synchronized to the extent that the signals need to travel faster than light?) Aspect managed to check that the inequality was violated, and he did it in such a way that there was no way that light could have propagated between Alice and Bob to explain the results: that was the hard part of the experiment.
 
 All attempts to simulate QM classically require signals to travel faster than the speed of light.
 
@@ -662,7 +666,7 @@ Spins operators for two particles, $\sigma_i$ and $\tau_j$, are compatible.
 
 \subsection{Bell's theorem review}\label{sec:bell:review}
 
-NB: Bell not always violated. It is often true for some properties, not others. 
+NB: Bell not always violated. It is often true for some properties, not others. LS suggests that you can choose A, B, C so Bell is satisfied, or so that it is not.
 
 In Section \ref{sec:bell}, we saw from (\ref{eq:bell:inequality}), that, for a classical system $$N(A, \neg B) + N(B, \neg C) \ge N(A,\neg C)$$
 We consider a two electron system with spins:
@@ -684,8 +688,11 @@ Or, in terms of projection operators.
 	\end{center}
 \end{table}
 
+Question: what sorts of experiment are we describing? Imagine a beam of electrons, which come out in correlated pairs. Electrons in each pair are near each other, they interact, and the lowest energy happens to be the singlet state. After a while they do or don't emit a photon, but they get into the singlet state. Then electrons are taken apart: this isn't hard to do--you send them through some system which separates them. You could use an electron/positron, and use a field to send them their separate ways, so we have many well separated pairs. Now divide into groups so we can do experiments: start with 100 billion pairs, take a third of them and measure $A\land\not B$--we measure the up component of the electron and the $45^{\circ}$ component of the positron, and count how many pairs were $\uparrow\nearrow$. This gives a probability. Repeat for second and third groups, \emph{mutatus mutandi}, to compute the other two probabilities.
 
-\url{https://youtu.be/xXBx8_19nyw?t=3836}
+When people talk about "non local" mechanisms, they mean that signals have to propagate faster then light.
+
+\url{https://youtu.be/xXBx8_19nyw?t=4394}
 
 \subsection{Two slit and interference} 
 

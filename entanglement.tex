@@ -612,10 +612,20 @@ Introducing the concept or a \emph{dyad}, $\ket{a}\bra{b}$:
 
 We will derive some interesting subspaces: subspaces correspond to observable questions that we might ask. Imagine an observable $K$, and consider the eigenvalue/eigenvector:
 \begin{align*}
-	K \ket{a} =& \lambda \ket{a} \text{. Suppose there is a linearly independednt eigenvector with the same eigenvalue}\\
-	K \ket{b} =& \lambda \ket{b} \text{, then any linrarly independent combination is also an eigenvalue}\\
-	K(\alpha \ket{a} + \beta \ket{b}) =& \lambda K(\alpha \ket{a} + \beta \ket{b})
+	K \ket{a} =& \lambda \ket{a} \text{ Suppose there is a linearly independednt eigenvector with the same eigenvalue}\\
+	K \ket{b} =& \lambda \ket{b} \text{, then any linearly independent combination is also an eigenvalue}\\
+	K(\alpha \ket{a} + \beta \ket{b}) =& \lambda (\alpha \ket{a} + \beta \ket{b})
 \end{align*}
+
+There is a subspace corresponding to the eigenvalue. So the measurement $K=\lambda$ is not necessarily identified with a single vector, but with a subspace. Once you have identified a subspace, you can find a basis. Lets suppose we have found a basis, $\{\ket{a}, \ket{b}\},...$, with dimension $<D$ and construct $\sum_a \ket{a} \bra{a}$
+
+\begin{align*}
+	(\sum_a \ket{a} \bra{a}) \psi =& \psi \text{, if $\psi$ in subspace}\\
+	=& \text{ projection onto subspace otherwise}\\
+	\sum_a \ket{a} \bra{a} =& \mathbb{P}_{K=\lambda}
+\end{align*}
+
+\url{https://youtu.be/xXBx8_19nyw?t=1721}
 
 \subsection{Bell's theorem (rehearsal from the last lecture)}
 

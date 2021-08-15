@@ -692,11 +692,40 @@ Question: what sorts of experiment are we describing? Imagine a beam of electron
 
 When people talk about "non local" mechanisms, they mean that signals have to propagate faster then light.
 
-\url{https://youtu.be/xXBx8_19nyw?t=4394}
+During the remainder of this lecture we will talk about three things: Interference phenomena; measurement and its connection with entanglement (how a measurement is really the establishment of entanglement between systems); and how measurements destroy interference--the collapse of the wave packet.
 
 \subsection{Two slit and interference} 
 
+\url{https://youtu.be/xXBx8_19nyw?t=4513}
+Consider an electron that can be in one of 7 positions--Figure \ref{fig:ent-2-slit}. We want the probability that the electron arrives at a particular point in the right hand column.
+
+\begin{figure}[H]
+	\begin{center}
+		\caption[Two slit experiment]{The two slit experiment. Electron starts in one of 7 positions and moves to the right. When an electron meets the 2nd column it bounces back, unless it is in one of the two positions designated as slits.}\label{fig:ent-2-slit}
+		\includegraphics[width=0.8\textwidth]{ent-2-slit}
+	\end{center}
+\end{figure}
+The quantum mechanical evolution of a system is linear. Imagine that a system moves from state $\ket{a}$ to $\ket{a^{\prime}}$ during time $t$, and from  $\ket{b}$ to $\ket{b^{\prime}}$. Then it moves from $\alpha \ket{a} + \beta \ket{b}$ to $\alpha \ket{a^{\prime}} + \beta \ket{b^{\prime}}$ during time $t$.
+
+Electron starts at 0 in first column, and either reaches +1 or -1 in second: by symmetry
+
+\begin{align*}
+	\ket{0} \rightarrow& \ket{-1} + \ket{+1}\\
+	\ket{+1} \rightarrow& \sum_n \psi_n \ket{n} \text{When electron reaches the 3rd column, "the screen":} \\
+	\ket{-1} \rightarrow& \sum_n \phi_n \ket{n} \text{, so, by linearity, after 2 steps starting at $\ket{0}$}\\
+	\ket{0} \rightarrow& \sum_n (\psi_n + \phi_n) \ket{n} \text{, so probability for $n$th state is}\\
+	(\psi_n^* + \phi_n^*)(\psi_n + \phi_n)=& \underbrace{\psi_n^*\psi_n}_\text{which is all we'd get if we closed first hole} + \psi_n^*\phi_n + \phi_n^*\psi_n + \phi_n^*\phi_n
+\end{align*}
+
+Classically we'd only get the first and last term, but in quantum mechanics we have the other two as well. By symmetry we might argues that $\psi_0$ and $\phi_0$ should be the same.
+\begin{align*}
+	\psi_0^*\psi_0 + \psi_0^*\phi_0 + \phi_0^*\psi_0 + \phi_0^*\phi_0 =& 4\psi_0^*\psi_0
+\end{align*}
+This is 4 times the probability that we'd get if $-1$ blocked; classically we'd expect 2 times!
+
 \subsection{Measurement and entanglement in the two-slit experiment}
+
+\url{https://youtu.be/xXBx8_19nyw?t=5476}
 
 \section{Quantum Entanglement}
 

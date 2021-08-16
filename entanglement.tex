@@ -779,17 +779,43 @@ What happens if someone watches whether electron goes through one hole or the ot
 \begin{align*}
 	\ket{0,d}\rightarrow& \ket{A,u} + \ket{B,d} \text{, states correlated and entangled}\\
 	\ket{A,u} \rightarrow& \sum_n \psi_n \ket{n,u}\\
-	\ket{B,d} \rightarrow& \sum_n \phi_n \ket{n,u}
+	\ket{B,d} \rightarrow& \sum_n \phi_n \ket{n,u} \numberthis \label{eq:twin:slit:AB}
 \end{align*}
 Terminology:
 \begin{itemize}
 	\item "collapsing the wavepacket" is the language to use if you don't want to remember the extra spin--collapse to $A$ or $B$;
 	\item "establishment of entanglement" is used when we keep the apparatus in our description.
 \end{itemize}
-\url{https://youtu.be/F3viANPhfD0?t=968}
-\subsection{High energy electrons emitting photons and destroying interference without explicit measurement} 
+What if particle gives a little kick to the screen, sufficient for us to know which hole it went through? Screen has an uncertainty in its momentum because it is well localized. particle shifts distribution, but slightly, so we don't get precise information concerning the hole.
 
-\subsection{Schr\"odinger cat and Wigner's friend} 
+Now, suppose that we do establish the entanglement of (\ref{eq:twin:slit:AB}), and calculate the probability of the electron being found at point $m$. There are two ways this can happen: with spin up, or spin down. We need to build the projection operator for being found at point $m$. So for $A+B$ we have:
+
+\begin{align*}
+	\sum_n&\big(\psi_n^* \bra{n,u}+\phi_n^*\bra{n,d}\big)\big(\ket{m,u}\bra{m,u} + \ket{m,d}\big)\ket{m,d} \sum_n\big(\psi_n \ket{n,u}+\phi_n\ket{n,d}\big)\\
+	=& \psi_m^* \psi_m +\phi_m^* \phi_m \text{. Cross terms vanish because of orthogonality.}
+\end{align*}
+
+So if you do an experiment, probabilities sum as in classical physics.
+
+\subsubsection{High energy electrons emitting photons and destroying interference without explicit measurement} 
+
+\begin{itemize}
+	\item The problem is not the spin, it is the correlation between the spin and the path. An additional "up" on both paths would not cancel interference.
+	\item LS doesn't need to look at the spin: it is enough that the path has been recorded tp destroy interference.
+	\item When electron is accelerated it may emit a photon, with a probability of 0.01 for a slowly moving electron. You cannot be certain which hole it went through. If the energy is really high, likelihood of emitting a photon is much higher, so interference may be partially destroyed. So the ability to emit photons may partially destroy interference pattern. 
+	\item If you know that probability of not quite 50-50, interference is destroyed a little bit.
+	\item The atmosphere is a source of interference.
+	\item Moon doesn't appear fuzzy, partly because it is heavy, partly because it is being constantly bombarded (observation).
+\end{itemize}
+
+Key take home: \begin{itemize}
+	\item if anything tags the electron so we know which part it went interference will be destroyed; .
+	\item if we only know probabilities for each hole, interference will be partially destroyed.
+\end{itemize}
+
+\subsection{Schr\"odinger's cat and Wigner's friend} 
+
+\url{https://youtu.be/F3viANPhfD0?t=2485}
 
  \subsection{Entropy, level of entanglement}  
  

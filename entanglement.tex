@@ -714,15 +714,15 @@ Electron starts at 0 in first column, and either reaches +1 or -1 in second: by 
 	\ket{+1} \rightarrow& \sum_n \psi_n \ket{n} \text{When electron reaches the 3rd column, "the screen":} \\
 	\ket{-1} \rightarrow& \sum_n \phi_n \ket{n} \text{, so, by linearity, after 2 steps starting at $\ket{0}$}\\
 	\ket{0} \rightarrow& \sum_n (\psi_n + \phi_n) \ket{n} \text{, so probability for $n$th state is}\\
-	(\psi_n^* + \phi_n^*)(\psi_n + \phi_n)=& \underbrace{\psi_n^*\psi_n}_\text{which is all we'd get if we closed first hole} + \psi_n^*\phi_n + \phi_n^*\psi_n + \phi_n^*\phi_n
+	(\psi_n^* + \phi_n^*)(\psi_n + \phi_n)=& \underbrace{\psi_n^*\psi_n}_\text{which is all we'd get if we closed first hole} + \psi_n^*\phi_n + \phi_n^*\psi_n + \phi_n^*\phi_n \numberthis \label{eq:P:hole0}
 \end{align*}
 
-Classically we'd only get the first and last term, but in quantum mechanics we have the other two as well. By symmetry we might argues that $\psi_0$ and $\phi_0$ should be the same.
+Classically we'd only get the first and last term, but in quantum mechanics we have the other two as well. By symmetry we might argue that $\psi_0$ and $\phi_0$ should be the same.
 \begin{align*}
 	\psi_0^*\psi_0 + \psi_0^*\phi_0 + \phi_0^*\psi_0 + \phi_0^*\phi_0 =& 4\psi_0^*\psi_0\numberthis \label{eq:constructive:interferance}
 \end{align*}
 This is 4 times the probability that we'd get if $-1$ blocked; classically we'd expect 2 times!
-Figure \ref{fig:change:sign}, however,  depicts an apparatus that changes the sign in the wave function, so  $\ket{0} \rightarrow \ket{-1} - \ket{+1}$. Now the terms in (\ref{eq:constructive:interferance}) cancel, giving destructive interference. The electron can get to a position either via the upper route or lower, but, if you open up both routes, it is impossible to get through! This is as odd as the Bell inequality. Probabilities in quantum mechanics are not doing what they do in classical mechanics: the probabilities for exclusive outcomes don't add.
+Figure \ref{fig:change:sign}, however,  depicts an apparatus that changes the sign in the wave function, so  $\ket{0} \rightarrow \ket{-1} - \ket{+1}$. Now the terms in (\ref{eq:constructive:interferance}) cancel, giving destructive interference. The electron can get to a position either via the upper route or lower, but, if you open up both routes, it is impossible to get through! This is as odd as the Bell inequality. Probabilities in quantum mechanics are not doing what they do in classical mechanics: the probabilities for exclusive outcomes don't add; the \emph{amplitudes} add.
 
 \begin{figure}[H]
 	\begin{center}
@@ -730,9 +730,24 @@ Figure \ref{fig:change:sign}, however,  depicts an apparatus that changes the si
 		\includegraphics[width=0.8\textwidth]{ent-2-slit-change-sign}
 	\end{center}
 \end{figure}
-\subsection{Measurement and entanglement in the two-slit experiment}
 
-\url{https://youtu.be/xXBx8_19nyw?t=5698}
+\subsection{Measurement \& entanglement in the 2 slit experiment}
+
+What happens if there is an apparatus that monitors--measures and records--which slit the electron goes through? In QM we can't do arbitrarily gentle experiments. It turns out we will change answers in a dramatic way and destroy interference. The electron becomes entangled with the apparatus.
+
+Place a spin next to the upper hole, initially down. If electron passes through upper hole, spin flips up, otherwise it stays down. System starts at $\ket{0,d}$. If we close lower hole we get $\ket{+1,u}$; closing upper hole gives $\ket{-1,d}$. Opening both gives $\ket{+1,u}+\ket{-1,d}$: the electron and spin have become entangled. What happens at screen? Assume spin is unaffected.
+
+\begin{align*}
+	\ket{+1,u} \rightarrow& \sum_n \psi_n \ket{n,u}  \\
+	\ket{-1,d} \rightarrow& \sum_n \phi_n \ket{n,d} \\
+	\ket{0} \rightarrow& \sum_n \big(\psi_n \ket{n,u} + \phi_n \ket{n,d}\big)
+\end{align*}
+
+If we try to compute the probability of the electron going through hole 0 in the screen, we no longer have the cross terms from (\ref{eq:P:hole0}), since $\braket{u\vert d}=0$.
+
+Making a measurement is establishing entanglement between the device and the system. The destruction of the interference is what is known as the collapse of the wave function.
+
+\url{https://youtu.be/xXBx8_19nyw?t=6648}
 
 \section{Quantum Entanglement}
 

@@ -747,12 +747,12 @@ If we try to compute the probability of the electron going through hole 0 in the
 
 Making a measurement is establishing entanglement between the device and the system. The destruction of the interference is what is known as the "collapse of the wave function".
 
-Can't electron become entangle with an atom in the surround to the slit? Yes, and it destroys the interference pattern. Photons are easier, as they don't interact so much. Electric field of electron may interact with something: if the disturbance is enough that you can tell which slit the electron went through, then you completely destroy the interference pattern. \begin{itemize}
-	\item If electron goes through slit and moves the probability distribution of some degree of freedom enough that you know the slit, then you lose interference.
+Can't electron become entangled with an atom in the surround to the slit? Yes, and that destroys the interference pattern. Photons are easier, as they don't interact so much. Electric field of electron may interact with something: if the disturbance is enough that you can tell which slit the electron went through, then you completely destroy the interference pattern. \begin{itemize}
+	\item If electron moves the probability distribution of some degree of freedom enough that you know which slit it went through, then you lose interference.
 	\item If it shifts just a little bit, so you don't know which slit, then interference will not be completely destroyed.
 \end{itemize}
 
-Iy is a matter of degree: freeze things, pout everything into ground state, so nothing is easly disturbed, then you can create pretty much the idealized situation where, after you have gone through, there is nothing that has been recorded. If there is an energy gap, and the photon/electron has low energy, it might not be able to make the disturbance: so you have the interference pattern.
+It is a matter of degree: freeze things, put everything into ground state, so nothing is easily disturbed; then you can create pretty much the idealized situation where, after you have gone through, there is nothing that has been recorded. If there is an energy gap, and the photon/electron has low energy, it might not be able to make the disturbance: so you have the interference pattern.
 
 NB: an experiment either means many repetition, or many particles. You need statistics to see the probabilities.
 
@@ -760,7 +760,33 @@ NB: an experiment either means many repetition, or many particles. You need stat
 \section{Quantum Entanglement}
 
 \subsection{Two slit interference and measurement} 
+LS reviewed the two slit experiment, replacing $\{+1,-1\}$ with $\{A,B\}$. He notes that classically the probabilities add: to get the probability for a point on the screen with both slits open is the sum of the probabilities with $A$ (only) open, and $B$ (only open.) 
 
+\begin{align*}
+	\ket{0}\rightarrow& \ket{A} + \ket{B}\\
+	\ket{A} \rightarrow& \sum_n \psi_n \ket{n}\\
+	\ket{B} \rightarrow& \sum_n \phi_n \ket{n}\\
+	P_n^A =& \psi_n^* \psi_n\\
+	P_n^B =& \phi_n^* \phi_n\\
+	\ket{A} + \ket{B} \rightarrow & \sum_n \big(\psi_n + \phi_n\big) \ket{n}\\
+	P_n^{A+B} =& \big(\psi_n^* + \phi_n^*\big)\big(\psi_n + \phi_n\big)\\
+	=& \underbrace{\psi_n^*\psi_n + \phi_n^*\phi_n}_\text{sum of original probabilities} + \underbrace{\phi_n^*\psi_n + \psi_n^*\phi_n}_\text{interference term}
+\end{align*}
+
+$P_n^{A+B}$ gives twice classical probability, other positions give zero.
+
+What happens if someone watches whether electron goes through one hole or the other? In the previous lecture we used a spin to record whether the electron went through A.
+\begin{align*}
+	\ket{0,d}\rightarrow& \ket{A,u} + \ket{B,d} \text{, states correlated and entangled}\\
+	\ket{A,u} \rightarrow& \sum_n \psi_n \ket{n,u}\\
+	\ket{B,d} \rightarrow& \sum_n \phi_n \ket{n,u}
+\end{align*}
+Terminology:
+\begin{itemize}
+	\item "collapsing the wavepacket" is the language to use if you don't want to remember the extra spin--collapse to $A$ or $B$;
+	\item "establishment of entanglement" is used when we keep the apparatus in our description.
+\end{itemize}
+\url{https://youtu.be/F3viANPhfD0?t=968}
 \subsection{High energy electrons emitting photons and destroying interference without explicit measurement} 
 
 \subsection{Schr\"odinger cat and Wigner's friend} 

@@ -16,6 +16,7 @@
 \setcounter{tocdepth}{2}
 \tikzfeynmanset{compat=1.0.0}
 \definecolor{Gray}{gray}{0.5}
+\DeclareMathOperator{\Tr}{Tr}
 %opening
 \title{Theoretical Minimum\\Quantum Entanglement, Part 1}
 \author{Simon Crase (compiler)\\simon@greenweaves.nz}
@@ -41,11 +42,9 @@ The notes were created using TexStudio\cite{TexStudio}, which I recommend for co
 \tableofcontents
 \listoffigures
 \listoftables
-\listoftheorems
-
+\listoftheorems[title=List of Theorems and Definitions]
 
 \section{Introduction}
-
 
 We, as animals, have inherited, through the process of evolution, certain intuitive ways of thinking about the physical world:
 \begin{enumerate}
@@ -83,7 +82,8 @@ We can generalize the definition of the number of bits of information: it doesn'
 
 All real systems are quantum mechanical. In this course we will try to answer the question why the quantum mechanics is suppressed in many systems we observe.
 
-A Newtonian system is one that is in a definite state, and that evolves deterministically.
+\begin{defn}[A Newtonian system is one that is in a definite state, and that evolves deterministically.]
+\end{defn}
 
 The Second Law of Thermodynamics arises because we lose the ability to follow the evolution of a system in precise detail.
 
@@ -170,23 +170,25 @@ This section continues the review of material from \cite{susskind2013quantum}.
 
 We need complex numbers to handle evolution with time.
 
-Define:
-\begin{align*}
-	\sigma_3 =& \begin{bmatrix} 1&0\\
-	0&-1
-                \end{bmatrix} \numberthis \label{eq:sigmas} \\
-            \sigma_2 =& \begin{bmatrix}
-            	0 & -i\\
-            	i & 0
-            \end{bmatrix}\\
-     \sigma_1 =& \begin{bmatrix} 0&1\\
-         	1&0
-     \end{bmatrix} \text{, then}\\
-	\sigma_3^2 =& 1 \numberthis \label{eq:sigma_sq}\\
-	\sigma_3^2 =& 1\\
-	\sigma_1^2 =& 1
-\end{align*}
-and the eigenvalues are $\pm1$.
+\begin{defn}[Pauli Matrices]
+	\begin{align*}
+		\sigma_3 =& \begin{bmatrix} 1&0\\
+			0&-1
+		\end{bmatrix} \numberthis \label{eq:sigmas} \\
+		\sigma_2 =& \begin{bmatrix}
+			0 & -i\\
+			i & 0
+		\end{bmatrix}\\
+		\sigma_1 =& \begin{bmatrix} 0&1\\
+			1&0
+		\end{bmatrix} \text{, then}\\
+		\sigma_3^2 =& 1 \numberthis \label{eq:sigma_sq}\\
+		\sigma_3^2 =& 1\\
+		\sigma_1^2 =& 1
+	\end{align*}
+\end{defn}
+
+The eigenvalues are $\pm1$.
 
 
 \begin{thm}[If $M$ is Hermitian and it has two different eigenvalues, then the eigenvectors are orthogonal.]
@@ -456,8 +458,9 @@ Note that we can replace numbers with probabilities, since we are working with z
 	\mathbb{P}_{\sigma_i} =& \frac{\sigma_i + I}{2} \text{, for $i \in \{1,2, 3\}$}
 \end{align*}
 
-\subsubsection{Alternative definition  for probability postulate of quantum mechanics}
-If we have an arbitrary state $\psi$, and we want the probability that a certain thing is true, construct the projection operator for the eigenvector corresponding to that certain thing, $\mathbb{P}$; the probability is the expectation of $\mathbb{P}$, $\braket{\psi|\mathbb{P}|\psi}$.
+\begin{defn}[Alternative definition  for probability postulate of quantum mechanics]
+	If we have an arbitrary state $\psi$, and we want the probability that a certain thing is true, construct the projection operator for the eigenvector corresponding to that certain thing, $\mathbb{P}$; the probability is the expectation of $\mathbb{P}$, $\braket{\psi|\mathbb{P}|\psi}$.
+\end{defn}
 
 \begin{enumerate}
 	\item Projection operators correspond to statements.
@@ -829,11 +832,13 @@ The process of separating a system into that which measures, and that which is m
 
 How do you define a measure of entanglement? Entanglement Entropy does this.
 
-What is classical entropy? Entropy is a property of the system and my state of knowledge abut the system. The less I know about the system the more the entropy. Imagine a classical system with $N$ states, where we know that the system is in one of $n$ states with equal probability. We can say that our degree of ignorance is $n$. If $n=1$, we say entropy is zero. If $n=N$, we know nothing about which state the system is in--maximum entropy. We define entropy to be:
-\begin{align*}
-	S=&\log{n}\text{, or, more generally}\\
-	S =&- \sum_i P_j \log{P_i}
-\end{align*}
+What is classical entropy? Entropy is a property of the system and my state of knowledge abut the system. The less I know about the system the more the entropy. Imagine a classical system with $N$ states, where we know that the system is in one of $n$ states with equal probability. We can say that our degree of ignorance is $n$. If $n=1$, we say entropy is zero. If $n=N$, we know nothing about which state the system is in--maximum entropy.
+\begin{defn}[Entropy]
+	\begin{align*}
+		S=&\log{n}\text{, or, more generally}\\
+		S =&- \sum_i P_j \log{P_i}
+	\end{align*}
+\end{defn}
 
 The difference between actual entropy and maximum entropy is called "information".
 
@@ -854,15 +859,17 @@ Now if M is Hermitian,there is a basis in which the matrix is diagonal, so the t
 	\sum \rightarrow& Tr \text{, in passage to quantum mechanics}
 \end{align*}
 Imagine that someone creates a system in a state $\ket{i}$, but they only tell us the probability distribution, $\rho_i$. We define the density matrix, the analogue of the classical $P_i$:
-\begin{align*}
-	\begin{pmatrix}
-		\rho_1&0&0&0&...\\
-		0&\rho_2&0&0&...\\
-		0&0&\rho_3&0&...\\
-		0&0&0&\rho_4&...\\
-		0&0&0&0&...
-	\end{pmatrix}
-\end{align*}
+\begin{defn}[The density matrix, $\rho$]
+	\begin{align*}
+		\begin{pmatrix}
+			\rho_1&0&0&0&...\\
+			0&\rho_2&0&0&...\\
+			0&0&\rho_3&0&...\\
+			0&0&0&\rho_4&...\\
+			0&0&0&0&...
+		\end{pmatrix}
+	\end{align*}
+\end{defn}
 The trace of the density matrix is 1.
 We have an observable $F$. If we were in the $i$th state, the expectation would be $\braket{i\vert F \vert i}$.
 \begin{thm}[$\bar{F}= T_r F \rho$.]
@@ -884,9 +891,38 @@ We now introduce the quantum mechanical definition of entropy. If one $rho_i$ is
 \begin{align*}
 	S =& -T_r \rho \log{\rho}
 \end{align*}
+
+
 \section{Entropy \& Dynamics}
 
 \subsection{Entropy and Density matrix; Measuring Entanglement Entropy} 
+
+\begin{itemize}
+	\item The density matrix is more general than the state vector, as it incorporates information about how the system was prepared. 
+	\item If you know nothing, density matrix is $\frac{1}{N}I$: all possibilities are equally weighted.
+	\item Density matrix has all eigenvalues real and non-negative $\lambda_i,\; i=1,2,...N$. The eigenvectors form an orthonormal basis.
+	\item  The probability of having been prepared in the state corresponding to the $i$th eigenvector is $\lambda_i$.
+	\item Extremes of knowledge are $\frac{1}{N}I$ and a pure state $\ket{\psi}$: density matrix if projection onto that pure state $\ket{\psi} \bra{\psi}$. 
+\end{itemize}
+
+Consider an observable $M$ for a system in a pure state $\ket{\psi}$:
+\begin{align*}
+	\bar{M} =& \Tr \rho M\\
+	=& \sum_i \braket{i \vert \rho M \vert i}\\
+	=& \sum_i \braket{i \vert \psi}\braket{\psi \vert M i}\\
+	=& \sum_i \braket{\psi \vert M i} \braket{i \vert \psi}\\
+	=& \braket{\psi \vert M \psi} \; \because \sum_i \ket{i}\bra{i}=I
+\end{align*}
+
+This isn't surprising for a pure state. Suppose that we don't have a pure state.
+\begin{align*}
+	\bar{M} =& \Tr \rho M\\
+	=& \sum_i \braket{i \vert \rho M \vert i} \\
+	=& \sum_{i,j} \braket{i\vert\rho j} \braket{j\vert M \vert i}\\
+	=& \sum_j \lambda_j \braket{j\vert M \vert j} \text{, in the basis in which $\rho$ is diagonal}
+\end{align*}
+
+\url{https://youtu.be/C1erB9p5414?t=1341}
 
 \subsection{Subsystems in pure states}
 

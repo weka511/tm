@@ -611,7 +611,7 @@ Review of several topics.
 Introducing the concept or a \emph{dyad}, $\ket{a}\bra{b}$:
 \begin{align*}
 	(\ket{a}\bra{b})\psi =& \ket{a}(\bra{b}\psi) \text{, we see from (\ref{eq:psi_expanded}):}\\
-	\ket{n}\bra{n} =& I \text{, the "Resolution of the Identity"}
+	\ket{n}\bra{n} =& I \text{, the "Resolution of the Identity"} \numberthis \label{eq:resolution:identity}
 \end{align*}
 
 We will derive some interesting subspaces: subspaces correspond to observable questions that we might ask. Imagine an observable $K$, and consider the eigenvalue/eigenvector:
@@ -696,7 +696,6 @@ During the remainder of this lecture we will talk about three things: Interferen
 
 \subsection{Two slit and interference} 
 
-\url{https://youtu.be/xXBx8_19nyw?t=4513}
 Consider an electron that can be in one of 7 positions--Figure \ref{fig:ent-2-slit}. We want the probability that the electron arrives at a particular point in the right hand column.
 
 \begin{figure}[H]
@@ -813,14 +812,78 @@ Key take home: \begin{itemize}
 	\item if we only know probabilities for each hole, interference will be partially destroyed.
 \end{itemize}
 
-\subsection{Schr\"odinger's cat and Wigner's friend} 
+\subsubsection{Schr\"odinger's cat and Wigner's friend}
 
-\url{https://youtu.be/F3viANPhfD0?t=2485}
+Schr\"odinger's cat is \emph{not} in a superposition of alive and dead. The cat is entangled: it is part of an entangled system.
+\begin{itemize}
+	\item Start with a live cat, and an unfired gun, $\ket{lu}\rightarrow\alpha\ket{lu}+\beta\ket{df}$
+	\item You can not do an interference experiment with live and dead.
+	\item You don't have to look at the cat to determine whether it is alive or dead, you can look at the gun.
+\end{itemize}
 
- \subsection{Entropy, level of entanglement}  
- 
- \subsection{Trace and Density matrix }
- 
+We can't talk about the electron having been at A or B unless we measure it: electron has to do something that it has arrived. We also to an experiment at the screen to record the fact that the electron has arrived (E.g. we don't look at the electron, we look at the black spot on a photographic plate, which has become entangled with the electron).
+
+The process of separating a system into that which measures, and that which is measured is always ambiguous. We can say that the experiment doesn't complete until "I" look at the spin, in which case we add another element, "me"; this has two states, having seen spin up, and recorded that in my brain, and having seen and recorded down ($\ket{A,up,up}$). But someone else could be observing me: we'd still have consistency. Schr\"odinger opens box, and he becomes entangled, then Wigner asks Schr\"odinger what he saw,...
+
+\subsection{Entropy, level of entanglement}  
+
+How do you define a measure of entanglement? Entanglement Entropy does this.
+
+What is classical entropy? Entropy is a property of the system and my state of knowledge abut the system. The less I know about the system the more the entropy. Imagine a classical system with $N$ states, where we know that the system is in one of $n$ states with equal probability. We can say that our degree of ignorance is $n$. If $n=1$, we say entropy is zero. If $n=N$, we know nothing about which state the system is in--maximum entropy. We define entropy to be:
+\begin{align*}
+	S=&\log{n}\text{, or, more generally}\\
+	S =&- \sum_i P_j \log{P_i}
+\end{align*}
+
+The difference between actual entropy and maximum entropy is called "information".
+
+\subsection{Trace and Density matrix }
+
+Let $M$ be a matrix/linear operator in a space with basis $\ket{i}$ and consider the trace:
+\begin{align*}
+	T_r M =& \sum_i \braket{i\vert M \vert i}
+\end{align*}
+
+\begin{thm}The trace of a matrix is independent of the choice of basis
+\end{thm}
+
+Now if M is Hermitian,there is a basis in which the matrix is diagonal, so the trace is the sum of the eigenvalues.
+
+\begin{align*}
+	\bar{F} =& \sum_i P_i F_i \text{Classical expected value}\\
+	\sum \rightarrow& Tr \text{, in passage to quantum mechanics}
+\end{align*}
+Imagine that someone creates a system in a state $\ket{i}$, but they only tell us the probability distribution, $\rho_i$. We define the density matrix, the analogue of the classical $P_i$:
+\begin{align*}
+	\begin{pmatrix}
+		\rho_1&0&0&0&...\\
+		0&\rho_2&0&0&...\\
+		0&0&\rho_3&0&...\\
+		0&0&0&\rho_4&...\\
+		0&0&0&0&...
+	\end{pmatrix}
+\end{align*}
+The trace of the density matrix is 1.
+We have an observable $F$. If we were in the $i$th state, the expectation would be $\braket{i\vert F \vert i}$.
+\begin{thm}[$\bar{F}= T_r F \rho$.]
+	i.e. in the case where all we know is the $\rho_i$
+\end{thm}
+\begin{proof}
+	\begin{align*}
+		T_r F \rho=&\sum_i \braket{i \vert F \rho \vert i}\\
+		=& \sum_{i,j} \braket{i \vert F \vert j} \braket{j \vert \rho \vert i} \text{, from (\ref{eq:resolution:identity}) "resolution of the identity"}\\
+		=& \underbrace{\sum_i \braket{i \vert F \vert i}}_\text{Expectation if in state $i$} \underbrace{\rho_i}_\text{Probability of being in state i}\\
+		=& \bar{F}
+	\end{align*}
+\end{proof}
+
+\begin{thm}[$T_r(AB)=T_r(BA)$]This is true even if the two matrices don't commute.
+\end{thm}
+We now introduce the quantum mechanical definition of entropy. If one $rho_i$ is 1 and all the others zero, entropy is zero.
+
+\begin{align*}
+	S =& -T_r \rho \log{\rho}
+\end{align*}
 \section{Entropy \& Dynamics}
 
 \subsection{Entropy and Density matrix; Measuring Entanglement Entropy} 

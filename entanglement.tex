@@ -26,7 +26,7 @@
 \maketitle
 
 \begin{abstract}
-These are my notes from the Quantum Entanglement Part 1, lectures\cite{susskind2013entanglement}  from Leonard Susskind's Theoretical Minimum series\cite{susskind2007theoretical}.
+These are my notes from the Quantum Entanglement Part 1, lectures\cite{susskind2013entanglement}  from Leonard Susskind's Theoretical Minimum series\cite{susskind2007theoretical}. Since the lectures were given weekly, Professor Susskind often repeats material from one lecture at the start of the next. I have omitted much of the repeated material.
 
 	\begin{quotation}
 		The old Copenhagen interpretation of quantum mechanics associated with Niels Bohr is giving way to a more profound interpretation based on the idea of quantum entanglement. Entanglement not only replaces the obsolete notion of the collapse of the wave function but it is also the basis for Bell's famous theorem, the new paradigm of quantum computing, and finally the widely discussed "many-worlds" interpretation of quantum mechanics originated by Everett.
@@ -759,7 +759,7 @@ It is a matter of degree: freeze things, put everything into ground state, so no
 NB: an experiment either means many repetition, or many particles. You need statistics to see the probabilities.
 
 
-\section{Quantum Entanglement}
+\section{Measurement, Entropy, the Density Matrix}
 
 \subsection{Two slit interference and measurement} 
 LS reviewed the two slit experiment, replacing $\{+1,-1\}$ with $\{A,B\}$. He notes that classically the probabilities add: to get the probability for a point on the screen with both slits open is the sum of the probabilities with $A$ (only) open, and $B$ (only open.) 
@@ -1030,11 +1030,51 @@ NB: we are talking about entropy of a subsystem, not the combined system, which 
 
 \subsection{Dynamics in time - Schr\"odinger equation}
 
-\url{https://youtu.be/C1erB9p5414?t=4232}
+In classical logic, if we are dealing with a discrete system, the only thing that makes sense is discrete time, and we permute points in configuration space. In quantum mechanics, we can have discrete systems, but evolution can be continuous.
+
+Assumption: the logical relationship between states does not change with time. Two orthogonal states will evolve into orthogonal states. The inner product between states remains the same.
+
+Actually, this is second principle: linearity is first.
+
 
 \subsubsection{Unitary operators}
 
+Start with system in state $\ket{\psi(0)}$ and evolves to $\ket{\psi(t)}$
+
+\begin{align*}
+	\ket{\psi(t)} =& U(t) \ket{\psi(0)} \text{, where}\\
+	U(0) =& I\\
+	\braket{\psi(t)\vert\phi(t)} =& \braket{\psi(0)\vert\phi(0)} \text{, as stated above.}\\
+	\bra{\phi(t)} =& \bra{\phi(0)} U^\dagger(t) \text{, whence}\\
+	\braket{\psi(t)\vert\phi(t)} =& \braket{\psi(0)\vert U^\dagger(t) U(t)\vert\phi(0)}\\
+	=& \braket{\psi(0)\vert\phi(0)} \\
+	=& \braket{\psi(0)\vert I \vert \phi(0)} \text{, so we can show}\\
+	 U^\dagger(t) U(t)=& I \text {, Unitary!}
+\end{align*}
+
 \subsubsection{Hamiltonian}
+
+Imagine a very small time evolution $t=\epsilon$, where $\epsilon^2$ can be ignored.
+
+\begin{align*}
+	U(\epsilon) =& 1 - i \epsilon H\\
+	U^\dagger (\epsilon) =& \\
+	U^\dagger (\epsilon)U(\epsilon) =& \big(1 + i \epsilon H^\dagger\big)\big(1 - i \epsilon H\big)\\
+	=& I + i\epsilon (H^\dagger-H) + O(\epsilon^2) \text{, which must equal I for Unitarity}\\
+	H^\dagger=& H \text{, for unitarity}
+\end{align*}
+
+\begin{itemize}
+	\item $H$ must be Hermitian; it is called the Hamiltonian.
+	\item $H$ is an observable, the Energy.
+	\item The eigenvalues of $H$ are the energy levels.
+\end{itemize}
+Writing the foregoing differently:
+\begin{align*}
+	\ket{\psi(\epsilon)} - \ket{\psi(0)} =& -i \epsilon H \ket{\psi(0)}\\
+	\frac{\ket{\psi(\epsilon)} - \ket{\psi(0)}}{\epsilon H } =& -i \ket{\psi(0)}\\
+	\frac{\partial \ket{\psi}}{\partial t} =& -i H \ket{\psi}
+\end{align*}
 
 \section{Quantum Entanglement}
 

@@ -16,7 +16,7 @@
 \setcounter{tocdepth}{2}
 \tikzfeynmanset{compat=1.0.0}
 \definecolor{Gray}{gray}{0.5}
-\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Tr}{Tr \;}
 %opening
 \title{Theoretical Minimum\\Quantum Entanglement, Part 1}
 \author{Simon Crase (compiler)\\simon@greenweaves.nz}
@@ -922,10 +922,69 @@ This isn't surprising for a pure state. Suppose that we don't have a pure state.
 	=& \sum_j \lambda_j \braket{j\vert M \vert j} \text{, in the basis in which $\rho$ is diagonal}
 \end{align*}
 
-\url{https://youtu.be/C1erB9p5414?t=1341}
+Entanglement happens when we have more than one system. Let's suppose we have a system composed of two parts, and suppose we have a basis labelled $\ket{ab}, a \in [1,N], b in [1,n]$. The most general state is $\sum_{a,b}\psi(a,b)\ket{ab}$ where $\sum_{a,b}\psi(a,b)^*\psi(a,b)=1$
+
+Suppose we do an experiment that doesn't involve $b$. Alice measures observable $M$ so A.
+
+\begin{align*}
+	\bar{M}=&\sum_{a,b,a^{\prime},b^{\prime}}\psi^*(a^{\prime},b^{\prime})\braket{a^{\prime}b^{\prime}\vert M \vert ab} \psi(a,b)\\
+	=&\sum_{a,b,a^{\prime}}\psi^*(a^{\prime},b)\braket{a^{\prime}b\vert M \vert ab} \psi(a,b) \text{$\because$ $M$ acts only on $A$.}\\
+	=& \sum_{a,a^{\prime}}  M_{a,a^\prime} \sum_b \psi^*(a^{\prime},b) \psi(a,b)\\
+	=& \sum_{a,a^{\prime}}  M_{a,a^\prime} \rho_{a,a^\prime}\\
+	=& \Tr M \rho
+\end{align*} 
+
+
 
 \subsection{Subsystems in pure states}
+When does $\psi(a,b)$ that the subsystems are in pure states? What if factorizes into separate functions of $a$ and $b$--$\psi(a,b)=\phi(a) \chi(b)$. We'll comput the density matrix.
 
+\begin{align*}
+	\rho_{ab} =& \sum_b \phi(a) \chi(b) \phi^*(a^\prime) \chi^*(b)\\
+	=& \phi(a) \phi^*(a^\prime) \underbrace{\sum_b  \chi(b)  \chi^*(b)}_\text{=1}\\
+	=& \phi(a) \phi^*(a^\prime) \text{, then the expecation of the observable $M$ is}\\
+	\bar{M} =& \sum_{a,b}\phi(a) M_{a,a^\prime}\phi^*(a^\prime)\\
+	=& \braket{\phi\vert M\vert \phi}
+\end{align*}
+$b$ can be ignored, and we can describe using a pure state $a$. But most functions aren't products! If entropy is small we are close to a product, if large we are entangled.
+
+We illustrate with two examples.
+
+\subsubsection{The Singlet}
+
+\begin{align*}
+	&\frac{\ket{ud}-\ket{du}}{\sqrt{2}} \text{. We express as a wave function}\\
+	\psi(u,u) =& 0\\
+	\psi(u,d) =& \frac{1}{\sqrt{2}}\\
+	\psi(d,u) =& \frac{1}{\sqrt{2}}\\
+	\psi(d,d) =& 0
+\end{align*}
+
+We calculate the density matrix for the $A$ system, the first spin.
+\begin{align*}
+	\rho_{uu} =& \psi(u,u)\psi^*(u,u) +  \psi(u,d)\psi^*(u,d) =& \frac{1}{2}\\
+	\rho_{ud} =& \psi(u,u)\psi^*(d,u) +  \psi(u,d)\psi^*(d,d) =& 0\\
+	\rho_{du} =& \psi(d,u)\psi^*(u,u) +  \psi(d,d)\psi^*(u,d) =& 0\\
+	\rho_{dd} =& \psi(d,u)\psi^*(d,u) +  \psi(d,d)\psi^*(d,d) =& \frac{1}{2}
+\end{align*}
+
+\begin{align*}
+	\rho =& \begin{pmatrix}
+		\frac{1} {2}&0\\
+		0 &\frac{1}{2}
+	\end{pmatrix}
+\end{align*}
+Entropy is $\log{2}$: maximum value - complete ignorance.
+
+What is expectation of spin?
+
+\begin{align*}
+	\vec{\sigma} \cdot \vec{\hat{n}} =& \Tr \rho \sigma \cdot n\\
+	=& \Tr \frac{1}{2} I \sigma \cdot n\\
+	=& \frac{1}{2} \Tr\sigma \cdot n\\
+	=& 0
+\end{align*}
+\url{https://youtu.be/C1erB9p5414?t=3507}
 \subsection{Entropy is not additive}
 
 \subsection{Dynamics in time - Schr\"odinger equation}

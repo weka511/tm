@@ -984,14 +984,57 @@ What is expectation of spin?
 	=& \frac{1}{2} \Tr\sigma \cdot n\\
 	=& 0
 \end{align*}
-\url{https://youtu.be/C1erB9p5414?t=3507}
-\subsection{Entropy is not additive}
+
+Singlet is maximally mixed state.
+
+\subsubsection{Another example: not the Singlet}
+Consider:
+\begin{align*}
+	\psi(u,u) =& \frac{1}{2}\\
+	\psi(u,d) =& \frac{1}{2}\\
+	\psi(d,u) =& \frac{1}{2}\\
+	\psi(d,d) =& \frac{1}{2} \text{, then}\\
+	\rho_{uu} =& \frac{1}{4} \\
+	\rho_{ud} =& \frac{1}{4}\\
+	\rho_{du} =&  \frac{1}{4}\\
+	\rho_{dd} =&  \frac{1}{4} \text{, i.e.}\\
+	\rho =& \begin{pmatrix}
+		\frac{1} {2}&\frac{1} {2}\\
+		\frac{1} {2} &\frac{1}{2}
+	\end{pmatrix}	
+\end{align*}
+We'll calculate the eigenvalues.
+\begin{thm}[Product and sum of eigenvalues]
+	\begin{enumerate}
+		\item Product of eigenvalues = determinant;
+		\item Sum of eigenvalue=trace.
+	\end{enumerate}
+\end{thm}
+
+So we know eigenvalues are 0 and 1; entropy is zero. This is a product state.
+
+\begin{align*}
+	\Tr \rho \sigma_3 =& 0\\
+	\Tr \rho \sigma_1 =& 1
+\end{align*}
+
+A pair of spins along the x-axis!
+
+The entropy that is exhibited in these examples is called \emph{entanglement entropy}. 
+
+
+
+\subsubsection{Entropy is not additive}
+
+NB: we are talking about entropy of a subsystem, not the combined system, which had zero entropy. Entropy in general does not add; in particular entanglement entropy does not add.
 
 \subsection{Dynamics in time - Schr\"odinger equation}
 
-\subsection{Unitary operators}
+\url{https://youtu.be/C1erB9p5414?t=4232}
 
-\subsection{Hamiltonian}
+\subsubsection{Unitary operators}
+
+\subsubsection{Hamiltonian}
 
 \section{Quantum Entanglement}
 

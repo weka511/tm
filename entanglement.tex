@@ -1073,8 +1073,18 @@ Writing the foregoing differently:
 \begin{align*}
 	\ket{\psi(\epsilon)} - \ket{\psi(0)} =& -i \epsilon H \ket{\psi(0)}\\
 	\frac{\ket{\psi(\epsilon)} - \ket{\psi(0)}}{\epsilon H } =& -i \ket{\psi(0)}\\
-	\frac{\partial \ket{\psi}}{\partial t} =& -i H \ket{\psi}
+	\frac{\partial \ket{\psi}}{\partial t} =& -\frac{i}{\hbar}  H \ket{\psi} \text{, introducing Planck's constant}
 \end{align*}
+
+Now let us consider an eigenvalue/eigenvector. Assume $\ket{\psi}$ remains an eigenvector for all time:
+\begin{align*}
+	H \ket{\psi} =& E \ket{\psi} \\
+	\ket{\psi(t)} =& f(t) \ket{\psi(0)}\\
+	\frac{\partial f}{\partial t} =&-i \frac{E}{\hbar}f\text{, whence}\\
+	f(t) =& e^{-i \frac{E}{\hbar} t}
+\end{align*}
+So an eigenvector evolves with time by multiplying by a time-dependent phase. Angular frequency is $\frac{E}{\hbar}$.
+
 
 \section{Quantum Entanglement}
 

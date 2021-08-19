@@ -846,7 +846,7 @@ The difference between actual entropy and maximum entropy is called "information
 
 Let $M$ be a matrix/linear operator in a space with basis $\ket{i}$ and consider the trace:
 \begin{align*}
-	T_r M =& \sum_i \braket{i\vert M \vert i}
+	\Tr M =& \sum_i \braket{i\vert M \vert i}
 \end{align*}
 
 \begin{thm}The trace of a matrix is independent of the choice of basis
@@ -856,7 +856,7 @@ Now if M is Hermitian,there is a basis in which the matrix is diagonal, so the t
 
 \begin{align*}
 	\bar{F} =& \sum_i P_i F_i \text{Classical expected value}\\
-	\sum \rightarrow& Tr \text{, in passage to quantum mechanics}
+	\sum \rightarrow& \Tr \text{, in passage to quantum mechanics}
 \end{align*}
 Imagine that someone creates a system in a state $\ket{i}$, but they only tell us the probability distribution, $\rho_i$. We define the density matrix, the analogue of the classical $P_i$:
 \begin{defn}[The density matrix, $\rho$]
@@ -872,24 +872,24 @@ Imagine that someone creates a system in a state $\ket{i}$, but they only tell u
 \end{defn}
 The trace of the density matrix is 1.
 We have an observable $F$. If we were in the $i$th state, the expectation would be $\braket{i\vert F \vert i}$.
-\begin{thm}[$\bar{F}= T_r F \rho$.]
+\begin{thm}[$\bar{F}= \Tr F \rho$.]
 	i.e. in the case where all we know is the $\rho_i$
 \end{thm}
 \begin{proof}
 	\begin{align*}
-		T_r F \rho=&\sum_i \braket{i \vert F \rho \vert i}\\
+		\Tr F \rho=&\sum_i \braket{i \vert F \rho \vert i}\\
 		=& \sum_{i,j} \braket{i \vert F \vert j} \braket{j \vert \rho \vert i} \text{, from (\ref{eq:resolution:identity}) "resolution of the identity"}\\
 		=& \underbrace{\sum_i \braket{i \vert F \vert i}}_\text{Expectation if in state $i$} \underbrace{\rho_i}_\text{Probability of being in state i}\\
 		=& \bar{F}
 	\end{align*}
 \end{proof}
 
-\begin{thm}[$T_r(AB)=T_r(BA)$]This is true even if the two matrices don't commute.
+\begin{thm}[$\Tr(AB)=\Tr(BA)$]This is true even if the two matrices don't commute.
 \end{thm}
 We now introduce the quantum mechanical definition of entropy. If one $rho_i$ is 1 and all the others zero, entropy is zero.
 
 \begin{align*}
-	S =& -T_r \rho \log{\rho}
+	S =& -\Tr \rho \log{\rho}
 \end{align*}
 
 
@@ -1042,7 +1042,7 @@ Actually, this is second principle: linearity is first.
 Start with system in state $\ket{\psi(0)}$ and evolves to $\ket{\psi(t)}$
 
 \begin{align*}
-	\ket{\psi(t)} =& U(t) \ket{\psi(0)} \text{, where}\\
+	\ket{\psi(t)} =& U(t) \ket{\psi(0)} \text{, where} \numberthis \label{eq:evolution_time}\\
 	U(0) =& I\\
 	\braket{\psi(t)\vert\phi(t)} =& \braket{\psi(0)\vert\phi(0)} \text{, as stated above.}\\
 	\bra{\phi(t)} =& \bra{\phi(0)} U^\dagger(t) \text{, whence}\\
@@ -1073,8 +1073,10 @@ Writing the foregoing differently:
 \begin{align*}
 	\ket{\psi(\epsilon)} - \ket{\psi(0)} =& -i \epsilon H \ket{\psi(0)}\\
 	\frac{\ket{\psi(\epsilon)} - \ket{\psi(0)}}{\epsilon H } =& -i \ket{\psi(0)}\\
-	\frac{\partial \ket{\psi}}{\partial t} =& -\frac{i}{\hbar}  H \ket{\psi} \text{, introducing Planck's constant}
+	\frac{\partial \ket{\psi}}{\partial t} =& -\frac{i}{\hbar}  H \ket{\psi} \text{, Schr\"odinger's equation} \numberthis \label{eq:shcroedinger}
 \end{align*}
+
+We have introduced Planck's constant.
 
 Now let us consider an eigenvalue/eigenvector. Assume $\ket{\psi}$ remains an eigenvector for all time:
 \begin{align*}
@@ -1089,12 +1091,43 @@ So an eigenvector evolves with time by multiplying by a time-dependent phase. An
 \section{Quantum Entanglement}
 
 \subsection{Dynamics of states in time; Hamiltonian is Energy}
+In the previous lecture we looked at how systems change with time. The state of a system is described by a ket vector, $\ket{\psi}$, which moves around with time. The rule is it moves under the influence of a linear operator--(\ref{eq:evolution_time}). The assumption that evolution is linear cannot be proved: it is a postulate that is rooted in experiment, plus the fact that everyone who has tried to change it has ended up with conceptual difficulties, such as energy not being conserved, probability is not defined, etc. We expect probability to be conserved.
+
+\begin{thm}[Conservation of probability requires the inner product of any two vectors to be independent of time]
+	\begin{align*}
+		\braket{\psi(t)\vert \psi(t)} =& \braket{\psi(0)\vert \psi()} \text{, $\forall t, \psi()$}\\
+		\implies&\\
+		\braket{\phi(t)\vert \psi(t)} =& \braket{\phi(0)\vert \psi()} \text{, $\forall t, \psi(), \phi()$}
+	\end{align*}
+\end{thm}
+
+\begin{defn}[Unitarity]
+	If $U^\dagger U=1$, we say that $U$ is unitary.
+\end{defn}
+
+\begin{thm}[The matrix describing the evolution of the wave function (\ref{eq:evolution_time}) is unitary]
+\end{thm}
+\begin{proof}
+	\begin{align*}
+		\ket{\psi(t)} =& U(t) \ket{\psi(0)} \text{, where} \\
+		U(0) =& I\\
+		\braket{\psi(t)\vert\phi(t)} =& \braket{\psi(0)\vert\phi(0)} \text{, as stated above.}\\
+		\bra{\phi(t)} =& \bra{\phi(0)} U^\dagger(t) \text{, whence}\\
+		\braket{\psi(t)\vert\phi(t)} =& \braket{\psi(0)\vert U^\dagger(t) U(t)\vert\phi(0)}\\
+		=& \braket{\psi(0)\vert\phi(0)} \\
+		=& \braket{\psi(0)\vert I \vert \phi(0)} \text{, so we can show}\\
+		U^\dagger(t) U(t)=& I \text {, Unitary!}
+	\end{align*}
+\end{proof}
+
+Why is Planck's constant so small? Why is Avigadro's number so large? This aren't questions about physics, but about human biology.
 
 \subsection{Commutators, conservation}
 
 \subsection{Mixed state of energy}
 
 \subsection{Spin in a magnetic field}
+
 
 \subsection{Singlet vs Triplet states}
 

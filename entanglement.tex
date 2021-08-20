@@ -1088,7 +1088,7 @@ Now let us consider an eigenvalue/eigenvector. Assume $\ket{\psi}$ remains an ei
 So an eigenvector evolves with time by multiplying by a time-dependent phase. Angular frequency is $\frac{E}{\hbar}$.
 
 
-\section{Quantum Entanglement}
+\section{Hamiltonian}
 
 \subsection{Dynamics of states in time; Hamiltonian is Energy}
 In the previous lecture we looked at how systems change with time. The state of a system is described by a ket vector, $\ket{\psi}$, which moves around with time. The rule is it moves under the influence of a linear operator--(\ref{eq:evolution_time}). The assumption that evolution is linear cannot be proved: it is a postulate that is rooted in experiment, plus the fact that everyone who has tried to change it has ended up with conceptual difficulties, such as energy not being conserved, probability is not defined, etc. We expect probability to be conserved.
@@ -1163,14 +1163,50 @@ How do other observables change with time? How do their expectations change with
 
 From the foregoing $\dot{\bar{A}} = \bar{\big[H,A\big]}$. That is the fundamental significance of the Hamiltonian. Clearly $\dot{\bar{H}} = \bar{\big[H,H\big]} = 0$.
 
-\url{https://youtu.be/qg-95d6OJJM?t=3140}
+The set of things that commute with the Hamiltonian is the set of conserved quantities.
 
 \subsection{Mixed state of energy}
 
+The Hamiltonian is Hermitian, so it has a complete set of eigenvectors. If you use this as the basis, $H$ is diagonal. $U$ is also diagonal, with exponentiation. $U = e^{-i\frac{H}{\hbar}t}$
+
+Combine two non-interacting systems: energies (and, hence, frequencies) add.
+
 \subsection{Spin in a magnetic field}
+
+We have $\sigma_1$, $\sigma_2$, $\sigma_3$ and the magnetic field, $\vec{B}$. Magnetic moment is proportional to spin: $\vec{mu} = \frac{\mu}{2}\sigma$, and $E=\frac{\mu}{2}\sigma \cdot \vec{B}.$
+
+\begin{align*}
+	H =& \frac{\mu}{2}\sigma \cdot \vec{B}\\
+	=& \frac{\mu}{2}\sigma_3 B \text{, if we align the magnetc field with z-axis}
+\end{align*}
+
+We compute the time derivative of expected spins.
+\begin{align*}
+	\dot{\sigma_3} =& \frac{i}{\hbar} \big[H,\sigma_3\big]\\
+	\propto& [\sigma_3,\sigma_3] \\
+	=& 0\\
+	\dot{\sigma_1} =& \frac{i}{\hbar} \big[H,\sigma_1\big]\\
+	=& \frac{i}{\hbar} \frac{\mu}{2} B \big[\sigma_3,\sigma_1\big]\\
+	=& \frac{i}{\hbar} \frac{\mu}{2} B 2 i \sigma_2\\
+	=& - \frac{\mu B}{\hbar} \sigma_2\\
+	\dot{\sigma_2} =&  \frac{\mu B}{\hbar} \sigma_1
+\end{align*}
+We have a point rotating in a plane.
+\begin{align*}
+	\sigma_1 = \cos{\frac{\mu B}{\hbar} t}\\
+	\sigma_2 = \sin{\frac{\mu B}{\hbar} t}
+\end{align*}
 
 
 \subsection{Singlet vs Triplet states}
+
+Two electrons providing fields for each other:
+\begin{align*}
+	H \propto \vec{\sigma} \cdot \vec{\tau}
+\end{align*}
+This has 4 eigenvectors: singlet and triplet(degenerate).
+
+\url{https://youtu.be/qg-95d6OJJM?t=4954}
 
 \bibliographystyle{unsrt}
 \addcontentsline{toc}{section}{Bibliography}

@@ -1057,11 +1057,11 @@ Start with system in state $\ket{\psi(0)}$ and evolves to $\ket{\psi(t)}$
 Imagine a very small time evolution $t=\epsilon$, where $\epsilon^2$ can be ignored.
 
 \begin{align*}
-	U(\epsilon) =& 1 - i \epsilon H\\
+	U(\epsilon) =& 1 - i \epsilon H \numberthis \label{eq:introducing:hamiltonian}\\
 	U^\dagger (\epsilon) =& \\
 	U^\dagger (\epsilon)U(\epsilon) =& \big(1 + i \epsilon H^\dagger\big)\big(1 - i \epsilon H\big)\\
 	=& I + i\epsilon (H^\dagger-H) + O(\epsilon^2) \text{, which must equal I for Unitarity}\\
-	H^\dagger=& H \text{, for unitarity}
+	H^\dagger=& H \text{, unitarity of $U\implies$ $H$ is Hermitian}
 \end{align*}
 
 \begin{itemize}
@@ -1073,7 +1073,7 @@ Writing the foregoing differently:
 \begin{align*}
 	\ket{\psi(\epsilon)} - \ket{\psi(0)} =& -i \epsilon H \ket{\psi(0)}\\
 	\frac{\ket{\psi(\epsilon)} - \ket{\psi(0)}}{\epsilon H } =& -i \ket{\psi(0)}\\
-	\frac{\partial \ket{\psi}}{\partial t} =& -\frac{i}{\hbar}  H \ket{\psi} \text{, Schr\"odinger's equation} \numberthis \label{eq:shcroedinger}
+	\frac{\partial \ket{\psi}}{\partial t} =& -\frac{i}{\hbar}  H \ket{\psi} \text{, Schr\"odinger's equation} \numberthis \label{eq:schroedinger}
 \end{align*}
 
 We have introduced Planck's constant.
@@ -1120,9 +1120,50 @@ In the previous lecture we looked at how systems change with time. The state of 
 	\end{align*}
 \end{proof}
 
-Why is Planck's constant so small? Why is Avigadro's number so large? This aren't questions about physics, but about human biology.
+Why is Planck's constant so small? Why is Avogadro's number so large? This aren't questions about physics, but about human biology.
 
-\subsection{Commutators, conservation}
+\begin{thm}[In (\ref{eq:introducing:hamiltonian}),  unitarity of $U\implies$ $H$ is Hermitian]
+\end{thm}
+
+So $H$ is an observable: every system must have one, otherwise it could not evolve. It is, of course, the Hamiltonian (as an operator): its values is called Energy.
+
+What is energy? Force rimes distance doesn't help us the understand the energy of the electromagnetic field.  We need a more general definition. One way to characterize energy is that it is conserved: that is the single most important thing about it. For certain familiar systems it takes a certain form.
+
+Another definition of Energy:
+$$E = h\nu = \hbar \omega$$
+What is the connection between this $E$ and the $H$ in the Schr\"odinger equation, (\ref{eq:schroedinger})? Since $H$ is Hermitian it has a complete set of eigenvectors, which we will use as a basis. Note that an eigenvector remains an eigenvector, since we are adding a little vector proportional to it and to $\epsilon$.
+
+\begin{align*}
+	H\ket{\psi_E} =& E\ket{\psi_E}\text{, let us try:}\\
+	\ket{\psi_E(t)} =& f(t)\ket{\psi_E}\\
+	\dot{f}\ket{\psi_E} =& -\frac{iH}{\hbar}\ket{\psi_E}\\
+	=& -\frac{iE}{\hbar} f(t) \ket{\psi_E}\\
+	\dot{f}=& -\frac{iE}{\hbar} f\\
+	f(t) =& e^{-\frac{iE}{\hbar}t}\\
+	=& e^{-i \omega t} \text{, see definition of energy in terms of $\omega$}
+\end{align*}
+
+What if we have a vector that is a sum of eigenvectors. Any vector can be so expanded. What happens to $\sum_n \alpha_n \ket{\psi_n}$ with time?
+
+\begin{align*}
+	\sum_n \alpha_n \ket{\psi_n} \rightarrow \sum_n \alpha_n e^{-\frac{iE_n}{\hbar}t} \ket{\psi_n}
+\end{align*}
+
+How do other observables change with time? How do their expectations change with time?
+
+\begin{align*}
+	\bar{A} =&\braket{\psi\vert A \psi}\text{. We want to compute}\\
+	\frac{\bar{A}}{dt} =&	\braket{\dot{\psi}\vert A \psi} + \braket{\psi\vert A \dot{\psi}} \text{, since $A$ constant}\\
+	=& \frac{i}{\hbar}\braket{\psi\vert H A \psi} - \frac{i}{\hbar}\braket{\psi\vert A H \psi}\\
+	=& \frac{i}{\hbar} \braket{\psi \vert \big(HA-AH\big)\vert \psi}\\
+	=& \frac{i}{\hbar} \braket{\psi \vert \big[H,A\big]\vert \psi} \text {, commutator}
+\end{align*}
+
+\subsection{Commutators and conservation}
+
+From the foregoing $\dot{\bar{A}} = \bar{\big[H,A\big]}$. That is the fundamental significance of the Hamiltonian. Clearly $\dot{\bar{H}} = \bar{\big[H,H\big]} = 0$.
+
+\url{https://youtu.be/qg-95d6OJJM?t=3140}
 
 \subsection{Mixed state of energy}
 

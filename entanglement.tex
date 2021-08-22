@@ -53,7 +53,7 @@ We, as animals, have inherited, through the process of evolution, certain intuit
 \end{enumerate}
 
 Everything in modern physics has to do with those things that are beyond these intuitions:
-speeds approaching speed of light; 4 D; the electron; the uncertainty principle. Why would natural selection have given us the intuition of the uncertainty principle? Intuitions for particles come from rocks.
+speeds approaching speed of light; 4 dimensions; the electron; the uncertainty principle. Why would natural selection have given us the intuition of the uncertainty principle? Intuitions for particles come from rocks.
 
 This course will try to expose some of the weirdness of quantum mechanics, the weirdness of the logic of quantum mechanics, the weirdness of how quantum information works. 
 
@@ -64,25 +64,50 @@ This course will cover:
 	\item physics as information.
 \end{enumerate}
 
-Classical mechanics represents values as real numbers; QM often uses discrete values. Before we cover quantum bits we will look at classical bits, using Dirac's notation $\ket{0}$ or $\ket{1}$--\cite{susskind2014quantum}. For an $n-bit$ \emph{classical} system, the number of configurations is $N_S=2^n$, so $n=\log_2(N_S)$.
+Classical mechanics represents values as real numbers; QM often uses discrete values. Before we cover quantum bits we will look at classical bits, using Dirac's notation $\ket{0}$ or $\ket{1}$. For an $n-bit$ \emph{classical} system, the number of configurations is $N_S=2^n$, so $n=\log_2(N_S)$.
 
 We can generalize the definition of the number of bits of information: it doesn't have to be an integer. We can represent the state of a physical system, to a specified precision, by a string of bits (quantize space, etc). Figure \ref{fig:state_transition} shows how the laws of physics can be represented as a state transition diagram.
+
+
 
 \begin{figure}[H]
 	\caption[State transition diagram for laws of physics]{The laws of physics can be represented as a state transition diagram. In quantum mechanics there is no fundamental difference between forward in time and backward in time.}\label{fig:state_transition}
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Reversible Laws}\label{fig:state_transition_reversible}
-		\includegraphics[width=0.8\textwidth]{et-1-1}
+		\caption{A reversible law}\label{fig:state_transition_reversible}
+		\begin{center}
+			\begin{tikzpicture}[node distance=2cm]
+			\node (A) at (0, 0) {};
+			\node (B) at (0, 2) {};
+			\node (C) at (2, 2) {};
+			\node (D) at (2, 0) {};
+			\draw[->]
+			(A) edge (B) (B) edge (C) (C) edge (D) (D) edge (A);	
+		\end{tikzpicture}
+	\end{center}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{An irreversible law}
-		\includegraphics[width=0.8\textwidth]{et-1-2}
+		\begin{center}
+			\begin{tikzpicture}[node distance=2cm]
+				
+				% nodes
+				\node (A) at (0, 0) {};
+				\node (B) at (0, 2) {};
+				\node (C) at (2, 2) {};
+				\node (D) at (2, 0) {};
+				
+				% arrows
+				\draw[->]
+				(A) edge (B) (B) edge (C) (C) edge (D) ;
+				\draw [->] (D)--(B); 
+			\end{tikzpicture}
+		\end{center}
 	\end{subfigure}
 \end{figure}
 
 All real systems are quantum mechanical. In this course we will try to answer the question why the quantum mechanics is suppressed in many systems we observe.
 
-\begin{defn}[A Newtonian system is one that is in a definite state, and that evolves deterministically.]
+\begin{defn}[A Newtonian system is one that is in a definite state, and that evolves deterministically]
 \end{defn}
 
 The Second Law of Thermodynamics arises because we lose the ability to follow the evolution of a system in precise detail.
@@ -103,7 +128,7 @@ This section reviews material from \cite{susskind2013quantum}.
 
 Classical mechanics is based on classical logic. Classical logic means that the states are Boolean: a set of points, each representing a state, and all the logic is classical. Quantum mechanics depends on a completely different logic.
 
-We start with a quantum bit of Qbit, such as the spin of an electron.
+We start with a quantum bit or Qbit, such as the spin of an electron.
 
 We need the concepts of \emph{preparing} a state, and \emph{detecting} a state.
 
@@ -113,16 +138,16 @@ To \emph{detect} we apply magnetic field, and measure radiation to see how much 
 
 This is \emph{not} the way a real electron works.
 
-A real electron behaves like this. No matter how we prepare the electron, when we turn on the magnetic field, either:
+Here is how a real electron behaves: oo matter how we prepare it, when we turn on the magnetic field, either:
 \begin{itemize}
 	\item nothing happens; or
 	\item it emits a single photon corresponding to the flip from down to up.
 \end{itemize}
 It is almost as if the electron has only two possible configurations. But what if we prepare it at $45^\circ$ or $90^\circ$? Still we get up or down. What if we measure in some other direction?
 
-What if we prepare up, turn off field, and later measure? Up.
+What if we prepare up, turn off the field, and later measure? Up.
 
-What if we prepare at $45^\circ$, turn off field, then measure up/down? Then there is a probability of emitting photon. Probability has memory of previous state. Once you measure, state is fixed.
+What if we prepare at $45^\circ$, turn off the field, then measure up/down? Then there is a probability of emitting photon. Probability has memory of previous state. Once you measure, state is fixed.
 
 In physics we have learned not to ask questions unless we can devise a way to measure the answer.
 
@@ -155,7 +180,7 @@ This section continues the review of material from \cite{susskind2013quantum}.
 
 \begin{itemize}
 	\item Complex numbers
-	\item The equation $e^{i\theta} = \cos{\theta} + i \sin{\theta}$ contains all of trigonometry.
+	\item The equation $e^{i\theta} = \cos{\theta} + i \sin{\theta}$ contains all of trigonometry. As an example, LS showed that we can use it to retrieve the formula for $\cos(\theta+\phi)$.
 \end{itemize}
 
 \subsection{Postulates of Quantum mechanics}
@@ -163,7 +188,7 @@ This section continues the review of material from \cite{susskind2013quantum}.
 \begin{enumerate}
 	\item States are represented by normalized vectors.
 	\item Observables are represented by Hermitian matrices.
-	\item $\braket{a|M|a}$ - expectation
+	\item Expectation: $\bar{M}=\braket{a|M|a}$ - 
 	\item Eigenvalues and Eigenvectors
 \end{enumerate}
 
@@ -181,7 +206,7 @@ We need complex numbers to handle evolution with time.
 		\end{bmatrix}\\
 		\sigma_1 =& \begin{bmatrix} 0&1\\
 			1&0
-		\end{bmatrix} \text{, then}\\
+		\end{bmatrix} \text{. We can show that}\\
 		\sigma_3^2 =& 1 \numberthis \label{eq:sigma_sq}\\
 		\sigma_3^2 =& 1\\
 		\sigma_1^2 =& 1
@@ -191,13 +216,17 @@ We need complex numbers to handle evolution with time.
 The eigenvalues are $\pm1$.
 
 
-\begin{thm}[If $M$ is Hermitian and it has two different eigenvalues, then the eigenvectors are orthogonal.]
+\begin{thm}[If $M$ is Hermitian,  the eigenvectors are real and orthogonal]
 	\begin{align*}
 		M =& M^\dagger \text{ and} \numberthis \label{eq:hermitian}\\
-		M \ket{a} =& \lambda_a \ket{a}\text{ and} \numberthis \label{eq:sigma_ev1}\\
-		M \ket{b} =& \lambda_b \ket{b}\text{ and} \numberthis \label{eq:sigma_ev2}\\
-		\lambda_a \ne& \lambda_b \numberthis \label{eq:ne} \\
+		M \ket{a} =& \lambda_a \ket{a} \numberthis \label{eq:sigma_ev1}\\
 		\implies&\\
+		\lambda_a =&\lambda_a^*
+	\end{align*}
+	In addition if
+	\begin{align*}
+		M \ket{b} =& \lambda_b \ket{b}\text{ we have} \numberthis \label{eq:sigma_ev2}\\
+		\lambda_a \ne& \lambda_b \numberthis \label{eq:ne} \\
 		\braket{a \vert b} =& 0 \numberthis \label{eq:orthogonal}
 	\end{align*}
 \end{thm}
@@ -205,13 +234,21 @@ The eigenvalues are $\pm1$.
 \begin{proof}
 	From (\ref{eq:sigma_ev1})
 	\begin{align*}
-		\braket{b \vert M \vert a} =& \lambda_a \braket{b\vert a} \text{, similary from (\ref{eq:sigma_ev2})}\\
+		\braket{a \vert M \vert a} =& \lambda_a \braket{a\vert a} \text{, transposing}\\
+		\braket{a \vert M^\dagger \vert a} =& \lambda_a^* \braket{a\vert a} \text{, then applying \eqref{eq:hermitian}} \\
+		\braket{a \vert M^\dagger \vert a} =& \lambda_a^* \braket{a\vert a} \text{, whence}\\
+		\lambda_a^* =& \lambda_a
+	\end{align*}
+	Using  (\ref{eq:sigma_ev1}) again:
+	\begin{align*}
+		\braket{b \vert M \vert a} =& \lambda_a \braket{b\vert a} \text{, and from (\ref{eq:sigma_ev2})}\\
 		\braket{a \vert M \vert b} =& \lambda_b \braket{a\vert b} \text{, or, using (\ref{eq:hermitian})}\\
 		\braket{b \vert M \vert a} =& \lambda_b \braket{b\vert a} \text{, whence}\\
 		(\lambda_1-\lambda_b)\braket{b\vert a} =& 0 \text{, so, using (\ref{eq:ne})}\\
 		\braket{b\vert a} =& 0\text{, which is (\ref{eq:orthogonal})}
 	\end{align*}
 \end{proof}
+
 \section{Spins \& Quantum Entanglement}
 
 \subsection{Review of spins of single electrons (continued)}
@@ -224,10 +261,7 @@ Consider spin about an arbitrary "pointer" $(n_1,n_2,n_3)$
 		n_3&n_1-i n_2\\
 		n_1 + i n_2&-n_3
 	\end{bmatrix}\\
-\text{where }n_1^2 + n_2^2 +n_3^2 =& 1		
-\end{align*}
-We define:
-\begin{align*}
+\text{where }n_1^2 + n_2^2 +n_3^2 =& 1	\text{. We define:}	\\
 	n_1-i n_2 =& n_-\\
 	n_1+i n_2 =& n_+\text{ then}\\
 	\vec{\hat{n}}\cdot\vec{\sigma} =&\begin{bmatrix}

@@ -261,7 +261,7 @@ Consider spin about an arbitrary "pointer" $(n_1,n_2,n_3)$
 		n_3&n_1-i n_2\\
 		n_1 + i n_2&-n_3
 	\end{bmatrix}\\
-\text{where }n_1^2 + n_2^2 +n_3^2 =& 1	\text{. We define:}	\\
+	\text{where }n_1^2 + n_2^2 +n_3^2 =& 1	\text{. We define:}	\\
 	n_1-i n_2 =& n_-\\
 	n_1+i n_2 =& n_+\text{ then}\\
 	\vec{\hat{n}}\cdot\vec{\sigma} =&\begin{bmatrix}
@@ -275,11 +275,19 @@ We can show that $(\vec{\hat{n}}\cdot\vec{\sigma})^2=I$, whence eigenvalues are 
 	=& 1 - n_3^2
 \end{align*}
 
-Figure \ref{fig:et-4-1} depicts the only interesting question we can ask about a single spin: what if we prepare along one axis, measure along another, what is the probability of positive versus negative?
+Figure \ref{fig:et-4-1} depicts the only interesting question we can ask about a single spin:  if we prepare along one axis, measure along another, what is the probability of positive versus negative?
 
 \begin{figure}[H]
 	\caption{Prepare Spin along $\vec{\hat{n}}$, measure along $\vec{\hat{m}}$}\label{fig:et-4-1}
-	\includegraphics[width=0.8\textwidth]{et-4-1}
+	\begin{center}
+		\begin{tikzpicture}[node distance=2cm]
+			\node (A) at (0, 0) {};
+			\node (B) at (0.2, 2) {};
+			\node (C) at (1.414, 1.414) {};
+			\draw [->] (A)--(B) node[above] {$\vec{\hat{m}}$}; 
+			\draw [->] (A)--(C) node[above] {$\vec{\hat{n}}$};
+		\end{tikzpicture}
+	\end{center}
 \end{figure}
 
 We need the eigenvectors of $\vec{\sigma} \cdot \vec{\hat{n}}$ and   $\vec{\sigma} \cdot \vec{\hat{m}}$.
@@ -381,7 +389,7 @@ If one electron is up, the other is down, and vice versa. We can learn something
 	\end{align*}
 \end{thm}
 
-\begin{cor}
+\begin{cor}[The probability of a spin being $+1$ (or $-1$) along any axis is $\frac{1}{2}$]
 	$\vec{\sigma}\cdot\vec{\hat{n}}$ and $\vec{\tau}\cdot\vec{\hat{n}}$ both  act on the expression (\ref{eq:T1}) to give zero; hence the probability of a spin being $+1$ (or $-1$) along any axis is $\frac{1}{2}$.
 \end{cor}
 
@@ -883,9 +891,10 @@ Let $M$ be a matrix/linear operator in a space with basis $\ket{i}$ and consider
 	\Tr M =& \sum_i \braket{i\vert M \vert i}
 \end{align*}
 
-\begin{thm}The trace of a matrix is independent of the choice of basis
-\end{thm}
-
+\begin{thm}[The trace of a matrix is independent of the choice of basis]\end{thm}
+\begin{proof}
+	TBP
+\end{proof}
 Now if M is Hermitian,there is a basis in which the matrix is diagonal, so the trace is the sum of the eigenvalues.
 
 \begin{align*}

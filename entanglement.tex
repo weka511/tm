@@ -364,10 +364,10 @@ If we have two spins there are two interesting cases:
 There is no way that either electron has a definite polarization. To see the difference between plus and minus in (\ref{eq:T1a}), consider the operator $\vec{\sigma} + \vec{\tau}$
 
 \begin{align*}
-\big(\vec{\sigma_z} + \vec{\tau_z}\big)\frac{1}{\sqrt{2}}\big[\ket{ud}\pm\ket{du}\big]=& 0\\
-\big(\vec{\sigma_x} + \vec{\tau_x}\big)\frac{1}{\sqrt{2}}\big[\ket{ud}+\ket{du}\big]=& 2 \big[\ket{uu}+\ket{dd}\big]\\
-\big(\vec{\sigma_x} + \vec{\tau_x}\big)\frac{1}{\sqrt{2}}\big[\ket{ud}-\ket{du}\big]=& 0\\
-\big(\vec{\sigma_y} + \vec{\tau_y}\big)\frac{1}{\sqrt{2}}\big[\ket{ud}-\ket{du}\big]=& 0
+	\big(\vec{\sigma_z} + \vec{\tau_z}\big)\frac{1}{\sqrt{2}}\big[\ket{ud}\pm\ket{du}\big]=& 0\\
+	\big(\vec{\sigma_x} + \vec{\tau_x}\big)\frac{1}{\sqrt{2}}\big[\ket{ud}+\ket{du}\big]=& 2 \big[\ket{uu}+\ket{dd}\big]\\
+	\big(\vec{\sigma_x} + \vec{\tau_x}\big)\frac{1}{\sqrt{2}}\big[\ket{ud}-\ket{du}\big]=& 0\\
+	\big(\vec{\sigma_y} + \vec{\tau_y}\big)\frac{1}{\sqrt{2}}\big[\ket{ud}-\ket{du}\big]=& 0
 \end{align*}
 So, for the singlet state, $\frac{1}{\sqrt{2}}\big[\ket{ud}\pm\ket{du}\big]$, if we measure $\vec{\sigma}$ we know $\vec{\tau}$. (Einstein, Podolsky, Rosen)\cite{einstein1935can}
 
@@ -1204,8 +1204,66 @@ Two electrons providing fields for each other:
 \begin{align*}
 	H \propto \vec{\sigma} \cdot \vec{\tau}
 \end{align*}
-This has 4 eigenvectors: singlet and triplet(degenerate).
+\begin{thm}	[$H \propto \vec{\sigma} \cdot \vec{\tau}$ has 4 eigenvectors: singlet and triplet(degenerate)]
+	Let $\alpha_{uu}\ket{uu} + \alpha_{ud}\ket{ud} +\alpha_{du}\ket{du} + \alpha_{dd}\ket{dd}$ be an eigenvector of $\vec{\sigma} \cdot \vec{\tau}$ with eigenvalue $E$.
+	\begin{align*}
+		\big(\sigma_1\tau_1 +& \sigma_2\tau_2 + \sigma_3\tau_3\big) \big(\alpha_{uu}\ket{uu} + 	\alpha_{ud}\ket{ud} +\alpha_{du}\ket{du} + \alpha_{dd}\ket{dd}\big) \\=& E \big(\alpha_{uu}\ket{uu} + \alpha_{ud}\ket{ud} +\alpha_{du}\ket{du} + \alpha_{dd}\ket{dd}\big) \numberthis \label{eq:ev_sigma_tau} \text{, where}\\
+		1 =& \alpha_{uu}^2 + \alpha_{ud}^2 +\alpha_{du}^2 + \alpha_{dd}^2 \numberthis \label{eq:norm:alpha}
+	\end{align*}
+Then there are two eigenvalues, $+1$ and $-3$. The first eigenvalue corresponds to the singlet, and the other is degenerate, giving rise to the triplet.
+\end{thm}
 
+\begin{proof}
+ 	The left hand side of \eqref{eq:ev_sigma_tau} expands to:
+	\begin{align*}
+		& \alpha_{uu}\big(\ket{dd} - \ket{dd} + \ket{uu}\big) + \alpha_{ud}\big(\ket{du} +\ket{du} - \ket{ud}\big)\\
+		&+\alpha_{du}\big(\ket{ud} +\ket{ud} - \ket{du}\big) + \alpha_{dd}\big(-\ket{uu} + \ket{uu} +\ket{dd}\big)\\
+		=&  \alpha_{uu} \ket{uu} + \big( 2 \alpha_{du} - \alpha_{ud}\big)\ket{ud} + \big( 2 \alpha_{ud} - \alpha_{du} \big)\ket{du}+ \alpha_{dd}\ket{dd}	
+	\end{align*}
+	Equating with the RHS of (\ref{eq:ev_sigma_tau}):
+	\begin{align*}
+		\alpha_{uu} =& E \alpha_{uu} \numberthis \label{eq:alpha:uu}\\
+		 2 \alpha_{du} - \alpha_{ud} =& E \alpha_{ud} \text{, or, rearranging}\\
+		  2 \alpha_{du} =& (1+E) \alpha_{ud} \numberthis \label{eq:alpha:ud}\\
+		 2 \alpha_{ud} - \alpha_{du}=& E \alpha_{du}\text{, or, rearranging}\\
+		 2 \alpha_{ud} =& (1+E)\alpha_{du} \numberthis \label{eq:alpha:du}\\
+		 \alpha_{dd} =& E \alpha_{dd} \numberthis \label{eq:alpha:dd}
+	\end{align*}
+
+   \eqref{eq:alpha:ud} and \eqref{eq:alpha:du} imply:
+   \begin{align*}
+   	4 \alpha_{du} =& (1+E) 2\alpha_{ud}\\
+   	=& (1+E)^2 \alpha_{du} \text{, when}\\
+   	E+1 =& \pm 2\\
+   	E =& 1 \text{, or}\\
+   	E =& -3
+   \end{align*}
+	We will consider each value in turn.
+	\begin{align}
+		E =& -3\\
+		\implies &\\
+		\alpha_{uu} =0 \land& \alpha_{dd}= 0 \text{, from \eqref{eq:alpha:uu} and \eqref{eq:alpha:dd}. Moreover }\\
+		\alpha_{du} =& - \alpha_{ud} \text{, from \eqref{eq:alpha:ud} and \eqref{eq:alpha:du}}
+	\end{align}
+	Using \eqref{eq:norm:alpha}, the values are unique modulo a phase. This is the singlet.
+	\begin{align*}
+		\frac{1}{\sqrt{2}}\big(\ket{ud}-\ket{du}\big)
+	\end{align*}
+	Since we are working in a 4-dimensional space, spanned by $\{\ket{uu}, \ket{ud}, \ket{du}, \ket{dd}\}$, and $\vec{\sigma}.\vec{\tau}$ is Hermitian, it is possible to find a basis of 4 eigenvectors; $E=1$ must be degenerate, and be associated with 3 independent eigenvectors.
+	It is clear that this eigenvalue imposes no constraints on $\alpha_{uu}$ or $\alpha_{dd}$-- \eqref{eq:alpha:uu} and \eqref{eq:alpha:dd}; moreover $\alpha_{du} = \alpha_{ud}$  from \eqref{eq:alpha:ud} and \eqref{eq:alpha:du}. We can easily choose three eigenvalues, which correspond to the triplet state--Table \ref{eq:basis3}.
+	\begin{table}[H]
+		\caption{Three independent eigenvectors for $E=1$}\label{eq:basis3}
+		\begin{center}
+			\begin{tabular}{|r|r|r|r|}\hline
+			$\alpha_{uu}$& $\alpha_{ud}$&$\alpha_{du}$&$\alpha_{dd}$\\ \hline
+			$\frac{1}{\sqrt{2}}$&0&0&$\frac{1}{\sqrt{2}}$\\ \hline
+			0&$\frac{1}{\sqrt{2}}$&$\frac{1}{\sqrt{2}}$&0\\ \hline
+			$\frac{1}{\sqrt{2}}$&0&0&$-\frac{1}{\sqrt{2}}$\\ \hline
+		\end{tabular}
+		\end{center}
+	\end{table}
+
+\end{proof}
 \url{https://youtu.be/qg-95d6OJJM?t=4954}
 
 \bibliographystyle{unsrt}

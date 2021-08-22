@@ -260,19 +260,21 @@ Consider spin about an arbitrary "pointer" $(n_1,n_2,n_3)$
 	=& \begin{bmatrix}
 		n_3&n_1-i n_2\\
 		n_1 + i n_2&-n_3
-	\end{bmatrix}\\
-	\text{where }n_1^2 + n_2^2 +n_3^2 =& 1	\text{. We define:}	\\
+	\end{bmatrix} \text{, where $n_1^2 + n_2^2 +n_3^2 = 1$}
+\end{align*}
+We define:
+\begin{align*}
 	n_1-i n_2 =& n_-\\
 	n_1+i n_2 =& n_+\text{ then}\\
 	\vec{\hat{n}}\cdot\vec{\sigma} =&\begin{bmatrix}
 		n_3&n_-\\
 		n_+&-n_3 
-	\end{bmatrix}\text{ an observable (turn on magnetic field along $\vec{n}$)}
+	\end{bmatrix}
 \end{align*}
-We can show that $(\vec{\hat{n}}\cdot\vec{\sigma})^2=I$, whence eigenvalues are $\pm 1$. Moreover
+$\vec{\hat{n}}\cdot\vec{\sigma}$ is Hermitian, hence an observable (turn on magnetic field along $\vec{n}$). We can show that $(\vec{\hat{n}}\cdot\vec{\sigma})^2=I$, whence its eigenvalues are $\pm 1$. Moreover
 \begin{align*}
 	n_+ n_- =& n_1^2 + n_2^2 + n_3^2 -n_3^2\\
-	=& 1 - n_3^2
+	=& 1 - n_3^2 \numberthis \label{eq:n3:2}
 \end{align*}
 
 Figure \ref{fig:et-4-1} depicts the only interesting question we can ask about a single spin:  if we prepare along one axis, measure along another, what is the probability of positive versus negative?
@@ -294,12 +296,15 @@ We need the eigenvectors of $\vec{\sigma} \cdot \vec{\hat{n}}$ and   $\vec{\sigm
 We have:
 \begin{align*}
 	(\vec{\sigma} \cdot \vec{\hat{n}}) \ket{\vec{\sigma} \cdot \vec{\hat{n}}=1} =& 1 \ket{\vec{\sigma} \cdot \vec{\hat{n}}=1} \text{ and}\\
-	(\vec{\sigma} \cdot \vec{\hat{m}}) \ket{\vec{\sigma} \cdot \vec{\hat{m}}=1} =& 1 \ket{\vec{\sigma} \cdot \vec{\hat{m}}=1} \text{. We need the probability amplitude:}\\
-	\vert \braket{\vec{\sigma} \cdot \vec{\hat{m}}=1\vert\vec{\sigma} \cdot \vec{\hat{n}}=1}\vert^2
+	(\vec{\sigma} \cdot \vec{\hat{m}}) \ket{\vec{\sigma} \cdot \vec{\hat{m}}=1} =& 1 \ket{\vec{\sigma} \cdot \vec{\hat{m}}=1}
 \end{align*}
+
+We need the probability amplitude that, if you prepare with $\vec{\sigma} \cdot \vec{\hat{n}}=1$ and then measure along $\vec{\hat{m}}=$ we will observe $\vec{\sigma} \cdot \vec{\hat{m}}=1$:
+$$P(\vec{\sigma} \cdot \vec{\hat{m}}=1\vert\vec{\sigma} \cdot \vec{\hat{n}}=1) = \vert \braket{\vec{\sigma} \cdot \vec{\hat{m}}=1\vert\vec{\sigma} \cdot \vec{\hat{n}}=1}\vert^2$$.
 
 This is what quantum mechanics does: it answers the question, "What is the probability I'll get a measurement of this value, given that I prepared the experiment is such and such a manner?"
 
+To calculate the eigenvectors of $\vec{\sigma} \cdot \vec{\hat{n}}$, we start:
 \begin{align*}
 	\begin{bmatrix}
 		n_3 &n_-\\
@@ -310,22 +315,35 @@ This is what quantum mechanics does: it answers the question, "What is the proba
 	\end{bmatrix}=&\begin{bmatrix}
 		\alpha\\
 		\beta
-\end{bmatrix} \text{. WLOG}\\
-	\begin{bmatrix}
-	n_3 &n_-\\
-	n_+&-n_3
-\end{bmatrix}\begin{bmatrix}
-	1\\
-	z
-\end{bmatrix}=&\begin{bmatrix}
-	1\\
-	z
-\end{bmatrix} \text{, whence}\\
-n_3 + n_- z =& 1\\
-x =& \frac{1-n_3}{n-}
+	\end{bmatrix}
 \end{align*}
- Normalizing:
+At this state we won't bother about normalization. (NB. Any vector can be multiplied by a phase: This has no physical effect: since $e^{i\theta}e^{-i\theta}=1$, the phase has no effect on any probabilities we calculate). We will arbitrary set: 
+\begin{align*}
+	\alpha=&1\\
+	\beta=&z \text{, then our equation becomes}\\
+	\begin{bmatrix}
+		n_3 &n_-\\
+		n_+&-n_3
+	\end{bmatrix}\begin{bmatrix}
+		1\\
+		z
+	\end{bmatrix}=&\begin{bmatrix}
+		1\\
+		z
+	\end{bmatrix} \text{, whence}\\
+	n_3 + n_- z =& 1 \text{, second line of multiplcation gives the same result, so we'll ignore.}\\
+	z =& \frac{1-n_3}{n_-} \text{, so our eigenvector becomes:}\\
+	&\begin{bmatrix}
+		1\\
+		\frac{1-n_3}{n_-} 
+	\end{bmatrix}
+\end{align*}
+The norm of the eigenvector is:
  \begin{align*}
+ 	1+\frac{1-n_3}{n_+}\frac{1-n_3}{n_-}=& \frac{n_+n_- + (1-n_3)^2 }{n_+n_-}\\ 
+ 	=&\frac{n_+n_- + 1 -2 n_3 + n_3^2}{n_+n_-} \text{. Now we use \eqref{eq:n3:2}}\\
+ 	=& \frac{1-\cancel{n_3^2}+1 - 2n_3 +\cancel{n_3^2}}{1-n_3^2}\\
+ 	=& \frac{2\cancel{(1-n_3)}}{\cancel{(1-n_3)}(1+n_3)} \text{, whence the normmalized eigenvector is:}\\
  	\ket{\vec{\sigma} \cdot \vec{\hat{n}}=1} =& \sqrt{\frac{1+n_3}{2}} \begin{bmatrix}
  		1\\\frac{1-n_3}{n_-}
  	\end{bmatrix}
@@ -357,18 +375,29 @@ When you measure something, you go into system, interact with it, and \emph{chan
 	\begin{align*}
 		B A\ket{\alpha_i} =& \lambda_i B \ket{\alpha_i}\\
 		=& \lambda_i \mu_i \ket{\alpha_i} \text{, from (\ref{eq:simultaneous2})} \text{. Similarly}\\
-		A  B \ket{\alpha_i} =& \mu_i  lambda_i \ket{\alpha_i} \text{, whence}\\
+		A  B \ket{\alpha_i} =& \mu_i  \lambda_i \ket{\alpha_i} \text{, whence}\\
 		B A\ket{\alpha_i} =& A  B \ket{\alpha_i} \text{ for every eigenvector $\ket{\alpha_i}$}
 	\end{align*}
 \end{proof}
-\begin{thm}[Any direction corresponds to an axis of spin.]
+\begin{thm}[Any direction corresponds to an axis of spin]
 	For any $\alpha$ and $\beta$ such that $\alpha^2$ + $\beta^2=1$, there exista a direction of space such that $(\alpha, \beta)$ is an eigenvector of $\vec{\sigma} \cdot\vec{\hat{n}}$ with eigenvalue 1.
 \end{thm}
-
+\begin{proof}
+	TBP
+\end{proof}
 \subsection{Pairs of electrons--Entanglement at last}
 There are four states: $\ket{u\;u}, \,\ket{d\;u}, \,\ket{u\;d}, \,\ket{d\;d}$.  We will use $\sigma$ for the first electron, $\tau$ for the second:  $\sigma$ leaves the second spin unchanged, $\tau$ leaves the first unchanged.
 
-How many ways to combine? 8-2 = 6, but this is more than we'd expect from $2\times2$! State space is richer than we'd expect. This is entanglement!
+How many ways to combine? 
+\begin{itemize}
+	\item There are 4 complex parameters, so 8 real ones;
+	\item But we can multiply any vector by a complex phases without affecting probabilities. so this adds a constraint to the real parameters;
+	\item We need to normalize, which adds a second constraint.
+	\item So the number of combinations is 8-2 = 6, but this is more than we'd expect from $2\times2$!
+	\item The state space is richer than we'd expect. 
+	\item This is entanglement!
+\end{itemize}
+
 
 The following \emph{product state} corresponds to a situation where the first electron has been carefully placed in one state, and the second in another.
 \begin{align*}
@@ -388,7 +417,9 @@ If one electron is up, the other is down, and vice versa. We can learn something
 		\big[\bra{ud}+\bra{du}\big]\tau_i\big[\ket{ud}+\ket{du}\big]=&0
 	\end{align*}
 \end{thm}
-
+\begin{proof}
+	TBP
+\end{proof}
 \begin{cor}[The probability of a spin being $+1$ (or $-1$) along any axis is $\frac{1}{2}$]
 	$\vec{\sigma}\cdot\vec{\hat{n}}$ and $\vec{\tau}\cdot\vec{\hat{n}}$ both  act on the expression (\ref{eq:T1}) to give zero; hence the probability of a spin being $+1$ (or $-1$) along any axis is $\frac{1}{2}$.
 \end{cor}

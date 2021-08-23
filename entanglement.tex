@@ -468,7 +468,7 @@ Figure \ref{fig:bell} illustrates the theorem.
     Table \ref{table:possibilities} depicts 8 possibilities for an object, which either has or does not have properties $A$, $B$, and $C$.
   
 	\begin{table}[H]
-		\caption[Bell's Theorem]{Bell's Theorem: each object either has or does not have properties $\{A, B,  C\}$. Each combination of properties is assigned a values chosen from the numbers 1 through 8. Finally, this table shows whether or not each combination contributes to the three sets $A \cap \neg B$, $B \cap \neg C$, and $A \cap \neg C $.}\label{table:possibilities}
+		\caption[Bell's Theorem]{Bell's Theorem: each object either has or does not have properties $\{A, B,  C\}$. Each combination of properties is assigned a value chosen from the numbers 1 through 8. This table shows whether or not each combination contributes to the three sets $A \cap \neg B$, $B \cap \neg C$, and $A \cap \neg C $.}\label{table:possibilities}
 		\begin{center}
 			\begin{tabular}{|c|c|c|c|c|c|c|} \hline
 				\#&$A$&$B$&$C$&$A \cap \neg B$&$B \cap \neg C$& $A \cap \neg C $\\ \hline
@@ -499,7 +499,7 @@ Figure \ref{fig:bell} illustrates the theorem.
 	\end{align*}
 Equation (\ref{eq:bell:inequality}) follows on taking the cardinalities of all three sets.
 \end{proof}
-What is amazing is that Bell's Inequality can be violated! One of the students said that the violation is profound. But all of QM violates classical mechanics. 
+What is amazing is that Bell's Inequality can be violated! One of the students said that the \emph{violation} is profound: but \emph{all} of QM violates classical mechanics. 
 
 We now take our system to be two spins, and we will define $A$, $B$, and $C$. We will start by assuming classical spins, and that they can be measured as classical objects, and we will write down Bell's inequality. We will talk only about spin 1. A proposition might be: spin 1 is up along the z axis. The negative would be "spin 1 is not up along the z-axis, i.e. down", which is equivalent to "spin 2 is up" (in the Singlet state).
 
@@ -517,9 +517,9 @@ If classical logic made any sense we would measure (we have a beam of electron p
 	\end{center}
 \end{table}
 
-If the entities are pairs of electrons, the left hand side of (\ref{eq:bell:inequality}) becomes:
+If the entities are pairs of electrons,  and we use the rotational invariance of the Singlet, the left hand side of (\ref{eq:bell:inequality}) becomes:
 \begin{align*}
-	\underbrace{N(A, \neg B)}_\text{1 up along z, 2 up along $45^\circ$} + \underbrace{N(B, \neg C)}_\text{N(A, \neg B) rotated $45^{\circ}$} =& 2N(A, \neg B)\text{ using rotational invariance of the Singlet.}
+	\underbrace{N(A, \neg B)}_\text{1 up along z, 2 up along $45^\circ$} + \underbrace{N(B, \neg C)}_\text{N(A, \neg B) rotated $45^{\circ}$} =& 2N(A, \neg B)
 \end{align*}
 The right hand side is 1 up along z, 2 up along $90^\circ$, so we have something we can test.
 \begin{align*}
@@ -617,15 +617,15 @@ Substituting this and (\ref{eq:bell:lhs:approx}) in (\ref{eq:bell:ineq:classical
 Thus the Singlet violates Bell's inequality: there is no possibility of an underlying classical way of thinking about QM where properties are based on set theory. It can not be the statistical theory of some underlying classical system, no matter how complicated, jumbled, or chaotic. 
 
 \subsubsection{The Aspect Experiment}
-Alain Aspect performed  a beautiful experiment\cite{aspect1982experimental}, which taught us a lot about measuring electrons, but the result was certain beforehand. Aspect asked whether there is an out, a way for classical mechanics to somehow simulate quantum mechanics: the answer is "yes", but only if the system under discussion has wires to connect the left electron to the right electron, so the electron on the left is not independent of the one on the right, and there is a processor in the centre. But the signals have to go faster than the speed of light! (Bob needs to tell Alice what is going on: what if the times are synchronized to the extent that the signals need to travel faster than light?) Aspect managed to check that the inequality was violated, and he did it in such a way that there was no way that light could have propagated between Alice and Bob to explain the results: that was the hard part of the experiment.
+Alain Aspect performed  a beautiful experiment\cite{aspect1982experimental}, which taught us a lot about measuring electrons, but the result was certain beforehand. Aspect asked whether there is an out, a way for classical mechanics to somehow simulate quantum mechanics: the answer is "yes", but only if the system under discussion has wires to connect the left electron to the right electron, so the electron on the left is not independent of the one on the right, and there is a processor in the centre. \emph{But the signals have to go faster than the speed of light}! (Bob needs to tell Alice what is going on: what if the times are synchronized to the extent that the signals need to travel faster than light?) Aspect managed to check that the inequality was violated, and he did it in such a way that there was no way that light could have propagated between Alice and Bob to explain the results: that was the hard part of the experiment.
 
 All attempts to simulate QM classically require signals to travel faster than the speed of light.
 
 \subsection{The No-Cloning Theorem}
 
-Evolution is linear. Imagine that a system moves from state $\ket{a}$ to $\ket{a^{\prime}}$ during time $t$, and from  $\ket{b}$ to $\ket{b^{\prime}}$. Then it moves from $\alpha \ket{a} + \beta \ket{b}$ to $\alpha \ket{a^{\prime}} + \beta \ket{b^{\prime}}$ during time $t$.
+Evolution is linear--see Section \ref{sect:unitary}. Imagine that a system moves from state $\ket{a}$ to $\ket{a^{\prime}}$ during time $t$, and from  $\ket{b}$ to $\ket{b^{\prime}}$. Then it moves from $\alpha \ket{a} + \beta \ket{b}$ to $\alpha \ket{a^{\prime}} + \beta \ket{b^{\prime}}$ during time $t$.
 
-Let us suppose that we have a machine that will take a system in an arbitrary styate, and produce two systems that are in the exact same state--a cloning operation. A Xerox is a classical cloning machine.  Figure \ref{fig:quantum:cloning:machine} illustrates a quantum cloning machine.
+Let us suppose that we have a machine that will take a system in an arbitrary state, and produce two systems that are in the exact same state--a cloning operation. A Xerox is a classical cloning machine.  Figure \ref{fig:quantum:cloning:machine} illustrates a quantum cloning machine.
 
 \begin{figure}[H]
 	\caption[Quantum Cloning machine: $\ket{u}\rightarrow \ket{u}\ket{u}$]{Quantum Cloning machine: $\ket{u}\rightarrow \ket{u} \ket{u}$. We'll use neutrons to avoid violating conservation of charge. (The machine supplies energy as needed.)}\label{fig:quantum:cloning:machine}
@@ -658,8 +658,8 @@ Our proof exploits the fact that cloning is quadratic, but time evolution is lin
 
 \begin{enumerate}
 	\item What happens if one member of an entangled pair is caught by a black hole? The outside electron becomes entangled with the degrees of freedom of the black hole. When the black hole evaporates, the photons are entangled with the electron that was outside.
-	\item What happens if two water molecules become entangled, and then one is placed in a bathtub full of water? The one outside becomes entangled with the state of the bathtub (the entangled molecule in the bathtub gets too mixed up with the others to have a clear identity). So what happens when the bathtub evaporates? The molecules remains entangled with the vapour, unless something comes over from the bathtub to interact with the molecules and break the entanglement. Disentanglement can take place, but only if the systems are close enough to interact.
-	\item What happens when we measure two entangles particles? That takes them out. What if we measure only one? It can? These measurements are called "observations", and we'll talk about them during this lecture.
+	\item What happens if two water molecules become entangled, and then one is placed in a bathtub full of water? The one outside becomes entangled with the state of the bathtub (the entangled molecule in the bathtub gets too mixed up with the others to have a clear identity). So what happens when the bathtub evaporates? The molecule remains entangled with the vapour, unless something comes over from the bathtub to interact with the molecules and break the entanglement. Disentanglement can take place, but only if the systems are close enough to interact.
+	\item What happens when we measure two entangled particles? That takes them out. What if we measure only one? It can. These measurements are called "observations", and we'll talk about them during this lecture.
 \end{enumerate}
 
 \subsection{Subspaces and Projection Operator}
@@ -675,7 +675,9 @@ Review of several topics.
 \begin{thm}[Basis vectors]
 	In a $D$-dimensional space with orthogonality, we can always find $D$ mutually orthogonal, normalized basis vectors, $\ket{n} n=1,2,...D$.
 \end{thm}
-
+\begin{proof}
+	TBP
+\end{proof}
 \begin{thm}[Expansion in basis vectors]
 	Any state vector can be written:
 	\begin{align*}
@@ -684,20 +686,23 @@ Review of several topics.
 		\psi =& \sum_{n=1}^{D} \ket{n} \braket{n\vert\psi} \numberthis \label{eq:psi_expanded}
 	\end{align*}
 \end{thm}
+\begin{proof}
+	TBP
+\end{proof}
 Introducing the concept or a \emph{dyad}, $\ket{a}\bra{b}$:
 \begin{align*}
-	(\ket{a}\bra{b})\psi =& \ket{a}(\bra{b}\psi) \text{, we see from (\ref{eq:psi_expanded}):}\\
+	\underbrace{\ket{a}\bra{b}}_\text{ A dyad}\psi =& \ket{a}(\bra{b}\psi) \text{, we see from (\ref{eq:psi_expanded}):}\\
 	\ket{n}\bra{n} =& I \text{, the "Resolution of the Identity"} \numberthis \label{eq:resolution:identity}
 \end{align*}
 
 We will derive some interesting subspaces: subspaces correspond to observable questions that we might ask. Imagine an observable $K$, and consider the eigenvalue/eigenvector:
 \begin{align*}
-	K \ket{a} =& \lambda \ket{a} \text{ Suppose there is a linearly independednt eigenvector with the same eigenvalue}\\
+	K \ket{a} =& \lambda \ket{a} \text{ Suppose there is a linearly independent eigenvector with the same eigenvalue}\\
 	K \ket{b} =& \lambda \ket{b} \text{, then any linearly independent combination is also an eigenvalue}\\
 	K(\alpha \ket{a} + \beta \ket{b}) =& \lambda (\alpha \ket{a} + \beta \ket{b})
 \end{align*}
 
-There is a subspace corresponding to the eigenvalue. So the measurement $K=\lambda$ is not necessarily identified with a single vector, but with a subspace. Once you have identified a subspace, you can find a basis. Lets suppose we have found a basis, $\{\ket{a}, \ket{b}\},...$, with dimension $<D$ and construct $\sum_a \ket{a} \bra{a}$
+There is a subspace corresponding to the eigenvalue. So the measurement $K=\lambda$ is not necessarily identified with a single vector, but with a subspace. Once you have identified a subspace, you can find a basis. Lets suppose we have found a basis, $\{\ket{a}, \ket{b},...\}$, with dimension $<D$ and construct $\sum_a \ket{a} \bra{a}$
 
 \begin{align*}
 	(\sum_a \ket{a} \bra{a}) \psi =& \psi \text{, if $\psi$ in subspace}\\
@@ -705,7 +710,7 @@ There is a subspace corresponding to the eigenvalue. So the measurement $K=\lamb
 	\sum_a \ket{a} \bra{a} =& \mathbb{P}_{K=\lambda} \numberthis \label{eq:projection}
 \end{align*}
 
-To construct a projection operator for a values of a property:
+To construct a projection operator for a value of a property:
 \begin{enumerate}
 	\item find subspace;
 	\item find basis in that subspace;
@@ -713,7 +718,7 @@ To construct a projection operator for a values of a property:
 \end{enumerate}
 Any projection operator characterizes a property--the property that is true in that subspace.
 
-The probability postulate for quantum mechanics is most nicely expressed in terms of projection operators. Given an arbitrary, normalized, state $\psi$, which may or may not be in the subspace, the probability that $K$ has value $\lambda$ is the expectation $\braket{\psi\vert\mathbb{P}_{K=\lambda}\vert\psi}$
+The probability postulate for quantum mechanics is most nicely expressed in terms of projection operators. Given an arbitrary, normalized, state $\psi$, which may or may not be in the subspace, the probability that $K$ has value $\lambda$ is the expectation: 
 
 \begin{align*}
 	\braket{\psi\vert\mathbb{P}_{K=\lambda}\vert\psi}=&\sum_a \braket{\psi\vert a}\braket{a \vert \psi} \text{, e.g.}\\
@@ -738,7 +743,7 @@ Two \emph{commuting} projection operators, $\mathbb{P}_{K=\lambda}$ and $\mathbb
 	So $\mathbb{P}_K\mathbb{P}_L$ corresponds to K \& L.
 \end{proof}
 
-Spins operators for two particles, $\sigma_i$ and $\tau_j$, are compatible.
+The spin operators for two particles, $\sigma_i$ and $\tau_j$, are compatible.
 
 \subsection{Bell's theorem review}\label{sec:bell:review}
 
@@ -1111,7 +1116,7 @@ Assumption: the logical relationship between states does not change with time. T
 Actually, this is second principle: linearity is first.
 
 
-\subsubsection{Unitary operators}
+\subsubsection{Unitary operators}\label{sect:unitary}
 
 Start with system in state $\ket{\psi(0)}$ and evolves to $\ket{\psi(t)}$
 

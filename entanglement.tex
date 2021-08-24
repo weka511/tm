@@ -948,10 +948,6 @@ Let $M$ be a matrix/linear operator in a space with basis $\ket{i}$ and consider
 		\end{align*}
 	\end{lemma}
 
-	\begin{lemma}\label{lemma:coeff:trace}
-		The coefficient of $\lambda^{n-1}$ in \eqref{eq:eigen:determinant} is the negative trace of the matrix, $-\sum_{i=1}^{n}a_{ii}$, and the coefficient of $\lambda^{n}$ is $1$.
-	\end{lemma}
-
 	\begin{lemma}\label{lemma:coeff:sum}
 		The coefficient of $\lambda^{n-1}$  in \eqref{eq:eigen:determinant} is $-\sum_{i=1}^{n} a_{ii}$
 	\end{lemma}
@@ -1030,12 +1026,13 @@ Let $M$ be a matrix/linear operator in a space with basis $\ket{i}$ and consider
 		\end{align*}
 	\end{proof}
 	Now each of the remaining terms in \eqref{eq:cofactors} consists of a determinant dimension $n-1$ with a $\lambda$ in $n-2$ rows only, multiplied by a constant: it is therefore of $\mathcal{O}(\lambda^{n-2})$. So \eqref{eq:cofactor1} gives the same result as \eqref{eq:cofactors}: this the identical to the induction hypothesis, with $n-1\rightarrow n$.
-	\begin{proof}[Proof of Lemma \ref{lemma:coeff:sum}]
-		content...
-	\end{proof}
+
 \end{proof}
 
 \begin{cor}[The trace of a matrix is independent of the choice of basis]\end{cor}
+\begin{proof}
+	From Theorem \ref{thm:sum:ev} $\Tr A = - \sum_i \lambda_i$, but the eigenvalues are independent of the choice of basis.
+\end{proof}
 
 Now if M is Hermitian,there is a basis in which the matrix is diagonal, so the trace is the sum of the eigenvalues.
 

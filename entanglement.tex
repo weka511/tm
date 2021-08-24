@@ -927,10 +927,74 @@ Let $M$ be a matrix/linear operator in a space with basis $\ket{i}$ and consider
 	\Tr M =& \sum_i \braket{i\vert M \vert i}
 \end{align*}
 
-\begin{thm}[The trace of a matrix is independent of the choice of basis]\end{thm}
+\begin{thm}[The trace of a matrix is the sum of its eigenvalues]\label{thm:sum:ev}
+	\begin{align*}
+		\Tr M =& \sum_i \lambda_i
+	\end{align*}
+\end{thm}
+
 \begin{proof}
-	TBP
+	This is an easy consequence of the following lemmata. 
+	\begin{lemma}
+		The eigenvalues satisfy the determinant equation:
+		\begin{align*}
+			\begin{vmatrix}
+				a_{11}-\lambda&a_{12}&a_{13}&...&a_{1n}\\
+				a_{20}&a_{22}-\lambda&a_{23}&...&a_{2n}\\
+				a_{31}&a_{32}&a_{33}-\lambda&...&a_{3n}\\
+				...&...&...&...&...\\
+				a_{n1}&a_{n2}&a_{n3}&...&a_{nn}-\lambda
+			\end{vmatrix}=0\numberthis\label{eq:eigen:determinant}
+		\end{align*}
+	\end{lemma}
+	\begin{proof}
+		From the definition of eigenvalue, and eigenvalue $\lambda$ and its corresponding eigenvector $\vec{v}$ must satisfy:
+		\begin{align*}
+				\begin{bmatrix}
+				a_{11}&a_{12}&a_{13}&...&a_{1n}\\
+				a_{20}&a_{22}&a_{23}&...&a_{2n}\\
+				a_{31}&a_{32}&a_{33}&...&a_{3n}\\
+				...&...&...&...&...\\
+				a_{n1}&a_{n2}&a_{n3}&...&a_{nn}
+				\end{bmatrix}\begin{bmatrix}
+								v_1\\
+								v_2\\
+								v_3\\
+								...\\
+								v_n
+							\end{bmatrix}=&\lambda \begin{bmatrix}
+							v_1\\
+							v_2\\
+							v_3\\
+							...\\
+							v_n
+						\end{bmatrix} \text{, whence:} \\
+					\begin{bmatrix}
+						a_{11}-\lambda&a_{12}&a_{13}&...&a_{1n}\\
+						a_{20}&a_{22}-\lambda&a_{23}&...&a_{2n}\\
+						a_{31}&a_{32}&a_{33}-\lambda&...&a_{3n}\\
+						...&...&...&...&...\\
+						a_{n1}&a_{n2}&a_{n3}&...&a_{nn}-\lambda
+					\end{bmatrix}\begin{bmatrix}
+						v_1\\
+						v_2\\
+						v_3\\
+						...\\
+						v_n
+					\end{bmatrix}=&0
+		\end{align*}
+		This equation has non-trivial solutions $\vec{v}$ iff \eqref{eq:eigen:determinant} is satisfied.
+	\end{proof}
+	\begin{lemma}
+		The coefficient of $\lambda_{n-1}$ in \eqref{eq:eigen:determinant} is the trace of the matrix.
+	\end{lemma}
+	\begin{lemma}
+		The coefficient of $\lambda_{n-1}$  in \eqref{eq:eigen:determinant} is $\sum_{i=1}^{n} \lambda_i$
+	\end{lemma}
 \end{proof}
+
+\begin{cor}[The trace of a matrix is independent of the choice of basis]\end{cor}
+
 Now if M is Hermitian,there is a basis in which the matrix is diagonal, so the trace is the sum of the eigenvalues.
 
 \begin{align*}

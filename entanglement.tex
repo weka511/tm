@@ -927,70 +927,112 @@ Let $M$ be a matrix/linear operator in a space with basis $\ket{i}$ and consider
 	\Tr M =& \sum_i \braket{i\vert M \vert i}
 \end{align*}
 
-\begin{thm}[The trace of a matrix is the sum of its eigenvalues]\label{thm:sum:ev}
+\begin{thm}[The trace of a matrix is the negative sum of its eigenvalues]\label{thm:sum:ev}
 	\begin{align*}
-		\Tr M =& \sum_i \lambda_i
+		\Tr A =& - \sum_i \lambda_i
 	\end{align*}
 \end{thm}
 
 \begin{proof}
 	This is an easy consequence of the following lemmata. 
-	\begin{lemma}
-		The eigenvalues satisfy the determinant equation:
+	\begin{lemma}\label{lemma:ev:determinant}
+		The eigenvalues satisfy the polynomial equation obtained by expanding the following determinant:
 		\begin{align*}
 			\begin{vmatrix}
-				a_{11}-\lambda&a_{12}&a_{13}&...&a_{1n}\\
-				a_{20}&a_{22}-\lambda&a_{23}&...&a_{2n}\\
-				a_{31}&a_{32}&a_{33}-\lambda&...&a_{3n}\\
+				\lambda-a_{11}&-a_{12}&-a_{13}&...&-a_{1n}\\
+				-a_{21}&\lambda-a_{22}&-a_{23}&...&-a_{2n}\\
+				-a_{31}&-a_{32}&\lambda-a_{33}&...&-a_{3n}\\
 				...&...&...&...&...\\
-				a_{n1}&a_{n2}&a_{n3}&...&a_{nn}-\lambda
+				-a_{n1}&-a_{n2}&-a_{n3}&...&\lambda-a_{nn}
 			\end{vmatrix}=0\numberthis\label{eq:eigen:determinant}
 		\end{align*}
 	\end{lemma}
-	\begin{proof}
+
+	\begin{lemma}\label{lemma:coeff:trace}
+		The coefficient of $\lambda^{n-1}$ in \eqref{eq:eigen:determinant} is the negative trace of the matrix, $-\sum_{i=1}^{n}a_{ii}$, and the coefficient of $\lambda^{n}$ is $1$.
+	\end{lemma}
+
+	\begin{lemma}\label{lemma:coeff:sum}
+		The coefficient of $\lambda^{n-1}$  in \eqref{eq:eigen:determinant} is $-\sum_{i=1}^{n} a_{ii}$
+	\end{lemma}
+
+	Applying Lemma \ref{lemma:ev:determinant} and Vi\`ete's first formulae\cite{enwiki:1030161470} to \eqref{eq:eigen:determinant}, we see that the sum of the roots of the equation is given by $-\sum_{i=1}^{n}a_{ii}$. But the $\lambda_i$ are the roots, whence $\sum_{i=1}^{n}\lambda_i=-\sum_{i=1}^{n}a_{ii}$
+	\begin{proof}[Proof of Lemma \ref{lemma:ev:determinant}]
 		From the definition of eigenvalue, and eigenvalue $\lambda$ and its corresponding eigenvector $\vec{v}$ must satisfy:
 		\begin{align*}
-				\begin{bmatrix}
+			\begin{bmatrix}
 				a_{11}&a_{12}&a_{13}&...&a_{1n}\\
-				a_{20}&a_{22}&a_{23}&...&a_{2n}\\
+				a_{21}&a_{22}&a_{23}&...&a_{2n}\\
 				a_{31}&a_{32}&a_{33}&...&a_{3n}\\
 				...&...&...&...&...\\
 				a_{n1}&a_{n2}&a_{n3}&...&a_{nn}
-				\end{bmatrix}\begin{bmatrix}
-								v_1\\
-								v_2\\
-								v_3\\
-								...\\
-								v_n
-							\end{bmatrix}=&\lambda \begin{bmatrix}
-							v_1\\
-							v_2\\
-							v_3\\
-							...\\
-							v_n
-						\end{bmatrix} \text{, whence:} \\
-					\begin{bmatrix}
-						a_{11}-\lambda&a_{12}&a_{13}&...&a_{1n}\\
-						a_{20}&a_{22}-\lambda&a_{23}&...&a_{2n}\\
-						a_{31}&a_{32}&a_{33}-\lambda&...&a_{3n}\\
-						...&...&...&...&...\\
-						a_{n1}&a_{n2}&a_{n3}&...&a_{nn}-\lambda
-					\end{bmatrix}\begin{bmatrix}
-						v_1\\
-						v_2\\
-						v_3\\
-						...\\
-						v_n
-					\end{bmatrix}=&0
+			\end{bmatrix}\begin{bmatrix}
+				v_1\\
+				v_2\\
+				v_3\\
+				...\\
+				v_n
+			\end{bmatrix}=&\lambda \begin{bmatrix}
+				v_1\\
+				v_2\\
+				v_3\\
+				...\\
+				v_n
+			\end{bmatrix} \text{, whence:} \\
+			\begin{bmatrix}
+				a_{11}-\lambda&a_{12}&a_{13}&...&a_{1n}\\
+				a_{21}&a_{22}-\lambda&a_{23}&...&a_{2n}\\
+				a_{31}&a_{32}&a_{33}-\lambda&...&a_{3n}\\
+				...&...&...&...&...\\
+				a_{n1}&a_{n2}&a_{n3}&...&a_{nn}-\lambda
+			\end{bmatrix}\begin{bmatrix}
+				v_1\\
+				v_2\\
+				v_3\\
+				...\\
+				v_n
+			\end{bmatrix}=&0
 		\end{align*}
-		This equation has non-trivial solutions $\vec{v}$ iff \eqref{eq:eigen:determinant} is satisfied.
+		This equation has non-trivial solutions $\vec{v}$ iff the determinant is zero, i.e. iff \eqref{eq:eigen:determinant} is satisfied.
 	\end{proof}
-	\begin{lemma}
-		The coefficient of $\lambda_{n-1}$ in \eqref{eq:eigen:determinant} is the trace of the matrix.
-	\end{lemma}
-	\begin{lemma}
-		The coefficient of $\lambda_{n-1}$  in \eqref{eq:eigen:determinant} is $\sum_{i=1}^{n} \lambda_i$
-	\end{lemma}
+	\begin{proof}[Proof of Lemma \ref{lemma:coeff:sum}]
+		This follows from mathematical induction.
+		\begin{enumerate}
+			\item Clearly the result is true for $n=1$, as the equation reduces to $a_{11}=\lambda$.
+			\item Assume that the result is true for $n=m-1$, where $m\ge 1$. We expand \eqref{eq:eigen:determinant} in cofactors.
+		\end{enumerate}
+		\begin{align*}
+			0=&\begin{vmatrix}
+				\lambda-a_{11}&-a_{12}&...&-a_{1n}\\
+				-a_{21}&\lambda-a_{22}&...&-a_{2n}\\
+				...&...&...&...\\
+				-a_{n1}&-a_{n2}&...&\lambda-a_{nn}
+			\end{vmatrix}\\=& \big(\lambda-a_{11}\big)\begin{vmatrix}
+														\lambda-a_{22}&...&-a_{2n}\\
+														...&...&...\\
+														-a_{n2}&...&\lambda-a_{nn}
+													\end{vmatrix}+a_{12}\begin{vmatrix}
+													\lambda-a_{11}&\cancel{-a_{12}}&...&-a_{1n}\\
+													-\bcancel{a_{21}}&\xcancel{\lambda-a_{22}}&...&-\bcancel{a_{2n}}\\
+													...&...&...&...\\
+													-a_{n1}&\cancel{-a_{n2}}&...&\lambda-a_{nn}
+												\end{vmatrix} - ... \numberthis \label{eq:cofactors}
+		\end{align*}
+		The first term in \eqref{eq:cofactors} gives:
+		\begin{align*}
+			\big(\lambda-a_{11}\big)\begin{vmatrix}
+			\lambda-a_{22}&...&-a_{2n}\\
+			...&...&...\\
+			-a_{n2}&...&\lambda-a_{nn}
+			\end{vmatrix}=&	\big(\lambda-a_{11}\big) \big(\lambda^{n-1} - \sum_{i=2}^{n}a_{ii}\lambda^{n-1}+...\big)	\\
+			=& \lambda \lambda^{n-1} - \lambda \sum_{i=2}^{n}a_{ii}\lambda^{n-2} - \alpha_{11}\lambda^{n-1} + \mathcal{O}(\lambda^{n-2})\\
+			=& \lambda^n - \sum_{i=1}^{n}a_{ii}\lambda^{n-1}+ \mathcal{O}(\lambda^{n-2}) \numberthis \label{eq:cofactor1}
+		\end{align*}
+	\end{proof}
+	Now each of the remaining terms in \eqref{eq:cofactors} consists of a determinant dimension $n-1$ with a $\lambda$ in $n-2$ rows only, multiplied by a constant: it is therefore of $\mathcal{O}(\lambda^{n-2})$. So \eqref{eq:cofactor1} gives the same result as \eqref{eq:cofactors}: this the identical to the induction hypothesis, with $n-1\rightarrow n$.
+	\begin{proof}[Proof of Lemma \ref{lemma:coeff:sum}]
+		content...
+	\end{proof}
 \end{proof}
 
 \begin{cor}[The trace of a matrix is independent of the choice of basis]\end{cor}

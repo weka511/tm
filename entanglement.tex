@@ -881,15 +881,15 @@ So if you do an experiment, probabilities sum as in classical physics.
 
 \begin{itemize}
 	\item The problem is not the spin, it is the correlation between the spin and the path. An additional "up" on both paths would not cancel interference.
-	\item LS doesn't need to look at the spin: it is enough that the path has been recorded tp destroy interference.
+	\item LS doesn't need to look at the spin: it is enough that the path has been recorded to destroy interference.
 	\item When electron is accelerated it may emit a photon, with a probability of 0.01 for a slowly moving electron. You cannot be certain which hole it went through. If the energy is really high, likelihood of emitting a photon is much higher, so interference may be partially destroyed. So the ability to emit photons may partially destroy interference pattern. 
-	\item If you know that probability of not quite 50-50, interference is destroyed a little bit.
+	\item If you know that probability is not quite 50-50, interference is destroyed a little bit.
 	\item The atmosphere is a source of interference.
 	\item Moon doesn't appear fuzzy, partly because it is heavy, partly because it is being constantly bombarded (observation).
 \end{itemize}
 
 Key take home: \begin{itemize}
-	\item if anything tags the electron so we know which part it went interference will be destroyed; .
+	\item if anything tags the electron so we know which part it went interference will be destroyed;
 	\item if we only know probabilities for each hole, interference will be partially destroyed.
 \end{itemize}
 
@@ -914,7 +914,7 @@ What is classical entropy? Entropy is a property of the system and my state of k
 \begin{defn}[Entropy]
 	\begin{align*}
 		S=&\log{n}\text{, or, more generally}\\
-		S =&- \sum_i P_j \log{P_i}
+		S =&- \sum_i P_i \log{P_i}
 	\end{align*}
 \end{defn}
 
@@ -929,7 +929,7 @@ Let $M$ be a matrix/linear operator in a space with basis $\ket{i}$ and consider
 
 \begin{thm}[The trace of a matrix is the negative sum of its eigenvalues]\label{thm:sum:ev}
 	\begin{align*}
-		\Tr A =& - \sum_i \lambda_i
+		\Tr A =& - \sum_i \lambda_i \text{, where we count degenerate eigenvalues in accordance with their multiplicity.}
 	\end{align*}
 \end{thm}
 
@@ -1068,6 +1068,9 @@ We have an observable $F$. If we were in the $i$th state, the expectation would 
 
 \begin{thm}[$\Tr(AB)=\Tr(BA)$]This is true even if the two matrices don't commute.
 \end{thm}
+\begin{proof}
+	TBP
+\end{proof}
 We now introduce the quantum mechanical definition of entropy. If one $rho_i$ is 1 and all the others zero, entropy is zero.
 
 \begin{align*}

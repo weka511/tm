@@ -1107,7 +1107,7 @@ This isn't surprising for a pure state. Suppose that we don't have a pure state.
 	=& \sum_j \lambda_j \braket{j\vert M \vert j} \text{, in the basis in which $\rho$ is diagonal}
 \end{align*}
 
-Entanglement happens when we have more than one system. Let's suppose we have a system composed of two parts, and suppose we have a basis labelled $\ket{ab}, a \in [1,N], b in [1,n]$. The most general state is $\sum_{a,b}\psi(a,b)\ket{ab}$ where $\sum_{a,b}\psi(a,b)^*\psi(a,b)=1$
+Entanglement happens when we have more than one system. Let's suppose we have a system composed of two parts, and suppose we have a basis labelled $\ket{ab}, a \in [1,N], b \in [1,n]$. The most general state is $\sum_{a,b}\psi(a,b)\ket{ab}$ where $\sum_{a,b}\psi(a,b)^*\psi(a,b)=1$
 
 Suppose we do an experiment that doesn't involve $b$. Alice measures observable $M$ so A.
 
@@ -1122,12 +1122,12 @@ Suppose we do an experiment that doesn't involve $b$. Alice measures observable 
 
 
 \subsection{Subsystems in pure states}
-When does $\psi(a,b)$ that the subsystems are in pure states? What if factorizes into separate functions of $a$ and $b$--$\psi(a,b)=\phi(a) \chi(b)$. We'll comput the density matrix.
+When does $\psi(a,b)$ represent subsystems that are in pure states? When it factorizes into separate functions of $a$ and $b$--$\psi(a,b)=\phi(a) \chi(b)$. We'll compute the density matrix.
 
 \begin{align*}
 	\rho_{ab} =& \sum_b \phi(a) \chi(b) \phi^*(a^\prime) \chi^*(b)\\
 	=& \phi(a) \phi^*(a^\prime) \underbrace{\sum_b  \chi(b)  \chi^*(b)}_\text{=1}\\
-	=& \phi(a) \phi^*(a^\prime) \text{, then the expecation of the observable $M$ is}\\
+	=& \phi(a) \phi^*(a^\prime) \text{, then the expectation of the observable $M$ is}\\
 	\bar{M} =& \sum_{a,b}\phi(a) M_{a,a^\prime}\phi^*(a^\prime)\\
 	=& \braket{\phi\vert M\vert \phi}
 \end{align*}
@@ -1285,7 +1285,9 @@ In the previous lecture we looked at how systems change with time. The state of 
 		\braket{\phi(t)\vert \psi(t)} =& \braket{\phi(0)\vert \psi()} \text{, $\forall t, \psi(), \phi()$}
 	\end{align*}
 \end{thm}
-
+\begin{proof}
+	TBP
+\end{proof}
 \begin{defn}[Unitarity]
 	If $U^\dagger U=1$, we say that $U$ is unitary.
 \end{defn}
@@ -1307,12 +1309,15 @@ In the previous lecture we looked at how systems change with time. The state of 
 
 Why is Planck's constant so small? Why is Avogadro's number so large? This aren't questions about physics, but about human biology.
 
-\begin{thm}[In (\ref{eq:introducing:hamiltonian}),  unitarity of $U\implies$ $H$ is Hermitian]
+\begin{thm}[In (\ref{eq:introducing:hamiltonian}),  unitarity of $U\implies H$ is Hermitian]
 \end{thm}
+\begin{proof}
+	RB{content...}
+\end{proof}
 
-So $H$ is an observable: every system must have one, otherwise it could not evolve. It is, of course, the Hamiltonian (as an operator): its values is called Energy.
+So $H$ is an observable: every system must an $H$, otherwise it could not evolve. It is, of course, the Hamiltonian (as an operator): its eigenvalues are called Energy levels.
 
-What is energy? Force rimes distance doesn't help us the understand the energy of the electromagnetic field.  We need a more general definition. One way to characterize energy is that it is conserved: that is the single most important thing about it. For certain familiar systems it takes a certain form.
+What is energy? Force times distance doesn't help us the understand the energy of the electromagnetic field.  We need a more general definition. One way to characterize energy is that it is conserved: that is the single most important thing about it. For certain familiar systems it takes a certain form.
 
 Another definition of Energy:
 $$E = h\nu = \hbar \omega$$
@@ -1477,7 +1482,7 @@ So configuration starts pure $\ket{ud}$. After a certain time the two terms in t
 	 e^{-i \frac{E_T}{\hbar}t} + e^{-i \frac{E_S}{\hbar}t} = \underbrace{e^{-i \frac{E_T+E_S}{2\hbar}t}}_\text{A pure phase}\underbrace{\bigg[e^{-i \frac{E_T-E_S}{2\hbar}t}+e^{-i \frac{-E_T+E_S}{2\hbar}t}\bigg]}_\text{A cosine}
 \end{align*}
 
-Hence \ref{eq:ud_oscillation} becomes a simple harmonic oscillation between $\ket{ud}$ and $\ket{du}$, modulo a phase, which can be ignored.
+Hence \eqref{eq:ud_oscillation} becomes a simple harmonic oscillation between $\ket{ud}$ and $\ket{du}$, modulo a phase, which can be ignored.
 
 \bibliographystyle{unsrt}
 \addcontentsline{toc}{section}{Bibliography}

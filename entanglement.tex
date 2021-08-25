@@ -418,7 +418,25 @@ If one electron is up, the other is down, and vice versa. We can learn something
 	\end{align*}
 \end{thm}
 \begin{proof}
-	TBP
+	We shall prove for $\sigma_i$ only: the proof for $\tau_i$ is analogous.
+	\begin{align*}
+		\big[\bra{ud}+\bra{du}\big]\sigma_1\big[\ket{ud}+\ket{du}\big]=&\big[\bra{ud}+\bra{du}\big]\big[\ket{dd}+\ket{uu}\big]\\
+		=&\braket{ud\vert dd} + \braket{ud\vert uu} + \braket{du\vert dd} + \braket{du\vert uu}\\
+		=&0 \text{, since each term is zero.}
+	\end{align*}
+	Similarly:
+	\begin{align*}
+		\big[\bra{ud}+\bra{du}\big]\sigma_2\big[\ket{ud}+\ket{du}\big]=&i\big[\bra{ud}+\bra{du}\big]\big[\ket{dd}-\ket{uu}\big]\\
+		=&i\braket{ud\vert dd} - \braket{ud\vert uu} + \braket{du\vert dd} - \braket{du\vert uu}\\
+		=&0
+	\end{align*}
+	Finally:
+	\begin{align*}
+		\big[\bra{ud}+\bra{du}\big]\sigma_3\big[\ket{ud}+\ket{du}\big]=&\big[\bra{ud}+\bra{du}\big]\big[\ket{ud}-\ket{du}\big]\\
+		=& \braket{ud\vert ud} - \braket{ud\vert du} + \braket{du\vert ud} - \braket{du\vert du}\\
+		=& 1 -0 -0 -1\\
+		=&0
+	\end{align*}
 \end{proof}
 \begin{cor}[The probability of a spin being $+1$ (or $-1$) along any axis is $\frac{1}{2}$]
 	$\vec{\sigma}\cdot\vec{\hat{n}}$ and $\vec{\tau}\cdot\vec{\hat{n}}$ both  act on the expression (\ref{eq:T1}) to give zero; hence the probability of a spin being $+1$ (or $-1$) along any axis is $\frac{1}{2}$.

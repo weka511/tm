@@ -4,6 +4,8 @@
 \usepackage{caption,subcaption,graphicx,float,url,amsmath,amssymb,amsthm,tocloft,cancel,thmtools,gensymb,braket,tikz-feynman,mathtools,color, colortbl}
 \usepackage[toc,nonumberlist]{glossaries}
 \usepackage{glossaries-extra}
+\usepackage[toc,page]{appendix}
+
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
 \newtheorem{thm}{Theorem}
@@ -14,7 +16,7 @@
 \widowpenalty10000
 \clubpenalty10000
 \setcounter{tocdepth}{2}
-\tikzfeynmanset{compat=1.0.0}
+\tikzfeynmanset{compat=1.1.0}
 \definecolor{Gray}{gray}{0.5}
 \DeclareMathOperator{\Tr}{Tr \;}
 %opening
@@ -379,33 +381,11 @@ When you measure something, you go into system, interact with it, and \emph{chan
 		B A\ket{\alpha_i} =& A  B \ket{\alpha_i} \text{ for every eigenvector $\ket{\alpha_i}$}
 	\end{align*}
 \end{proof}
-\begin{thm}[Any direction corresponds to an axis of spin]
+\begin{thm}[Any direction corresponds to an axis of spin]\label{thm:any:direction:corresponds}
 	For any $\alpha$ and $\beta$ such that $\alpha^2$ + $\beta^2=1$, there exists a direction of space such that $(\alpha, \beta)$ is an eigenvector of $\vec{\sigma} \cdot\vec{\hat{n}}$ with eigenvalue 1.
 \end{thm}
 \begin{proof}
-	\eqref{eq:eigenvector:normalized} shows how to construct an eigenvector with eigenvalue 1:
-	\begin{align*}
-	 	\ket{\vec{\sigma} \cdot \vec{\hat{n}}=1} =& \sqrt{\frac{1+n_3}{2}} \begin{bmatrix}
-			1\\\frac{1-n_3}{n_1-i n_2}
-		\end{bmatrix}\text{. Our theorem claims that this can be equated with} \\
-		=& \begin{bmatrix}
-						\alpha\\
-						\beta
-			\end{bmatrix} \text{, i.e.}\\
-			\sqrt{\frac{1+n_3}{2}} =& \alpha \text{, and} \numberthis \label{eq:thm:alpha}\\
-			\alpha \frac{1-n_3}{n_1-i n_2} =& \beta \numberthis \label{eq:thm:beta} 
-	\end{align*}
-	Since we want $n_3$ to be real, we may need to transform $\alpha \rightarrow e^{i\theta}\alpha, \beta \rightarrow e^{i\theta}\beta$ so $\alpha$ is real. Then \eqref{eq:thm:alpha} gives:
-	\begin{align*}
-		n_3 =& 2 \alpha^2-1 \text{, and from \eqref{eq:thm:beta}}\\
-		 \frac{1-n_3}{n_1-i n_2} =& \frac{\beta}{\alpha}\\
-		 \frac{1}{n_1-i n_2}\frac{{n_1+i n_2}}{{n_1+i n_2}}=&\frac{\beta}{\alpha\big(1-n_3\big)}\\
-		 \frac{{n_1+i n_2}}{{n_1^2+ n_2^2}} =& \frac{\beta}{\alpha\big(1-n_3\big)}\\
-		 \frac{{n_1+i n_2}}{{1- n_3^2}} =&\frac{\beta}{\alpha\big(1-n_3\big)}\\
-		 \frac{{n_1+i n_2}}{1+ n_3} =&\frac{\beta}{\alpha}\\
-		 \frac{{n_1+i n_2}}{2 \alpha^2} =&\frac{\beta}{\alpha}\\
-		 n_1+i n_2 = 2\alpha\beta
-	\end{align*} 
+	See \ref{proof:any:direction:corresponds}
 \end{proof}
 \subsection{Pairs of electrons--Entanglement at last}
 There are four states: $\ket{u\;u}, \,\ket{d\;u}, \,\ket{u\;d}, \,\ket{d\;d}$.  We will use $\sigma$ for the first electron, $\tau$ for the second:  $\sigma$ leaves the second spin unchanged, $\tau$ leaves the first unchanged.
@@ -1524,6 +1504,36 @@ So configuration starts pure $\ket{ud}$. After a certain time the two terms in t
 
 Hence \eqref{eq:ud_oscillation} becomes a simple harmonic oscillation between $\ket{ud}$ and $\ket{du}$, modulo a phase, which can be ignored.
 
+\begin{appendices}
+	\section {Proofs of theorems}
+	This section contains proofs that might distract from the presentation.
+	\subsection{Theorem \ref{thm:any:direction:corresponds}}\label{proof:any:direction:corresponds}
+	\begin{proof}
+		\eqref{eq:eigenvector:normalized} shows how to construct an eigenvector with eigenvalue 1:
+		\begin{align*}
+		\ket{\vec{\sigma} \cdot \vec{\hat{n}}=1} =& \sqrt{\frac{1+n_3}{2}} \begin{bmatrix}
+		1\\\frac{1-n_3}{n_1-i n_2}
+		\end{bmatrix}\text{. Our theorem claims that this can be equated with} \\
+		=& \begin{bmatrix}
+		\alpha\\
+		\beta
+		\end{bmatrix} \text{, i.e.}\\
+		\sqrt{\frac{1+n_3}{2}} =& \alpha \text{, and} \numberthis \label{eq:thm:alpha}\\
+		\alpha \frac{1-n_3}{n_1-i n_2} =& \beta \numberthis \label{eq:thm:beta} 
+		\end{align*}
+		Since we want $n_3$ to be real, we may need to transform $\alpha \rightarrow e^{i\theta}\alpha, \beta \rightarrow e^{i\theta}\beta$ so $\alpha$ is real. Then \eqref{eq:thm:alpha} gives:
+		\begin{align*}
+		n_3 =& 2 \alpha^2-1 \text{, and from \eqref{eq:thm:beta}}\\
+		\frac{1-n_3}{n_1-i n_2} =& \frac{\beta}{\alpha}\\
+		\frac{1}{n_1-i n_2}\frac{{n_1+i n_2}}{{n_1+i n_2}}=&\frac{\beta}{\alpha\big(1-n_3\big)}\\
+		\frac{{n_1+i n_2}}{{n_1^2+ n_2^2}} =& \frac{\beta}{\alpha\big(1-n_3\big)}\\
+		\frac{{n_1+i n_2}}{{1- n_3^2}} =&\frac{\beta}{\alpha\big(1-n_3\big)}\\
+		\frac{{n_1+i n_2}}{1+ n_3} =&\frac{\beta}{\alpha}\\
+		\frac{{n_1+i n_2}}{2 \alpha^2} =&\frac{\beta}{\alpha}\\
+		n_1+i n_2 = 2\alpha\beta
+		\end{align*} 
+	\end{proof}
+\end{appendices}
 \bibliographystyle{unsrt}
 \addcontentsline{toc}{section}{Bibliography}
 \raggedright

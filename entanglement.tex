@@ -346,7 +346,7 @@ The norm of the eigenvector is:
  	=& \frac{2\cancel{(1-n_3)}}{\cancel{(1-n_3)}(1+n_3)} \text{, whence the normmalized eigenvector is:}\\
  	\ket{\vec{\sigma} \cdot \vec{\hat{n}}=1} =& \sqrt{\frac{1+n_3}{2}} \begin{bmatrix}
  		1\\\frac{1-n_3}{n_-}
- 	\end{bmatrix}
+ 	\end{bmatrix} \numberthis \label{eq:eigenvector:normalized}
  \end{align*}
 
 Eventually we find:
@@ -380,10 +380,32 @@ When you measure something, you go into system, interact with it, and \emph{chan
 	\end{align*}
 \end{proof}
 \begin{thm}[Any direction corresponds to an axis of spin]
-	For any $\alpha$ and $\beta$ such that $\alpha^2$ + $\beta^2=1$, there exista a direction of space such that $(\alpha, \beta)$ is an eigenvector of $\vec{\sigma} \cdot\vec{\hat{n}}$ with eigenvalue 1.
+	For any $\alpha$ and $\beta$ such that $\alpha^2$ + $\beta^2=1$, there exists a direction of space such that $(\alpha, \beta)$ is an eigenvector of $\vec{\sigma} \cdot\vec{\hat{n}}$ with eigenvalue 1.
 \end{thm}
 \begin{proof}
-	TBP
+	\eqref{eq:eigenvector:normalized} shows how to construct an eigenvector with eigenvalue 1:
+	\begin{align*}
+	 	\ket{\vec{\sigma} \cdot \vec{\hat{n}}=1} =& \sqrt{\frac{1+n_3}{2}} \begin{bmatrix}
+			1\\\frac{1-n_3}{n_1-i n_2}
+		\end{bmatrix}\text{. Our theorem claims that this can be equated with} \\
+		=& \begin{bmatrix}
+						\alpha\\
+						\beta
+			\end{bmatrix} \text{, i.e.}\\
+			\sqrt{\frac{1+n_3}{2}} =& \alpha \text{, and} \numberthis \label{eq:thm:alpha}\\
+			\alpha \frac{1-n_3}{n_1-i n_2} =& \beta \numberthis \label{eq:thm:beta} 
+	\end{align*}
+	Since we want $n_3$ to be real, we may need to transform $\alpha \rightarrow e^{i\theta}\alpha, \beta \rightarrow e^{i\theta}\beta$ so $\alpha$ is real. Then \eqref{eq:thm:alpha} gives:
+	\begin{align*}
+		n_3 =& 2 \alpha^2-1 \text{, and from \eqref{eq:thm:beta}}\\
+		 \frac{1-n_3}{n_1-i n_2} =& \frac{\beta}{\alpha}\\
+		 \frac{1}{n_1-i n_2}\frac{{n_1+i n_2}}{{n_1+i n_2}}=&\frac{\beta}{\alpha\big(1-n_3\big)}\\
+		 \frac{{n_1+i n_2}}{{n_1^2+ n_2^2}} =& \frac{\beta}{\alpha\big(1-n_3\big)}\\
+		 \frac{{n_1+i n_2}}{{1- n_3^2}} =&\frac{\beta}{\alpha\big(1-n_3\big)}\\
+		 \frac{{n_1+i n_2}}{1+ n_3} =&\frac{\beta}{\alpha}\\
+		 \frac{{n_1+i n_2}}{2 \alpha^2} =&\frac{\beta}{\alpha}\\
+		 n_1+i n_2 = 2\alpha\beta
+	\end{align*} 
 \end{proof}
 \subsection{Pairs of electrons--Entanglement at last}
 There are four states: $\ket{u\;u}, \,\ket{d\;u}, \,\ket{u\;d}, \,\ket{d\;d}$.  We will use $\sigma$ for the first electron, $\tau$ for the second:  $\sigma$ leaves the second spin unchanged, $\tau$ leaves the first unchanged.

@@ -954,99 +954,7 @@ Let $M$ be a matrix/linear operator in a space with basis $\ket{i}$ and consider
 \end{thm}
 
 \begin{proof}
-	This is an easy consequence of the following lemmata. 
-	\begin{lemma}\label{lemma:ev:determinant}
-		The eigenvalues satisfy the polynomial equation obtained by expanding the following determinant:
-		\begin{align*}
-			\begin{vmatrix}
-				\lambda-a_{11}&-a_{12}&-a_{13}&...&-a_{1n}\\
-				-a_{21}&\lambda-a_{22}&-a_{23}&...&-a_{2n}\\
-				-a_{31}&-a_{32}&\lambda-a_{33}&...&-a_{3n}\\
-				...&...&...&...&...\\
-				-a_{n1}&-a_{n2}&-a_{n3}&...&\lambda-a_{nn}
-			\end{vmatrix}=0\numberthis\label{eq:eigen:determinant}
-		\end{align*}
-	\end{lemma}
-
-	\begin{lemma}\label{lemma:coeff:sum}
-		The coefficient of $\lambda^{n-1}$  in \eqref{eq:eigen:determinant} is $-\sum_{i=1}^{n} a_{ii}$
-	\end{lemma}
-
-	Applying Lemma \ref{lemma:ev:determinant} and Vi\`ete's first formulae\cite{enwiki:1030161470} to \eqref{eq:eigen:determinant}, we see that the sum of the roots of the equation is given by $-\sum_{i=1}^{n}a_{ii}$. But the $\lambda_i$ are the roots, whence $\sum_{i=1}^{n}\lambda_i=-\sum_{i=1}^{n}a_{ii}$
-	\begin{proof}[Proof of Lemma \ref{lemma:ev:determinant}]
-		From the definition of eigenvalue, and eigenvalue $\lambda$ and its corresponding eigenvector $\vec{v}$ must satisfy:
-		\begin{align*}
-			\begin{bmatrix}
-				a_{11}&a_{12}&a_{13}&...&a_{1n}\\
-				a_{21}&a_{22}&a_{23}&...&a_{2n}\\
-				a_{31}&a_{32}&a_{33}&...&a_{3n}\\
-				...&...&...&...&...\\
-				a_{n1}&a_{n2}&a_{n3}&...&a_{nn}
-			\end{bmatrix}\begin{bmatrix}
-				v_1\\
-				v_2\\
-				v_3\\
-				...\\
-				v_n
-			\end{bmatrix}=&\lambda \begin{bmatrix}
-				v_1\\
-				v_2\\
-				v_3\\
-				...\\
-				v_n
-			\end{bmatrix} \text{, whence:} \\
-			\begin{bmatrix}
-				a_{11}-\lambda&a_{12}&a_{13}&...&a_{1n}\\
-				a_{21}&a_{22}-\lambda&a_{23}&...&a_{2n}\\
-				a_{31}&a_{32}&a_{33}-\lambda&...&a_{3n}\\
-				...&...&...&...&...\\
-				a_{n1}&a_{n2}&a_{n3}&...&a_{nn}-\lambda
-			\end{bmatrix}\begin{bmatrix}
-				v_1\\
-				v_2\\
-				v_3\\
-				...\\
-				v_n
-			\end{bmatrix}=&0
-		\end{align*}
-		This equation has non-trivial solutions $\vec{v}$ iff the determinant is zero, i.e. iff \eqref{eq:eigen:determinant} is satisfied.
-	\end{proof}
-	\begin{proof}[Proof of Lemma \ref{lemma:coeff:sum}]
-		This follows from mathematical induction.
-		\begin{enumerate}
-			\item Clearly the result is true for $n=1$, as the equation reduces to $a_{11}=\lambda$.
-			\item Assume that the result is true for $n=m-1$, where $m\ge 1$. We expand \eqref{eq:eigen:determinant} in cofactors.
-		\end{enumerate}
-		\begin{align*}
-			0=&\begin{vmatrix}
-				\lambda-a_{11}&-a_{12}&...&-a_{1n}\\
-				-a_{21}&\lambda-a_{22}&...&-a_{2n}\\
-				...&...&...&...\\
-				-a_{n1}&-a_{n2}&...&\lambda-a_{nn}
-			\end{vmatrix}\\=& \big(\lambda-a_{11}\big)\begin{vmatrix}
-														\lambda-a_{22}&...&-a_{2n}\\
-														...&...&...\\
-														-a_{n2}&...&\lambda-a_{nn}
-													\end{vmatrix}+a_{12}\begin{vmatrix}
-													\lambda-a_{11}&\cancel{-a_{12}}&...&-a_{1n}\\
-													-\bcancel{a_{21}}&\xcancel{\lambda-a_{22}}&...&-\bcancel{a_{2n}}\\
-													...&...&...&...\\
-													-a_{n1}&\cancel{-a_{n2}}&...&\lambda-a_{nn}
-												\end{vmatrix} - ... \numberthis \label{eq:cofactors}
-		\end{align*}
-		The first term in \eqref{eq:cofactors} gives:
-		\begin{align*}
-			\big(\lambda-a_{11}\big)\begin{vmatrix}
-			\lambda-a_{22}&...&-a_{2n}\\
-			...&...&...\\
-			-a_{n2}&...&\lambda-a_{nn}
-			\end{vmatrix}=&	\big(\lambda-a_{11}\big) \big(\lambda^{n-1} - \sum_{i=2}^{n}a_{ii}\lambda^{n-1}+...\big)	\\
-			=& \lambda \lambda^{n-1} - \lambda \sum_{i=2}^{n}a_{ii}\lambda^{n-2} - \alpha_{11}\lambda^{n-1} + \mathcal{O}(\lambda^{n-2})\\
-			=& \lambda^n - \sum_{i=1}^{n}a_{ii}\lambda^{n-1}+ \mathcal{O}(\lambda^{n-2}) \numberthis \label{eq:cofactor1}
-		\end{align*}
-	\end{proof}
-	Now each of the remaining terms in \eqref{eq:cofactors} consists of a determinant dimension $n-1$ with a $\lambda$ in $n-2$ rows only, multiplied by a constant: it is therefore of $\mathcal{O}(\lambda^{n-2})$. So \eqref{eq:cofactor1} gives the same result as \eqref{eq:cofactors}: this the identical to the induction hypothesis, with $n-1\rightarrow n$.
-
+	See Appendix \ref{proof:sum_ev}
 \end{proof}
 
 \begin{cor}[The trace of a matrix is independent of the choice of basis]\end{cor}
@@ -1089,7 +997,13 @@ We have an observable $F$. If we were in the $i$th state, the expectation would 
 \begin{thm}[$\Tr(AB)=\Tr(BA)$]This is true even if the two matrices don't commute.
 \end{thm}
 \begin{proof}
-	TBP
+	\begin{align*}
+		\Tr AB =& \sum_i (AB)_{ii} \text{, by definition of trace}\\
+		=& \sum_{i,j} a_{ij} b_{ij} \text{, by defnition of matrix multiplication}\\
+		=& \sum_{i,j} b_{ij} a_{ij} \text{, on rearranging}\\
+		=& \sum_i (AB)_{ji} \text{, by defnition of matrix multiplication}\\
+		=& \Tr BA \text{, by definition of trace}
+	\end{align*}
 \end{proof}
 We now introduce the quantum mechanical definition of entropy. If one $rho_i$ is 1 and all the others zero, entropy is zero.
 
@@ -1215,7 +1129,9 @@ We'll calculate the eigenvalues.
 		\item Sum of eigenvalue=trace.
 	\end{enumerate}
 \end{thm}
-
+\begin{proof}
+	TBP
+\end{proof}
 So we know eigenvalues are 0 and 1; entropy is zero. This is a product state.
 
 \begin{align*}
@@ -1506,7 +1422,7 @@ Hence \eqref{eq:ud_oscillation} becomes a simple harmonic oscillation between $\
 
 \begin{appendices}
 	\section {Proofs of theorems}
-	This section contains proofs that might distract from the presentation.
+	This section contains proofs of theorems that were stated without proof during the lectures, and are sufficiently long that they might distract from the presentation.
 	\subsection{Theorem \ref{thm:any:direction:corresponds}}\label{proof:any:direction:corresponds}
 	\begin{proof}
 		\eqref{eq:eigenvector:normalized} shows how to construct an eigenvector with eigenvalue 1:
@@ -1533,6 +1449,103 @@ Hence \eqref{eq:ud_oscillation} becomes a simple harmonic oscillation between $\
 		n_1+i n_2 = 2\alpha\beta
 		\end{align*} 
 	\end{proof}
+	\subsection{Theorem \ref{thm:sum:ev}}\label{proof:sum_ev}
+	\begin{proof}
+		This is an easy consequence of the following lemmata. 
+		\begin{lemma}\label{lemma:ev:determinant}
+			The eigenvalues satisfy the polynomial equation obtained by expanding the following determinant:
+			\begin{align*}
+			\begin{vmatrix}
+			\lambda-a_{11}&-a_{12}&-a_{13}&...&-a_{1n}\\
+			-a_{21}&\lambda-a_{22}&-a_{23}&...&-a_{2n}\\
+			-a_{31}&-a_{32}&\lambda-a_{33}&...&-a_{3n}\\
+			...&...&...&...&...\\
+			-a_{n1}&-a_{n2}&-a_{n3}&...&\lambda-a_{nn}
+			\end{vmatrix}=0\numberthis\label{eq:eigen:determinant}
+			\end{align*}
+		\end{lemma}
+		
+		\begin{lemma}\label{lemma:coeff:sum}
+			The coefficient of $\lambda^{n-1}$  in \eqref{eq:eigen:determinant} is $-\sum_{i=1}^{n} a_{ii}$
+		\end{lemma}
+		
+		Applying Lemma \ref{lemma:ev:determinant} and Vi\`ete's first formulae\cite{enwiki:1030161470} to \eqref{eq:eigen:determinant}, we see that the sum of the roots of the equation is given by $-\sum_{i=1}^{n}a_{ii}$. But the $\lambda_i$ are the roots, whence $\sum_{i=1}^{n}\lambda_i=-\sum_{i=1}^{n}a_{ii}$
+		\begin{proof}[Proof of Lemma \ref{lemma:ev:determinant}]
+			From the definition of eigenvalue, and eigenvalue $\lambda$ and its corresponding eigenvector $\vec{v}$ must satisfy:
+			\begin{align*}
+			\begin{bmatrix}
+			a_{11}&a_{12}&a_{13}&...&a_{1n}\\
+			a_{21}&a_{22}&a_{23}&...&a_{2n}\\
+			a_{31}&a_{32}&a_{33}&...&a_{3n}\\
+			...&...&...&...&...\\
+			a_{n1}&a_{n2}&a_{n3}&...&a_{nn}
+			\end{bmatrix}\begin{bmatrix}
+			v_1\\
+			v_2\\
+			v_3\\
+			...\\
+			v_n
+			\end{bmatrix}=&\lambda \begin{bmatrix}
+			v_1\\
+			v_2\\
+			v_3\\
+			...\\
+			v_n
+			\end{bmatrix} \text{, whence:} \\
+			\begin{bmatrix}
+			a_{11}-\lambda&a_{12}&a_{13}&...&a_{1n}\\
+			a_{21}&a_{22}-\lambda&a_{23}&...&a_{2n}\\
+			a_{31}&a_{32}&a_{33}-\lambda&...&a_{3n}\\
+			...&...&...&...&...\\
+			a_{n1}&a_{n2}&a_{n3}&...&a_{nn}-\lambda
+			\end{bmatrix}\begin{bmatrix}
+			v_1\\
+			v_2\\
+			v_3\\
+			...\\
+			v_n
+			\end{bmatrix}=&0
+			\end{align*}
+			This equation has non-trivial solutions $\vec{v}$ iff the determinant is zero, i.e. iff \eqref{eq:eigen:determinant} is satisfied.
+		\end{proof}
+		\begin{proof}[Proof of Lemma \ref{lemma:coeff:sum}]
+			This follows from mathematical induction.
+			\begin{enumerate}
+				\item Clearly the result is true for $n=1$, as the equation reduces to $a_{11}=\lambda$.
+				\item Assume that the result is true for $n=m-1$, where $m\ge 1$. We expand \eqref{eq:eigen:determinant} in cofactors.
+			\end{enumerate}
+			\begin{align*}
+			0=&\begin{vmatrix}
+			\lambda-a_{11}&-a_{12}&...&-a_{1n}\\
+			-a_{21}&\lambda-a_{22}&...&-a_{2n}\\
+			...&...&...&...\\
+			-a_{n1}&-a_{n2}&...&\lambda-a_{nn}
+			\end{vmatrix}\\=& \big(\lambda-a_{11}\big)\begin{vmatrix}
+			\lambda-a_{22}&...&-a_{2n}\\
+			...&...&...\\
+			-a_{n2}&...&\lambda-a_{nn}
+			\end{vmatrix}+a_{12}\begin{vmatrix}
+			\lambda-a_{11}&\cancel{-a_{12}}&...&-a_{1n}\\
+			-\bcancel{a_{21}}&\xcancel{\lambda-a_{22}}&...&-\bcancel{a_{2n}}\\
+			...&...&...&...\\
+			-a_{n1}&\cancel{-a_{n2}}&...&\lambda-a_{nn}
+			\end{vmatrix} - ... \numberthis \label{eq:cofactors}
+			\end{align*}
+			The first term in \eqref{eq:cofactors} gives:
+			\begin{align*}
+			\big(\lambda-a_{11}\big)\begin{vmatrix}
+			\lambda-a_{22}&...&-a_{2n}\\
+			...&...&...\\
+			-a_{n2}&...&\lambda-a_{nn}
+			\end{vmatrix}=&	\big(\lambda-a_{11}\big) \big(\lambda^{n-1} - \sum_{i=2}^{n}a_{ii}\lambda^{n-1}+...\big)	\\
+			=& \lambda \lambda^{n-1} - \lambda \sum_{i=2}^{n}a_{ii}\lambda^{n-2} - \alpha_{11}\lambda^{n-1} + \mathcal{O}(\lambda^{n-2})\\
+			=& \lambda^n - \sum_{i=1}^{n}a_{ii}\lambda^{n-1}+ \mathcal{O}(\lambda^{n-2}) \numberthis \label{eq:cofactor1}
+			\end{align*}
+		\end{proof}
+		Now each of the remaining terms in \eqref{eq:cofactors} consists of a determinant dimension $n-1$ with a $\lambda$ in $n-2$ rows only, multiplied by a constant: it is therefore of $\mathcal{O}(\lambda^{n-2})$. So \eqref{eq:cofactor1} gives the same result as \eqref{eq:cofactors}: this the identical to the induction hypothesis, with $n-1\rightarrow n$.
+		
+	\end{proof}
+	
 \end{appendices}
 \bibliographystyle{unsrt}
 \addcontentsline{toc}{section}{Bibliography}

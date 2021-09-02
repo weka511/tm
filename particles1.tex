@@ -25,6 +25,10 @@
 \begin{abstract}
 These are my notes for the \emph{New Revolutions in Particle Physics 1} lectures\cite{susskind2009particles} from Leonard Susskind's \emph{Theoretical Minimum} series\cite{susskind2007theoretical}.
 
+\begin{quotation}
+	Revolutionary new concepts about elementary particles, space and time, and the structure of matter began to emerge in the mid-1970s. Theory got far ahead of experiment with radical new ideas such as grand unification and supersymmetry, but the concepts have never been experimentally tested. Now all that is about to change. The Large Hadron Collider, or LHC, has finally been built and is about to confront theory with experiment. This course is devoted to these theoretical ideas and how they will be tested.
+\end{quotation}
+
 Disclaimer: I have created these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended 
 as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
 
@@ -1306,23 +1310,22 @@ Often can ignore parts of Lagrangian: e.g. quarks don't have much to do with ele
 
 \section{Field Lagrangians and Path Integrals}
 
-The basic technique that Lecture \ref{sect:equation:motion} alluded to is called the path integral method of quantum mechanics. It is the most direct route to the theory of particles interactions based on Feynman diagrams. The path integral is the quantum mechanical version of the Principle of Least Action\cite{susskind2013quantum}. If we think of a classical Newtonian particle its motion from one point of space-time to another is determined by a Lagrangian $\mathcal{L}(\dot{X},X)$. We use the Lagrangian to construct the Action. 
+The basic technique that Lecture \ref{sect:equation:motion} alluded to is called the \emph{path integral method of quantum mechanics}. It is the most direct route to the theory of particle interactions based on Feynman diagrams. The path integral is the quantum mechanical version of the Principle of Least Action\cite{susskind2013quantum}. If we think of a classical Newtonian particle, its motion from one point of space-time to another is determined by a Lagrangian $\mathcal{L}(\dot{X},X)$. We use the Lagrangian to construct the Action. 
 
-\begin{defn}[Action of Path]
-	For every trajectory, $P$ from the initial point to the final point , whether or not the trajectory is a solution to Newton's Laws of motion,  the Action is: 
+\begin{defn}[Classical Action of Path]
+	For every trajectory, $P$ from the initial point to the final point, whether or not the trajectory is a solution to Newton's Laws of motion,  the Classical Action is: 
 	\begin{align*}
-		\mathcal{A}=\int_P dx^4 \mathcal{L}
+		\mathcal{A}=\int_P dt \mathcal{L}(\dot{X},X)
 	\end{align*}
 \end{defn}
 
-The classical form of the Principle of Least Action is that the true trajectory minimizes the action. We can use the calculus of variations to derive differential equations which satisfy Newton's Laws.
 
-The same idea works in classical field theory, where $\mathcal{L}=\mathcal{L}(\phi,\phi_\mu)$. The theory of relativity requires that the Lagrangian be a scalar\cite{susskind2017special}.
+The classical form of the Principle of Least Action is that the true trajectory minimizes the action. We can use the calculus of variations to derive differential equations which satisfy Newton's Laws. The same idea works in classical field theory, where $\mathcal{L}=\mathcal{L}(\phi,\partial_\mu\phi)$. The theory of relativity requires that the Lagrangian be a scalar\cite{susskind2017special}.
 
 \begin{defn}[Action over Region]
 	For a region of spaces time, $R$,  the Action is: 
 	\begin{align*}
-		\mathcal{A}=\int_R dx^4 \mathcal{L}
+		\mathcal{A}=\int_R dx^4 \mathcal{L}(\phi,\partial_\mu\phi)
 	\end{align*}
 \end{defn}
 

@@ -1,7 +1,7 @@
 % !TeX program = lualatex
 \documentclass[]{article}
 
-\usepackage{caption,subcaption,graphicx,float,url,amsmath,amssymb,amsthm,tocloft,cancel,thmtools,gensymb,braket,tikz-feynman,mathtools}
+\usepackage{caption,subcaption,graphicx,float,url,amsmath,amssymb,amsthm,tocloft,cancel,thmtools,gensymb,braket,tikz-cd,tikz-feynman,mathtools}
 \usepackage[toc,nonumberlist]{glossaries}
 \usepackage{glossaries-extra}
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
@@ -70,12 +70,12 @@ H \ket{\psi} =& E \ket{\psi}\text{, Time independent Schr\"odinger Equation}
 
 \subsection{Introduction to Symmetry}
 
-\begin{defn}[Symmetry]
+\begin{defn}[Symmetry]\label{defn:symmetry}
 	A symmetry is a transformation that doesn't change equations. 
 \end{defn}
 Rotational symmetry is one of the most important symmetries, as is translational symmetry.
 
-\begin{thm}[A symmetry is a unitary operator that commutes with Hamiltonian]
+\begin{thm}[A symmetry is a unitary operator that commutes with the Hamiltonian]
 	\begin{align*}
 	V \ket{\psi} =& \ket{\psi^{\prime}} \text{is a symmetry}\numberthis \label{eq:symmetry}\\
 	\iff&\\
@@ -84,12 +84,23 @@ Rotational symmetry is one of the most important symmetries, as is translational
 \end{thm}
 
 \begin{proof}
-	Suppose $\psi_1$ evolves to $\psi_2$:
+	Suppose $\psi_1$ evolves to $\psi_2$, as shown in Figure \ref{fig:commutator}.
+	\begin{figure}[H]
+		\begin{center}
+			\caption{Commutative diagram: $\ket{\psi_1}$ evolves to $\ket{\psi_2}$}\label{fig:commutator}
+			\begin{tikzcd}
+				\ket{\psi_1} \arrow[r, "U"] \arrow[d,"V"]
+				& \ket{\psi_2} \arrow[d, "V" ] \\
+				\ket{\psi_1^\prime} \arrow[r,  "U" ]
+				&  \ket{\psi_2^\prime}
+			\end{tikzcd}
+		\end{center}
+	\end{figure}
 	\begin{align*}
 	\ket{\psi_1} \xrightarrow{U}& \ket{\psi_2} \text {or, equivalently}\\
 	\psi_2 =& U \psi_1 \text{. Now, if $V$ really is a symmetry:} \numberthis \label{eq:psi_1}\\
 	\ket{\psi_1^{\prime}} \xrightarrow{U}& \ket{\psi_2^{\prime}} \text {,  or}\\
-	\psi_2^{\prime} =& U \psi_1^{\prime} \text{, so from (\ref{eq:symmetry}):}\\
+	\psi_2^{\prime} =& U \psi_1^{\prime} \text{, so from (\ref{eq:symmetry}) and Definition \ref{defn:symmetry}:} \\
 	V\ket{\psi_2} =& U V \ket{\psi_1} \text{, or, using (\ref{eq:psi_1})}\\
 	V U\ket {\psi_1} =& U V \ket{\psi_1} \text{. But $\ket{\psi_1}$ is an arbitrary state, so} \\
 	V U =& U V \text{ i.e. so for small time $\epsilon$}\\

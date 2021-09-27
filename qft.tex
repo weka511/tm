@@ -1,0 +1,87 @@
+% !TeX program = lualatex
+\documentclass[]{article}
+
+\usepackage{caption,subcaption,graphicx,float,url,amsmath,amssymb,amsthm,tocloft,cancel,thmtools,gensymb,braket,tikz-feynman,mathtools,color, colortbl}
+\usepackage[toc,nonumberlist]{glossaries}
+\usepackage{glossaries-extra}
+\usepackage[toc,page]{appendix}
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lemma}[thm]{Lemma}
+\graphicspath{{figs/}}
+\widowpenalty10000
+\clubpenalty10000
+\setcounter{tocdepth}{2}
+\tikzfeynmanset{compat=1.1.0}
+\definecolor{Gray}{gray}{0.5}
+\DeclareMathOperator{\Tr}{Tr \;}
+%opening
+\title{QFT}
+\author{Simon Crase (compiler)\\simon@greenweaves.nz}
+
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{}
+
+\begin{align*}
+	\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} =& \bigg(\frac{2\pi}{a}\bigg)^\frac{1}{2} \numberthis \label{eq:integral:gaussian}
+\end{align*}
+\begin{thm}
+	\begin{align*}
+		\langle x^{2n} \rangle =& \frac{\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}x^{2n}}{\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}}\\
+		=&\frac{\prod_{k=1}^{n}\big(2k-1\big)}{a^n}
+	\end{align*}
+\end{thm}
+
+\begin{proof}
+	The proof by mathematical induction starts by defining the proposition $P(n)$:
+	\begin{align*}
+		P(n) \equiv& \bigg[\frac{\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}x^{2n}}{\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}}=\frac{\prod_{k=1}^{n}\big(2k-1\big)}{a^n}\bigg]
+	\end{align*}
+	\begin{lemma}
+		P(0) is true.
+	\end{lemma}
+	\begin{proof}
+		$P(0)$ reduces to $\frac{\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}}{\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}}=1$
+	\end{proof}
+	\begin{lemma}
+		$P(0) \implies P(1)$
+	\end{lemma}
+	\begin{proof}
+		We observe the integrand in (\ref{eq:integral:gaussian}) converges uniformly, so we can differentiate under the integral sign.
+		\begin{align*}
+			-2\frac{d}{da}\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} =& -2\frac{d}{da} \bigg(\frac{2\pi}{a}\bigg)^\frac{1}{2}\\
+			\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} x^2 =& \bigg(\frac{2\pi}{a^3}\bigg)^\frac{1}{2}\\
+			=& \bigg(\frac{2\pi}{a}\bigg)^\frac{1}{2} \frac{1}{a}\\
+			=& \int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} \frac{1}{a}
+		\end{align*}
+	\end{proof}
+	\begin{lemma}
+		$P(n) \land P(1)\implies P(n+1)$
+	\end{lemma}
+	\begin{proof}
+		\begin{align*}
+		\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}x^{2n}=&\prod_{k=1}^{n}\big(2k-1\big)	\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2} \frac{1}{a^n}\\
+		-2\frac{d}{da}\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}x^{2n}=&-2 \prod_{k=1}^{n}\big(2k-1\big)\frac{d}{da} \big[	\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2} \frac{1}{a^n}\big]\\
+		\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}x^{2(n+1)}=&-2 \prod_{k=1}^{n}\big(2k-1\big)\bigg[\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} (-\frac{1}{2}x^2)\frac{1}{a^n}-\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2}\frac{n}{a^{n+1}}\bigg]\\
+		=&\prod_{k=1}^{n}\big(2k-1\big)\bigg[\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2}\frac{x^2}{a^n}+2\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2}\frac{n}{a^{n+1}}\bigg]\\
+		=&\prod_{k=1}^{n}\big(2k-1\big)\bigg[ \int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2}\frac{1}{a} \frac{1}{a^n} + \int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} \frac{2n}{a^{n+1}}\bigg]\\
+		=&\prod_{k=1}^{n}\big(2k-1\big) \frac{2n+1}{a^{n+1}}\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2}\\
+		=&\prod_{k=1}^{n+1}\big(2k-1\big) \frac{1}{a^{n+1}}\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2}
+		\end{align*}
+	\end{proof}
+\end{proof}
+
+\end{document}

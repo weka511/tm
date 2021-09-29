@@ -31,17 +31,18 @@
 
 \begin{abstract}
 
+Proofs of equations from \cite{zee2010quantum}
 \end{abstract}
 
 \section{}
 
 \begin{align*}
-	\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} =& \bigg(\frac{2\pi}{a}\bigg)^\frac{1}{2} \numberthis \label{eq:integral:gaussian}
+	\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} =& \frac{1}{\sqrt{a}}\int_{-\infty}^{\infty} \underbrace{dy e^{-\frac{1}{2}y^2}}_\text{ where $y=\sqrt{a}x$} \\
+	=& \bigg(\frac{2\pi}{a}\bigg)^\frac{1}{2} \numberthis \label{eq:integral:gaussian}
 \end{align*}
 \begin{thm}
 	\begin{align*}
-		\langle x^{2n} \rangle =& \frac{\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}x^{2n}}{\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}}\\
-		=&\frac{\prod_{k=1}^{n}\big(2k-1\big)}{a^n}
+		\frac{\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}x^{2n}}{\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}} =&\frac{\prod_{k=1}^{n}\big(2k-1\big)}{a^n}
 	\end{align*}
 \end{thm}
 
@@ -50,17 +51,30 @@
 	\begin{align*}
 		P(n) \equiv& \bigg[\frac{\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}x^{2n}}{\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}}=\frac{\prod_{k=1}^{n}\big(2k-1\big)}{a^n}\bigg]
 	\end{align*}
-	\begin{lemma}
+	\begin{lemma}\label{thm:P_0}
 		P(0) is true.
 	\end{lemma}
 	\begin{proof}
 		$P(0)$ reduces to $\frac{\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}}{\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}}=1$
 	\end{proof}
-	\begin{lemma}
+    \begin{lemma}\label{lemma:uniform:convergence}
+    	\begin{align*}
+    		\forall \alpha >0 \text{, }\frac{d}{d\alpha}\int_{-\infty}^\infty dx e^{-\frac{1}{2}\alpha x^2}x^{2n} =&\int_{-\infty}^\infty dx \frac{\partial}{\partial \alpha} \big[e^{-\frac{1}{2}\alpha x^2}x^{2n}\big]
+    	\end{align*}
+    \end{lemma}
+	\begin{proof}
+		\begin{align*}
+			\forall a>0, \forall \alpha_0 >0 :& \alpha_0<\alpha\\ \int_{a}^\infty dx e^{-\frac{1}{2}\alpha x^2}x^{2n} =&\int_{a}^\infty dx e^{-\frac{1}{2}\alpha_0 x^2} e^{-\frac{1}{2}(\alpha-\alpha_0) x^2}x^{2n} \text{. Now define}\\
+			M(x) =& e^{-\frac{1}{2}\alpha_0 x^2}
+		\end{align*}
+		We can choose $a$ large enough that $e^{-\frac{1}{2}(\alpha-\alpha_0) x^2}x^{2n}$ is monotone decreasing for $x>a$. Clearly $e^{-\frac{1}{2}\alpha_0 x^2} e^{-\frac{1}{2}(\alpha-\alpha_0) x^2}x^{2n}<e^{-\frac{1}{2}\alpha_0 x^2}\; \forall x>a$ and $\int_{a}^\infty dx e^{-\frac{1}{2}\alpha_0 x^2}<\infty$, we we can apply the Weierstrass M-Test \cite[Chapter 10, 6.1]{widder1961advanced} to conclude that the integral converges uniformly, hence we can differentiate under the integral sign.
+	\end{proof}
+
+	\begin{lemma}\label{thm:P_1}
 		$P(0) \implies P(1)$
 	\end{lemma}
 	\begin{proof}
-		We observe the integrand in (\ref{eq:integral:gaussian}) converges uniformly, so we can differentiate under the integral sign.
+		Since (\ref{eq:integral:gaussian}) converges uniformly, Lemma \ref{lemma:uniform:convergence} allows us to differentiate under the integral sign\cite{widder1961advanced}.
 		\begin{align*}
 			-2\frac{d}{da}\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} =& -2\frac{d}{da} \bigg(\frac{2\pi}{a}\bigg)^\frac{1}{2}\\
 			\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} x^2 =& \bigg(\frac{2\pi}{a^3}\bigg)^\frac{1}{2}\\
@@ -68,20 +82,33 @@
 			=& \int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} \frac{1}{a}
 		\end{align*}
 	\end{proof}
-	\begin{lemma}
+	\begin{lemma}\label{thm:P_n}
 		$P(n) \land P(1)\implies P(n+1)$
 	\end{lemma}
 	\begin{proof}
 		\begin{align*}
+		P(n) \implies &\\
 		\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}x^{2n}=&\prod_{k=1}^{n}\big(2k-1\big)	\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2} \frac{1}{a^n}\\
 		-2\frac{d}{da}\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}x^{2n}=&-2 \prod_{k=1}^{n}\big(2k-1\big)\frac{d}{da} \big[	\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2} \frac{1}{a^n}\big]\\
-		\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}x^{2(n+1)}=&-2 \prod_{k=1}^{n}\big(2k-1\big)\bigg[\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} (-\frac{1}{2}x^2)\frac{1}{a^n}-\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2}\frac{n}{a^{n+1}}\bigg]\\
-		=&\prod_{k=1}^{n}\big(2k-1\big)\bigg[\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2}\frac{x^2}{a^n}+2\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2}\frac{n}{a^{n+1}}\bigg]\\
+		\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}x^{2(n+1)}=&-2 \prod_{k=1}^{n}\big(2k-1\big)\bigg[\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} (-\frac{1}{2}x^2)\frac{1}{a^n}-\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2}\frac{n}{a^{n+1}}\bigg] \\
+		=&\prod_{k=1}^{n}\big(2k-1\big)\bigg[\underbrace{\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2}x^2}_\text{Now we apply $P(1)$} \frac{1}{a^n}+2\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2}\frac{n}{a^{n+1}}\bigg]\\
 		=&\prod_{k=1}^{n}\big(2k-1\big)\bigg[ \int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2}\frac{1}{a} \frac{1}{a^n} + \int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} \frac{2n}{a^{n+1}}\bigg]\\
 		=&\prod_{k=1}^{n}\big(2k-1\big) \frac{2n+1}{a^{n+1}}\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2}\\
-		=&\prod_{k=1}^{n+1}\big(2k-1\big) \frac{1}{a^{n+1}}\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2}
+		=&\prod_{k=1}^{n+1}\big(2k-1\big) \frac{1}{a^{n+1}}\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2}\\
+		\equiv& P(n+1)
 		\end{align*}
 	\end{proof}
+	Summarizing:
+	\begin{align*}
+		\text{Lemma }\ref{thm:P_0} \implies& P(0)\\
+		P(0) \land \text{Lemma } \ref{thm:P_1} \implies& P(1)\\
+		P(0) \land P(1)\land P(n) \land \text{Lemma } \ref{thm:P_n} \implies& P(n+1)
+	\end{align*}
 \end{proof}
+
+\bibliographystyle{unsrt}
+\addcontentsline{toc}{section}{Bibliography}
+\raggedright
+\bibliography{tm}
 
 \end{document}

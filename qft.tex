@@ -31,10 +31,11 @@
 
 \begin{abstract}
 
-Proofs of equations from \cite{zee2010quantum}
+This document contains derivations of equations from \cite{zee2010quantum}.
+
 \end{abstract}
 
-\section{}
+\section{Path Integral Formulation}
 
 \begin{align*}
 	\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} =& \frac{1}{\sqrt{a}}\int_{-\infty}^{\infty} \underbrace{dy e^{-\frac{1}{2}y^2}}_\text{ where $y=\sqrt{a}x$} \\
@@ -64,10 +65,22 @@ Proofs of equations from \cite{zee2010quantum}
     \end{lemma}
 	\begin{proof}
 		\begin{align*}
-			\forall a>0, \forall \alpha_0 >0 :& \alpha_0<\alpha\\ \int_{a}^\infty dx e^{-\frac{1}{2}\alpha x^2}x^{2n} =&\int_{a}^\infty dx e^{-\frac{1}{2}\alpha_0 x^2} e^{-\frac{1}{2}(\alpha-\alpha_0) x^2}x^{2n} \text{. Now define}\\
-			M(x) =& e^{-\frac{1}{2}\alpha_0 x^2}
+			\forall a>0, \forall \alpha_0 \in (0,\alpha)\; \int_{a}^\infty dx e^{-\frac{1}{2}\alpha x^2}x^{2n} =&\int_{a}^\infty dx e^{-\frac{1}{2}\alpha_0 x^2} e^{-\frac{1}{2}(\alpha-\alpha_0) x^2}x^{2n} \\
+			\text{Now define}\; M(x) =& e^{-\frac{1}{2}\alpha_0 x^2}
 		\end{align*}
-		We can choose $a$ large enough that $e^{-\frac{1}{2}(\alpha-\alpha_0) x^2}x^{2n}$ is monotone decreasing for $x>a$. Clearly $e^{-\frac{1}{2}\alpha_0 x^2} e^{-\frac{1}{2}(\alpha-\alpha_0) x^2}x^{2n}<e^{-\frac{1}{2}\alpha_0 x^2}\; \forall x>a$ and $\int_{a}^\infty dx e^{-\frac{1}{2}\alpha_0 x^2}<\infty$, we we can apply the Weierstrass M-Test \cite[Chapter 10, 6.1]{widder1961advanced} to conclude that the integral converges uniformly, hence we can differentiate under the integral sign.
+		We can choose $a$ large enough that $e^{-\frac{1}{2}(\alpha-\alpha_0) x^2}x^{2n}$ is monotone decreasing for $x>a$. Clearly
+		\begin{align*}
+			e^{-\frac{1}{2}\alpha_0 x^2} e^{-\frac{1}{2}(\alpha-\alpha_0) x^2}x^{2n} \in C\\
+				e^{-\frac{1}{2}\alpha_0 x^2} \in C\\
+			e^{-\frac{1}{2}\alpha_0 x^2} e^{-\frac{1}{2}(\alpha-\alpha_0) x^2}x^{2n}<&M(x)\; \forall x>a \text{ and}\\
+			\int_{a}^\infty dx M(x)<&\infty
+		\end{align*}
+		 for $\alpha$ in closed interval [A,B] that includes $\alpha_0$; the Weierstrass M-Test \cite[Chapter 10, 6.1]{widder1961advanced} shows that the integral converges uniformly for $\alpha\in[A,B]$. Hence we can differentiate under the integral sign \cite[Chapter 10, 8.3]{widder1961advanced}.
+		Now
+		\begin{align*}
+			\int_{-\infty}^\infty dx e^{-\frac{1}{2}\alpha x^2}x^{2n} =& 2 \int_{a}^\infty dx e^{-\frac{1}{2}\alpha x^2}x^{2n} + \int_{-a}^a dx e^{-\frac{1}{2}\alpha x^2}x^{2n}
+		\end{align*}
+	Noting that $e^{-\frac{1}{2}\alpha x^2}x^{2n} \in C^1$ for x in [-a,a], we can also differentiate the second integral.
 	\end{proof}
 
 	\begin{lemma}\label{thm:P_1}
@@ -105,6 +118,43 @@ Proofs of equations from \cite{zee2010quantum}
 		P(0) \land P(1)\land P(n) \land \text{Lemma } \ref{thm:P_n} \implies& P(n+1)
 	\end{align*}
 \end{proof}
+
+\begin{thm}
+	If $A$ is a symmetric matrix
+	\begin{align*}
+		\int_{-\infty}^{\infty}dx_1 dx_2...dx_N e^{-\frac{1}{2}\vec{x}A\vec{x} + \vec{J} \cdot \vec{x}} =& \bigg(\frac{(2\pi)^N}{\vert A \vert}\bigg)^\frac{1}{2} e^{\frac{1}{2}\vec{J}\cdot A^{-1} \vec{J}} \numberthis \label {eq:Zee_I_2_22}
+	\end{align*}
+\end{thm}
+\begin{proof}
+	Since $A$ is symmetric, there exists an orthogonal matrix $O$ such that $A=O^T D O$, where $D$ is a diagonal matrix--\cite{bellman1970introduction}. Define
+	\begin{align*}
+		y_i =& \sum_j O_{ij}x_j\\
+		\int_{-\infty}^{\infty}dx_1 dx_2...dx_N e^{-\frac{1}{2}\vec{x}A\vec{x} + \vec{J} \cdot \vec{x}}=&\bigg(\frac{1}{\vert O \vert}\bigg)^N \int_{-\infty}^{\infty}dy_1 dy_2...dy_Ne^{-\frac{1}{2}\vec{x}O^T D O\vec{x} + \vec{J} \cdot \vec{x}}\\
+		=& \int_{-\infty}^{\infty}dy_1 dy_2...dy_N e^{-\frac{1}{2}(\vec{x}O^T) D (O\vec{x}) + \vec{J} \cdot \vec{x}}\\
+		=& \int_{-\infty}^{\infty}dy_1 dy_2...dy_N e^{- \frac{1}{2} \vec{y}D \vec{y} + (O\vec{J})\cdot \vec{y}}\\
+		=& \prod_{i=1}^N \int_{-\infty}^{\infty}dy_i e^{- \frac{1}{2} D_{ii}y_i^2 + (OJ)_i y_i}\\
+		=& \prod_{i=1}^N \bigg[\bigg(\frac{2\pi}{D_{ii}}\bigg)^\frac{1}{2} e^{\big(\frac{[(OJ)_i]^2}{2D_{ii}}\big)}\bigg] \numberthis \label {eq:Zee_I_2_22_a}
+	\end{align*}
+	But
+	\begin{align*}
+		\prod_{i=1}^N \bigg(\frac{2\pi}{D_{ii}}\bigg) =& \frac{({2\pi})^N}{\vert D \vert}\\
+		=& \frac{({2\pi})^N}{\vert A \vert} \text{, since $O$ is orthogonal} \numberthis \label {eq:Zee_I_2_22_b}
+	\end{align*}
+	And
+	\begin{align*}
+		\prod_{i=1}^N e^{\big(\frac{[(OJ)_i]^2}{2D_{ii}}\big)} =& e^{\sum_{i=1}^N {\big(\frac{[(OJ)_i]^2}{2D_{ii}}\big)}}\\
+		\sum_{i=1}^N {\big(\frac{[(OJ)_i]^2}{2D_{ii}}\big)} =& \frac{1}{2} \sum_{i=1}^N (OJ)_i (D^{-1})_{ii} (OJ)_i\\
+		 =& \frac{1}{2} \sum_{i,j,k,l=1}^N O_{ik} J_k (D^{-1})_{ij} O_{jl} J_l\\
+		 =& \frac{1}{2} \sum_{i,j,k,l=1}^N J_k O^T_{ki}  (D^{-1})_{ij} O_{jl} J_l \\
+		 =& \frac{1}{2} \sum_{k,l=1}^N J_k \bigg(\sum_{k,l=1}^N O^T_{ki}  (D^{-1})_{ij} O_{jl}\bigg) J_l\\
+		  \\
+		 =& \frac{1}{2} \sum_{k,l=1}^N J_k \big(A^{-1}\big)_{kl} J_l \\
+		 =& \frac{1}{2} J A^{-1} J \numberthis \label {eq:Zee_I_2_22_c}
+	\end{align*}
+	Substituting (\ref{eq:Zee_I_2_22_b}) and (\ref{eq:Zee_I_2_22_c}) in (\ref{eq:Zee_I_2_22_a}), we obtain (\ref{eq:Zee_I_2_22}).
+\end{proof}
+\url{https://youtu.be/aypGTsLN0ck?t=3294}
+
 
 \bibliographystyle{unsrt}
 \addcontentsline{toc}{section}{Bibliography}

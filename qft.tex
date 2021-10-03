@@ -35,7 +35,8 @@ This document contains derivations of equations from \cite{zee2010quantum}.
 
 \end{abstract}
 
-\section{Path Integral Formulation}
+\section{Motivation and Foundation}
+\subsection{Path Integral Formulation}
 
 \begin{align*}
 	\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} =& \frac{1}{\sqrt{a}}\int_{-\infty}^{\infty} \underbrace{dy e^{-\frac{1}{2}y^2}}_\text{ where $y=\sqrt{a}x$} \\
@@ -153,6 +154,23 @@ This document contains derivations of equations from \cite{zee2010quantum}.
 	\end{align*}
 	Substituting (\ref{eq:Zee_I_2_22_b}) and (\ref{eq:Zee_I_2_22_c}) in (\ref{eq:Zee_I_2_22_a}), we obtain (\ref{eq:Zee_I_2_22}).
 \end{proof}
+
+\subsection{From Field to Particle to Force}
+\begin{align*}
+	W(J) =& - \frac{1}{2} \int \int d^4x d^4y J(x) D(x-y) J(y)\\
+	D(x-y) =& \int \frac{d^4k}{(2\pi)^4} \frac{e^{ik(x-y)}}{k^2-m^2+i\epsilon}\\
+	J(x) =& J_1(x) + J_2(x) \text{, where}\\
+	J_{a}(x) =&\delta^{(3)}(\vec{x}-\vec{x_a}) 
+\end{align*}
+Considering only the cross terms
+\begin{align*}
+	W(J) =& - \int \frac{1}{(2\pi)^4} \cancel{2} \cancel{\frac{1}{2}} \int \int d^4x d^4y d^4k \delta^{(3)}(\vec{x}-\vec{x_1})   \frac{e^{ik(x-y)}}{k^2-m^2+i\epsilon} \delta^{(3)}(\vec{y}-\vec{x_2}))\\
+	=& - \frac{1}{(2\pi)^4} \int \int \int \int \int \int dx^0 d\vec{x} dy^0 d\vec{y} dk^0 d\vec{k}  \delta^{(3)}(\vec{x}-\vec{x_1})   \frac{e^{ik^0(x^0-y^0)-i\vec{k} \cdot (\vec{x}-\vec{y})}}{k^2-m^2+i\epsilon} \delta^{(3)}(\vec{y}-\vec{x_2}))\\
+	=& - \frac{1}{(2\pi)^4} \int \int \int \int \int dx^0 d\vec{x} dy^0 dk^0 d\vec{k}  \delta^{(3)}(\vec{x}-\vec{x_1})   \frac{e^{ik^0(x^0-y^0)-i\vec{k} \cdot (\vec{x}-\vec{x_2})}}{k^2-m^2+i\epsilon} \\
+	=& - \frac{1}{(2\pi)^4} \int \int \int \int dx^0  dy^0 dk^0 d\vec{k} \;    \frac{e^{ik^0(x^0-y^0)-i\vec{k} \cdot (\vec{x_1}-\vec{x_2})}}{k^2-m^2+i\epsilon}\\
+	=& - \frac{1}{(2\pi)^3} \int \int dx^0  dy^0 \underbrace{\int \frac{dk^0}{2\pi} e^{ik^0(x^0-y^0)}}_\text{$\delta(x^0-y^0)$} \int d\vec{k} \; \frac{e^{i\vec{k} \cdot (\vec{x}-\vec{y})}}{k^2-m^2+i\epsilon}\\
+	=& - \frac{1}{(2\pi)^3} \int  dx^0  \int d\vec{k} \; \frac{e^{i\vec{k} \cdot (\vec{x}-\vec{y})}}{k^2-m^2+i\epsilon}
+\end{align*}
 \url{https://youtu.be/aypGTsLN0ck?t=3294}
 
 

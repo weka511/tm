@@ -19,6 +19,7 @@
 \tikzfeynmanset{compat=1.1.0}
 \definecolor{Gray}{gray}{0.5}
 \DeclareMathOperator{\Tr}{Tr \;}
+\newcommand{\Lagr}{\mathcal{L}}
 %opening
 \title{QFT}
 \author{Simon Crase (compiler)\\simon@greenweaves.nz}
@@ -171,7 +172,82 @@ Considering only the cross terms
 	=& - \frac{1}{(2\pi)^3} \int \int dx^0  dy^0 \underbrace{\int \frac{dk^0}{2\pi} e^{ik^0(x^0-y^0)}}_\text{$\delta(x^0-y^0)$} \int d\vec{k} \; \frac{e^{i\vec{k} \cdot (\vec{x}-\vec{y})}}{k^2-m^2+i\epsilon}\\
 	=& - \frac{1}{(2\pi)^3} \int  dx^0  \int d\vec{k} \; \frac{e^{i\vec{k} \cdot (\vec{x}-\vec{y})}}{k^2-m^2+i\epsilon}
 \end{align*}
-\url{https://youtu.be/aypGTsLN0ck?t=3294}
+
+\subsection{I.5 Coulomb and Newton}
+The Lagrangian Density is given by:
+\begin{align*}
+	\Lagr =& -\frac{1}{4} F_{\mu\nu}F^{\mu\nu} + \frac{1}{2}m^2 A_{\mu}A^{\mu} + A_{\mu}J^{\mu} \text{, where}\\
+	F_{\mu\nu} =& \partial_{\mu} A_{\nu} - \partial_{\nu} A_{\mu} \text{ and}\\
+	\partial_{\mu}J^{\nu}=& 0 \text{. We define the action} \numberthis \label{eq:EM_continuity}\\
+	S(A) =&\int d^4 \Lagr\\
+	=&  \int d^4x \bigg[-\frac{1}{4} F_{\mu\nu}F^{\mu\nu} + \frac{1}{2}m^2 A_{\mu}A^{\mu} + A_{\mu}J^{\mu} \bigg]
+\end{align*}
+Expanding the first term in the Lagrangian
+\begin{align*}
+	F_{\mu\nu}F^{\mu\nu}=& g^{\mu\rho} g^{\nu\sigma}F_{\mu\nu}F_{\rho\sigma}\\
+	=& g^{\mu\rho} g^{\nu\sigma} \big(\partial_{\mu} A_{\nu} - \partial_{\nu} A_{\mu}\big)\big(\partial_{\rho} A_{\sigma} - \partial_{\sigma} A_{\rho}\big)\\
+	=& g^{\mu\rho} g^{\nu\sigma}\big[\partial_{\mu} A_{\nu}\partial_{\rho} A_{\sigma} -\partial_{\mu} A_{\nu}\partial_{\sigma} A_{\rho} -\partial_{\nu} A_{\mu}\partial_{\rho} A_{\sigma} + \partial_{\nu} A_{\mu}\partial_{\sigma} A_{\rho}\big]\\
+	=& g^{\mu\rho} g^{\nu\sigma} \partial_{\mu} A_{\nu}\partial_{\rho} A_{\sigma} -g^{\mu\rho} g^{\nu\sigma} \partial_{\mu} A_{\nu}\partial_{\sigma} A_{\rho} -\underbrace{g^{\mu\rho} g^{\nu\sigma} \partial_{\nu} A_{\mu}\partial_{\rho} A_{\sigma}}_\text{substitute: $\mu\nu\rho\sigma\rightarrow\nu\mu\sigma\rho$} +\underbrace{g^{\mu\rho} g^{\nu\sigma} \partial_{\nu} A_{\mu}\partial_{\sigma} A_{\rho}}_\text{$\mu\nu\rho\sigma\rightarrow\nu\mu\sigma\rho$}	\\
+	=& g^{\mu\rho} g^{\nu\sigma} \partial_{\mu} A_{\nu}\partial_{\rho} A_{\sigma} -g^{\mu\rho} g^{\nu\sigma} \partial_{\mu} A_{\nu}\partial_{\sigma} A_{\rho} - g^{\nu\sigma} g^{\mu\rho} \partial_{\mu} A_{\nu}\partial_{\sigma} A_{\rho} +g^{\nu\sigma} g^{\mu\rho} \partial_{\mu} A_{\nu}\partial_{\rho} A_{ssigma}	\\
+	=& 2 \big[g^{\mu\rho} g^{\nu\sigma} \partial_{\mu} A_{\nu}\partial_{\rho} A_{\sigma} -g^{\mu\rho} g^{\nu\sigma} \partial_{\mu} A_{\nu}\partial_{\sigma} A_{\rho}\big]
+\end{align*}
+So the first term in the action is
+\begin{align*}
+	 -\frac{1}{4} \int d^4x F_{\mu\nu}F^{\mu\nu} =&  -\frac{2}{4} \int d^4x \big[g^{\mu\rho} g^{\nu\sigma} \partial_{\mu} A_{\nu}\partial_{\rho} A_{\sigma} -g^{\mu\rho} g^{\nu\sigma} \partial_{\mu} A_{\nu}\partial_{\sigma} A_{\rho}\big] \text{. Integrating by parts gives}\\
+	 =& \frac{1}{2} \int d^4x \big[g^{\mu\rho} g^{\nu\sigma}  A_{\nu}\partial_{\mu}\partial_{\rho} A_{\sigma} -g^{\mu\rho} g^{\nu\sigma}  A_{\nu}\partial_{\mu} \partial_{\sigma} A_{\rho}\big]\\
+	 =& \frac{1}{2} \int d^4x \big[ g^{\nu\sigma}  A_{\nu}\partial^2 A_{\sigma} -  A_{\nu}\partial^{\rho} \partial^{\nu} A_{\rho}\big]\\
+	 =& \frac{1}{2} \int d^4x A_{\nu} \big[ g^{\nu\sigma}  \partial^2  -  \partial^{\sigma} \partial^{\nu} \big] A_{\sigma}
+\end{align*}
+
+So the action becomes
+\begin{align*}
+	\int d^4 \Lagr=&  \int d^4x \bigg[\frac{1}{2} A_{\nu} \big[ g^{\nu\sigma}  \partial^2  -  \partial^{\sigma} \partial^{\nu} \big] A_{\sigma} + \frac{1}{2}m^2 A_{\mu}A^{\mu} + A_{\mu}J^{\mu} \bigg]\\
+	=&\int d^4x \bigg[\frac{1}{2} A_{\nu} \big[ g^{\nu\sigma}  (\partial^2 +m^2)  -  \partial^{\sigma} \partial^{\nu} \big] A_{\sigma} +  A_{\mu}J^{\mu} \bigg]
+\end{align*}
+
+\begin{align*}
+	D_{\mu\nu} \big(D^{-1}\big)^{\nu\lambda} =& \delta_{\mu}^{\lambda}
+\end{align*}
+From Lecture. How do we get a repulsive force? This is tied up with spin. If we want particles fro field to have spin 1, we need a vector--$A_{\mu}$. We need to reduce $A_{\mu}$ to 3 degrees of freedom (polarization), and \eqref{eq:EM_continuity} is the only Lorentz invariant way to do this. We will start with the physics--Figure \ref{fig:electromagnetic:current}.
+\begin{figure}[H]
+	\begin{center}
+		\caption{Electromagnetic Field with source and sink}\label{fig:electromagnetic:current}
+		\includegraphics[width=0.5\textwidth]{qft_liecture2_1}
+	\end{center}
+\end{figure}
+\begin{align*}
+	J \phi \rightarrow& J_{\mu} A^{\mu}\\
+	\frac{1}{k^2 + m^2} \rightarrow& \frac{1}{k^2 + m^2} \underbrace{\underbrace{\sum_{a=1}^{3}}_\text{3 polarizations} \epsilon_\mu^{(a)}(k) \epsilon_\nu^{(a)}(k)}_\text{A Lorentz tensor, $-G_{\mu\nu}$ say} \numberthis \label{eq:em:propagator}
+\end{align*}
+We will evaluate in the rest frame of the particle, where $k=(m,0,0,0)$, and polarization is the 3 directions in Cartesian space.
+\begin{align*}
+	\epsilon_\mu^{(1)}(k) =& (0,1,0,0)\\
+	\epsilon_\mu^{(2)}(k) =& (0,0,1,0)\\
+	\epsilon_\mu^{(3)}(k) =& (0,0,0,1)\\
+	k^{\mu}\epsilon_\mu =& 0 \text{, since $k=(m,0,0,0)$} \numberthis \label{eq:k_mu_0}
+\end{align*}
+\eqref{eq:k_mu_0} is Lorentz Invariant! c.f. $\partial_{\mu}A^{\mu}=0$. We will establish the tensor $G_{\mu\nu}$ in \eqref{eq:em:propagator} using symmetry and Lorentz invariance. There are only two things to construct $G_{\mu\nu}$ from, $k_{\mu}$ and $g_{\mu\nu}$.
+\begin{align*}
+	- G_{\mu\nu} =& A k_{\mu} k_{\nu} + B g_{\mu\nu}\\
+	 G_{\mu\nu} k^{\mu} =& 0 \text{ from \eqref{eq:k_mu_0}, whence}\\
+	 \big(A k_{\mu} k_{\nu} + B g_{\mu\nu}\big) k^{\mu} =& 0\\
+	 \big(A \underbrace{k^2}_\text{$=m^2$}+B\big)k_{\nu} =& 0\\
+	 A =& -\frac{B}{m^2}\\
+	 - G_{\mu\nu} =& -\big(g_{\mu\nu}-\frac{k_{\mu}k_{\nu}}{m^2}\big) \text{. Normalization fixed by rest frame.}\\
+	 \frac{1}{k^2 + m^2} \rightarrow& \frac{-g_{\mu\nu}+\frac{k_{\mu}k_{\nu}}{m^2}}{k^2 + m^2}
+\end{align*}
+Imagine two stationary charges: then $J^i=0$
+\begin{align*}
+	W(J) =& \int  \frac{d^4k}{(2\pi)4} J^{\mu}(k)^* \frac{-g_{\mu\nu}+\frac{k_{\mu}k_{\nu}}{m^2}}{k^2 + m^2} J^{\nu}(k)\\
+	\partial_{\mu} J^{\mu} =& 0 \text{ implies}\\
+	k_{\mu} J^{\mu} =& 0\\
+	W(J) =& \int  \frac{d^4k}{(2\pi)4} J^0(k)^* \frac{-g_{00}}{k^2 + m^2} J^0(k)\\
+	=& \int  \frac{d^4k}{(2\pi)4} J^0(k)^* \frac{-1}{k^2 + m^2} J^0(k) \text{--Like charges repel}
+\end{align*}
+
+Spin 2 has two indices $h_{\mu\nu}$. Two sign switches cancel!
+
+Even spin can exchange lumps, but not odd.
 
 
 \bibliographystyle{unsrt}

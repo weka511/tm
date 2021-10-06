@@ -70,8 +70,6 @@ Classical mechanics represents values as real numbers; QM often uses discrete va
 
 We can generalize the definition of the number of bits of information: it doesn't have to be an integer. We can represent the state of a physical system, to a specified precision, by a string of bits (quantize space, etc). Figure \ref{fig:state_transition} shows how the laws of physics can be represented as a state transition diagram.
 
-
-
 \begin{figure}[H]
 	\caption[State transition diagram for laws of physics]{The laws of physics can be represented as a state transition diagram. In quantum mechanics there is no fundamental difference between forward in time and backward in time.}\label{fig:state_transition}
 	\begin{subfigure}[t]{0.45\textwidth}
@@ -1124,13 +1122,17 @@ Consider:
 \end{align*}
 We'll calculate the eigenvalues.
 \begin{thm}[Product and sum of eigenvalues]
-	\begin{enumerate}
-		\item Product of eigenvalues = determinant;
-		\item Sum of eigenvalue=trace.
-	\end{enumerate}
+	For a matrix $A$ with eigenvalues  $\{\lambda_i\}$:
+	\begin{align*}
+		\prod_i \lambda_i =& \vert A \vert \text{ Product of eigenvalues = determinant} \numberthis \label{eq:prod:ev}\\
+		\sum_i \lambda_i =& \Tr A \text{ Sum of eigenvalue=trace} \numberthis \label{eq:sum:ev}
+	\end{align*}
 \end{thm}
 \begin{proof}
-	TBP
+	\begin{enumerate}
+		\item \eqref{eq:sum:ev} is proved in Section \ref{proof:sum_ev}, as part of proving Theorem \ref{thm:sum:ev}
+		\item \eqref{eq:prod:ev} can be seen as an application of the last of Vi\`ete's  formulae\cite{enwiki:1030161470}.
+	\end{enumerate}
 \end{proof}
 So we know eigenvalues are 0 and 1; entropy is zero. This is a product state.
 
@@ -1452,7 +1454,7 @@ Hence \eqref{eq:ud_oscillation} becomes a simple harmonic oscillation between $\
 	\subsection{Theorem \ref{thm:sum:ev}}\label{proof:sum_ev}
 	\begin{proof}
 		This is an easy consequence of the following lemmata. 
-		\begin{lemma}\label{lemma:ev:determinant}
+		\begin{lemma}[Polynomial Equation for eigenvalues]\label{lemma:ev:determinant}
 			The eigenvalues satisfy the polynomial equation obtained by expanding the following determinant:
 			\begin{align*}
 			\begin{vmatrix}
@@ -1465,11 +1467,11 @@ Hence \eqref{eq:ud_oscillation} becomes a simple harmonic oscillation between $\
 			\end{align*}
 		\end{lemma}
 		
-		\begin{lemma}\label{lemma:coeff:sum}
+		\begin{lemma}[Coefficient of $\lambda^{n-1}$ is $-\sum_{i=1}^{n} a_{ii}$]\label{lemma:coeff:sum}
 			The coefficient of $\lambda^{n-1}$  in \eqref{eq:eigen:determinant} is $-\sum_{i=1}^{n} a_{ii}$
 		\end{lemma}
 		
-		Applying Lemma \ref{lemma:ev:determinant} and Vi\`ete's first formulae\cite{enwiki:1030161470} to \eqref{eq:eigen:determinant}, we see that the sum of the roots of the equation is given by $-\sum_{i=1}^{n}a_{ii}$. But the $\lambda_i$ are the roots, whence $\sum_{i=1}^{n}\lambda_i=-\sum_{i=1}^{n}a_{ii}$
+		Applying Lemma \ref{lemma:ev:determinant} and Vi\`ete's first formula\cite{enwiki:1030161470} to \eqref{eq:eigen:determinant}, we see that the sum of the roots of the equation is given by $-\sum_{i=1}^{n}a_{ii}$. But the $\lambda_i$ are the roots, whence $\sum_{i=1}^{n}\lambda_i=-\sum_{i=1}^{n}a_{ii}$
 		\begin{proof}[Proof of Lemma \ref{lemma:ev:determinant}]
 			From the definition of eigenvalue, and eigenvalue $\lambda$ and its corresponding eigenvector $\vec{v}$ must satisfy:
 			\begin{align*}

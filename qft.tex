@@ -21,7 +21,7 @@
 \DeclareMathOperator{\Tr}{Tr \;}
 \newcommand{\Lagr}{\mathcal{L}}
 %opening
-\title{QFT}
+\title{Quantum Field Theory}
 \author{Simon Crase (compiler)\\simon@greenweaves.nz}
 
 
@@ -35,6 +35,8 @@
 This document contains derivations of equations from \cite{zee2010quantum}.
 
 \end{abstract}
+
+\tableofcontents
 
 \section{Motivation and Foundation}
 \subsection{Path Integral Formulation}
@@ -173,7 +175,7 @@ Considering only the cross terms
 	=& - \frac{1}{(2\pi)^3} \int  dx^0  \int d\vec{k} \; \frac{e^{i\vec{k} \cdot (\vec{x}-\vec{y})}}{k^2-m^2+i\epsilon}
 \end{align*}
 
-\subsection{I.5 Coulomb and Newton}
+\subsection{Coulomb and Newton}
 The Lagrangian Density is given by:
 \begin{align*}
 	\Lagr =& -\frac{1}{4} F_{\mu\nu}F^{\mu\nu} + \frac{1}{2}m^2 A_{\mu}A^{\mu} + A_{\mu}J^{\mu} \text{, where}\\
@@ -249,7 +251,34 @@ Spin 2 has two indices $h_{\mu\nu}$. Two sign switches cancel!
 
 Even spin can exchange lumps, but not odd.
 
-
+\begin{thm}
+	\begin{align*}
+		\big(\delta^2+m^2\big) A^{\mu}=&0 \text{ and} \numberthis \label{eq:cn:1}\\
+		 \partial_{\mu} A^{\mu}=&0 \text{ are equivalent to } \numberthis \label{eq:cn:2}\\
+		 \big(g^{\mu\nu}\partial^2-\partial^\mu\partial^\nu\big)A_\nu + m^2 A^\mu=&0 \numberthis \label{eq:cn:3}
+	\end{align*}
+\end{thm}
+\begin{proof}[Proof: $\eqref{eq:cn:1} \land \eqref{eq:cn:2} \implies \eqref{eq:cn:3}$]
+	 From	\eqref{eq:cn:2} 
+	\begin{align*}
+		 \partial^\nu A_\nu =& 0 \text{, whence}\\
+		 \partial^\mu \partial^\nu A_\nu =& 0 \text{. Now \eqref{eq:cn:1} can be rearranged} \numberthis \label{eq:cn:4}\\
+		 \partial^2 \big(g^{\mu\nu}A_\nu\big) + m^2 A^\mu =&0\\
+		 g^{\mu\nu} \partial^2 A_\nu + m^2 A^\mu =&0 \text{. Now, using \eqref{eq:cn:4}}\\
+		 g^{\mu\nu} \partial^2 A_\nu - \partial^\mu \partial^\nu A_\nu + m^2 A^\mu =&0 \text{, which rearranges to \eqref{eq:cn:3}}
+	\end{align*}
+\end{proof}
+\begin{proof}[$\eqref{eq:cn:3} \implies \eqref{eq:cn:1} \land \eqref{eq:cn:2}$]
+	From \eqref{eq:cn:3}
+	\begin{align*}
+	 	m^2 A^\mu=&\big(\partial^\mu\partial^\nu-g^{\mu\nu}\partial^2\big)A_\nu \\
+	 	m^2 \partial_\mu A^\mu =&\partial_\mu \big(\partial^\mu\partial^\nu-g^{\mu\nu}\partial^2\big)A_\nu\\
+	 	=&\partial_\mu\partial^\mu\partial^\nu A_\nu -  g^{\mu\nu}\partial_\mu\partial^2A_\nu\\
+	 	=&\partial^2\partial^\nu A_\nu - \partial^\nu\partial^2A_\nu\\
+	 	=& 0 \text{, which is \eqref{eq:cn:2}. Now \eqref{eq:cn:3} becomes}\\
+	 	g^{\mu\nu}\partial^2 A_\nu-\cancel{\partial^\mu\partial^\nu A_\nu} + m^2 A^\mu=&0 \text{, which is \eqref{eq:cn:1}}
+	\end{align*}
+\end{proof}
 \bibliographystyle{unsrt}
 \addcontentsline{toc}{section}{Bibliography}
 \raggedright

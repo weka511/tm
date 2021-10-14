@@ -39,7 +39,40 @@ This document contains derivations of equations from \cite{zee2010quantum}.
 \tableofcontents
 
 \section{Motivation and Foundation}
+
 \subsection{Path Integral Formulation}
+
+\begin{thm}
+	If
+	\begin{align*}
+		H = \frac{\hat{p}^2}{2m} + V(\hat{q})\numberthis \label{eq:H}\\
+		...
+	\end{align*}
+\end{thm}
+\begin{proof}
+	\begin{align*}
+		\braket{q_F\vert H\vert q_I} =& \big(\prod_{j=1}^{N-1} \int dq_j\big)\prod_{i=0}^{N-1} \braket{q_{j+1} \vert e^{-iHT} \vert q_j}\\
+		=& \big(\prod_{j=1}^{N-1} \int dq_j\big)\prod_{i=0}^{N-1} \braket{q_{j+1} \vert e^{-i\big(\frac{\hat{p}^2}{2m} + V(\hat{q})\big)\delta t} \vert q_j}\\
+		=& \big(\prod_{j=1}^{N-1} \int dq_j\big)\prod_{i=0}^{N-1} \braket{q_{j+1} \vert e^{-i\frac{\hat{p}^2}{2m} \delta t} e^{-i V(\hat{q}) \delta t} \vert q_j}\\
+		=& \big(\prod_{j=1}^{N-1} \int dq_j\big)\prod_{i=0}^{N-1} e^{-i V(q_j) \delta t} \braket{q_{j+1} \vert e^{-i\frac{\hat{p}^2}{2m} \delta t}  \vert q_j} \text{, since $\ket{q_j}$ is an eigenvector of $\hat{q}$}
+	\end{align*}
+	
+	\begin{align*}
+		\braket{q_{j+1} \vert e^{-i\frac{\hat{p}^2}{2m} \delta t}  \vert q_j}=& \int \frac{dp}{2\pi}\braket{q_{j+1} \vert e^{-i\frac{\hat{p}^2}{2m} \delta t}  \vert p} \braket{p\vert q_j}\\
+		=& \int \frac{dp}{2\pi} e^{-i\frac{p^2}{2m} \delta t} \braket{q_{j+1} \vert p} \braket{p\vert q_j} \text{, since $p$ is an eigenvector of $\hat{p}$}\\
+		=& \int \frac{dp}{2\pi} e^{-i\frac{p^2}{2m} \delta t} e^{ip q_{j+1}} e^{-ip q_j} \\
+		=& \int \frac{dp}{2\pi} e^{\frac{-i \delta t}{2m}p^2} e^{ip [q_{j+1}-q_j]} \\
+		=& \frac{1}{2\pi} \big(\frac{2\pi}{a}\big)^\frac{1}{2} e^{\frac{-J^2}{2a}} \text{, where $a=\frac{i \delta t}{m}$ and $J=(q_{j+1}-q_j)$}\\
+		=& \frac{1}{2\pi} \big(\frac{2\pi m}{i \delta t}\big)^\frac{1}{2} e^{-\frac{m (q_{j+1}-q_j)^2}{2 i \delta t}}\\
+		=& \big(\frac{-i m}{2\pi \delta t}\big)^\frac{1}{2} e^{i \delta t \frac{m (q_{j+1}-q_j)^2}{2  {\delta t}^2}}
+	\end{align*}
+	
+	\begin{align*}
+		\braket{q_F\vert H\vert q_I} =& \big(\frac{-i m}{2\pi \delta t}\big)^\frac{N}{2} \big(\prod_{j=1}^{N-1} \int dq_j\big) \prod_{i=0}^{N-1} e^{-i V(q_j) \delta t} e^{i \delta t \frac{m (q_{j+1}-q_j)^2}{2  {\delta t}^2}}\\
+		=& \big(\frac{-i m}{2\pi \delta t}\big)^\frac{N}{2} \big(\prod_{j=1}^{N-1} \int dq_j\big) \prod_{j=0}^{N-1}  e^{i \delta t \bigg[\frac{m (q_{j+1}-q_j)^2}{2  {\delta t}^2} - V(q_j)\bigg]}\\
+		=& \big(\frac{-i m}{2\pi \delta t}\big)^\frac{N}{2} \big(\prod_{j=1}^{N-1} \int dq_j\big)  e^{i \delta t \sum_{i=0}^{N-1}\bigg[\frac{m (q_{j+1}-q_j)^2}{2  {\delta t}^2} - V(q_j)\bigg]}
+	\end{align*}
+\end{proof}
 
 \begin{align*}
 	\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} =& \frac{1}{\sqrt{a}}\int_{-\infty}^{\infty} \underbrace{dy e^{-\frac{1}{2}y^2}}_\text{ where $y=\sqrt{a}x$} \\

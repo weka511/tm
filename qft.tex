@@ -42,19 +42,23 @@ This document contains derivations of equations from \cite{zee2010quantum}.
 
 \subsection{Path Integral Formulation}
 
-\begin{thm}
+\begin{thm}[Exercise I/2/1 - eq(5)]
 	If
 	\begin{align*}
-		H = \frac{\hat{p}^2}{2m} + V(\hat{q})\numberthis \label{eq:H}\\
-		...
+		H =& \frac{\hat{p}^2}{2m} + V(\hat{q})\numberthis \label{eq:H} \\
+		L =& \frac{\hat{p}^2}{2m} - V(\hat{q}) \text{, and}\\
+		\int Dq(t)=& \lim_{N\rightarrow\infty} \big(\frac{-i m}{2\pi \delta t}\big)^\frac{N}{2} \big(\prod_{j=1}^{N-1} \int dq_j\big) \text{, then}\\
+		\braket{q_F\vert H\vert q_I} =& \int Dq(t) e^{i \int_{0}^{T}dt L} \text{, where}\\	
 	\end{align*}
 \end{thm}
 \begin{proof}
+	For some N, define $\delta t =Y/N$ and $q_j= q(j \delta t)$.
+	
 	\begin{align*}
 		\braket{q_F\vert H\vert q_I} =& \big(\prod_{j=1}^{N-1} \int dq_j\big)\prod_{i=0}^{N-1} \braket{q_{j+1} \vert e^{-iHT} \vert q_j}\\
 		=& \big(\prod_{j=1}^{N-1} \int dq_j\big)\prod_{i=0}^{N-1} \braket{q_{j+1} \vert e^{-i\big(\frac{\hat{p}^2}{2m} + V(\hat{q})\big)\delta t} \vert q_j}\\
 		=& \big(\prod_{j=1}^{N-1} \int dq_j\big)\prod_{i=0}^{N-1} \braket{q_{j+1} \vert e^{-i\frac{\hat{p}^2}{2m} \delta t} e^{-i V(\hat{q}) \delta t} \vert q_j}\\
-		=& \big(\prod_{j=1}^{N-1} \int dq_j\big)\prod_{i=0}^{N-1} e^{-i V(q_j) \delta t} \braket{q_{j+1} \vert e^{-i\frac{\hat{p}^2}{2m} \delta t}  \vert q_j} \text{, since $\ket{q_j}$ is an eigenvector of $\hat{q}$}
+		=& \big(\prod_{j=1}^{N-1} \int dq_j\big)\prod_{i=0}^{N-1} e^{-i V(q_j) \delta t} \braket{q_{j+1} \vert e^{-i\frac{\hat{p}^2}{2m} \delta t}  \vert q_j} \text{, since $\ket{q_j}$ is an eigenvector of $\hat{q}$} \numberthis \label{eq:qHq}
 	\end{align*}
 	
 	\begin{align*}
@@ -64,13 +68,14 @@ This document contains derivations of equations from \cite{zee2010quantum}.
 		=& \int \frac{dp}{2\pi} e^{\frac{-i \delta t}{2m}p^2} e^{ip [q_{j+1}-q_j]} \\
 		=& \frac{1}{2\pi} \big(\frac{2\pi}{a}\big)^\frac{1}{2} e^{\frac{-J^2}{2a}} \text{, where $a=\frac{i \delta t}{m}$ and $J=(q_{j+1}-q_j)$}\\
 		=& \frac{1}{2\pi} \big(\frac{2\pi m}{i \delta t}\big)^\frac{1}{2} e^{-\frac{m (q_{j+1}-q_j)^2}{2 i \delta t}}\\
-		=& \big(\frac{-i m}{2\pi \delta t}\big)^\frac{1}{2} e^{i \delta t \frac{m (q_{j+1}-q_j)^2}{2  {\delta t}^2}}
+		=& \big(\frac{-i m}{2\pi \delta t}\big)^\frac{1}{2} e^{i \delta t \frac{m (q_{j+1}-q_j)^2}{2  {\delta t}^2}}  \numberthis \label{eq:qP2q}
 	\end{align*}
-	
+	Substituting \eqref{eq:qP2q} in \eqref{eq:qHq}: 
 	\begin{align*}
 		\braket{q_F\vert H\vert q_I} =& \big(\frac{-i m}{2\pi \delta t}\big)^\frac{N}{2} \big(\prod_{j=1}^{N-1} \int dq_j\big) \prod_{i=0}^{N-1} e^{-i V(q_j) \delta t} e^{i \delta t \frac{m (q_{j+1}-q_j)^2}{2  {\delta t}^2}}\\
 		=& \big(\frac{-i m}{2\pi \delta t}\big)^\frac{N}{2} \big(\prod_{j=1}^{N-1} \int dq_j\big) \prod_{j=0}^{N-1}  e^{i \delta t \bigg[\frac{m (q_{j+1}-q_j)^2}{2  {\delta t}^2} - V(q_j)\bigg]}\\
-		=& \big(\frac{-i m}{2\pi \delta t}\big)^\frac{N}{2} \big(\prod_{j=1}^{N-1} \int dq_j\big)  e^{i \delta t \sum_{i=0}^{N-1}\bigg[\frac{m (q_{j+1}-q_j)^2}{2  {\delta t}^2} - V(q_j)\bigg]}
+		=& \big(\frac{-i m}{2\pi \delta t}\big)^\frac{N}{2} \big(\prod_{j=1}^{N-1} \int dq_j\big)  e^{i \delta t \sum_{i=0}^{N-1}\bigg[\frac{m (q_{j+1}-q_j)^2}{2  {\delta t}^2} - V(q_j)\bigg]}\\
+		\rightarrow& \int Dq(t) e^{i \int_{0}^{T}dt L} \text{, as $N\rightarrow\infty$}
 	\end{align*}
 \end{proof}
 

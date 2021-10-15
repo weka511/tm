@@ -43,41 +43,55 @@ This document contains derivations of equations from \cite{zee2010quantum}.
 \subsection{Path Integral Formulation}
 
 \begin{thm}[Exercise I/2/1 - eq(5)]
-	If
+	If the Hamiltonian is given by
 	\begin{align*}
-		H =& \frac{\hat{p}^2}{2m} + V(\hat{q})\numberthis \label{eq:H} \\
-		L =& \frac{\hat{p}^2}{2m} - V(\hat{q}) \text{, and}\\
-		\int Dq(t)=& \lim_{N\rightarrow\infty} \big(\frac{-i m}{2\pi \delta t}\big)^\frac{N}{2} \big(\prod_{j=1}^{N-1} \int dq_j\big) \text{, then}\\
-		\braket{q_F\vert H\vert q_I} =& \int Dq(t) e^{i \int_{0}^{T}dt L} \text{, where}\\	
+		H =& \frac{\hat{p}^2}{2m} + V(\hat{q}) \text{, and the corresponding Lagrangian is} \numberthis \label{eq:H} \\
+		L =& \frac{\hat{p}^2}{2m} - V(\hat{q}) \text{, then} \numberthis \label{eq:L}\\
+		\braket{q_F\vert H\vert q_I} =& \int Dq(t) e^{i \int_{0}^{T}dt L} \text{, where}\numberthis \label{eq:Path:itegral}\\	
+		\int Dq(t)\triangleq& \lim_{N\rightarrow\infty} \big(\frac{-i m}{2\pi \delta t}\big)^\frac{N}{2} \big(\prod_{j=1}^{N-1} \int dq_j\big) \numberthis \label{eq:D}
 	\end{align*}
 \end{thm}
 \begin{proof}
-	For some N, define $\delta t =Y/N$ and $q_j= q(j \delta t)$.
+	For some N, define $\delta t =T/N$ and $q_j= q(j \delta t)$.
 	
 	\begin{align*}
 		\braket{q_F\vert H\vert q_I} =& \big(\prod_{j=1}^{N-1} \int dq_j\big)\prod_{i=0}^{N-1} \braket{q_{j+1} \vert e^{-iHT} \vert q_j}\\
-		=& \big(\prod_{j=1}^{N-1} \int dq_j\big)\prod_{i=0}^{N-1} \braket{q_{j+1} \vert e^{-i\big(\frac{\hat{p}^2}{2m} + V(\hat{q})\big)\delta t} \vert q_j}\\
-		=& \big(\prod_{j=1}^{N-1} \int dq_j\big)\prod_{i=0}^{N-1} \braket{q_{j+1} \vert e^{-i\frac{\hat{p}^2}{2m} \delta t} e^{-i V(\hat{q}) \delta t} \vert q_j}\\
-		=& \big(\prod_{j=1}^{N-1} \int dq_j\big)\prod_{i=0}^{N-1} e^{-i V(q_j) \delta t} \braket{q_{j+1} \vert e^{-i\frac{\hat{p}^2}{2m} \delta t}  \vert q_j} \text{, since $\ket{q_j}$ is an eigenvector of $\hat{q}$} \numberthis \label{eq:qHq}
+		=& \big(\prod_{j=1}^{N-1} \int dq_j\big)\prod_{i=0}^{N-1} \braket{q_{j+1} \vert e^{-i\big(\frac{\hat{p}^2}{2m} + V(\hat{q})\big)\delta t} \vert q_j} \text{, from \eqref{eq:H}}\\
+		=& \big(\prod_{j=1}^{N-1} \int dq_j\big)\prod_{i=0}^{N-1} \braket{q_{j+1} \vert e^{-i\frac{\hat{p}^2}{2m} \delta t} e^{-i V(\hat{q}) \delta t} \vert q_j} \text{, we'll expand in eigenvectors of $\hat{q}$}\\
+		=& \big(\prod_{j=1}^{N-1} \int dq_j\big)\prod_{i=0}^{N-1} \int dq \braket{q_{j+1} \vert e^{-i\frac{\hat{p}^2}{2m} \delta t}\vert q} \braket{q\vert e^{-i V(\hat{q}) \delta t} \vert q_j} \text{, since $\ket{q}\bra{q}=I$} \numberthis \label{eq:qHq}
 	\end{align*}
-	
+	 We will evaluate the integrand in two steps, starting with the potential energy.
 	\begin{align*}
-		\braket{q_{j+1} \vert e^{-i\frac{\hat{p}^2}{2m} \delta t}  \vert q_j}=& \int \frac{dp}{2\pi}\braket{q_{j+1} \vert e^{-i\frac{\hat{p}^2}{2m} \delta t}  \vert p} \braket{p\vert q_j}\\
-		=& \int \frac{dp}{2\pi} e^{-i\frac{p^2}{2m} \delta t} \braket{q_{j+1} \vert p} \braket{p\vert q_j} \text{, since $p$ is an eigenvector of $\hat{p}$}\\
-		=& \int \frac{dp}{2\pi} e^{-i\frac{p^2}{2m} \delta t} e^{ip q_{j+1}} e^{-ip q_j} \\
-		=& \int \frac{dp}{2\pi} e^{\frac{-i \delta t}{2m}p^2} e^{ip [q_{j+1}-q_j]} \\
-		=& \frac{1}{2\pi} \big(\frac{2\pi}{a}\big)^\frac{1}{2} e^{\frac{-J^2}{2a}} \text{, where $a=\frac{i \delta t}{m}$ and $J=(q_{j+1}-q_j)$}\\
-		=& \frac{1}{2\pi} \big(\frac{2\pi m}{i \delta t}\big)^\frac{1}{2} e^{-\frac{m (q_{j+1}-q_j)^2}{2 i \delta t}}\\
-		=& \big(\frac{-i m}{2\pi \delta t}\big)^\frac{1}{2} e^{i \delta t \frac{m (q_{j+1}-q_j)^2}{2  {\delta t}^2}}  \numberthis \label{eq:qP2q}
+		\braket{q\vert e^{-i V(\hat{q}) \delta t} \vert q_j} =& \braket{ e^{i V(\hat{q}) \delta t} q \vert q_j}\\
+		=& \braket{ e^{i V(q) \delta t} q \vert q_j} \text{, since $\ket{q}$ is an eigenvector, with eigenvalue $q$}\\
+		=& \braket{ e^{i V(q) \delta t} q \vert q_j} \\
+		=& e^{-i V(q) \delta t} \braket{ q \vert q_j}  \numberthis \label{eq:qVq}
 	\end{align*}
-	Substituting \eqref{eq:qP2q} in \eqref{eq:qHq}: 
+	Now for the kinetic energy.
 	\begin{align*}
-		\braket{q_F\vert H\vert q_I} =& \big(\frac{-i m}{2\pi \delta t}\big)^\frac{N}{2} \big(\prod_{j=1}^{N-1} \int dq_j\big) \prod_{i=0}^{N-1} e^{-i V(q_j) \delta t} e^{i \delta t \frac{m (q_{j+1}-q_j)^2}{2  {\delta t}^2}}\\
+		\braket{q_{j+1} \vert e^{-i\frac{\hat{p}^2}{2m} \delta t}  \vert q}=& \int \frac{dp}{2\pi}\braket{q_{j+1} \vert e^{-i\frac{\hat{p}^2}{2m} \delta t}  \vert p} \braket{p\vert q}\\
+		=& \int \frac{dp}{2\pi} e^{-i\frac{p^2}{2m} \delta t} \braket{q_{j+1} \vert p} \braket{p\vert q} \text{, since $\ket{p}$ is an eigenvector of $\hat{p}$}\\
+		=& \int \frac{dp}{2\pi} e^{-i\frac{p^2}{2m} \delta t} e^{ip q_{j+1}} e^{-ip q} \\
+		=& \int \frac{dp}{2\pi} e^{\frac{-i \delta t}{2m}p^2} e^{ip [q_{j+1}-q]} \\
+		=& \frac{1}{2\pi} \big(\frac{2\pi}{a}\big)^\frac{1}{2} e^{\frac{-J^2}{2a}} \text{, where $a=\frac{i \delta t}{m}$ and $J=(q_{j+1}-q)$}\\
+		=& \frac{1}{2\pi} \big(\frac{2\pi m}{i \delta t}\big)^\frac{1}{2} e^{-\frac{m (q_{j+1}-q)^2}{2 i \delta t}}\\
+		=& \big(\frac{-i m}{2\pi \delta t}\big)^\frac{1}{2} e^{i \delta t \frac{m (q_{j+1}-q)^2}{2  {\delta t}^2}}  \numberthis \label{eq:qP2q}
+	\end{align*}
+	Substituting \eqref{eq:qVq} and \eqref{eq:qP2q} in \eqref{eq:qHq}: 
+	\begin{align*}
+		\braket{q_F\vert H\vert q_I} =& \big(\frac{-i m}{2\pi \delta t}\big)^\frac{N}{2} \big(\prod_{j=1}^{N-1} \int dq_j\big) \prod_{i=0}^{N-1} \big(\frac{-i m}{2\pi \delta t}\big)^\frac{1}{2} \int dq e^{i \delta t \frac{m (q_{j+1}-q)^2}{2  {\delta t}^2}} e^{-i V(q) \delta t} \underbrace{\braket{ q \vert q_j}}_\text{$=m^2$}\delta(q-q_j) \\
 		=& \big(\frac{-i m}{2\pi \delta t}\big)^\frac{N}{2} \big(\prod_{j=1}^{N-1} \int dq_j\big) \prod_{j=0}^{N-1}  e^{i \delta t \bigg[\frac{m (q_{j+1}-q_j)^2}{2  {\delta t}^2} - V(q_j)\bigg]}\\
-		=& \big(\frac{-i m}{2\pi \delta t}\big)^\frac{N}{2} \big(\prod_{j=1}^{N-1} \int dq_j\big)  e^{i \delta t \sum_{i=0}^{N-1}\bigg[\frac{m (q_{j+1}-q_j)^2}{2  {\delta t}^2} - V(q_j)\bigg]}\\
-		\rightarrow& \int Dq(t) e^{i \int_{0}^{T}dt L} \text{, as $N\rightarrow\infty$}
+		=& \big(\frac{-i m}{2\pi \delta t}\big)^\frac{N}{2} \big(\prod_{j=1}^{N-1} \int dq_j\big)  e^{i  \sum_{i=0}^{N-1} \delta t \bigg[\frac{m (q_{j+1}-q_j)^2}{2  {\delta t}^2} - V(q_j)\bigg]} \numberthis \label{eq:big:feynman:sum}
+	\end{align*}
+	Now, as $N\rightarrow\infty$
+	\begin{align*}
+	\sum_{i=0}^{N-1} \delta t \rightarrow &\int dt\\
+	\frac{m (q_{j+1}-q_j)^2}{2  {\delta t}^2} \rightarrow & \frac{m \dot{q}}{2} \text{, so, substituting \eqref{eq:L} and \eqref{eq:D}, \eqref{eq:big:feynman:sum} becomes}\\
+	\braket{q_F\vert H\vert q_I} \rightarrow& \int Dq(t) e^{i \int_{0}^{T}dt L} \text{i.e. \eqref{eq:Path:itegral}}
 	\end{align*}
 \end{proof}
+
+
 
 \begin{align*}
 	\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} =& \frac{1}{\sqrt{a}}\int_{-\infty}^{\infty} \underbrace{dy e^{-\frac{1}{2}y^2}}_\text{ where $y=\sqrt{a}x$} \\

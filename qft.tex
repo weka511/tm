@@ -42,6 +42,39 @@ This document contains derivations of equations from \cite{zee2010quantum}.
 
 \subsection{Path Integral Formulation}
 
+\begin{thm}
+	\begin{align*}
+		\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}x^2} =& \sqrt{2\pi} \numberthis \label{eq:integral:gaussian0}\\
+		\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} =& \bigg(\frac{2\pi}{a}\bigg)^\frac{1}{2} \numberthis \label{eq:integral:gaussian}\\
+		\int_{-\infty}^{\infty} dx\,e^{-\frac{a}{2} x^2+Jx}=&\bigg(\frac{2\pi}{a}\bigg)^\frac{1}{2}e^\frac{J^2}{2a} \numberthis \label{eq:integral:gaussian1}\\
+		\int_{-\infty}^{\infty} dx\,e^{-\frac{a}{2} x^2+iJx}=&\bigg(\frac{2\pi}{a}\bigg)^\frac{1}{2}e^\frac{-J^2}{2a} \numberthis \label{eq:integral:gaussian2}
+	\end{align*}
+\end{thm}
+
+\begin{proof}
+	\begin{align*}
+		\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}x^2}\big)\big(\int_{-\infty}^{\infty} dy e^{-\frac{1}{2}y^2}\big) =& \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} dx dy e^{-\frac{1}{2}(x^2+y^2)} \\
+		=& \int_{0}^{2\pi} d\theta \int_{0}^{\infty}dr\;r\;e^\frac{-r^2}{2}\\
+		=&- 2\pi \int_{0}^{\infty}d(\frac{-r^2}{2})e^\frac{-r^2}{2}\\
+		=&- 2\pi e^{-u}\bigg\vert_0^\infty\\
+		=& 2\pi
+	\end{align*}
+	Taking square roots of both side, we get \eqref{eq:integral:gaussian0}.
+	\begin{align*}
+		\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} =&\frac{1}{\sqrt{a}} \int_{-\infty}^{\infty} d(\sqrt{a}x) e^{-\frac{1}{2}(\sqrt{a}x)^2}\\
+		=& \frac{1}{\sqrt{a}} \int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2}
+	\end{align*}
+	Which is \eqref{eq:integral:gaussian}
+	\begin{align*}
+		\int_{-\infty}^{\infty} dx\,e^{-\frac{a}{2} x^2+Jx}=&\int_{-\infty}^{\infty} dx\,e^{-\frac{a}{2} \big[x^2-2 \big(\frac{J}{a}\big)x+\big(\frac{J}{a}\big)^2\big]} e^{\frac{a}{2}\big(\frac{J}{a}\big)^2}\\
+		=&e^\frac{J^2}{2a}\int_{-\infty}^{\infty} dx e^{-\frac{a}{2} \big[x-\frac{J}{a}\big]^2}\\
+		=&e^\frac{J^2}{2a}\int_{-\infty}^{\infty} dx e^{-\frac{a}{2} x^2}
+	\end{align*}
+	Substituting \eqref{eq:integral:gaussian} gives \eqref{eq:integral:gaussian1}. Replacing $J$ by $iJ$ gives \eqref{eq:integral:gaussian2}.
+\end{proof}
+
+
+
 \begin{thm}[Exercise I/2/1 - eq(5)]
 	If the Hamiltonian is given by
 	\begin{align*}
@@ -71,11 +104,13 @@ This document contains derivations of equations from \cite{zee2010quantum}.
 	\begin{align*}
 		\braket{q_{j+1} \vert e^{-i\frac{\hat{p}^2}{2m} \delta t}  \vert q}=& \int \frac{dp}{2\pi}\braket{q_{j+1} \vert e^{-i\frac{\hat{p}^2}{2m} \delta t}  \vert p} \braket{p\vert q}\\
 		=& \int \frac{dp}{2\pi} e^{-i\frac{p^2}{2m} \delta t} \braket{q_{j+1} \vert p} \braket{p\vert q} \text{, since $\ket{p}$ is an eigenvector of $\hat{p}$}\\
-		=& \int \frac{dp}{2\pi} e^{-i\frac{p^2}{2m} \delta t} e^{ip q_{j+1}} e^{-ip q} \\
-		=& \int \frac{dp}{2\pi} e^{\frac{-i \delta t}{2m}p^2} e^{ip [q_{j+1}-q]} \\
-		=& \frac{1}{2\pi} \big(\frac{2\pi}{a}\big)^\frac{1}{2} e^{\frac{-J^2}{2a}} \text{, where $a=\frac{i \delta t}{m}$ and $J=(q_{j+1}-q)$}\\
-		=& \frac{1}{2\pi} \big(\frac{2\pi m}{i \delta t}\big)^\frac{1}{2} e^{-\frac{m (q_{j+1}-q)^2}{2 i \delta t}}\\
-		=& \big(\frac{-i m}{2\pi \delta t}\big)^\frac{1}{2} e^{i \delta t \frac{m (q_{j+1}-q)^2}{2  {\delta t}^2}}  \numberthis \label{eq:qP2q}
+		=& \int \frac{dp}{2\pi} e^{-i\frac{p^2}{2m} \delta t} e^{ip q_{j+1}} e^{-ip q} 
+	\end{align*}
+	Using \eqref{eq:integral:gaussian2} with $a=\frac{i \delta t}{m}$ and $J=q_{j+1}-q$:
+	\begin{align*}
+	\braket{q_{j+1} \vert e^{-i\frac{\hat{p}^2}{2m} \delta t}  \vert q}=& \int \frac{dp}{2\pi} e^{\frac{-i \delta t}{2m}p^2} e^{ip [q_{j+1}-q]} \\
+	=& \frac{1}{2\pi} \big(\frac{2\pi m}{i \delta t}\big)^\frac{1}{2} e^{-\frac{m (q_{j+1}-q)^2}{2 i \delta t}}\\
+	=& \big(\frac{-i m}{2\pi \delta t}\big)^\frac{1}{2} e^{i \delta t \frac{m (q_{j+1}-q)^2}{2  {\delta t}^2}}  \numberthis \label{eq:qP2q}
 	\end{align*}
 	Substituting \eqref{eq:qVq} and \eqref{eq:qP2q} in \eqref{eq:qHq}: 
 	\begin{align*}
@@ -93,10 +128,7 @@ This document contains derivations of equations from \cite{zee2010quantum}.
 
 
 
-\begin{align*}
-	\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} =& \frac{1}{\sqrt{a}}\int_{-\infty}^{\infty} \underbrace{dy e^{-\frac{1}{2}y^2}}_\text{ where $y=\sqrt{a}x$} \\
-	=& \bigg(\frac{2\pi}{a}\bigg)^\frac{1}{2} \numberthis \label{eq:integral:gaussian}
-\end{align*}
+
 \begin{thm}
 	\begin{align*}
 		\frac{\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}x^{2n}}{\int_{-\infty}^\infty dx e^{-\frac{1}{2}ax^2}} =&\frac{\prod_{k=1}^{n}\big(2k-1\big)}{a^n}

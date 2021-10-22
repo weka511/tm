@@ -42,40 +42,40 @@ This document contains derivations of equations from \cite{zee2010quantum}.
 
 \subsection{Path Integral Formulation}
 
-\begin{thm}
+\begin{thm}[Some useful integrals]
 	\begin{align*}
 		\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}x^2} =& \sqrt{2\pi} \numberthis \label{eq:integral:gaussian0}\\
 		\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} =& \bigg(\frac{2\pi}{a}\bigg)^\frac{1}{2} \numberthis \label{eq:integral:gaussian}\\
 		\int_{-\infty}^{\infty} dx\,e^{-\frac{a}{2} x^2+Jx}=&\bigg(\frac{2\pi}{a}\bigg)^\frac{1}{2}e^\frac{J^2}{2a} \numberthis \label{eq:integral:gaussian1}\\
-		\int_{-\infty}^{\infty} dx\,e^{-\frac{a}{2} x^2+iJx}=&\bigg(\frac{2\pi}{a}\bigg)^\frac{1}{2}e^\frac{-J^2}{2a} \numberthis \label{eq:integral:gaussian2}
+		\int_{-\infty}^{\infty} dx\,e^{-\frac{a}{2} x^2+iJx}=&\bigg(\frac{2\pi}{a}\bigg)^\frac{1}{2}e^{-\frac{J^2}{2a}} \numberthis \label{eq:integral:gaussian2}
 	\end{align*}
 \end{thm}
 
 \begin{proof}
 	\begin{align*}
 		\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}x^2}\big)\big(\int_{-\infty}^{\infty} dy e^{-\frac{1}{2}y^2}\big) =& \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} dx dy e^{-\frac{1}{2}(x^2+y^2)} \\
-		=& \int_{0}^{2\pi} d\theta \int_{0}^{\infty}dr\;r\;e^\frac{-r^2}{2}\\
-		=&- 2\pi \int_{0}^{\infty}d(\frac{-r^2}{2})e^\frac{-r^2}{2}\\
+		=& \int_{0}^{2\pi} d\theta \int_{0}^{\infty}dr\;r\;e^\frac{-r^2}{2} \text{, substituting $x=r\cos{\theta}$,$y=r\sin{\theta}$}\\
+		=&- 2\pi \int_{0}^{\infty}du e^{-u}\;\text{, substituting $u=\frac{-r^2}{2}$}\\
 		=&- 2\pi e^{-u}\bigg\vert_0^\infty\\
 		=& 2\pi
 	\end{align*}
 	Taking square roots of both side, we get \eqref{eq:integral:gaussian0}.
 	\begin{align*}
-		\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} =&\frac{1}{\sqrt{a}} \int_{-\infty}^{\infty} d(\sqrt{a}x) e^{-\frac{1}{2}(\sqrt{a}x)^2}\\
-		=& \frac{1}{\sqrt{a}} \int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2}
+		\int_{-\infty}^{\infty} dx e^{-\frac{1}{2}ax^2} =&\frac{1}{\sqrt{a}} \int_{-\infty}^{\infty} dx^\prime e^{-\frac{1}{2}{x^\prime}^2} \text{, substituting $x^\prime = \sqrt{a}x$} \\
+		=& \bigg(\frac{2\pi}{a}\bigg)^\frac{1}{2} \text{, from \eqref{eq:integral:gaussian0}, 	which gives \eqref{eq:integral:gaussian}}
 	\end{align*}
-	Which is \eqref{eq:integral:gaussian}
+
 	\begin{align*}
-		\int_{-\infty}^{\infty} dx\,e^{-\frac{a}{2} x^2+Jx}=&\int_{-\infty}^{\infty} dx\,e^{-\frac{a}{2} \big[x^2-2 \big(\frac{J}{a}\big)x+\big(\frac{J}{a}\big)^2\big]} e^{\frac{a}{2}\big(\frac{J}{a}\big)^2}\\
-		=&e^\frac{J^2}{2a}\int_{-\infty}^{\infty} dx e^{-\frac{a}{2} \big[x-\frac{J}{a}\big]^2}\\
-		=&e^\frac{J^2}{2a}\int_{-\infty}^{\infty} dx e^{-\frac{a}{2} x^2}
+		\int_{-\infty}^{\infty} dx\,e^{-\frac{a}{2} x^2+Jx}=&\int_{-\infty}^{\infty} dx\,e^{-\frac{a}{2} \big[x^2-2 \big(\frac{J}{a}\big)x+\big(\frac{J}{a}\big)^2\big]} e^{\frac{a}{2}\big(\frac{J}{a}\big)^2}\text{, completing the square}\\
+		=&e^\frac{J^2}{2a}\int_{-\infty}^{\infty} dx e^{-\frac{a}{2} \big[x-\frac{J}{a}\big]^2} \text{, now substitute $x^\prime=x-\frac{J}{a}$}\\
+		=&e^\frac{J^2}{2a}\int_{-\infty}^{\infty} dx^\prime e^{-\frac{a}{2} {x^\prime}^2}
 	\end{align*}
 	Substituting \eqref{eq:integral:gaussian} gives \eqref{eq:integral:gaussian1}. Replacing $J$ by $iJ$ gives \eqref{eq:integral:gaussian2}.
 \end{proof}
 
 
 
-\begin{thm}[Exercise I/2/1 - eq(5)]
+\begin{thm}[Feynman Path Integral--Exercise I.2.1 - eq(5)]
 	If the Hamiltonian is given by
 	\begin{align*}
 		H =& \frac{\hat{p}^2}{2m} + V(\hat{q}) \text{, and the corresponding Lagrangian is} \numberthis \label{eq:H} \\
@@ -363,6 +363,13 @@ Even spin can exchange lumps, but not odd.
 	 	g^{\mu\nu}\partial^2 A_\nu-\cancel{\partial^\mu\partial^\nu A_\nu} + m^2 A^\mu=&0 \text{, which is \eqref{eq:cn:1}}
 	\end{align*}
 \end{proof}
+
+\subsection{Feynman Diagrams}
+
+\begin{align*}
+	Z(J) =& \int D\phi \; e^{i\int d^4x\;\big[\frac{1}{2}[(\partial \phi)^2-m^2\phi^2]-\frac{\lambda}{4!}\phi^4+J\phi\big]}\\
+	=& \int D\phi \; e^{i\int d^4x\;\big[\frac{1}{2}[(\partial \phi)^2-m^2\phi^2]+J\phi\big]}e^{-i\frac{\lambda}{4!}\phi^4}
+\end{align*}
 \bibliographystyle{unsrt}
 \addcontentsline{toc}{section}{Bibliography}
 \raggedright

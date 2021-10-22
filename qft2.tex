@@ -1,0 +1,52 @@
+% !TeX program = lualatex
+\documentclass[]{article}
+
+\usepackage{caption,subcaption,graphicx,float,url,amsmath,amssymb,amsthm,tocloft,cancel,thmtools,gensymb,braket,tikz-feynman,mathtools,color, colortbl}
+\usepackage[toc,nonumberlist]{glossaries}
+\usepackage{glossaries-extra}
+\usepackage[toc,page]{appendix}
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lemma}[thm]{Lemma}
+\graphicspath{{figs/}}
+\widowpenalty10000
+\clubpenalty10000
+\setcounter{tocdepth}{2}
+\tikzfeynmanset{compat=1.1.0}
+\definecolor{Gray}{gray}{0.5}
+\DeclareMathOperator{\Tr}{Tr \;}
+\newcommand{\Lagr}{\mathcal{L}}
+\renewcommand{\thesection}{2.\arabic{section}}
+\setlength{\cftsubsecindent}{0em}
+\setlength{\cftsecnumwidth}{3em}
+\setlength{\cftsubsecnumwidth}{3em}
+%opening
+\title{Quantum Field Theory\\
+Part II: Dirac and the Spinor}
+\author{Simon Crase (compiler)\\simon@greenweaves.nz}
+
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+This document contains derivations of equations from \cite[Part II: Dirac and the Spinor]{zee2010quantum}.
+
+\end{abstract}
+
+\tableofcontents
+
+
+\bibliographystyle{unsrt}
+\addcontentsline{toc}{section}{Bibliography}
+\raggedright
+\bibliography{tm}
+
+\end{document}

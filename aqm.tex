@@ -29,7 +29,7 @@ These are my notes from the Advanced Quantum Mechanics lectures\cite{susskind201
 Disclaimer: I have created these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended 
 as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
 
-The notes were created using TexStudio\cite{TexStudio}, which I recommend for compiling them to a PDF, and the bibliography was created using JabRef\cite{Jabref}.
+The notes were created using TexStudio\cite{TexStudio}, which I recommend for compiling them to a PDF; the bibliography was created using JabRef\cite{Jabref}.
 
 \end{abstract}
 
@@ -41,30 +41,44 @@ The notes were created using TexStudio\cite{TexStudio}, which I recommend for co
 
 \section{Review and Introduction to Symmetry}
 
-\subsection{Review of Quantum Mechanics}
+We start with a review of quantum mechanics, and then move on to the applications--not the technology but the basic physics problems for which quantum mechanics was invented: atoms; electrons, which stand for a whole class of particles, muons, quarks, neutrinos; and photons. One theme will be symmetry--how symmetries are realized in quantum mechanics, how they are represented, and what they tell us about the quantum mechanical system
 
+\subsection{Review of Quantum Mechanics}
+ This is a review of material from \cite{susskind2012quantum,susskind2014quantum}.
 \begin{itemize}
-	\item States: $\ket{\psi}$ and $\bra{\psi}$
-	\item Observables: $A=A^{\dag}$. An observable is represented by a Hermitian matrix.
-	\item Eigenvalues represent values that can be measured: $A\ket{\alpha} = \alpha\ket{\alpha}$
-	\item Inner product $\braket{\phi|\psi}$	
-	\item Orthogonal $\braket{\phi|\psi}=0$
-	\item Independent values $\braket{x|x^{\prime}}=0$
-	\item Wave function $\braket{x|\psi} = \psi(x)$
-	\item Probability $P(x)=\psi^*(x)\psi(x)$
-	\item Momentum $p\psi(x)=- i \hslash \frac{\partial \Psi}{\partial x}$
-	\item Evolution operator is Unitary $U(t)$: $\ket{\psi(0)} = \ket{\psi(t)}$
-	\item $\braket{\phi|\psi}=\braket{\phi|U^{\dagger}U|\psi}$ i.e. $U^{\dagger}U=I$
-	\item $U(\epsilon)= I + \epsilon G$, so $G=-G^{\dagger}$, $G=- i H$
-	\item For general $t$, $U(t)=e^{- i H t}$
+	\item We start by asking how to represent the state of a system: in classical mechanics states are represented as points in phase space, in quantum mechanics they are represented by state vectors, in a vector space--$\ket{\psi}$ and $\bra{\psi}$. Complex numbers are ubiquitous in quantum mechanics, and our vector space is also complex; $\bra{\psi}$ is analogous to the complex conjugate of $\ket{\psi}$.
+	\item Observables. We have observables in classical mechanics, such as position and momentum, but we assume we know what we mean when we say "observable". In quantum mechanics we have to be very precise. An observable is represented by a Hermitian matrix. Hermitian operators are analogous to real numbers: $A=A^{\dag}$.
+	\item Eigenvalues represent values that can be measured: $A\ket{\alpha} = \alpha\ket{\alpha}$. The set of eigenvalues is the set of possible values of a measurement; the eigenvectors are the state vectors of the system such that, if you make a measurement in one of these states, the value is definite, not statistical, and the value is $\alpha$.
+	\item Inner product $\braket{\phi|\psi}$-- a complex number defined for any bra/ket pair.
+	\item Orthogonal $\braket{\phi|\psi}=0$--for any pair of states that can be distinguished by some possible measurement.
+	\item A particle is something that has a definite position in space. The position, $x$ say, should be thought of as an observable. If we measure a particle's position and definitely find it at $x_0$, we have state vector $\ket{x_0}$.
+	\begin{itemize}
+		\item \item Independent values $\braket{x|x^{\prime}}=0$ if $x$ and $x^{\prime}$ are distinguishable.
+		\item For any state $\ket{\psi}$, $\braket{x|\psi} = \psi(x)$ is called the \emph{wave function}. 
+		\item The meaning of $\psi$ is closely related to probability: probability of finding particle at $x$ is $P(x)=\psi^*(x)\psi(x)$
+		\item Position is an observable $X$. In 3 dimensions $\braket{xyz|x^{\prime}y^{\prime}z^{\prime}}=0$ if there is any mismatch $x^{\prime}\ne x \lor y^{\prime} \ne y \lor z^{\prime} \ne z$. We will generally suppress $y$ and $z$; remember they are still there.
+		\item Another important observable is Momentum, which has one component for each dimension of space: $P\psi(x)=- i \hslash \frac{\partial \Psi}{\partial x}$.
+		\item The eigenvector of $X$ corresponding to $x_0$ is $\delta(x-x_0)$.
+		\item The eigenvector of $P$ corresponding to $p_0$ is $e^{\frac{i p_0 x}{\hslash}}$. Using $P(x)=\psi^*(x)\psi(x)$, $P(x)=1$--particles is smeared along entire line--Uncertainty Principle.
+	\end{itemize}
 \end{itemize}
 
+\begin{itemize}
+	\item Evolution operator $U(t)$:
+	\begin{itemize}
+		\item $U(t)\ket{\psi(0)} = \ket{\psi(t)}$
+		\item $U(t)\ket{\psi(t_0)} = \ket{\psi(t_0 + y)}$
+	\end{itemize}
+	\item Following the "minus 1-th law"\footnote{Information is conserved}, we postulate that two states that are observably different will not evolve into two other states that are \emph{not} observably different, so inner products must be preserved: $\braket{\phi|\psi}=\braket{\phi|U^{\dagger}U|\psi}$ i.e. $U^{\dagger}U=I$. U is \emph{Unitary}
+	\item Let $U(\epsilon)= I + \epsilon G$, so $U^\dagger(\epsilon)= I - \epsilon G^\dagger$ and $G=-G^{\dagger}$. We can satisfy this be defining $G=- i H$ for some Hermitian $H$--the \emph{Hamiltonian}.
+	\item For general $t$, $U(t)=e^{- i H t}$
+\end{itemize}
 \begin{align*}
-\psi(t+\epsilon) =& e^{-i \hslash \epsilon} \ket{\psi(t)}\\
-=& (1- i \hslash \epsilon)\ket{\psi(t)}\\
-\frac{\ket{\psi(t+\epsilon)} -\ket{\psi(t)} }{\epsilon}&= -i \hslash \ket{\psi(t)}\\
-\frac{\partial \ket{\psi}}{\partial t} =& -i H \ket{\psi(t)} \text{, Time dependent Schr\"odinger Equation}\\
-H \ket{\psi} =& E \ket{\psi}\text{, Time independent Schr\"odinger Equation}
+	\psi(t+\epsilon) =& e^{-i \hslash \epsilon} \ket{\psi(t)}\\
+	=& (1- i \hslash \epsilon)\ket{\psi(t)}\\
+	\frac{\ket{\psi(t+\epsilon)} -\ket{\psi(t)} }{\epsilon}=& -i \hslash \ket{\psi(t)}\\
+	\frac{\partial \ket{\psi}}{\partial t} =& -i H \ket{\psi(t)} \text{, Time dependent Schr\"odinger Equation}\\
+	H \ket{\psi} =& E \ket{\psi}\text{, Time independent Schr\"odinger Equation}
 \end{align*} 
 
 
@@ -2073,7 +2087,7 @@ When we tried $H= H = \vec{\alpha} \cdot \vec{P}+\beta m$, we found that for pos
 	 Physically, the helicity operator can be thought of as a projection operator of spin along the direction of motion $h=\frac{\vec{S}\cdot\vec{P}}{\lvert P \rvert}$.
 \end{defn}
 \begin{defn}[Chirality]
-	Chirality is the relationship between the directions of spin and momentum. If the directions are the same, the cirality is right handed, otherwise left handed.\cite{meredith2018helicity}
+	Chirality is the relationship between the directions of spin and momentum. If the directions are the same, the chirality is right handed, otherwise left handed.\cite{meredith2018helicity}
 \end{defn}
 
 We coupled the left and right handed particles using the off diagonal entries in $\beta$, and the mass. So mass is a coupling between left and right. For massless particles, chirality is conserved.[Sort out helicity]

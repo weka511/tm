@@ -53,7 +53,7 @@ We start with a review of quantum mechanics, and then move on to the application
 	\item Orthogonal $\braket{\phi|\psi}=0$--for any pair of states that can be distinguished by some possible measurement.
 	\item A particle is something that has a definite position in space. The position, $x$ say, should be thought of as an observable. If we measure a particle's position and definitely find it at $x_0$, we have state vector $\ket{x_0}$.
 	\begin{itemize}
-		\item \item Independent values $\braket{x|x^{\prime}}=0$ if $x$ and $x^{\prime}$ are distinguishable.
+		\item Independent values $\braket{x|x^{\prime}}=0$ if $x$ and $x^{\prime}$ are distinguishable.
 		\item For any state $\ket{\psi}$, $\braket{x|\psi} = \psi(x)$ is called the \emph{wave function}. 
 		\item The meaning of $\psi$ is closely related to probability: probability of finding particle at $x$ is $P(x)=\psi^*(x)\psi(x)$
 		\item Position is an observable $X$. In 3 dimensions $\braket{xyz|x^{\prime}y^{\prime}z^{\prime}}=0$ if there is any mismatch $x^{\prime}\ne x \lor y^{\prime} \ne y \lor z^{\prime} \ne z$. We will generally suppress $y$ and $z$; remember they are still there.
@@ -81,13 +81,17 @@ We start with a review of quantum mechanics, and then move on to the application
 	H \ket{\psi} =& E \ket{\psi}\text{, Time independent Schr\"odinger Equation}
 \end{align*} 
 
+How does eigenvector change with time? It just gets multiplied by a \emph{phase}, which has no effect on probability.
 
 \subsection{Introduction to Symmetry}
+
+Evolution is one example of a transformation on a system which preserve inner products. One important example is the rotational symmetry of the hydrogen atom. Translational symmetry is another example.
 
 \begin{defn}[Symmetry]\label{defn:symmetry}
 	A symmetry is a transformation that doesn't change equations. 
 \end{defn}
-Rotational symmetry is one of the most important symmetries, as is translational symmetry.
+
+If $V$ is a symmetry we expect it to be unitary, as it should preserve differences.
 
 \begin{thm}[A symmetry is a unitary operator that commutes with the Hamiltonian]
 	\begin{align*}
@@ -98,7 +102,7 @@ Rotational symmetry is one of the most important symmetries, as is translational
 \end{thm}
 
 \begin{proof}
-	Suppose $\psi_1$ evolves to $\psi_2$, as shown in Figure \ref{fig:commutator}.
+	Suppose $\psi_1$ evolves to $\psi_2=U(t)\psi_1$, as shown in Figure \ref{fig:commutator}.
 	\begin{figure}[H]
 		\begin{center}
 			\caption{Commutative diagram: $\ket{\psi_1}$ evolves to $\ket{\psi_2}$}\label{fig:commutator}
@@ -111,17 +115,17 @@ Rotational symmetry is one of the most important symmetries, as is translational
 		\end{center}
 	\end{figure}
 	\begin{align*}
-	\ket{\psi_1} \xrightarrow{U}& \ket{\psi_2} \text {or, equivalently}\\
-	\psi_2 =& U \psi_1 \text{. Now, if $V$ really is a symmetry:} \numberthis \label{eq:psi_1}\\
-	\ket{\psi_1^{\prime}} \xrightarrow{U}& \ket{\psi_2^{\prime}} \text {,  or}\\
-	\psi_2^{\prime} =& U \psi_1^{\prime} \text{, so from (\ref{eq:symmetry}) and Definition \ref{defn:symmetry}:} \\
-	V\ket{\psi_2} =& U V \ket{\psi_1} \text{, or, using (\ref{eq:psi_1})}\\
-	V U\ket {\psi_1} =& U V \ket{\psi_1} \text{. But $\ket{\psi_1}$ is an arbitrary state, so} \\
-	V U =& U V \text{ i.e. so for small time $\epsilon$}\\
-	V (I - i \epsilon H) =& (I - i \epsilon H) V \text{, whence}\\
-	V H =& H V \text{, which is (\ref{eq:symmetry:commute})}
+		\ket{\psi_1} \xrightarrow{U}& \ket{\psi_2} \text {or, equivalently}\\
+		\psi_2 =& U \psi_1 \text{. Now, if $V$ really is a symmetry:} \numberthis \label{eq:psi_1}\\
+		\ket{\psi_1^{\prime}} \xrightarrow{U}& \ket{\psi_2^{\prime}} \text {,  or}\\
+		\psi_2^{\prime} =& U \psi_1^{\prime} \text{, so from (\ref{eq:symmetry}) and Definition \ref{defn:symmetry}:} \\
+		V\ket{\psi_2} =& U V \ket{\psi_1} \text{, or, using (\ref{eq:psi_1})}\\
+		V U\ket {\psi_1} =& U V \ket{\psi_1} \text{. But $\ket{\psi_1}$ is an arbitrary state, so} \\
+		V U =& U V \text{. Hence for small time $\epsilon$}\\
+		V (I - i \epsilon H) =& (I - i \epsilon H) V \text{, whence}\\
+		V H =& H V \text{, which is (\ref{eq:symmetry:commute})}
 	\end{align*}
-	Moreover the symmetry $V$ should transform mutually exclusive states into mutually exclusive states, whence it should preserve orthogonality, hence $V$ should be unitary. 
+	Moreover the symmetry $V$ should transform mutually exclusive states into mutually exclusive states, whence it should preserve orthogonality; $V$ should be unitary. 
 \end{proof}
 
 Symmetries can be discrete or continuous.
@@ -164,7 +168,7 @@ Symmetries are operations that you can do on a system which don't change:
 
 Examples of symmetry:
 \begin{itemize}
-	\item translation--doesn't change energy levels, Hamiltonian, or the Scro\"edinger equation;
+	\item translation--doesn't change energy levels, Hamiltonian, or the Schro\"edinger equation;
 	\item rotation;
 	\item interchanging identical particles;
 	\item crystal symmetry: translate one lattice spacing (not exact if crystal not infinite).

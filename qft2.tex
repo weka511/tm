@@ -42,7 +42,128 @@ This document contains derivations of equations from \cite[Part II: Dirac and th
 \end{abstract}
 
 \tableofcontents
+\section{Rotations}
+After \cite{westra2008SU2}
+\begin{align*}
+	U =& \begin{bmatrix}
+		x&-y\\
+		\bar{y}&\bar{x}
+	\end{bmatrix}\\
+	x =& \cos{\theta} e^{i\phi}\\
+	y =& \sin{\theta} e^{i\psi}\\
+	U=& \begin{bmatrix}
+		\cos{\theta} e^{i\phi}&\sin{\theta}e^{i\psi}\\
+		-sin{\theta}e^{-i\psi}&\cos{\theta} e^{-i\phi}
+	\end{bmatrix}\\
+	U^T =& \begin{bmatrix}
+		\cos{\theta} e^{-i\phi}&-\sin{\theta}e^{i\psi}\\
+		sin{\theta}e^{-i\psi}&\cos{\theta} e^{i\phi}
+	\end{bmatrix}
+\end{align*}
+\begin{align*}
+	U \sigma^1 U^T  =&  \begin{bmatrix}
+		\cos{\theta} e^{i\phi}&\sin{\theta}e^{i\psi}\\
+		-\sin{\theta}e^{-i\psi}&\cos{\theta} e^{-i\phi}
+	\end{bmatrix} \begin{bmatrix}
+		0&1\\
+		1&0
+	\end{bmatrix} \begin{bmatrix}
+		\cos{\theta} e^{-i\phi}&-\sin{\theta}e^{i\psi}\\
+		\sin{\theta}e^{-i\psi}&\cos{\theta} e^{i\phi}
+	\end{bmatrix}\\
+	=&  \begin{bmatrix}
+		\sin{\theta}e^{i\psi} & \cos{\theta} e^{i\phi}\\
+		\cos{\theta} e^{-i\phi}&-\sin{\theta}e^{-i\psi}
+	\end{bmatrix} \begin{bmatrix}
+		\cos{\theta} e^{-i\phi}&-\sin{\theta}e^{i\psi}\\
+		\sin{\theta}e^{-i\psi}&\cos{\theta} e^{i\phi}
+	\end{bmatrix}\\
+	=& \begin{bmatrix}
+		\cos\theta \sin\theta\big[e^{i(\psi-\phi)}\big]&-\sin^2\theta e^{2i\phi} +\cos^2\theta e^{2i\phi}\\
+		.&.
+	\end{bmatrix}
+\end{align*}
+\begin{align*}
+	U \sigma^2 U^T  =&  \begin{bmatrix}
+		\cos{\theta} e^{i\phi}&\sin{\theta}e^{i\psi}\\
+		-\sin{\theta}e^{-i\psi}&\cos{\theta} e^{-i\phi}
+	\end{bmatrix} \begin{bmatrix}
+		0&-i\\
+		i&0
+	\end{bmatrix} \begin{bmatrix}
+		\cos{\theta} e^{-i\phi}&-\sin{\theta}e^{i\psi}\\
+		\sin{\theta}e^{-i\psi}&\cos{\theta} e^{i\phi}
+	\end{bmatrix}
+\end{align*}
+\begin{align*}
+	U \sigma^3 U^T =&  \begin{bmatrix}
+		\cos{\theta} e^{i\phi}&\sin{\theta}e^{i\psi}\\
+		-\sin{\theta}e^{-i\psi}&\cos{\theta} e^{-i\phi}
+	\end{bmatrix} \begin{bmatrix}
+		1&0\\
+		0&-1
+	\end{bmatrix} \begin{bmatrix}
+		\cos{\theta} e^{-i\phi}&-\sin{\theta}e^{i\psi}\\
+		\sin{\theta}e^{-i\psi}&\cos{\theta} e^{i\phi}
+	\end{bmatrix}\\
+	=& \begin{bmatrix}
+		\cos{\theta} e^{i\phi}&-\sin{\theta}e^{i\psi}\\
+		-\sin{\theta}e^{-i\psi}&-\cos{\theta} e^{-i\phi}
+	\end{bmatrix}  \begin{bmatrix}
+		\cos{\theta} e^{-i\phi}&-\sin{\theta}e^{i\psi}\\
+		\sin{\theta}e^{-i\psi}&\cos{\theta} e^{i\phi}
+	\end{bmatrix}\\
+	=& \begin{bmatrix}
+		\cos^2{\theta}-\sin^2{\theta}&-2 \cos{\theta}\sin{\theta}e^{i(\theta+\phi)}\\
+		-2 \cos{\theta}\sin{\theta}e^{-i(\theta+\phi)}&-(\cos^2{\theta}-\sin^2{\theta})
+	\end{bmatrix} \numberthis \label{eq:U:sigma3:UT}
+\end{align*}
+Now
+\begin{align*}
+	xy =& \cos{\theta} e^{i\phi} \sin{\theta} e^{i\psi}\\
+	=& \cos{\theta} \sin{\theta}  e^{i(\phi + \psi)}\\
+	=& \cos{\theta} \sin{\theta}  \big[\cos{(\phi + \psi)}+ i \sin{(\phi + \psi)}\big]\\
+	=& \cos{\theta} \sin{\theta}  \big[\cos{[-(\phi + \psi)]}- i \sin{[-(\phi + \psi)]}\big]
+\end{align*}
+We see that the real part of the cross term in \eqref{eq:U:sigma3:UT} is:
+\begin{align*}
+	-2 \cos{\theta}\sin{\theta}\begin{bmatrix}
+		.&\Re({e^{i(\phi + \psi)}})\\
+		\Re({e^{-i(\phi + \psi)}})&.
+	\end{bmatrix}=&	-2 \cos{\theta}\sin{\theta} \begin{bmatrix}
+		.&\Re({e^{i(\phi + \psi)}})\\
+		\Re({e^{-i(\phi + \psi)}})&.
+	\end{bmatrix}\\
+	=&	-2 \cos{\theta}\sin{\theta} \begin{bmatrix}
+		.&\Re({e^{i(\phi + \psi)}})\\
+		\Re({e^{i(\phi + \psi)}})&.\\
+	\end{bmatrix} \\
+	=& -2 \cos{\theta}\sin{\theta} \Re({e^{i(\phi + \psi)}}) \sigma^1\\
+	=& 2 \Re(xy) \sigma^1
+\end{align*}
 
+Then the imaginary part of the cross term in \eqref{eq:U:sigma3:UT} is:
+\begin{align*}
+	-2 \cos{\theta}\sin{\theta}\begin{bmatrix}
+		.&\Im({e^{i(\phi + \psi)}})\\
+		\Im({e^{-i(\phi + \psi)}})&.
+	\end{bmatrix}=&	-2 \cos{\theta}\sin{\theta} \begin{bmatrix}
+		.&\Im({e^{i(\phi + \psi)}})\\
+		-\Im({e^{i(\phi + \psi)}})&.\\
+	\end{bmatrix} \\
+	=& 2 \cos{\theta}\sin{\theta} \Im({e^{i(\phi + \psi)}}) \frac{\sigma^2}{i}\\
+	=& 2 \Im(xy) \frac{\sigma^2}{i}
+\end{align*}
+Finally
+\begin{align*}
+	\vert x \vert^2 - \vert y \vert^2 =& \cos^2 \theta - \sin^2 \theta \text{, so the diagonal term in \eqref{eq:U:sigma3:UT} is}\\
+	&(\vert x \vert^2 - \vert y \vert^2) \sigma^3
+\end{align*}
+
+So \eqref{eq:U:sigma3:UT} becomes:
+\begin{align*}
+		U \sigma^3 U^T =&  2 \Re(xy) \sigma^1 + 2 \Im(xy) \sigma^2 + (\vert x \vert^2 - \vert y \vert^2) \sigma^3
+\end{align*}
 
 \bibliographystyle{unsrt}
 \addcontentsline{toc}{section}{Bibliography}

@@ -42,7 +42,7 @@ This document contains derivations of equations from \cite[Part II: Dirac and th
 \end{abstract}
 
 \tableofcontents
-\section{Rotations}
+\section{Isomorphism $\frac{SU(2)}{Z^2} \cong SO(3)$}
 In \cite[Section 3]{westra2008SU2} a $2\times 2$ unimodular unitary matrix has the form:
 \begin{align*}
 	U =& \begin{bmatrix}
@@ -136,7 +136,32 @@ So \eqref{eq:U:sigma1:UT} becomes:
 	\end{bmatrix} \begin{bmatrix}
 		\cos{\theta} e^{-i\phi}&-\sin{\theta}e^{i\psi}\\
 		\sin{\theta}e^{-i\psi}&\cos{\theta} e^{i\phi}
-	\end{bmatrix}
+	\end{bmatrix}\\
+	=&  i \begin{bmatrix}
+		\cos{\theta} e^{i\phi}&\sin{\theta}e^{i\psi}\\
+		-\sin{\theta}e^{-i\psi}&\cos{\theta} e^{-i\phi}
+	\end{bmatrix} \begin{bmatrix}
+		0&-1\\
+		1&0
+	\end{bmatrix} \begin{bmatrix}
+		\cos{\theta} e^{-i\phi}&-\sin{\theta}e^{i\psi}\\
+		\sin{\theta}e^{-i\psi}&\cos{\theta} e^{i\phi}
+	\end{bmatrix}\\
+	=&  i\begin{bmatrix}
+		\sin{\theta}e^{i\psi}&-\cos{\theta} e^{i\phi}\\
+		\cos{\theta} e^{-i\phi}&\sin{\theta}e^{-i\psi}
+	\end{bmatrix} \begin{bmatrix}
+		\cos{\theta} e^{-i\phi}&-\sin{\theta}e^{i\psi}\\
+		\sin{\theta}e^{-i\psi}&\cos{\theta} e^{i\phi}
+	\end{bmatrix}\\
+   =& i \begin{bmatrix}
+	   	\sin{\theta}e^{i\psi}\cos{\theta} e^{-i\phi}-\cos{\theta} e^{i\phi}\sin{\theta}e^{-i\psi}&-\sin^2{\theta}e^{2i\psi}-\cos^2{\theta} e^{2i\phi}\\
+	   	\cos^2{\theta} e^{-2i\phi}+\sin^2{\theta}e^{-2i\psi}&-\cos{\theta} e^{-i\phi}\sin{\theta}e^{i\psi}+\sin{\theta}e^{-i\psi}\cos{\theta} e^{i\phi}
+   \end{bmatrix} \\
+	=& \begin{bmatrix}
+		\sin{\theta}\cos{\theta}\big[e^{i(\psi-\phi)}+e^{i(\phi-\psi)}\big]&-\sin^2{\theta}e^{2i\psi}-\cos^2{\theta} e^{2i\phi}\\
+		\cos^2{\theta} e^{-2i\phi}+\sin^2{\theta}e^{-2i\psi}&\sin{\theta}\cos{\theta}\big[-e^{i(\psi-\phi)}+e^{i(\phi-\psi)}\big]
+	\end{bmatrix} \numberthis \label{eq:U:sigma2:UT}
 \end{align*}
 \begin{align*}
 	U \sigma^3 U^T =&  \begin{bmatrix}

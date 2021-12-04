@@ -371,9 +371,30 @@ Even spin can exchange lumps, but not odd.
 \section{Feynman Diagrams}
 
 \begin{align*}
-	Z(J) =& \int D\phi \; e^{i\int d^4x\;\big[\frac{1}{2}[(\partial \phi)^2-m^2\phi^2]-\frac{\lambda}{4!}\phi^4+J\phi\big]}\\
-	=& \int D\phi \; e^{i\int d^4x\;\big[\frac{1}{2}[(\partial \phi)^2-m^2\phi^2]+J\phi\big]}e^{-i\frac{\lambda}{4!}\phi^4}
+	Z(J,\lambda) =& \int D\phi \; e^{i\int d^4x\;\big[\frac{1}{2}[(\partial \phi)^2-m^2\phi^2]-\frac{\lambda}{4!}\phi^4+J\phi\big]}\\
+	=& \int D\phi \; e^{i\int d^4x\;\big[\frac{1}{2}[(\partial \phi)^2-m^2\phi^2]+J\phi\big]e^{-i\frac{\lambda}{4!}\phi^4}}
 \end{align*}
+
+The \emph{functional derivative} is defined in \cite{enwiki:1034704989}:
+\begin{align*}
+	\int \frac{\delta F(x)}{\delta \rho} \phi(x) dx \triangleq& \lim_{\epsilon \rightarrow 0} \frac{F(\rho + \epsilon \phi)-f[\rho]}{\epsilon}\\
+	=&\bigg[\frac{dF(\rho+\epsilon\phi)}{d\rho}\bigg]_\text{$\epsilon=0$}
+\end{align*}
+
+
+\begin{thm}
+	\begin{align*}
+		Z(J,\lambda) =&	e^{-\frac{i\lambda}{4!}\int dx \frac{\delta^4}{(\delta J)^4}}Z(J,0)
+	\end{align*}
+\end{thm}
+
+\begin{proof}
+	After \cite{straub2004feynman}...	
+\end{proof}
+
+
+% Endmatter
+
 \bibliographystyle{unsrt}
 \addcontentsline{toc}{section}{Bibliography}
 \raggedright

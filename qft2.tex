@@ -43,14 +43,13 @@ This document contains derivations of equations from \cite[Part II: Dirac and th
 
 \tableofcontents
 \section{Rotations}
-After \cite{westra2008SU2}
+In \cite[Section 3]{westra2008SU2} a $2\times 2$ unimodular unitary matrix has the form:
 \begin{align*}
 	U =& \begin{bmatrix}
 		x&-y\\
 		\bar{y}&\bar{x}
-	\end{bmatrix}\\
-	x =& \cos{\theta} e^{i\phi}\\
-	y =& \sin{\theta} e^{i\psi}\\
+	\end{bmatrix} \text{. Substituting}\\
+	x =& \cos{\theta} e^{i\phi}, \; y = \sin{\theta} e^{i\psi} \numberthis \label{eq:xy} \text{, gives} \\
 	U=& \begin{bmatrix}
 		\cos{\theta} e^{i\phi}&\sin{\theta}e^{i\psi}\\
 		-sin{\theta}e^{-i\psi}&\cos{\theta} e^{-i\phi}
@@ -60,6 +59,7 @@ After \cite{westra2008SU2}
 		sin{\theta}e^{-i\psi}&\cos{\theta} e^{i\phi}
 	\end{bmatrix}
 \end{align*}
+We follow \cite[Section 4]{westra2008SU2} and transform the Pauli Matrices.
 \begin{align*}
 	U \sigma^1 U^T  =&  \begin{bmatrix}
 		\cos{\theta} e^{i\phi}&\sin{\theta}e^{i\psi}\\
@@ -79,10 +79,53 @@ After \cite{westra2008SU2}
 		\sin{\theta}e^{-i\psi}&\cos{\theta} e^{i\phi}
 	\end{bmatrix}\\
 	=& \begin{bmatrix}
-		\cos\theta \sin\theta\big[e^{i(\psi-\phi)}\big]&-\sin^2\theta e^{2i\phi} +\cos^2\theta e^{2i\phi}\\
-		.&.
-	\end{bmatrix}
+		\cos\theta \sin\theta\big[e^{i(\psi-\phi)}+e^{i(\phi-\psi)}\big]&\cos^2\theta e^{2i\phi}-\sin^2\theta e^{2i\psi} \\
+		\cos^2\theta e^{-2i\phi}-\sin^2\theta e^{-2i\psi}&-\cos\theta \sin\theta\big[e^{i(\psi-\phi)}+e^{i(\phi-\psi)}\big]
+	\end{bmatrix} \numberthis \label{eq:U:sigma1:UT}
 \end{align*}
+
+The real part of the off diagonal elements of \eqref{eq:U:sigma1:UT} becomes:
+\begin{align*}
+	&\begin{bmatrix}
+		.&\Re(\cos^2\theta e^{2i\phi}-\sin^2\theta e^{2i\psi}) \\
+		\Re(\cos^2\theta e^{-2i\phi}-\sin^2\theta e^{-2i\psi})&.
+	\end{bmatrix}\\
+	=& \frac{1}{2}(\cos^2\theta e^{2i\phi}-\sin^2\theta e^{2i\psi}+ \cos^2\theta e^{-2i\phi}-\sin^2\theta e^{-2i\psi}) \sigma^1	\\
+	=& \Re(x^2-y^2)	
+\end{align*}
+
+The imaginary part of the off diagonal elements of \eqref{eq:U:sigma1:UT} becomes:
+\begin{align*}
+	&\begin{bmatrix}
+		.&\Im(\cos^2\theta e^{2i\phi}-\sin^2\theta e^{2i\psi}) \\
+		\Im(\cos^2\theta e^{-2i\phi}-\sin^2\theta e^{-2i\psi})&.
+	\end{bmatrix}\\
+	=& \frac{1}{2}(\cos^2\theta e^{2i\phi}-\sin^2\theta e^{2i\psi}- \cos^2\theta e^{-2i\phi}+\sin^2\theta e^{-2i\psi}) \frac{\sigma^2}{i}	\\
+	=& -\Im(x^2-y^2)	
+\end{align*}
+
+The diagonal elements of \eqref{eq:U:sigma1:UT} are:
+
+\begin{align*}
+	 \cos\theta \sin\theta\big[e^{i(\psi-\phi)}+e^{i(\phi-\psi)}\big]\begin{bmatrix}
+		1&0\\
+		0&-1
+	\end{bmatrix}
+	=& \cos\theta \sin\theta\big[e^{i(\psi-\phi)}+e^{i(\phi-\psi)}\big] \sigma^3 \text{, now}\\
+	\cos\theta \sin\theta e^{i(\psi-\phi)}=& \cos\theta e^{-i\phi} \sin\theta e^{i\psi}\\
+	=& \bar{x} y \text{, and}\\
+	\cos\theta \sin\theta e^{i(\phi-\psi)}=& \cos\theta e^{i\phi} \sin\theta e^{-i\psi}\\
+	=& \bar{x} y \text{, whence} \\
+	\cos\theta \sin\theta\big[e^{i(\psi-\phi)}+e^{i(\phi-\psi)}\big] =& x\bar{y} + \bar{x}y\\
+	=&2 \Re{x\bar{y}} \text{, and}\\
+	\cos\theta \sin\theta\big[e^{i(\psi-\phi)}+e^{i(\phi-\psi)}\big] \sigma^3 =& 2 \Re({x\bar{y}}) \sigma^3 
+\end{align*}
+
+So \eqref{eq:U:sigma1:UT} becomes:
+\begin{align*}
+		U \sigma^1 U^T  =& \Re{(x^2-y^2)} \sigma^1 - \Im{(x^2-y^2)} \sigma^2 + 2 \Re({x\bar{y}}) \sigma^3 
+\end{align*}
+
 \begin{align*}
 	U \sigma^2 U^T  =&  \begin{bmatrix}
 		\cos{\theta} e^{i\phi}&\sin{\theta}e^{i\psi}\\

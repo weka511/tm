@@ -1,6 +1,5 @@
 % !TeX program = lualatex
 \documentclass[]{article}
-
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{graphicx}
@@ -50,10 +49,9 @@ These are my notes from the Quantum Entanglement Part 1, lectures\cite{susskind2
 		The old Copenhagen interpretation of quantum mechanics associated with Niels Bohr is giving way to a more profound interpretation based on the idea of quantum entanglement. Entanglement not only replaces the obsolete notion of the collapse of the wave function but it is also the basis for Bell's famous theorem, the new paradigm of quantum computing, and finally the widely discussed "many-worlds" interpretation of quantum mechanics originated by Everett--\cite{susskind2013entanglement}
 	\end{quotation}
 
-Disclaimer: I have created these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended 
-as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own. I have added headings based on the topics covered in each lecture, since each of the original lectures is has the same title, \emph{Quantum Entanglement}.
+Disclaimer: I have created these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own. I have added headings based on the topics covered in each lecture, since each of the original lectures has the same title, \emph{Quantum Entanglement}.
 
-The notes were created using TexStudio\cite{TexStudio}, which I recommend for compiling them to a PDF; the bibliography was created using JabRef\cite{Jabref}.
+The notes were created using TeXstudio\cite{TexStudio}, and the bibliography with JabRef\cite{Jabref}.
 
 \end{abstract}
 
@@ -66,23 +64,22 @@ The notes were created using TexStudio\cite{TexStudio}, which I recommend for co
 
 We, as animals, have inherited, through the process of evolution, certain intuitive ways of thinking about the physical world:
 \begin{enumerate}
-	\item A lioness, pursuing an antelope, will stop as soon as relative velocity changes sign (physics calculation!);
-	\item A Neanderthal pushing rock from door of cave aims body to maximize component of force in the right direction.
+	\item a lioness, pursuing an antelope, will stop as soon as relative velocity changes sign (physics calculation!);
+	\item a Neanderthal pushing a rock from the door of his cave aims body to maximize component of force in the right direction.
 \end{enumerate}
 
-Everything in modern physics has to do with those things that are beyond these intuitions:
-speeds approaching speed of light; 4 dimensions; the electron; the uncertainty principle. Why would natural selection have given us the intuition of the uncertainty principle? Intuitions for particles come from rocks.
+Everything in modern physics has to do with those things that are beyond these intuitions: speeds approaching speed of light; 4 dimensions; the electron; the uncertainty principle. Why would natural selection have given us the intuition of the uncertainty principle? Intuitions for particles come from rocks.
 
 This course will try to expose some of the weirdness of quantum mechanics, the weirdness of the logic of quantum mechanics, the weirdness of how quantum information works. 
 
 This course will cover:
 \begin{enumerate}
 	\item the basic logic of quantum mechanics;
-	\item the basic logic of quantum information theory
+	\item the basic logic of quantum information theory;
 	\item physics as information.
 \end{enumerate}
 
-Classical mechanics represents values as real numbers; QM often uses discrete values. Before we cover quantum bits we will look at classical bits, using Dirac's notation $\ket{0}$ or $\ket{1}$. For an $n-bit$ \emph{classical} system, the number of configurations is $N_S=2^n$, so $n=\log_2(N_S)$.
+Classical mechanics represents values as real numbers; QM often uses discrete values. Before we cover quantum bits we will look at classical bits, using Dirac's notation $\ket{0}$ or $\ket{1}$. For an n-bit \emph{classical} system, the number of configurations is $N_S=2^n$, so $n=\log_2(N_S)$.
 
 We can generalize the definition of the number of bits of information: it doesn't have to be an integer. We can represent the state of a physical system, to a specified precision, by a string of bits (quantize space, etc). Figure \ref{fig:state_transition} shows how the laws of physics can be represented as a state transition diagram.
 
@@ -144,17 +141,14 @@ This section reviews material from \cite{susskind2013quantum}.
 
 Classical mechanics is based on classical logic. Classical logic means that the states are Boolean: a set of points, each representing a state, and all the logic is classical. Quantum mechanics depends on a completely different logic.
 
-We start with a quantum bit or Qbit, such as the spin of an electron.
+We start with a quantum bit or Qbit, such as the spin of an electron. We need the concepts of \emph{preparing} a state, and \emph{detecting} a state.
 
-We need the concepts of \emph{preparing} a state, and \emph{detecting} a state.
+\begin{itemize}
+	\item Classically we can \emph{prepare} an electron to point in a particular direction by placing it in a magnetic field. The electron will precess before aligning: the stronger the field the faster it emits electromagnetic radiation and aligns.
+	\item To \emph{detect} we apply magnetic field, and measure radiation to see how much realignment was needed.
+\end{itemize}
 
-Classically we can \emph{prepare} an electron to point in a particular direction by placing it in a magnetic field. The electron will precess before aligning: the stronger the field the faster it emits electromagnetic radiation and aligns.
-
-To \emph{detect} we apply magnetic field, and measure radiation to see how much realignmnet was needed.
-
-This is \emph{not} the way a real electron works.
-
-Here is how a real electron behaves: oo matter how we prepare it, when we turn on the magnetic field, either:
+This is \emph{not} the way a real electron works: no matter how we prepare a real electron, when we turn on the magnetic field, either:
 \begin{itemize}
 	\item nothing happens; or
 	\item it emits a single photon corresponding to the flip from down to up.
@@ -224,7 +218,7 @@ We need complex numbers to handle evolution with time.
 			1&0
 		\end{bmatrix} \text{. We can show that}\\
 		\sigma_3^2 =& 1 \numberthis \label{eq:sigma_sq}\\
-		\sigma_3^2 =& 1\\
+		\sigma_2^2 =& 1\\
 		\sigma_1^2 =& 1
 	\end{align*}
 \end{defn}
@@ -241,8 +235,8 @@ The eigenvalues are $\pm1$.
 	\end{align*}
 	In addition if
 	\begin{align*}
-		M \ket{b} =& \lambda_b \ket{b}\text{ we have} \numberthis \label{eq:sigma_ev2}\\
-		\lambda_a \ne& \lambda_b \numberthis \label{eq:ne} \\
+		M \ket{b} =& \lambda_b \ket{b}\text{ and} \numberthis \label{eq:sigma_ev2}\\
+		\lambda_a \ne& \lambda_b \text{ we have} \numberthis \label{eq:ne} \\
 		\braket{a \vert b} =& 0 \numberthis \label{eq:orthogonal}
 	\end{align*}
 \end{thm}
@@ -252,7 +246,7 @@ The eigenvalues are $\pm1$.
 	\begin{align*}
 		\braket{a \vert M \vert a} =& \lambda_a \braket{a\vert a} \text{, transposing}\\
 		\braket{a \vert M^\dagger \vert a} =& \lambda_a^* \braket{a\vert a} \text{, then applying \eqref{eq:hermitian}} \\
-		\braket{a \vert M^\dagger \vert a} =& \lambda_a^* \braket{a\vert a} \text{, whence}\\
+		\braket{a \vert M \vert a} =& \lambda_a^* \braket{a\vert a} \text{, whence}\\
 		\lambda_a^* =& \lambda_a
 	\end{align*}
 	Using  (\ref{eq:sigma_ev1}) again:
@@ -347,7 +341,7 @@ At this state we won't bother about normalization. (NB. Any vector can be multip
 		1\\
 		z
 	\end{bmatrix} \text{, whence}\\
-	n_3 + n_- z =& 1 \text{, second line of multiplcation gives the same result, so we'll ignore.}\\
+	n_3 + n_- z =& 1 \text{, second line of multiplication gives the same result, so we'll ignore.}\\
 	z =& \frac{1-n_3}{n_-} \text{, so our eigenvector becomes:}\\
 	&\begin{bmatrix}
 		1\\
@@ -359,7 +353,7 @@ The norm of the eigenvector is:
  	1+\frac{1-n_3}{n_+}\frac{1-n_3}{n_-}=& \frac{n_+n_- + (1-n_3)^2 }{n_+n_-}\\ 
  	=&\frac{n_+n_- + 1 -2 n_3 + n_3^2}{n_+n_-} \text{. Now we use \eqref{eq:n3:2}}\\
  	=& \frac{1-\cancel{n_3^2}+1 - 2n_3 +\cancel{n_3^2}}{1-n_3^2}\\
- 	=& \frac{2\cancel{(1-n_3)}}{\cancel{(1-n_3)}(1+n_3)} \text{, whence the normmalized eigenvector is:}\\
+ 	=& \frac{2\cancel{(1-n_3)}}{\cancel{(1-n_3)}(1+n_3)} \text{, whence the normalized eigenvector is:}\\
  	\ket{\vec{\sigma} \cdot \vec{\hat{n}}=1} =& \sqrt{\frac{1+n_3}{2}} \begin{bmatrix}
  		1\\\frac{1-n_3}{n_-}
  	\end{bmatrix} \numberthis \label{eq:eigenvector:normalized}
@@ -1013,9 +1007,9 @@ We have an observable $F$. If we were in the $i$th state, the expectation would 
 \begin{proof}
 	\begin{align*}
 		\Tr AB =& \sum_i (AB)_{ii} \text{, by definition of trace}\\
-		=& \sum_{i,j} a_{ij} b_{ij} \text{, by defnition of matrix multiplication}\\
+		=& \sum_{i,j} a_{ij} b_{ij} \text{, by definition of matrix multiplication}\\
 		=& \sum_{i,j} b_{ij} a_{ij} \text{, on rearranging}\\
-		=& \sum_i (AB)_{ji} \text{, by defnition of matrix multiplication}\\
+		=& \sum_i (AB)_{ji} \text{, by definition of matrix multiplication}\\
 		=& \Tr BA \text{, by definition of trace}
 	\end{align*}
 \end{proof}
@@ -1321,7 +1315,7 @@ We have $\sigma_1$, $\sigma_2$, $\sigma_3$ and the magnetic field, $\vec{B}$. Ma
 
 \begin{align*}
 	H =& \frac{\mu}{2}\sigma \cdot \vec{B}\\
-	=& \frac{\mu}{2}\sigma_3 B \text{, if we align the magnetc field with z-axis}
+	=& \frac{\mu}{2}\sigma_3 B \text{, if we align the magnetic field with z-axis}
 \end{align*}
 
 We compute the time derivative of expected spins.

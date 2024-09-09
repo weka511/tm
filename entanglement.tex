@@ -19,7 +19,6 @@
 \usepackage{colortbl}
 \usepackage[toc,nonumberlist]{glossaries}
 \usepackage{glossaries-extra}
-\usepackage[toc,page]{appendix}
 
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
@@ -312,7 +311,7 @@ We have:
 We need the probability amplitude that, if you prepare with $\vec{\sigma} \cdot \vec{\hat{n}}=1$ and then measure along $\vec{\hat{m}}=$ we will observe $\vec{\sigma} \cdot \vec{\hat{m}}=1$:
 $$P(\vec{\sigma} \cdot \vec{\hat{m}}=1\vert\vec{\sigma} \cdot \vec{\hat{n}}=1) = \vert \braket{\vec{\sigma} \cdot \vec{\hat{m}}=1\vert\vec{\sigma} \cdot \vec{\hat{n}}=1}\vert^2$$.
 
-This is what quantum mechanics does: it answers the question, "What is the probability I'll get a measurement of this value, given that I prepared the experiment is such and such a manner?"
+This is what quantum mechanics does: it answers the question, ``What is the probability I'll get a measurement of this value, given that I prepared the experiment is such and such a manner?''
 
 To calculate the eigenvectors of $\vec{\sigma} \cdot \vec{\hat{n}}$, we start:
 \begin{align*}
@@ -393,7 +392,30 @@ When you measure something, you go into system, interact with it, and \emph{chan
 	For any $\alpha$ and $\beta$ such that $\alpha^2$ + $\beta^2=1$, there exists a direction of space such that $(\alpha, \beta)$ is an eigenvector of $\vec{\sigma} \cdot\vec{\hat{n}}$ with eigenvalue 1.
 \end{thm}
 \begin{proof}
-	See \ref{proof:any:direction:corresponds}
+		\eqref{eq:eigenvector:normalized} shows how to construct an eigenvector with eigenvalue 1:
+		\begin{align*}
+			\ket{\vec{\sigma} \cdot \vec{\hat{n}}=1} =& \sqrt{\frac{1+n_3}{2}} \begin{bmatrix}
+				1\\\frac{1-n_3}{n_1-i n_2}
+			\end{bmatrix}\text{. Our theorem claims that this can be equated with} \\
+			=& \begin{bmatrix}
+				\alpha\\
+				\beta
+			\end{bmatrix} \text{, i.e.}\\
+			\sqrt{\frac{1+n_3}{2}} =& \alpha \text{, and} \numberthis \label{eq:thm:alpha}\\
+			\alpha \frac{1-n_3}{n_1-i n_2} =& \beta \numberthis \label{eq:thm:beta} 
+		\end{align*}
+		Since we want $n_3$ to be real, we may need to transform $\alpha \rightarrow e^{i\theta}\alpha, \beta \rightarrow e^{i\theta}\beta$ so $\alpha$ is real. Then \eqref{eq:thm:alpha} gives:
+		\begin{align*}
+			n_3 =& 2 \alpha^2-1 \text{, and from \eqref{eq:thm:beta}}\\
+			\frac{1-n_3}{n_1-i n_2} =& \frac{\beta}{\alpha}\\
+			\frac{1}{n_1-i n_2}\frac{{n_1+i n_2}}{{n_1+i n_2}}=&\frac{\beta}{\alpha\big(1-n_3\big)}\\
+			\frac{{n_1+i n_2}}{{n_1^2+ n_2^2}} =& \frac{\beta}{\alpha\big(1-n_3\big)}\\
+			\frac{{n_1+i n_2}}{{1- n_3^2}} =&\frac{\beta}{\alpha\big(1-n_3\big)}\\
+			\frac{{n_1+i n_2}}{1+ n_3} =&\frac{\beta}{\alpha}\\
+			\frac{{n_1+i n_2}}{2 \alpha^2} =&\frac{\beta}{\alpha}\\
+			n_1+i n_2 = 2\alpha\beta
+		\end{align*} 
+
 \end{proof}
 \subsection{Pairs of electrons--Entanglement at last}
 There are four states: $\ket{u\;u}, \,\ket{d\;u}, \,\ket{u\;d}, \,\ket{d\;d}$.  We will use $\sigma$ for the first electron, $\tau$ for the second:  $\sigma$ leaves the second spin unchanged, $\tau$ leaves the first unchanged.
@@ -962,7 +984,102 @@ Let $M$ be a matrix/linear operator in a space with basis $\ket{i}$ and consider
 \end{thm}
 
 \begin{proof}
-	See Appendix \ref{proof:sum_ev}
+	This is an easy consequence of lemmas \ref{lemma:ev:determinant} and \ref{lemma:coeff:sum}. 
+		\begin{lemma}[Polynomial Equation for eigenvalues]\label{lemma:ev:determinant}
+			The eigenvalues satisfy the polynomial equation obtained by expanding the following determinant:
+			\begin{align*}
+				\begin{vmatrix}
+					\lambda-a_{11}&-a_{12}&-a_{13}&...&-a_{1n}\\
+					-a_{21}&\lambda-a_{22}&-a_{23}&...&-a_{2n}\\
+					-a_{31}&-a_{32}&\lambda-a_{33}&...&-a_{3n}\\
+					...&...&...&...&...\\
+					-a_{n1}&-a_{n2}&-a_{n3}&...&\lambda-a_{nn}
+				\end{vmatrix}=0\numberthis\label{eq:eigen:determinant}
+			\end{align*}
+		\end{lemma}
+		\begin{proof}[Proof of Lemma \ref{lemma:ev:determinant}]
+		From the definition of eigenvalue, and eigenvalue $\lambda$ and its corresponding eigenvector $\vec{v}$ must satisfy:
+		\begin{align*}
+			\begin{bmatrix}
+				a_{11}&a_{12}&a_{13}&...&a_{1n}\\
+				a_{21}&a_{22}&a_{23}&...&a_{2n}\\
+				a_{31}&a_{32}&a_{33}&...&a_{3n}\\
+				...&...&...&...&...\\
+				a_{n1}&a_{n2}&a_{n3}&...&a_{nn}
+			\end{bmatrix}\begin{bmatrix}
+				v_1\\
+				v_2\\
+				v_3\\
+				...\\
+				v_n
+			\end{bmatrix}=&\lambda \begin{bmatrix}
+				v_1\\
+				v_2\\
+				v_3\\
+				...\\
+				v_n
+			\end{bmatrix} \text{, whence:} \\
+			\begin{bmatrix}
+				a_{11}-\lambda&a_{12}&a_{13}&...&a_{1n}\\
+				a_{21}&a_{22}-\lambda&a_{23}&...&a_{2n}\\
+				a_{31}&a_{32}&a_{33}-\lambda&...&a_{3n}\\
+				...&...&...&...&...\\
+				a_{n1}&a_{n2}&a_{n3}&...&a_{nn}-\lambda
+			\end{bmatrix}\begin{bmatrix}
+				v_1\\
+				v_2\\
+				v_3\\
+				...\\
+				v_n
+			\end{bmatrix}=&0
+		\end{align*}
+	This equation has non-trivial solutions $\vec{v}$ iff the determinant is zero, i.e. iff \eqref{eq:eigen:determinant} is satisfied.
+	\end{proof}		
+	\begin{lemma}[Coefficient of $\lambda^{n-1}$ is $-\sum_{i=1}^{n} a_{ii}$]\label{lemma:coeff:sum}
+		The coefficient of $\lambda^{n-1}$  in \eqref{eq:eigen:determinant} is $-\sum_{i=1}^{n} a_{ii}$
+	\end{lemma}
+
+	\begin{proof}[Proof of Lemma \ref{lemma:coeff:sum}]
+		This follows from mathematical induction.
+		\begin{enumerate}
+			\item Clearly the result is true for $n=1$, as the equation reduces to $a_{11}=\lambda$.
+			\item Assume that the result is true for $n=m-1$, where $m\ge 1$. We expand \eqref{eq:eigen:determinant} in cofactors.
+		\end{enumerate}
+		\begin{align*}
+			0=&\begin{vmatrix}
+				\lambda-a_{11}&-a_{12}&...&-a_{1n}\\
+				-a_{21}&\lambda-a_{22}&...&-a_{2n}\\
+				...&...&...&...\\
+				-a_{n1}&-a_{n2}&...&\lambda-a_{nn}
+			\end{vmatrix}\\=& \big(\lambda-a_{11}\big)\begin{vmatrix}
+				\lambda-a_{22}&...&-a_{2n}\\
+				...&...&...\\
+				-a_{n2}&...&\lambda-a_{nn}
+			\end{vmatrix}+a_{12}\begin{vmatrix}
+				\lambda-a_{11}&\cancel{-a_{12}}&...&-a_{1n}\\
+				-\bcancel{a_{21}}&\xcancel{\lambda-a_{22}}&...&-\bcancel{a_{2n}}\\
+				...&...&...&...\\
+				-a_{n1}&\cancel{-a_{n2}}&...&\lambda-a_{nn}
+			\end{vmatrix} - ... \numberthis \label{eq:cofactors}
+		\end{align*}
+		The first term in \eqref{eq:cofactors} gives:
+		\begin{align*}
+			\big(\lambda-a_{11}\big)\begin{vmatrix}
+				\lambda-a_{22}&...&-a_{2n}\\
+				...&...&...\\
+				-a_{n2}&...&\lambda-a_{nn}
+			\end{vmatrix}=&	\big(\lambda-a_{11}\big) \big(\lambda^{n-1} - \sum_{i=2}^{n}a_{ii}\lambda^{n-1}+...\big)	\\
+			=& \lambda \lambda^{n-1} - \lambda \sum_{i=2}^{n}a_{ii}\lambda^{n-2} - \alpha_{11}\lambda^{n-1} + \mathcal{O}(\lambda^{n-2})\\
+			=& \lambda^n - \sum_{i=1}^{n}a_{ii}\lambda^{n-1}+ \mathcal{O}(\lambda^{n-2}) \numberthis \label{eq:cofactor1}
+		\end{align*}
+	\end{proof}
+		
+		Applying Lemma \ref{lemma:ev:determinant} and Vi\`ete's first formula\cite{enwiki:1030161470} to \eqref{eq:eigen:determinant}, we see that the sum of the roots of the equation is given by $-\sum_{i=1}^{n}a_{ii}$. But the $\lambda_i$ are the roots, whence $\sum_{i=1}^{n}\lambda_i=-\sum_{i=1}^{n}a_{ii}$
+
+
+		Now each of the remaining terms in \eqref{eq:cofactors} consists of a determinant dimension $n-1$ with a $\lambda$ in $n-2$ rows only, multiplied by a constant: it is therefore of $\mathcal{O}(\lambda^{n-2})$. So \eqref{eq:cofactor1} gives the same result as \eqref{eq:cofactors}: this the identical to the induction hypothesis, with $n-1\rightarrow n$.
+		
+	
 \end{proof}
 
 \begin{cor}[The trace of a matrix is independent of the choice of basis]\end{cor}
@@ -1426,133 +1543,6 @@ So configuration starts pure $\ket{ud}$. After a certain time the two terms in t
 
 Hence \eqref{eq:ud_oscillation} becomes a simple harmonic oscillation between $\ket{ud}$ and $\ket{du}$, modulo a phase, which can be ignored.
 
-\begin{appendices}
-	\section {Proofs of theorems}
-	This section contains proofs of theorems that were stated without proof during the lectures, and are sufficiently long that they might distract from the presentation.
-	\subsection{Theorem \ref{thm:any:direction:corresponds}}\label{proof:any:direction:corresponds}
-	\begin{proof}
-		\eqref{eq:eigenvector:normalized} shows how to construct an eigenvector with eigenvalue 1:
-		\begin{align*}
-		\ket{\vec{\sigma} \cdot \vec{\hat{n}}=1} =& \sqrt{\frac{1+n_3}{2}} \begin{bmatrix}
-		1\\\frac{1-n_3}{n_1-i n_2}
-		\end{bmatrix}\text{. Our theorem claims that this can be equated with} \\
-		=& \begin{bmatrix}
-		\alpha\\
-		\beta
-		\end{bmatrix} \text{, i.e.}\\
-		\sqrt{\frac{1+n_3}{2}} =& \alpha \text{, and} \numberthis \label{eq:thm:alpha}\\
-		\alpha \frac{1-n_3}{n_1-i n_2} =& \beta \numberthis \label{eq:thm:beta} 
-		\end{align*}
-		Since we want $n_3$ to be real, we may need to transform $\alpha \rightarrow e^{i\theta}\alpha, \beta \rightarrow e^{i\theta}\beta$ so $\alpha$ is real. Then \eqref{eq:thm:alpha} gives:
-		\begin{align*}
-		n_3 =& 2 \alpha^2-1 \text{, and from \eqref{eq:thm:beta}}\\
-		\frac{1-n_3}{n_1-i n_2} =& \frac{\beta}{\alpha}\\
-		\frac{1}{n_1-i n_2}\frac{{n_1+i n_2}}{{n_1+i n_2}}=&\frac{\beta}{\alpha\big(1-n_3\big)}\\
-		\frac{{n_1+i n_2}}{{n_1^2+ n_2^2}} =& \frac{\beta}{\alpha\big(1-n_3\big)}\\
-		\frac{{n_1+i n_2}}{{1- n_3^2}} =&\frac{\beta}{\alpha\big(1-n_3\big)}\\
-		\frac{{n_1+i n_2}}{1+ n_3} =&\frac{\beta}{\alpha}\\
-		\frac{{n_1+i n_2}}{2 \alpha^2} =&\frac{\beta}{\alpha}\\
-		n_1+i n_2 = 2\alpha\beta
-		\end{align*} 
-	\end{proof}
-	\subsection{Theorem \ref{thm:sum:ev}}\label{proof:sum_ev}
-	\begin{proof}
-		This is an easy consequence of the following lemmata. 
-		\begin{lemma}[Polynomial Equation for eigenvalues]\label{lemma:ev:determinant}
-			The eigenvalues satisfy the polynomial equation obtained by expanding the following determinant:
-			\begin{align*}
-			\begin{vmatrix}
-			\lambda-a_{11}&-a_{12}&-a_{13}&...&-a_{1n}\\
-			-a_{21}&\lambda-a_{22}&-a_{23}&...&-a_{2n}\\
-			-a_{31}&-a_{32}&\lambda-a_{33}&...&-a_{3n}\\
-			...&...&...&...&...\\
-			-a_{n1}&-a_{n2}&-a_{n3}&...&\lambda-a_{nn}
-			\end{vmatrix}=0\numberthis\label{eq:eigen:determinant}
-			\end{align*}
-		\end{lemma}
-		
-		\begin{lemma}[Coefficient of $\lambda^{n-1}$ is $-\sum_{i=1}^{n} a_{ii}$]\label{lemma:coeff:sum}
-			The coefficient of $\lambda^{n-1}$  in \eqref{eq:eigen:determinant} is $-\sum_{i=1}^{n} a_{ii}$
-		\end{lemma}
-		
-		Applying Lemma \ref{lemma:ev:determinant} and Vi\`ete's first formula\cite{enwiki:1030161470} to \eqref{eq:eigen:determinant}, we see that the sum of the roots of the equation is given by $-\sum_{i=1}^{n}a_{ii}$. But the $\lambda_i$ are the roots, whence $\sum_{i=1}^{n}\lambda_i=-\sum_{i=1}^{n}a_{ii}$
-		\begin{proof}[Proof of Lemma \ref{lemma:ev:determinant}]
-			From the definition of eigenvalue, and eigenvalue $\lambda$ and its corresponding eigenvector $\vec{v}$ must satisfy:
-			\begin{align*}
-			\begin{bmatrix}
-			a_{11}&a_{12}&a_{13}&...&a_{1n}\\
-			a_{21}&a_{22}&a_{23}&...&a_{2n}\\
-			a_{31}&a_{32}&a_{33}&...&a_{3n}\\
-			...&...&...&...&...\\
-			a_{n1}&a_{n2}&a_{n3}&...&a_{nn}
-			\end{bmatrix}\begin{bmatrix}
-			v_1\\
-			v_2\\
-			v_3\\
-			...\\
-			v_n
-			\end{bmatrix}=&\lambda \begin{bmatrix}
-			v_1\\
-			v_2\\
-			v_3\\
-			...\\
-			v_n
-			\end{bmatrix} \text{, whence:} \\
-			\begin{bmatrix}
-			a_{11}-\lambda&a_{12}&a_{13}&...&a_{1n}\\
-			a_{21}&a_{22}-\lambda&a_{23}&...&a_{2n}\\
-			a_{31}&a_{32}&a_{33}-\lambda&...&a_{3n}\\
-			...&...&...&...&...\\
-			a_{n1}&a_{n2}&a_{n3}&...&a_{nn}-\lambda
-			\end{bmatrix}\begin{bmatrix}
-			v_1\\
-			v_2\\
-			v_3\\
-			...\\
-			v_n
-			\end{bmatrix}=&0
-			\end{align*}
-			This equation has non-trivial solutions $\vec{v}$ iff the determinant is zero, i.e. iff \eqref{eq:eigen:determinant} is satisfied.
-		\end{proof}
-		\begin{proof}[Proof of Lemma \ref{lemma:coeff:sum}]
-			This follows from mathematical induction.
-			\begin{enumerate}
-				\item Clearly the result is true for $n=1$, as the equation reduces to $a_{11}=\lambda$.
-				\item Assume that the result is true for $n=m-1$, where $m\ge 1$. We expand \eqref{eq:eigen:determinant} in cofactors.
-			\end{enumerate}
-			\begin{align*}
-			0=&\begin{vmatrix}
-			\lambda-a_{11}&-a_{12}&...&-a_{1n}\\
-			-a_{21}&\lambda-a_{22}&...&-a_{2n}\\
-			...&...&...&...\\
-			-a_{n1}&-a_{n2}&...&\lambda-a_{nn}
-			\end{vmatrix}\\=& \big(\lambda-a_{11}\big)\begin{vmatrix}
-			\lambda-a_{22}&...&-a_{2n}\\
-			...&...&...\\
-			-a_{n2}&...&\lambda-a_{nn}
-			\end{vmatrix}+a_{12}\begin{vmatrix}
-			\lambda-a_{11}&\cancel{-a_{12}}&...&-a_{1n}\\
-			-\bcancel{a_{21}}&\xcancel{\lambda-a_{22}}&...&-\bcancel{a_{2n}}\\
-			...&...&...&...\\
-			-a_{n1}&\cancel{-a_{n2}}&...&\lambda-a_{nn}
-			\end{vmatrix} - ... \numberthis \label{eq:cofactors}
-			\end{align*}
-			The first term in \eqref{eq:cofactors} gives:
-			\begin{align*}
-			\big(\lambda-a_{11}\big)\begin{vmatrix}
-			\lambda-a_{22}&...&-a_{2n}\\
-			...&...&...\\
-			-a_{n2}&...&\lambda-a_{nn}
-			\end{vmatrix}=&	\big(\lambda-a_{11}\big) \big(\lambda^{n-1} - \sum_{i=2}^{n}a_{ii}\lambda^{n-1}+...\big)	\\
-			=& \lambda \lambda^{n-1} - \lambda \sum_{i=2}^{n}a_{ii}\lambda^{n-2} - \alpha_{11}\lambda^{n-1} + \mathcal{O}(\lambda^{n-2})\\
-			=& \lambda^n - \sum_{i=1}^{n}a_{ii}\lambda^{n-1}+ \mathcal{O}(\lambda^{n-2}) \numberthis \label{eq:cofactor1}
-			\end{align*}
-		\end{proof}
-		Now each of the remaining terms in \eqref{eq:cofactors} consists of a determinant dimension $n-1$ with a $\lambda$ in $n-2$ rows only, multiplied by a constant: it is therefore of $\mathcal{O}(\lambda^{n-2})$. So \eqref{eq:cofactor1} gives the same result as \eqref{eq:cofactors}: this the identical to the induction hypothesis, with $n-1\rightarrow n$.
-		
-	\end{proof}
-	
-\end{appendices}
 \bibliographystyle{unsrt}
 \addcontentsline{toc}{section}{Bibliography}
 \raggedright

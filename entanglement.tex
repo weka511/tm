@@ -894,7 +894,35 @@ Figure \ref{fig:change:sign}, however,  depicts an apparatus that changes the si
 \begin{figure}[H]
 	\begin{center}
 		\caption{Apparatus to change sign $\ket{0} \rightarrow \ket{-1} - \ket{+1}$}\label{fig:change:sign}
-		\includegraphics[width=0.8\textwidth]{ent-2-slit-change-sign}
+			\begin{tikzpicture}
+			\filldraw[black] (0,0) circle (2pt) node[anchor=west]{};
+			\filldraw[black] (0,1) circle (2pt) node[anchor=west]{};
+			\filldraw[black] (0,2) circle (2pt) node[anchor=west]{};
+			\filldraw[black] (0,3) circle (2pt) node[anchor=west]{};
+			\filldraw[black] (0,4) circle (2pt) node[anchor=west]{};
+			\filldraw[black] (0,5) circle (2pt) node[anchor=west]{};
+			\filldraw[black] (0,6) circle (2pt) node[anchor=west]{};
+			\filldraw[black] (3,0) circle (2pt) node[anchor=west]{};
+			\filldraw[black] (3,1) circle (2pt) node[anchor=west]{};
+			\filldraw[black] (3,2) circle (2pt) node[anchor=west]{};
+			\filldraw[black] (3,3) circle (2pt) node[anchor=west]{};
+			\filldraw[black] (3,4) circle (2pt) node[anchor=west]{};
+			\filldraw[black] (3,5) circle (2pt) node[anchor=west]{};
+			\filldraw[black] (3,6) circle (2pt) node[anchor=west]{};
+			\filldraw[black] (6,0) circle (2pt) node[anchor=west]{};
+			\filldraw[black] (6,1) circle (2pt) node[anchor=west]{};
+			\filldraw[black] (6,2) circle (2pt) node[anchor=west]{};
+			\filldraw[black] (6,3) circle (2pt) node[anchor=west]{};
+			\filldraw[black] (6,4) circle (2pt) node[anchor=west]{};
+			\filldraw[black] (6,5) circle (2pt) node[anchor=west]{};
+			\filldraw[black] (6,6) circle (2pt) node[anchor=west]{};
+			\draw[gray, thick, ->] (0,3) -- (3,4);
+			\draw[gray, thick, ->] (0,3) -- (3,2);
+			\draw[gray, dashed, ->] (3,4) -- (6,4);
+			\draw[gray, dashed, ->] (3,2) -- (6,4);
+			\draw[gray, dashed, ->] (3,4) -- (6,5);
+			\draw[gray, dashed, ->] (3,2) -- (6,5);
+		\end{tikzpicture}
 	\end{center}
 \end{figure}
 

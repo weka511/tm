@@ -1,9 +1,25 @@
 \documentclass[]{article}
 
-\usepackage{caption,subcaption,graphicx,float,url,amsmath,amssymb,amsthm,tocloft,cancel,mathrsfs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{tocloft}
+\usepackage{cancel}
+\usepackage{thmtools}
+\usepackage{gensymb}
+\usepackage{braket}
+\usepackage{tikz-feynman}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{colortbl}
 \usepackage[toc,nonumberlist]{glossaries}
-\usepackage{glossaries-extra,thmtools,gensymb,braket,bm,tensor}
-\usepackage[toc,page]{appendix}
+\usepackage{glossaries-extra}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[toc,page]{appendix}
@@ -22,6 +38,8 @@
 \title{Theoretical Minimum\\Cosmology}
 \author{Simon Crase (compiler)\\simon@greenweaves.nz}
 
+\makeglossaries
+
 \begin{document}
 
 \maketitle
@@ -32,7 +50,7 @@
 	Disclaimer: I have created these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended 
 	as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
 	
-	The notes were created using TexStudio\cite{TexStudio}, which I recommend for compiling them to a PDF, and the bibliography was created using JabRef\cite{Jabref}.
+	The notes were created using TexStudio\cite{TexStudio}, and the bibliography using JabRef\cite{Jabref}.
 \end{abstract}
 
 \tableofcontents
@@ -40,15 +58,25 @@
 \listoftables
 \listoftheorems
 
+\newglossaryentry{gls:isotropic}{
+	name={isotropic},
+	description={Same in all directions.}}
+
+\newglossaryentry{gls:homogenous}{
+	name={homogenous},
+	description={Same in every place.}}
+		
 \section{The expanding (Newtonian) universe}
 
 Cosmology as a science dates back to the discovery of the microwave radiation from the Big Bang in the 1960s. Before that Cosmology was more like natural science--classifying oddities. Thinking of the universe as a physical system, as a system to study mathematically, with a set of physical principles and a set of equations is relatively new.
 
-We will study the universe as a physical system.
+We will study the universe as a physical system, i.e. something we can study with equations.
 
-First observation: the universe is isotropic. So it should be homogeneous.
+\begin{itemize}
+	\item First observation: the universe is \gls{gls:isotropic}, averaging over patches of the sky, so it should be \gls{gls:homogenous}. If not we'd have shells centered on Earth!
 
-There are around $10^{11}$ galaxies within view of Earth.
+	\item There are around $10^{11}$ galaxies within view of Earth, which we can treat as particles. Each galaxy has roughly $10^{11}$ stars,
+\end{itemize}
 
 \subsection{How would Newton have handled expanding universe?}
 
@@ -102,6 +130,8 @@ Let $M$ denote the mass within $\Delta x \Delta y \Delta z$: $M = \nu \Delta x \
 \section{Inflation}
 \section{Inhomogeneities and quantum fluctuations}
 
+% glossary: may need command makeglossaries.exe cosmology
+\printglossaries
 
 \bibliographystyle{unsrt}
 \addcontentsline{toc}{section}{Bibliography}

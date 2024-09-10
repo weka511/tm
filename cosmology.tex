@@ -188,7 +188,37 @@ Similarly in \eqref{eq:friedmann}, total energy can by positive, negative or zer
 
 In Figure \ref{fig:newtons:thm}, all the particle knows is that it is moving under influence of mass concentrated at origin, so we can treat as Figure \ref{fig:cosmo:throw:rock}.
 
+The Total Energy is given by $\frac{1}{2} m \dot{a}^2 R^2 -\frac{m M G}{a R}$. In the edge case where energy is zero
+\begin{align*}
+	 \dot{a}^2 R^2 -\frac{2 M G}{a R} =& 0 \\
+	 \frac{\dot{a}^2 }{a^2} -\frac{2 M G \frac{4}{3} \pi}{\frac{4}{3} \pi a^3 R^3} =& 0 \\
+	 {\underbrace{\big(\frac{\dot{a}}{a}\big)}_\text{Hubble}}^2 =& \frac{4 \pi}{3} G \rho \numberthis \label{eq:friedmann:eq}
+\end{align*}
+Equation \eqref{eq:friedmann:eq} is known as the Friedmann equation. This universe will get slower and slower, but never collapse.
 
+Using \eqref{eq:rho}, \eqref{eq:friedmann:eq} becomes:
+\begin{align*}
+	\big(\frac{\dot{a}}{a}\big) =& \frac{8 \pi \nu}{3}\frac{G}{a^3}\\
+	\big(\frac{\dot{a}}{a}\big) =& \frac{1}{a^3} \text{, using suitable units}
+\end{align*}
+RHS is always positive, and decreases as $a$ increases, but slows.
+Try $a=ct^P$
+\begin{align*}
+	a=&ct^P\\
+	\dot{a}=&^c P t^{P-1}\\
+	\frac{\dot{a}}{a}=& \frac{P}{t}\\
+	\frac{P^2}{t^2} =& \frac{1}{c^3 t^{3P}} \text{, whence}\\
+	3P =& 2\\
+	P =& \frac{2}{3}\\
+	P^2 =& \frac{1}{C^3}
+\end{align*}
+
+\begin{figure}[H]
+	\caption[Scale Factor]{Scale Factor, showing slowing (case discusses), collapsing, and real (accelerating) universes.}
+	\includegraphics[width=\textwidth]{cosmo-1-scale-factor}
+\end{figure}
+
+Newton had speculated about a homogeneous universe, but didn't carry out the calculation.
 \section{Matter and radiation dominated universes}
 
 \section{Geometries of space: flat, spherical, hyperbolic}

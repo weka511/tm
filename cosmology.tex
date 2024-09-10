@@ -114,18 +114,58 @@ Could Newton have figured out expanding universe given observations?
  
 \subsection{How much mass is in $\Delta x \Delta y \Delta z$?}
 
-Let $M$ denote the mass within $\Delta x \Delta y \Delta z$: $M = \nu \Delta x \Delta y \Delta z$, and $V$ denote the volume.
+Assume  $\Delta x \Delta y \Delta z$ big enough that we can average over the small scale structure. How much mass is in there? Let $M$ denote the mass within $\Delta x \Delta y \Delta z$, and $M = \nu \Delta x \Delta y \Delta z$ Let $V$ denote the volume.
 
 \begin{align*}
 	V =& a^3 \Delta x \Delta y \Delta z\\
 	M =& \nu \Delta x \Delta y \Delta z \text{, constant}\\
-	\rho =& \frac{\nu}{a^3}
+	\rho(t) =& \frac{\nu}{a(t)^3} \numberthis \label{eq:rho}
 \end{align*}
 
+Amount of mass in a given region of Figure \ref{fig:cosmo-1-grid} remains the same, as galaxies move with grid.
 
+Chose grid to Newton at rest at centre of universe. He looks out at distant galaxy, which move in accordance with Newton's laws. He would use Newton's Theorem--Figure \ref{fig:newtons:thm}.
 
+\begin{figure}[H]
+	\caption[Newton's Theorem]{Newton's Theorem: to determine gravitational force on red body, assuming isotropy, draw sphere and calculate force if mass inside concentrated sphere in centre, and ignore mass outside.}\label{fig:newtons:thm}
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{cosmo-1-newtons-thm}
+	\end{center}
+\end{figure}
 
-\url{https://youtu.be/P-medYaqVak?t=1170}
+\begin{align*}
+	D =& a(t) \sqrt{x^2 + y^2 + z^2}\\
+	=&a(t) R \text{, say} \numberthis \label{eq:D}
+\end{align*}
+R is constant, since galaxy at fixed point in lattice. We want acceleration so we can use Newton's laws.
+\begin{align*}
+	V =& \dot{a(t)} R\\
+	A =& \ddot{a(t)}R
+\end{align*}
+From Newton's Law of Universal Gravitation
+\begin{align*}
+	F =& - \frac{mMG}{D^2}\\
+	A =& - \frac{MG}{D^2} \text{, which should become}\\
+	=& \ddot{a(t)}R
+\end{align*}
+So we want
+\begin{align*}
+	\ddot{a(t)}R =& - \frac{MG}{D^2}\\
+	=& - \frac{MG}{a^2 R^2} \text{, from \eqref{eq:D}}\\
+	\frac{\ddot{a(t)}}{a} =& - \frac{MG}{a^3 R^3}\text{, now volume is}\\
+	V =& \frac{4 \pi}{3}  a^3 R^3\\
+	\frac{\ddot{a(t)}}{a}=& -\frac{4 \pi}{3} G \rho \text{, from definition of $\rho$} \numberthis \label{eq:a}
+\end{align*}
+
+Now $\rho$ does not depend in $R$, so \eqref{eq:a} applies for every galaxy. This is true for any origin, as long as we do the transformation carefully. Everything hinges on the assumption that the universe is homogeneous.
+
+We can see from \eqref{eq:a} that the universe is not static unless $\rho=0$. Let us substitute \eqref{eq:rho} in \eqref{eq:a}.
+
+\begin{align*}
+	\frac{\ddot{a(t)}}{a} =& \frac{4 \pi}{3} \frac{G \nu}{a^3}  \numberthis \label{eq:friedmann}
+\end{align*}
+
+This was discovered by Friedmann, in the context of General Relativity. It doesn't tell us whether universe is expanding or creating, but tells us that acceleration is negative. But observation says that it isn't! This would have been the standard model before we found that expansion is accelerating.
 
 \section{Matter and radiation dominated universes}
 \section{Geometries of space: flat, spherical, hyperbolic}

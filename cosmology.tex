@@ -87,14 +87,39 @@ Could Newton have figured out expanding universe given observations?
 \begin{figure}[H]
 	\begin{center}
 		\caption{We start by introducing a set of coordinates.}
-		\begin{subfigure}[t]{0.45\textwidth}
+		\begin{subfigure}[b]{0.4\textwidth}
 			\caption{Chose grid so that galaxies are at grid points, so grid moves with galaxies. Galaxies move coherently (from observation).}\label{fig:cosmo-1-grid}
-			\includegraphics[width=0.8\textwidth]{cosmo-1-grid}
+			\begin{tikzpicture}[darkstyle/.style={circle,draw,fill=gray!40,minimum size=1}]
+				\foreach \x in {0,...,4}
+				\foreach \y in {0,...,4} 
+				{\pgfmathtruncatemacro{\label}{\x - 5 *  \y +21}
+					\node [darkstyle]  (\x\y) at (1.5*\x,1.5*\y) {};} 
+				
+				\foreach \x in {0,...,4}
+				\foreach \y [count=\yi] in {0,...,3}  
+				\draw (\x\y)--(\x\yi) (\y\x)--(\yi\x) ;
+				
+			\end{tikzpicture}
 		\end{subfigure}
-		\;
-		\begin{subfigure}[t]{0.45\textwidth}
+		\hfill
+		\begin{subfigure}[b]{0.4\textwidth}
 			\caption{Define distance: $D_{ab}=a(t) \Delta x_{ab}$, where scale parameter $a$ may or may not be a constant.}\label{fig:cosmo-1-distance}
-			\includegraphics[width=0.8\textwidth]{cosmo-1-distance}
+			\begin{tikzpicture}[darkstyle/.style={circle,draw,fill=gray!40,minimum size=1}]
+				\foreach \x in {0,...,4}
+				\foreach \y in {0,...,4} 
+				{\pgfmathtruncatemacro{\label}{\x - 5 *  \y +21}
+					\node [darkstyle]  (\x\y) at (1.5*\x,1.5*\y) {};} 
+				
+				\filldraw[black] (1.5*2,1.5*2+0.3) node[anchor=west]{a}; 
+				\filldraw[black] (1.5*4,1.5*2+0.3) node[anchor=west]{b}; 
+				\filldraw[black] (1.5*3,1.5*2+0.3) node[anchor=west]{$\Delta X$}; 
+				\draw[->]        (1.5*3+0.6,1.5*2+0.3)   -- (1.5*4-0.1,1.5*2+0.3);
+				\draw[->]        (1.5*4-1.5,1.5*2+0.3)   -- (1.5*2+0.5,1.5*2+0.3);
+				\foreach \x in {0,...,4}
+				\foreach \y [count=\yi] in {0,...,3}  
+				\draw (\x\y)--(\x\yi) (\y\x)--(\yi\x) ;
+				
+			\end{tikzpicture}
 		\end{subfigure}
 	\end{center}
 \end{figure}

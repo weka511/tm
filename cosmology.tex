@@ -154,7 +154,14 @@ Chose grid to Newton at rest at centre of universe. He looks out at distant gala
 \begin{figure}[H]
 	\caption[Newton's Theorem]{Newton's Theorem: to determine gravitational force on red body, assuming isotropy, draw sphere and calculate force if mass inside concentrated sphere in centre, and ignore mass outside.}\label{fig:newtons:thm}
 	\begin{center}
-		\includegraphics[width=0.8\textwidth]{cosmo-1-newtons-thm}
+		\begin{tikzpicture}
+			\filldraw[color=black, fill=gray!25, very thick](0,0) circle (5.0);
+			\filldraw[color=red, fill=red, very thick](4,3) circle (0.1);
+			\filldraw[color=black, fill=black, very thick](0,0) circle (0.1);
+			\draw[black] (-2,0) -- (2,0);
+			\draw[black] (0,-2) -- (0,2);
+			\draw[black,->] (0,0) -- (4*0.95,3*0.95) node[midway, above] {D};
+		\end{tikzpicture}
 	\end{center}
 \end{figure}
 

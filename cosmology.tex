@@ -195,7 +195,11 @@ This was discovered by Friedmann, in the context of General Relativity. It doesn
 \begin{figure}[H]
 	\caption{Consider throwing rock up from Earth, along x-axis}\label{fig:cosmo:throw:rock}
 	\begin{center}
-		\includegraphics[width=0.5\textwidth]{cosmo-1-throw-rock}
+		\begin{tikzpicture}
+			\filldraw[gray] (0,0) circle (12pt) node[anchor=west]{M};
+			\filldraw[black] (3,0) circle (2pt) node[anchor=west]{m};
+			\draw [->] (5,0)   -- (6,0) node[right] {X};
+		\end{tikzpicture}
 	\end{center}
 \end{figure}
 

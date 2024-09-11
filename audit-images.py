@@ -26,7 +26,8 @@ def find_included_images():
     '''
     Find all images that have been included with a tex includegraphics command
     '''
-    def create_matches(file_name,R = compile(r'\s*\\includegraphics.*\{(.*)\}.*')):
+    # \includegraphics[width=\textwidth]{gr-8-newton}\label{fig:gr-8-newton}
+    def create_matches(file_name,R = compile(r'.*\\includegraphics(\[.*\])?\{([^\}]*)\}.*')):
         '''
         Find images for one specified file
         '''
@@ -35,7 +36,7 @@ def find_included_images():
             for line in f:
                 match = R.match(line)
                 if match:
-                    Product.append(match.group(1))
+                    Product.append(match.group(2))
         return Product
 
     image_files = [create_matches(file_name) for file_name in listdir('.')
@@ -51,7 +52,7 @@ if __name__=='__main__':
     with open('rm.sh','w') as out:
         for image in listdir('figs'):
             if splitext(image)[0] not in image_lookup:
-                out.write(f'git rm figs/{image}\n')
+                out.write(f'git rm "figs/{image}"\n')
                 count_unreferenced += 1
             else:
                 count_referenced += 1

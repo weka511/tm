@@ -19,24 +19,26 @@
 
 from os import listdir
 from os.path import isfile, join, splitext
-from re import compile
 from time import time
 
 def find_included_images():
     '''
     Find all images that have been included with a tex includegraphics command
     '''
-    # \includegraphics[width=\textwidth]{gr-8-newton}\label{fig:gr-8-newton}
-    def create_matches(file_name,R = compile(r'.*\\includegraphics(\[.*\])?\{([^\}]*)\}.*')):
+    def create_matches(file_name):
         '''
         Find images for one specified file
         '''
         Product = []
-        with open(file_name) as f:
-            for line in f:
-                match = R.match(line)
-                if match:
-                    Product.append(match.group(2))
+        with open(file_name) as file:
+            for line in file:
+                i = line.find(r'\includegraphics')
+                if i == -1: continue
+                j = line.find('{')
+                k = line.find('}')
+                name = line[j+1:k]
+                Product.append(name)
+
         return Product
 
     image_files = [create_matches(file_name) for file_name in listdir('.')
@@ -51,7 +53,9 @@ if __name__=='__main__':
     image_lookup = find_included_images()
     with open('rm.sh','w') as out:
         for image in listdir('figs'):
+            z = splitext(image)[0]
             if splitext(image)[0] not in image_lookup:
+                print (image)
                 out.write(f'git rm "figs/{image}"\n')
                 count_unreferenced += 1
             else:

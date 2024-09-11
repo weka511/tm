@@ -22,24 +22,32 @@ from os.path import isfile, join, splitext
 from re import compile
 from time import time
 
-def find_included_images(file_name,R):
-    image_files = []
-    with open(file_name) as f:
-        for line in f:
-            match = R.match(line)
-            if match:
-                image_files.append(match.group(1))
-    return image_files
+def find_included_images():
+    '''
+    Find all images that have been included with a tex includegraphics command
+    '''
+    def create_matches(file_name,R = compile(r'\s*\\includegraphics.*\{(.*)\}.*')):
+        '''
+        Find images for one specified file
+        '''
+        Product = []
+        with open(file_name) as f:
+            for line in f:
+                match = R.match(line)
+                if match:
+                    Product.append(match.group(1))
+        return Product
+
+    image_files = [create_matches(file_name) for file_name in listdir('.')
+                   if isfile(file_name) and splitext(file_name)[1]=='.tex']
+    return set([file_name for image_list in image_files for file_name in image_list])
 
 if __name__=='__main__':
     print (__doc__)
     start  = time()
     count_referenced = 0
     count_unreferenced = 0
-    R = compile(r'\s*\\includegraphics.*\{(.*)\}.*')
-    image_files = [find_included_images(file_name,R) for file_name in listdir('.')
-                   if isfile(file_name) and splitext(file_name)[1]=='.tex']
-    image_lookup = set([f for i in image_files for f in i])
+    image_lookup = find_included_images()
     with open('rm.sh','w') as out:
         for image in listdir('figs'):
             if splitext(image)[0] not in image_lookup:

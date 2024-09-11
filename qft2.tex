@@ -29,8 +29,6 @@
 Part II: Dirac and the Spinor}
 \author{Simon Crase (compiler)\\simon@greenweaves.nz}
 
-
-
 \begin{document}
 
 \maketitle
@@ -110,21 +108,21 @@ We follow \cite[Section 4]{westra2008SU2} and transform the Pauli Matrices.
 	\end{bmatrix} \numberthis \label{eq:U:sigma1:UT}
 \end{align*}
 
-The real part of the off diagonal elements of \eqref{eq:U:sigma1:UT} becomes:
+The real part of the off diagonal elements of \eqref{eq:U:sigma1:UT} is:
 \begin{align*}
 	&\begin{bmatrix}
-		.&\Re(\cos^2\theta e^{2i\phi}-\sin^2\theta e^{2i\psi}) \\
-		\Re(\cos^2\theta e^{-2i\phi}-\sin^2\theta e^{-2i\psi})&.
+		0&\Re(\cos^2\theta e^{2i\phi}-\sin^2\theta e^{2i\psi}) \\
+		\Re(\cos^2\theta e^{-2i\phi}-\sin^2\theta e^{-2i\psi})&0
 	\end{bmatrix}\\
 	=& \frac{1}{2}(\cos^2\theta e^{2i\phi}-\sin^2\theta e^{2i\psi}+ \cos^2\theta e^{-2i\phi}-\sin^2\theta e^{-2i\psi}) \sigma^1	\\
 	=& \Re(x^2-y^2)	
 \end{align*}
 
-The imaginary part of the off diagonal elements of \eqref{eq:U:sigma1:UT} becomes:
+The imaginary part of the off diagonal elements of \eqref{eq:U:sigma1:UT} is:
 \begin{align*}
 	&\begin{bmatrix}
-		.&\Im(\cos^2\theta e^{2i\phi}-\sin^2\theta e^{2i\psi}) \\
-		\Im(\cos^2\theta e^{-2i\phi}-\sin^2\theta e^{-2i\psi})&.
+		0&\Im(\cos^2\theta e^{2i\phi}-\sin^2\theta e^{2i\psi}) \\
+		\Im(\cos^2\theta e^{-2i\phi}-\sin^2\theta e^{-2i\psi})&0
 	\end{bmatrix}\\
 	=& \frac{1}{2}(\cos^2\theta e^{2i\phi}-\sin^2\theta e^{2i\psi}- \cos^2\theta e^{-2i\phi}+\sin^2\theta e^{-2i\psi}) \frac{\sigma^2}{i}	\\
 	=& -\Im(x^2-y^2)	
@@ -149,7 +147,7 @@ The diagonal elements of \eqref{eq:U:sigma1:UT} are:
 
 So \eqref{eq:U:sigma1:UT} becomes:
 \begin{align*}
-		U \sigma^1 U^T  =& \Re{(x^2-y^2)} \sigma^1 - \Im{(x^2-y^2)} \sigma^2 + 2 \Re({x\bar{y}}) \sigma^3 
+		U \sigma^1 U^T  =& \Re{(x^2-y^2)} \sigma^1 - \Im{(x^2-y^2)} \sigma^2 + 2 \Re({x\bar{y}}) \sigma^3 \numberthis \label{eq:U:sigma1:expanded}
 \end{align*}
 
 \begin{align*}
@@ -193,29 +191,30 @@ So \eqref{eq:U:sigma1:UT} becomes:
 The real part of the off diagonal terms in \eqref{eq:U:sigma2:UT} is:
 \begin{align*}
 	 &\begin{bmatrix}
-		.&\Im(\sin^2{\theta}e^{2i\psi}+\cos^2{\theta} e^{2i\phi})\\
-		-\Im(\cos^2{\theta} e^{-2i\phi}+\sin^2{\theta}e^{-2i\psi})&.
+		0&\Im(\sin^2{\theta}e^{2i\psi}+\cos^2{\theta} e^{2i\phi})\\
+		-\Im(\cos^2{\theta} e^{-2i\phi}+\sin^2{\theta}e^{-2i\psi})&0
 	\end{bmatrix}\\
    =& \begin{bmatrix}
-		.&(\sin^2{\theta}\sin{2i\psi}+\cos^2{\theta} \sin{2i\phi})\\
-		-(\cos^2{\theta} \sin({-2i\phi})+\sin^2{\theta}\sin({-2i\psi}))&.
+		0&(\sin^2{\theta}\sin{2i\psi}+\cos^2{\theta} \sin{2i\phi})\\
+		-(\cos^2{\theta} \sin({-2i\phi})+\sin^2{\theta}\sin({-2i\psi}))&0
 	\end{bmatrix}\\
 	=& \begin{bmatrix}
-	.&(\sin^2{\theta}\sin{2i\psi}+\cos^2{\theta} \sin{2i\phi})\\
-	(\cos^2{\theta} \sin({2i\phi})+\sin^2{\theta}\sin({2i\psi}))&.
+	0&(\sin^2{\theta}\sin{2i\psi}+\cos^2{\theta} \sin{2i\phi})\\
+	(\cos^2{\theta} \sin({2i\phi})+\sin^2{\theta}\sin({2i\psi}))&0
 	\end{bmatrix}\\
 	=& (\sin^2{\theta}\sin{2i\psi}+\cos^2{\theta} \sin{2i\phi}) \sigma^1\\
 	=& \Im(x^2 + y^2) \sigma^1
 \end{align*}
+
 The imaginary part of the off diagonal terms in \eqref{eq:U:sigma2:UT} is:
 \begin{align*}
-	&\begin{bmatrix}
-		.&-\Re({\sin^2{\theta}e^{2i\psi}+\cos^2{\theta} e^{2i\phi}})\\
-		\Re({\cos^2{\theta} e^{-2i\phi}+\sin^2{\theta}e^{-2i\psi}})&.
-	\end{bmatrix}\\
+	\begin{bmatrix}
+		0&-\Re({\sin^2{\theta}e^{2i\psi}+\cos^2{\theta} e^{2i\phi}})\\
+		\Re({\cos^2{\theta} e^{-2i\phi}+\sin^2{\theta}e^{-2i\psi}})&0
+	\end{bmatrix}
 	=&\begin{bmatrix}
-		.&-\Re(x^2+y^2)\\
-		\Re(\bar{x}^2+\bar{y}^2)&.
+		0&-\Re(x^2+y^2)\\
+		\Re(\bar{x}^2+\bar{y}^2)&0
 	\end{bmatrix}\\
 	=& \frac{\Re(x^2+y^2)}{i} \sigma_2
 \end{align*}
@@ -229,8 +228,9 @@ The diagonal terms in \eqref{eq:U:sigma2:UT} are:
 
 So \eqref{eq:U:sigma2:UT} becomes:
 \begin{align*}
-	U \sigma^2 U^T  =& \Im(x^2 + y^2) \sigma^1 + \Re(x^2+y^2) \sigma_2 - 2 \Im({\bar{x}y}) \sigma^3  
+	U \sigma^2 U^T  =& \Im(x^2 + y^2) \sigma^1 + \Re(x^2+y^2) \sigma_2 - 2 \Im({\bar{x}y}) \sigma^3  \numberthis \label{eq:U:sigma2:expanded}
 \end{align*}
+
 \begin{align*}
 	U \sigma^3 U^T =&  \begin{bmatrix}
 		\cos{\theta} e^{i\phi}&\sin{\theta}e^{i\psi}\\
@@ -264,11 +264,11 @@ Now
 We see that the real part of the cross term in \eqref{eq:U:sigma3:UT} is:
 \begin{align*}
 	-2 \cos{\theta}\sin{\theta}\begin{bmatrix}
-		.&\Re({e^{i(\phi + \psi)}})\\
-		\Re({e^{-i(\phi + \psi)}})&.
+		0&\Re({e^{i(\phi + \psi)}})\\
+		\Re({e^{-i(\phi + \psi)}})&0
 	\end{bmatrix}=&	-2 \cos{\theta}\sin{\theta} \begin{bmatrix}
-		.&\Re({e^{i(\phi + \psi)}})\\
-		\Re({e^{-i(\phi + \psi)}})&.
+		0&\Re({e^{i(\phi + \psi)}})\\
+		\Re({e^{-i(\phi + \psi)}})&0
 	\end{bmatrix}\\
 	=&	-2 \cos{\theta}\sin{\theta} \begin{bmatrix}
 		.&\Re({e^{i(\phi + \psi)}})\\
@@ -281,11 +281,11 @@ We see that the real part of the cross term in \eqref{eq:U:sigma3:UT} is:
 Then the imaginary part of the cross term in \eqref{eq:U:sigma3:UT} is:
 \begin{align*}
 	-2 \cos{\theta}\sin{\theta}\begin{bmatrix}
-		.&\Im({e^{i(\phi + \psi)}})\\
-		\Im({e^{-i(\phi + \psi)}})&.
+		0&\Im({e^{i(\phi + \psi)}})\\
+		\Im({e^{-i(\phi + \psi)}})&0
 	\end{bmatrix}=&	-2 \cos{\theta}\sin{\theta} \begin{bmatrix}
-		.&\Im({e^{i(\phi + \psi)}})\\
-		-\Im({e^{i(\phi + \psi)}})&.\\
+		0&\Im({e^{i(\phi + \psi)}})\\
+		-\Im({e^{i(\phi + \psi)}})&0\\
 	\end{bmatrix} \\
 	=& 2 \cos{\theta}\sin{\theta} \Im({e^{i(\phi + \psi)}}) \frac{\sigma^2}{i}\\
 	=& 2 \Im(xy) \frac{\sigma^2}{i}
@@ -298,8 +298,17 @@ Finally
 
 So \eqref{eq:U:sigma3:UT} becomes:
 \begin{align*}
-		U \sigma^3 U^T =&  2 \Re(xy) \sigma^1 + 2 \Im(xy) \sigma^2 + (\vert x \vert^2 - \vert y \vert^2) \sigma^3
+		U \sigma^3 U^T =&  2 \Re(xy) \sigma^1 + 2 \Im(xy) \sigma^2 + (\vert x \vert^2 - \vert y \vert^2) \sigma^3 \numberthis \label{eq:U:sigma3:expanded}
 \end{align*}
+
+Collecting \eqref{eq:U:sigma1:expanded}, \eqref{eq:U:sigma2:expanded}, and \eqref{eq:U:sigma3:expanded}, we get:
+\begin{equation}
+	\begin{aligned}
+		U \sigma^1 U^T  =& \Re{(x^2-y^2)} \sigma^1 -& \Im{(x^2-y^2)} \sigma^2 +& 2 \Re({x\bar{y}}) \sigma^3\\
+		U \sigma^2 U^T  =& \Im(x^2 + y^2) \sigma^1 +& \Re(x^2+y^2) \sigma_2 -& 2 \Im({\bar{x}y}) \sigma^3  \\
+		U \sigma^3 U^T =&  2 \Re(xy) \sigma^1 +& 2 \Im(xy) \sigma^2 +& (\vert x \vert^2 - \vert y \vert^2) \sigma^3
+	\end{aligned}\label{eq:all3sigma}
+\end{equation}
 
 \section{Quantizing the Dirac Field}
 \section{Lorentz Group and Weyl Spinors}

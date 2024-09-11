@@ -37,7 +37,7 @@ File|Description
 ----------------|-------------------------------------------------------------
 audit-images.py|Used to identify unreferenced image files
 Ising.nlogo|Demonstration of Domain walls
-plot-quartic.py|Used to plot Maxican hat for Higgs boson
+plot-quartic.py|Used to plot Mexican hat for Higgs boson
 tm.wpr|Python project for helper files
 
 ## Proofs to supplement QFT in a Nutshell

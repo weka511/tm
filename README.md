@@ -2,7 +2,7 @@
 
 ## Lecture Notes based on Leonard Susskind's [Theoretical Minimum](http://theoreticalminimum.com/home)
 
-**Disclaimer** I have created these notes as an aide-mémoire for my own use; if you find them useful, you are welcome, but I'd appreciate it if you'd let me know if you are using them. They are _not_ intended 
+**Disclaimer** I have created these notes as an aide-mémoire for my own use; if you find them useful, you are welcome, but I'd appreciate it if you'd let me know if you are using them. They are _not_ intended
 as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
 
 The notes were created using [TexStudio](https://www.texstudio.org/), which I recommend for compiling them to a PDF, and the bibliography was created using [JabRef](https://www.jabref.org/).
@@ -26,7 +26,7 @@ reviews.tex|Review of Carlo Rovelli Helgoland
 sm.tex|[Statistical Mechanics](http://theoreticalminimum.com/courses/statistical-mechanics/2013/spring)
 tm.bib|Bibliography for Theoretical Minimum
 
-## Exercises 
+## Exercises
 File|Description
 ----------------|-------------------------------------------------------------
 gr-exercises.tex|Worked examples from [General Relativity](http://theoreticalminimum.com/courses/general-relativity/2012/fall)
@@ -35,7 +35,8 @@ gr-exercises.tex|Worked examples from [General Relativity](http://theoreticalmin
 
 File|Description
 ----------------|-------------------------------------------------------------
-Ising.nlogo| Demonstration of Domain walls|plot-quartic.py|Plot potential function for particles2.tex
+audit-images.py|Used to identify unreferenced image files
+Ising.nlogo|Demonstration of Domain walls
 plot-quartic.py|Used to plot Maxican hat for Higgs boson
 tm.wpr|Python project for helper files
 

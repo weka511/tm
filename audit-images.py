@@ -40,12 +40,13 @@ if __name__=='__main__':
     image_files = [find_included_images(file_name,R) for file_name in listdir('.')
                    if isfile(file_name) and splitext(file_name)[1]=='.tex']
     image_lookup = set([f for i in image_files for f in i])
-    for image in listdir('figs'):
-        if splitext(image)[0] not in image_lookup:
-            print (f'git rm {image}')
-            count_unreferenced += 1
-        else:
-            count_referenced += 1
+    with open('rm.sh','w') as out:
+        for image in listdir('figs'):
+            if splitext(image)[0] not in image_lookup:
+                out.write(f'git rm figs/{image}\n')
+                count_unreferenced += 1
+            else:
+                count_referenced += 1
 
     percent_unreferenced = 100 * count_unreferenced/(count_referenced + count_unreferenced)
     print (f'{count_unreferenced} unreferenced images, {count_referenced} referenced, {percent_unreferenced:.1f}% unreferenced')

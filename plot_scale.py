@@ -46,7 +46,7 @@ if __name__=='__main__':
     ax.get_xaxis().set_ticks([])
     ax.get_yaxis().set_ticks([])
     ax.legend()
-    fig.savefig('figs/cosmo-2-a-t')
+    fig.savefig('figs/cosmo-2-a-t',bbox_inches='tight')
 
     fig = plt.figure()
     ax = fig.add_subplot(1,1,1)
@@ -57,7 +57,7 @@ if __name__=='__main__':
     ax.get_xaxis().set_ticks([])
     ax.get_yaxis().set_ticks([])
     ax.legend()
-    fig.savefig('figs/cosmo-2-a-r')
+    fig.savefig('figs/cosmo-2-a-r',bbox_inches='tight')
 
     elapsed = time() - start
     minutes = int(elapsed/60)

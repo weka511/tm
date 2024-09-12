@@ -47,8 +47,7 @@
 \begin{abstract}
 	These are my notes for the \emph{Cosmology}\cite{susskind2013cosmology} lectures from Leonard Susskind's \emph{Theoretical Minimum} series\cite{susskind2007theoretical}. 
 	
-	Disclaimer: I have created these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended 
-	as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
+	Disclaimer: I have created these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
 	
 	The notes were created using TexStudio\cite{TexStudio}, and the bibliography using JabRef\cite{Jabref}.
 \end{abstract}
@@ -132,7 +131,6 @@ Could Newton have figured out expanding universe given observations?
 	\end{center}
 \end{figure}
  
- 
  We postulate a more general formula for distance between two galaxies $a$ and $b$:
  
  \begin{align*}            
@@ -158,7 +156,19 @@ Assume  $\Delta x \Delta y \Delta z$ big enough that we can average over the sma
 
 Amount of mass in a given region of Figure \ref{fig:cosmo-1-grid} remains the same, as galaxies move with grid.
 
+\subsection{Newtonian derivation of Friedmann Equation}
 Choose grid to Newton at rest at centre of universe. He looks out at distant galaxy, which move in accordance with Newton's laws. He would use Newton's Theorem--Figure \ref{fig:newtons:thm}.
+
+\begin{thm}[Newton's shell theorem]
+	\begin{enumerate}
+		\item A spherically symmetric body affects external objects gravitationally as though all of its mass were concentrated at a point at its center.
+		\item If the body is a spherically symmetric shell (i.e., a hollow ball), no net gravitational force is exerted by the shell on any object inside, regardless of the object's location within the shell.
+	\end{enumerate}
+\end{thm}
+
+\begin{proof}
+	Given in \cite{enwiki:1241447151}.
+\end{proof}
 
 \begin{figure}[H]
 	\caption[Newton's Theorem]{Newton's Theorem: to determine gravitational force on red body, assuming isotropy, draw sphere and calculate force if mass inside concentrated sphere in centre, and ignore mass outside.}\label{fig:newtons:thm}
@@ -320,7 +330,7 @@ There are two directions we want to go in.
 	\item What if energy is non-zero?
 \end{enumerate}
 
-\subsection{Matter Dominated Universe}
+\subsection{Matter dominated universe}
 \begin{figure}[H]
 	\caption{We compute the constant energy}
 		\begin{center}
@@ -372,20 +382,35 @@ Now there is a point where $\dot{a}=0$: the expansion stops, and $\dot{a}$ chang
 
 The matter dominated universe was the classic cosmology until other things were discovered. There are three cases, positive energy, negative and zero. In a later lecture we will find that this is connected to the geometry of the universe: this is the main contribution of General Relativity.
 
+
 \subsection{Radiation dominated universe}
 
 We do have to think about relativity, but there is only one important thing: $E=mc^2$. We rewrite Equation \eqref{eq:full:friedmann} to show the connection with general relativity, and define $\kappa = C$:
 
 \begin{align*}
-	\underbrace{\frac{\dot{a}}{a}^2  - \frac{\kappa}{a^2}}_\text{Terms involving geometry}=& \underbrace{\frac{8\pi}{3} G \rho}_\text{Matter and energy} 
+	\underbrace{\frac{\dot{a}}{a}^2  - \frac{\kappa}{a^2}}_\text{Terms involving geometry}=& \underbrace{\frac{8\pi}{3} G \rho}_\text{Matter and energy} \numberthis \label{eq:geometry:energy}
 \end{align*}
 We'll replace mass density of energy density. Energy = $Mc^2 + $ Radiation (and we will choose units such that $c=1$).
 
 To compute radiation density, take a box, volume $a^3$, and assume a certain number of photons.
 
 \begin{figure}[H]
-	\caption[Unit box with photon]{Unit box with photon. Expand slowly, and wavelength grows in proportion; number remains unchanged.}\label{fig:unit:box}
-	\includegraphics[width=0.6\textwidth]{cosmo-2-unit-box}
+	\caption{Unit box with photons: $\lambda$ increases as box expands adiabatically }\label{fig:unit:box}
+	\begin{center}
+			\begin{subfigure}[t]{0.45\textwidth}
+				\begin{center}
+					\caption{As box expands adiabatically, photons do work on walls of box. Number of photons does not change.}
+					\includegraphics[width=\textwidth]{cosmo-2-unit-box}
+				\end{center}
+			\end{subfigure}
+			\;
+			\begin{subfigure}[t]{0.45\textwidth}
+				\begin{center}
+					\caption{An analogy with standing waves. Number of nodes (zero crossings) is an adiabatic invariant:  it has to be an integer.}
+					\includegraphics[width=\textwidth]{cosmo-2-standing-waves}
+				\end{center}
+			\end{subfigure}	
+	\end{center}
 \end{figure}
 
 \begin{align*}
@@ -406,12 +431,63 @@ We have to do some more quantum mechanics of classical electromagnetism to justi
 \end{align*}
 
 \begin{figure}[H]
-	\caption{Comparison of Radiation and Matter dominated universes}
-	\includegraphics[width=0.8\textwidth]{cosmo-2-a-r}
+	\caption{Comparison of radiation and matter dominated universes}\label{fig:cosmo-2-a-r}
+	\begin{center}
+			\includegraphics[width=0.8\textwidth]{cosmo-2-a-r}
+	\end{center}
 \end{figure}
 
 
-\section{Geometries of space: flat, spherical, hyperbolic}
+\subsection{Mixed case: neither matter nor radiation dominates}
+
+We consider a real universe with both matter and radiation.
+
+\begin{align*}
+	\big(\frac{\dot{a}}{a}\big)^2 =& \underbrace{\frac{C_m}{a^3}}_\text{More important for big $a$} + \underbrace{\frac{C_R}{a^4}}_\text{More important for small $a$}
+\end{align*}
+
+At start of expansion, radiation dominates, $t^{\frac{1}{2}}$, but later switches, $t^{\frac{2}{3}}$--Figure \ref{fig:cosmo-2-a-r}.
+
+\begin{itemize}
+	\item How do we know that there isn't conversion of matter to energy as universe expands? In practice mostly conserved separately once things cool to 1000K.
+
+	\item There is a third component: dark energy (dark matter is included in $C_m$).
+
+	\item Radiation includes photons, gravitons, and neutrinos, which move at speeds close to $c$.
+\end{itemize}
+
+This is the cosmology of 30 years prior to date of lecture (2013).
+
+What happens to radiation energy lost during expansion?
+\begin{align*}
+	\underbrace{- \big(\frac{\dot{a}}{a}\big)^2}_\text{Kinetic Energy} + \frac{C_m}{a^3} +\frac{C_R}{a^4} =& 0 
+\end{align*}
+
+Kinetic Energy is  tiny at present.
+
+There are two ways to think about time translation symmetry.
+\begin{enumerate}
+	\item The universe is a time dependent thing that everything moves in. There is no longer time translation symmetry, so energy doesn't have to be conserved.
+	\item There is time translation symmetry: starting universe at $t=-7$ is exactly that same as starting at $t=4$, but this adds an extra term to energy equation. This is very subtle and we'll discuss later.
+\end{enumerate}
+
+There are three cases in \eqref{eq:geometry:energy}.
+
+\begin{align*}
+	\big(\frac{\dot{a}}{a}\big)^2  =& \frac{8\pi\rho G}{3} - \frac{\kappa}{a^2} 
+\end{align*}
+
+In Section \ref{sec:geometries}, we will see that $\kappa$ is connected with geometry.
+\begin{itemize}
+	\item If $\kappa=0$, space is flat.
+	\item If $\kappa>0$, space is curved like a sphere, and it compact.
+	\item If $\kappa<0$, space is curved negatively.
+\end{itemize}
+
+
+\section{Geometries of space: flat, spherical, hyperbolic} \label{sec:geometries}
+
+
 
 \begin{quotation}
 	Professor Susskind presents three possible geometries of homogeneous space: flat (infinite), spherical (positively curved and finite), hyperbolic (negatively curved and infinite). He develops the metric for these three spatial geometries in spherical coordinates, and describes methodologies for determining which geometry represents our universe. To date, we have not been able to detect curvature in our universe. Professor Susskind concludes the lecture by introducing a time-dependent scale factor into the metric for each of these geometries.

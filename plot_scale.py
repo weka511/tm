@@ -24,24 +24,27 @@ from os.path import join
 from time import time
 import numpy as np
 import matplotlib.pyplot as plt
+
 def parse_args():
     parser = ArgumentParser(description=__doc__)
     parser.add_argument('--data', default='./data')
     return parser.parse_args()
 
 if __name__=='__main__':
+    plt.rcParams['text.usetex'] = True
     start  = time()
     args = parse_args()
 
     fig = plt.figure()
     ax = fig.add_subplot(1,1,1)
-    ts = np.linspace(0,100,50)
+    ts = np.linspace(0,500,500)
     As = ts**(2/3)
-    ax.plot(ts,As)
+    ax.plot(ts,As,label=r'$a=t^{\frac{2}{3}}$')
     ax.set_xlabel('t')
     ax.set_ylabel('a')
     ax.get_xaxis().set_ticks([])
     ax.get_yaxis().set_ticks([])
+    ax.legend()
     fig.savefig('figs/cosmo-2-a-t')
     elapsed = time() - start
     minutes = int(elapsed/60)

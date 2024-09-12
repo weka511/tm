@@ -39,7 +39,7 @@ audit-images.py|Used to identify unreferenced image files
 Ising.nlogo|Demonstration of Domain walls
 plot-quartic.py|Used to plot Mexican hat for Higgs boson
 tm.wpr|Python project for helper files
-plot_scale.py|Used to plot scale factor
+plot_scale.py|Used to plot scale parameter
 
 ## Proofs to supplement QFT in a Nutshell
 

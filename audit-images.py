@@ -15,15 +15,21 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-'''Find unreferenced image files'''
+'''
+    Find unreferenced image files
+
+    Build a dictionary of all image files that are included in each tex file.
+    iterate through the images diretory to verify that image is actually included.
+    If not, construct git rm command.
+'''
 
 from os import listdir
 from os.path import isfile, join, splitext
 from time import time
 
-def find_included_images():
+def create_included_images():
     '''
-    Find all images that have been included with a tex includegraphics command
+    Create set of images that have been included with a tex includegraphics command
     '''
     def create_matches(file_name):
         '''
@@ -31,13 +37,15 @@ def find_included_images():
         '''
         Product = []
         with open(file_name) as file:
+            print (file_name)
             for line in file:
-                i = line.find(r'\includegraphics')
-                if i == -1: continue
-                j = line.find('{')
-                k = line.find('}')
-                name = line[j+1:k]
-                Product.append(name)
+                trimmed = line.strip()
+                if trimmed.startswith(r'\includegraphics'):
+                    j = trimmed.find('{')
+                    k = trimmed.find('}')
+                    name = trimmed[j+1:k].strip()
+                    print(f'\t{name}')
+                    Product.append(name)
 
         return Product
 
@@ -50,13 +58,12 @@ if __name__=='__main__':
     start  = time()
     count_referenced = 0
     count_unreferenced = 0
-    image_lookup = find_included_images()
+    image_lookup = create_included_images()
     with open('rm.sh','w') as out:
         for image in listdir('figs'):
-            z = splitext(image)[0]
             if splitext(image)[0] not in image_lookup:
                 print (image)
-                out.write(f'git rm "figs/{image}"\n')
+                out.write(f'git rm figs/{image}\n')
                 count_unreferenced += 1
             else:
                 count_referenced += 1

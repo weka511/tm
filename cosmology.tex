@@ -285,7 +285,27 @@ In Section \ref{sec:expanding:newton} we derived \eqref{eq:friedmann:8}, which r
 	\big(\frac{\dot{a}}{a}\big)^2 =& \frac{8 \pi G \rho}{3}
 \end{align*}
 
-$\frac{8 \pi}{3}$ is related to the volume of a sphere. The equation assumes zero energy.
+$\frac{8 \pi}{3}$ is related to the volume of a sphere. The equation assumes zero energy, or, equivalently, galaxies moving at escape velocity.
+
+Is $\nu$ constant? If we assume, for the moment, that protons and galaxies are forever, then yes, $\nu$ is constant. Box grows, but number of particles in box remains constant. Recall \eqref{eq:friedmann:8}:
+\begin{align*}
+	\big(\frac{\dot{a}}{a}\big)^2 =& \frac{8 \pi \nu}{3}\frac{G}{a^3} \\
+	\big(\frac{\dot{a}}{a}\big)^2 =& \frac{1}{a^3} \text{, using suitable units} \numberthis \label{eq:friedmann:normalized}
+\end{align*}
+
+We can solve \eqref{eq:friedmann:normalized}.
+
+\begin{align*}
+	\dot{a} =& \frac{1}{\sqrt{a}}\\
+	\frac{dt}{da} =& \sqrt{a}\\
+	t = \frac{2}{3}a^{\frac{3}{2}}\\
+	a = t^\frac{2}{3} \text{, ignoring some constant}
+\end{align*}
+
+\begin{figure}
+	\caption{$a = t^\frac{2}{3}$}
+	\includegraphics[width=0.8\textwidth]{figs/cosmo-2-a-t}
+\end{figure}
 \section{Geometries of space: flat, spherical, hyperbolic}
 
 \begin{quotation}

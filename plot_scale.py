@@ -35,10 +35,11 @@ if __name__=='__main__':
     start  = time()
     args = parse_args()
 
-    fig = plt.figure()
-    ax = fig.add_subplot(1,1,1)
     ts = np.linspace(0,500,500)
     As = ts**(2/3)
+    Bs = ts**(1/2)
+    fig = plt.figure()
+    ax = fig.add_subplot(1,1,1)
     ax.plot(ts,As,label=r'$a=t^{\frac{2}{3}}$')
     ax.set_xlabel('t')
     ax.set_ylabel('a')
@@ -46,6 +47,18 @@ if __name__=='__main__':
     ax.get_yaxis().set_ticks([])
     ax.legend()
     fig.savefig('figs/cosmo-2-a-t')
+
+    fig = plt.figure()
+    ax = fig.add_subplot(1,1,1)
+    ax.plot(ts,As,label=r'Matter dominated: $a=t^{\frac{2}{3}}$')
+    ax.plot(ts,Bs,label=r'Radiation dominated: $a=t^{\frac{1}{2}}$')
+    ax.set_xlabel('t')
+    ax.set_ylabel('a')
+    ax.get_xaxis().set_ticks([])
+    ax.get_yaxis().set_ticks([])
+    ax.legend()
+    fig.savefig('figs/cosmo-2-a-r')
+
     elapsed = time() - start
     minutes = int(elapsed/60)
     seconds = elapsed - 60*minutes

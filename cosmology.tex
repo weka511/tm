@@ -358,19 +358,58 @@ if $C>0$, right hand side is strictly positive, universe continues to grow forev
 
 Eventually we can neglect gravity and velocity is uniform.
 
-What is energy is negative? Equation \eqref{eq:full:friedmann} becomes:
+What if energy is negative? Equation \eqref{eq:full:friedmann} becomes:
 
 \begin{align*}
 	\frac{\dot{a}}{a}^2  =& \frac{8\pi\nu G}{a^3} - \frac{C}{a^2} 
 \end{align*}
-Now there is a point where $\dot{a}=0$.
+Now there is a point where $\dot{a}=0$: the expansion stops, and $\dot{a}$ changes from positive branch of square root to negative.
 
 \begin{figure}[H]
 	\caption{Negative Energy:  there is a point where $\dot{a}=0$}
 	\includegraphics[width=0.8\textwidth]{cosmo-2-negative}
 \end{figure}
 
-The matter dominated universe was the classic cosmology until other things were discovered.
+The matter dominated universe was the classic cosmology until other things were discovered. There are three cases, positive energy, negative and zero. In a later lecture we will find that this is connected to the geometry of the universe: this is the main contribution of General Relativity.
+
+\subsection{Radiation dominated universe}
+
+We do have to think about relativity, but there is only one important thing: $E=mc^2$. We rewrite Equation \eqref{eq:full:friedmann} to show the connection with general relativity, and define $\kappa = C$:
+
+\begin{align*}
+	\underbrace{\frac{\dot{a}}{a}^2  - \frac{\kappa}{a^2}}_\text{Terms involving geometry}=& \underbrace{\frac{8\pi}{3} G \rho}_\text{Matter and energy} 
+\end{align*}
+We'll replace mass density of energy density. Energy = $Mc^2 + $ Radiation (and we will choose units such that $c=1$).
+
+To compute radiation density, take a box, volume $a^3$, and assume a certain number of photons.
+
+\begin{figure}[H]
+	\caption[Unit box with photon]{Unit box with photon. Expand slowly, and wavelength grows in proportion; number remains unchanged.}\label{fig:unit:box}
+	\includegraphics[width=0.6\textwidth]{cosmo-2-unit-box}
+\end{figure}
+
+\begin{align*}
+	V =& a^3\\
+	E =& \frac{h c}{\lambda}
+\end{align*}
+
+We have to do some more quantum mechanics of classical electromagnetism to justify the statement in Figure \ref{fig:unit:box}. For the time being, take it as a given. So energy in box decreases: $E\propto \frac{1}{a}$ an.d $\rho\propto \frac{1}{a^4}$.
+
+\begin{align*}
+	\frac{\dot{a}}{a}^2  =& \frac{8\pi\nu G}{a^4} - \frac{C}{a^2} \text{, setting $C=0$}\\
+	\frac{\dot{a}}{a}^2  =& \frac{8\pi\nu G}{a^4} \text{, or, with suitable units}\\
+	\frac{\dot{a}}{a}^2  =& \frac{1}{a^4} \text{, taking square root and rearranging} \\
+	\dot{a} =& \frac{1}{a}\\
+	\frac{dt}{da} =& a\\
+	t =& a^2{, in suitable units}\\
+	a =& \sqrt{t} 
+\end{align*}
+
+\begin{figure}[H]
+	\caption{Comparison of Radiation and Matter dominated universes}
+	\includegraphics[width=0.8\textwidth]{cosmo-2-a-r}
+\end{figure}
+
 
 \section{Geometries of space: flat, spherical, hyperbolic}
 
@@ -424,7 +463,7 @@ The matter dominated universe was the classic cosmology until other things were 
 \section{Inhomogeneities and quantum fluctuations}
 
 \begin{quotation}
-Professor Susskind describes the theory whereby inhomogeneities in the universe were caused by quantum fluctuations in the early universe.  He begins with the mathematical equations of a damped harmonic oscillator, and relates that simple system to a dissipative inflaton field with spatial dependencies.  The quantum fluctuations in the zero point energy states of this field lead to inhomogeneities in the universe.  These inhomogeneities explain both the small variations in the cosmic microwave background, as well as the formation of galaxies from regions of high energy density.
+Professor Susskind describes the theory whereby inhomogeneities in the universe were caused by quantum fluctuations in the early universe.  He begins with the mathematical equations of a damped harmonic oscillator, and relates that simple system to a dissipative inflation field with spatial dependencies.  The quantum fluctuations in the zero point energy states of this field lead to inhomogeneities in the universe.  These inhomogeneities explain both the small variations in the cosmic microwave background, as well as the formation of galaxies from regions of high energy density.
 \end{quotation}
 
 % glossary: may need command makeglossaries.exe cosmology

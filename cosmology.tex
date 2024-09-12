@@ -66,7 +66,7 @@
 	name={homogenous},
 	description={Same in every place.}}
 		
-\section{The expanding (Newtonian) universe}
+\section{The expanding (Newtonian) universe}\label{sec:expanding:newton}
 
 \begin{quotation}
 	This lecture focuses on the classical or Newtonian view of the universe.  Beginning with the assumption of an isotropic universe with gravity as the only significant cosmic-scale force, Professor Susskind derives the equation for the Hubble constant, and demonstrates that the universe cannot be static -- that it must be expanding or contracting.
@@ -153,7 +153,7 @@ Assume  $\Delta x \Delta y \Delta z$ big enough that we can average over the sma
 
 Amount of mass in a given region of Figure \ref{fig:cosmo-1-grid} remains the same, as galaxies move with grid.
 
-Chose grid to Newton at rest at centre of universe. He looks out at distant galaxy, which move in accordance with Newton's laws. He would use Newton's Theorem--Figure \ref{fig:newtons:thm}.
+Choose grid to Newton at rest at centre of universe. He looks out at distant galaxy, which move in accordance with Newton's laws. He would use Newton's Theorem--Figure \ref{fig:newtons:thm}.
 
 \begin{figure}[H]
 	\caption[Newton's Theorem]{Newton's Theorem: to determine gravitational force on red body, assuming isotropy, draw sphere and calculate force if mass inside concentrated sphere in centre, and ignore mass outside.}\label{fig:newtons:thm}
@@ -238,8 +238,8 @@ Equation \eqref{eq:friedmann:eq} is known as the Friedmann equation. This univer
 
 Using \eqref{eq:rho}, \eqref{eq:friedmann:eq} becomes:
 \begin{align*}
-	\big(\frac{\dot{a}}{a}\big) =& \frac{8 \pi \nu}{3}\frac{G}{a^3}\\
-	\big(\frac{\dot{a}}{a}\big) =& \frac{1}{a^3} \text{, using suitable units}
+	\big(\frac{\dot{a}}{a}\big)^2 =& \frac{8 \pi \nu}{3}\frac{G}{a^3} \numberthis \label{eq:friedmann:8}\\
+	\big(\frac{\dot{a}}{a}\big)^2 =& \frac{1}{a^3} \text{, using suitable units}
 \end{align*}
 RHS is always positive, and decreases as $a$ increases, but slows.
 Try $a=ct^P$
@@ -258,7 +258,7 @@ Try $a=ct^P$
 	\includegraphics[width=\textwidth]{cosmo-1-scale-factor}
 \end{figure}
 
-Newton had speculated about a homogeneous universe, but didn't carry out the calculation.
+Newton speculated about a homogeneous universe, but didn't carry out the calculation.
 
 \section{Matter and radiation dominated universes}
 
@@ -266,6 +266,26 @@ Newton had speculated about a homogeneous universe, but didn't carry out the cal
 	After reviewing the basic equation for an expanding universe, Professor Susskind solves the equation explicitly for a zero energy universe, and then extends the derivation to universes with non-zero energy.  These universes can take two forms: matter-dominated universes, and radiation-dominated universes.  The radiation-dominated form characterizes our early universe, and the matter-dominated form characterizes our universe today -- or so cosmologists believed until observations led to theories of dark energy in the 1990s.
 \end{quotation}
 
+Did Newton get it right? Yes, mostly. Einstein's equations deal with curved space-time, and some of the universes we will study have curved 3-space--maybe a 3-sphere. Suppose we just look at very neighbouring galaxies, where it will look flat. Then in a small region we can use Newton;s equations. So what we did in Section \ref{sec:expanding:newton} should be OK, as long as we don't have two galaxies moving past each other at a speed comparable to that of light (OK for galaxies that are a long way away).
+
+Now photons and neutrinos are moving very fast, so  we have to modifiy our equations to deal with this.
+
+Treat matter in galaxies as uniform density $\rho$. Lay down grid as in Figure \ref{fig:cosmo-1-grid}. How big is spacing? Equations should not depend on spacing, but maybe the ratios matter. If a doubles, we have expansion.
+\begin{figure}[H]
+	\caption{Equations should not depend on spacing.}
+	\includegraphics[width=0.8\textwidth]{cosmo-2-grid}
+\end{figure}
+
+We could measure expansion by $\frac{\dot{a}}{a}$.
+
+Another ambiguity is $\nu$, which depends on $a$.
+
+In Section \ref{sec:expanding:newton} we derived \eqref{eq:friedmann:8}, which reduces to:
+\begin{align*}
+	\big(\frac{\dot{a}}{a}\big)^2 =& \frac{8 \pi G \rho}{3}
+\end{align*}
+
+$\frac{8 \pi}{3}$ is related to the volume of a sphere. The equation assumes zero energy.
 \section{Geometries of space: flat, spherical, hyperbolic}
 
 \begin{quotation}

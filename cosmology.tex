@@ -297,15 +297,61 @@ We can solve \eqref{eq:friedmann:normalized}.
 
 \begin{align*}
 	\dot{a} =& \frac{1}{\sqrt{a}}\\
-	\frac{dt}{da} =& \sqrt{a}\\
+	\frac{dt}{da} =& \sqrt{a} \text{, $\pm$ corresponds to expansion/contraction} \\
 	t = \frac{2}{3}a^{\frac{3}{2}}\\
-	a = t^\frac{2}{3} \text{, ignoring some constant}
+	a = t^\frac{2}{3} \text{, ignoring some constant} \numberthis \label{eq:2:3}
 \end{align*}
 
 \begin{figure}
-	\caption{$a = t^\frac{2}{3}$}
+	\caption[Decelerating growth of scale parameter]{Scale parameter increases with time, but decelerates as the result of gravitational attraction}
 	\includegraphics[width=0.8\textwidth]{figs/cosmo-2-a-t}
 \end{figure}
+
+NB. Real motion of galaxies is made up of flow plus peculiar motion.
+
+There are two directions we want to go in.
+\begin{enumerate}
+	\item What if we replace matter with photons? (Early universe).
+	\item What if energy is non-zero?
+\end{enumerate}
+
+\subsection{Matter Dominated Universe}
+\begin{figure}[H]
+	\caption{We compute the constant energy}
+		\begin{center}
+			\begin{tikzpicture}
+				\filldraw[color=black, fill=gray!25, very thick](0,0) circle (5.0);
+				\filldraw[color=red, fill=red, very thick](5,0) circle (0.1) node[right,above]{$m$};
+				\filldraw[color=black, fill=black, very thick](0,0) circle (0.5) node[above]{$M$};
+				\draw[black,->] (0,0) -- (5*0.95,0) node[midway, above] {$X=1$};
+				\draw[black,->] (5*0.95,0) -- (5.5,0) node[right] {$\frac{1}{2}m V^2 - \frac{mMG}{D}=E$};
+			\end{tikzpicture}
+	\end{center}
+\end{figure}
+
+\begin{align*}
+	 V^2 -  \frac{2MG}{D} =& \frac{2E}{m}\\
+	 D =& aX \\
+	 V =& \dot{a} X \text{, but we have set $X=1$}\\
+	 D =& a \\
+	 V =& \dot{a}\\
+	 \dot{a}^2 - \frac{2MG}{a} =& C \text{, say}\\
+	 \frac{\dot{a}}{a}^2 - \frac{2MG}{a^3} =& \frac{C}{a^2} \\
+	 \frac{\dot{a}}{a}^2 - \frac{8\pi\rho G}{3} =& \frac{C}{a^2}\\
+	 \frac{\dot{a}}{a}^2  =& \frac{8\pi\nu G}{a^3} + \frac{C}{a^2} \numberthis \label{eq:full:friedmann}
+\end{align*}
+
+\eqref{eq:full:friedmann} is the full Friedmann equation, which he derived from General Relativity; we have derived from Newton.
+
+if $C>0$, right hand side is strictly positive, universe continues to grow forever (For if $\dot{a}>0$ initially, it has to pass through zero to stop expanding). If $a$ small enough $\frac{8\pi\nu G}{a^3}$ will dominate, and we can use \eqref{eq:2:3}. Once $a$ grows enough $ \frac{C}{a^2}$ dominates.
+
+\begin{align*}
+	\frac{\dot{a}}{a}^2  =&  \frac{C}{a^2} \\
+	\frac{\dot{a}}{a} =&  \frac{C}{a} \text{, for some new $C$}\\
+	\dot{a} =& C
+\end{align*}
+
+Eventually we can neglect gravity and velocity is uniform.
 \section{Geometries of space: flat, spherical, hyperbolic}
 
 \begin{quotation}

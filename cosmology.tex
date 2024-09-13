@@ -68,7 +68,11 @@
 \newglossaryentry{gls:scale:factor}{
 	name={scale factor},
 	description={The expansion of the universe is parametrized by a dimensionless scale factor $a$.  It relates the proper distance (which can change over time, unlike the comoving distance $d_C$ which is constant and set to today's distance) between a pair of objects, e.g. two galaxy clusters, moving with the Hubble flow in an expanding or contracting FLRW universe at any arbitrary time $t$ to their distance at some reference time $t_0$.\cite{enwiki:1228037646}}}
-		
+
+\newglossaryentry{gls:peculiar:velocity}{
+	name={peculiar velocity},
+	description={The components of a galaxy's velocity that deviate from the Hubble flow. According to Hubble's Law, galaxies recede from us at speeds proportional to their distance from us.\cite{enwiki:1192597030}}}
+			
 \section{The expanding (Newtonian) universe}\label{sec:expanding:newton}
 
 \begin{quotation}
@@ -173,7 +177,7 @@ Choose grid so Newton is at rest at centre of universe. He looks out at distant 
 \begin{figure}[H]
 	\caption[Newton's Theorem]{Newton's Theorem: to determine gravitational force on red body, assuming isotropy, draw sphere and calculate force as if mass inside shell were concentrated in centre, and ignore mass outside.}\label{fig:newtons:thm}
 	\begin{center}
-		\begin{tikzpicture}
+		\begin{tikzpicture}[scale=0.5]
 			\filldraw[color=black, fill=gray!25, very thick](0,0) circle (5.0);
 			\filldraw[color=red, fill=red, very thick](4,3) circle (0.1);
 			\filldraw[color=black, fill=black, very thick](0,0) circle (0.1);
@@ -221,7 +225,7 @@ This was discovered by Friedmann, in the context of General Relativity. It doesn
 \begin{figure}[H]
 	\caption{Consider throwing rock up from Earth, along x-axis}\label{fig:cosmo:throw:rock}
 	\begin{center}
-		\begin{tikzpicture}
+		\begin{tikzpicture}[scale=0.5]
 			\filldraw[gray] (0,0) circle (12pt) node[anchor=west]{M};
 			\filldraw[black] (3,0) circle (2pt) node[anchor=west]{m};
 			\draw [->] (5,0)   -- (6,0) node[right] {X};
@@ -280,11 +284,11 @@ Newton speculated about a homogeneous universe, but didn't carry out the calcula
 	After reviewing the basic equation for an expanding universe, Professor Susskind solves the equation explicitly for a zero energy universe, and then extends the derivation to universes with non-zero energy.  These universes can take two forms: matter-dominated universes, and radiation-dominated universes.  The radiation-dominated form characterizes our early universe, and the matter-dominated form characterizes our universe today -- or so cosmologists believed until observations led to theories of dark energy in the 1990s.
 \end{quotation}
 
-Did Newton get it right? Yes, mostly. Einstein's equations deal with curved space-time, and some of the universes we will study have curved 3-space--maybe a 3-sphere. Suppose we just look at very neighbouring galaxies, where it will look flat. Then in a small region we can use Newton;s equations. So what we did in Section \ref{sec:expanding:newton} should be OK, as long as we don't have two galaxies moving past each other at a speed comparable to that of light (OK for galaxies that are a long way away).
+Did Newton get it right? Yes, mostly. Einstein's equations deal with curved space-time, and some of the universes we will study have curved 3-space, maybe a 3-sphere. Suppose we just look at very neighbouring galaxies, where it will look flat. Then in a small region we can use Newton;s equations. So what we did in Section \ref{sec:expanding:newton} should be OK, as long as we don't have two galaxies moving past each other at a speed comparable to that of light (But that is OK for galaxies that are a long way away).
 
-Now photons and neutrinos are moving very fast, so  we have to modifiy our equations to deal with this.
+Now photons and neutrinos are moving very fast, so  we have to modify our equations to deal with this.
 
-Treat matter in galaxies as uniform density $\rho$. Lay down grid as in Figure \ref{fig:cosmo-1-grid}. How big is spacing? Equations should not depend on spacing, but maybe the ratios matter. If a doubles, we have expansion.
+Treat matter in galaxies as uniform density $\rho$. Lay down grid as in Figure \ref{fig:cosmo-1-grid}. How big is spacing? Equations should not depend on spacing, but maybe the ratios matter. If $a$ doubles, we have expansion.
 \begin{figure}[H]
 	\caption{Equations should not depend on spacing.}
 	\includegraphics[width=0.8\textwidth]{cosmo-2-grid}
@@ -321,19 +325,21 @@ We can solve \eqref{eq:friedmann:normalized}.
 	\includegraphics[width=0.8\textwidth]{figs/cosmo-2-a-t}
 \end{figure}
 
-NB. Real motion of galaxies is made up of flow plus peculiar motion.
+
+	
+NB. Real motion of galaxies is made up of flow plus \gls{gls:peculiar:velocity}.
 
 There are two directions we want to go in.
 \begin{enumerate}
-	\item What if we replace matter with photons? (Early universe).
-	\item What if energy is non-zero?
+	\item What if we replace matter with photons? (Early universe). Section \ref{sec:radiation:dominated}
+	\item What if energy is non-zero?--Section \ref{sec:matter:dominated}.
 \end{enumerate}
 
-\subsection{Matter dominated universe}
+\subsection{Matter dominated universe}\label{sec:matter:dominated}
 \begin{figure}[H]
 	\caption{We compute the constant energy}
 		\begin{center}
-			\begin{tikzpicture}
+			\begin{tikzpicture}[scale=0.5]
 				\filldraw[color=black, fill=gray!25, very thick](0,0) circle (5.0);
 				\filldraw[color=red, fill=red, very thick](5,0) circle (0.1) node[right,above]{$m$};
 				\filldraw[color=black, fill=black, very thick](0,0) circle (0.5) node[above]{$M$};
@@ -348,19 +354,19 @@ There are two directions we want to go in.
 	 D =& aX \\
 	 V =& \dot{a} X \text{, but we have set $X=1$}\\
 	 D =& a \\
-	 V =& \dot{a}\\
+	 V =& \dot{a} \text{, so the energy equation becomes}\\
 	 \dot{a}^2 - \frac{2MG}{a} =& C \text{, say}\\
-	 \frac{\dot{a}}{a}^2 - \frac{2MG}{a^3} =& \frac{C}{a^2} \\
-	 \frac{\dot{a}}{a}^2 - \frac{8\pi\rho G}{3} =& \frac{C}{a^2}\\
-	 \frac{\dot{a}}{a}^2  =& \frac{8\pi\nu G}{a^3} + \frac{C}{a^2} \numberthis \label{eq:full:friedmann}
+	 \big(\frac{\dot{a}}{a}\big)^2 - \frac{2MG}{a^3} =& \frac{C}{a^2} \\
+	 \big(\frac{\dot{a}}{a}\big)^2 - \frac{8\pi\rho G}{3} =& \frac{C}{a^2}\\
+	 \big(\frac{\dot{a}}{a}\big)^2  =& \frac{8\pi\nu G}{3a^3} + \frac{C}{a^2} \text{, on substituting \eqref{eq:rho}} \numberthis \label{eq:full:friedmann}
 \end{align*}
 
-\eqref{eq:full:friedmann} is the full Friedmann equation, which he derived from General Relativity; we have derived from Newton.
+Equation \eqref{eq:full:friedmann} is the full Friedmann equation, which he derived from General Relativity; we have derived from Newton.
 
-if $C>0$, right hand side is strictly positive, universe continues to grow forever (For if $\dot{a}>0$ initially, it has to pass through zero to stop expanding). If $a$ small enough $\frac{8\pi\nu G}{a^3}$ will dominate, and we can use \eqref{eq:2:3}. Once $a$ grows enough $ \frac{C}{a^2}$ dominates.
+if $C>0$, right hand side is strictly positive, universe continues to grow forever (For if $\dot{a}>0$ initially, it has to pass through zero to stop expanding). If $a$ small enough $\frac{8\pi\nu G}{3 a^3}$ will dominate, and we can use \eqref{eq:2:3}. Once $a$ grows enough $ \frac{C}{a^2}$ dominates.
 
 \begin{align*}
-	\frac{\dot{a}}{a}^2  =&  \frac{C}{a^2} \\
+	\big(\frac{\dot{a}}{a}\big)^2  =&  \frac{C}{a^2} \\
 	\frac{\dot{a}}{a} =&  \frac{C}{a} \text{, for some new $C$}\\
 	\dot{a} =& C
 \end{align*}
@@ -370,7 +376,7 @@ Eventually we can neglect gravity and velocity is uniform.
 What if energy is negative? Equation \eqref{eq:full:friedmann} becomes:
 
 \begin{align*}
-	\frac{\dot{a}}{a}^2  =& \frac{8\pi\nu G}{a^3} - \frac{C}{a^2} 
+	\big(\frac{\dot{a}}{a}\big)^2  =& \frac{8\pi\nu G}{a^3} - \frac{C}{a^2} \text{, for some new, positive $C$}
 \end{align*}
 Now there is a point where $\dot{a}=0$: the expansion stops, and $\dot{a}$ changes from positive branch of square root to negative.
 
@@ -382,7 +388,7 @@ Now there is a point where $\dot{a}=0$: the expansion stops, and $\dot{a}$ chang
 The matter dominated universe was the classic cosmology until other things were discovered. There are three cases, positive energy, negative and zero. In a later lecture we will find that this is connected to the geometry of the universe: this is the main contribution of General Relativity.
 
 
-\subsection{Radiation dominated universe}
+\subsection{Radiation dominated universe}\label{sec:radiation:dominated}
 
 We do have to think about relativity, but there is only one important thing: $E=mc^2$. We rewrite Equation \eqref{eq:full:friedmann} to show the connection with general relativity, and define $\kappa = C$:
 

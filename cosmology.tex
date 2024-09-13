@@ -514,25 +514,65 @@ Let's think about a metric, and restrict to 2 dimensions.
 
 \begin{align*}
 	ds^2 =& dx^2 + dy^2\text{, ordinary flat space}\\
-	=&dr^2 + r^2 d\theta^2\\
-	=&dr^2 + r^2 d\Omega_1^2
+	=&dr^2 + r^2 d\theta^2 \text{, changing to polar coordinates. Or}\\
+	=&dr^2 + r^2 d\Omega_1^2 \numberthis \label{eq:flat:polar}
 \end{align*}
 
 Use the idea that $d\theta^2$ is a  metric for $\Omega_1$, the 1-sphere or unit circle.
 
 \begin{figure}[H]
 	\caption[We can treat circle as a piece of string and deform it]{We can treat circle as a piece of string and deform it. Label by angular coordinate so equal distances map to the equal angles. A circle is just a curve where we come back to the same place after an angle of $2\pi$}.
-	\includegraphics[width=0.8\textwidth]{cosmo-3-1-sphere}
+	\includegraphics[width=0.8\textwidth]{cosmo-3-1-sphere}\label{fig:cosmo-3-1-sphere}
 \end{figure}
 
 In polar coordinates, it \emph{looks} as if there is a special place, but, in reality, all points are the same. think of flat space as a nested collection of circles. 
 
-The 2-sphere is also homogeneous. Every point on the surface of the spehere is the same as any other point. It has uniform curvature. If you wakk around you come back to the same space.
+The 2-sphere is also homogeneous. Every point on the surface of the sphere is the same as any other point. It has uniform curvature. If you walk around you come back to the same space.
 
 \begin{figure}[H]
-	\caption{Nested spheres}
+	\caption[Nested spheres with point indicating observer]{Nested spheres with point indicating observer. Observer looks out and sees a series of nested spheres, maybe one light year apart. They start growing, slow down, and then contract. Characterize spheres by angle $r$. We will denote the 2-sphere $\Omega_2$.} 
 	\includegraphics[width=0.8\textwidth]{cosmo-3-1-nested-spheres}
 \end{figure}
+
+The metric of the 2-sphere is:
+
+\begin{align*}
+	d\Omega_2^2 =& dr^2 + \sin^2 r\; d\Omega_1^2
+\end{align*}
+
+This pattern just continues. If I want to make a 3 dimensional sphere--a 3 dimensional space where every point is the same, and where we eventually come back to the same point. If we look into space for a certain distance, things form a 2-sphere. Look further, a bigger 2-sphere, but eventually they start to get smaller.
+
+\begin{figure}[H]
+	\caption[Nested 2-spheres in a 3-sphere]{Nested 2-spheres in a 3-sphere. The observer is in the 3-sphere, at the point $r=0$. The 2-spheres surround the observer.}
+	\includegraphics[width=0.8\textwidth]{cosmo-3-3-sphere}
+\end{figure}
+
+The metric follows the familiar pattern:
+\begin{align*}
+	d\Omega_3^2 =& dr^2 + \sin^2 r\; d\Omega_2^2
+\end{align*}
+
+What happens in flat space? In polar coordinates, \eqref{eq:flat:polar} generalizes to:
+\begin{align*}
+	ds^2 =& dr^2 + r^2 d\Omega_2^2
+\end{align*}
+
+There is another way to view spheres. Imagine an ant living on a circle. It can receive light along the circle, it can communicate with its neighbours, but it has no way of knowing whether it lives on either curve in Figure \ref{fig:cosmo-3-1-sphere}, or even whether there are additional dimensions. We, however, can describe a circle by embedding it in two dimensions.
+\begin{figure}[H]
+	\caption{Embedding an $n$-sphere in $n+1$ dimensions}
+	\begin{subfigure}[t]{0.5\textwidth}
+		\caption{A circle in two dimensions: $x^2 + y^2 = 1$}
+		\includegraphics[width=0.8\textwidth]{cosmo-3-embed-circle}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.5\textwidth}
+		\caption{A 2-sphere in three dimensions: $x^2 + y^2 + z^2= 1$}
+		\includegraphics[width=0.8\textwidth]{cosmo-3-embed-2-sphere}
+	\end{subfigure}
+\end{figure}
+Similarly we can embed a 3-sphere in 4 dimensions: $x^2 + y^2 + z^2+w^2= 1$. We don't have to answer the question whether this makes physical sense.
+
+
+What is the difference in what we receive between a sphere and an infinite flat plane? \url{https://youtu.be/nJlWYDcGr8U?t=1704}
 \section{Cosmological Thermodynamics}
 
 \begin{quotation}

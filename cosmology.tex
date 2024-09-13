@@ -63,8 +63,7 @@
 
 \newglossaryentry{gls:homogenous}{
 	name={homogenous},
-	description={Same in every place.}}
-	
+	description={Homogeneity means the space is every where the same. Somebody located at a particular place in the space looks around them, see everywhere around them, and sees exactly the same thing that somebody else sees in any other position\cite[Lecture 3]{susskind2013cosmology}}}	
 \newglossaryentry{gls:scale:factor}{
 	name={scale factor},
 	description={The expansion of the universe is parametrized by a dimensionless scale factor $a$.  It relates the proper distance (which can change over time, unlike the comoving distance $d_C$ which is constant and set to today's distance) between a pair of objects, e.g. two galaxy clusters, moving with the Hubble flow in an expanding or contracting FLRW universe at any arbitrary time $t$ to their distance at some reference time $t_0$.\cite{enwiki:1228037646}}}
@@ -436,7 +435,7 @@ We have to do some more quantum mechanics of classical electromagnetism to justi
 \end{align*}
 
 \begin{figure}[H]
-	\caption{Comparison of radiation and matter dominated universes--\eqref{eq:2:3} and \eqref{eq:a:scrt:t}}\label{fig:cosmo-2-a-r}
+	\caption[Comparison of radiation and matter dominated universes]{Comparison of radiation and matter dominated universes--\eqref{eq:2:3} and \eqref{eq:a:scrt:t}}\label{fig:cosmo-2-a-r}
 	\begin{center}
 			\includegraphics[width=0.8\textwidth]{cosmo-2-a-r}
 	\end{center}
@@ -492,12 +491,48 @@ In Section \ref{sec:geometries}, we will see that $\kappa$ is connected with geo
 
 \section{Geometries of space: flat, spherical, hyperbolic} \label{sec:geometries}
 
-
-
 \begin{quotation}
 	Professor Susskind presents three possible geometries of homogeneous space: flat (infinite), spherical (positively curved and finite), hyperbolic (negatively curved and infinite). He develops the metric for these three spatial geometries in spherical coordinates, and describes methodologies for determining which geometry represents our universe. To date, we have not been able to detect curvature in our universe. Professor Susskind concludes the lecture by introducing a time-dependent scale factor into the metric for each of these geometries.
 \end{quotation}
 
+As a matter of observation, space \emph{is} flat. We don't know that it is flat, just that it is very big, and we don't know whether there is any curvature. It is important to investigate the various possibilities. We don't know what is happening on scales beyond 10 billion light years, but we will make some assumptions. We won't assume that it is flat, but we will assume that it is homogeneous and isotropic. Is that true? We don't know, but we can only test it if we know its consequences. Almost all cosmology is based on that assumption.
+
+If space is not flat, it must be curved. While there are many types of curved spaces, most are not compatible with the universe being \gls{gls:homogenous}.
+
+\begin{itemize}
+	\item A parabaloid is most certainly not homogeneous. Its curvature is greater at the tip, less further away.
+	\item A long pointy ellipsoid is not homogeneous. You woiuld notice the difference if you were walking around on it.
+	\item Surfaces with bumps are not homogeneous.
+\end{itemize}
+
+What kinds \emph{can} be curved and homogeneous? There are two kinds.
+\begin{itemize}
+	\item Flat space.
+\end{itemize}
+
+Let's think about a metric, and restrict to 2 dimensions.
+
+\begin{align*}
+	ds^2 =& dx^2 + dy^2\text{, ordinary flat space}\\
+	=&dr^2 + r^2 d\theta^2\\
+	=&dr^2 + r^2 d\Omega_1^2
+\end{align*}
+
+Use the idea that $d\theta^2$ is a  metric for $\Omega_1$, the 1-sphere or unit circle.
+
+\begin{figure}[H]
+	\caption[We can treat circle as a piece of string and deform it]{We can treat circle as a piece of string and deform it. Label by angular coordinate so equal distances map to the equal angles. A circle is just a curve where we come back to the same place after an angle of $2\pi$}.
+	\includegraphics[width=0.8\textwidth]{cosmo-3-1-sphere}
+\end{figure}
+
+In polar coordinates, it \emph{looks} as if there is a special place, but, in reality, all points are the same. think of flat space as a nested collection of circles. 
+
+The 2-sphere is also homogeneous. Every point on the surface of the spehere is the same as any other point. It has uniform curvature. If you wakk around you come back to the same space.
+
+\begin{figure}[H]
+	\caption{Nested spheres}
+	\includegraphics[width=0.8\textwidth]{cosmo-3-1-nested-spheres}
+\end{figure}
 \section{Cosmological Thermodynamics}
 
 \begin{quotation}

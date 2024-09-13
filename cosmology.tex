@@ -393,9 +393,9 @@ The matter dominated universe was the classic cosmology until other things were 
 We do have to think about relativity, but there is only one important thing: $E=mc^2$. We rewrite Equation \eqref{eq:full:friedmann} to show the connection with general relativity, and define $\kappa = C$:
 
 \begin{align*}
-	\underbrace{\frac{\dot{a}}{a}^2  - \frac{\kappa}{a^2}}_\text{Terms involving geometry}=& \underbrace{\frac{8\pi}{3} G \rho}_\text{Matter and energy} \numberthis \label{eq:geometry:energy}
+	\underbrace{\big(\frac{\dot{a}}{a}\big)^2  - \frac{\kappa}{a^2}}_\text{Terms involving geometry}=& \underbrace{\frac{8\pi}{3} G \rho}_\text{Matter and energy} \numberthis \label{eq:geometry:energy}
 \end{align*}
-We'll replace mass density of energy density. Energy = $Mc^2 + $ Radiation (and we will choose units such that $c=1$).
+We'll replace mass density with energy density. Energy = $Mc^2 + $ Radiation (and we will choose units such that $c=1$).
 
 To compute radiation density, take a box, volume $a^3$, and assume a certain number of photons.
 
@@ -411,7 +411,7 @@ To compute radiation density, take a box, volume $a^3$, and assume a certain num
 			\;
 			\begin{subfigure}[t]{0.45\textwidth}
 				\begin{center}
-					\caption{An analogy with standing waves. Number of nodes (zero crossings) is an adiabatic invariant:  it has to be an integer.}
+					\caption{An analogy with standing waves. Number of nodes (zero crossings) is an adiabatic invariant:  it has to be an integer. So $\lambda$ stretches with circle.}
 					\includegraphics[width=\textwidth]{cosmo-2-standing-waves}
 				\end{center}
 			\end{subfigure}	
@@ -423,20 +423,20 @@ To compute radiation density, take a box, volume $a^3$, and assume a certain num
 	E =& \frac{h c}{\lambda}
 \end{align*}
 
-We have to do some more quantum mechanics of classical electromagnetism to justify the statement in Figure \ref{fig:unit:box}. For the time being, take it as a given. So energy in box decreases: $E\propto \frac{1}{a}$ an.d $\rho\propto \frac{1}{a^4}$.
+We have to do some more quantum mechanics of classical electromagnetism to justify the statement in Figure \ref{fig:unit:box}. For the time being, take it as a given. So energy in box decreases: $E\propto \frac{1}{a}$ and $\rho\propto \frac{1}{a^4}$. We substitute in \eqref{eq:geometry:energy}:
 
 \begin{align*}
-	\frac{\dot{a}}{a}^2  =& \frac{8\pi\nu G}{a^4} - \frac{C}{a^2} \text{, setting $C=0$}\\
-	\frac{\dot{a}}{a}^2  =& \frac{8\pi\nu G}{a^4} \text{, or, with suitable units}\\
-	\frac{\dot{a}}{a}^2  =& \frac{1}{a^4} \text{, taking square root and rearranging} \\
+	\big(\frac{\dot{a}}{a}\big)  =& \frac{8\pi\nu G}{a^4} - \frac{C}{a^2} \text{, and explore the case where $C=0$}\\
+	\big(\frac{\dot{a}}{a}\big)  =& \frac{8\pi\nu G}{a^4} \text{, or, with suitable units}\\
+	\big(\frac{\dot{a}}{a}\big)  =& \frac{1}{a^4} \text{, taking square root and rearranging} \\
 	\dot{a} =& \frac{1}{a}\\
 	\frac{dt}{da} =& a\\
-	t =& a^2{, in suitable units}\\
-	a =& \sqrt{t} 
+	t =& a^2 \text{, in suitable units}\\
+	a =& \sqrt{t} \numberthis \label{eq:a:scrt:t}
 \end{align*}
 
 \begin{figure}[H]
-	\caption{Comparison of radiation and matter dominated universes}\label{fig:cosmo-2-a-r}
+	\caption{Comparison of radiation and matter dominated universes--\eqref{eq:2:3} and \eqref{eq:a:scrt:t}}\label{fig:cosmo-2-a-r}
 	\begin{center}
 			\includegraphics[width=0.8\textwidth]{cosmo-2-a-r}
 	\end{center}

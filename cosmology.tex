@@ -506,10 +506,7 @@ If space is not flat, it must be curved. While there are many types of curved sp
 \end{itemize}
 
 What kinds \emph{can} be curved and homogeneous? There are two kinds.
-\begin{itemize}
-	\item Flat space.
-\end{itemize}
-
+\subsection{Flat Space and the 3-sphere}
 Let's think about a metric, and restrict to 2 dimensions.
 
 \begin{align*}
@@ -602,8 +599,61 @@ $d\theta$ is bigger than if we lived in flat space. Distant galaxies appear bigg
 
 We can also count the number of galaxies: on  a sphere you see fewer galaxies at great distances, compared to the plane. At attipodes we see just one galaxy.
 
-There is a third homogeneous geometry.
+\begin{figure}[H]
+	\caption[Stereographic Projection]{Stereographic Projection: observer is at South pole. Every point on sphere projects to a point on plane, and North pole projects to infinity. Circles on sphere map to little closed curves on plane (actually circles).}
+	\includegraphics[width=0.8\textwidth]{cosmo-3-stereographic-projection}
+\end{figure}
 
+How do circles on the plae map to circles on the sphere? If they are close to South pole they look the same. As we move further the projections get bigger, and the extreme Arctic circle looks very large. Sphere is homogeneous, but this doesn't match plane. 
+
+We can do the same thing with a 3-sphere.
+
+\subsection{Hyperbolic geometry}
+There is a third homogeneous geometry, which we'll call the hyperbolic space. As we move from observer, size of circles blows up very rapidly.
+
+\begin{align*}
+	d\mathcal{H}_2^2 =& dr^2 + \sinh^2 r d\Omega_1^2\\
+	d\mathcal{H}_3^2 =& dr^2 + \sinh^2 r d\Omega_2^2 \text{, candidate geometry for our space.}
+\end{align*}
+
+What happens to angle subtended by a galaxy?
+
+\begin{align*}
+	d\theta	 =& \frac{d}{\sinh r}\\
+	\approx& \frac{2d}{e^r}
+\end{align*}
+So if we lived in a hyperbolic universe, we'd notice that distant galaxies looked to small, and there were a lot of them.
+
+We will construct the hyperbolic surface $T^2-x^2-y^2=1$.
+
+\begin{figure}[H]
+	\caption{Hyperboloid. }
+	\begin{subfigure}[t]{0.3\textwidth}
+		\caption{This doesn't appear \emph{homogeneous}, but is if we use metric $t^2-x^2-y^2$ (Lorentz Transformation)}
+		\includegraphics[width=\textwidth]{cosmo-3-hyperboloid}
+	\end{subfigure}
+	\;
+	\begin{subfigure}[t]{0.3\textwidth}
+		\caption{Stereographic projection. We project points onto plane. Notice asymptotic circle: there are no points outside this. There is a lot of distortion.}
+		\includegraphics[width=\textwidth]{cosmo-3-hyperboloid-stereographic}
+	\end{subfigure}
+	\;
+	\begin{subfigure}[t]{0.3\textwidth}
+		\caption{The angels and devils are supposed to be the same size, and each one sees the same things, and has the same neighbours. There are coordinate transformation that will map one onto the other.}
+		\includegraphics[width=\textwidth]{cosmo3-escher}
+	\end{subfigure}
+\end{figure}
+
+This geometry has many names. It is also the uniformly negatively curved space.
+
+We can also make the space have a radius other than 1.
+\begin{align*}
+	ds^2 =& a^2 \big(dr^2 + \sin^2 r d\Omega_{n-1})^2\big) \text{sphere} \\
+	ds^2 =& a^2 \big(dr^2 + \sinh^2 r d\Omega_{n-1})^2\big) \text{hyperboloid}
+\end{align*}
+The smaller $a$, the greater the curvature.
+
+Modern cosmology assumes that the space we live in is one of the three that we have considered (not quite true: it could be a torus). On scales that we can currently detect, the Universe appears flat--out to 22 billion light years, so we know that the radius must be at least 10 times this side.
 
 \section{Cosmological Thermodynamics}
 

@@ -277,7 +277,7 @@ The right hand side of \eqref{eq:friedmann:8a} is always positive, and decreases
 
 Newton speculated about a homogeneous universe, but didn't carry out the calculation.
 
-\section{Matter and radiation dominated universes}
+\section{Matter and radiation dominated universes}\label{sec:matter:radiation:dominated}
 
 \begin{quotation}
 	After reviewing the basic equation for an expanding universe, Professor Susskind solves the equation explicitly for a zero energy universe, and then extends the derivation to universes with non-zero energy.  These universes can take two forms: matter-dominated universes, and radiation-dominated universes.  The radiation-dominated form characterizes our early universe, and the matter-dominated form characterizes our universe today -- or so cosmologists believed until observations led to theories of dark energy in the 1990s.
@@ -501,28 +501,32 @@ If space is not flat, it must be curved. While there are many types of curved sp
 
 \begin{itemize}
 	\item A parabaloid is most certainly not homogeneous. Its curvature is greater at the tip, less further away.
-	\item A long pointy ellipsoid is not homogeneous. You woiuld notice the difference if you were walking around on it.
+	\item A long pointy ellipsoid is not homogeneous. You would notice the difference if you were walking around on it.
 	\item Surfaces with bumps are not homogeneous.
 \end{itemize}
 
-What kinds \emph{can} be curved and homogeneous? There are two kinds.
-\subsection{Flat Space and the 3-sphere}
-Let's think about a metric, and restrict to 2 dimensions.
+What kinds of spaces \emph{can} be curved and homogeneous? There are two kinds, positive curvature, Section \ref{sec:positive:curvature}, and negative, Section \ref{sec:negative:curvature}.
+
+\subsection{Flat Space and the 3-sphere}\label{sec:positive:curvature}
+
+Let's think about a metric for ordinary flat space, restricting to 2 dimensions.
 
 \begin{align*}
-	ds^2 =& dx^2 + dy^2\text{, ordinary flat space}\\
-	=&dr^2 + r^2 d\theta^2 \text{, changing to polar coordinates. Or}\\
+	ds^2 =& dx^2 + dy^2\text{, or changing to polar coordinates}\\
+	=&dr^2 + r^2 d\theta^2 \text{, or changing notation}\\
 	=&dr^2 + r^2 d\Omega_1^2 \numberthis \label{eq:flat:polar}
 \end{align*}
 
 Use the idea that $d\theta^2$ is a  metric for $\Omega_1$, the 1-sphere or unit circle.
 
 \begin{figure}[H]
-	\caption[We can treat circle as a piece of string and deform it]{We can treat circle as a piece of string and deform it. Label by angular coordinate so equal distances map to the equal angles. A circle is just a curve where we come back to the same place after an angle of $2\pi$}.
-	\includegraphics[width=0.8\textwidth]{cosmo-3-1-sphere}\label{fig:cosmo-3-1-sphere}
+	\caption[We can treat a circle as a piece of string and deform it]{We can treat circle as a piece of string and deform it. Label by angular coordinate so equal distances map to the equal angles. A circle is just a curve where we come back to the same place after an angle of $2\pi$.}
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{cosmo-3-1-sphere}\label{fig:cosmo-3-1-sphere}
+	\end{center}
 \end{figure}
 
-In polar coordinates, it \emph{looks} as if there is a special place, but, in reality, all points are the same. think of flat space as a nested collection of circles. 
+In polar coordinates, it \emph{looks} as if there is a special place, but, in reality, all points are the same. We will think of flat 2d space as a nested collection of circles--\eqref{eq:flat:polar}. 
 
 The 2-sphere is also homogeneous. Every point on the surface of the sphere is the same as any other point. It has uniform curvature. If you walk around you come back to the same space.
 
@@ -587,28 +591,32 @@ Now, consider the 2-sphere.
 
 \begin{figure}[H]
 	\caption{Galaxies embedded in 2-sphere, with observer at "left pole".}
-	\includegraphics[width=0.8\textwidth]{cosmo-3-galaxies-2-sphere}
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{cosmo-3-galaxies-2-sphere}
+	\end{center}
 \end{figure}
 
 \begin{align*}
 	d^2 =& \sin^2 r d\theta^2\\
-	d\theta = \frac{d}{\sin r}
+	d\theta =& \frac{d}{\sin r}
 \end{align*}
 
 $d\theta$ is bigger than if we lived in flat space. Distant galaxies appear bigger, but fainter. So we can distinguish flat and spherical.
 
-We can also count the number of galaxies: on  a sphere you see fewer galaxies at great distances, compared to the plane. At attipodes we see just one galaxy.
+We can also count the number of galaxies: on  a sphere you see fewer galaxies at great distances, compared to the plane. At antipodes we see just one galaxy.
 
 \begin{figure}[H]
 	\caption[Stereographic Projection]{Stereographic Projection: observer is at South pole. Every point on sphere projects to a point on plane, and North pole projects to infinity. Circles on sphere map to little closed curves on plane (actually circles).}
-	\includegraphics[width=0.8\textwidth]{cosmo-3-stereographic-projection}
+	\begin{center}
+			\includegraphics[width=0.6\textwidth]{cosmo-3-stereographic-projection}
+	\end{center}
 \end{figure}
 
-How do circles on the plae map to circles on the sphere? If they are close to South pole they look the same. As we move further the projections get bigger, and the extreme Arctic circle looks very large. Sphere is homogeneous, but this doesn't match plane. 
+How do circles on the plane map to circles on the sphere? If they are close to South pole they look the same. As we move further the projections get bigger, and the extreme Arctic circle looks very large. Sphere is homogeneous, but this doesn't match plane. 
 
 We can do the same thing with a 3-sphere.
 
-\subsection{Hyperbolic geometry}
+\subsection{Hyperbolic geometry}\label{sec:negative:curvature}
 There is a third homogeneous geometry, which we'll call the hyperbolic space. As we move from observer, size of circles blows up very rapidly.
 
 \begin{align*}
@@ -655,9 +663,9 @@ The smaller $a$, the greater the curvature.
 
 Modern cosmology assumes that the space we live in is one of the three that we have considered.  On scales that we can currently detect, the Universe appears flat--out to 22 billion light years, so we know that the radius must be at least 10 times this side.
 
-Space could also be a torus, a rectangle with opposite sides identified; flat, with periodic boundary conditions.
+Space could also be a torus, a rectangle with opposite sides identified; flat, with periodic boundary conditions. People have looked for evidence of periodicity, but not found any\footnote{This was in response to a question asked at the start of Section \ref{sec:cosmological:thermodynamics}}.
  
- \subsection{Space \& Time}
+ \subsection{Space and Time}
  
  The Minkowski metric is:
  \begin{align*}
@@ -684,7 +692,7 @@ Space could also be a torus, a rectangle with opposite sides identified; flat, w
  \end{align*}
 
 We need to investigate how $a$ varies with time. We will need to write down equations from General Relativity. It tuwn out they will agree with the Friedmann equations we derived from Newtonian physics.
-\section{Cosmological Thermodynamics}
+\section{Cosmological Thermodynamics}\label{sec:cosmological:thermodynamics}
 
 \begin{quotation}
 	The time-time component of Einstein's field equations for general relativity relate energy density to the geometry of space.  Using this energy density, Professor Susskind presents the thermodynamic equation of state which relates the energy density to pressure.  He uses this equation to derive how the density of the universe relates to the scale factor for matter- and radiation-dominated universes, and gives a brief preview of how dark energy affects this analysis.

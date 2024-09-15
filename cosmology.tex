@@ -691,7 +691,7 @@ Space could also be a torus, a rectangle with opposite sides identified; flat, w
  	ds^2 =& - dt^2 + a(t)^2d\mathcal{H}_3^2 \text{, hyperbolic, with varying radius}
  \end{align*}
 
-We need to investigate how $a$ varies with time. We will need to write down equations from General Relativity. It tuwn out they will agree with the Friedmann equations we derived from Newtonian physics.
+We need to investigate how $a$ varies with time. We will need to write down equations from General Relativity. It turn out they will agree with the Friedmann equations we derived from Newtonian physics.
 \section{Cosmological Thermodynamics}\label{sec:cosmological:thermodynamics}
 
 \begin{quotation}
@@ -721,6 +721,37 @@ We can show that a similar thing happens with $ds^2=dr^2 + \sin^2 r d\theta^2$ i
 Being homogeneous and isotropic is somewhere between being a postulate and an observational fact.
 
 Geometry has its own intrinsic shape, it isn't necessarily embedded. In 1 dimension the only thing that matters is distance along the curve. And they are not curved: we straighten any piece. They are flat but closed.
+
+What is special about 3 dimensions? Our brain architecture evolved to navigate a 3 dimensional space. Mathematically 3 dimensional space isn't special.
+
+\subsection{Setting up the Geometry}
+
+
+Let us assume that space has one of the 3 homogeneous and isotropic geometries:
+\begin{itemize}
+	\item $k=1$
+	\item $k=$
+	\item $k=-1$
+\end{itemize}
+Where $k$ is overall curvature (ignoring little bumps).
+
+General Relativity starts with a metric, and we will assum that space and time aren't mixed with each other in the metric. The metric has one of these three forms:
+\begin{align*}
+	ds^2 =& - dt^2 + a(t)^2 d\Omega_3^2 \text{, $k=1$, or}\\
+	ds^2 =& - dt^2 + a(t)^2 dx^2 + dy^2 +dz^2 \text{, $k=0$, or}\\
+	ds^2 =& - dt^2 + a(t)^2 d\mathcal{H}_3^2 \text{, $k=-1$}	
+\end{align*}
+In all three cases:
+\begin{align*}
+	D =& a(t) d\theta\\
+	V =&  \dot(a) d\theta\\
+	=& \frac{\dot{a}}{a}D	
+\end{align*}
+
+Hubble's parameter $\frac{\dot{a}}{a}$ depends on time, but not on position.
+
+\url{https://youtu.be/UpFRJ4g3S0M?t=2786}
+
 \section{Vacuum energy}
 
 \begin{quotation}

@@ -57,6 +57,8 @@
 \listoftables
 \listoftheorems
 
+\newabbreviation{gls:FLRW}{FLRW}{Friedmann-Lema\^itre-Robertson-Walker}
+
 \newglossaryentry{gls:isotropic}{
 	name={isotropic},
 	description={In physics and geometry, isotropy  is uniformity in all orientations--\cite{enwiki:1230543452}}}
@@ -66,7 +68,7 @@
 	description={Homogeneity means the space is every where the same. Somebody located at a particular place in the space looks around them, see everywhere around them, and sees exactly the same thing that somebody else sees in any other position\cite[Lecture 3]{susskind2013cosmology}}}	
 \newglossaryentry{gls:scale:factor}{
 	name={scale factor},
-	description={The expansion of the universe is parametrized by a dimensionless scale factor $a$.  It relates the proper distance (which can change over time, unlike the comoving distance $d_C$ which is constant and set to today's distance) between a pair of objects, e.g. two galaxy clusters, moving with the Hubble flow in an expanding or contracting FLRW universe at any arbitrary time $t$ to their distance at some reference time $t_0$.\cite{enwiki:1228037646}}}
+	description={The expansion of the universe is parametrized by a dimensionless scale factor $a$.  It relates the proper distance (which can change over time, unlike the comoving distance $d_C$ which is constant and set to today's distance) between a pair of objects, e.g. two galaxy clusters, moving with the Hubble flow in an expanding or contracting \gls{gls:FLRW} universe at any arbitrary time $t$ to their distance at some reference time $t_0$.\cite{enwiki:1228037646}}}
 
 \newglossaryentry{gls:peculiar:velocity}{
 	name={peculiar velocity},
@@ -735,7 +737,7 @@ Let us assume that space has one of the 3 homogeneous and isotropic geometries:
 \end{itemize}
 Where $k$ is overall curvature (ignoring little bumps).
 
-General Relativity starts with a metric, and we will assum that space and time aren't mixed with each other in the metric. The metric has one of these three forms:
+General Relativity starts with a metric, and we will assume that space and time aren't mixed with each other in the metric\footnote{This is a consequnce of homogeneity and isotropy}. The metric has one of these three forms:
 \begin{align*}
 	ds^2 =& - dt^2 + a(t)^2 d\Omega_3^2 \text{, $k=1$, or}\\
 	ds^2 =& - dt^2 + a(t)^2 dx^2 + dy^2 +dz^2 \text{, $k=0$, or}\\
@@ -750,7 +752,37 @@ In all three cases:
 
 Hubble's parameter $\frac{\dot{a}}{a}$ depends on time, but not on position.
 
-\url{https://youtu.be/UpFRJ4g3S0M?t=2786}
+\subsection{Einstein's Field Equations}
+
+\begin{align*}
+	\underbrace{	R^{\mu\nu} - \frac{1}{2}g^{\mu\nu}R}_\text{Einstein Tensor}=&\underbrace{\frac{8\pi}{3}}_\text{c.f. equation \eqref{eq:full:friedmann}} T^{\mu\nu}
+\end{align*}
+
+$T^\mu\nu$ contains a complex of things: the density of energy. the flux of energy, the density of momentum, and the flux of momentum. We will fix on the time-time component\footnote{This turns out to give Newton's energy equation; other components would give $F=mA$.}, $\frac{8\pi}{3} T^{00}$. $T^{00}$ is the energy density, $\rho$, so we will write $\frac{8\pi}{3} \rho$. The right hand side is completely sensitive to the type of material that is in the universe, e.g. matter, photons: it knows about the material that makes up the universe.
+
+The curvature has two parts, one of which involves second derivatives of the metric by the coordinates, the other squares of first derivatives. Fortunately the time-time component, there is only one of the two: the second derivatives cancel, and we only have squares of first derivatives.
+
+There are derivatives by time, and by space. The spaces ones are connected with curvature of space, which scales as $\frac{1}{R}$; the time ones with how things are changing with time, i.e. $a(t)$.
+
+\begin{align*}
+	\big(\frac{\dot{a}}{a}\big)^2 + \frac{k}{a^2}=& \frac{8\pi}{3} \rho \text{, or}\\
+	\big(\frac{\dot{a}}{a}\big)^2 =& \frac{8\pi}{3} - \frac{k}{a^2}\rho \text{, c.f. Equation \eqref{eq:geometry:energy}} \numberthis \label{eq:einstein:equation}
+\end{align*}
+
+We can interpret $k$ is curvature, rather than energy.
+
+Why does General Relativity give the same answer as Newton? If we just look at a small region of curved space, it looks flat. Once we realize that equations are the same for a small piece and a large one, we see that we must reproduce Newton's equations. In Newton's view, $\rho$ is the mass density, which if accurate if everything is moving at speeds much less than light. On the other hand, the Einstein equations are more general than Newton's: they apply to fast moving particles, and photons.
+
+\subsection{Equation of State}
+
+We need to understand how $\rho$ depends on $a$ to solve \eqref{eq:einstein:equation}. We will consider two cases:
+\begin{enumerate}
+	\item Matter dominated--$\rho=\frac{\rho_0}{a^3}$
+	\item Radiation dominated--$\rho=\frac{\rho_0}{a^4}$
+\end{enumerate}
+\url{https://youtu.be/UpFRJ4g3S0M?t=4091}.
+
+
 
 \section{Vacuum energy}
 

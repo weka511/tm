@@ -776,11 +776,48 @@ Why does General Relativity give the same answer as Newton? If we just look at a
 \subsection{Equation of State}
 
 We need to understand how $\rho$ depends on $a$ to solve \eqref{eq:einstein:equation}. We will consider two cases:
+\begin{align*}
+	\rho=&\frac{\rho_0}{a^3} \text{, Matter dominated, and} \numberthis \label{eq:matter:eos}\\
+	\rho=&\frac{\rho_0}{a^4} \text{,  Radiation dominated} \numberthis \label{eq:radiation:eos}
+\end{align*}
+
+There are also combinations of these two.
+
+We will proceed in two steps:
 \begin{enumerate}
-	\item Matter dominated--$\rho=\frac{\rho_0}{a^3}$
-	\item Radiation dominated--$\rho=\frac{\rho_0}{a^4}$
+	\item Assume an equation of state, and use it to derive equations like \eqref{eq:matter:eos} and \eqref{eq:radiation:eos}.
+	\item Derive equation of state for different kinds of materials.
 \end{enumerate}
-\url{https://youtu.be/UpFRJ4g3S0M?t=4091}.
+
+An equation of state is a relationship between thermodynamic variables describing a system. For our system, temperature won't play a big role. We will be interested in the relationship between energy density and pressure. The example of interest can be described by very simple equations of state.
+
+\begin{align*}
+	P =& w \rho\text{, for some constant $w$}\\
+	w =& 0 \text {, for a matter dominated universe}\\
+	w =& \frac{1}{3} \text{, radiation dominated\footnote{Mostly microwave background,}--3 dimensions}
+\end{align*}
+
+Consider a box of gas. We change volume, doing work.
+
+\begin{align*}
+	E =& \rho V\\
+	dE =& -P dV + \underbrace{T dS}_\text{Adiabatic, so $dS=0$}\\
+	=& \rho dV + V d\rho\\
+	V d\rho =& -\big(p+\rho\big)dV\\
+	=& - (1+w)dV \text{, regrouping}\\
+	\frac{d\rho}{\rho} =& - (1+w)\frac{dV}{V} \text{, integrating}\\
+	\rho =& \frac{C}{V^{1+w}}\\
+	=& \frac{C}{a(t)^{3(1+w)}}
+\end{align*}
+
+\begin{itemize}
+	\item If $w=0$, we have a matter dominated universe, with $\rho=\frac{C}{a^3}$
+	\item If $w=\frac{1}{3}$, we have a radiation  dominated universe, with $\rho=\frac{C}{a^4}$
+\end{itemize}
+
+We need little more than the equation of state to derive a universe.
+
+\url{https://youtu.be/UpFRJ4g3S0M?t=5350}.
 
 
 

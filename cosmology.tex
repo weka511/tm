@@ -564,12 +564,25 @@ There is another way to view spheres. Imagine an ant living on a circle. It can 
 \begin{figure}[H]
 	\caption{Embedding an $n$-sphere in $n+1$ dimensions}
 	\begin{subfigure}[t]{0.5\textwidth}
-		\caption{A circle in two dimensions: $x^2 + y^2 = 1$}
-		\includegraphics[width=0.8\textwidth]{cosmo-3-embed-circle}
+		\caption{A 1-sphere in two dimensions}
+		\begin{tikzpicture}
+			\draw[fill=none](0,0) circle (2.0) node [above,right] {};
+			\node[] at (1.8,1.9) {$x^2 + y^2 = 1$};
+			\draw[->](-2.5,0) -- (2.5,0) node [above] {$x$};
+			\draw[->](0,-2.5) -- (0,2.5) node [above] {$y$};
+		\end{tikzpicture}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.5\textwidth}
-		\caption{A 2-sphere in three dimensions: $x^2 + y^2 + z^2= 1$}
-		\includegraphics[width=0.8\textwidth]{cosmo-3-embed-2-sphere}
+		\caption{A 2-sphere in three dimensions}
+		\begin{tikzpicture}
+			\draw[fill=none](0,0) circle (2.0) node [black] {};
+			\node [] at (-1.8,1.9) { $x^2 + y^2 + z^2= 1$};
+			\draw[->](-2.5,0) -- (2.5,0) node [above] {$x$};
+			\draw[->](0,-2.5) -- (0,2.5) node [above] {$y$};
+			\draw[->](0,0) -- (-2.3,-2.3) node [below,left] {$z$};
+			\draw[dashed](0,0) -- (1.3,1.3) node [below,left] {};
+			\draw[](1.4,1.4) -- (1.8,1.8) node [below,left] {};
+		\end{tikzpicture}
 	\end{subfigure}
 \end{figure}
 Similarly we can embed a 3-sphere in 4 dimensions: $x^2 + y^2 + z^2+w^2= 1$. We don't have to answer the question whether this makes physical sense.
@@ -731,17 +744,17 @@ What is special about 3 dimensions? Our brain architecture evolved to navigate a
 
 Let us assume that space has one of the 3 homogeneous and isotropic geometries:
 \begin{itemize}
-	\item $k=1$
-	\item $k=$
-	\item $k=-1$
+	\item $\kappa=1$
+	\item $\kappa=0$
+	\item $\kappa=-1$
 \end{itemize}
-Where $k$ is overall curvature (ignoring little bumps).
+Where $\kappa$ is overall curvature (ignoring little bumps).
 
 General Relativity starts with a metric, and we will assume that space and time aren't mixed with each other in the metric\footnote{This is a consequnce of homogeneity and isotropy}. The metric has one of these three forms:
 \begin{align*}
-	ds^2 =& - dt^2 + a(t)^2 d\Omega_3^2 \text{, $k=1$, or}\\
-	ds^2 =& - dt^2 + a(t)^2 dx^2 + dy^2 +dz^2 \text{, $k=0$, or}\\
-	ds^2 =& - dt^2 + a(t)^2 d\mathcal{H}_3^2 \text{, $k=-1$}	
+	ds^2 =& - dt^2 + a(t)^2 d\Omega_3^2 \text{, $\kappa=1$, or}\\
+	ds^2 =& - dt^2 + a(t)^2 dx^2 + dy^2 +dz^2 \text{, $\kappa=0$, or}\\
+	ds^2 =& - dt^2 + a(t)^2 d\mathcal{H}_3^2 \text{, $\kappa=-1$}	
 \end{align*}
 In all three cases:
 \begin{align*}
@@ -769,7 +782,7 @@ There are derivatives by time, and by space. The spaces ones are connected with 
 	\big(\frac{\dot{a}}{a}\big)^2 =& \frac{8\pi}{3} - \frac{k}{a^2}\rho \text{, c.f. Equation \eqref{eq:geometry:energy}} \numberthis \label{eq:einstein:equation}
 \end{align*}
 
-We can interpret $k$ is curvature, rather than energy.
+We can interpret $\kappa$ as curvature, rather than energy.
 
 Why does General Relativity give the same answer as Newton? If we just look at a small region of curved space, it looks flat. Once we realize that equations are the same for a small piece and a large one, we see that we must reproduce Newton's equations. In Newton's view, $\rho$ is the mass density, which if accurate if everything is moving at speeds much less than light. On the other hand, the Einstein equations are more general than Newton's: they apply to fast moving particles, and photons.
 
@@ -817,7 +830,7 @@ Consider a box of gas. We change volume, doing work.
 
 We need little more than the equation of state to derive a universe.
 
-\subsection{Dark Energy , Cosmological Constant, Vacuum Energy}
+\subsection{Dark Energy, Cosmological Constant, Vacuum Energy}
 
 Let's try $w=-1$. (E.g Replace box with a line interval with a spring joining the ends. Pressure is negative\footnote{We call this tension}, as spring is drawing ends together. Increasing potential energy makes pressure more negative.) Then $\rho$ is constant: it does not change when box expands.
 
@@ -828,6 +841,10 @@ Can mock up cosmological constant by adding linear term to Newton's gravitationa
 \begin{quotation}
 	After a review of the equations of state presented in the last lecture, Professor Susskind derives the density parameter for an energy dominated universe.  He then introduces the concept of vacuum energy, which is represented by the cosmological constant, and is one possible form of dark energy, and describes the characteristics of the universe under various values of the cosmological constant and curvature.
 \end{quotation}
+
+What is the history of the Universe? To the extent that it homogeneous and isotropic, this boils down to the time history of the scale factor. We can test it, and observe it.
+
+\url{https://youtu.be/GgKGPyFL-TM?t=555}
 
 \section{Dark matter and allocation of energy density}
 

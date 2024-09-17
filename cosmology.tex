@@ -865,17 +865,49 @@ In a matter dominated universe, because $E=mc^2$, a tiny amount of mass still ha
 Radiation is massless particles, photons.
 
 \begin{figure}[H]
-	\caption[A box of photons]{A box of photons. They bounce of walls, lose no energy, an exert pressure on walls}
-	\includegraphics[width=0.8\textwidth]{cosmo-5-box-photons}
+	\caption{A box of photons}
+	\begin{subfigure}[t]{0.55\textwidth}
+		\caption{Photons bounce of walls, lose no energy, and exert pressure on walls}
+		\includegraphics[width=\textwidth]{cosmo-5-box-photons}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.4\textwidth}
+		\caption{Photon hitting wall at angle $\theta$}\label{fig:cosmo-5-wall}
+		\includegraphics[width=\textwidth]{cosmo-5-wall}
+	\end{subfigure}
 \end{figure}
 
-Let us pretend that all phones have the same energy (we will find out this doesn't matter; it is approximately true of photons are in thermal equilibrium). Let energy per photon be $\epsilon$, and momentum per photon $\vec{\pi}$\footnote{Not "the" $\pi$}.
 
-\url{https://youtu.be/GgKGPyFL-TM?t=1385}
+Let us pretend that all photons have the same energy (we will find out this doesn't matter; it is approximately true of photons are in thermal equilibrium). Let energy per photon be $\epsilon$,  momentum per photon $\vec{\pi}$\footnote{Not "the" $\pi$}, and number of photons per unit volume be $\nu$.
+
+In any little volume of box, on average momentum could be in any direction (isotropic).
+\begin{align*}
+	\epsilon =& \pi c\\
+	=& \pi \text{, in units where $c=1$}\\
+	\rho = \nu \epsilon
+\end{align*}
+
+How many particles hit the box dueing time interval $\Delta t$? Particle will hit the wall during $\Delta t$ if it is close enough: $\Delta X=\Delta T$ if moving to right. What if not moving exactly right--Figure \ref{fig:cosmo-5-wall}.
+\begin{align*}
+	\Delta x =& \Delta t \, \cos{\theta}\\
+	\Delta_{\pi} =& 2 \epsilon \cos {\theta}\\
+	\frac{\Delta_{\pi}}{\Delta t} =& \frac{2 \epsilon \cos {\theta}}{\Delta t} \text{, force per particle that hits wall}\\
+	N =& \Delta x A \nu\\
+	P =& 2 \epsilon \cos {\theta} \Delta x  \nu\\
+	=& \cancel{2} \epsilon \cos^2 {\theta}   \nu\\ 
+	=& \rho  \cos^2 {\theta} \\
+	P =&\frac{1}{3} \rho
+\end{align*}
+
+\begin{figure}[H]
+	\caption{$<\hat{n}_x>^2 + <\hat{n}_y>^2 + <\hat{n}_z>^2=1$}
+	\includegraphics[width=0.6\textwidth]{cosmo-5-nxnynz}
+\end{figure}
+
+\url{https://youtu.be/GgKGPyFL-TM?t=2349}
 
 \section{Dark matter and allocation of energy density}
 
-\begin{quotation}
+\begin{quotation} 
 	Professor Susskind develops the energy density allocation equation, and describes the historical progress of the effort to find the correct values for the terms in this equation.  This analysis combined with observations of the motion of stars and galaxies led cosmologists to postulate the existence of dark matter.  Observations of luminosity and red-shift have led to the correct solution for today's universe - which is dominated by dark energy.
 \end{quotation}
 

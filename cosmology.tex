@@ -786,7 +786,7 @@ We can interpret $\kappa$ as curvature, rather than energy.
 
 Why does General Relativity give the same answer as Newton? If we just look at a small region of curved space, it looks flat. Once we realize that equations are the same for a small piece and a large one, we see that we must reproduce Newton's equations. In Newton's view, $\rho$ is the mass density, which if accurate if everything is moving at speeds much less than light. On the other hand, the Einstein equations are more general than Newton's: they apply to fast moving particles, and photons.
 
-\subsection{Equation of State}
+\subsection{Equation of State}\label{sec:equation:state}
 
 We need to understand how $\rho$ depends on $a$ to solve \eqref{eq:einstein:equation}. We will consider two cases:
 \begin{align*}
@@ -807,7 +807,7 @@ An equation of state is a relationship between thermodynamic variables describin
 \begin{align*}
 	P =& w \rho\text{, for some constant $w$}\\
 	w =& 0 \text {, for a matter dominated universe}\\
-	w =& \frac{1}{3} \text{, radiation dominated\footnote{Mostly microwave background,}--3 dimensions}
+	w =& \frac{1}{3} \text{, radiation dominated--see \eqref{eq:w:1:3}}
 \end{align*}
 
 Consider a box of gas. We change volume, doing work.
@@ -862,12 +862,12 @@ In a matter dominated universe, because $E=mc^2$, a tiny amount of mass still ha
 
 \subsection{Why is $w=\frac{1}{3}$?}
 
-Radiation is massless particles, photons.
+Radiation is massless particles, photons. Figure \ref{fig:cosmo-5-box-photons} depicts a box of photons.
 
 \begin{figure}[H]
 	\caption{A box of photons}
 	\begin{subfigure}[t]{0.55\textwidth}
-		\caption{Photons bounce of walls, lose no energy, and exert pressure on walls}
+		\caption{Photons bounce of walls, lose no energy, and exert pressure on walls}\label{fig:cosmo-5-box-photons}
 		\includegraphics[width=\textwidth]{cosmo-5-box-photons}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.4\textwidth}
@@ -877,31 +877,60 @@ Radiation is massless particles, photons.
 \end{figure}
 
 
-Let us pretend that all photons have the same energy (we will find out this doesn't matter; it is approximately true of photons are in thermal equilibrium). Let energy per photon be $\epsilon$,  momentum per photon $\vec{\pi}$\footnote{Not "the" $\pi$}, and number of photons per unit volume be $\nu$.
+Let us pretend that all photons have the same energy (we will find out this doesn't matter; it is approximately true of photons are in thermal equilibrium). Let:
+\begin{itemize}
+	\item energy per photon be $\epsilon$;
+	\item  momentum per photon $\vec{\pi}$, (not "the" $\pi$)., and 
+	\item number of photons per unit volume be $\nu$.
+\end{itemize}
 
 In any little volume of box, on average momentum could be in any direction (isotropic).
 \begin{align*}
-	\epsilon =& \pi c\\
-	=& \pi \text{, in units where $c=1$}\\
-	\rho = \nu \epsilon
+	\epsilon =&  \pi c \text{, where }\\
+	\pi=&\lvert\vec{\pi}\rvert \text{, so}\\
+	\epsilon =& \pi \text{, in units where $c=1$}
+\end{align*}
+Let number of photons per unit volume be $\nu$. Then the energy density is:
+\begin{align*}
+	\rho =& \nu \epsilon 
 \end{align*}
 
-How many particles hit the box dueing time interval $\Delta t$? Particle will hit the wall during $\Delta t$ if it is close enough: $\Delta X=\Delta T$ if moving to right. What if not moving exactly right--Figure \ref{fig:cosmo-5-wall}.
+How many particles hit the box during time interval $\Delta t$? In Figure \ref{fig:cosmo-5-wall}, a particle moving to right will hit the wall during $\Delta t$ if it is close enough, within $\Delta X$, where $\Delta X=\Delta T$. What if it is not moving exactly right?
 \begin{align*}
-	\Delta x =& \Delta t \, \cos{\theta}\\
-	\Delta_{\pi} =& 2 \epsilon \cos {\theta}\\
-	\frac{\Delta_{\pi}}{\Delta t} =& \frac{2 \epsilon \cos {\theta}}{\Delta t} \text{, force per particle that hits wall}\\
-	N =& \Delta x A \nu\\
-	P =& 2 \epsilon \cos {\theta} \Delta x  \nu\\
-	=& \cancel{2} \epsilon \cos^2 {\theta}   \nu\\ 
-	=& \rho  \cos^2 {\theta} \\
-	P =&\frac{1}{3} \rho
+	\Delta x =& \Delta t \, \cos{\theta} \text{, then the momentum will change by:}\\
+	\Delta_{\pi} =& 2 \epsilon \cos {\theta} \text{, since particle turned around, so}\\
+	\frac{\Delta_{\pi}}{\Delta t} =& \frac{2 \epsilon \cos {\theta}}{\Delta t} \text{, is the force per particle that hits wall}
 \end{align*}
+Now the number of particles that hit the wall is given by
+\begin{align*}
+	N =& \frac{1}{2}\Delta x A \nu \text{, where $A$ is area, and $c=1$}
+\end{align*}
+allowing for the fact that half the particles within $\Delta x$ are moving away. We now calculate the contribution to the pressure from particles moving at angle $\theta$
+.\begin{align*}
+	P(\theta) =& \frac{1}{2} \frac{2 \epsilon \cos {\theta}}{\Delta t} \Delta x  \; \nu \text{, force per area}\\
+	=& \frac{\cancel{2}}{\cancel{2}}  \epsilon \cos {\theta} \Delta x  \nu \text{, force per area}\\
+	=&  \epsilon \nu \cos^2 {\theta}  \\ 
+	=& \rho  \cos^2 {\theta} 
+\end{align*}
+Now integrate over all $\theta$. We shall suppose that every direction is characterized by a unit vector $\vec(n)$, Figure \ref{fig:cosmo-5-nxnynz}.
 
 \begin{figure}[H]
-	\caption{$<\hat{n}_x>^2 + <\hat{n}_y>^2 + <\hat{n}_z>^2=1$}
-	\includegraphics[width=0.6\textwidth]{cosmo-5-nxnynz}
+	\caption{Unit vector $\hat{n}$}\label{fig:cosmo-5-nxnynz}
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{cosmo-5-nxnynz}
+	\end{center}
 \end{figure}
+
+\begin{align*}
+	n_x =& \cos{\theta}\\
+	\hat{n}_x^2 +  \hat{n}_y^2 +  \hat{n}_z^2=&1
+\end{align*}
+Now $n_x$, $n_y$, and $n_z$ are related by rotational symmetry. We can take average over 3D space, and use isotropy to get:
+\begin{align*}
+		\langle \hat{n}_x\rangle^2 + \langle \hat{n}_y\rangle^2 + \langle \hat{n}_z\rangle^2=&1\\
+	P =&\frac{1}{3} \rho \text{, or}\\
+	w =& \frac{1}{3}\text{, as asserted in Section \ref{sec:equation:state}}\numberthis \label{eq:w:1:3}
+\end{align*}
 
 \url{https://youtu.be/GgKGPyFL-TM?t=2349}
 

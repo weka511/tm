@@ -801,22 +801,29 @@ We will proceed in two steps:
 An equation of state is a relationship between thermodynamic variables describing a system. For our system, temperature won't play a big role. We will be interested in the relationship between energy density and pressure. The example of interest can be described by very simple equations of state.
 
 \begin{align*}
-	P =& w \rho\text{, for some constant $w$}\\
+	P =& w \rho\text{, for some constant $w$} \numberthis \label{eq:p:w:rho}\\
 	w =& 0 \text {, for a matter dominated universe}\\
 	w =& \frac{1}{3} \text{, radiation dominated--see \eqref{eq:w:1:3}}
 \end{align*}
 
-Consider a box of gas. We change volume, doing work.
+Consider a box of gas. We can work out the total energy from the density and volume, $V$.
+\begin{align*}
+	E =& \rho V \numberthis \label{eq:E:rho:V}
+\end{align*}
+ 
+We change the volume adiabatically, doing work. From \cite{susskind2013statistical}[Lecture 6]:
 
 \begin{align*}
-	E =& \rho V\\
-	dE =& -P dV + \underbrace{T dS}_\text{Adiabatic, so $dS=0$}\\
-	=& \rho dV + V d\rho\\
-	V d\rho =& -\big(p+\rho\big)dV\\
-	=& - (1+w)dV \text{, regrouping}\\
+	dE =& -P dV + \underbrace{T dS}_\text{Adiabatic $\implies dS=0$}\\
+	=& \rho dV + V d\rho \text{, from \eqref{eq:E:rho:V}}\\
+	V d\rho =& -\big(p+\rho\big)dV 
+\end{align*}
+(It is permissible to add $p$ and $\rho$ as the latter is \emph{energy} density. Both have dimension $\mathsf{T^{-2}L^{-1}M}$.)
+\begin{align*}
+	V d\rho =& - (1+w)\rho dV \text{, from \eqref{eq:p:w:rho}. Regrouping}\\
 	\frac{d\rho}{\rho} =& - (1+w)\frac{dV}{V} \text{, integrating}\\
 	\rho =& \frac{C}{V^{1+w}}\\
-	=& \frac{C}{a(t)^{3(1+w)}}
+	=& \frac{C}{a^{3(1+w)}}
 \end{align*}
 
 \begin{itemize}
@@ -830,7 +837,7 @@ We need little more than the equation of state to derive a universe.
 
 Let's try $w=-1$. (E.g Replace box with a line interval with a spring joining the ends. Pressure is negative\footnote{We call this tension}, as spring is drawing ends together. Increasing potential energy makes pressure more negative.) Then $\rho$ is constant: it does not change when box expands.
 
-Can mock up cosmological constant by adding linear term to Newton's gravitational law.
+We can mock up the cosmological constant by adding linear term to Newton's gravitational law.
 
 \section{Vacuum energy}
 

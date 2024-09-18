@@ -15,6 +15,7 @@
 \usepackage{braket}
 \usepackage{tikz-feynman}
 \usepackage{tikz}
+\usepackage{pgfplots}
 \usepackage{mathtools}
 \usepackage{color}
 \usepackage{colortbl}
@@ -1025,15 +1026,38 @@ Friedmann's equation \eqref{eq:friedmann:avec:lambda} becomes:
  	\includegraphics[width=0.8\textwidth]{cosmo-5-pe}
  \end{figure}
  
- We can solve
+ We can solve to get:
  \begin{align*}
  	a(t) =& \frac{1}{\sqrt{\Lambda}} \cosh {(\sqrt{\Lambda}t)}
  \end{align*}
  
  \begin{figure}[H]
- 	\caption{cosmo-5-bounce}
- 	\includegraphics[width=0.8\textwidth]{cosmo-5-bounce}
+ 	\caption{$a(t) = \frac{1}{\sqrt{\Lambda}} \cosh {(\sqrt{\Lambda}t)}$}
+ 	\begin{subfigure}[t]{0.45\textwidth}
+ 		\caption{'Shape of $\cosh{}$'}
+ 		\begin{tikzpicture}[scale=0.5]
+ 			\begin{axis}[
+ 				trig format=rad, % HERE
+ 				xlabel = $t$,
+ 				ylabel = $a(t)$,
+ 				xmin = -2.5,xmax = 2.5,
+ 				ymin = 0,ymax = 8,
+ 				domain = -2.5:2.5,
+ 				smooth,thick,
+ 				axis lines = middle,
+ 				every tick/.style = {thick}]	
+ 				\addplot[color=purple]{cosh(x)};		
+ 			\end{axis}
+ 		\end{tikzpicture}
+ 	\end{subfigure}
+ 	\;
+ 	 \begin{subfigure}[t]{0.45\textwidth}
+ 		\caption{Universe bounces at $t=0$}
+ 		\includegraphics[width=0.8\textwidth]{cosmo-5-bounce}
+ 	\end{subfigure}
  \end{figure}
+ 
+
  
  \subsubsection{Negative cosmological constant, with negative curvature}\label{sec:neg:neg}
  We will consider a negative cosmological constant, with negative curvature:
@@ -1041,12 +1065,12 @@ Friedmann's equation \eqref{eq:friedmann:avec:lambda} becomes:
  The Friedmann equation, \eqref{eq:full:friedmann}, becomes:
  \begin{align*}
  	\big(\frac{\dot{a}}{a}\big)^2  =& -1 + \frac{1}{a^2} \\
- 	\dot{a}^2 + a^1 =&1 \text{, the energy equation for a harmonic oscillator}
+ 	\dot{a}^2 + a^2 =&1 \text{, the energy equation for a harmonic oscillator}
  \end{align*}
  
  Universe expands and crunches.
  
-\url{https://youtu.be/GgKGPyFL-TM?t=3794}
+
 
 \section{Dark matter and allocation of energy density}
 

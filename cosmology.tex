@@ -681,7 +681,7 @@ Modern cosmology assumes that the space we live in is one of the three that we h
 
 Space could also be a torus, a rectangle with opposite sides identified; flat, with periodic boundary conditions. People have looked for evidence of periodicity, but not found any\footnote{This was in response to a question asked at the start of Section \ref{sec:cosmological:thermodynamics}}.
  
- \subsection{Space and Time}
+ \subsection{Space and Time}\label{sec:space:time}
  
  The Minkowski metric is:
  \begin{align*}
@@ -743,44 +743,39 @@ What is special about 3 dimensions? Our brain architecture evolved to navigate a
 \subsection{Setting up the Geometry}
 
 
-Let us assume that space has one of the 3 homogeneous and isotropic geometries:
-\begin{itemize}
-	\item $\kappa=1$
-	\item $\kappa=0$
-	\item $\kappa=-1$
-\end{itemize}
-Where $\kappa$ is overall curvature (ignoring little bumps).
+Let us assume that space has one of the 3 homogeneous and isotropic geometries described in Section \ref{sec:space:time}.
 
-General Relativity starts with a metric, and we will assume that space and time aren't mixed with each other in the metric\footnote{This is a consequnce of homogeneity and isotropy}. The metric has one of these three forms:
+General Relativity starts with a metric, and we will assume that space and time aren't mixed with each other in the metric\footnote{This is a consequence of homogeneity and isotropy}. The metric has one of these three forms:
 \begin{align*}
-	ds^2 =& - dt^2 + a(t)^2 d\Omega_3^2 \text{, $\kappa=1$, or}\\
-	ds^2 =& - dt^2 + a(t)^2 dx^2 + dy^2 +dz^2 \text{, $\kappa=0$, or}\\
-	ds^2 =& - dt^2 + a(t)^2 d\mathcal{H}_3^2 \text{, $\kappa=-1$}	
+	ds^2 =& - dt^2 + a(t)^2 d\Omega_3^2 &\kappa=1\text{, or}\\
+	ds^2 =& - dt^2 + a(t)^2 \big(dx^2 + dy^2 +dz^2\big) &\kappa=0\text{, or}\\
+	ds^2 =& - dt^2 + a(t)^2 d\mathcal{H}_3^2 &\kappa=-1	\text{ }
 \end{align*}
 In all three cases:
 \begin{align*}
 	D =& a(t) d\theta\\
-	V =&  \dot(a) d\theta\\
+	V =&  \dot{a} d\theta\\
 	=& \frac{\dot{a}}{a}D	
 \end{align*}
 
 Hubble's parameter $\frac{\dot{a}}{a}$ depends on time, but not on position.
 
-\subsection{Einstein's Field Equations}
+\subsection{Einstein's Field Equation}
 
+From \cite[Lecture 9]{susskind2012general}:
 \begin{align*}
-	\underbrace{	R^{\mu\nu} - \frac{1}{2}g^{\mu\nu}R}_\text{Einstein Tensor}=&\underbrace{\frac{8\pi}{3}}_\text{c.f. equation \eqref{eq:full:friedmann}} T^{\mu\nu}
+	\underbrace{R^{\mu\nu} - \frac{1}{2}g^{\mu\nu}R}_\text{Einstein Tensor}=&\underbrace{\frac{8\pi G}{3}}_\text{c.f. equation \eqref{eq:full:friedmann}}\underbrace{ T^{\mu\nu}}_\text{Energy-momentum} \numberthis \label{eq:einstein:field}
 \end{align*}
 
-$T^\mu\nu$ contains a complex of things: the density of energy. the flux of energy, the density of momentum, and the flux of momentum. We will fix on the time-time component\footnote{This turns out to give Newton's energy equation; other components would give $F=mA$.}, $\frac{8\pi}{3} T^{00}$. $T^{00}$ is the energy density, $\rho$, so we will write $\frac{8\pi}{3} \rho$. The right hand side is completely sensitive to the type of material that is in the universe, e.g. matter, photons: it knows about the material that makes up the universe.
+$T^{\mu\nu}$ contains a complex of things: the density of energy. the flux of energy, the density of momentum, and the flux of momentum. We will fix on the time-time component\footnote{This turns out to give Newton's energy equation; other components would give $F=mA$.}, $\frac{8\pi G}{3} T^{00}$. $T^{00}$ is the energy density, $\rho$, so we will write $\frac{8\pi G}{3} \rho$. The right hand side is completely sensitive to the type of material that is in the universe, e.g. matter, photons: it knows about the material that makes up the universe.
 
-The curvature has two parts, one of which involves second derivatives of the metric by the coordinates, the other squares of first derivatives. Fortunately the time-time component, there is only one of the two: the second derivatives cancel, and we only have squares of first derivatives.
+The curvature has two parts, one of which involves second derivatives of the metric by the coordinates, the other squares of first derivatives. Fortunately the time-time component contains only one of the two: the second derivatives cancel, and we only have squares of first derivatives.
 
-There are derivatives by time, and by space. The space ones are connected with curvature of space, which scales as $\frac{1}{R}$; the time ones with how things are changing with time, i.e. $a(t)$.
+There are derivatives by time, and by space. The space ones are connected with curvature of space, which scales as $\frac{1}{R}$; the time ones with how things are changing with time, i.e. $a(t)$. Einstein's Field Equation, \eqref{eq:einstein:field}, reduces to:
 
 \begin{align*}
 	\big(\frac{\dot{a}}{a}\big)^2 + \frac{\kappa}{a^2}=& \frac{8\pi}{3} \rho \text{, or}\\
-	\big(\frac{\dot{a}}{a}\big)^2 =& \frac{8\pi}{3} - \frac{\kappa}{a^2}\rho \text{, c.f. Equation \eqref{eq:geometry:energy}} \numberthis \label{eq:einstein:equation}
+	\big(\frac{\dot{a}}{a}\big)^2 =& \frac{8\pi G}{3}\rho - \frac{\kappa}{a^2} \text{, c.f. Equation \eqref{eq:geometry:energy}} \numberthis \label{eq:einstein:equation}
 \end{align*}
 
 We can interpret $\kappa$ as curvature, rather than energy.

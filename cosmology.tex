@@ -811,17 +811,17 @@ Consider a box of gas. We can work out the total energy from the density and vol
 	E =& \rho V \numberthis \label{eq:E:rho:V}
 \end{align*}
  
-We change the volume adiabatically, doing work. From \cite{susskind2013statistical}[Lecture 6]:
+We change the volume, doing work. From \cite{susskind2013statistical}[Lecture 6], assuming an adiabatic change:
 
 \begin{align*}
-	dE =& -P dV + \underbrace{T dS}_\text{Adiabatic $\implies dS=0$}\\
-	=& \rho dV + V d\rho \text{, from \eqref{eq:E:rho:V}}\\
-	V d\rho =& -\big(p+\rho\big)dV 
+	dE =& -P dV + \underbrace{T dS}_\text{$=0$} \numberthis \label{dE:PdV:TdS}\\
+	=& \rho dV + V d\rho \text{, from \eqref{eq:E:rho:V}. Combine with \eqref{dE:PdV:TdS}}\\
+	V d\rho =& -\big(p+\rho\big)dV \numberthis \label{eq:Vdrho}
 \end{align*}
 (It is permissible to add $p$ and $\rho$ as the latter is \emph{energy} density. Both have dimension $\mathsf{T^{-2}L^{-1}M}$.)
 \begin{align*}
-	V d\rho =& - (1+w)\rho dV \text{, from \eqref{eq:p:w:rho}. Regrouping}\\
-	\frac{d\rho}{\rho} =& - (1+w)\frac{dV}{V} \text{, integrating}\\
+	V d\rho =& - (1+w)\rho dV \text{, from \eqref{eq:p:w:rho} and \eqref{eq:Vdrho}. Regrouping}\\
+	\frac{d\rho}{\rho} =& - (1+w)\frac{dV}{V} \text{, and integrating}\\
 	\rho =& \frac{C}{V^{1+w}}\\
 	=& \frac{C}{a^{3(1+w)}}
 \end{align*}

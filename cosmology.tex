@@ -979,18 +979,73 @@ The Friedmann equation, \eqref{eq:full:friedmann}, becomes:
 		\caption{Options for $\Lambda$ and $\kappa$}
 		\begin{tabular}{||l|l|p{5cm}||} \hline
 			$\Lambda$ & $\kappa$ & Remarks\\ \hline
-			-1 & +1 & Makes no sense as it would make $\big(\frac{\dot{a}}{a}\big)^2<0$\\\hline
 			0 & +1 & Already done\\\hline
 			0 & 0 & Already done\\\hline
 			0 & -1 & Already done\\\hline
-			+1 & 0 &See Section \ref{sec:lambda:pos:k:0} \\\hline
+			+1 & 0 &de Sitter space--see Section \ref{sec:lambda:pos:k:0}\\\hline
+			+1 & +1 &de Sitter space--see Section \ref{sec:lambda:pos:k:1} \\\hline
+			-1 & +1 & Makes no sense as it would make $\big(\frac{\dot{a}}{a}\big)^2<0$\\\hline
+			-1&-1&Section \ref{sec:neg:neg} \\\hline
 			\hline
 		\end{tabular}
 	\end{center}
 \end{table}
 
-\subsubsection{$\Lambda>0$ \& $\kappa0$}\label{sec:lambda:pos:k:0}
+\subsubsection{Flat space, positive cosmological constant: $\Lambda>0$ \& $\kappa=0$}\label{sec:lambda:pos:k:0}
 
+Friedmann's equation \eqref{eq:friedmann:avec:lambda} becomes:
+\begin{align*}
+	\big(\frac{\dot{a}}{a}\big)^2  =& \Lambda\\ 
+	\dot{a} =& \sqrt{\Lambda} a\\
+	a(t) \propto& e^{\sqrt{\Lambda}t} \text{, universe expands exponentially}
+\end{align*}
+ The Hubble constant is $\sqrt{\Lambda}$, and $
+ a(t) \propto e^{Ht}$. This is known as de Sitter space.
+ 
+ Let us mix in some matter:
+ \begin{align*}
+ 	\big(\frac{\dot{a}}{a}\big)^2  =& \Lambda + \frac{C}{a^3}
+ \end{align*}
+ 
+ In early times, $a$ is small, and $\frac{C}{a^3}$ will dominate; later, $a$ is large and $\Lambda$ will dominate. Right now the two energies compete (for last 2-3 billions years, dark energy has started to become more important. Observation shows that it is accelerating, and, as precision increases, it looks more like exponential acceleration. )
+ 
+ Positive vacuum energy comes from bosons, negative from fermions. LS says it is a mystery that vacuum energy is so low.
+ 
+ \subsubsection{Positive curved space, positive cosmological constant: $\Lambda>0$ \& $\kappa>0$}\label{sec:lambda:pos:k:1}
+ 
+ The Friedmann equation, \eqref{eq:full:friedmann}, becomes:
+ \begin{align*}
+ 	\big(\frac{\dot{a}}{a}\big)^2  =& \Lambda - \frac{1}{a^2} \text{, see if it resembles anything we know}\\
+ 	\dot{a}^2 - \Lambda a^2 =&-1
+ \end{align*}
+ Think of $a(t)$ as the coordinate of a particle on a line. $\dot{a}^2$ becomes twice the kinetic energy, $\Lambda a^2$ the potential energy plotted in Figure \ref{fig:cosmo-5-pe}. Think of $a$ starting large, going up hill, then rolling back. 
+ 
+ \begin{figure}[H]
+ 	\caption{Potential Energy}\label{fig:cosmo-5-pe}
+ 	\includegraphics[width=0.8\textwidth]{cosmo-5-pe}
+ \end{figure}
+ 
+ We can solve
+ \begin{align*}
+ 	a(t) =& \frac{1}{\sqrt{\Lambda}} \cosh {(\sqrt{\Lambda}t)}
+ \end{align*}
+ 
+ \begin{figure}[H]
+ 	\caption{cosmo-5-bounce}
+ 	\includegraphics[width=0.8\textwidth]{cosmo-5-bounce}
+ \end{figure}
+ 
+ \subsubsection{Negative cosmological constant, with negative curvature}\label{sec:neg:neg}
+ We will consider a negative cosmological constant, with negative curvature:
+ 
+ The Friedmann equation, \eqref{eq:full:friedmann}, becomes:
+ \begin{align*}
+ 	\big(\frac{\dot{a}}{a}\big)^2  =& -1 + \frac{1}{a^2} \\
+ 	\dot{a}^2 + a^1 =&1 \text{, the energy equation for a harmonic oscillator}
+ \end{align*}
+ 
+ Universe expands and crunches.
+ 
 \url{https://youtu.be/GgKGPyFL-TM?t=3794}
 
 \section{Dark matter and allocation of energy density}
@@ -1017,7 +1072,7 @@ The Friedmann equation, \eqref{eq:full:friedmann}, becomes:
 
 \begin{quotation}
 	
-	
+
 	Professor Susskind introduces the theory of cosmological inflation under which the early universe underwent an exponential expansion during which it doubled in size every 10-32 seconds and expanded by at least a factor of $e^{90}$.  This all occurred prior to the Big Bang and during this period the universe cooled very rapidly and was essentially empty.  In the early phase of this rapid expansion, the universe was hot enough that magnetic monopoles were formed.  However these were the only particles formed.  The rest of the energy of the universe was contained in the potential energy of the inflaton field, and it wasn't until the Big Bang that this potential energy was converted into the particles that form the matter that makes up the galaxies in the universe today.
 	
 	This theory of rapid expansion explains the lack of observed magnetic monopoles and the uniformity of the cosmic microwave background radiation.  The rapid expansion dispersed the monopoles, smoothed out the distribution of photons, and also flattened space itself.

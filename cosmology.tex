@@ -823,7 +823,7 @@ We change the volume, doing work. From \cite{susskind2013statistical}[Lecture 6]
 	V d\rho =& - (1+w)\rho dV \text{, from \eqref{eq:p:w:rho} and \eqref{eq:Vdrho}. Regrouping}\\
 	\frac{d\rho}{\rho} =& - (1+w)\frac{dV}{V} \text{, and integrating}\\
 	\rho =& \frac{C}{V^{1+w}}\\
-	=& \frac{C}{a^{3(1+w)}}
+	=& \frac{C}{a^{3(1+w)}}\numberthis \label{eq:rho:a}
 \end{align*}
 
 \begin{itemize}
@@ -845,27 +845,25 @@ We can mock up the cosmological constant by adding linear term to Newton's gravi
 	After a review of the equations of state presented in the last lecture, Professor Susskind derives the density parameter for an energy dominated universe.  He then introduces the concept of vacuum energy, which is represented by the cosmological constant, and is one possible form of dark energy, and describes the characteristics of the universe under various values of the cosmological constant and curvature.
 \end{quotation}
 
-What is the history of the Universe? To the extent that it homogeneous and isotropic, this boils down to the time history of the scale factor. If we know the history of the scale factor we know an awful lot about the history of the universe. We can test it, and observe it.
+What is the history of the Universe? To the extent that it homogeneous and isotropic, this question boils down to the time history of the scale factor. If we know the history of the scale factor we know an awful lot about the history of the universe. We can test it, and observe it.
 
 We have looked at \begin{itemize}
-	\item the matter dominated universe, in  which $a(t)\propto t^{\frac{2}{3}}$, 
-	\item energy dominated $a(t)\propto t^\frac{1}{2}$.
+	\item the matter dominated universe, in  which $a(t)\propto t^{\frac{2}{3}}$--Equations \eqref{eq:2:3}\&\eqref{eq:matter:eos}, 
+	\item energy dominated $a(t)\propto t^\frac{1}{2}$--Equations \eqref{eq:a:scrt:t} \& \eqref{eq:radiation:eos}.
 \end{itemize}
 
 Both are models, and neither is absolutely correct. We believe that the second model was approximately correct for the early universe, and that the first became true later. We will discuss when we get to observational cosmology.
 
-We also looked at the relation between $a$ and $\rho$. \begin{itemize}
+We also looked at the relation between $a$ and $\rho$--Equation \eqref{eq:rho:a}. \begin{itemize}
 	\item $\rho =\frac{\rho_0}{a^3}$ (matter dominated),
 	\item  $\rho =\frac{\rho_0}{a^4}$, radiation dominated.
 \end{itemize}
 
-The equation of state is $P = w\rho$.
+The equation of state is $P = w\rho$--Equation \eqref{eq:p:w:rho}. In a matter dominated universe, because $E=mc^2$, a tiny amount of mass still has a large energy density. But particles have a low velocity; where does pressure come from? From particles hitting the wall, slowly; so formula for pressure contains velocities of particles, but not $c$. It is much less than energy density, so $w=0$ for a non-relativistic matter dominated universe. For radiation, $w=\frac{1}{3}$, which we will prove in Section \ref{sec:w:1:3}.
 
-In a matter dominated universe, because $E=mc^2$, a tiny amount of mass still has a large energy density. But particles have a low velocity; where does pressure come from? From particles hitting the wall, slowly, so formula for pressure contains velocities of particles, but not $c$. It is much less than energy density, so $w=0$ for a non-relativistic matter dominated universe. For radiation, $w=\frac{1}{3}$, which we will prove below.
+\subsection{Why is $w=\frac{1}{3}$?}\label{sec:w:1:3}
 
-\subsection{Why is $w=\frac{1}{3}$?}
-
-Radiation is massless particles, photons. Figure \ref{fig:cosmo-5-box-photons} depicts a box of photons.
+Radiation is massless particles--photons. Figure \ref{fig:cosmo-5-box-photons} depicts a box of photons.
 
 \begin{figure}[H]
 	\caption{A box of photons}
@@ -883,7 +881,7 @@ Radiation is massless particles, photons. Figure \ref{fig:cosmo-5-box-photons} d
 Let us pretend that all photons have the same energy (we will find out this doesn't matter; it is approximately true of photons are in thermal equilibrium). Let:
 \begin{itemize}
 	\item energy per photon be $\epsilon$;
-	\item  momentum per photon $\vec{\pi}$, (not "the" $\pi$)., and 
+	\item  momentum per photon $\vec{\pi}$, (not "the" $\pi$), and 
 	\item number of photons per unit volume be $\nu$.
 \end{itemize}
 
@@ -898,9 +896,9 @@ Let number of photons per unit volume be $\nu$. Then the energy density is:
 	\rho =& \nu \epsilon 
 \end{align*}
 
-How many particles hit the box during time interval $\Delta t$? In Figure \ref{fig:cosmo-5-wall}, a particle moving to right will hit the wall during $\Delta t$ if it is close enough, within $\Delta X$, where $\Delta X=\Delta T$. What if it is not moving exactly right?
+How many particles hit the box during time interval $\Delta t$? In Figure \ref{fig:cosmo-5-wall}, a particle moving to right will hit the wall during $\Delta t$ if it is close enough--within $\Delta X$--where $\Delta X=\Delta T$. What if it is not moving exactly right, say at angle $\theta$--Figure \ref{fig:cosmo-5-wall}?
 \begin{align*}
-	\Delta x =& \Delta t \, \cos{\theta} \text{, then the momentum will change by:}\\
+	\Delta x =& \Delta t \, \cos{\theta} \text{. Then the momentum will change by:}\\
 	\Delta_{\pi} =& 2 \epsilon \cos {\theta} \text{, since particle turned around, so}\\
 	\frac{\Delta_{\pi}}{\Delta t} =& \frac{2 \epsilon \cos {\theta}}{\Delta t} \text{, is the force per particle that hits wall}
 \end{align*}
@@ -915,7 +913,7 @@ allowing for the fact that half the particles within $\Delta x$ are moving away.
 	=&  \epsilon \nu \cos^2 {\theta}  \\ 
 	=& \rho  \cos^2 {\theta} 
 \end{align*}
-Now integrate over all $\theta$. We shall suppose that every direction is characterized by a unit vector $\vec(n)$, Figure \ref{fig:cosmo-5-nxnynz}.
+Now integrate over all $\theta$. We shall suppose that every direction is characterized by a unit vector $\vec{n}$, Figure \ref{fig:cosmo-5-nxnynz}.
 
 \begin{figure}[H]
 	\caption{Unit vector $\hat{n}$}\label{fig:cosmo-5-nxnynz}
@@ -924,6 +922,7 @@ Now integrate over all $\theta$. We shall suppose that every direction is charac
 	\end{center}
 \end{figure}
 
+We see that:
 \begin{align*}
 	n_x =& \cos{\theta}\\
 	\hat{n}_x^2 +  \hat{n}_y^2 +  \hat{n}_z^2=&1
@@ -944,32 +943,26 @@ Can energy density ever be negative? Yes, but not under any circumstances we wil
 
 Vacuum energy comes from quantum field theory, and gives rise to negative pressure. It is an energy that we assign to empty space (zero point energy of fluctuation). A box contains a vacuum energy equal to vacuum energy density times volume.
 
-The vacuum energy density is a constant, it is independent of $a(t)$:
+The vacuum energy density is a constant; it is independent of $a(t)$:
 \begin{align*}
 	\rho_0 =& \Lambda \frac{3}{8 \pi G}
 \end{align*}
 
-$\Lambda$ is known as the cosmological constant, or as dark energy.
- 
-For the significance of the factor $\frac{3}{8 \pi G}$, see \eqref{eq:full:friedmann}
+$\Lambda$ is known as the ''cosmological constant'', or as ''dark energy''. For the significance of the factor $\frac{3}{8 \pi G}$, see \eqref{eq:full:friedmann}
 
 We shall work out the equation of state.
 \begin{align*}
 	E =& \rho_0V\\
-	dE =& \rho_0 V \\
-	=&-w \rho+- dV\\
+	dE =& \rho_0 dV \\
+	=&-w \rho_0 dV \text{ from \eqref{eq:p:w:rho}, whence}\\
 	w=&-1
 \end{align*}
 
-The closer that experiments observe $w=-1$, the closer they get to saying that vacuum energy dominates.
+When you read that astronomers are measuring $w$, and discovering that $w$ is close to $-1$, they are talking about vacuum energy. The closer the experimental evidence is to $w=-1$, they are saying that the energy of the universe is like vacuum energy; it doesn't dilute, because it is a property of empty space.
 
 Vacuum energy can be positive or negative, but, in both cases, pressure and density have opposite sign. We don't know the value of $\rho_0$: there are too many contributions.
 
-Let us study the case where the vacuum energy density is the \emph{only} density. Earlier we look at a pure matter dominated universe, Section \ref{sec:matter:dominated}, and ow we'll look at a pure vacuum energy universe. There are six cases, depending on:
-\begin{itemize}
-	\item $\Lambda=\pm$;
-	\item $\kappa= +1, 0, -1$ .
-\end{itemize}
+Let us study the case where the vacuum energy density is the \emph{only} density. Earlier we look at a pure matter dominated universe, Section \ref{sec:matter:dominated}, and now we'll look at a pure vacuum energy universe. There are six cases for non-zero $\Lambda$ and  for $\kappa$--Table \ref{table eq:options:lambda:kappa}.
 
 The Friedmann equation, \eqref{eq:full:friedmann}, becomes:
 \begin{align*}
@@ -979,7 +972,7 @@ The Friedmann equation, \eqref{eq:full:friedmann}, becomes:
 
 \begin{table}[H]
 	\begin{center}
-		\caption{Options for $\Lambda$ and $\kappa$}
+		\caption{Options for $\Lambda$ and $\kappa$}\label{table eq:options:lambda:kappa}
 		\begin{tabular}{||l|l|p{5cm}||} \hline
 			$\Lambda$ & $\kappa$ & Remarks\\ \hline
 			0 & +1 & Already done\\\hline

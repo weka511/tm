@@ -1063,9 +1063,21 @@ Substituting  $\Lambda>0$ and $\kappa=0$ in Friedmann's equation \eqref{eq:fried
  
 \begin{figure}[H]
 	\caption{Universe bounces at $t=0$}
-	\begin{center}
-		\includegraphics[width=0.6\textwidth]{cosmo-5-bounce}
-	\end{center}
+	\begin{tikzpicture}	
+		\begin{axis}[axis equal]
+			\addplot3 [surf,
+			colormap/cool, %colour scheme
+			domain=0:360, %sets range for x
+			y domain=-1:1, %sets range for y
+			samples=20, %number of samples taken
+			z buffer=sort]
+			(
+			{cos(x)*cosh(y)},
+			{sin(x)*cosh(y)},
+			{y}
+			);
+		\end{axis}
+	\end{tikzpicture}
 \end{figure}
  
  \subsubsection{Negative cosmological constant, with negative curvature}\label{sec:neg:neg}

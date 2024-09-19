@@ -987,16 +987,16 @@ The Friedmann equation, \eqref{eq:full:friedmann}, becomes:
 	\end{center}
 \end{table}
 
-\subsubsection{Flat space, positive cosmological constant: $\Lambda>0$ \& $\kappa=0$}\label{sec:lambda:pos:k:0}
+\subsubsection{Flat space, positive cosmological constant}\label{sec:lambda:pos:k:0}
 
-Friedmann's equation \eqref{eq:friedmann:avec:lambda} becomes:
+Substituting  $\Lambda>0$ and $\kappa=0$ in Friedmann's equation \eqref{eq:friedmann:avec:lambda} gives:
 \begin{align*}
 	\big(\frac{\dot{a}}{a}\big)^2  =& \Lambda\\ 
 	\dot{a} =& \sqrt{\Lambda} a\\
 	a(t) \propto& e^{\sqrt{\Lambda}t} \text{, universe expands exponentially}
 \end{align*}
  The Hubble constant is $\sqrt{\Lambda}$, and $
- a(t) \propto e^{Ht}$. This is known as de Sitter space.
+ a(t) \propto e^{Ht}$. This is known as ''de Sitter space''.
  
  Let us mix in some matter:
  \begin{align*}
@@ -1007,19 +1007,15 @@ Friedmann's equation \eqref{eq:friedmann:avec:lambda} becomes:
  
  Positive vacuum energy comes from bosons, negative from fermions. LS says it is a mystery that vacuum energy is so low.
  
- \subsubsection{Positive curved space, positive cosmological constant: $\Lambda>0$ \& $\kappa>0$}\label{sec:lambda:pos:k:1}
+ \subsubsection{Positive curved space, positive cosmological constant}\label{sec:lambda:pos:k:1}
  
- The Friedmann equation, \eqref{eq:full:friedmann}, becomes:
+ Substituting $\Lambda>0$ \& $\kappa>0$ in the Friedmann equation, \eqref{eq:full:friedmann}, gives:
  \begin{align*}
- 	\big(\frac{\dot{a}}{a}\big)^2  =& \Lambda - \frac{1}{a^2} \text{, see if it resembles anything we know}\\
+ 	\big(\frac{\dot{a}}{a}\big)^2  =& \Lambda - \frac{1}{a^2}\\
  	\dot{a}^2 - \Lambda a^2 =&-1
  \end{align*}
- Think of $a(t)$ as the coordinate of a particle on a line. $\dot{a}^2$ becomes twice the kinetic energy, $\Lambda a^2$ the potential energy plotted in Figure \ref{fig:cosmo-5-pe}. Think of $a$ starting large, going up hill, then rolling back. 
+ Think of $a(t)$ as the coordinate of a particle on a line. $\dot{a}^2$ becomes twice the kinetic energy; $-\Lambda a^2$ the potential energy plotted in Figure \ref{fig:cosmo-5-pe}. Think of $a$ starting large, going up hill, then rolling back. 
  
- \begin{figure}[H]
- 	\caption{Potential Energy}\label{fig:cosmo-5-pe}
- 	\includegraphics[width=0.8\textwidth]{cosmo-5-pe}
- \end{figure}
  
  We can solve to get:
  \begin{align*}
@@ -1027,9 +1023,27 @@ Friedmann's equation \eqref{eq:friedmann:avec:lambda} becomes:
  \end{align*}
  
  \begin{figure}[H]
- 	\caption{$a(t) = \frac{1}{\sqrt{\Lambda}} \cosh {(\sqrt{\Lambda}t)}$}
+ 	\caption{$\dot{a}^2 - \Lambda a^2 =-1$}
+ 	 \begin{subfigure}[t]{0.45\textwidth}
+ 		\caption{Potential Energy}\label{fig:cosmo-5-pe}
+ 		\begin{tikzpicture}[scale=0.5]
+ 			\begin{axis}[
+ 				trig format=rad, % HERE
+ 				xlabel = $t$,
+ 				ylabel = $a(t)$,
+ 				xmin = -3,xmax = 3,
+ 				ymin = -9,ymax = 0.5,
+ 				domain = -3:3,
+ 				smooth,thick,
+ 				axis lines = middle,
+ 				every tick/.style = {thick}]	
+ 				\addplot[color=purple]{-x*x};		
+ 			\end{axis}
+ 		\end{tikzpicture}
+ 	\end{subfigure}
+ 	\;
  	\begin{subfigure}[t]{0.45\textwidth}
- 		\caption{'Shape of $\cosh{}$'}
+ 		\caption{'$a(t) = \frac{1}{\sqrt{\Lambda}} \cosh {(\sqrt{\Lambda}t)}$'}
  		\begin{tikzpicture}[scale=0.5]
  			\begin{axis}[
  				trig format=rad, % HERE
@@ -1045,14 +1059,14 @@ Friedmann's equation \eqref{eq:friedmann:avec:lambda} becomes:
  			\end{axis}
  		\end{tikzpicture}
  	\end{subfigure}
- 	\;
- 	 \begin{subfigure}[t]{0.45\textwidth}
- 		\caption{Universe bounces at $t=0$}
- 		\includegraphics[width=0.8\textwidth]{cosmo-5-bounce}
- 	\end{subfigure}
  \end{figure}
  
-
+\begin{figure}[H]
+	\caption{Universe bounces at $t=0$}
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{cosmo-5-bounce}
+	\end{center}
+\end{figure}
  
  \subsubsection{Negative cosmological constant, with negative curvature}\label{sec:neg:neg}
  We will consider a negative cosmological constant, with negative curvature:

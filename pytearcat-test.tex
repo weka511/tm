@@ -1,0 +1,109 @@
+\documentclass[]{article}
+
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{tocloft}
+\usepackage{cancel}
+\usepackage{thmtools}
+\usepackage{gensymb}
+\usepackage{braket}
+\usepackage{tikz-feynman}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage[toc,nonumberlist]{glossaries}
+\usepackage{glossaries-extra}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[toc,page]{appendix}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\newcommand{\Lagr}{\mathscr{L}}
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lemma}[thm]{Lemma}
+\graphicspath{{figs/}}
+\widowpenalty10000
+\clubpenalty10000
+\setcounter{tocdepth}{2}
+
+%opening
+\title{Testing pytearcat}
+\author{Simon Crase}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This document records the result of testing pytearcat\cite{san2021pytearcat} against \cite{akhmedov2016lectures}
+\end{abstract}
+
+\tableofcontents
+
+\section{Test methodology}
+
+Take a couple of examples from \cite{akhmedov2016lectures}, copy metric, compute Christoffel symbols and Einstein tensor using , and compare with \cite{akhmedov2016lectures}. If a component is zero in both \cite{akhmedov2016lectures} and \cite{san2021pytearcat}, omit it from report.
+\section{Schwartzchild Solution}
+
+\cite{akhmedov2016lectures}[Lecture IV]
+
+\subsection{Metric}
+\begin{align*}
+	ds^2 = e^{\nu{\left(t,r \right)}} \cdot dt^2- e^{\lambda_{}{\left(t,r \right)}} \cdot dr^2- r^{2} \cdot d\theta^2- r^{2} \sin^{2}{\left(\theta \right)} \cdot d\phi^2
+\end{align*}
+
+\subsection{Christoffel Symbols}
+\begin{align*}
+	  {\Gamma}{}^{0}\,{}_{0}\,{}_{0}\, =& \frac{\frac{\partial}{\partial t} \nu{\left(t,r \right)}}{2}  & \text{Pass} \\
+	 {\Gamma}{}^{0}\,{}_{0}\,{}_{1}\, =& \frac{\frac{\partial}{\partial r} \nu{\left(t,r \right)}}{2}\\
+	 {\Gamma}{}^{0}\,{}_{1}\,{}_{0}\, =& \frac{\frac{\partial}{\partial r} \nu{\left(t,r \right)}}{2} & \text{Pass}\\	
+	 {\Gamma}{}^{0}\,{}_{1}\,{}_{1}\, =& \frac{e^{\lambda_{}{\left(t,r \right)}} e^{- \nu{\left(t,r \right)}} \frac{\partial}{\partial t} \lambda_{}{\left(t,r \right)}}{2} & \text{ Pass}
+\end{align*}
+	
+\begin{align*}
+	 {\Gamma}{}^{1}\,{}_{0}\,{}_{0}\, =& \frac{e^{- \lambda_{}{\left(t,r \right)}} e^{\nu{\left(t,r \right)}} \frac{\partial}{\partial r} \nu{\left(t,r \right)}}{2}  & \text{Pass}\\
+	 {\Gamma}{}^{1}\,{}_{0}\,{}_{1}\, =& \frac{\frac{\partial}{\partial t} \lambda_{}{\left(t,r \right)}}{2}  & \text{Pass}\\
+	 {\Gamma}{}^{1}\,{}_{1}\,{}_{0}\, =& \frac{\frac{\partial}{\partial t} \lambda_{}{\left(t,r \right)}}{2}\\
+	 {\Gamma}{}^{1}\,{}_{1}\,{}_{1}\, =& \frac{\frac{\partial}{\partial r} \lambda_{}{\left(t,r \right)}}{2} & \text{Pass} \\
+	 {\Gamma}{}^{1}\,{}_{2}\,{}_{2}\, =& - r e^{- \lambda_{}{\left(t,r \right)}}  & \text{Pass}\\
+	 {\Gamma}{}^{1}\,{}_{3}\,{}_{3}\, =& - r e^{- \lambda_{}{\left(t,r \right)}} \sin^{2}{\left(\theta \right)} & \text{Pass}
+\end{align*}
+
+\begin{align*}
+	 {\Gamma}{}^{2}\,{}_{1}\,{}_{2}\, =& \frac{1}{r}  & \text{Pass}	\\
+	 {\Gamma}{}^{2}\,{}_{2}\,{}_{1}\, =& \frac{1}{r}	\\
+	 {\Gamma}{}^{2}\,{}_{3}\,{}_{3}\, =& - \sin{\left(\theta \right)} \cos{\left(\theta \right)} &	 \text{ Pass}\\
+\end{align*}
+
+\begin{align*}
+	 {\Gamma}{}^{3}\,{}_{1}\,{}_{3}\, =& \frac{1}{r} & \text{Pass}\\
+	 {\Gamma}{}^{3}\,{}_{2}\,{}_{3}\, =& \frac{\cos{\left(\theta \right)}}{\sin{\left(\theta \right)}}\\
+	 {\Gamma}{}^{3}\,{}_{3}\,{}_{1}\, =& \frac{1}{r}\\
+	 {\Gamma}{}^{3}\,{}_{3}\,{}_{2}\, =& \frac{\cos{\left(\theta \right)}}{\sin{\left(\theta \right)}}  & \text{Pass}
+\end{align*}
+
+\subsection{Einstein Tensor}
+
+\begin{align*}
+	  {G}{}_{0}\,{}_{0}\, =& \frac{\left(r \frac{\partial}{\partial r} \lambda_{}{\left(t,r \right)} + e^{\lambda_{}{\left(t,r \right)}} - 1\right) e^{- \lambda_{}{\left(t,r \right)}} e^{\nu{\left(t,r \right)}}}{r^{2}}\\	
+	{G}{}_{0}\,{}_{1}\, =& \frac{\frac{\partial}{\partial t} \lambda_{}{\left(t,r \right)}}{r}\\	
+	{G}{}_{1}\,{}_{0}\, =& \frac{\frac{\partial}{\partial t} \lambda_{}{\left(t,r \right)}}{r}\\	
+	{G}{}_{1}\,{}_{1}\, =& \frac{r \frac{\partial}{\partial r} \nu{\left(t,r \right)} - e^{\lambda_{}{\left(t,r \right)}} + 1}{r^{2}}\\	
+	{G}{}_{2}\,{}_{2}\, =& - \frac{r \left(r e^{\lambda_{}{\left(t,r \right)}} \left(\frac{\partial}{\partial t} \lambda_{}{\left(t,r \right)}\right)^{2} - r e^{\lambda_{}{\left(t,r \right)}} \frac{\partial}{\partial t} \lambda_{}{\left(t,r \right)} \frac{\partial}{\partial t} \nu{\left(t,r \right)} + 2 r e^{\lambda_{}{\left(t,r \right)}} \frac{\partial^{2}}{\partial t^{2}} \lambda_{}{\left(t,r \right)} + r e^{\nu{\left(t,r \right)}} \frac{\partial}{\partial r} \lambda_{}{\left(t,r \right)} \frac{\partial}{\partial r} \nu{\left(t,r \right)} - r e^{\nu{\left(t,r \right)}} \left(\frac{\partial}{\partial r} \nu{\left(t,r \right)}\right)^{2} - 2 r e^{\nu{\left(t,r \right)}} \frac{\partial^{2}}{\partial r^{2}} \nu{\left(t,r \right)} + 2 e^{\nu{\left(t,r \right)}} \frac{\partial}{\partial r} \lambda_{}{\left(t,r \right)} - 2 e^{\nu{\left(t,r \right)}} \frac{\partial}{\partial r} \nu{\left(t,r \right)}\right) e^{- \lambda_{}{\left(t,r \right)}} e^{- \nu{\left(t,r \right)}}}{4}\\	
+	{G}{}_{3}\,{}_{3}\, =& - \frac{r \left(r e^{\lambda_{}{\left(t,r \right)}} \left(\frac{\partial}{\partial t} \lambda_{}{\left(t,r \right)}\right)^{2} - r e^{\lambda_{}{\left(t,r \right)}} \frac{\partial}{\partial t} \lambda_{}{\left(t,r \right)} \frac{\partial}{\partial t} \nu{\left(t,r \right)} + 2 r e^{\lambda_{}{\left(t,r \right)}} \frac{\partial^{2}}{\partial t^{2}} \lambda_{}{\left(t,r \right)} + r e^{\nu{\left(t,r \right)}} \frac{\partial}{\partial r} \lambda_{}{\left(t,r \right)} \frac{\partial}{\partial r} \nu{\left(t,r \right)} - r e^{\nu{\left(t,r \right)}} \left(\frac{\partial}{\partial r} \nu{\left(t,r \right)}\right)^{2} - 2 r e^{\nu{\left(t,r \right)}} \frac{\partial^{2}}{\partial r^{2}} \nu{\left(t,r \right)} + 2 e^{\nu{\left(t,r \right)}} \frac{\partial}{\partial r} \lambda_{}{\left(t,r \right)} - 2 e^{\nu{\left(t,r \right)}} \frac{\partial}{\partial r} \nu{\left(t,r \right)}\right) e^{- \lambda_{}{\left(t,r \right)}} e^{- \nu{\left(t,r \right)}} \sin^{2}{\left(\theta \right)}}{4}
+\end{align*}
+
+\bibliographystyle{unsrt}
+\addcontentsline{toc}{section}{Bibliography}
+\raggedright
+\bibliography{tm}
+\end{document}

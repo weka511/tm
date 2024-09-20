@@ -62,6 +62,14 @@ Take a couple of examples from \cite{akhmedov2016lectures}, copy metric, compute
 \end{align*}
 
 \subsection{Christoffel Symbols}
+
+\begin{align*}
+	{\Gamma}{}^{0}\,{}_{0}\,{}_{0}\, =& \frac{\frac{\partial}{\partial t} \nu{\left(t,r \right)}}{2}  & \text{Pass} \\
+	{\Gamma}{}^{0}\,{}_{0}\,{}_{1}\, =& \frac{\frac{\partial}{\partial r} \nu{\left(t,r \right)}}{2}\\
+	{\Gamma}{}^{0}\,{}_{1}\,{}_{0}\, =& \frac{\frac{\partial}{\partial r} \nu{\left(t,r \right)}}{2} & \text{Pass}\\	
+	{\Gamma}{}^{0}\,{}_{1}\,{}_{1}\, =& \frac{e^{\lambda_{}{\left(t,r \right)}} e^{- \nu{\left(t,r \right)}} \frac{\partial}{\partial t} \lambda_{}{\left(t,r \right)}}{2} & \text{ Pass}
+\end{align*}
+
 \begin{align*}
 	  {\Gamma}{}^{0}\,{}_{0}\,{}_{0}\, =& \frac{\frac{\partial}{\partial t} \nu{\left(t,r \right)}}{2}  & \text{Pass} \\
 	 {\Gamma}{}^{0}\,{}_{0}\,{}_{1}\, =& \frac{\frac{\partial}{\partial r} \nu{\left(t,r \right)}}{2}\\
@@ -93,6 +101,7 @@ Take a couple of examples from \cite{akhmedov2016lectures}, copy metric, compute
 
 \subsection{Einstein Tensor}
 
+Results from pytearcat.
 \begin{align*}
 	  {G}{}_{0}\,{}_{0}\, =& \frac{\left(r \frac{\partial}{\partial r} \lambda_{}{\left(t,r \right)} + e^{\lambda_{}{\left(t,r \right)}} - 1\right) e^{- \lambda_{}{\left(t,r \right)}} e^{\nu{\left(t,r \right)}}}{r^{2}}\\	
 	{G}{}_{0}\,{}_{1}\, =& \frac{\frac{\partial}{\partial t} \lambda_{}{\left(t,r \right)}}{r}\\	
@@ -100,6 +109,18 @@ Take a couple of examples from \cite{akhmedov2016lectures}, copy metric, compute
 	{G}{}_{1}\,{}_{1}\, =& \frac{r \frac{\partial}{\partial r} \nu{\left(t,r \right)} - e^{\lambda_{}{\left(t,r \right)}} + 1}{r^{2}}\\	
 	{G}{}_{2}\,{}_{2}\, =& - \frac{r \left(r e^{\lambda_{}{\left(t,r \right)}} \left(\frac{\partial}{\partial t} \lambda_{}{\left(t,r \right)}\right)^{2} - r e^{\lambda_{}{\left(t,r \right)}} \frac{\partial}{\partial t} \lambda_{}{\left(t,r \right)} \frac{\partial}{\partial t} \nu{\left(t,r \right)} + 2 r e^{\lambda_{}{\left(t,r \right)}} \frac{\partial^{2}}{\partial t^{2}} \lambda_{}{\left(t,r \right)} + r e^{\nu{\left(t,r \right)}} \frac{\partial}{\partial r} \lambda_{}{\left(t,r \right)} \frac{\partial}{\partial r} \nu{\left(t,r \right)} - r e^{\nu{\left(t,r \right)}} \left(\frac{\partial}{\partial r} \nu{\left(t,r \right)}\right)^{2} - 2 r e^{\nu{\left(t,r \right)}} \frac{\partial^{2}}{\partial r^{2}} \nu{\left(t,r \right)} + 2 e^{\nu{\left(t,r \right)}} \frac{\partial}{\partial r} \lambda_{}{\left(t,r \right)} - 2 e^{\nu{\left(t,r \right)}} \frac{\partial}{\partial r} \nu{\left(t,r \right)}\right) e^{- \lambda_{}{\left(t,r \right)}} e^{- \nu{\left(t,r \right)}}}{4}\\	
 	{G}{}_{3}\,{}_{3}\, =& - \frac{r \left(r e^{\lambda_{}{\left(t,r \right)}} \left(\frac{\partial}{\partial t} \lambda_{}{\left(t,r \right)}\right)^{2} - r e^{\lambda_{}{\left(t,r \right)}} \frac{\partial}{\partial t} \lambda_{}{\left(t,r \right)} \frac{\partial}{\partial t} \nu{\left(t,r \right)} + 2 r e^{\lambda_{}{\left(t,r \right)}} \frac{\partial^{2}}{\partial t^{2}} \lambda_{}{\left(t,r \right)} + r e^{\nu{\left(t,r \right)}} \frac{\partial}{\partial r} \lambda_{}{\left(t,r \right)} \frac{\partial}{\partial r} \nu{\left(t,r \right)} - r e^{\nu{\left(t,r \right)}} \left(\frac{\partial}{\partial r} \nu{\left(t,r \right)}\right)^{2} - 2 r e^{\nu{\left(t,r \right)}} \frac{\partial^{2}}{\partial r^{2}} \nu{\left(t,r \right)} + 2 e^{\nu{\left(t,r \right)}} \frac{\partial}{\partial r} \lambda_{}{\left(t,r \right)} - 2 e^{\nu{\left(t,r \right)}} \frac{\partial}{\partial r} \nu{\left(t,r \right)}\right) e^{- \lambda_{}{\left(t,r \right)}} e^{- \nu{\left(t,r \right)}} \sin^{2}{\left(\theta \right)}}{4}
+\end{align*}
+
+I could not get it to calculate ${G}{}_{\mu}\,{}^{\nu}$, so I calculated manually.
+\begin{align*}
+	{G}{}_{0}\,{}^{0}\, =& {G}{}_{0}\,{}_{0} \cdot  g^{00}\\
+	=& \frac{\left(r \frac{\partial}{\partial r} \lambda_{}{\left(t,r \right)} + e^{\lambda_{}{\left(t,r \right)}} - 1\right) e^{- \lambda_{}{\left(t,r \right)}} \cancel{e^{\nu{\left(t,r \right)}}}}{r^{2}} \cancel{e^{-\nu{\left(t,r \right)}}} & \text{Sign error}\\
+	{G}{}_{0}\,{}^{1}\, =& {G}{}_{0}\,{}_{1} g^{11} \\
+	=&-\frac{\frac{\partial}{\partial t} \lambda_{}{\left(t,r \right)}}{r} e^{-\lambda} &\text{Pass}\\
+	{G}{}_{1}\,{}^{1}\, =& {G}{}_{1}\,{}_{1} g^{11}\\
+	=&- \frac{r \frac{\partial}{\partial r} \nu{\left(t,r \right)} - e^{\lambda_{}{\left(t,r \right)}} + 1}{r^{2}} e^{-\lambda}\\
+	=&- \frac{r \frac{\partial}{\partial r} \nu{\left(t,r \right)} - e^{\lambda_{}{\left(t,r \right)}} + 1}{r^{2}} e^{-\lambda}\\
+	=&\frac{1}{r^2} -e^{-\lambda}\frac{r \frac{\partial}{\partial r} \nu +1}{r^2}  &\text{Pass}
 \end{align*}
 
 \bibliographystyle{unsrt}

@@ -1,7 +1,26 @@
 % !TeX program = lualatex
 \documentclass[]{article}
 
-\usepackage{caption,subcaption,graphicx,float,url,amsmath,amssymb,amsthm,tocloft,cancel,thmtools,gensymb,braket,tikz-cd,tikz-feynman,mathtools}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{tocloft}
+\usepackage{cancel}
+\usepackage{thmtools}
+\usepackage{gensymb}
+\usepackage{braket}
+\usepackage{tikz-feynman}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{pgfplots}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{colortbl}
 \usepackage[toc,nonumberlist]{glossaries}
 \usepackage{glossaries-extra}
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
@@ -29,7 +48,7 @@ These are my notes from the Advanced Quantum Mechanics lectures\cite{susskind201
 Disclaimer: I have created these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended 
 as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
 
-The notes were created using TexStudio\cite{TexStudio}, which I recommend for compiling them to a PDF; the bibliography was created using JabRef\cite{Jabref}.
+The notes were created using TexStudio\cite{TexStudio}, and the bibliography using JabRef\cite{Jabref}.
 
 \end{abstract}
 
@@ -56,7 +75,7 @@ We start with a review of quantum mechanics, and then move on to the application
 		\item Independent values $\braket{x|x^{\prime}}=0$ if $x$ and $x^{\prime}$ are distinguishable.
 		\item For any state $\ket{\psi}$, $\braket{x|\psi} = \psi(x)$ is called the \emph{wave function}. 
 		\item The meaning of $\psi$ is closely related to probability: probability of finding particle at $x$ is $P(x)=\psi^*(x)\psi(x)$
-		\item Position is an observable $X$. In 3 dimensions $\braket{xyz|x^{\prime}y^{\prime}z^{\prime}}=0$ if there is any mismatch $x^{\prime}\ne x \lor y^{\prime} \ne y \lor z^{\prime} \ne z$. We will generally suppress $y$ and $z$; remember they are still there.
+		\item Position is an observable $X$. In 3 dimensions $\braket{xyz|x^{\prime}y^{\prime}z^{\prime}}=0$ if there is any mismatch $x^{\prime}\ne x \lor y^{\prime} \ne y \lor z^{\prime} \ne z$. We will generally suppress $y$ and $z$, but remember they are still there.
 		\item Another important observable is Momentum, which has one component for each dimension of space: $P\psi(x)=- i \hslash \frac{\partial \Psi}{\partial x}$.
 		\item The eigenvector of $X$ corresponding to $x_0$ is $\delta(x-x_0)$.
 		\item The eigenvector of $P$ corresponding to $p_0$ is $e^{\frac{i p_0 x}{\hslash}}$. Using $P(x)=\psi^*(x)\psi(x)$, $P(x)=1$--particles is smeared along entire line--Uncertainty Principle.
@@ -70,7 +89,7 @@ We start with a review of quantum mechanics, and then move on to the application
 		\item $U(t)\ket{\psi(t_0)} = \ket{\psi(t_0 + y)}$
 	\end{itemize}
 	\item Following the "minus 1-th law"\footnote{Information is conserved}, we postulate that two states that are observably different will not evolve into two other states that are \emph{not} observably different, so inner products must be preserved: $\braket{\phi|\psi}=\braket{\phi|U^{\dagger}U|\psi}$ i.e. $U^{\dagger}U=I$. U is \emph{Unitary}
-	\item Let $U(\epsilon)= I + \epsilon G$, so $U^\dagger(\epsilon)= I - \epsilon G^\dagger$ and $G=-G^{\dagger}$. We can satisfy this be defining $G=- i H$ for some Hermitian $H$--the \emph{Hamiltonian}.
+	\item Let $U(\epsilon)= I + \epsilon G$, so $U^\dagger(\epsilon)= I - \epsilon G^\dagger$ and $G=-G^{\dagger}$. This, in turn, requires $( I + \epsilon G)( I - \epsilon G^\dagger)= O(\epsilon^2)$. We can satisfy this be defining $G=- i H$ for some Hermitian $H$--the \emph{Hamiltonian}.
 	\item For general $t$, $U(t)=e^{- i H t}$
 \end{itemize}
 \begin{align*}
@@ -85,13 +104,17 @@ How does eigenvector change with time? It just gets multiplied by a \emph{phase}
 
 \subsection{Introduction to Symmetry}
 
-Evolution is one example of a transformation on a system which preserve inner products. One important example is the rotational symmetry of the hydrogen atom. Translational symmetry is another example.
+Evolution is one example of a transformation on a system which preserve inner products.
+\begin{itemize}
+	\item One important example is the rotational symmetry of the hydrogen atom.
+	\item Translational symmetry is another example.
+\end{itemize}
 
 \begin{defn}[Symmetry]\label{defn:symmetry}
 	A symmetry is a transformation that doesn't change equations. 
 \end{defn}
 
-If $V$ is a symmetry we expect it to be unitary, as it should preserve differences.
+If $V$ is a symmetry we expect it to be unitary, as it should preserve differences between wave functions.
 
 \begin{thm}[A symmetry is a unitary operator that commutes with the Hamiltonian]
 	\begin{align*}

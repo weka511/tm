@@ -59,7 +59,11 @@ if __name__=='__main__':
     count_referenced = 0
     count_unreferenced = 0
     image_lookup = create_included_images()
+    unreferenced = False
     with open('rm.sh','w') as out:
+        if unreferenced:
+            print ('Unreferenced images')
+            unreferenced = True
         for image in listdir('figs'):
             if splitext(image)[0] not in image_lookup:
                 print (image)

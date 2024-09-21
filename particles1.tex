@@ -1,6 +1,24 @@
 % !TeX program = lualatex
 \documentclass[]{article}
-\usepackage{caption,subcaption,graphicx,float,url,amsmath,amssymb,amsthm,tocloft,cancel,thmtools,gensymb,braket,tikz-feynman}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{tocloft}
+\usepackage{cancel}
+\usepackage{thmtools}
+\usepackage{gensymb}
+\usepackage{braket}
+\usepackage{tikz-feynman}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{colortbl}
 \usepackage[toc,nonumberlist]{glossaries}
 \usepackage{glossaries-extra}
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
@@ -32,7 +50,7 @@ These are my notes for the \emph{New Revolutions in Particle Physics 1} lectures
 Disclaimer: I have created these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended 
 as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
 
-The notes were created using TexStudio\cite{TexStudio}, which I recommend for compiling them to a PDF, and the bibliography was created using JabRef\cite{Jabref}.
+The notes were created using TexStudio\cite{TexStudio}, and the bibliography   using JabRef\cite{Jabref}.
 \end{abstract}
 
 \tableofcontents
@@ -42,6 +60,7 @@ The notes were created using TexStudio\cite{TexStudio}, which I recommend for co
 
 \section{Particles and Light}
 
+\subsection{Introduction}
 This lecture contains  facts from other courses, which will be used in later lectures.
 
 Particle physics is about the question: is matter discrete? If so we will call the smallest things "particles". If matter forms a continuum, we have fields.
@@ -66,7 +85,7 @@ f=&\frac{1}{T} \text{, so}\\
 	\includegraphics[width=0.9\textwidth]{Wavelength}
 \end{figure}
 
-Wave/particle duality.
+\subsection{Wave/particle duality.}
 
 A photon has energy:
 \begin{align*}

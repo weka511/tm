@@ -1094,10 +1094,38 @@ Substituting  $\Lambda>0$ and $\kappa=0$ in Friedmann's equation \eqref{eq:fried
 
 
 \section{Dark matter and allocation of energy density}
-
 \begin{quotation} 
 	Professor Susskind develops the energy density allocation equation, and describes the historical progress of the effort to find the correct values for the terms in this equation.  This analysis combined with observations of the motion of stars and galaxies led cosmologists to postulate the existence of dark matter.  Observations of luminosity and red-shift have led to the correct solution for today's universe - which is dominated by dark energy.
 \end{quotation}
+
+We will look at the connection between experimental facts and our models.
+
+\subsection{Review}
+\begin{align*}
+	\big(\frac{\dot{a}}{a}\big)^2 =& H^2 \text{, Friedmann, Hubble}\\
+	=& \frac{8\pi G}{3} \rho - \frac{\kappa}{a^2}
+\end{align*}
+
+This changes with time: when people speak of the ''Hubble constant'' they mean today's value.
+
+Our metric is:
+\begin{align*}
+	ds^2 =& - dt^2 +a(t)^2\big[dr^2 + \xi^2(r) d\Omega^2\big] \text{, where}\\
+	\xi(r)=&\sin{r}& \text{ if } \kappa = +1\\
+	\xi(r)=&\sinh{r}& \text{ if }\kappa = -1\\
+	\xi(r)=&r& \text{ if } \kappa = 0
+\end{align*} $\xi$ depends on the geometry.
+
+There are only 3 contributions to $\rho$ known.
+
+\begin{align*}
+	- \frac{\kappa}{a^2} + \frac{8 \pi G}{3}\rho = \underbrace{\frac{C_R}{a^4}}_\text{Radiation} + \underbrace{\frac{C_M}{a^3}}_\text{Matter}+ \underbrace{\Lambda}_\text{Vacuum energy} - \frac{\kappa}{a^2}\\
+	=&H^2 \numberthis \label{eq:hubble:contraint}
+\end{align*}
+
+Equation \eqref{eq:hubble:contraint} is a constraint. Each term has some value, as does $H$. How do we measure them?
+
+\url{https://youtu.be/eOOtl8DTmhQ?t=501}
 
 \section{Temperature History of the Universe}
 
@@ -1116,8 +1144,6 @@ Substituting  $\Lambda>0$ and $\kappa=0$ in Friedmann's equation \eqref{eq:fried
 \section{Inflation}
 
 \begin{quotation}
-	
-
 	Professor Susskind introduces the theory of cosmological inflation under which the early universe underwent an exponential expansion during which it doubled in size every 10-32 seconds and expanded by at least a factor of $e^{90}$.  This all occurred prior to the Big Bang and during this period the universe cooled very rapidly and was essentially empty.  In the early phase of this rapid expansion, the universe was hot enough that magnetic monopoles were formed.  However these were the only particles formed.  The rest of the energy of the universe was contained in the potential energy of the inflaton field, and it wasn't until the Big Bang that this potential energy was converted into the particles that form the matter that makes up the galaxies in the universe today.
 	
 	This theory of rapid expansion explains the lack of observed magnetic monopoles and the uniformity of the cosmic microwave background radiation.  The rapid expansion dispersed the monopoles, smoothed out the distribution of photons, and also flattened space itself.

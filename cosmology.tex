@@ -1259,14 +1259,33 @@ Let us invent something an astronomer can test: what is $\frac{dN}{dz}$, the num
 \begin{align*}
 	\frac{dN}{dz} \propto& \frac{dr \xi(r)^2}{dz}\\
 	dz =& -\frac{a_{TODAY}}{a(t)^2}da\\
-	\frac{dN}{dz} \propto& \frac{dr \xi(r)^2}{-\frac{a_{TODAY}}{a(t)^2}\dot{a}dt}\\
+	\frac{dN}{dz} \propto& \frac{dr  \xi(r)^2}{-\frac{a_{TODAY}}{a(t)^2}\dot{a}dt}\\
 	\propto& \frac{ \xi(r)^2}{-\frac{a_{TODAY}}{a(t)^2}\dot{a}}\frac{dr}{dt}\\
 	\propto& \frac{\xi(r)^2}{\frac{a_{TODAY}}{a(t)}\dot{a}} \text{, from \eqref{eq:dr:dt}}\\
-	\propto&\frac{\xi(r)^2}{(z+1)\dot{a}} \text{, from \eqref{eq:z:a}}
+	\propto&\frac{\xi(r)^2}{(z+1)\dot{a}} \text{, from \eqref{eq:z:a}} \numberthis \label{dN:dz}
 \end{align*}
 
+There is nothing we can do with this until we make a model. We will take the matter dominated universe, and set $\kappa=-1$.
 
-\url{https://youtu.be/eOOtl8DTmhQ?t=4013}
+\begin{align*}
+	a \propto& t^\frac{2}{3}\\
+	\dot{a}& \frac{2}{3}t^\frac{1}{3}
+\end{align*}
+
+Now $a$, $\dot{a}$, $r$ can all be expressed in terms of $z$, so we can express the right hand side of \eqref{eq:z:a} in terms of $z$ (only because we have a model). Now $\xi(r)$ increases exponentially, which is easy to detect: it makes an anomalously large galaxies\footnote{Galaxies is used to mean standard candles, and the best ones are supernovae} at large redshift. You can convert a $\kappa$ and equation of state\footnote{The $\Omega s$ form part of the model.} into a prediction for the number of galaxies at a given redshift. Given this, and the relationship between luminosity and redshift we can work out the complete history of the universe, and determine $C_R$.
+
+ Observations over the last 50 years are inconsistent with matter dominated universe with negative $\kappa$. Best fit today is:
+ \begin{itemize}
+ 	\item $\Omega_R=0$
+ 	\item $\Omega_m\approx0.3$ including dark matter
+ 	\item $\Omega_{\Lambda}\approx0.7$
+ 	\item $\Omega_{\kappa}\approx0\pm0.01$
+ \end{itemize}
+If you vary these numbers by more than one percent, model fails to match data.
+
+
+
+\url{https://youtu.be/eOOtl8DTmhQ?t=5467}
 
 \section{Temperature History of the Universe}
 

@@ -1110,7 +1110,7 @@ This changes with time: when people speak of the ''Hubble constant'' they mean t
 
 Our metric is:
 \begin{align*}
-	ds^2 =& - dt^2 +a(t)^2\big[dr^2 + \xi^2(r) d\Omega^2\big] \text{, where}\\
+	ds^2 =& - dt^2 +a(t)^2\big[dr^2 + \xi^2(r) d\Omega^2\big] \text{, where} \numberthis \label{fig:metric:6}\\
 	\xi(r)=&\sin{r}& \text{ if } \kappa = +1\\
 	\xi(r)=&\sinh{r}& \text{ if }\kappa = -1\\
 	\xi(r)=&r& \text{ if } \kappa = 0
@@ -1132,7 +1132,7 @@ Equation \eqref{eq:hubble:contraint} is a constraint. Each term has some value, 
 
 	\item Matter, we look at the galaxies, and see how much hydrogen is in them, measure luminosity, and measure luminous matter. It comes to one proton per cubic metre. Low, but much higher than radiation density.
 	
-	\item Forget vaccum energy for the time being. We are being historical, so leave out dark matter and dark energy.
+	\item Forget vacuum energy for the time being. We are being historical, so leave out dark matter and dark energy.
 \end{itemize}
 
 Today we call the ratios $\Omega_R$, $\Omega_m$, $\Omega_{\Lambda}$, and $\Omega_{\kappa}$,normalized so:
@@ -1202,7 +1202,7 @@ Dark matter can't be fermions  if they are light, but maybe bosons. Bose condens
 \subsubsection{Modify gravitational theory}
 
 The alternative is to modify gravitational theory Newton's laws to that  Kepler's 2nd law doesn't work for galaxies, but this doesn't seem to work.
-Most physicists think it is particles. Matter in solar system is much denser than interstellar space.
+Most physicists think it is particles. Since Newtonian gravity works find in our solar system, we know that ordinary matter dominates here. Matter in solar system is much denser than interstellar space.
 
 \subsection{Testing cosmological theories}
 
@@ -1229,6 +1229,41 @@ The evidence favours a hyperbolic space, as a function of red-shift. What about 
 \end{itemize}
 
 What about number of galaxies as a function of red-shift?
+
+Let $\lambda_{e}mitted$ denote the wavelength of light is emitted from a source. This may or may not be the wavelength that is detected: Doppler shift is one possible reason; gravitational shift due to a black hole is another; expansion of the universe is equivalent to the Doppler shift, but it is what we are interested in.
+
+\begin{figure}[H]
+	\caption[Map of the Universe]{Map of the Universe. Vertical lines correspond to equal values of $r$, wavy line is light ray, and we see a number of galaxies. They have different  scale factors, $a(t)$: c.f. $a_{TODAY}$. Light emitted at point with $a(t)$ has to stretch to get to where we observe it, by a factor of $\frac{a_{TODAY}}{a_t}$.}
+	\includegraphics[width=0.8\textwidth]{cosmo-6-map-universe}  
+\end{figure} 
+
+\begin{defn}[Redshift]
+	\begin{align*}
+		z =& \frac{\lambda_{Detected}}{\lambda_{Emitted}}-1 \text{, $-1$ for historical reasons}\\ 
+		=&\frac{a_{TODAY}}{a_t} - 1 \numberthis \label{eq:z:a}
+	\end{align*}
+\end{defn}
+
+
+Each galaxy we observe at a different distance was emitted at a different time, and has its own redshift. But until we know how the light ray moves, we don't know how to compare scale factors.
+
+A light ray is a null ray for the metric \eqref{fig:metric:6}. If a light ray is moving radially towards us, $dt^2=a(t)^2dr^2$. This has two solutions, one going back into the past (the one we are interested in), and one going to the future. The past solution is:
+
+\begin{align*}
+	dt=&-a(t)dr\text{, as $t$ gets more negative, $r$ get bigger} \\
+	dr=&-\frac{dt}{a(t)}\numberthis \label{eq:dr:dt}
+\end{align*}
+
+Let us invent something an astronomer can test: what is $\frac{dN}{dz}$, the number of galaxies per unit redshift.
+
+\begin{align*}
+	\frac{dN}{dz} \propto& \frac{dr \xi(r)^2}{dz}\\
+	dz =& -\frac{a_{TODAY}}{a(t)^2}da\\
+	\frac{dN}{dz} \propto& \frac{dr \xi(r)^2}{-\frac{a_{TODAY}}{a(t)^2}\dot{a}dt}\\
+	\propto& \frac{ \xi(r)^2}{-\frac{a_{TODAY}}{a(t)^2}\dot{a}}\frac{dr}{dt}\\
+	\propto& \frac{\xi(r)^2}{\frac{a_{TODAY}}{a(t)}\dot{a}} \text{, from \eqref{eq:dr:dt}}\\
+	\propto&\frac{\xi(r)^2}{(z+1)\dot{a}} \text{, from \eqref{eq:z:a}}
+\end{align*}
 
 
 \url{https://youtu.be/eOOtl8DTmhQ?t=4013}

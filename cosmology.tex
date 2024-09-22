@@ -1283,9 +1283,39 @@ Temperature is a feature of thermal equilibrium. Thermal equilibrium is a condit
 
 Let's imagine a box with perfectly reflecting walls and put photons into it. Open wee hole, shine laser in, then close hole. If photons don't interact, box won't come into thermal equilibrium. We need \emph{scattering} to get thermal equilibrium. Charged particles will scatter effectively. If box has some electrons, photons will scatter, electrons will scatter, and particles will eventually form a thermal soup; we could say that the box has a temperature.
 
-The universe appears to be electrically neutral: $N_{e^-}=N_P$. Hydrogen atoms aren't effective scatterers, so today the universe is not in thermal equilibrium, or the different kinds of particles aren't in thermal equilibrium with each other. If electrons and protons weren't bound, they would be efficient scatterers, and the universe would have a well defined temperature. WE need a high temperature to ensure they aren't bound.
+The universe appears to be electrically neutral: $N_{e^-}=N_P$. Hydrogen atoms aren't effective scatterers, so today the universe is not in thermal equilibrium, or the different kinds of particles aren't in thermal equilibrium with each other. If electrons and protons weren't bound, they would be efficient scatterers, and the universe would have a well defined temperature. We need a high temperature to ensure they aren't bound.
 
-\url{https://youtu.be/GvhxamzVpN8?t=1132}
+Returning to our box, we have a temperature $T$, and each photon has an energy $\lambda$ and frequency $\nu$ (there are many different wavelengths in the box).
+
+Radiation characterized by the intensity: $I(t,\nu)dVd\nu$ is energy in band. First attempt (before 1900), using dimensional analysis.
+\begin{align*}
+	dim \; I(t,\nu) =& \big[\frac{E T}{V}\big]
+\end{align*}
+
+What are units of temperature? (energy per particle) $E = k_BT$--Boltzmann's constant is just a conversion factor: temperature can be treated as energy. We can ask what sort of dependence $I$ can have on $T$ and $\nu$? The only thing that will work dimensionally is:
+
+
+\begin{align*}
+	I \propto & \frac{T k_B \nu^2}{c^2} \numberthis \label{eq:raleigh:jeans}
+\end{align*}
+
+This a a disaster: $I$ grows without bound an $\nu$ grows, and the energy in the box is infinite. We need another consonant to avoid the ''ultraviolet catastrophe''. The correct formula for black body radiation is:
+ 
+\begin{align*}
+	I =& \frac{2 h \nu^3}{c^2} \frac{1}{e^\frac{h\nu}{k_BT}-1} \numberthis \label{eq:planck:black:body}
+\end{align*}
+
+For small $\nu$, \eqref{eq:planck:black:body} reduces to \eqref{eq:raleigh:jeans}, and for  $\frac{h\nu}{kT} \gg 1$ it behaves more like $e^\frac{-h\nu}{k_BT}$, averting the ultraviolet catastrophe.
+
+At the crossover point
+\begin{align*}
+	\frac{h\nu}{kT} =& 1 \text{, or}\\
+	\frac{hc}{kT} =& \lambda
+\end{align*}
+
+We see that the classical picture works well for longer wavelengths, but the quantum one is needed for smaller wavelengths. Most of the power is at the crossover point, at wavelengths inversely proportional to temperature. We can use this approximately even if system is not in equilibrium. At present the wavelength as about 1mm, which corresponds to 3K.
+
+\url{https://youtu.be/GvhxamzVpN8?t=2211}
 
 \section{Baryogenesis}
 

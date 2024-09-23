@@ -1310,12 +1310,46 @@ For small $\nu$, \eqref{eq:planck:black:body} reduces to \eqref{eq:raleigh:jeans
 At the crossover point
 \begin{align*}
 	\frac{h\nu}{kT} =& 1 \text{, or}\\
-	\frac{hc}{kT} =& \lambda
+	\frac{hc}{kT} =& \lambda \text{, the thermal wavelength associated with that temperature.}
 \end{align*}
 
-We see that the classical picture works well for longer wavelengths, but the quantum one is needed for smaller wavelengths. Most of the power is at the crossover point, at wavelengths inversely proportional to temperature. We can use this approximately even if system is not in equilibrium. At present the wavelength as about 1mm, which corresponds to 3K.
+We see that the classical picture works well for longer wavelengths, but the quantum one is needed for smaller wavelengths. Most of the power is at the crossover point, at wavelengths inversely proportional to temperature. We can use this approximately even if system is not in equilibrium. At present the wavelength as about 1mm, which corresponds to 3K: do not interpret this as saying that anything is in thermal equilibrium.
 
-\url{https://youtu.be/GvhxamzVpN8?t=2211}
+From \eqref{eq:planck:black:body}:
+
+\begin{align*}
+	I \propto & \underbrace{\frac{\nu^3}{T^3} \frac{1}{e^\frac{h\nu}{k_BT}-1}}_\text{Determines shape of curve} T^3
+\end{align*}
+
+If we change temperature, $\frac{\nu^3}{T^3} \frac{1}{e^\frac{h\nu}{k_BT}-1}$ simply rescales. This is the universal behaviour of black body radiation.
+
+Most charged particles are bound into atoms, and aren't available for scattering. The universe today is not in thermal equilibrium.
+
+When temperature is too low in the box, the radiation decouples from the charged particles.
+
+Imagine box starts at a high temperature so matter is ionized. As we expand the box it cools, temperature goes down, and particles combine into atoms. There isn't enough oomph to ionize atoms, ad the radiation decouples. The temperature of the radiation goes down, but it doesn't stay in thermal equilibrium. As box expands, the shape of the black body radiation is frozen in. Wavelengths are stretches, which is equivalent to changing temperature, but only for radiation (Molecules have a different temperature). That is why radiation today has black body form (this has been measured). \gls{gls:cmb} has been studied, and error bars are very tiny. We see universe filled with radiation that appears to be the remnant of a thermal distribution that must have been thermalized at a very high temperature when all matter was ionized.
+
+\begin{align*}
+	\frac{\lambda_{TODAY}}{\lambda_{DECOUPLING}} =& \frac{a(TODAY)}{a(DECOUPLING)}\\
+	=&\frac{T_DECOUPLING}{T_{TODAY}} \text{, \gls{gls:cmb}}\\
+	\approx& \frac{T_{ionization}}{3K} \text{, ionization energy for hydrogen=13.5 ev}
+\end{align*}
+
+The ratio of N(photons) to N(electrons) is very large: $\frac{N_\gamma}{N_e}\approx 10^8$. (Observable fact: why?)
+
+
+The probability of a photon having energy $\epsilon$ is $e^{-\frac{\epsilon}{kT}}$. What is probability that it will have the ionization energy is $e^{-\frac{\epsilon_{ion}}{kT}}$. If $\epsilon>kT$ this is very small, but there are many photons. We could ask how many photons can ionize the atom? $10^8 e^{-\frac{\epsilon_{ion}}{kT}}$. We are operating in tail of Boltzmann distribution. If $10^8 e^{-\frac{\epsilon_{ion}}{kT}} \approx 1$, there are enough photons to ionize the electrons. $10^8 e^{-\frac{\epsilon_{ion}}{kT}} \approx e^20 e^{-\frac{\epsilon_{ion}}{kT}}$
+
+(History back to decoupling has number of particles conserved).
+
+We want:
+\begin{align*}
+	\frac{\epsilon_{ion}}{kT}\approx&20\\
+	kT \approx& \frac{1}{20}\epsilon_{ion}
+\end{align*}
+
+This will ensure that there are enough high energy photons to ionize everything.
+\url{https://youtu.be/GvhxamzVpN8?t=4293}
 
 \section{Baryogenesis}
 

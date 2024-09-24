@@ -53,15 +53,58 @@
 	The notes were created using TexStudio\cite{TexStudio}, and the bibliography using JabRef\cite{Jabref}.
 \end{abstract}
 
-\tableofcontents
-\listoffigures
-\listoftables
-\listoftheorems
+
+% Glossary entries
 
 
 \newacronym{gls:cmb}{CMB}{Cosmic Microwave Background}
 
 \newacronym{gls:FLRW}{FLRW}{Friedmann-Lema\^itre-Robertson-Walker}
+
+\newglossaryentry{gls:kappa}{
+	name={\ensuremath{\kappa}},
+	description={Indicates curvature: \{0,+1,-1\}}
+}
+
+\newglossaryentry{gls:kB}{
+	name={\ensuremath{k_B}},
+	description={Boltzmann's Constant}
+}
+
+\newglossaryentry{gls:Lambda}{
+	name={\ensuremath{\Lambda}},
+	description={Cosmological Constant}
+}
+
+\newglossaryentry{gls:lambda}{
+	name={\ensuremath{\lambda}},
+	description={wavelength}
+}
+
+\newglossaryentry{gls:nu}{
+	name={\ensuremath{\nu}},
+	description={Frequency}
+}
+
+\newglossaryentry{gls:n:gamma}{
+	name={\ensuremath{n_{\gamma}}},
+	description={Number of photons}
+}
+
+\newglossaryentry{gls:n:positrons}{
+	name={\ensuremath{n_{e^+}}},
+	description={Number of positrons}
+}
+
+\newglossaryentry{gls:n:electrons}{
+	name={\ensuremath{n_{e^-}}},
+	description={Number of electrons}
+}
+
+\newglossaryentry{gls:n:proton}{
+	name={\ensuremath{n_P}},
+	description={Number of protons}
+}
 
 \newglossaryentry{gls:isotropic}{
 	name={isotropic},
@@ -77,6 +120,11 @@
 \newglossaryentry{gls:peculiar:velocity}{
 	name={peculiar velocity},
 	description={The components of a galaxy's velocity that deviate from the Hubble flow. According to Hubble's Law, galaxies recede from us at speeds proportional to their distance from us.\cite{enwiki:1192597030}}}
+
+\tableofcontents
+\listoffigures
+\listoftables
+\listoftheorems
 			
 \section{The expanding (Newtonian) universe}\label{sec:expanding:newton}
 
@@ -387,17 +435,17 @@ The matter dominated universe was the classic cosmology until other things were 
 
 \subsection{Radiation dominated universe}\label{sec:radiation:dominated}
 
-We do have to think about relativity, but there is only one important thing: $E=mc^2$. We rewrite Equation \eqref{eq:full:friedmann} to show the connection with general relativity, and define $\kappa = C$:
+We do have to think about relativity, but there is only one important thing: $E=mc^2$. We rewrite Equation \eqref{eq:full:friedmann} to show the connection with general relativity, and define $\gls{gls:kappa} = C$:
 
 \begin{align*}
-	\underbrace{\big(\frac{\dot{a}}{a}\big)^2  - \frac{\kappa}{a^2}}_\text{Terms involving geometry}=& \underbrace{\frac{8\pi}{3} G \rho}_\text{Matter and energy} \numberthis \label{eq:geometry:energy}
+	\underbrace{\big(\frac{\dot{a}}{a}\big)^2  - \frac{\gls{gls:kappa}}{a^2}}_\text{Terms involving geometry}=& \underbrace{\frac{8\pi}{3} G \rho}_\text{Matter and energy} \numberthis \label{eq:geometry:energy}
 \end{align*}
 We'll replace mass density with energy density. Energy = $Mc^2 + $ Radiation (and we will choose units such that $c=1$).
 
 To compute radiation density, take a box, volume $a^3$, and assume a certain number of photons.
 
 \begin{figure}[H]
-	\caption{Unit box with photons: $\lambda$ increases as box expands adiabatically }\label{fig:unit:box}
+	\caption{Unit box with photons: \gls{gls:lambda} increases as box expands adiabatically }\label{fig:unit:box}
 	\begin{center}
 			\begin{subfigure}[t]{0.45\textwidth}
 				\begin{center}
@@ -408,7 +456,7 @@ To compute radiation density, take a box, volume $a^3$, and assume a certain num
 			\;
 			\begin{subfigure}[t]{0.45\textwidth}
 				\begin{center}
-					\caption{An analogy with standing waves. Number of nodes (zero crossings) is an adiabatic invariant:  it has to be an integer. So $\lambda$ stretches with circle.}
+					\caption{An analogy with standing waves. Number of nodes (zero crossings) is an adiabatic invariant:  it has to be an integer. So $\gls{gls:Lambda}$ stretches with circle.}
 					\includegraphics[width=\textwidth]{cosmo-2-standing-waves}
 				\end{center}
 			\end{subfigure}	
@@ -417,7 +465,7 @@ To compute radiation density, take a box, volume $a^3$, and assume a certain num
 
 \begin{align*}
 	V =& a^3\\
-	E =& \frac{h c}{\lambda}
+	E =& \frac{h c}{\gls{gls:Lambda}}
 \end{align*}
 
 We have to do some more quantum mechanics of classical electromagnetism to justify the statement in Figure \ref{fig:unit:box}. For the time being, take it as a given. So energy in box decreases: $E\propto \frac{1}{a}$ and $\rho\propto \frac{1}{a^4}$. We substitute in \eqref{eq:geometry:energy}:
@@ -476,14 +524,14 @@ There are two ways to think about time translation symmetry.
 There are three cases in \eqref{eq:geometry:energy}.
 
 \begin{align*}
-	\big(\frac{\dot{a}}{a}\big)^2  =& \frac{8\pi\rho G}{3} - \frac{\kappa}{a^2} 
+	\big(\frac{\dot{a}}{a}\big)^2  =& \frac{8\pi\rho G}{3} - \frac{\gls{gls:kappa}}{a^2} 
 \end{align*}
 
-In Section \ref{sec:geometries}, we will see that $\kappa$ is connected with geometry.
+In Section \ref{sec:geometries}, we will see that $\gls{gls:kappa}$ is connected with geometry.
 \begin{itemize}
-	\item If $\kappa=0$, space is flat.
-	\item If $\kappa>0$, space is curved like a sphere, and it compact.
-	\item If $\kappa<0$, space is curved negatively.
+	\item If $\gls{gls:kappa}=0$, space is flat.
+	\item If $\gls{gls:kappa}>0$, space is curved like a sphere, and it compact.
+	\item If $\gls{gls:kappa}<0$, space is curved negatively.
 \end{itemize}
 
 
@@ -735,9 +783,9 @@ Let us assume that space has one of the 3 homogeneous and isotropic geometries d
 
 General Relativity starts with a metric, and we will assume that space and time aren't mixed with each other in the metric\footnote{This is a consequence of homogeneity and isotropy}. The metric has one of these three forms:
 \begin{align*}
-	ds^2 =& - dt^2 + a(t)^2 d\Omega_3^2 &\kappa=1\text{, or}\\
-	ds^2 =& - dt^2 + a(t)^2 \big(dx^2 + dy^2 +dz^2\big) &\kappa=0\text{, or}\\
-	ds^2 =& - dt^2 + a(t)^2 d\mathcal{H}_3^2 &\kappa=-1	\text{ }
+	ds^2 =& - dt^2 + a(t)^2 d\Omega_3^2 &\gls{gls:kappa}=1\text{, or}\\
+	ds^2 =& - dt^2 + a(t)^2 \big(dx^2 + dy^2 +dz^2\big) &\gls{gls:kappa}=0\text{, or}\\
+	ds^2 =& - dt^2 + a(t)^2 d\mathcal{H}_3^2 &\gls{gls:kappa}=-1	\text{ }
 \end{align*}
 In all three cases:
 \begin{align*}
@@ -762,11 +810,11 @@ The curvature has two parts, one of which involves second derivatives of the met
 There are derivatives by time, and by space. The space ones are connected with curvature of space, which scales as $\frac{1}{R}$; the time ones with how things are changing with time, i.e. $a(t)$. Einstein's Field Equation, \eqref{eq:einstein:field}, reduces to:
 
 \begin{align*}
-	\big(\frac{\dot{a}}{a}\big)^2 + \frac{\kappa}{a^2}=& \frac{8\pi}{3} \rho \text{, or}\\
-	\big(\frac{\dot{a}}{a}\big)^2 =& \frac{8\pi G}{3}\rho - \frac{\kappa}{a^2} \text{, c.f. Equation \eqref{eq:geometry:energy}} \numberthis \label{eq:einstein:equation}
+	\big(\frac{\dot{a}}{a}\big)^2 + \frac{\gls{gls:kappa}}{a^2}=& \frac{8\pi}{3} \rho \text{, or}\\
+	\big(\frac{\dot{a}}{a}\big)^2 =& \frac{8\pi G}{3}\rho - \frac{\gls{gls:kappa}}{a^2} \text{, c.f. Equation \eqref{eq:geometry:energy}} \numberthis \label{eq:einstein:equation}
 \end{align*}
 
-We can interpret $\kappa$ as curvature, rather than energy.
+We can interpret $\gls{gls:kappa}$ as curvature, rather than energy.
 
 Why does General Relativity give the same answer as Newton? If we just look at a small region of curved space, it looks flat. Once we realize that equations are the same for a small piece and a large one, we see that we must reproduce Newton's equations. In Newton's view, $\rho$ is the mass density, which if accurate if everything is moving at speeds much less than light. On the other hand, the Einstein equations are more general than Newton's: they apply to fast moving particles, and photons.
 
@@ -929,10 +977,10 @@ Vacuum energy comes from quantum field theory, and gives rise to negative pressu
 
 The vacuum energy density is a constant; it is independent of $a(t)$:
 \begin{align*}
-	\rho_0 =& \Lambda \frac{3}{8 \pi G}
+	\rho_0 =& \gls{gls:Lambda} \frac{3}{8 \pi G}
 \end{align*}
 
-$\Lambda$ is known as the ''cosmological constant'', or as ''dark energy''. For the significance of the factor $\frac{3}{8 \pi G}$, see \eqref{eq:full:friedmann}
+$\gls{gls:Lambda}$ is known as the ''cosmological constant'', or as ''dark energy''. For the significance of the factor $\frac{3}{8 \pi G}$, see \eqref{eq:full:friedmann}
 
 We shall work out the equation of state.
 \begin{align*}
@@ -946,19 +994,19 @@ When you read that astronomers are measuring $w$, and discovering that $w$ is cl
 
 Vacuum energy can be positive or negative, but, in both cases, pressure and density have opposite sign. We don't know the value of $\rho_0$: there are too many contributions.
 
-Let us study the case where the vacuum energy density is the \emph{only} density. Earlier we look at a pure matter dominated universe, Section \ref{sec:matter:dominated}, and now we'll look at a pure vacuum energy universe. There are six cases for non-zero $\Lambda$ and  for $\kappa$--Table \ref{table eq:options:lambda:kappa}.
+Let us study the case where the vacuum energy density is the \emph{only} density. Earlier we look at a pure matter dominated universe, Section \ref{sec:matter:dominated}, and now we'll look at a pure vacuum energy universe. There are six cases for non-zero $\gls{gls:Lambda}$ and  for $\gls{gls:kappa}$--Table \ref{table eq:options:lambda:kappa}.
 
 The Friedmann equation, \eqref{eq:full:friedmann}, becomes:
 \begin{align*}
-	\big(\frac{\dot{a}}{a}\big)^2  =& \frac{8\pi G}{3} \rho_0 - \frac{\kappa}{a^2}\\
-	=& \Lambda - \frac{\kappa}{a^2} \numberthis \label{eq:friedmann:avec:lambda}
+	\big(\frac{\dot{a}}{a}\big)^2  =& \frac{8\pi G}{3} \rho_0 - \frac{\gls{gls:kappa}}{a^2}\\
+	=& \gls{gls:Lambda} - \frac{\gls{gls:kappa}}{a^2} \numberthis \label{eq:friedmann:avec:lambda}
 \end{align*}
 
 \begin{table}[H]
 	\begin{center}
-		\caption{Options for $\Lambda$ and $\kappa$}\label{table eq:options:lambda:kappa}
+		\caption{Options for $\gls{gls:Lambda}$ and \gls{gls:kappa}}\label{table eq:options:lambda:kappa}
 		\begin{tabular}{||l|l|p{5cm}||} \hline
-			$\Lambda$ & $\kappa$ & Remarks\\ \hline
+			$\gls{gls:Lambda}$ & $\gls{gls:kappa}$ & Remarks\\ \hline
 			0 & +1 & Already done\\\hline
 			0 & 0 & Already done\\\hline
 			0 & -1 & Already done\\\hline
@@ -973,41 +1021,41 @@ The Friedmann equation, \eqref{eq:full:friedmann}, becomes:
 
 \subsubsection{Flat space, positive cosmological constant}\label{sec:lambda:pos:k:0}
 
-Substituting  $\Lambda>0$ and $\kappa=0$ in Friedmann's equation \eqref{eq:friedmann:avec:lambda} gives:
+Substituting  $\gls{gls:Lambda}>0$ and $\gls{gls:kappa}=0$ in Friedmann's equation \eqref{eq:friedmann:avec:lambda} gives:
 \begin{align*}
-	\big(\frac{\dot{a}}{a}\big)^2  =& \Lambda\\ 
-	\dot{a} =& \sqrt{\Lambda} a\\
-	a(t) \propto& e^{\sqrt{\Lambda}t} \text{, universe expands exponentially}
+	\big(\frac{\dot{a}}{a}\big)^2  =& \gls{gls:Lambda}\\ 
+	\dot{a} =& \sqrt{\gls{gls:Lambda}} a\\
+	a(t) \propto& e^{\sqrt{\gls{gls:Lambda}}t} \text{, universe expands exponentially}
 \end{align*}
- The Hubble constant is $\sqrt{\Lambda}$, and $
+ The Hubble constant is $\sqrt{\gls{gls:Lambda}}$, and $
  a(t) \propto e^{Ht}$. This is known as ''de Sitter space''.
  
  Let us mix in some matter:
  \begin{align*}
- 	\big(\frac{\dot{a}}{a}\big)^2  =& \Lambda + \frac{C}{a^3}
+ 	\big(\frac{\dot{a}}{a}\big)^2  =& \gls{gls:Lambda} + \frac{C}{a^3}
  \end{align*}
  
- In early times, $a$ is small, and $\frac{C}{a^3}$ will dominate; later, $a$ is large and $\Lambda$ will dominate. Right now the two energies compete (for last 2-3 billions years, dark energy has started to become more important. Observation shows that it is accelerating, and, as precision increases, it looks more like exponential acceleration. )
+ In early times, $a$ is small, and $\frac{C}{a^3}$ will dominate; later, $a$ is large and $\gls{gls:Lambda}$ will dominate. Right now the two energies compete (for last 2-3 billions years, dark energy has started to become more important. Observation shows that it is accelerating, and, as precision increases, it looks more like exponential acceleration. )
  
  Positive vacuum energy comes from bosons, negative from fermions. LS says it is a mystery that vacuum energy is so low.
  
  \subsubsection{Positive curved space, positive cosmological constant}\label{sec:lambda:pos:k:1}
  
- Substituting $\Lambda>0$ \& $\kappa>0$ in the Friedmann equation, \eqref{eq:full:friedmann}, gives:
+ Substituting $\gls{gls:Lambda}>0$ \& $\gls{gls:kappa}>0$ in the Friedmann equation, \eqref{eq:full:friedmann}, gives:
  \begin{align*}
- 	\big(\frac{\dot{a}}{a}\big)^2  =& \Lambda - \frac{1}{a^2}\\
- 	\dot{a}^2 - \Lambda a^2 =&-1
+ 	\big(\frac{\dot{a}}{a}\big)^2  =& \gls{gls:Lambda} - \frac{1}{a^2}\\
+ 	\dot{a}^2 - \gls{gls:Lambda} a^2 =&-1
  \end{align*}
- Think of $a(t)$ as the coordinate of a particle on a line. $\dot{a}^2$ becomes twice the kinetic energy; $-\Lambda a^2$ the potential energy plotted in Figure \ref{fig:cosmo-5-pe}. Think of $a$ starting large, going up hill, then rolling back. 
+ Think of $a(t)$ as the coordinate of a particle on a line. $\dot{a}^2$ becomes twice the kinetic energy; $-\gls{gls:Lambda} a^2$ the potential energy plotted in Figure \ref{fig:cosmo-5-pe}. Think of $a$ starting large, going up hill, then rolling back. 
  
  
  We can solve to get:
  \begin{align*}
- 	a(t) =& \frac{1}{\sqrt{\Lambda}} \cosh {(\sqrt{\Lambda}t)}
+ 	a(t) =& \frac{1}{\sqrt{\gls{gls:Lambda}}} \cosh {(\sqrt{\gls{gls:Lambda}}t)}
  \end{align*}
  
  \begin{figure}[H]
- 	\caption{$\dot{a}^2 - \Lambda a^2 =-1$}
+ 	\caption{$\dot{a}^2 - \gls{gls:Lambda} a^2 =-1$}
  	 \begin{subfigure}[t]{0.45\textwidth}
  		\caption{Potential Energy}\label{fig:cosmo-5-pe}
  		\begin{tikzpicture}[scale=0.5]
@@ -1027,7 +1075,7 @@ Substituting  $\Lambda>0$ and $\kappa=0$ in Friedmann's equation \eqref{eq:fried
  	\end{subfigure}
  	\;
  	\begin{subfigure}[t]{0.45\textwidth}
- 		\caption{'$a(t) = \frac{1}{\sqrt{\Lambda}} \cosh {(\sqrt{\Lambda}t)}$'}
+ 		\caption{'$a(t) = \frac{1}{\sqrt{\gls{gls:Lambda}}} \cosh {(\sqrt{\gls{gls:Lambda}}t)}$'}
  		\begin{tikzpicture}[scale=0.5]
  			\begin{axis}[
  				trig format=rad, % HERE
@@ -1084,7 +1132,7 @@ We will look at the connection between experimental facts and our models.
 \subsection{Review}
 \begin{align*}
 	\big(\frac{\dot{a}}{a}\big)^2 =& H^2 \text{, Friedmann, Hubble}\\
-	=& \frac{8\pi G}{3} \rho - \frac{\kappa}{a^2}
+	=& \frac{8\pi G}{3} \rho - \frac{\gls{gls:kappa}}{a^2}
 \end{align*}
 
 This changes with time: when people speak of the ''Hubble constant'' they mean today's value.
@@ -1092,15 +1140,15 @@ This changes with time: when people speak of the ''Hubble constant'' they mean t
 Our metric is:
 \begin{align*}
 	ds^2 =& - dt^2 +a(t)^2\big[dr^2 + \xi^2(r) d\Omega^2\big] \text{, where} \numberthis \label{fig:metric:6}\\
-	\xi(r)=&\sin{r}& \text{ if } \kappa = +1\\
-	\xi(r)=&\sinh{r}& \text{ if }\kappa = -1\\
-	\xi(r)=&r& \text{ if } \kappa = 0
+	\xi(r)=&\sin{r}& \text{ if } \gls{gls:kappa} = +1\\
+	\xi(r)=&\sinh{r}& \text{ if }\gls{gls:kappa} = -1\\
+	\xi(r)=&r& \text{ if } \gls{gls:kappa} = 0
 \end{align*} $\xi$ depends on the geometry.
 
 There are only 3 contributions to $\rho$ known.
 
 \begin{align*}
-	- \frac{\kappa}{a^2} + \frac{8 \pi G}{3}\rho = \underbrace{\frac{C_R}{a^4}}_\text{Radiation} + \underbrace{\frac{C_M}{a^3}}_\text{Matter}+ \underbrace{\Lambda}_\text{Vacuum energy} - \frac{\kappa}{a^2}\\
+	- \frac{\gls{gls:kappa}}{a^2} + \frac{8 \pi G}{3}\rho = \underbrace{\frac{C_R}{a^4}}_\text{Radiation} + \underbrace{\frac{C_M}{a^3}}_\text{Matter}+ \underbrace{\gls{gls:Lambda}}_\text{Vacuum energy} - \frac{\gls{gls:kappa}}{a^2}\\
 	=&H^2 \numberthis \label{eq:hubble:contraint}
 \end{align*}
 
@@ -1116,12 +1164,12 @@ Equation \eqref{eq:hubble:contraint} is a constraint. Each term has some value, 
 	\item Forget vacuum energy for the time being. We are being historical, so leave out dark matter and dark energy.
 \end{itemize}
 
-Today we call the ratios $\Omega_R$, $\Omega_m$, $\Omega_{\Lambda}$, and $\Omega_{\kappa}$,normalized so:
+Today we call the ratios $\Omega_R$, $\Omega_m$, $\Omega_{\gls{gls:Lambda}}$, and $\Omega_{\gls{gls:kappa}}$,normalized so:
 \begin{align*}
-	\Omega_R+\Omega_m+\Omega_{\Lambda}+\Omega_{\kappa}=&1
+	\Omega_R+\Omega_m+\Omega_{\gls{gls:Lambda}}+\Omega_{\gls{gls:kappa}}=&1
 \end{align*}
 
-When LS was a student, $\Omega_R$ was negligible, $\Omega_{\Lambda}$ was unknown, and Hubble constant was 20 times larger than $\Omega_m$, so it was assumed that $\Omega_{\kappa}\approx 1$. The meant on open, infinite universe with $k\approx -1$. For most of the time $\frac{c_M}{a^3}$ competes favorably with $\frac{\kappa}{a^2}$
+When LS was a student, $\Omega_R$ was negligible, $\Omega_{\gls{gls:Lambda}}$ was unknown, and Hubble constant was 20 times larger than $\Omega_m$, so it was assumed that $\Omega_{\gls{gls:kappa}}\approx 1$. The meant on open, infinite universe with $k\approx -1$. For most of the time $\frac{c_M}{a^3}$ competes favorably with $\frac{\gls{gls:kappa}}{a^2}$
 
 $H$ has another meaning in a matter dominated universe, where $a\propto t^\frac{2}{3}$. Also:
 \begin{align*}
@@ -1190,12 +1238,12 @@ Most physicists think it is particles. Since Newtonian gravity works find in our
 How do we test the following equation?
 
 \begin{align*}
-	\frac{C_M}{a^3} - \frac{\kappa}{a^3} = H^2
+	\frac{C_M}{a^3} - \frac{\gls{gls:kappa}}{a^3} = H^2
 \end{align*}
 
-A model consists of $\kappa$ and an equadrtion of state, for which we can substitute a history, $a(t)$. We can measure red-shift, and luminosity.
+A model consists of $\gls{gls:kappa}$ and an equadrtion of state, for which we can substitute a history, $a(t)$. We can measure red-shift, and luminosity.
 
-To start, assume we can ignore time. how can we measure $\kappa$? Meausure number of galaxies of a given brightness, as a function of distance.
+To start, assume we can ignore time. how can we measure $\gls{gls:kappa}$? Meausure number of galaxies of a given brightness, as a function of distance.
 
 \begin{itemize}
 	\item In a flat space, the number of galaxies in a shell of thickness $dr$ goes as $r^2$.
@@ -1211,7 +1259,7 @@ The evidence favours a hyperbolic space, as a function of red-shift. What about 
 
 What about number of galaxies as a function of red-shift?
 
-Let $\lambda_{e}mitted$ denote the wavelength of light is emitted from a source. This may or may not be the wavelength that is detected: Doppler shift is one possible reason; gravitational shift due to a black hole is another; expansion of the universe is equivalent to the Doppler shift, but it is what we are interested in.
+Let $\gls{gls:Lambda}_{e}mitted$ denote the wavelength of light is emitted from a source. This may or may not be the wavelength that is detected: Doppler shift is one possible reason; gravitational shift due to a black hole is another; expansion of the universe is equivalent to the Doppler shift, but it is what we are interested in.
 
 \begin{figure}[H]
 	\caption[Map of the Universe]{Map of the Universe. Vertical lines correspond to equal values of $r$, wavy line is light ray, and we see a number of galaxies. They have different  scale factors, $a(t)$: c.f. $a_{TODAY}$. Light emitted at point with $a(t)$ has to stretch to get to where we observe it, by a factor of $\frac{a_{TODAY}}{a_t}$.}
@@ -1220,7 +1268,7 @@ Let $\lambda_{e}mitted$ denote the wavelength of light is emitted from a source.
 
 \begin{defn}[Redshift]
 	\begin{align*}
-		z =& \frac{\lambda_{Detected}}{\lambda_{Emitted}}-1 \text{, $-1$ for historical reasons}\\ 
+		z =& \frac{\gls{gls:Lambda}_{Detected}}{\gls{gls:Lambda}_{Emitted}}-1 \text{, $-1$ for historical reasons}\\ 
 		=&\frac{a_{TODAY}}{a_t} - 1 \numberthis \label{eq:z:a}
 	\end{align*}
 \end{defn}
@@ -1246,28 +1294,28 @@ Let us invent something an astronomer can test: what is $\frac{dN}{dz}$, the num
 	\propto&\frac{\xi(r)^2}{(z+1)\dot{a}} \text{, from \eqref{eq:z:a}} \numberthis \label{dN:dz}
 \end{align*}
 
-There is nothing we can do with this until we make a model. We will take the matter dominated universe, and set $\kappa=-1$.
+There is nothing we can do with this until we make a model. We will take the matter dominated universe, and set $\gls{gls:kappa}=-1$.
 
 \begin{align*}
 	a \propto& t^\frac{2}{3}\\
 	\dot{a}& \frac{2}{3}t^\frac{1}{3}
 \end{align*}
 
-Now $a$, $\dot{a}$, $r$ can all be expressed in terms of $z$, so we can express the right hand side of \eqref{eq:z:a} in terms of $z$ (only because we have a model). Now $\xi(r)$ increases exponentially, which is easy to detect: it makes an anomalously large galaxies\footnote{Galaxies is used to mean standard candles, and the best ones are supernovae} at large redshift. You can convert a $\kappa$ and equation of state\footnote{The $\Omega s$ form part of the model.} into a prediction for the number of galaxies at a given redshift. Given this, and the relationship between luminosity and redshift we can work out the complete history of the universe, and determine $C_R$.
+Now $a$, $\dot{a}$, $r$ can all be expressed in terms of $z$, so we can express the right hand side of \eqref{eq:z:a} in terms of $z$ (only because we have a model). Now $\xi(r)$ increases exponentially, which is easy to detect: it makes an anomalously large galaxies\footnote{Galaxies is used to mean standard candles, and the best ones are supernovae} at large redshift. You can convert a $\gls{gls:kappa}$ and equation of state\footnote{The $\Omega s$ form part of the model.} into a prediction for the number of galaxies at a given redshift. Given this, and the relationship between luminosity and redshift we can work out the complete history of the universe, and determine $C_R$.
 
- Observations over the last 50 years are inconsistent with matter dominated universe with negative $\kappa$. Best fit today is:
+ Observations over the last 50 years are inconsistent with matter dominated universe with negative $\gls{gls:kappa}$. Best fit today is:
  \begin{align*}
  	\Omega_R=&0\\
  	\Omega_m\approx&0.3 \text{ including dark matter}\\
- 	\Omega_{\Lambda}\approx&0.7\\
- 	\Omega_{\kappa}\approx&\pm0.01\\
+ 	\Omega_{\gls{gls:Lambda}}\approx&0.7\\
+ 	\Omega_{\gls{gls:kappa}}\approx&\pm0.01\\
  \end{align*}
 If you vary these numbers by more than one percent, model fails to match data. Also we can determine $\Omega_R$ and $\Omega_m$ (subject to assumption about dark matter), so we only need to search on other two.
 
 The values above are today's values:
 \begin{itemize}
 	\item Long in the past $\Omega_R\approx1$; 
-	\item long in the future $\Omega_{\Lambda}\approx1$
+	\item long in the future $\Omega_{\gls{gls:Lambda}}\approx1$
 \end{itemize} 
 
 
@@ -1275,42 +1323,45 @@ We get a $\pm 10\%$ model with supernova data; add in the \gls{gls:cmb} we get $
 
 \section{Temperature History of the Universe}
 
-Last week we saw that the best way to estimate the rough parameters of the expanding universe is to begin with a model, then calculate its consequences; if that doesn't work so well, adjust parameters and keep going until we agree with data. The model consists of a time history for the scale factor, and a specification for the geometry. Until we get to the \gls{gls:cmb} and its details, we typically don't see deep enough and far enough that the $\kappa$ is critical to our analysis. Counting galaxies and supernovae with redshifts that are no bigger than 7, they aren't sensitive to curvature. That is both good and bad: it is bad because we can't deduce the curvature; but since it isn't sensitive to curvature, we don't need to know its value to work out the history of the scale factor. We can work out the relationship between brightness and distance, and the number of objects with a given redshift. Data is consistent with negligible curvature and about 70\% dark energy.
+\subsection{Review}
+Last week we saw that the best way to estimate the rough parameters of the expanding universe is to begin with a model, then calculate its consequences; if that doesn't work so well, adjust parameters and keep going until we agree with data. The model consists of a time history for the scale factor, and a specification for the geometry. Until we get to the \gls{gls:cmb} and its details, we typically don't see deep enough and far enough that the $\gls{gls:kappa}$ is critical to our analysis. Counting galaxies and supernovae with redshifts that are no bigger than 7, they aren't sensitive to curvature. That is both good and bad: it is bad because we can't deduce the curvature; but since it isn't sensitive to curvature, we don't need to know its value to work out the history of the scale factor. We can work out the relationship between brightness and distance, and the number of objects with a given redshift. Data is consistent with negligible curvature and about 70\% dark energy.
 
 We have to look deep into \glsdesc{gls:cmb} to get more.
+
+\subsection{Black Body Radiation}
 
 Temperature is a feature of thermal equilibrium. Thermal equilibrium is a condition for a system that is established after a period of time by scattering.
 
 Let's imagine a box with perfectly reflecting walls and put photons into it. Open wee hole, shine laser in, then close hole. If photons don't interact, box won't come into thermal equilibrium. We need \emph{scattering} to get thermal equilibrium. Charged particles will scatter effectively. If box has some electrons, photons will scatter, electrons will scatter, and particles will eventually form a thermal soup; we could say that the box has a temperature.
 
-The universe appears to be electrically neutral: $N_{e^-}=N_P$. Hydrogen atoms aren't effective scatterers, so today the universe is not in thermal equilibrium, or the different kinds of particles aren't in thermal equilibrium with each other. If electrons and protons weren't bound, they would be efficient scatterers, and the universe would have a well defined temperature. We need a high temperature to ensure they aren't bound.
+The universe appears to be electrically neutral: $\gls{gls:n:electrons}=\gls{gls:n:proton}$. Hydrogen atoms aren't effective scatterers, so today the universe is not in thermal equilibrium, or the different kinds of particles aren't in thermal equilibrium with each other. If electrons and protons weren't bound, they would be efficient scatterers, and the universe would have a well defined temperature. We need a high temperature to ensure they aren't bound.
 
-Returning to our box, we have a temperature $T$, and each photon has an energy $\lambda$ and frequency $\nu$ (there are many different wavelengths in the box).
+Returning to our box, we have a temperature $T$, and each photon has an wavelength \gls{gls:lambda} and frequency \gls{gls:nu} (there are many different wavelengths in the box).
 
-Radiation characterized by the intensity: $I(t,\nu)dVd\nu$ is energy in band. First attempt (before 1900), using dimensional analysis.
+Radiation is characterized by the intensity: $I(t,\nu)dVd\nu$ is energy per unit volume in band of frequencies $d\gls{gls:nu}$. First attempt (before 1900), using dimensional analysis.
 \begin{align*}
 	dim \; I(t,\nu) =& \big[\frac{E T}{V}\big]
 \end{align*}
 
-What are units of temperature? (energy per particle) $E = k_BT$--Boltzmann's constant is just a conversion factor: temperature can be treated as energy. We can ask what sort of dependence $I$ can have on $T$ and $\nu$? The only thing that will work dimensionally is:
+What are units of temperature--i.e. energy per particle? $E = \gls{gls:kB}T$ (Boltzmann's constant is just a conversion factor: temperature can be treated as energy). We can ask what sort of dependence $I$ can have on $T$ and \gls{gls:nu}? The only thing that will work dimensionally is:
 
 
 \begin{align*}
-	I \propto & \frac{T k_B \nu^2}{c^2} \numberthis \label{eq:raleigh:jeans}
+	I \propto & \frac{T \gls{gls:kB} \nu^2}{c^2} \numberthis \label{eq:raleigh:jeans}
 \end{align*}
 
-This a a disaster: $I$ grows without bound an $\nu$ grows, and the energy in the box is infinite. We need another consonant to avoid the ''ultraviolet catastrophe''. The correct formula for black body radiation is:
+This a a disaster: $I$ grows without bound as \gls{gls:nu} grows, and the energy in the box is infinite. We need another constant to avoid the ''ultraviolet catastrophe''. The correct formula for black body radiation is:
  
 \begin{align*}
-	I =& \frac{2 h \nu^3}{c^2} \frac{1}{e^\frac{h\nu}{k_BT}-1} \numberthis \label{eq:planck:black:body}
+	I =& \frac{2 h \nu^3}{c^2} \frac{1}{e^\frac{h\nu}{\gls{gls:kB}T}-1} \numberthis \label{eq:planck:black:body}
 \end{align*}
 
-For small $\nu$, \eqref{eq:planck:black:body} reduces to \eqref{eq:raleigh:jeans}, and for  $\frac{h\nu}{kT} \gg 1$ it behaves more like $e^\frac{-h\nu}{k_BT}$, averting the ultraviolet catastrophe.
+For small \gls{gls:nu}, \eqref{eq:planck:black:body} reduces to \eqref{eq:raleigh:jeans}, and for  $\frac{h\nu}{\gls{gls:kB}T} \gg 1$ it behaves more like $e^\frac{-h\nu}{\gls{gls:kB}T}$, averting the ultraviolet catastrophe.
 
 At the crossover point
 \begin{align*}
-	\frac{h\nu}{kT} =& 1 \text{, or}\\
-	\frac{hc}{kT} =& \lambda \text{, the thermal wavelength associated with that temperature.}
+	\frac{h\nu}{\gls{gls:kB}T} =& 1 \text{, or}\\
+	\frac{hc}{\gls{gls:kB}T} =& \gls{gls:lambda} \text{, the thermal wavelength associated with  temperature $T$.}
 \end{align*}
 
 We see that the classical picture works well for longer wavelengths, but the quantum one is needed for smaller wavelengths. Most of the power is at the crossover point, at wavelengths inversely proportional to temperature. We can use this approximately even if system is not in equilibrium. At present the wavelength as about 1mm, which corresponds to 3K: do not interpret this as saying that anything is in thermal equilibrium.
@@ -1318,27 +1369,33 @@ We see that the classical picture works well for longer wavelengths, but the qua
 From \eqref{eq:planck:black:body}:
 
 \begin{align*}
-	I \propto & \underbrace{\frac{\nu^3}{T^3} \frac{1}{e^\frac{h\nu}{k_BT}-1}}_\text{Determines shape of curve} T^3
+	I \propto & \underbrace{\frac{\nu^3}{T^3} \frac{1}{e^\frac{h\nu}{\gls{gls:kB}T}-1}}_\text{Determines shape of curve} T^3
 \end{align*}
 
-If we change temperature, $\frac{\nu^3}{T^3} \frac{1}{e^\frac{h\nu}{k_BT}-1}$ simply rescales. This is the universal behaviour of black body radiation.
+If we change temperature, $\frac{\nu^3}{T^3} \frac{1}{e^\frac{h\nu}{\gls{gls:kB}T}-1}$ simply rescales. This is the universal behaviour of black body radiation.
 
+\subsection{Decoupling}
 Most charged particles are bound into atoms, and aren't available for scattering. The universe today is not in thermal equilibrium.
 
-When temperature is too low in the box, the radiation decouples from the charged particles.
+When the temperature is too low in the box, the radiation decouples from the charged particles.
 
-Imagine box starts at a high temperature so matter is ionized. As we expand the box it cools, temperature goes down, and particles combine into atoms. There isn't enough oomph to ionize atoms, ad the radiation decouples. The temperature of the radiation goes down, but it doesn't stay in thermal equilibrium. As box expands, the shape of the black body radiation is frozen in. Wavelengths are stretches, which is equivalent to changing temperature, but only for radiation (Molecules have a different temperature). That is why radiation today has black body form (this has been measured). \gls{gls:cmb} has been studied, and error bars are very tiny. We see universe filled with radiation that appears to be the remnant of a thermal distribution that must have been thermalized at a very high temperature when all matter was ionized.
+Imagine the box starts at a high temperature so matter is ionized. As we expand the box it cools, the temperature goes down, and the particles combine into atoms. There isn't enough oomph to ionize atoms, and the radiation decouples. The temperature of the radiation goes down, but it doesn't stay in thermal equilibrium. As the box expands, the shape of the black body radiation is frozen in. Wavelengths are stretched, which is equivalent to changing temperature, but only for radiation (Molecules have a different temperature). That is why radiation today has black body form (this has been measured). \gls{gls:cmb} has been studied, and error bars are very tiny. We see a universe filled with radiation that appears to be the remnant of a thermal distribution that must have been thermalized at a very high temperature when all matter was ionized.
 
 \begin{align*}
-	\frac{\lambda_{TODAY}}{\lambda_{DECOUPLING}} =& \frac{a(TODAY)}{a(DECOUPLING)}\\
-	=&\frac{T_DECOUPLING}{T_{TODAY}} \text{, \gls{gls:cmb}}\\
+	\frac{\gls{gls:Lambda}_{TODAY}}{\gls{gls:Lambda}_{DECOUPLING}} =& \frac{a(TODAY)}{a(DECOUPLING)}\\
+	=&\frac{T_{DECOUPLING}}{T_{TODAY}} \text{, \glsdesc{gls:cmb}}\\
 	\approx& \frac{T_{ionization}}{3K} \text{, ionization energy for hydrogen=13.5 ev}
 \end{align*}
 
-The ratio of N(photons) to N(electrons) is very large: $\frac{N_\gamma}{N_e}\approx 10^8$. (Observable fact: why?)
+The ratio of photons to electrons is very large: $\frac{\gls{gls:n:gamma}}{\gls{gls:n:electrons}}\approx 10^8$. (Observable fact: why?)
 
 
-The probability of a photon having energy $\epsilon$ is $e^{-\frac{\epsilon}{kT}}$. What is probability that it will have the ionization energy is $e^{-\frac{\epsilon_{ion}}{kT}}$. If $\epsilon>kT$ this is very small, but there are many photons. We could ask how many photons can ionize the atom? $10^8 e^{-\frac{\epsilon_{ion}}{kT}}$. We are operating in tail of Boltzmann distribution. If $10^8 e^{-\frac{\epsilon_{ion}}{kT}} \approx 1$, there are enough photons to ionize the electrons. $10^8 e^{-\frac{\epsilon_{ion}}{kT}} \approx e^20 e^{-\frac{\epsilon_{ion}}{kT}}$
+The probability of a photon having energy $\epsilon$ is $e^{-\frac{\epsilon}{\gls{gls:kB}T}}$.\begin{itemize}
+	\item  What is probability that it will have the ionization energy is $e^{-\frac{\epsilon_{ion}}{\gls{gls:kB}T}}$.
+	\item If $\epsilon>\gls{gls:kB}T$ this is very small, but there are many photons.
+	\item We could ask how many photons can ionize the atom? $10^8 e^{-\frac{\epsilon_{ion}}{\gls{gls:kB}T}}$. We are operating in tail of Boltzmann distribution.
+	\item If $10^8 e^{-\frac{\epsilon_{ion}}{\gls{gls:kB}T}} \approx 1$, there are enough photons to ionize the electrons. $10^8 e^{-\frac{\epsilon_{ion}}{\gls{gls:kB}T}} \approx e^{20} e^{-\frac{\epsilon_{ion}}{\gls{gls:kB}T}}$
+\end{itemize}
 
 (History back to decoupling has number of particles conserved).
 
@@ -1346,6 +1403,8 @@ The probability of a photon having energy $\epsilon$ is $e^{-\frac{\epsilon}{kT}
 This will ensure that there are enough high energy photons to ionize everything.
 
 Population of photons from stars is a tiny fraction of the total photons in \glsdesc{gls:cmb}.
+
+\subsection{Landmarks on the way back to the Big Bang}
 
 We want:
 \begin{align*}
@@ -1357,7 +1416,7 @@ We want:
 So
 \begin{align*}
 	\frac{T_{DECOUPLING}}{T_{TODAY}} \approx & 1000\\
-	\frac{a_{TODAY}}{a_{DECOUPLING}}
+	\frac{a_{TODAY}}{a_{DECOUPLING}}  \approx & 1000
 \end{align*}
 Space expanded by a factor of 1000 since it was opaque. That is one landmark.
 
@@ -1365,10 +1424,10 @@ The second landmark is when the universe went from being radiation dominated to 
 
 There is a crossover between the two regimes. Let us see if we can estimate.
 
-Frst, we need the ratios today.
+First, we need the ratios today. From \eqref{eq:matter:eos} and \eqref{eq:radiation:eos}:
 \begin{align*}
-	\rho_{matter} =& \frac{p_m}{a^3} \text{, most of observable history}\\
-	\rho_{radiation}=& \frac{p_4}{a^4} \text{. Let us take the energy density today}\\
+	\rho_{matter} =& \frac{\rho_0}{a^3} \text{, most of observable history}\\
+	\rho_{radiation}=& \frac{\rho_0}{a^4} \text{. Let us take the energy density today}\\
 	\frac{\rho_{matter}}{\rho_{radiation}} \approx& 10^{-18} \times 10^{13}\\
 	\approx& 10^5 \text{, oops, we forgot dark matter, so}\\
 	\approx& 10^6
@@ -1380,12 +1439,12 @@ How did it behave in the past? In the past $\rho_{matter}$ scales with 3 powers 
 
 The next important landmark was when the temperature was hot enough to create positrons.
 
-In flat space, only ratios of $a$ matter. If $\kappa>0$, we can make sense of $a(t)$ as the radius of the 3-sphere.  If $\kappa<0$, the universe started infinite.
+In flat space, only ratios of $a$ matter. If $\gls{gls:kappa}>0$, we can make sense of $a(t)$ as the radius of the 3-sphere.  If $\gls{gls:kappa}<0$, the universe started infinite.
 
 \begin{figure}[H]
 	\caption{The universe in a nutshell}
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Looking backward aolong light rays}
+		\caption{Looking backward along light rays, sampling every thousand light years or so.}
 		\includegraphics[width=\textwidth]{cosmo-7-universe-1}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.45\textwidth}
@@ -1394,13 +1453,11 @@ In flat space, only ratios of $a$ matter. If $\kappa>0$, we can make sense of $a
 	\end{subfigure}
 \end{figure}
 
-When temperature gets to about $10^{14}K$, $\frac{a_T}{a(t)}\approx 10^{14}$, characteristic photon energy $\epsilon_{photon}=0.5MeV$,  the $mc^2$ of an electron. Two photons colliding can produce electron-positron pairs; also electrons and positrons can make photons. They can form a thermal equilibrium, and a no longer determined by ''memory of the future''. Thermal equilibrium at that temperature satisfies $n_{e^-}=n_{e^+}=n_{\gamma}$. Note that  $n_{e^-}-n_{e^+}$ does not change, but $n_{e^-}+n_{e^+}$ does: it is bigger than today's value by $10^8$.
+When temperature gets to about $10^{14}K$, $\frac{a_T}{a(t)}\approx 10^{14}$, characteristic photon energy $\epsilon_{photon}=0.5MeV$,  the $E=mc^2$ of an electron. Two photons colliding can produce electron-positron pairs; also electrons and positrons can make photons. They can form a thermal equilibrium, and are no longer determined by ''memory of the future''. Thermal equilibrium at that temperature satisfies $\gls{gls:n:electrons}=\gls{gls:n:positrons}=\gls{gls:n:gamma}$. Note that  $\gls{gls:n:electrons}-\gls{gls:n:positrons}$ does not change, but $\gls{gls:n:electrons}+\gls{gls:n:positrons}$ does: it is bigger than today's value by $10^8$.
 
 What led to any difference?
 
 
-
-\url{https://youtu.be/GvhxamzVpN8?t=5261}
 
 \section{Baryogenesis}
 

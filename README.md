@@ -5,7 +5,7 @@
 **Disclaimer** I have created these notes as an aide-mémoire for my own use; if you find them useful, you are welcome, but I'd appreciate it if you'd let me know if you are using them. They are _not_ intended
 as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
 
-The notes were created using [TexStudio](https://www.texstudio.org/), which I recommend for compiling them to a PDF, and the bibliography was created using [JabRef](https://www.jabref.org/).
+The notes were created using [TexStudio](https://www.texstudio.org/), and the bibliography by [JabRef](https://www.jabref.org/).
 
 File|Description
 ----------------|-------------------------------------------------------------

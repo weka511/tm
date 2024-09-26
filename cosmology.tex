@@ -1562,11 +1562,13 @@ Imagine (before Sakharov) that $CP$ was a symmetry: then you might be able to sw
   Very hot at beginning! But Baryon violation by itself isn't enough by itself to give an average excess of protons over antiprotons: for every event like  Figure \ref{fig:cosmo-8-proton-decay}, which reduces baryon number, there is a charge conjugated process that increases baryon number--Figure \ref{fig:cosmo-8-anti-proton-decay}. 
  
  \begin{figure}[H]
- 	\caption{cosmo-8-anti-proton-decay}\label{fig:cosmo-8-anti-proton-decay}
- 	\includegraphics[width=0.5\textwidth]{cosmo-8-anti-proton-decay}
+ 	\caption{Decay of an antiproton}\label{fig:cosmo-8-anti-proton-decay}
+	 \begin{center}
+	 	\includegraphics[width=0.5\textwidth]{cosmo-8-anti-proton-decay}
+	 \end{center}
  \end{figure}
  
- If we believe in particle-antiparticle symmetry, on average there will be as many Figure \ref{fig:cosmo-8-anti-proton-decay} decays as Figure \ref{fig:cosmo-8-proton-decay}. the process could decay antiprotons, or run in reverse. If we started with an equal population of quarks and antiquarks, and try to rely only on violation of Baryon number, it would not be an efficient way to create an excess. Moreover, in the very early universe there were lots of electrons, positrons and photons, so it was possible for the reactions to go backwards. There is a statistical process going on, so it is only statistical that there would be as many protons as antiprotons. The excess of protons over antiprotons cannot be a statistical effect.
+ If we believe in particle-antiparticle symmetry, on average there will be as many Figure \ref{fig:cosmo-8-anti-proton-decay} decays as Figure \ref{fig:cosmo-8-proton-decay}. The process could decay antiprotons, or run in reverse. If we started with an equal population of quarks and antiquarks, and try to rely only on violation of Baryon number, it would not be an efficient way to create an excess. Moreover, in the very early universe there were lots of electrons, positrons and photons, so it was possible for the reactions to go backwards. There is a statistical process going on, so it is only statistical that there would be as many protons as antiprotons. The excess of protons over antiprotons cannot be a statistical effect.
  
  It is quite true that the excess is a small number, $10^{-8}$, but how many protons are there in the observable universe? About $10^{80}$. How big would you expect it to be if it were a pure statistical effect? $\sqrt{N}$ is the expected fluctuation in a variable. In a world with $10^{80}$ protons, we'd expect a fluctuation of $\sqrt{10^{80}}=\sqrt{10^{40}}$. If excess were around this size it might be statistical.
  
@@ -1590,8 +1592,10 @@ Is there evidence of violation of particle-antiparticle symmetry? Examples are d
  
  There is a theorem of relativistic field theory that the total half life of the proton and antiproton have to be the same\footnote{\url{https://youtu.be/gdFldkitkJA?t=2991}}, but Figures \ref{fig:cosmo-8-anti-proton-decay} and  \ref{fig:cosmo-8-proton-decay} can be different, as there is more than one way a proton can decay. For example a proton can also decay into a $\mu$ and a photon--Figure \ref{fig:cosmo-8-muse}
  \begin{figure}[H]
- 	\caption{cosmo-8-muse}\label{fig:cosmo-8-muse}
- 	\includegraphics[width=0.8\textwidth]{cosmo-8-muse}
+ 	\begin{center}
+ 		\caption{A proton can also decay into a $\mu$ and a photon}\label{fig:cosmo-8-muse}
+ 		\includegraphics[width=0.8\textwidth]{cosmo-8-muse}
+ 	\end{center}
  \end{figure}
  
  The theorem says we calculate all the ways the proton can decay, and it must give the same rate as the total for the antiproton. It does not say that the rates for the individual diagrams should be the same: it doesn't say that any particular decay has to have a symmetry.
@@ -1628,14 +1632,58 @@ Is there evidence of violation of particle-antiparticle symmetry? Examples are d
  
 \section{Inflation}
 
+(The first two sections were presented at the end of the previous lecture.)
+\subsection{The Question}
+
 The inflationary universe idea was put forward to explain why the universe is so homogeneous and isotropic. This became important when the \glsdesc{gls:cmb} was discovered, and the \gls{gls:cmb} quickly became a high precision thing. The temperature was measured to be $2.7K$, and was the same in every direction. The rough idea that the universe was isotropic became a high precision thing. Why is it so isotropic? It must have become this way very early, as lumpiness tends to increase with time, because of gravity. The universe must have started very early--before galaxies, at the decoupling time-- being homogeneous and isotropic. But not absolutely homogeneous and isotropic, since there are galaxies and clusters. The lumpiness must have been small. Gravity is different from other theories: it increases lumpiness, instead of letting it diffuse.
 
 Cosmologists have been able to estimate the inhomogeneity that was necessary at the time of decoupling for galaxies to have formed later. They characterized inhomogeneity as $\frac{\delta\rho}{\rho}\approx10^-5$, the mean excess density in a lump. Now we had a number, which we could try to explain. We still don't know why this is the correct value. The existence of this number focused attention on the questions. First, why is it so homogeneous? Later, why is is a bit inhomogeneous?
 
-The explanation from Alan Guth in 1980 was that the universe expanded very fast, and stretched. Stretching an inhomogeneous universe makes it homogeneous on the scales that are relevant. The universe inflated--expanded exponentially-- and stretched itself so much that it smoothed out the inhomogeneities. 
+The explanation from Alan Guth in 1980 was that the universe expanded very fast, and stretched. Stretching an inhomogeneous universe makes it homogeneous on the scales that are relevant. The universe inflated--expanded exponentially-- and stretched itself so much that it smoothed out the inhomogeneities.  During the expansion period, temperature wasn't terribly relevant, it was the rapid expansion.
 
+\subsection{Friction}
 
-\url{https://youtu.be/gdFldkitkJA?t=5139}
+This means viscosity: consider a stone falling though honey--Figure \ref{fig:cosmo-9-falling-stone}.
+
+\begin{figure}[H]
+	\caption{Viscosity example--Falling stone}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{The height is $\phi$, and stone is subject to a force arising from potential energy $V(\phi)$. Assume force is upward, so $V$ increases in downward direction.}\label{fig:cosmo-9-falling-stone}
+		\includegraphics[width=\textwidth]{cosmo-9-falling-stone}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{If $V(\phi)$ is a rather shallow hill, and the viscosity coefficient is large, the stone will take a long time to roll down the hill.}\label{fig:cosmo-9-falling-shallow-slope}
+		\includegraphics[width=\textwidth]{cosmo-9-falling-shallow-slope}
+	\end{subfigure}
+\end{figure}
+
+\begin{align*}
+	F =& - \frac{d V}{d\phi}\\
+	\ddot{\phi} =& - \gamma \dot{\phi} - \frac{d V}{d\phi} \text{, Newton with $m=1$ and viscosity} \numberthis \label{eq:falling:stone}\\
+	\dot{\phi} =& \frac{F}{\gamma} \text{, at terminal velocity}
+\end{align*}
+
+If $V(\phi)$ is a rather shallow hill--Figure \ref{fig:cosmo-9-falling-shallow-slope}--and the viscosity coefficient is large, the stone will take a long time to roll down the hill.
+
+$\phi$ will be the value of a field, and we will want to be in a situation where the field evolves very slowly because of a lot of friction, which will drive inflation.
+
+Now, assume that the universe is filled by a scalar field, the inflaton field $\phi$, which is pretty much uniform in space. Think about the energy stored in the field. Follow the field in an expanding box, size $(a(t))^3$.
+\begin{align*}
+	E =& a^3(t)\big[\frac{\dot{\phi}^2}{2} + V(\phi)\big]\text{, no spatial gradient since uniform}
+\end{align*}
+
+We want the equation of motion.
+
+\begin{align*}
+	\mathcal{L} =&  a^3(t)\big[\frac{\dot{\phi}^2}{2} - V(\phi)\big]\\
+	\frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{phi}}=& \frac{\partial \mathcal{L}}{\partial \phi}\\
+	\frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{\phi}}=&\frac{d}{dt}\big[\dot{\phi}a^3(t)\big]	\\
+	\frac{d}{dt}\big[\dot{\phi}a^3(t)\big]=&-a^3(t)\frac{dV}{d\phi}\\
+	a^3\ddot{\phi} + \dot{\phi}\big(3a^2\dot{a}\big)=&a^3F \text {, ''The Force''}\\
+	\ddot{\phi} + 3\frac{\dot{a}}{a}\dot{\phi}=&F\\
+	\ddot{\phi} + \underbrace{3H\dot{\phi}}_\text{Cosmic friction term}=&F
+\end{align*}
+This is the falling stone, Equation \eqref{eq:falling:stone}, with a viscous drag proportional to $H$: Hubble acts as friction.
 
 \section{Inhomogeneities and quantum fluctuations}
 

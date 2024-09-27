@@ -1,4 +1,7 @@
 % !TeX program = lualatex
+
+%% Use lualatex to make tikz-feynmann work properly
+
 \documentclass[]{article}
 
 \usepackage{caption}
@@ -59,7 +62,7 @@
 
 \newglossaryentry{gls:H}{
 	name = {H},
-	description={Hubble's constant --Equation \eqref{eq:hubble}}
+	description={Hubble's constant}
 }
 
 \newglossaryentry{gls:kB}{
@@ -173,7 +176,7 @@ We will study the universe as a physical system, i.e. something we can study wit
 
 Could Newton have figured out expanding universe given observations?
 
-\subsection{How would Newton have handled expanding universe?}
+\subsection{How would Newton have handled an expanding universe?}
 
 \begin{figure}[H]
 	\begin{center}
@@ -1666,8 +1669,9 @@ Cosmologists have been able to estimate the inhomogeneity that was necessary at 
 
 The explanation from Alan Guth in 1980 was that the universe expanded very fast, and stretched. Stretching an inhomogeneous universe makes it homogeneous on the scales that are relevant. The universe inflated--expanded exponentially-- and stretched itself so much that it smoothed out the inhomogeneities.  During the expansion period, temperature wasn't terribly relevant, it was the rapid expansion.
 
-\subsection{Friction}
+\subsection{The Inflaton Field}
 
+\subsubsection{End of Lecture 8}
 This means viscosity: consider a stone falling though honey--Figure \ref{fig:cosmo-9-falling-stone}.
 
 \begin{figure}[H]
@@ -1697,6 +1701,8 @@ Now, assume that the universe is filled by a scalar field, the inflaton field $\
 	E =& a^3(t)\big[\frac{\dot{\phi}^2}{2} + V(\phi)\big]\text{, no spatial gradient since uniform}
 \end{align*}
 
+(We have assumed that the field doesn't vary much in space. Because space expands, the variation in the field has become stretched out, so much that it doesn't vary across a box.)
+
 We use Lagrange's equation to derive the equation of motion. First calculate the Lagrangian.
 
 \begin{align*}
@@ -1706,14 +1712,31 @@ We use Lagrange's equation to derive the equation of motion. First calculate the
 	\frac{d}{dt}\big[\dot{\phi}a^3(t)\big]=&-a^3(t)\frac{dV}{d\phi} \text{. Expanding the time derivative we get:}\\
 	a^3\ddot{\phi} + \dot{\phi}\big(3a^2\dot{a}\big)=&a^3F \text {. Now divide by $a$}\\
 	\ddot{\phi} + 3\frac{\dot{a}}{a}\dot{\phi}=&F\text{, and use Equation \eqref{eq:hubble}}\\
-	\ddot{\phi} + 3H\dot{\phi}=&F \text{, c.f. \eqref{eq:falling:stone}, with the ''cosmic friction'' term $3H\dot{\phi}$}
+	\ddot{\phi} + 3H\dot{\phi}=&F \numberthis \label{eq:falling:rock:viscous}
 \end{align*}
 
+\subsubsection{Lecture 9 begins}
+
+We postulate a hypothetical, undiscovered scalar field. Fields have energy, which depends on the value of the field. Let us hypothesize an energy, Figure \ref{fig:cosmo-9-scalar-field}.
+\begin{figure}[H]
+	\caption[Hypothetical, undiscovered scalar field]{The energy density that would be stored in space by our hypothetical, undiscovered scalar field. We haven't shown zero energy for $\phi=0$ because we don't know where its zero is. We call this ''potential energy'' as it is not associated with time dependence of the field.}\label{fig:cosmo-9-scalar-field}.
+	\includegraphics[width=0.8\textwidth]{cosmo-9-scalar-field}
+\end{figure}
+
+A scalar field has kinetic energy $\frac{\dot{\phi}^2}{2}$, so field energy in a small unit box is $\frac{\dot{\phi}^2}{2} + V(\phi)$, which is isomorphic to the motion of a particle in a field $\phi$.
+
+(I have skipped over the remainder of the review of Lecture 8)
+
+We resume with Equation \eqref{eq:falling:rock:viscous}, which should be compared with \eqref{eq:falling:stone} and Figure \ref{fig:cosmo-9-falling-stone}. Note the ''cosmic friction'' term $3H\dot{\phi}$. Rock accelerates, but friction slows it.
+
+Suppose that the viscosity does not depend on time. In the beginning there is no friction, and the velocity increases; viscosity plays a bigger role, until eventually the stone reaches (really approaches) terminal velocity--$\frac{F}{3H}$. At his point kinetic energy is negligible, compared to potential energy.
+
+\url{https://youtu.be/hADOY0TzLic?t=1540}
 
 \section{Inhomogeneities and quantum fluctuations}
 
 \begin{quotation}
-Professor Susskind describes the theory whereby inhomogeneities in the universe were caused by quantum fluctuations in the early universe.  He begins with the mathematical equations of a damped harmonic oscillator, and relates that simple system to a dissipative inflation field with spatial dependencies.  The quantum fluctuations in the zero point energy states of this field lead to inhomogeneities in the universe.  These inhomogeneities explain both the small variations in the \gls{gls:cmb}, as well as the formation of galaxies from regions of high energy density.
+Professor Susskind describes the theory whereby inhomogeneities in the universe were caused by quantum fluctuations in the early universe.  He begins with the mathematical equations of a damped harmonic oscillator, and relates that simple system to a dissipative inflaton field with spatial dependencies.  The quantum fluctuations in the zero point energy states of this field lead to inhomogeneities in the universe.  These inhomogeneities explain both the small variations in the \gls{gls:cmb}, as well as the formation of galaxies from regions of high energy density.
 \end{quotation}
 
 

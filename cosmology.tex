@@ -8,6 +8,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{mathrsfs}
 \usepackage{tocloft}
 \usepackage{cancel}
 \usepackage{thmtools}
@@ -217,7 +218,7 @@ Could Newton have figured out expanding universe given observations?
  \begin{align*}	
  	V_{ab}=&\dot{a} \Delta X_{ab} \text{, neglecting $y$ and $z$}\\
  	\frac{V_{ab}}{D_{ab}} =& \frac{\dot{a}}{a} \text{, independent of choice of galaxies!}\\
- 	=& H \text{, Hubble constant at a given time.}\\
+ 	=& H \text{, Hubble constant at a given time.} \numberthis \label{eq:hubble}\\
  	V =& H D \text{, Hubble's Law.}
 \end{align*}
  
@@ -1544,11 +1545,11 @@ We now know that the symmetry is $CPT$ (In the Scr\"odinger equation, $t\rightar
 Imagine (before Sakharov) that $CP$ was a symmetry: then you might be able to swap particles and antiparticles and reflect left \& right. But if there were a complete symmetry, why the imbalance? It doesn't sound right.
 
 \subsection{The Sakharov Conditions}
-
+Sakharov showed that the following three conditions were sufficient to account for the observed excess of protons over antiprotons.
 \begin{enumerate}
 	\item \gls{gls:baryon:number} violation--Section \ref{sec:sakharov1}
 	\item C-symmetry and CP-symmetry violation--Section \ref{sec:sakharov2}
-	\item Universe is expanding enough to break T symmetry--Section \ref{sec:sakharov3}
+	\item The universe is expanding fast enough to break T symmetry--Section \ref{sec:sakharov3}
 \end{enumerate}
 
 \subsubsection{\gls{gls:baryon:number} violation}\label{sec:sakharov1}
@@ -1672,18 +1673,18 @@ Now, assume that the universe is filled by a scalar field, the inflaton field $\
 	E =& a^3(t)\big[\frac{\dot{\phi}^2}{2} + V(\phi)\big]\text{, no spatial gradient since uniform}
 \end{align*}
 
-We want the equation of motion.
+We use Lagrange's equation to derive the equation of motion. First calculate the Lagrangian.
 
 \begin{align*}
-	\mathcal{L} =&  a^3(t)\big[\frac{\dot{\phi}^2}{2} - V(\phi)\big]\\
-	\frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{phi}}=& \frac{\partial \mathcal{L}}{\partial \phi}\\
-	\frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{\phi}}=&\frac{d}{dt}\big[\dot{\phi}a^3(t)\big]	\\
-	\frac{d}{dt}\big[\dot{\phi}a^3(t)\big]=&-a^3(t)\frac{dV}{d\phi}\\
-	a^3\ddot{\phi} + \dot{\phi}\big(3a^2\dot{a}\big)=&a^3F \text {, ''The Force''}\\
-	\ddot{\phi} + 3\frac{\dot{a}}{a}\dot{\phi}=&F\\
-	\ddot{\phi} + \underbrace{3H\dot{\phi}}_\text{Cosmic friction term}=&F
+	\Lagr =&  a^3(t)\big[\frac{\dot{\phi}^2}{2} - V(\phi)\big] \text{ and substitute in Lagrange's equation}\\
+	\frac{d}{dt} \frac{\partial \Lagr}{\partial \dot{\phi}}=& \frac{\partial \Lagr}{\partial \phi} \text{. The first term is}\\
+	\frac{d}{dt} \frac{\partial \Lagr}{\partial \dot{\phi}}=&\frac{d}{dt}\big[\dot{\phi}a^3(t)\big]	\text{, whence}\\
+	\frac{d}{dt}\big[\dot{\phi}a^3(t)\big]=&-a^3(t)\frac{dV}{d\phi} \text{. Expanding the time derivative we get:}\\
+	a^3\ddot{\phi} + \dot{\phi}\big(3a^2\dot{a}\big)=&a^3F \text {. Now divide by $a$}\\
+	\ddot{\phi} + 3\frac{\dot{a}}{a}\dot{\phi}=&F\text{, and use Equation \eqref{eq:hubble}}\\
+	\ddot{\phi} + 3H\dot{\phi}=&F \text{, c.f. \eqref{eq:falling:stone}, with the ''cosmic friction'' term $3H\dot{\phi}$}
 \end{align*}
-This is the falling stone, Equation \eqref{eq:falling:stone}, with a viscous drag proportional to $H$: Hubble acts as friction.
+
 
 \section{Inhomogeneities and quantum fluctuations}
 

@@ -1,3 +1,4 @@
+% !TeX program = lualatex
 \documentclass[]{article}
 
 \usepackage{caption}
@@ -1509,12 +1510,17 @@ Let us suppose that \gls{gls:baryon:number} is like electric charge: it is conse
 \end{itemize}
 This leaves a positron and something electrically neutral, such as a photon(A neutrino is not good, as we'd have an even number of fermions). We don't know any deep fundamental reason why this can't happen.
 
+
 \begin{figure}[H]
 	\caption{Proton decay}
 	\begin{subfigure}[b]{0.47\textwidth}
 		\caption{Hypothetical scenario where a proton decays into a positron and a photon. For some reason, that Standard Model does not permit the decay , but there are extensions to the Standard Model where this could happen. We do know that the decay cannot be very fast, as the protons have been around for at least 13.7 billion years. Note that as protons decay, positrons are made.}\label{fig:cosmo-8-proton-decay}
 		\begin{center}
-			\includegraphics[width=\textwidth]{cosmo-8-proton-decay}
+			\feynmandiagram [horizontal=i1 to a] {
+				i1[particle=\(p\)] -- [fermion] a,
+				a --[fermion] f1[particle=\(e^{+}\)],
+				a--[photon] f2[particle=\(\gamma\)],
+			};
 		\end{center}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.47\textwidth}
@@ -1565,7 +1571,11 @@ Sakharov showed that the following three conditions were sufficient to account f
  \begin{figure}[H]
  	\caption{Decay of an antiproton}\label{fig:cosmo-8-anti-proton-decay}
 	 \begin{center}
-	 	\includegraphics[width=0.5\textwidth]{cosmo-8-anti-proton-decay}
+	 	\feynmandiagram [horizontal=i1 to a] {
+	 		i1[particle=\(\bar{p}\)] -- [fermion] a,
+	 		a --[fermion] f1[particle=\(e^{-}\)],
+	 		a--[photon] f2[particle=\(\gamma\)],
+	 	};
 	 \end{center}
  \end{figure}
  
@@ -1595,7 +1605,16 @@ Is there evidence of violation of particle-antiparticle symmetry? Examples are d
  \begin{figure}[H]
  	\begin{center}
  		\caption{A proton can also decay into a $\mu$ and a photon}\label{fig:cosmo-8-muse}
- 		\includegraphics[width=0.8\textwidth]{cosmo-8-muse}
+ 		\feynmandiagram [horizontal=i1 to a] {
+ 			i1[particle=\(p\)] -- [fermion] a,
+ 			a --[fermion] f1[particle=\(\mu^{+}\)],
+ 			a--[photon] f2[particle=\(\gamma\)],
+ 		};
+ 		\feynmandiagram [horizontal=i1 to a] {
+ 			i1[particle=\(\bar{p}\)] -- [fermion] a,
+ 			a --[fermion] f1[particle=\(\mu^{-}\)],
+ 			a--[photon] f2[particle=\(\gamma\)],
+ 		};
  	\end{center}
  \end{figure}
  

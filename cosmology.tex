@@ -1851,18 +1851,23 @@ The other set of facts that need to be explained is Homogeneity at the time of d
 
 \section{Inhomogeneities and quantum fluctuations}
 
-\subsection{Introduction: End of Lecture 9}
-Why isn't the universe completely smooth? The amount of inflation would have smoothed the universe enough to eliminate the structure we have. Not galaxies, not clusters, but superclusters of superclusters. They form a structure that fills the universe; it is not completely homogeneous in those scales. It is largely understood, but mainly through simulations.
+\subsection{Question (End of Lecture 9)}
 
-The simulations start by assuming that the universe was not completely smooth, and it started with a certain amount of structure called to fluctuation spectrum. Allow gravity and motion of objects to evolve, and see that it produces structure. 
+Why isn't the universe completely smooth? The amount of inflation would have smoothed the universe enough to eliminate the structure we have. We are not talking about galaxies, nor clusters, but superclusters of superclusters. They form a structure that fills the universe; it is not completely homogeneous in those scales. It is largely understood, but mainly through simulations.
+
+The simulations start by assuming that the universe was not completely smooth, and it started with a certain amount of structure called the ''fluctuation spectrum''. They allow gravity and motion of objects to evolve, and see that it produces structure. 
 
 On bigger scales, gravity is not that important. On the scale of a galaxy, or a star, or a planet, gravity is what pulls things together. On bigger scales, there is structure that is largely not coming from gravity; it would be there even if there were no gravity. What it takes is to start with some inhomogeneity.
 
-Figure \ref{fig:cosmo-9-super} is a photograph of the sky, but deep, deep astronomy: billions of light years out, high redshifts. It has seem structure, and is not featureless. It has a filamentary structure. The filaments aren't single galaxies, they are millions of galaxies. The filaments intersect and form a complicated web, rather like Figure \ref{fig:cosmo-9-hand-drawn}. 
+LS gave some images to the students that showed the Large scale structure of the Universe. 
 
-Figure \ref{fig:cosmo-9-simulation} is a simulation. They start with a big bunch of particles, with some spectrum of fluctuations, a little randomness in the velocity distribution. Let it evolve for a while. Maybe start with a uniform distribution of matter, and a little variation in velocity. 
+\begin{itemize}
+	\item Figure \ref{fig:cosmo-9-super} is a photograph of the sky, but deep, deep astronomy: billions of light years out, high redshifts. It has some structure, and is not featureless: it has a filamentary structure. The filaments aren't single galaxies, they are millions of galaxies. The filaments intersect and form a complicated web, rather like Figure \ref{fig:cosmo-9-hand-drawn}. 
 
-Figure \ref{fig:cosmo-9-pool} shows how light forms patterns at the bottom of a pool of water.
+	\item Figure \ref{fig:cosmo-9-simulation} is a simulation. It started with a big bunch of particles, with some spectrum of fluctuations, a little randomness in the velocity distribution. Let it evolve for a while. Maybe start with a uniform distribution of matter, and a little variation in velocity. 
+
+	\item Figure \ref{fig:cosmo-9-pool} shows how light forms patterns at the bottom of a pool of water.
+\end{itemize}
  
 Figures \ref{fig:cosmo-9-super}, \ref{fig:cosmo-9-simulation}, and \ref{fig:cosmo-9-pool} have a remarkable similarity, which can be explained by caustics.
 
@@ -1892,19 +1897,21 @@ If we were dealing with only one dimension, caustics would be bright spots. In t
 
 \begin{figure}[h]
 	\caption[Explanation of Large Structure]{Large structure of universe, with time running upwards \emph{or}, swimming pool with depth $t$ running upwards. In the latter case, the top of the pool is at the bottom of the picture; rays of light come in at slightly different angles, because of waves on the surface, then hit the top of the picture (bottom of the pool). }\label{fig:cosmo-9-caustic}
-	\includegraphics[width=0.8\textwidth]{cosmo-9-caustic}
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{cosmo-9-caustic}
+	\end{center}
 \end{figure}
 
 In Figure \ref{fig:cosmo-9-caustic} we have some structure imposed by waviness in the surface of the water. When light rays come in they are refracted a little, and the light goes off at an angle that varies from place to place. In the one dimensional case there are spots of high intensity.
 
-We can think of  Figure \ref{fig:cosmo-9-caustic} as waves, or as particles atsring with different velocities at $t=0$. Let us assume that the particles are uniformly distributed when they start, with no tendency to bunch up. We define $n$ as the number of particles along the $t=0$ axis, so $\frac{dn}{dx}$ is the density. Since it is unform, set it to $1$.
+We can think of  Figure \ref{fig:cosmo-9-caustic} as waves, or as particles arriving with different velocities at $t=0$. Let us assume that the particles are uniformly distributed when they start, with no tendency to bunch up. We define $n$ as the number of particles along the $t=0$ axis, so $\frac{dn}{dx}$ is the density. 
 
 \begin{align*}
-	\frac{dn}{dx}=&1 \text{. Let $y(t)$ denote the position after time $t$,}\\
-	y(t) =& x +v(x)t\\
+	\frac{dn}{dx}=&1 \text{. Since it is uniform, set it to $1$.}\\
+	y(t) =& x +v(x)t \text{, where $y(t)$ denotes the position after time $t$}\\
 	\frac{dy}{dx} =& 1+v^{\prime}(x)t\\
 	\frac{dn}{dy} =& \frac{dn}{dx} \frac{dx}{dy} \text{, the density after time $t$}\\
-	=& \frac{1}{1+v^{\prime}(x)t} \frac{dx}{dy}
+	=& \frac{1}{1+v^{\prime}(x)t} 
 \end{align*}    
 
 The bright spots are where $1+v^{\prime}(x)t=0$.
@@ -1916,12 +1923,12 @@ The bright spots are where $1+v^{\prime}(x)t=0$.
 		\includegraphics[width=\textwidth]{cosmo-9-v-prime}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.3\textwidth}
-		\caption{As $t$ continues to increase we get multiple bright spots.}
-		\includegraphics[width=0.8\textwidth]{cosmo-9-with-caustics}.
-	\end{subfigure}
-	\begin{subfigure}[t]{0.3\textwidth}
 		\caption{As $t$ increases we get a point where $v^{\prime}(x)t=-1$, so we have a bright spot, or a big flux of particles. The rest of the peaks don't cross the line, however.}
 		\includegraphics[width=\textwidth]{cosmo-9-v-prime-eventually}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.3\textwidth}
+		\caption{As $t$ continues to increase we get multiple bright spots.}
+		\includegraphics[width=0.8\textwidth]{cosmo-9-with-caustics}.
 	\end{subfigure}
 \end{figure}
 

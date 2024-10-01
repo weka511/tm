@@ -1936,12 +1936,68 @@ The bright spots are where $1+v^{\prime}(x)t=0$.
 Now, if we do this in two dimensions you get something that looks like Figure \ref{fig:cosmo-9-hand-drawn}. Hot spots intersect. In 3 dimensions you get surfaces, intersecting other surfaces, etc. This is what you'd expect in a world without gravity.
 
 Where did the variations in velocity come from?
+
+\subsection{Digression, leading to Planck Units}
  
 We do know a highly accurate description of elementary particles. It has a lot of parameters. Depending on the version that turns out to be true, the number of parameters could vary from 25 to 150: masses of quarks, masses of electrons, masses of muons, the coupling constants, the value of they. electrical charge, and a list of what the particles are. Some of the particles are related to each other, others are not. So there is a very accurate theory that describes everything that is known about elementary particles. Thousands of experiments. In principle it can explain nuclei, atoms. Quantum Electrodynamics is part of it, so it can explain molecules, chemistry.
 
-We also have a classical theory of gravity, General Relativity. Again it is highly accurate theory. Does it have any parameters? There is Newton's constant of gravitation. There are masses of particles. These aren't thought to be deeply fundamental.
+We also have a classical theory of gravity, General Relativity. Again it is highly accurate theory. Does it have any parameters? There is Newton's constant of gravitation. There are masses of particles. These aren't thought to be deeply fundamental. There are three parameters, however, that are universal.
+\begin{enumerate}
+	\item The speed of light. Einstein's principle, was that \emph{all} particles, signals, etc moves slower than the speed of light.
+	\item Planck's constant: the uncertainty principle applies to \emph{all} measurements.
+	\item Newton's constant applies to \emph{all} objects.
+\end{enumerate}
 
-\url{https://youtu.be/NZ_CvI9Ying?t=200}
+The use of the word \emph{all} is really deep. Planck realized that there were 3 fundamental units, and 3 fundamental constants, so he could define basic units that make the 3 constants unity.
+ 
+ \begin{align*}
+ 	[c] =& \frac{[L]}{[T]}	\\
+ 	[\hbar]=& \frac{[M][L^2]}{[T]}\\
+ 	[G]=& \frac{[L^3]}{[M][T^2]} 
+ \end{align*}
+ 
+ We define new units:
+ \begin{align*}
+ 	[L] =& c^a \hbar^b G^d\\
+ 	=& \frac{[L^a]}{[T^a]} \frac{[M^b][L^{2b}]}{[T^b]} \frac{[L^{3d}]}{[M^d][T^{2d}]}\\
+ 	=& \frac{[L^a]}{[T^a]} \frac{\cancel{[M^b]}[L^{2b}]}{[T^b]} \frac{[L^{3b}]}{\cancel{[M^b]}[T^{2b}]} \text{, if $d=b$}\\
+ 	=& \frac{[L^{a+5b}]}{[T^{a+3b}]} \text{so we need:}\\
+ 	a+5b =& 1\\
+ 	a+3b =& 0\\
+ 	2b =& 1\\
+ 	b =& \frac{1}{2}
+ 	a=-\frac{3}{2}\\
+ 	[L] =& \sqrt{\frac{\hbar G}{c^3}}\\
+ 	\approx& 10^{-35} \text{ metres.}
+ \end{align*}
+ 
+ \begin{align*}
+ 	[T] =& \frac{[L]}{c}\\
+ 	=& \sqrt{\frac{\hbar G}{c^5}}\\ 
+ 	\approx & 10^{-43} \text{ sec.}\\
+ \end{align*}
+ 
+ \begin{align*}
+ 	[M][c^2] [T] =& [\hbar]\\
+ 	[M] =& \frac{\hbar}{c^2 [T]}\\
+ 	=& \frac{\hbar}{c^2} \sqrt{\frac{c^5}{\hbar G}}\\
+ 	=& \sqrt{\frac{\hbar c}{G}}\\
+ 	\approx & 10^{-8} \text{ Kg--about a dust mote}
+ \end{align*}
+
+At the time the lecture ws given the LHC was probing down to a distance of $10^17$ Planck lengths: we don't know the phenomena below this scale. The Standard Model works well for the LHC level.
+
+We don't know why the parameters are the values they are, or why they appear to be so fine tuned.
+
+Why are fundamental particles so much lighter than the Planck mass? By a factor of $10^{-25}$. This is connected with the lightness of the Higgs Boson.
+
+The Planck mass is the mass of the smallest possible black hole: it carries one bit of information.
+\url{https://youtu.be/NZ_CvI9Ying?t=1991}
+
+\begin{figure}[h]
+	\caption{WMAP\cite{{wmp2024ilc9yrmoll1024}}
+	\includegraphics[width=\textwidth]{ilc_9yr_moll1024}
+\end{figure}
 % glossary: may need command makeglossaries.exe cosmology
 \printglossaries
 

@@ -2003,7 +2003,7 @@ Figure \ref{fig:ilc_9yr_moll1024} shows a map of the universe--the Wilkinson Mic
 \end{figure}
 
 \begin{figure}[H]
-	\caption{Concentric shells, centered on us, and ending when the universe was opaque}\label{fig:cosmo-10-shells}
+	\caption[Concentric shells, centered on us]{Concentric shells, centered on us, and ending when the universe was opaque}\label{fig:cosmo-10-shells}
 	\begin{center}
 		\includegraphics[width=0.6\textwidth]{cosmo-10-shells}
 	\end{center}
@@ -2023,7 +2023,7 @@ The current theory is that they originated from quantum fluctuations. It depends
 	\item the equations of a scalar field in the expanding universe.
 \end{itemize}
 
-\subsubsection{The damped harmonic oscillator}
+\subsubsection{The undamped harmonic oscillator}
 
 We start with the undamped oscillator:
  
@@ -2047,9 +2047,71 @@ In the ground state, on average:
 	\dot{X(t)} =& \sqrt{\frac{\hbar\omega}{2}}e^{\omega t}
 \end{align*}
 
-That is the theory of zero-point energy. No matter how much you try to cool the system, zero-point energy is there.
+That is the theory of zero-point energy. No matter how much you try to cool the system, zero-point energy is still there.
 
-\url{https://youtu.be/NZ_CvI9Ying?t=3269}
+\subsubsection{The damped harmonic oscillator}
+
+The equation of motion for the \emph{damped} harmonic oscillator is:
+\begin{align*}
+	\ddot{X} + \gamma \dot{X} + \omega^2 X =& 0\numberthis \label{eq:damped:harmonic}\\
+	\text{Try }	X =& e^{\alpha t}\ \text{ as a solution}\
+	\alpha =& \frac{-\gamma \pm \sqrt{\gamma^2-4 \omega^2}}{2}
+\end{align*}
+
+We have four cases. 
+\begin{enumerate}
+	\item under-damped;
+	\item over-damped;
+	\item critically damped;
+	\item no restoring force.
+\end{enumerate}
+
+\begin{align*}
+	\text{If } \gamma^2 <& 4 \omega^2\\
+	X\propto& e^{-\gamma t} e^{\pm \sqrt{4\omega^2 - \gamma^2}}
+\end{align*}
+
+This is under-damped: the particle oscillates, but there is an exponential decay to the amplitude. In the over-damped region:
+
+\begin{align*}
+	\text{If } \gamma^2 >& 4 \omega^2\\
+	\alpha =& \frac{-\gamma \pm \sqrt{\gamma^2-4 \omega^2}}{2}
+\end{align*}
+
+Both $\alpha$ are negative, so the solutions decay with time.
+
+There is also a transition between the two cases, the critical case.
+
+\begin{align*}
+	\text{If } \gamma =&  2 \omega \text{ the two solution coincide}\\
+	X =& e^{- \gamma t} \text{ is one solution. Let us try}\\
+	X =& t e^{- \gamma t} \text{ as a second independent solution to \eqref{eq:damped:harmonic}}\\
+	\dot{X} =& (1 - \gamma t) e^{- \gamma t} \\
+	\ddot{X} =& \gamma ( \gamma t-2) e^{- \gamma t} \text{, then \eqref{eq:damped:harmonic} becomes:}\\
+	\gamma ( \cancel{\gamma t}-2) + \gamma (1- \cancel{\gamma t}) + \omega^2 =& 0\\
+	 \gamma =& \omega^2
+\end{align*}
+
+No restoring force,
+\begin{align*}
+	\text{If }  \omega =&0 \\
+	\alpha^2 + \gamma \alpha =& 0\\
+	\alpha(\alpha + \gamma)=& 0\text{, whence}\\
+	\alpha =& 0 \text{, or}\\
+	\alpha =& - \gamma\\
+	X =& c_0 + c_1 e^{-\gamma t} \numberthis \label{eq:no:restoring:force}
+\end{align*}
+
+Particle asymptotically comes to rest.
+
+Imagine the following scenario: $\omega$ is not actually a constant; it varies slowly. It starts large, in the oscillating regime. Now $\gamma$ gets larger, and the frequency decreases--Figure \ref{fig:cosmo-10-varying-omega}. That is the system we will be interested in.
+
+\begin{figure}[H]
+	\caption[Varying Omega]{Varying Omega. It starts large, in the oscillating regime. Now $\gamma$ gets larger, and the frequency decreases. Eventually particles comes to rest as in Equation \eqref{eq:no:restoring:force}}\label{fig:cosmo-10-varying-omega}
+	\includegraphics[width=\textwidth]{cosmo-10-varying-omega}
+\end{figure}
+
+\url{https://youtu.be/NZ_CvI9Ying?t=4473}
 
 % glossary: may need command make.glossaries.exe cosmology
 \printglossaries

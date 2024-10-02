@@ -132,7 +132,7 @@
 
 \newglossaryentry{gls:isotropic}{
 	name={isotropic},
-	description={In physics and geometry, isotropy  is uniformity in all orientations--\cite{enwiki:1230543452}}}
+	description={Isotropy  is uniformity in all orientations}}
 
 \newglossaryentry{gls:homogenous}{
 	name={homogenous},
@@ -140,11 +140,11 @@
 	
 \newglossaryentry{gls:scale:factor}{
 	name={scale factor},
-	description={The expansion of the universe is parametrized by a dimensionless scale factor $a$.  It relates the proper distance (which can change over time, unlike the comoving distance $d_C$ which is constant and set to today's distance) between a pair of objects, e.g. two galaxy clusters, moving with the Hubble flow in an expanding or contracting \gls{gls:FLRW} universe at any arbitrary time $t$ to their distance at some reference time $t_0$.\cite{enwiki:1228037646}}}
+	description={The expansion of the universe is parameterized by a dimensionless scale factor $a$--Equation \eqref{eq:scale:factor}.}}
 
 \newglossaryentry{gls:peculiar:velocity}{
 	name={peculiar velocity},
-	description={The components of a galaxy's velocity that deviate from the Hubble flow. According to Hubble's Law, galaxies recede from us at speeds proportional to their distance from us.\cite{enwiki:1192597030}}}
+	description={The components of a galaxy's velocity that deviate from the Hubble flow.}}
 	
 \maketitle
 
@@ -225,7 +225,7 @@ Could Newton have figured out expanding universe given observations?
  We postulate a more general formula for distance between two galaxies $a$ and $b$:
  
  \begin{align*}            
- 	D_{ab}=&a(t) \sqrt{\Delta_{ab} x^2 + \Delta_{ab} y^2 + \Delta_{ab} z^2}  \text{, where $a(t)$ is called the ''scale factor''}
+ 	D_{ab}=&a(t) \sqrt{\Delta_{ab} x^2 + \Delta_{ab} y^2 + \Delta_{ab} z^2}  \text{, where $a(t)$ is called the ''scale factor''} \numberthis \label{eq:scale:factor}
 \end{align*}
  Now calculate velocity:\footnote{\label{note1}During the lecture, $V$ is used for both velocity and volume. I will retain this usage in the notes; the reader should be careful to check which usage is meant.}           
  \begin{align*}	
@@ -256,10 +256,6 @@ Choose grid so Newton is at rest at centre of universe. He looks out at distant 
 		\item If the body is a spherically symmetric shell (i.e., a hollow ball), no net gravitational force is exerted by the shell on any object inside, regardless of the object's location within the shell.
 	\end{enumerate}
 \end{thm}
-
-\begin{proof}
-	Given in \cite{enwiki:1241447151}.
-\end{proof}
 
 \begin{figure}[H]
 	\caption[Newton's Theorem]{Newton's Theorem: to determine gravitational force on red body, assuming isotropy, draw sphere and calculate force as if mass inside shell were concentrated in centre, and ignore mass outside.}\label{fig:newtons:thm}
@@ -2107,7 +2103,7 @@ Particle asymptotically comes to rest.
 Imagine the following scenario: $\omega$ is not actually a constant; it varies slowly. It starts large, in the oscillating regime. Now $\gamma$ gets larger, and the frequency decreases--Figure \ref{fig:cosmo-10-varying-omega}. That is the system we will be interested in.
 
 \begin{figure}[H]
-	\caption[Varying $\Omega$]{Varying $\Omega$. It starts large, in the oscillating regime. Now $\gamma$ gets larger, and the frequency decreases. Eventually particles comes to rest as in Equation \eqref{eq:no:restoring:force}}\label{fig:cosmo-10-varying-omega}
+	\caption[Varying $\omega$]{Varying $\omega$. It starts large, in the oscillating regime. Now $\gamma$ gets larger, and the frequency decreases. Eventually particles comes to rest as in Equation \eqref{eq:no:restoring:force}}\label{fig:cosmo-10-varying-omega}
 	\includegraphics[width=\textwidth]{cosmo-10-varying-omega}
 \end{figure}
 

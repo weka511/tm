@@ -2114,7 +2114,7 @@ Imagine the following scenario: $\omega$ is not actually a constant; it varies s
 In order the see the relevance of this, consider the equation of motion of the Inflaton field \eqref{eq:falling:stone}.
 
 \begin{figure}[H]
-	\caption[Potential for inflaton field]{Potential for inflaton field. We thought about a potential that is very flat for some energy density, then a cliff. We don't understand why the potential has this behaviour, but we know from observation that it has to be this way for things to work out. The ''ball'' rolls slowly down falls of the cliff, and goes to the bottom.}
+	\caption[Potential for inflaton field]{Potential for inflaton field. We thought about a potential that is very flat for some energy density, then a cliff. We don't understand why the potential has this behaviour, but we know from observation that it has to be this way for things to work out. The ''ball'' rolls slowly down falls of the cliff, and goes to the bottom.}\label{fig:cosmo-10-inflaton}
 	\begin{center}
 		\includegraphics[width=0.6\textwidth]{cosmo-10-inflaton}
 	\end{center}
@@ -2162,9 +2162,36 @@ This is exactly the situation of Figure \ref{fig:cosmo-10-varying-omega}. We end
 
 That would be the end of the story, if it were not for quantum mechanics.
 
+Quantum mechanics has zero-point oscillations. These can be thought of as classical waves. In space there is an oscillating field for every $\vec{k}$. Typically we don't see this because the frequency is so large. But in Figure \ref{fig:cosmo-10-varying-omega} it comes to rest with the field just frozen. It is important to know when we reach the critical damping $\gamma=2\omega$: the time will depend on $\vec{k}$: the smaller the wavelength, the later the wave will get frozen.
 
+\begin{align*}
+	\gamma=&2\omega\\
+	3H =& 2 \frac{k}{a}\\
+	a = \frac{2k}{3H} \text{ is when the transition happens}
+\end{align*}
 
-\url{https://youtu.be/NZ_CvI9Ying?t=4556}
+This transition is called ''exiting the horizon''.
+
+For large $k$, rapid oscillation, freezing doesn't occur until we get a large $a$. Let us write in terms of wavelength.
+\begin{align*}
+	k =& \frac{2\pi a(t)}{\lambda } \text{, so crossover happens when}\\
+	a \approx& \frac{1}{\lambda H}\\
+	\lambda \approx& \frac{1}{H}  
+\end{align*}
+
+$\lambda$ is the distance where expansion matches speed of light--the Hubble distance or Hubble horizon. During inflation this distance was small, but it is the distance at which wave stops oscillating.
+
+Imagine if new waves arise as existing waves reach horizon. Where do they come from? The vacuum fluctuations. These waves ruin the isotropy.
+
+All this takes place on top of something else that is going on. In Figure \ref{fig:cosmo-10-inflaton} the field is gradually sliding down the potential, classically, plus the quantum noise. The latter has $\hbar$s in front, so it is tiny. It isn't enough to explain the energy isotropy.
+
+What happens when we slide over and go down the edge in Figure \ref{fig:cosmo-10-inflaton}? Ignore the noise, and assume the whole universe goes over: the potential turns into particles and heat; the expansion slows. It is no longer exponential, and the energy density dilutes.
+
+Not quite. The noise says that the field is not quite the same at every point: we have a composite noise from the waves that got frozen. We get a complicated mixture as different places go over the cliff. By tweaking parameters, we get the observed $\frac{\delta\rho}{\rho}$
+
+CMB comes from 200,000 years after falling off the cliff.
+
+LS doesn't think NS variation significant.
 
 % glossary: may need command make.glossaries.exe cosmology
 \printglossaries

@@ -2107,16 +2107,62 @@ Particle asymptotically comes to rest.
 Imagine the following scenario: $\omega$ is not actually a constant; it varies slowly. It starts large, in the oscillating regime. Now $\gamma$ gets larger, and the frequency decreases--Figure \ref{fig:cosmo-10-varying-omega}. That is the system we will be interested in.
 
 \begin{figure}[H]
-	\caption[Varying Omega]{Varying Omega. It starts large, in the oscillating regime. Now $\gamma$ gets larger, and the frequency decreases. Eventually particles comes to rest as in Equation \eqref{eq:no:restoring:force}}\label{fig:cosmo-10-varying-omega}
+	\caption[Varying $\Omega$]{Varying $\Omega$. It starts large, in the oscillating regime. Now $\gamma$ gets larger, and the frequency decreases. Eventually particles comes to rest as in Equation \eqref{eq:no:restoring:force}}\label{fig:cosmo-10-varying-omega}
 	\includegraphics[width=\textwidth]{cosmo-10-varying-omega}
 \end{figure}
 
 In order the see the relevance of this, consider the equation of motion of the Inflaton field \eqref{eq:falling:stone}.
 
 \begin{figure}[H]
-	\caption{cosmo-10-inflaton}
-	\includegraphics[width=0.6\textwidth]{cosmo-10-inflaton}
+	\caption[Potential for inflaton field]{Potential for inflaton field. We thought about a potential that is very flat for some energy density, then a cliff. We don't understand why the potential has this behaviour, but we know from observation that it has to be this way for things to work out. The ''ball'' rolls slowly down falls of the cliff, and goes to the bottom.}
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{cosmo-10-inflaton}
+	\end{center}
 \end{figure}
+
+Let us make an approximation, and suppose that the flattish part is really flat, so $V^\prime=0$. The the field satisfies the wave equation.
+\begin{align*}
+	\frac{\partial^2 \phi}{\partial t^2} - \frac{\partial^2 \phi}{\partial x^2} - \frac{\partial^2 \phi}{\partial y^2} - \frac{\partial^2 \phi}{\partial z^2}=&0 \text{, if not flat $-\frac{dV}{d\phi}$} \numberthis \label{eq:wave:eq}
+\end{align*}
+
+Now, in an expanding universe:
+\begin{align*}
+	\frac{\partial^2 \phi}{\partial t^2} + \underbrace{3H\frac{\partial \phi}{\partial t}}_\text{zero if not expanding}=& 0 \text{ if $\phi$ does not vary from point to point}
+\end{align*}
+
+There has to be another term if $\phi$ does vary from place to place: the term has to be such that we will reproduce \eqref{eq:wave:eq} if $a$ is constant. We might guess:
+
+\begin{align*}
+	\frac{\partial^2 \phi}{\partial t^2} + 3H\frac{\partial \phi}{\partial t}- \frac{\partial^2 \phi}{\partial x^2} - \frac{\partial^2 \phi}{\partial y^2} - \frac{\partial^2 \phi}{\partial z^2}=& 0 
+\end{align*}
+
+This might be correct of we were measuring in standard units, such a light seconds, but we are not\footnote{\url{https://youtu.be/NZ_CvI9Ying?t=4915}}. We need to incorporate the scale factor. Suppressing $y$ and $z$ for clarity:
+
+\begin{align*}
+	\frac{\partial^2 \phi}{\partial t^2} + 3H\frac{\partial \phi}{\partial t}- \frac{1}{a^2}\frac{\partial^2 \phi}{\partial x^2}=& 0 \numberthis \label{eq:wave:with_a}
+\end{align*}
+
+
+\begin{figure}[h]
+	\caption{We want to solve for a function that looks like this.}
+	\begin{center}
+		\includegraphics[width=0.6 \textwidth]{cosmo-a0-wave}
+	\end{center}
+\end{figure}
+
+Let us try:
+\begin{align*}
+	\phi(\vec{x},t) =& \phi_k(t) e^{i \vec{k} \cdot \vec{x}} \text{ in \eqref{eq:wave:with_a}}\\
+	\ddot{\phi_k(t)} + \underbrace{3H}_\gamma \dot{\phi_k(t)} + \underbrace{\big(\frac{k}{a(t)}\big)^2}_{\omega^2}\phi_k(t) =& 0
+\end{align*}
+
+The damped harmonic oscillator \eqref{eq:damped:harmonic}!
+
+This is exactly the situation of Figure \ref{fig:cosmo-10-varying-omega}. We end up with a number for $\phi_k$ for each $\vec{k}$. Waves stretch, and eventually come to rest at some non-zero point.
+
+That would be the end of the story, if it were not for quantum mechanics.
+
+
 
 \url{https://youtu.be/NZ_CvI9Ying?t=4556}
 

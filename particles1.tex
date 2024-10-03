@@ -41,7 +41,7 @@
 \maketitle
 
 \begin{abstract}
-These are my notes for the \emph{New Revolutions in Particle Physics 1} lectures\cite{susskind2009particles} from Leonard Susskind's \emph{Theoretical Minimum} series\cite{susskind2007theoretical}.
+These are my notes for \emph{New Revolutions in Particle Physics 1}  from Leonard Susskind's \emph{Theoretical Minimum} series \cite[Particle Physics 1: Basic Concepts]{susskind2007theoretical}.
 
 \begin{quotation}
 	Revolutionary new concepts about elementary particles, space and time, and the structure of matter began to emerge in the mid-1970s. Theory got far ahead of experiment with radical new ideas such as grand unification and supersymmetry, but the concepts have never been experimentally tested. Now all that is about to change. The Large Hadron Collider, or LHC, has finally been built and is about to confront theory with experiment. This course is devoted to these theoretical ideas and how they will be tested.
@@ -92,7 +92,8 @@ A photon has energy:
 E=&\hslash \omega \text{. Energy of single photon.} \numberthis\label{eq:E_omega}\\
 E_{ray}=&n \hslash \omega \text{. Energy of ray.}
 \end{align*}
- 
+
+(I learned quantum mechanics using Planck's constant, $h$, rather than Dirac's $\hbar$; $hf=\hbar\omega$.) 
 
 In modern usage, mass is what used to be called rest mass. $E = m c^2$ only for stationary object.
 
@@ -116,7 +117,7 @@ To see really small things, we need particles with high energy and momentum.
 
 \subsection{Mathematical Preliminaries}
 
-Consider a classical wave $A \sin(kx)$. Energy is proportional to $A^2$, but also to the number of photons, $n$: $E \propto n \hslash \omega$, $A \propto \sqrt(n)$.
+Consider a classical wave $A \sin(kx)$. Energy is proportional to $A^2$, but also to the number of photons, $n$: $E \propto n \hslash \omega$, $A \propto \sqrt{n}$.
 
 Generally, equations containing $c$ apply for photons only. For non-relativistic particles:
 \begin{align*}
@@ -129,19 +130,19 @@ f =& \frac{h}{2 m \lambda^2} \text{. c.f. Schr\"odinger equation!}
 	\item Group velocity: velocity of troughs and peaks--identified with particle velocity.
 \end{itemize}
 
-For light waves, phase and group velocities the same, but this isn't true for most particles. Phase velocity can exceed $c$, but it can't transmit information--Section \ref{section:phase:group:velocities}.
+For light waves, phase and group velocities are the same, but this isn't true for most particles. Phase velocity can exceed $c$, but it can't transmit information--Section \ref{section:phase:group:velocities}.
 
 Space is infinite. If physics is the art of getting problems into a shape that computers can solve, we need to remove infinities.
 
-Let's look at 1 dimensional waves. We can restrict to fixed length $L$: reflecting boundary condition at ends. But this violates conservation of momentum. Instead use a topological "circle" circumference $L$--periodic boundary conditions. As a consequence momentum is quantized: 
+Let's look at 1 dimensional waves. In order to get rid of infinities, we can restrict to fixed length $L$: reflecting boundary condition at ends. But this violates conservation of momentum: when wave bounces momentum reverses. Instead use a topological ''circle''\footnote{I.e. we just assume that the ends are connected somehow--in fact there is no end.} circumference $L$--periodic boundary conditions. This gets rid of infinity and preserves conservation of momentum at a cost: momentum is quantized: 
 
 \begin{align*}
-\lambda =& \frac{L}{N}\\
-P =& \frac{h}{\lambda}\\
-=& \frac{h N}{L}
+	\lambda =& \frac{L}{N} \text{ for some integer $N$}\\
+	P =& \frac{h}{\lambda} \text{ allowable momenta}\\
+	=& \frac{h N}{L}
 \end{align*}
 
-Now make into a real circle, radius $R$, and redefine $L$ to be \emph{angular momentum}.
+Now make into a real circle, radius $R$, and redefine $L=PR$ to be \emph{angular momentum}.
 
 \begin{align*}
 P =& \frac{h N}{2 \pi R}\\

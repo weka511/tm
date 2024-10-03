@@ -134,7 +134,7 @@ For light waves, phase and group velocities are the same, but this isn't true fo
 
 Space is infinite. If physics is the art of getting problems into a shape that computers can solve, we need to remove infinities.
 
-Let's look at 1 dimensional waves. In order to get rid of infinities, we can restrict to fixed length $L$: reflecting boundary condition at ends. But this violates conservation of momentum: when wave bounces momentum reverses. Instead use a topological ''circle''\footnote{I.e. we just assume that the ends are connected somehow--in fact there is no end.} circumference $L$--periodic boundary conditions. This gets rid of infinity and preserves conservation of momentum at a cost: momentum is quantized: 
+Let's look at 1 dimensional waves. In order to get rid of infinities, we can restrict to fixed length $L$: reflecting boundary condition at ends. But this violates conservation of momentum: when wave bounces momentum reverses. Instead use a topological ''circle''\footnote{I.e. we just assume that the ends are connected} circumference $L$--periodic boundary conditions. This gets rid of infinity and preserves conservation of momentum at a cost: momentum is quantized: 
 
 \begin{align*}
 	\lambda =& \frac{L}{N} \text{ for some integer $N$}\\
@@ -219,9 +219,17 @@ What does $\Psi$ do? It annihilates a particle at $x$.
 Locality: when something happens, it happens at one spot. Figure \ref{fig:ex:locality} is an example of one particle being replaced by two.
 
 \begin{figure}[H]
-	\caption[Example of locality: one particle is replaced by two]{Example of locality: one particle is replaced by two. $\Psi^\dagger(x)\Psi^\dagger(x)\Psi(x)\ket{...}$}\label{fig:ex:locality}
-	\includegraphics[width=0.8\textwidth]{split-particle}
+	\caption[Example of locality: one particle is replaced by two]{Example of locality: $\Psi^\dagger(x)\Psi^\dagger(x)\Psi(x)\ket{...}$}\label{fig:ex:locality}
+	\begin{center}
+		\feynmandiagram [horizontal=i1 to a] {
+			i1[] -- [fermion,momentum'=\(k\)] a[particle=\(x^{\prime}\)],
+			a --[fermion] f1[],
+			a--[fermion] f2[],
+		};
+	\end{center}
 \end{figure}
+
+
 
 Start with state $\ket{0,...\underbrace{1}_\text{$k_i$},0,000}$.
 

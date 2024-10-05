@@ -29,6 +29,9 @@
 \newtheorem{defn}[thm]{Definition}
 \newtheorem{cor}[thm]{Corollary}
 \newtheorem{lemma}[thm]{Lemma}
+\newtheoremstyle{case}{}{}{}{}{}{:}{ }{}
+\theoremstyle{case}
+\newtheorem{case}{Case}
 \graphicspath{{figs/}}
 \widowpenalty10000
 \clubpenalty10000
@@ -271,13 +274,19 @@ The reflection of a magnetic field is not the same field, as it is an axial vect
 		$[C,H]=0$
 	\end{lemma}
 	\begin{proof}
-		There are two cases: $C$ is a linear combination of $A$ and $B$, or $A$, $B$, and $C$ are independent. Since the lemma is trivial in the former case, we shall suppose the latter.
-		\begin{align*}
-		i[C,H] =& (AB)H - H(AB)\\
-		=& AHB -HAB\\
-		=& [A,H]B\\
-		=&0
-		\end{align*}
+		\begin{case}
+			$C$ is a linear combination of $A$ and $B$; the result is trivial.
+		\end{case}
+		\begin{case}
+			$A$, $B$, and $C$ are independent
+			\begin{align*}
+				i[C,H] =& [A,B]H - H[A,B] \text{, expanding commutator}\\
+				=& ABH - BAH - HAB + HBA \text{, again} \\
+				=& ABH - BAH - AHB + BHA \text{, using $[A,H]=0\land[B,H]=0$} \\
+				=& \cancel{ABH} - \bcancel{BAH} - \cancel{ABH} + \bcancel{BAH} \text{, using commutativity again and canceling}\\
+				=&0
+			\end{align*}
+		\end{case}
 	\end{proof}
 	
 	TBP

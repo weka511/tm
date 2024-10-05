@@ -153,7 +153,7 @@
 	
 	Disclaimer: I have created these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
 	
-	The notes were created using TexStudio\cite{TexStudio}, and the bibliography using JabRef\cite{Jabref}.
+	The notes were created using TexStudio\cite{TexStudio}, the bibliography using JabRef\cite{Jabref}, and Feynman diagrams using \emph{TikZ-Feynman} \cite{ellis2016tikz}.
 \end{abstract}
 
 
@@ -1681,7 +1681,7 @@ The explanation from Alan Guth in 1980 was that the universe expanded very fast,
 \subsection{The Inflaton Field}
 
 \subsubsection{End of Lecture 8}
-This means viscosity: consider a stone falling though honey--Figure \ref{fig:cosmo-9-falling-stone}.
+This means viscosity: consider a stone falling through honey--Figure \ref{fig:cosmo-9-falling-stone}.
 
 \begin{figure}[H]
 	\caption{Viscosity example--Falling stone}
@@ -1695,6 +1695,7 @@ This means viscosity: consider a stone falling though honey--Figure \ref{fig:cos
 	\end{subfigure}
 \end{figure}
 
+Then the stone satisfies the equation of motion \eqref{eq:falling:stone}.
 \begin{align*}
 	F =& - \frac{d V}{d\phi}\\
 	\ddot{\phi} =& - \gamma \dot{\phi} - \frac{d V}{d\phi} \text{, Newton with $m=1$ and viscosity} \numberthis \label{eq:falling:stone}\\
@@ -1703,9 +1704,7 @@ This means viscosity: consider a stone falling though honey--Figure \ref{fig:cos
 
 If $V(\phi)$ is a rather shallow hill--Figure \ref{fig:cosmo-9-falling-shallow-slope}--and the viscosity coefficient is large, the stone will take a long time to roll down the hill.
 
-$\phi$ will be the value of a field, and we will want to be in a situation where the field evolves very slowly because of a lot of friction, which will drive inflation.
-
-Now, assume that the universe is filled by a scalar field, the inflaton field $\phi$, which is pretty much uniform in space. Think about the energy stored in the field. Follow the field in an expanding box, size $(a(t))^3$.
+We want to make $\phi$ the value of a field, and we will want to be in a situation where the field evolves very slowly because of a lot of friction, which will drive inflation. We assume that the universe is filled by a scalar field, the inflaton field $\phi$, which is pretty much uniform in space. Think about the energy stored in the field. Follow the field in an expanding box, size $(a(t))^3$. The total energy, kinetic plus potential, is given by the following equation.
 \begin{align*}
 	E =& a^3(t)\big[\frac{\dot{\phi}^2}{2} + V(\phi)\big]\text{, no spatial gradient since uniform}
 \end{align*}
@@ -1717,7 +1716,7 @@ We use Lagrange's equation to derive the equation of motion. First calculate the
 \begin{align*}
 	\Lagr =&  a^3(t)\big[\frac{\dot{\phi}^2}{2} - V(\phi)\big] \text{ and substitute in Lagrange's equation}\\
 	\frac{d}{dt} \frac{\partial \Lagr}{\partial \dot{\phi}}=& \frac{\partial \Lagr}{\partial \phi} \text{. The first term is}\\
-	\frac{d}{dt} \frac{\partial \Lagr}{\partial \dot{\phi}}=&\frac{d}{dt}\big[\dot{\phi}a^3(t)\big]	\text{, whence}\\
+	\frac{d}{dt} \frac{\partial \Lagr}{\partial \dot{\phi}}=&\frac{d}{dt}\big[\dot{\phi}a^3(t)\big]	\text{, whence Lagrange's equation becomes:}\\
 	\frac{d}{dt}\big[\dot{\phi}a^3(t)\big]=&-a^3(t)\frac{dV}{d\phi} \text{. Expanding the time derivative we get:}\\
 	a^3\ddot{\phi} + \dot{\phi}\big(3a^2\dot{a}\big)=&a^3F \text {. Now divide by $a$}\\
 	\ddot{\phi} + 3\frac{\dot{a}}{a}\dot{\phi}=&F\text{, and use Equation \eqref{eq:hubble}}\\
@@ -1729,10 +1728,12 @@ We use Lagrange's equation to derive the equation of motion. First calculate the
 We postulate a hypothetical, undiscovered scalar field. Fields have energy, which depends on the value of the field. Let us hypothesize an energy, Figure \ref{fig:cosmo-9-scalar-field}.
 \begin{figure}[H]
 	\caption[Hypothetical, undiscovered scalar field]{The energy density that would be stored in space by our hypothetical, undiscovered scalar field. We haven't shown zero energy for $\phi=0$ because we don't know where its zero is. We call this ''potential energy'' as it is not associated with time dependence of the field.}\label{fig:cosmo-9-scalar-field}.
-	\includegraphics[width=0.8\textwidth]{cosmo-9-scalar-field}
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{cosmo-9-scalar-field}
+	\end{center}
 \end{figure}
 
-A scalar field has kinetic energy $\frac{\dot{\phi}^2}{2}$, so field energy in a small unit box is $\frac{\dot{\phi}^2}{2} + V(\phi)$, which is isomorphic to the motion of a particle in a field $\phi$.
+A scalar field has kinetic energy $\frac{\dot{\phi}^2}{2}$, so the field energy in a small unit box is $\frac{\dot{\phi}^2}{2} + V(\phi)$, which is isomorphic to the motion of a particle in a field $\phi$.
 
 (I have skipped over the remainder of the review of Lecture 8)
 
@@ -1743,21 +1744,16 @@ Suppose that the viscosity does not depend on time. In the beginning there is no
 What happened to energy conservation? Energy conservation is a consequence of time translation invariance, and $a(t)$ introduces a dependency on time.
 
 \subsection{How does $\phi$ affect the expansion?}
-This is one half of the story for expansion in the presence of a scalar field. But how does $\phi$ affect the expansion? For simplicity we will confine ourselves to the flat space case. The Friedmann equation is:
+This is one half of the story for expansion in the presence of a scalar field. But how does $\phi$ affect the expansion? For simplicity we will confine ourselves to the flat space case. The Friedmann equation \eqref{eq:friedmann:eq} becomes:
 \begin{align*}
-	H^2 = \big(\frac{\dot{a}}{a}\big)^2 = \frac{8\pi G}{3}\big[\frac{\dot{\phi}^2+V(\phi)}{2}\big]
+	H^2 = \big(\frac{\dot{a}}{a}\big)^2 = \frac{8\pi G}{3}\underbrace{\big[\frac{\dot{\phi}^2+V(\phi)}{2}\big]}_\rho
 \end{align*}
 
-Let us assume that V is large and its slope is gradual, as depicted in Figure \ref{fig:cosmo-9-potential}.
-
-\begin{figure}[H]
-	\caption[V is large and its slope is gradual]{Assume that V is large and its slope is gradual. The ''stone'' wants to run down towards lower potential energy. Since the slope is gradual, the force is small.}\label{fig:cosmo-9-potential}
-	\includegraphics[width=0.9\textwidth]{cosmo-9-potential}
-\end{figure}
+Let us assume that V is large and its slope is gradual, as depicted in Figure \ref{fig:cosmo-9-scalar-field}.  Since the slope is gradual, the force is small.
 
 (LS emphasized that the inflaton field, $\phi$ is hypothetical. Other scalar field wouldn't do the job, especially the Higgs field.)
 
-In Figure \ref{fig:cosmo-9-potential} the ''ball'' slowly creeps down the hill.
+In Figure \ref{fig:cosmo-9-scalar-field} the ''ball'' slowly creeps down the hill.
 
 \begin{align*}
 	H^2 = \big(\frac{\dot{a}}{a}\big)^2 \approx \frac{8\pi G}{3} V(\phi)
@@ -1773,7 +1769,7 @@ Now if $H^2$ is approximately constant, because the right hand side is approxima
 \end{align*}
 
 This is a theory of the very early universe, when it was expanding at a large rate.
-Cosmologists believe that the doubleing time was $10^{-32}s$. This is not a theory of the current universe.
+Cosmologists believe that the doubling time was $10^{-32}s$. This is not a theory of the current universe.
 
 Question about how gradual variation can cause exponential growth.
 \begin{itemize}
@@ -1817,7 +1813,7 @@ The other set of facts that need to be explained is Homogeneity at the time of d
  
  A very rapid expansion can solve both problems.
  
- It was estimated that, in order to make the universe the way it is, from a known starting point, or an unknown starting point that isn't smooth, you need at least 60 \glspl{gls:e:folding}, i.e multiplication by $e^{60}$ to get to the known smoothness. So $Ht$ needs to be \emph{at least} 60, which means that the ramp in Figure \ref{fig:cosmo-9-potential} must have been rather shallow.
+ It was estimated that, in order to make the universe the way it is, from a known starting point, or an unknown starting point that isn't smooth, you need at least 60 \glspl{gls:e:folding}, i.e multiplication by $e^{60}$ to get to the known smoothness. So $Ht$ needs to be \emph{at least} 60, which means that the ramp in Figure \ref{fig:cosmo-9-scalar-field} must have been rather shallow.
  
  That is where the theory was around 1980.
  
@@ -1990,7 +1986,7 @@ The use of the word \emph{all} is really deep. Planck realized that there were 3
  	\approx & 10^{-8} \text{ Kg--about a dust mote}
  \end{align*}
 
-At the time the lecture ws given the LHC was probing down to a distance of $10^17$ Planck lengths: we don't know the phenomena below this scale. The Standard Model works well for the LHC level.
+At the time the lecture ws given the LHC was probing down to a distance of $10^{17}$ Planck lengths: we don't know the phenomena below this scale. The Standard Model works well for the LHC level.
 
 We don't know why the parameters are the values they are, or why they appear to be so fine tuned.
 

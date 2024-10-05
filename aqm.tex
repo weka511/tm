@@ -389,6 +389,7 @@ We want to find eigenvalues of angular momentum. It us useful to introduce creat
 		L_z \ket{m} =& m \ket{m} \text{, magnetic quantum number}\numberthis \label{eq:ev:Lz}\\
 		[L_+,L_z] \ket{m} =& \big(L_+L_z - L_zL_+\big) \ket{m}\\
 		=&- L_+ \ket{m} \text{, from (\ref{eq:comm:LpmLz}). Rearranging  and using (\ref{eq:ev:Lz})}\\
+		\underbrace{L_+L_z \ket{m}}_{m L_+\ket{m}} - L_zL_+ \ket{m} =&- L_+ \ket{m}\\
 		m L_+\ket{m} + L_+\ket{m} =& L_z L_+ \ket{m} \text{, whence}\\
 		\big(m + 1 \big)L_+\ket{m}  =& L_z L_+ \ket{m} \numberthis \label{eq:create_m}
 	\end{align*}
@@ -401,16 +402,43 @@ So, using the algebra of commutators, we have generated a spectrum of values of 
 \begin{figure}[H]
 	\caption{Spectrum of $L_z$.}\label{fig:spectrum_Lz}
 	\begin{subfigure}[t]{0.3\textwidth}
-		\caption{Terminators in red}\label{fig:aqm-2-3}
-		\includegraphics[width=0.8\textwidth]{aqm-2-3}
+		\caption{Eigenvalues (red) are separated by integers, but we have not yet shown that they are necessarily integers.}\label{fig:aqm-2-3}
+		\begin{center}
+			\begin{tikzpicture}
+				\draw[help lines] (0,-4.9) grid (0.2,4.9);
+				\draw[->,ultra thick] (0,-5)--(0,5) node[above]{$m$};
+				\foreach \i in {-5,...,4}{
+					\filldraw[color=red, fill=red, very thick](0,\i+0.7) circle (0.1);
+					\node[] at (0.6,\i) {\i};
+				}
+			\end{tikzpicture}
+		\end{center}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.3\textwidth}
 		\caption{Integral values in red}\label{fig:aqm-2-3a}
-		\includegraphics[width=0.8\textwidth]{aqm-2-3a}
+			\begin{center}
+			\begin{tikzpicture}
+				\draw[help lines] (0,-4.9) grid (0.2,4.9);
+				\draw[->,ultra thick] (0,-5)--(0,5) node[above]{$m$};
+				\foreach \i in {-5,...,4}{
+					\filldraw[color=red, fill=red, very thick](0,\i) circle (0.1);
+					\node[] at (0.6,\i) {\i};
+				}
+			\end{tikzpicture}
+		\end{center}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.3\textwidth}
 		\caption{Half integral values}\label{fig:aqm-2-3b}
-		\includegraphics[width=0.8\textwidth]{aqm-2-3b}
+			\begin{center}
+			\begin{tikzpicture}
+				\draw[help lines] (0,-4.9) grid (0.2,4.9);
+				\draw[->,ultra thick] (0,-5)--(0,5) node[above]{$m$};
+				\foreach \i in {-5,...,4}{
+					\filldraw[color=red, fill=red, very thick](0,\i+0.5) circle (0.1);
+					\node[] at (0.6,\i) {\i};
+				}
+			\end{tikzpicture}
+		\end{center}
 	\end{subfigure}
 \end{figure}
 
@@ -426,7 +454,7 @@ So, using the algebra of commutators, we have generated a spectrum of values of 
 \begin{proof}
 	\begin{align*}
 	H \ket{m} =& E \ket{m} \numberthis \label{eq:assume_ev}\\
-	H L_+ \ket{m} =& L_+ H \ket{m}\\
+	H L_+ \ket{m} =& L_+ H \ket{m} \text{, from \eqref{eq:LH}, $H$ commutes with all $L$}\\
 	=& L_+ E \ket{m} \text{, from (\ref{eq:assume_ev})}\\
 	=& E L_+  \ket{m}\\
 	H \ket{m+1} =& E \ket{m+1} \text{, from (\ref{eq:create_m})}

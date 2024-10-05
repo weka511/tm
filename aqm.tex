@@ -262,7 +262,7 @@ The reflection of a magnetic field is not the same field, as it is an axial vect
 	\begin{align*}
 		[A,H]=&0 \text{, because it's a symmetry}\\
 		[B,H]=& 0\\
-		[A,B]\ne 0
+		[A,B]\ne& 0
 	\end{align*}
 	then...
 \end{thm}
@@ -305,15 +305,11 @@ The reflection of a magnetic field is not the same field, as it is an axial vect
 	\end{align*}
 \end{proof}
 
-
-
-
-
 \begin{defn}[Commutator algebra]
 	Closure of $\{A,B,C,...\}$ under commutation.
 \end{defn}
 
-Collection of generators is an algebra.
+A cCollection of generators is an algebra.
 
 \begin{defn}[abelian]
 	A group of symmetries that all commute.
@@ -325,32 +321,30 @@ Collection of generators is an algebra.
 
 \subsection{An example: Angular Momentum}
 
-Consider a classical orbit with energy $E$, Figure \ref{eq:aqm-2-1}. 	Is it degenerate? All we have to do is rotate it to see a new orbit with energy $E$: rotation about the y-axis has added a z-component. This is a classical suggestion that the quantum mechanical operators of angular momentum don't commute (rotation about 2nd axis converts rotation about 1st into something with a component along 3rd).
+Consider a classical orbit with energy $E$, Figure \ref{eq:aqm-2-1}. Is it degenerate? All we have to do is rotate it to see a new orbit with energy $E$: rotation about the y-axis has added a z-component. This is a classical suggestion that the quantum mechanical operators of angular momentum don't commute (rotation about 2nd axis converts rotation about 1st into something with a component along 3rd).
 
 \begin{figure}[H]
-	\begin{center}
+	\caption{An example: Angular Momentum}
+	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Degeneracy of Angular Momentum(classical)}\label{eq:aqm-2-1}
-		\includegraphics[width=0.5\textwidth]{aqm-2-1}
-	\end{center}
+		\includegraphics[width=\textwidth]{aqm-2-1}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{Rotation in 2D by a small angle $\epsilon$}\label{fig:aqm-2-2}
+		\includegraphics[width=\textwidth]{aqm-2-2}
+	\end{subfigure}
 \end{figure}
 
 Let's look at the angular momentum generators. Figure \ref{fig:aqm-2-2} shows a  rotation about the z-axis by a small angle $\epsilon$.
-
-\begin{figure}[H]
-	\begin{center}
-		\caption{Rotation in 2D by a small angle $\epsilon$}\label{fig:aqm-2-2}
-		\includegraphics[width=0.5\textwidth]{aqm-2-2}
-	\end{center}
-\end{figure}
 
 \begin{align*}
 	\delta x =& - y \epsilon\\
 	\delta y =& x \epsilon \text{. Now for a wave function $\psi(x,y)$}\\
 	\delta \psi =& \frac{\partial \psi}{\partial x} \delta x + \frac{\partial \psi}{\partial y} \delta y\\
 	=&\big( - y \frac{\partial \psi}{\partial x} + x \frac{\partial \psi}{\partial y}\big) \epsilon\\
-	\triangleq& i \epsilon L_z \psi\\
-	=& \big(- y P_x + x P_y x\big) i \epsilon \text{, whence}\\
-	L_z =& x P_y - y P_x \text{, similarly}\\
+	=& i \, \epsilon \big(- y P_x + x P_y x\big)  \text{. If we define}\\
+	L_z =& x P_y - y P_x \text{, we can write:}\\
+	\delta \psi=& i \epsilon L_z \psi\text{. Similarly we define}\\
 	L_x =& y P_z - z P_y \text{, and}\\
 	L_y =& x P_x - x P_z \text{, c.f. the classical formula}\\
 	\vec{L} =& \vec{r} \times \vec{P}
@@ -359,14 +353,14 @@ These are symmetries if the system is rotationally invariant.
 
 Do they commute with each other? In \cite{susskind2014quantum} we saw
 \begin{align*}
-	[L,H_i]=& 0 \numberthis \label{eq:LH}\\
+	[L_i,H]=& 0 \text{, for $i \in \{x,y,z\}$}\numberthis \label{eq:LH}\\
 	[L_x,L_y] =& i L_z \numberthis \label{eq:lx_ly}\\
 	[L_y,L_z] =& i L_x\numberthis \label{eq:ly_lz}\\
 	[L_z,L_x] =& i L_y\numberthis \label{eq:lz_lx}
 \end{align*}
 
 \begin{defn}[Algebra]
-	In mathematics, an \emph{algebra over a field } (often simply called an algebra) is a vector space equipped with a bilinear product. 
+	An \emph{algebra over a field } (often simply called an algebra) is a vector space equipped with a bilinear product. 
 \end{defn}
 
 \begin{defn}[Lie algebra]
@@ -378,7 +372,7 @@ So $L_x$, $L_y$, $L_z$ generate a Lie algebra: if we continue commuting we don't
 We want to find eigenvalues of angular momentum. It us useful to introduce creation and annihilation operators for $L_z$.
 \begin{align*}
 	L_{\pm} \triangleq& L_x \pm i L_y \numberthis \label{eq:comm:Lpm}\\
-	[L_{\pm},L_Z] =& \mp L_{\pm} \numberthis \label{eq:comm:LpmLz}
+	[L_{\pm},L_z] =& \mp L_{\pm} \numberthis \label{eq:comm:LpmLz}
 \end{align*}
 
 \begin{thm}[If $\ket{m}$ is an eigenvector of $L_z$, so are $L_+ \ket{m}$ and $L_- \ket{m}$]
@@ -396,8 +390,9 @@ We want to find eigenvalues of angular momentum. It us useful to introduce creat
 		[L_+,L_z] \ket{m} =& \big(L_+L_z - L_zL_+\big) \ket{m}\\
 		=&- L_+ \ket{m} \text{, from (\ref{eq:comm:LpmLz}). Rearranging  and using (\ref{eq:ev:Lz})}\\
 		m L_+\ket{m} + L_+\ket{m} =& L_z L_+ \ket{m} \text{, whence}\\
-		\big(m + 1 \big)L_+\ket{m}  =& L_z L_+ \ket{m} \text{; $L_+ \ket{m}$ is an eigenvector, eigenvalue $m+1$}\numberthis \label{eq:create_m}
+		\big(m + 1 \big)L_+\ket{m}  =& L_z L_+ \ket{m} \numberthis \label{eq:create_m}
 	\end{align*}
+	So $L_+ \ket{m}$ is an eigenvector, eigenvalue $m+1$.
 	Similarly, $L_- \ket{m}$ is an eigenvector, eigenvalue $m-1$. The sequence of eigenvectors terminates if  $L_{\pm} \ket{m}=0$.
 \end{proof}
 

@@ -397,46 +397,57 @@ We want to find eigenvalues of angular momentum. It us useful to introduce creat
 	Similarly, $L_- \ket{m}$ is an eigenvector, eigenvalue $m-1$. The sequence of eigenvectors terminates if  $L_{\pm} \ket{m}=0$.
 \end{proof}
 
-So, using the algebra of commutators, we have generated a spectrum of values of $L_z$, separated by integers--see Figure \ref{fig:aqm-2-3}. Imagine that we rotate by $180\degree$: this takes $L_z\rightarrow - L_z$, so rotational symmetry requires that the termination points be reversed: they must be symmetrical. There are two possibilities--Figures \ref{fig:aqm-2-3a} and \ref{fig:aqm-2-3b}. We can show that the only values that are allowed for orbital angular momentum are integral (single values wave function), but half integral is also possible for spin. 
+\begin{itemize}
+	\item So, using the algebra of commutators, we have generated a spectrum of values of $L_z$, separated by integers--see Figure \ref{fig:aqm-2-3}. This spectrum does not necessarily have to go on indefinitely, as it is possible that $\exists  \ket{m}: L_+ \ket{m} = 0$.
+	\item Imagine that we rotate by $180\degree$: this takes $L_z\rightarrow - L_z$, so rotational symmetry requires that the termination points be reversed: they must be symmetrical. There are two possibilities--Figures \ref{fig:aqm-2-3a} and \ref{fig:aqm-2-3b}. We can show that the only values that are allowed for orbital angular momentum are integral (single values wave function), but half integral is also possible for spin. 
+\end{itemize}
 
 \begin{figure}[H]
-	\caption{Spectrum of $L_z$.}\label{fig:spectrum_Lz}
+	\caption[Spectrum of $L_z$.]{Spectrum of $L_z$. Eigenvalues are separated by integers, and the red circles show possible terminations, where $L_{\pm}\ket{m}=0$.}\label{fig:spectrum_Lz}
 	\begin{subfigure}[t]{0.3\textwidth}
-		\caption{Eigenvalues (red) are separated by integers, but we have not yet shown that they are necessarily integers.}\label{fig:aqm-2-3}
+		\caption {We have not yet shown that the eigenvalues are necessarily integers.}\label{fig:aqm-2-3}
 		\begin{center}
 			\begin{tikzpicture}
 				\draw[help lines] (0,-4.9) grid (0.2,4.9);
 				\draw[->,ultra thick] (0,-5)--(0,5) node[above]{$m$};
 				\foreach \i in {-5,...,4}{
-					\filldraw[color=red, fill=red, very thick](0,\i+0.7) circle (0.1);
+					\filldraw[color=black, fill=black, very thick](0,\i+0.7) circle (0.1);
 					\node[] at (0.6,\i) {\i};
 				}
+				\filldraw[color=red, fill=red, very thick](0,4.7) circle (0.1);
+				\filldraw[color=red, fill=red, very thick](0,-5+0.7) circle (0.1);
 			\end{tikzpicture}
 		\end{center}
 	\end{subfigure}
+	\;
 	\begin{subfigure}[t]{0.3\textwidth}
-		\caption{Integral values in red}\label{fig:aqm-2-3a}
-			\begin{center}
+		\caption{Integral values, exhibiting symmetry about 0. }\label{fig:aqm-2-3a}
+		\begin{center}
+			\begin{tikzpicture}
+				\draw[help lines] (0,-4.9) grid (0.2,4.9);
+				\draw[->,ultra thick] (0,-5)--(0,5) node[above]{$m$};
+				\foreach \i in {-4,...,4}{
+					\filldraw[color=black, fill=black, very thick](0,\i) circle (0.1);
+					\node[] at (0.6,\i) {\i};
+				}
+				\filldraw[color=red, fill=red, very thick](0,4) circle (0.1);
+				\filldraw[color=red, fill=red, very thick](0,-4) circle (0.1);
+			\end{tikzpicture}
+		\end{center}
+	\end{subfigure}
+	\;
+	\begin{subfigure}[t]{0.3\textwidth}
+		\caption{Half integral values.}\label{fig:aqm-2-3b}
+		\begin{center}
 			\begin{tikzpicture}
 				\draw[help lines] (0,-4.9) grid (0.2,4.9);
 				\draw[->,ultra thick] (0,-5)--(0,5) node[above]{$m$};
 				\foreach \i in {-5,...,4}{
-					\filldraw[color=red, fill=red, very thick](0,\i) circle (0.1);
+					\filldraw[color=black, fill=black, very thick](0,\i+0.5) circle (0.1);
 					\node[] at (0.6,\i) {\i};
 				}
-			\end{tikzpicture}
-		\end{center}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.3\textwidth}
-		\caption{Half integral values}\label{fig:aqm-2-3b}
-			\begin{center}
-			\begin{tikzpicture}
-				\draw[help lines] (0,-4.9) grid (0.2,4.9);
-				\draw[->,ultra thick] (0,-5)--(0,5) node[above]{$m$};
-				\foreach \i in {-5,...,4}{
-					\filldraw[color=red, fill=red, very thick](0,\i+0.5) circle (0.1);
-					\node[] at (0.6,\i) {\i};
-				}
+				\filldraw[color=red, fill=red, very thick](0,4.5) circle (0.1);
+				\filldraw[color=red, fill=red, very thick](0,-4.5) circle (0.1);
 			\end{tikzpicture}
 		\end{center}
 	\end{subfigure}
@@ -480,7 +491,7 @@ In 3 dimensions, $\psi(r,\theta,\phi)= Y(\theta,\phi) \chi(r)$, where $Y(\theta,
 
 In Section \ref{seq:symmetry:degeneracy} we derived the commutators, (\ref{eq:lx_ly}), (\ref{eq:ly_lz}), and (\ref{eq:lz_lx}). We selected one component, $L_z$, and worked with its eigenvectors, $L_z \ket{m} = m \ket{m}$. We defined $L_\pm$, (\ref{eq:comm:Lpm}), and found that they had useful properties, (\ref{eq:comm:LpmLz}). $L_\pm$ were raising and lowering operators, which take use up and down the spectrum.
 
-We asked whether the raising and lowering could go on forever. The only way to come to an end is if $\exists l$ such that $L_+\ket{k}=0$ (and similarly for $L_-$). Spectrum has to be symmetric (rotational invariance). We found spectrum had to go up in integers, and that it started at either an integer or half integer. We found that the spectrum was a multiplet of $2l+1$ states. The multiplet is characterized by the magnitude of angular momentum.
+We asked whether the raising and lowering could go on forever. The only way to come to an end is if $\exists l$ such that $L_+\ket{k}=0$ (and similarly for $L_-$). The spectrum has to be symmetric (rotational invariance). We found that the spectrum had to go up in integers, and that it started at either an integer or half integer. We found that the spectrum was a multiplet of $2l+1$ states. The multiplet is characterized by the magnitude of angular momentum.
 
 
 From (\ref{eq:create_m}) we have a spectrum of angular momenta, integral or half integral, say $\set{-l,...,l:L_+\ket{l}=0}$. There are $2l+1$ states with constant $L^2 = L_x^2 + L_y^2 + L_x^2$. Classically $L^2 = L_z^2 +(L_x-iL_y)(L_x+iL_y)$, but this fails in quantum mechanics as they operators don't commute.
@@ -490,7 +501,7 @@ The quantum version is:
 	L^2 =& L_z^2 +(L_x-iL_y)(L_x+iL_y) -i [L_x,L_y]\\
 	=& L_z^2 + L_z + L^-L^+\\
 	L^2\ket{l}=& L_z^2\ket{l} + L_z\ket{l} + L^-L^+\ket{l}\\
-	=& l^2\ket{l} + l\ket{l} + 0\text{, because eigenvectors.}\\
+	=& l^2\ket{l} + l\ket{l} + 0\text{, because $\ket{l}$ is an eigenvector \& $L^+\ket{l}=0$.}\\
 	L^2\ket{l}=&l (l+1) \ket{l} \numberthis \label{eq:max:L}
 \end{align*}
 

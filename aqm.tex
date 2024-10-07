@@ -27,20 +27,18 @@
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
 % snarfed from https://tex.stackexchange.com/questions/283502/reset-counter-at-beginning-of-proof
-\newcounter{claimcount}
-\setcounter{claimcount}{0}
-\newenvironment{claim}{\refstepcounter{claimcount}\textbf{\newline Case \arabic{claimcount}:}}{}
+\newcounter{casecount}
+\setcounter{casecount}{0}
+\newenvironment{case}{\refstepcounter{casecount}\textbf{\newline Case \arabic{casecount}:}}{}
 
 
-\AtBeginEnvironment{proof}{\setcounter{claimcount}{0}}
+\AtBeginEnvironment{proof}{\setcounter{casecount}{0}}
 
 \newtheorem{thm}{Theorem}
 \newtheorem{defn}[thm]{Definition}
 \newtheorem{cor}[thm]{Corollary}
 \newtheorem{lemma}[thm]{Lemma}
-%\newtheoremstyle{case}{}{}{}{}{}{:}{ }{}
-%\theoremstyle{case}
-%\newtheorem{case}{Case}
+
 \graphicspath{{figs/}}
 \widowpenalty10000
 \clubpenalty10000
@@ -75,7 +73,7 @@ The notes were prepared using TexStudio\cite{TexStudio}, the bibliography using 
 \listoffigures
 \listoftables
 
-\listoftheorems%[ignoreall, show={thm,defn,cor,lemma}] % suppress cases
+\listoftheorems
 
 
 \section{Review and Introduction to Symmetry}
@@ -277,10 +275,10 @@ The reflection of a magnetic field is not the same field, as it is an axial vect
 	\end{align*}
 \end{thm}
 \begin{proof}
-	\begin{claim}
+	\begin{case}
 		$C$ is a linear combination of $A$ and $B$; the result is trivial.
-	\end{claim}
-	\begin{claim}
+	\end{case}
+	\begin{case}
 		$A$, $B$, and $C$ are independent
 		\begin{align*}
 			i[C,H] =& [A,B]H - H[A,B] \text{, expanding commutator}\\
@@ -289,7 +287,7 @@ The reflection of a magnetic field is not the same field, as it is an axial vect
 			=& \cancel{ABH} - \bcancel{BAH} - \cancel{ABH} + \bcancel{BAH} \text{, using commutativity again and canceling}\\
 			=&0
 		\end{align*}
-	\end{claim}
+	\end{case}
 \end{proof}
 
 
@@ -310,15 +308,15 @@ The reflection of a magnetic field is not the same field, as it is an axial vect
 		HA \ket{v} =& E A\ket{v}  \text{, since $A$ commutes with $H$}
 	\end{align*}
 	Whence $A \ket{v}$ is also an eigenvector with eigenvalue $E$. Similarly $B \ket{v}$ is also an eigenvector with eigenvalue $E$.
-	\begin{claim}\label{foo}
+	\begin{case}
 		If $A \ket{v}$, or $B \ket{v}$ is independent of $\ket{v}$, we have constructed an eigenvector that shares the same eigenvalue, and the result is proved.
-	\end{claim}
-	\begin{claim}
+	\end{case}
+	\begin{case}
 		Otherwise choose another eigenvector $\ket{v}$. Continue until we have $A \ket{v}$, or $B \ket{v}$  independent of $\ket{v}$ as in the first case.
-	\end{claim}
-	\begin{claim}
+	\end{case}
+	\begin{case}
 		If we exhaust all eigenvectors, then $A$ and $B$ must be proportional, which is impossible since they don't commute.
-	\end{claim}
+	\end{case}
 \end{proof}
 
 \begin{thm}[Reflection and rotation don't commute]

@@ -310,10 +310,15 @@ The reflection of a magnetic field is not the same field, as it is an axial vect
 		HA \ket{v} =& E A\ket{v}  \text{, since $A$ commutes with $H$}
 	\end{align*}
 	Whence $A \ket{v}$ is also an eigenvector with eigenvalue $E$. Similarly $B \ket{v}$ is also an eigenvector with eigenvalue $E$.
-		\begin{claim}
-		foo
+	\begin{claim}\label{foo}
+		If $A \ket{v}$, or $B \ket{v}$ is independent of $\ket{v}$, we have constructed an eigenvector that shares the same eigenvalue, and the result is proved.
 	\end{claim}
-	TBP
+	\begin{claim}
+		Otherwise choose another eigenvector $\ket{v}$. Continue until we have $A \ket{v}$, or $B \ket{v}$  independent of $\ket{v}$ as in the first case.
+	\end{claim}
+	\begin{claim}
+		If we exhaust all eigenvectors, then $A$ and $B$ must be proportional, which is impossible since they don't commute.
+	\end{claim}
 \end{proof}
 
 \begin{thm}[Reflection and rotation don't commute]

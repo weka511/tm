@@ -23,20 +23,29 @@
 \usepackage{colortbl}
 \usepackage[toc,nonumberlist]{glossaries}
 \usepackage{glossaries-extra}
+\usepackage{etoolbox}
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+% snarfed from https://tex.stackexchange.com/questions/283502/reset-counter-at-beginning-of-proof
+\newcounter{claimcount}
+\setcounter{claimcount}{0}
+\newenvironment{claim}{\refstepcounter{claimcount}\textbf{\newline Case \arabic{claimcount}:}}{}
+
+
+\AtBeginEnvironment{proof}{\setcounter{claimcount}{0}}
 
 \newtheorem{thm}{Theorem}
 \newtheorem{defn}[thm]{Definition}
 \newtheorem{cor}[thm]{Corollary}
 \newtheorem{lemma}[thm]{Lemma}
-\newtheoremstyle{case}{}{}{}{}{}{:}{ }{}
-\theoremstyle{case}
-\newtheorem{case}{Case}
+%\newtheoremstyle{case}{}{}{}{}{}{:}{ }{}
+%\theoremstyle{case}
+%\newtheorem{case}{Case}
 \graphicspath{{figs/}}
 \widowpenalty10000
 \clubpenalty10000
 \setcounter{tocdepth}{2}
-\tikzfeynmanset{compat=1.0.0}
+\tikzfeynmanset{compat=1.1.0}
 %opening
 \title{Theoretical Minimum\\Advanced Quantum Mechanics}
 \author{Simon Crase (compiler)\\simon@greenweaves.nz}
@@ -65,7 +74,8 @@ The notes were prepared using TexStudio\cite{TexStudio}, the bibliography using 
 \tableofcontents
 \listoffigures
 \listoftables
-\listoftheorems
+
+\listoftheorems%[ignoreall, show={thm,defn,cor,lemma}] % suppress cases
 
 
 \section{Review and Introduction to Symmetry}
@@ -257,38 +267,52 @@ We will use $M$ to denote reflection symmetry. If we have reflection symmetry, $
 
 The reflection of a magnetic field is not the same field, as it is an axial vector. Imagine a current generating a magnetic field going into the plane. If we reflect, the current goes in the opposite direction, as does the magnetic field.
 
+
+\begin{thm}[Commutator of two symmetries is itself a symmetry]
+	\begin{align*}
+		\text{if } [A,H]=&0 \text{,and}\\
+		[B,H]=& 0 \text{, and}\\
+		[A,B]=& i C  \text{, then}\\
+		[C,H]=&0
+	\end{align*}
+\end{thm}
+\begin{proof}
+	\begin{claim}
+		$C$ is a linear combination of $A$ and $B$; the result is trivial.
+	\end{claim}
+	\begin{claim}
+		$A$, $B$, and $C$ are independent
+		\begin{align*}
+			i[C,H] =& [A,B]H - H[A,B] \text{, expanding commutator}\\
+			=& ABH - BAH - HAB + HBA \text{, again} \\
+			=& ABH - BAH - AHB + BHA \text{, using $[A,H]=0\land[B,H]=0$} \\
+			=& \cancel{ABH} - \bcancel{BAH} - \cancel{ABH} + \bcancel{BAH} \text{, using commutativity again and canceling}\\
+			=&0
+		\end{align*}
+	\end{claim}
+\end{proof}
+
+
 \begin{thm}[Two symmetries that don't commute imply degeneracy]
 	Suppose we have two symmetries, whose generators are $A$ and $B$.
 	\begin{align*}
-		[A,H]=&0 \text{, because it's a symmetry}\\
-		[B,H]=& 0\\
+		[A,H]=&0 \text{, and} \\
+		[B,H]=& 0\text{, and} \\
 		[A,B]\ne& 0
 	\end{align*}
-	then...
+	then there are two or more independent eigenvectors of $H$ with the same eigenvalue (energy).
 \end{thm}
 \begin{proof}
+	Choose any  eigenvector $\ket{v}$ of $H$ with eigenvalue $E$. Then we can write
 	\begin{align*}
-		[A,B]=& i C  \text{. Need $i$ for $C$ to be Hermitean}
+		H \ket{v} =& E \ket{v} \\
+		AH \ket{v} =& E A \ket{v}\\
+		HA \ket{v} =& E A\ket{v}  \text{, since $A$ commutes with $H$}
 	\end{align*}
-	\begin{lemma}[C commutes with H]
-		$[C,H]=0$
-	\end{lemma}
-	\begin{proof}
-		\begin{case}
-			$C$ is a linear combination of $A$ and $B$; the result is trivial.
-		\end{case}
-		\begin{case}
-			$A$, $B$, and $C$ are independent
-			\begin{align*}
-				i[C,H] =& [A,B]H - H[A,B] \text{, expanding commutator}\\
-				=& ABH - BAH - HAB + HBA \text{, again} \\
-				=& ABH - BAH - AHB + BHA \text{, using $[A,H]=0\land[B,H]=0$} \\
-				=& \cancel{ABH} - \bcancel{BAH} - \cancel{ABH} + \bcancel{BAH} \text{, using commutativity again and canceling}\\
-				=&0
-			\end{align*}
-		\end{case}
-	\end{proof}
-	
+	Whence $A \ket{v}$ is also an eigenvector with eigenvalue $E$. Similarly $B \ket{v}$ is also an eigenvector with eigenvalue $E$.
+		\begin{claim}
+		foo
+	\end{claim}
 	TBP
 \end{proof}
 
@@ -309,7 +333,7 @@ The reflection of a magnetic field is not the same field, as it is an axial vect
 	Closure of $\{A,B,C,...\}$ under commutation.
 \end{defn}
 
-A cCollection of generators is an algebra.
+A collection of generators is an algebra.
 
 \begin{defn}[abelian]
 	A group of symmetries that all commute.

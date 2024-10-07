@@ -2122,11 +2122,66 @@ We still have $H^2=P^2$, and we don't have a mass. So we try $H= H = \vec{\alpha
 
 So $\beta$ anticommutes with all the Pauli matrices: unfortunately there is not matrix that anticommutes with all the Pauli matrices.
 
-\begin{thm}[There is no $2 \times 2$ matrix that anticommutes with the Pauli matrices]
-	We can find 3 $2 \times 2$ matrices that anticommute, but not 4.
+\begin{thm}[No $2 \times 2$ matrix  anticommutes with the Pauli matrices]
+	We can find 3 $2 \times 2$ non-trivial matrices that anticommute, but not 4.
 \end{thm}
 \begin{proof}
-	TBP
+	The Pauli matrices anticommute, so the first part of the theorem is immediate. To show there as not a $4th$ matrix, try to find $\begin{pmatrix}
+		a & b\\
+		c & d
+	\end{pmatrix}$ that anticommutes with the Pauli matrices. We start with $\sigma_1$.
+	\begin{align*}
+		\begin{pmatrix}
+			1 & 0\\
+			0 & -1
+		\end{pmatrix}	\begin{pmatrix}
+		a & b\\
+		c & d
+		\end{pmatrix} =& -	\begin{pmatrix}
+		a & b\\
+		c & d
+		\end{pmatrix}	\begin{pmatrix}
+		1 & 0\\
+		0 & -1
+		\end{pmatrix}\\
+		\begin{pmatrix}
+			a & b\\
+			-c & -d
+		\end{pmatrix} =& - \begin{pmatrix}
+			a & -b\\
+			c & -d
+		\end{pmatrix} \text{, whence}\\
+		a=&0 \text{ and} \\
+		d=&0
+	\end{align*}
+	Next we try $\sigma_2$:
+	\begin{align*}
+		\begin{pmatrix}
+			0 & 1\\
+			1 & 0
+		\end{pmatrix} \begin{pmatrix}
+			0 & b\\
+			c & 0
+		\end{pmatrix} =& -\begin{pmatrix}
+			0 & b\\
+			c & 0
+		\end{pmatrix} \begin{pmatrix}
+			0 & 1\\
+			1 & 0
+		\end{pmatrix}\\
+		\begin{pmatrix}
+			c & 0\\
+			0 & b
+		\end{pmatrix} =& - \begin{pmatrix}
+			b & 0\\
+			0 & c
+		\end{pmatrix} \text{, which reduces to:}\\
+		c =& -b
+	\end{align*}
+	But this makes our matrix be $\begin{pmatrix}
+		0 & b\\
+		-b & 0
+	\end{pmatrix}$, which is a $\sigma_3$ multiplied by a scalar. The only way it can anticommute with $\sigma_3$ is if $b=0$, which is trivial.
 \end{proof}
 We have two choices: we can give up, or introduce another 2 valued degree of freedom, so we would use $4 \times 4$. It turns out that this will work: $4 \times 4$ \emph{has nothing to do with space being 4 dimensional; it is just a mathematical fact about anti-commuting matrices.} 
 

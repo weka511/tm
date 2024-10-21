@@ -106,8 +106,8 @@ We start with a review of quantum mechanics, and then move on to the application
 		\item $U(t)\ket{\psi(0)} = \ket{\psi(t)}$
 		\item $U(t)\ket{\psi(t_0)} = \ket{\psi(t_0 + y)}$
 	\end{itemize}
-	\item Following the "minus 1-th law"\footnote{Information is conserved}, we postulate that two states that are observably different will not evolve into two other states that are \emph{not} observably different, so inner products must be preserved: $\braket{\phi|\psi}=\braket{\phi|U^{\dagger}U|\psi}$ i.e. $U^{\dagger}U=I$. U is \emph{Unitary}
-	\item Let $U(\epsilon)= I + \epsilon G$, so $U^\dagger(\epsilon)= I - \epsilon G^\dagger$ and $G=-G^{\dagger}$. This, in turn, requires $( I + \epsilon G)( I - \epsilon G^\dagger)= O(\epsilon^2)$. We can satisfy this be defining $G=- i H$ for some Hermitian $H$--the \emph{Hamiltonian}.
+	\item Following the "minus 1-th law"\footnote{Information is conserved}, we postulate that two states that are observably different will not evolve into two other states that are \emph{not} observably different, so inner products must be preserved: $\braket{\phi|\psi} = \braket{\phi|U^{\dagger}U|\psi}$ i.e. $U^{\dagger}U=I$. U is \emph{Unitary}
+	\item Let $U(\epsilon)= I + \epsilon G$, so $U^\dagger(\epsilon)= I - \epsilon G^\dagger$ and $G=-G^{\dagger}$. This, in turn, requires $( I + \epsilon G)( I - \epsilon G^\dagger)= I + O(\epsilon^2)$. We can satisfy this be defining $G=- i H$ for some Hermitian $H$--the \emph{Hamiltonian}.
 	\item For general $t$, $U(t)=e^{- i H t}$
 \end{itemize}
 \begin{align*}
@@ -348,7 +348,7 @@ A collection of generators is an algebra.
 
 \subsection{An example: Angular Momentum}
 
-Consider a classical orbit with energy $E$, Figure \ref{eq:aqm-2-1}. Is it degenerate? All we have to do is rotate it to see a new orbit with energy $E$: rotation about the y-axis has added a z-component. This is a classical suggestion that the quantum mechanical operators of angular momentum don't commute (rotation about 2nd axis converts rotation about 1st into something with a component along 3rd).
+Consider a classical orbit with energy $E$, Figure \ref{eq:aqm-2-1}. Is it degenerate? All we have to do is rotate it to see a new orbit with energy $E$: rotation about the y-axis has added a z-component. This is a classical suggestion that the quantum mechanical operators of angular momentum don't commute (rotation about $2^{nd}$ axis converts rotation about $1^{st}$ into something with a component along $3^{rd}$).
 
 \begin{figure}[H]
 	\caption{An example: Angular Momentum}
@@ -672,37 +672,44 @@ Everything in physics that has an equilibrium, if you disturb equilibrium by a s
 
 \begin{figure}[H]
 	\begin{center}
-		\caption[Model: suspended mass.]{Suspended mass $(m=1)$, spring constant $(k=\omega^2)$.  $X$ is deviation from equillibrium.}\label{fig:aqm-3-shm-suspended-mass}
+		\caption[Suspended mass.]{Suspended mass $(m=1)$, spring constant $(k=\omega^2)$.  $X$ is deviation from equillibrium.}\label{fig:aqm-3-shm-suspended-mass}
 		\includegraphics[width=0.8\textwidth]{aqm-3-shm-suspended-mass}
 	\end{center}
 \end{figure}
 
 Classically:
 \begin{align*}
-	H =& \frac{P^2}{2m} + \frac{\omega^2 x^2}{2} \text{. We'll check with Hamilton's equations}\\
-	 \dot{p}=&\frac{\partial H}{\partial x} \\
-	=& \dot{x} \\
-	\dot{x} =& -\frac{\partial H}{\partial p} \\
-	=& - \omega^2 p \\
-	\dddot{x} + \omega^2 x =&0 \text{, as expected}
+	H =& \frac{p^2}{2} + \frac{\omega^2 x^2}{2} \text{. We'll check with Hamilton's equations}\\
+	 \dot{x}=&\frac{\partial H}{\partial p} \\
+	 =&p\\
+	 \dot{p}=&-\frac{\partial H}{\partial x} \\
+	=& - \omega^2 x \\
+	\ddot{x} + \omega^2 x =&0 \text{, as expected.}
 \end{align*}
 
 Quantum mechanically:
 \begin{align*}
-	H =& \frac{P^2}{2m} + \frac{\omega^2 x^2}{2}\\
-	=& \frac{\omega}{2 \omega}\big(P + i \omega x \big)\big(P - i \omega x \big) - \frac{i \omega}{2} [x,P] \text{, since x and p don't commute}\\
-	=& \frac{\omega}{2 \omega}\big(P + i \omega x \big)\big(P - i \omega x \big) + \underbrace{\frac{\hslash \omega}{2}}_\text{zero point energy}\\
-	=&\omega \frac{\big(P + i \omega x \big)}{\sqrt{2 \omega}}\frac{\big(P - i \omega x \big)}{\sqrt{2 \omega}}
+	H =& \frac{P^2}{2m} + \frac{\omega^2 X^2}{2}\\
+	=& \frac{1}{2}\big(P + i \omega X \big)\big(P - i \omega X \big) - \frac{i \omega}{2} [X,P] \text{, since $X$ and $P$ don't commute}\\
+	=& \frac{1}{2}\big(P + i \omega X \big)\big(P - i \omega X \big) + \underbrace{\frac{\hslash \omega}{2}}_\text{zero point energy}
 \end{align*}
 
 Classically both $p=0$ and $x=0$ in the ground state; since the Heisenberg uncertainty principle precludes  $p=0$ and $x=0$, the zero point energy is the minimum possible. We'll drop the ground state energy (zero point energy) for the time being, since it is just an additive constant\footnote{At the end of lecture \ref{section:fermions:dirac}, LS mentioned that the zero point energy is involved only in gravitational interactions; elsewhere only the energy \emph{difference} matters}.
 
-We'll introduce raising and lowering operators:
+\begin{align*}
+	H =& \omega \frac{\big(P + i \omega X \big)}{\sqrt{2 \omega}}\frac{\big(P - i \omega X \big)}{\sqrt{2 \omega}} \numberthis \label{eq:H:rl}
+\end{align*}
+
+We'll introduce raising and lowering operators, to perform the same task as they did for angular momentum. They will take us up and down a ladder, this time a ladder of energy levels.
 
 \begin{align*}
 	a^+ \triangleq & \frac{P + i \omega x } {\sqrt{2 \omega}} \numberthis \label{eq:creation:operator}\\
-	a^- \triangleq & \frac{P - i \omega x } {\sqrt{2 \omega}}\text{, Hermitean conjugate--$a^-=(a^+)^\dagger$} \numberthis \label{eq:annihilation:operator}\\
-	H =& \omega a^+ a^-\text{. We'll take the commutator:}\numberthis \label{eq:shM}\\
+	a^- \triangleq & \frac{P - i \omega x } {\sqrt{2 \omega}} \numberthis \label{eq:annihilation:operator}\\
+	a^-=& (a^+)^\dagger \text{, the operators are Hermitean conjugates and \eqref{eq:H:rl} becomes.}\\
+	H =& \omega a^+ a^-\numberthis \label{eq:shM}
+\end{align*}
+We'll take the commutator:
+\begin{align*}
 	[a^-,a^+] =& \frac{1}{2\omega}\big[P - i \omega x,P + i \omega x\big]\\
 	=& 1\text{. We also define} \numberthis \label{eq:a:comm}\\
 	N \triangleq& a^+a^-\text{, so (\ref{eq:shM}) becomes} \numberthis \label{eq:number:operator}\\
@@ -719,7 +726,7 @@ $N$ is Hermitian, so it has a complete set of eigenvalues and eigenvectors.
 	N a^+ \ket{n} =& (n+1) a^+ \ket{n}
 \end{align*}
 
-So $a^+$ acts as raising operator, and we can show $a^-$ is lowering.  Since the Hamiltonian is positive we can't ever get negative energy, so there must be a lowest energy state, $0$--Figure \ref{fig:aqm-3-spectrum}. In QM there is a theorem that all the eigenvalues of $MM^\dagger$ are positive or zero, for any operator $M$. 
+So $a^+$ acts as raising operator, and we can show $a^-$ is lowering.  Since the Hamiltonian is positive we can't ever get negative energy, so there must be a lowest energy state, $\ket{0}$--Figure \ref{fig:aqm-3-spectrum}. In QM there is a theorem that all the eigenvalues of $MM^\dagger$ are positive or zero, for any operator $M$. 
 
 \begin{figure}[H]
 	\begin{center}
@@ -752,8 +759,8 @@ In Section \ref{sect:harmonic:oscillators} we found:
 
 We will find ground state by solving the Schr\"odinger equation.
 \begin{align*}
-	\ket{\psi} \rightarrow& \psi_0(x) \text{, in thr ground state}\\
-	X \rightarrow& x. \text{, multiplication}\\
+	\ket{\psi} \rightarrow& \psi_0(x) \text{, in the ground state}\\
+	X \rightarrow& x \text{, multiplication}\\
 	P \rightarrow& -i \frac{d}{dx}
 \end{align*}
 

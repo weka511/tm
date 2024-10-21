@@ -705,22 +705,22 @@ We'll introduce raising and lowering operators, to perform the same task as they
 \begin{align*}
 	a^+ \triangleq & \frac{P + i \omega x } {\sqrt{2 \omega}} \numberthis \label{eq:creation:operator}\\
 	a^- \triangleq & \frac{P - i \omega x } {\sqrt{2 \omega}} \numberthis \label{eq:annihilation:operator}\\
-	a^-=& (a^+)^\dagger \text{, the operators are Hermitean conjugates and \eqref{eq:H:rl} becomes.}\\
+	a^-=& (a^+)^\dagger \text{, the operators are Hermitean conjugates and \eqref{eq:H:rl} becomes:}\\
 	H =& \omega a^+ a^-\numberthis \label{eq:shM}
 \end{align*}
 We'll take the commutator:
 \begin{align*}
 	[a^-,a^+] =& \frac{1}{2\omega}\big[P - i \omega x,P + i \omega x\big]\\
 	=& 1\text{. We also define} \numberthis \label{eq:a:comm}\\
-	N \triangleq& a^+a^-\text{, so (\ref{eq:shM}) becomes} \numberthis \label{eq:number:operator}\\
+	N \triangleq& a^+a^-\text{, so \eqref{eq:shM} becomes} \numberthis \label{eq:number:operator}\\
 	H =& \omega N
 \end{align*}
-$N$ is Hermitian, so it has a complete set of eigenvalues and eigenvectors.
+$N$ is Hermitian, so it has a complete set of eigenvalues and eigenvectors. Let  $\ket{n}$  and $n$ be any pair of an eigenvector and eigenvalue (we aren't \emph{assuming} that $n$ is an integer).
 
 \begin{align*}
-	N\ket{n} =& n\ket{n} \text{, we aren't \emph{assuming} that $n$ is an integer}\\
+	N\ket{n} =& n\ket{n} \text{, apply \eqref{eq:a:comm} to give} \\
 	a^+a^-\ket{n} =& n\ket{n}\\
-	a^+(a^-a^+ - a^+a^-)\ket{n} =& a^+\ket{n}\text{, using (\ref{eq:a:comm})}\\
+	a^+\underbrace{(a^-a^+ - a^+a^-)}_\text{$=1$}\ket{n} =& a^+\ket{n}\text{, using (\ref{eq:a:comm})}\\
 	a^+a^-a^+ \ket{n} - a^+\underbrace{a^+a^- \ket{n}}_\text{$ n\ket{n}$} =& a^+\ket{n}\\
 	\underbrace{a^+a^-}_\text{$N$}a^+ \ket{n} =& n a^+\ket{n} + a^+\ket{n}\\
 	N a^+ \ket{n} =& (n+1) a^+ \ket{n}
@@ -1610,7 +1610,7 @@ This is believed to be the explanation of the deficit of solar neutrinos: by the
 
 \subsubsection{Scientific American Article on whether electron is a sphere}
 
-What would it mean for the electron to be a sphere?
+What would it mean for the electron to be a sphere?\cite{Cartlidge2011Electron}
 
 What was measured was the electric dipole moment, the charge times the distance between them, and it represents an off centred distribution. The centre of the dumbbell is the centre. For a charge distribution not to have a dipole does not mean that it is a sphere. A charge distribution can have many multipole moments. What kind of shape corresponds to a dipole? One with an imbalance of charge. We could have a distribution shaped like an oblate spheroid, or any kind of ellipsoid. This would not have a dipole moment, because it is uniformly distributed about any plane passing through centre. It might have a quadrapole moment, or an octopole moment.
 
@@ -1622,7 +1622,7 @@ In quantum mechanics there is something odd about  the notion of spherical symme
 		\includegraphics[width=\textwidth]{aqm-8-qm-dumbbell}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.3\textwidth}
-		\caption{Quantum Dumbbell - e.g. a molecule}\label{fig:aqm-8-qm-dumbbell-superposition}
+		\caption{Quantum Superposition}\label{fig:aqm-8-qm-dumbbell-superposition}
 		\includegraphics[width=\textwidth]{aqm-8-qm-dumbbell-superposition}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.3\textwidth}
@@ -1633,7 +1633,7 @@ In quantum mechanics there is something odd about  the notion of spherical symme
 Let's take the ground state of the molecule, which is described by its angular momentum about the centre (ignore vibrations). If molecule is a boson, the ground state will have angular momentum $0$: wave function is completely symmetric for all rotations. So, independent of shape of molecule, the ground state is rotationally symmetric. Maybe it is a superposition of states, such as Figure \ref{fig:aqm-8-qm-dumbbell-superposition}, so wave function is symmetrized. Does Figure \ref{fig:aqm-8-qm-dumbbell-superposition} have a dipole moment? Answer is ambiguous, depending on the experiment.
 \begin{itemize}
 	\item Take a sudden quick snapshot; we'd discover it was lopsided with dipole moment. How fast does camera have to be? What resolution do we need? Snapshot measures angle; system would be in a state of definite orientation, so can't measure angular momentum (Heisenberg).
-	\item What is energy of first excited state? What if it is enormous? More than we have in our photons. Then apparatus cannot resolve angle. We measure average: a sphere. Mesons are also (smaller) dumbbells. Kicking it into first excited state is huge compared to ordinary photons. All we can mesaud=sure shows it is a sphere on average.
+	\item What is energy of first excited state? What if it is enormous? More than we have in our photons. Then apparatus cannot resolve angle. We measure average: a sphere. Mesons are also (smaller) dumbbells. Kicking it into first excited state is huge compared to ordinary photons. All we can measure shows it is a sphere on average.
 \end{itemize}
 
 Question of whether it a sphere or not is confusing.
@@ -1648,21 +1648,25 @@ Some symmetries forbid electric dipole moment, e.g. reflection symmetry. If the 
 	\caption{Symmetries and dipoles}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption[Mirror image of an electron]{Mirror image of an electron. Magnetic field has same directions, since it comes from spinning charge, but charge imbalance is reversed.}\label{fig:aqm-8-mirror-image}
-		\includegraphics[width=0.8\textwidth]{aqm-8-mirror-image}
+		\begin{center}
+			\includegraphics[width=0.8\textwidth]{aqm-8-mirror-image}
+		\end{center}
 	\end{subfigure}
+	\enspace
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption[Mirror image of an electron]{Mirror image of an electron. Magnetic field has same directions, since it comes from spinning charge, but charge imbalance is reversed.}\label{fig:aqm-8-time-reversal}
-		\includegraphics[width=0.8\textwidth]{aqm-8-time-reversal}
+		\begin{center}
+			\includegraphics[width=0.8\textwidth]{aqm-8-time-reversal}
+		\end{center}
 	\end{subfigure}
 \end{figure}
 
-But the laws of physics do distinguish between left hand and right hand (e.g. neutrinos). But there another more accurate symmetry, time reversal.  Figure \ref{aqm-8-time-reversal} shows the direction of spin being reversed, hence the magnetic filed reversed, but the charge distribution is unchanged. So time reversal would preclude a dipole, if it is a good symmetry of nature.
+But the laws of physics do distinguish between left hand and right hand (e.g. neutrinos). But there another more accurate symmetry, time reversal.  Figure \ref{fig:aqm-8-time-reversal} shows the direction of spin being reversed, hence the magnetic field reversed, but the charge distribution is unchanged. So time reversal would preclude a dipole, if it is a good symmetry of nature.
 
 But time reversal is not a good symmetry of nature, either.
 
 Standard Model predicts a very small dipole moment that is too small to detect. Experiment has failed to detect dipole moment.
 
-\url{https://youtu.be/7G4C7scQX3A?t=4380}
 
 \subsection{Second Quantization of Bosons}
  How are fields connected with Fourier transforms? In ordinary QM we have wave functions; in the position representation, and the squares define probabilities of the particle being at a particular point. We can Fourier transform the wave functions, and the transform is the representation in momentum space.

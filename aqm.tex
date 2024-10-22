@@ -718,17 +718,15 @@ We'll take the commutator:
 $N$ is Hermitian, so it has a complete set of eigenvalues and eigenvectors. Let  $\ket{n}$  and $n$ be any pair of an eigenvector and eigenvalue (we aren't \emph{assuming} that $n$ is an integer).
 
 \begin{align*}
-	N\ket{n} =& n\ket{n} \text{, apply \eqref{eq:number:operator} to give} \\
-	a^+a^-\ket{n} =& n\ket{n}\\
+	N\ket{n} =& n\ket{n} \numberthis \label{eq:shm:ev}\\
 	a^+\underbrace{(a^-a^+ - a^+a^-)}_\text{$=1$}\ket{n} =& a^+\ket{n}\text{, using (\ref{eq:a:comm})}\\
 	a^+a^-a^+ \ket{n} - a^+\underbrace{a^+a^- \ket{n}}_\text{$ n\ket{n}$} =& a^+\ket{n} \\ 
-	\underbrace{a^+a^-}_\text{$N$}a^+ \ket{n} =& n a^+\ket{n} + a^+\ket{n} \text{, applying \eqref{eq:number:operator} again}\\
+	\underbrace{a^+a^-}_\text{$N$}a^+ \ket{n} =& n a^+\ket{n} + a^+\ket{n} \text{, applying \eqref{eq:shm:ev} and \eqref{eq:number:operator}.}\\
 	N a^+ \ket{n} =& (n+1) a^+ \ket{n}
 \end{align*}
 
 So $a^+$ acts as raising operator; we now show $a^-$ is lowering. 
 \begin{align*}
-	N\ket{n} =& n \ket{n}\\
 	a^-\big(a^+a^- - a^-a^+\big) \ket{n} =& -a^-\ket{n}\\
 	\underbrace{a^-a^+}_\text{N}a^-\ket{n} - a^- \underbrace{a^- a^+}_\text{N} \ket{n} =& -a^-\ket{n}\\
 	N a^-\ket{n} =&	(n-1)a^-\ket{n}
@@ -739,7 +737,17 @@ So $a^+$ acts as raising operator; we now show $a^-$ is lowering.
 \begin{figure}[H]
 	\begin{center}
 		\caption[Energy Spectrum for Harmonic Oscillator]{Energy Spectrum for Harmonic Oscillator. $a^+$ takes energy up one level, and $a^-$ down, except for $a^-\ket{0}$=0.}\label{fig:aqm-3-spectrum}
-		\includegraphics[width=0.8\textwidth]{aqm-3-spectrum}
+		\begin{tikzpicture}
+			\draw[help lines] (0,-4.9) grid (0.2,4.9);
+			\node[] at (0.8,0) (n){$\ket{n}$};
+			\node[] at (1.2,0.5) (a){$a^+$};
+			\node[] at (0.8,1) (n1){$\ket{n+1}$};
+			\node[] at (0.8,2) {$\ket{n+2}$};
+			\node[] at (0.8,3) {$\ket{n+3}$};
+			\node[] at (0.8,-2) {$\ket{0}$};
+			\node[] at (0.8,-3) {$0$};
+			\draw [->] (n) -- (n1) ;
+	\end{tikzpicture}
 	\end{center}
 \end{figure}
 We will see (Theorem \ref{thm:norm:harmonic}) the appropriate normalization gives:

@@ -594,17 +594,19 @@ So we have an equation for a one dimensional problem. Figure \ref{fig:aqm-3-cent
 		\caption{Resolving momentum into radial and angular components}\label{fig:aqm-3-1-momentum}
 		\includegraphics[width=\textwidth]{aqm-3-1-momentum}
 	\end{subfigure}
+	\quad
 	\begin{subfigure}[t]{0.3\textwidth}
 		\caption{Potential assuming the Coulomb force}\label{fig:aqm-3-central}
 		\includegraphics[width=\textwidth]{aqm-3-central}
 	\end{subfigure}
+	\quad
 	\begin{subfigure}[t]{0.3\textwidth}
 		\caption{Small oscillations about minimum}\label{fig:aqm-3-central-osc}
 		\includegraphics[width=\textwidth]{aqm-3-central-osc}
 	\end{subfigure}
 \end{figure}
 
-That is the classical physics. What about the quantum physics? For the quantum physics we have a wave function which satisfies the Schr\"odinger Equation(\ref{eq:schroedinger:central}). The angular part is totally taken care of by our existing study of angular momentum\footnote{Strictly step (\ref{eq:resolve}) requires a quantum mechanical justification}.
+That is the classical physics. For the quantum physics we have a wave function which satisfies the Schr\"odinger Equation(\ref{eq:schroedinger:central}). The angular part is totally taken care of by our existing study of angular momentum\footnote{Strictly step (\ref{eq:resolve}) requires a quantum mechanical justification}.
 \begin{align*}
 	-\frac{\hslash^2}{2m}\frac{\partial^2 \psi(r)}{\partial r^2} + \hslash^2 \frac{l(l+1)\hslash^2}{r^2}\psi(r)+V(r)\psi(r) =& E\psi(r)\numberthis \label{eq:schroedinger:central}
 \end{align*}
@@ -617,10 +619,12 @@ Figure \ref{fig:aqm-3-central} depicts the potential for the Coulomb force. The 
 		\caption{No nodes}\label{fig:aqm-3-central-0node}
 		\includegraphics[width=\textwidth]{aqm-3-central-0node}
 	\end{subfigure}
+	\quad
 	\begin{subfigure}[t]{0.30\textwidth}
 		\caption{One node}\label{fig:aqm-3-central-1node}
 		\includegraphics[width=\textwidth]{aqm-3-central-1node}
 	\end{subfigure}
+	\quad
 	\begin{subfigure}[t]{0.30\textwidth}
 		\caption{Two nodes}\label{fig:aqm-3-central-2nodes}
 		\includegraphics[width=\textwidth]{aqm-3-central-2node2}
@@ -714,15 +718,23 @@ We'll take the commutator:
 $N$ is Hermitian, so it has a complete set of eigenvalues and eigenvectors. Let  $\ket{n}$  and $n$ be any pair of an eigenvector and eigenvalue (we aren't \emph{assuming} that $n$ is an integer).
 
 \begin{align*}
-	N\ket{n} =& n\ket{n} \text{, apply \eqref{eq:a:comm} to give} \\
+	N\ket{n} =& n\ket{n} \text{, apply \eqref{eq:number:operator} to give} \\
 	a^+a^-\ket{n} =& n\ket{n}\\
 	a^+\underbrace{(a^-a^+ - a^+a^-)}_\text{$=1$}\ket{n} =& a^+\ket{n}\text{, using (\ref{eq:a:comm})}\\
-	a^+a^-a^+ \ket{n} - a^+\underbrace{a^+a^- \ket{n}}_\text{$ n\ket{n}$} =& a^+\ket{n}\\
-	\underbrace{a^+a^-}_\text{$N$}a^+ \ket{n} =& n a^+\ket{n} + a^+\ket{n}\\
+	a^+a^-a^+ \ket{n} - a^+\underbrace{a^+a^- \ket{n}}_\text{$ n\ket{n}$} =& a^+\ket{n} \\ 
+	\underbrace{a^+a^-}_\text{$N$}a^+ \ket{n} =& n a^+\ket{n} + a^+\ket{n} \text{, applying \eqref{eq:number:operator} again}\\
 	N a^+ \ket{n} =& (n+1) a^+ \ket{n}
 \end{align*}
 
-So $a^+$ acts as raising operator, and we can show $a^-$ is lowering.  Since the Hamiltonian is positive we can't ever get negative energy, so there must be a lowest energy state, $\ket{0}$--Figure \ref{fig:aqm-3-spectrum}. In QM there is a theorem that all the eigenvalues of $MM^\dagger$ are positive or zero, for any operator $M$. 
+So $a^+$ acts as raising operator; we now show $a^-$ is lowering. 
+\begin{align*}
+	N\ket{n} =& n \ket{n}\\
+	a^-\big(a^+a^- - a^-a^+\big) \ket{n} =& -a^-\ket{n}\\
+	\underbrace{a^-a^+}_\text{N}a^-\ket{n} - a^- \underbrace{a^- a^+}_\text{N} \ket{n} =& -a^-\ket{n}\\
+	N a^-\ket{n} =&	(n-1)a^-\ket{n}
+\end{align*}
+
+ Since the Hamiltonian is positive we can't ever get negative energy, so there must be a lowest energy state, $\ket{0}$--Figure \ref{fig:aqm-3-spectrum}. In QM there is a theorem that all the eigenvalues of $MM^\dagger$ are positive or zero, for any operator $M$. 
 
 \begin{figure}[H]
 	\begin{center}

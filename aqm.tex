@@ -609,23 +609,19 @@ That is the classical physics. What about the quantum physics? For the quantum p
 	-\frac{\hslash^2}{2m}\frac{\partial^2 \psi(r)}{\partial r^2} + \hslash^2 \frac{l(l+1)\hslash^2}{r^2}\psi(r)+V(r)\psi(r) =& E\psi(r)\numberthis \label{eq:schroedinger:central}
 \end{align*}
 
-Figure \ref{fig:aqm-3-central-potential} depicts the potential for the Coulomb force. The energy levels of (\ref{eq:schroedinger:central}) are characterized by the number of nodes--Definition \ref{defn:node} and Figures \ref{fig:aqm-3-central-0node}, \ref{fig:aqm-3-central-1node}, and \ref{fig:aqm-3-central-2nodes} (The more nodes, the faster the wiggle, hence higher momentum).
+Figure \ref{fig:aqm-3-central} depicts the potential for the Coulomb force. The energy levels of (\ref{eq:schroedinger:central}) are characterized by the number of nodes--Definition \ref{defn:node} and Figures \ref{fig:aqm-3-central-0node}, \ref{fig:aqm-3-central-1node}, and \ref{fig:aqm-3-central-2nodes} (The more nodes, the faster the wiggle, hence higher momentum).
 
 \begin{figure}[H]
 	\caption{Solving Central Potential Schro\"dinger Equation (\ref{eq:schroedinger:central})}
-	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Potential}\label{fig:aqm-3-central-potential}
-		\includegraphics[width=\textwidth]{aqm-3-central-potential}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.45\textwidth}
+	\begin{subfigure}[t]{0.30\textwidth}
 		\caption{No nodes}\label{fig:aqm-3-central-0node}
 		\includegraphics[width=\textwidth]{aqm-3-central-0node}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.45\textwidth}
+	\begin{subfigure}[t]{0.30\textwidth}
 		\caption{One node}\label{fig:aqm-3-central-1node}
 		\includegraphics[width=\textwidth]{aqm-3-central-1node}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.45\textwidth}
+	\begin{subfigure}[t]{0.30\textwidth}
 		\caption{Two nodes}\label{fig:aqm-3-central-2nodes}
 		\includegraphics[width=\textwidth]{aqm-3-central-2node2}
 	\end{subfigure}
@@ -1302,9 +1298,9 @@ We can handle situation where number of particles is a random variable: a laser 
 
 \subsection{Review construction of a simple quantum field}
 
-The trick of introducing fields from particles can be done in two ways. We can start with particles and reconstruct why they can be described by fields, or start with wave fields and work out why they have quanta. Starting with particles we can describe 1 particle, 2 particles, etc, then move on to a variable number of particles. We'll start with one single type of particle. Number of photons in room changes constantly. A neuron can decay into a proton, an electron, and a neutrino. We can't rely on quantum mechanics of a single particle: we need to invent fields.
+The trick of introducing fields from particles can be done in two ways. We can start with particles and reconstruct why they can be described by fields, or start with wave fields and work out why they have quanta. Starting with particles we can describe 1 particle, 2 particles, etc, then move on to a variable number of particles. We'll start with one single type of particle. The number of photons in room changes constantly. A neutron can decay into a proton, an electron, and a neutrino. We can't rely on quantum mechanics of a single particle: we need to invent fields.
 
-We will start with single particle quantum mechanics, a state vector $\ket{\psi}$. We can construct the inner product $\bra{x}\ket{\psi}=\psi(x)$ and the probability density $\psi^*(x) \psi(x)$.  Normalization: $\int \psi^*(x) \psi(x) dx=1$ gives \textit{number of particles}: this isn't very interesting since we had only one particle to begin with.
+We will start with single particle quantum mechanics, a state vector $\ket{\psi}$. We can construct the inner product $\braket{x|\psi}=\psi(x)$ and the probability density $\psi^*(x) \psi(x)$.  Normalization: $\int \psi^*(x) \psi(x) dx=1$ gives \textit{number of particles}: this isn't very interesting since we had only one particle to begin with.
 
 We next introduced some a particle states that form an orthonormal basis. There are many ways to do this. For instance the x-states form an orthonormal basis. The eigenvectors of any Hermitian operator will form a basis. In particular the energy eigenstates of the particles in a box--Figure \ref{fig:aqm-6-sine} form an orthonormal basis. 
 \begin{align*}

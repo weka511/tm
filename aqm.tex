@@ -746,8 +746,9 @@ So $a^+$ acts as raising operator; we now show $a^-$ is lowering.
 			\node[] at (0.8,3) {$\ket{n+3}$};
 			\node[] at (0.8,-2) {$\ket{0}$};
 			\node[] at (0.8,-3) {$0$};
-			\draw [->] (n) -- (n1) ;
-	\end{tikzpicture}
+			\draw [->] (n) .. controls (0.9,0.2) and (2.1,0.3) .. (n1) ;
+			\node[] at (0,5) {$N$};
+		\end{tikzpicture}
 	\end{center}
 \end{figure}
 We will see (Theorem \ref{thm:norm:harmonic}) the appropriate normalization gives:

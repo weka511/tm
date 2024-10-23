@@ -430,7 +430,7 @@ We want to find eigenvalues of angular momentum. It us useful to introduce creat
 \end{itemize}
 
 \begin{figure}[H]
-	\caption[Spectrum of $L_z$.]{Spectrum of $L_z$. Eigenvalues are separated by integers, and the red circles show possible terminations, where $L_{\pm}\ket{m}=0$.}\label{fig:spectrum_Lz}
+	\caption[Spectrum of $L_z$.]{Spectrum of $L_z$. Eigenvalues are separated by integers, and the red circles show possible terminations, where $L_{\pm}\ket{m}=0$. Rotational symmetry implies that maximum/minimum values are symmetrical about zero.}\label{fig:spectrum_Lz}
 	\begin{subfigure}[t]{0.3\textwidth}
 		\caption {We have not yet shown that the eigenvalues are necessarily integers.}\label{fig:aqm-2-3}
 		\begin{center}
@@ -446,9 +446,9 @@ We want to find eigenvalues of angular momentum. It us useful to introduce creat
 			\end{tikzpicture}
 		\end{center}
 	\end{subfigure}
-	\;
+	\em
 	\begin{subfigure}[t]{0.3\textwidth}
-		\caption{Integral values, exhibiting symmetry about 0. }\label{fig:aqm-2-3a}
+		\caption{Integral values, exhibiting symmetry about 0. This is the only possibility for orbital angular momentum. }\label{fig:aqm-2-3a}
 		\begin{center}
 			\begin{tikzpicture}
 				\draw[help lines] (0,-4.9) grid (0.2,4.9);
@@ -462,9 +462,9 @@ We want to find eigenvalues of angular momentum. It us useful to introduce creat
 			\end{tikzpicture}
 		\end{center}
 	\end{subfigure}
-	\;
+	\em
 	\begin{subfigure}[t]{0.3\textwidth}
-		\caption{Half integral values.}\label{fig:aqm-2-3b}
+		\caption{Half integral values: this is possible for spin.}\label{fig:aqm-2-3b}
 		\begin{center}
 			\begin{tikzpicture}
 				\draw[help lines] (0,-4.9) grid (0.2,4.9);
@@ -497,7 +497,7 @@ We want to find eigenvalues of angular momentum. It us useful to introduce creat
 	=& E L_+  \ket{m}\\
 	H \ket{m+1} =& E \ket{m+1} \text{, from (\ref{eq:create_m})}
 	\end{align*}
-	Since symmetries commute, we have degeneracy.
+	Since symmetries don't commute, we have degeneracy.
 \end{proof}
 
 \section{Atomic orbits and harmonic oscillators}
@@ -738,19 +738,24 @@ So $a^+$ acts as raising operator; we now show $a^-$ is lowering.
 	\begin{center}
 		\caption[Energy Spectrum for Harmonic Oscillator]{Energy Spectrum for Harmonic Oscillator. $a^+$ takes energy up one level, and $a^-$ down, except for $a^-\ket{0}$=0.}\label{fig:aqm-3-spectrum}
 		\begin{tikzpicture}
+			\draw[->,ultra thick] (0,-4.9)--(0,4.9) node[above]{$N$};
 			\draw[help lines] (0,-4.9) grid (0.2,4.9);
 			\node[] at (0.8,0) (n){$\ket{n}$};
 			\node[] at (1.2,0.5) (a){$a^+$};
+			\node[] at (2.5,0.5) (aa){$a^-$};
 			\node[] at (0.8,1) (n1){$\ket{n+1}$};
 			\node[] at (0.8,2) {$\ket{n+2}$};
 			\node[] at (0.8,3) {$\ket{n+3}$};
-			\node[] at (0.8,-2) {$\ket{0}$};
-			\node[] at (0.8,-3) {$0$};
+			\node[] at (0.8,-2) (ket0){$\ket{0}$};
+			\node[] at (0.8,-3) (0){$0$};
 			\draw [->] (n) .. controls (0.9,0.2) and (2.1,0.3) .. (n1) ;
-			\node[] at (0,5) {$N$};
+			\draw [->] (n1) .. controls  (3.1,0.3) and (1.9,0.2) .. (n) ;
+			\draw [->] (ket0) .. controls  (3.1,-2) and (1.9,-3) .. (0) ;
+			\node[] at (2.5,-2.5) (aaa){$a^-$};
 		\end{tikzpicture}
 	\end{center}
 \end{figure}
+
 We will see (Theorem \ref{thm:norm:harmonic}) the appropriate normalization gives:
 \begin{align*}
 	a^+\ket{n} =& \sqrt{n+1}\ket{n+1}\\

@@ -645,14 +645,14 @@ What can we say about energy levels in general? Figure \ref{fig:degeneracy:hydro
 
 \begin{figure}[H]
 	\begin{center}
-		\caption[Degeneracy of Energy Levels in Hydrogen Atom]{Degeneracy of Energy Levels in Hydrogen Atom. Each $l$ has its own Schro\"edinger equation (\ref{eq:schroedinger:central}), so each $l$ may have its own set of bound solutions. The ground state for $l=0$ has no nodes,  the next state has one node, etc. For $l=1$ the energy of the ground state lies somewhere above the corresponding state for $l=1$. Moreover there are 3 states for each node: the energy levels are degenerate. Similarly for $l=2$ there are 5 states for each node, and the energy levels are higher.}\label{fig:degeneracy:hydrogen}
+		\caption[Degeneracy of Energy Levels in Hydrogen Atom]{Degeneracy of Energy Levels in Hydrogen Atom. Each $l$ has its own Schro\"edinger equation (\ref{eq:schroedinger:central}), so each $l$ may have its own set of bound solutions. The ground state for $l=0$ has no nodes,  the next state has one node, etc. For $l=1$ the energy of the ground state lies somewhere above the corresponding state for $l=1$. Moreover there are 3 states for each node: the energy levels are degenerate. Similarly for $l=2$ there are 5 states for each node, and the energy levels are higher. NB: if $E$ high enough, electron escapes.}\label{fig:degeneracy:hydrogen}
 		\includegraphics[width=0.9\textwidth]{aqm-3-hydrogen-degeneracy}
 	\end{center}
 \end{figure}
 
 \begin{figure}[H]
 	\begin{center}
-		\caption[Energy Levels for the Coulomb Force]{For the Coulomb force \emph{only}, the energy levels for $l+1$ match those for $l$, shifted up by one. This is an extra degeneracy from a bizarre symmetry. The number of states at each level is  $\{1,4,9,16,...\}$}\label{fig:aqm-3-central-coulomb}
+		\caption[Energy Levels for the Coulomb Force]{For the Coulomb force \emph{only}, the energy levels for $l+1$ match those for $l$, shifted up by one. This is an extra degeneracy from a bizarre symmetry. The number of states at each level is  $\{1,4,9,16,...\}$. NB, the symmetry is violated for every real atom, because of correction terms (spin, etc).}\label{fig:aqm-3-central-coulomb}
 		\includegraphics[width=0.8\textwidth]{aqm-3-central-coulomb}
 	\end{center}
 \end{figure}
@@ -1353,7 +1353,7 @@ Now we have another useful little manipulation.
 
 This is true for any set of eigenvectors of any Hermitian operator.
 
-Now we move on to problem of studying many particles at the same time. How are we going to characterize a state? One set of states that is particularly useful is to say how many there are for each energy level. Characterize by the occupation numbers,  $\ket{n_1, n_2,...n_i,...}$. These don't belong in the same vector space s the single particle wave functions. Do not confuse the single particle states with these more general structures. We use the same notation merely because nobody has invented anything that works better than Dirac's bras and kets.
+Now we move on to problem of studying many particles at the same time. How are we going to characterize a state? One set of states that is particularly useful is to say how many there are for each energy level. Characterize by the occupation numbers,  $\ket{n_1, n_2,...n_i,...}$. These don't belong in the same vector space as the single particle wave functions. Do not confuse the single particle states with these more general structures. We use the same notation merely because nobody has invented anything that works better than Dirac's bras and kets.
 
 We want to change the numbers of particles, i.e. increase and decrease occupation numbers. We introduce an oscillator for each $i$: this has nothing to do with oscillation, it is just a bookkeeping trick. We introduce creation and annihilation operators, $a^+_i$ and $a^-_i$, and make them behave the same as the oscillator creation and annihilation operators. They are often written slightly differently.
 
@@ -1369,7 +1369,7 @@ We will find it convenient to introduce the field operator, which operates on Fo
 \end{align*}
 
 \begin{itemize}
-	\item These would be Fourier transforms if sine/cosine waves, except they are operator values, not numeric.
+	\item These would be Fourier transforms of sine/cosine waves, except they are operator values, not numeric.
 	\item $\Psi(x)$ and $\Psi^\dagger(x)$ are not Hermitian.
 \end{itemize}
 
@@ -1383,7 +1383,7 @@ But right now we aren't observing them, just using them as bookkeeping devices.
 We will now look at a different interpretation of $\Psi(x)$. What does it do when it operates on the vacuum, the Fock space state where all the occupation numbers are zero: $\ket{0} = \ket{0,0,0,.....}$? We'll write down the following formula.
 
 \begin{align*}
-	\ket{x}=&\sum_{i}\ket{i}\braket{i|x}\text{ "resolution of the identity". Now}\\
+	\ket{x}=&\sum_{i}\ket{i}\braket{i|x}\text{ resolution of the identity. Now}\\
 	\ket{i}=&a^\dagger_i\ket{0} \text{, i.e. a state with one particle in $i^{th}$ energy level, and}\\
 	\braket{i|x}=&\psi_i(x) \text{, so}\\
 	\ket{x}=& \sum_i \psi^*_i(x)a^\dagger_i\ket{0}\\
@@ -1416,7 +1416,7 @@ The operator $\int dx \Psi^\dagger(x) \Psi(x)$ is interesting: it is not the sam
 	=&\sum_i a^+_i a_i \text{. Now we use (\ref{eq:number:operator})}\\
 	=&\sum_i N_i \text{, total number of particles.}
 \end{align*}
-So $\int dx \Psi^\dagger(x) \Psi(x)$ is the operator representing total number of particles. Will it be finite, since there are infinitely many $i$s? Unless the total energy is insanely high, the $N_i$ must fall off quickly. To make energy finite, total number of particles must be finite. $\Psi^\dagger(x) \Psi(x)$ represents particle density\footnote{The measured value is not necessarily the probability; usually will be within $\sqrt{n}$ of probability.}, since its integral is the total number.
+So $\int dx \Psi^\dagger(x) \Psi(x)$ is the operator representing total number of particles. Will it be finite, since there are infinitely many possible values of $i$? Unless the total energy is insanely high, the $N_i$ must fall off quickly. To make energy finite, total number of particles must be finite. $\Psi^\dagger(x) \Psi(x)$ represents particle density\footnote{The measured value is not necessarily the probability; usually will be within $\sqrt{n}$ of probability.}, since its integral is the total number.
 
 Now  $\Psi^\dagger(x) \Psi(x)$ is an observable, so we can measure it.  To measure we integrate over a small volume, and ask how many particles are there. Like any observable it has states: you can measure and get a variety of answers.
 
@@ -1468,7 +1468,7 @@ Notes:
 	\item If we don't split too many hairs,square of electromagnetic field is qualitatively related to density of photons.
 \end{itemize}
 
-You can imagine how confused everybody was before Dirac put it all together. People were confused by $psi$, which they thought was a field, like the electromagnetic field. Some thought it was just an auxiliary device for computing probabilities. If that was what is was, how was it connected with electromagnetic field? What was connection between particles and fields. The Scr\"odinger equation looked a but like Maxwell's equations. But Maxwell's equations were not anything to do with probability amplitudes: they concerned measurable value of the field. But there was a connection, as the photons were quanta of the field. QFT is the resolution of that confusion.  
+You can imagine how confused everybody was before Dirac put it all together. People were confused by $psi$, which they thought was a field, like the electromagnetic field. Some thought it was just an auxiliary device for computing probabilities. If that was what is was, how was it connected with electromagnetic field? What was connection between particles and fields. The Scr\"odinger equation looked a bit like Maxwell's equations. But Maxwell's equations were not anything to do with probability amplitudes: they concerned measurable value of the field. But there was a connection, as the photons were quanta of the field. QFT is the resolution of that confusion.  
 
 For electromagnetic field:
 \begin{align*}

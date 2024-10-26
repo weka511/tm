@@ -1142,8 +1142,11 @@ How do we label states? For one oscillator we have the occupation number. One wa
 \begin{proof}
 	\begin{align*}
 		a^+\ket{n}=&c_n\ket{n+1} \text{, for the eigenvector $\ket{n}$ and some $c_n$}\\
-		\bra{n}a^-=&c_n\bra{n+1}\text{, wlog assume $c_n$ real}\\
-		\braket{n|a^-a^+|n}=&c_n^2\text{, from (ref{eq:norm})}\\
+	\end{align*}
+	Transposing and, without loss of generality, assuming  $c_n$ real
+	\begin{align*}
+		\bra{n}a^-=&c_n\bra{n+1}\\
+		\braket{n|a^-a^+|n}=&c_n^2\text{, from \eqref{eq:norm}}\\
 		=& \braket{n|a^+a^-+1|n}\text{, using (\ref{eq:a:comm_i})}\\
 		=& \braket{n|N+1|n} \text{, from (\ref{eq:number:operator})}\\
 		=&n+1 \text{, whence}\\
@@ -1161,7 +1164,7 @@ How do we label states? For one oscillator we have the occupation number. One wa
 	\begin{align*}
 		a^-\ket{n}=&c^\prime_n\ket{n-1} \text{, for the eigenvector $\ket{n}$ and some $c_n$}\\
 		\bra{n}a^+=&c^\prime_n\bra{n-1} \text{, wlog assume $c_n$ real}\\
-		\bra{n}a^+a^-\ket{n}=&(c^\prime_n)^2\bra{n-1}\ket{n-1}\\
+		\bra{n}a^+a^-\ket{n}=&(c^\prime_n)^2\braket{n-1|n-1}\\
 		\bra{n}N\ket{n}=&(c^\prime_n)^2 \text{, from (\ref{eq:number:operator})}\\
 		n=&(c^\prime_n)^2
 	\end{align*}
@@ -1383,7 +1386,7 @@ But right now we aren't observing them, just using them as bookkeeping devices.
 We will now look at a different interpretation of $\Psi(x)$. What does it do when it operates on the vacuum, the Fock space state where all the occupation numbers are zero: $\ket{0} = \ket{0,0,0,.....}$? We'll write down the following formula.
 
 \begin{align*}
-	\ket{x}=&\sum_{i}\ket{i}\braket{i|x}\text{ resolution of the identity. Now}\\
+	\ket{x}=&\sum_{i}\ket{i}\braket{i|x}\text{ resolution of the identity\cite{susskind2014quantum}. Now}\\
 	\ket{i}=&a^\dagger_i\ket{0} \text{, i.e. a state with one particle in $i^{th}$ energy level, and}\\
 	\braket{i|x}=&\psi_i(x) \text{, so}\\
 	\ket{x}=& \sum_i \psi^*_i(x)a^\dagger_i\ket{0}\\
@@ -1894,8 +1897,6 @@ What is the effect of $H^2$? We can multiply it out, but the easy way is to use 
 		};
 	\end{subfigure}
 \end{figure}
-\url{https://youtu.be/7a1hon7NJ1M?t=2917}
-
 
 Figures \ref{fig:scatter:annihilate} and \ref{fig:additional:particle} have a coupling constant $g^2$.
 

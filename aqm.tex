@@ -1113,10 +1113,10 @@ Imagine many (possibly infinite number) harmonic oscillators. Think of each osci
 
 From (\ref{eq:creation:operator}) and (\ref{eq:annihilation:operator}):
 \begin{align*}
-	a^+_i \triangleq & \frac{P + i \omega x } {\sqrt{2 \omega}} \text{, raising or creation operator} \numberthis \label{eq:creation:operator:i}\\
-	a^-_i \triangleq & \frac{P - i \omega x } {\sqrt{2 \omega}}\text{, lowering or annihilation operator} \numberthis \label{eq:annihilation:operator_i}\\
+	a^+_i = & \frac{P + i \omega x } {\sqrt{2 \omega}} \text{, raising or creation operator} \numberthis \label{eq:creation:operator:i}\\
+	a^-_i = & \frac{P - i \omega x } {\sqrt{2 \omega}}\text{, lowering or annihilation operator} \numberthis \label{eq:annihilation:operator_i}\\
 	a^-\ket{0} =& \vec{0}\\
-	N_i\triangleq& a^+_i a^-_i \text{, number operator--this is what goes into Hamiltonian} 
+	N_i=& a^+_i a^-_i \text{, number operator--this is what goes into Hamiltonian} 
 \end{align*}
 
  We can compute the commutators from  (\ref{eq:a:comm}) and (\ref{eq:number:operator}), and use the fact that oscillators $i$ and $j$ are independent (if two measurements don't commute, they can not be measured simultaneously - i.e. they are not independent). 
@@ -1145,7 +1145,7 @@ How do we label states? For one oscillator we have the occupation number. One wa
 	\end{align*}
 	Transposing and, without loss of generality, assuming  $c_n$ real
 	\begin{align*}
-		\bra{n}a^-=&c_n\bra{n+1}\\
+		\bra{n}a^-=&c_n\bra{n+1} \text{, so taking the inner product with the foregoing}\\
 		\braket{n|a^-a^+|n}=&c_n^2\text{, from \eqref{eq:norm}}\\
 		=& \braket{n|a^+a^-+1|n}\text{, using (\ref{eq:a:comm_i})}\\
 		=& \braket{n|N+1|n} \text{, from (\ref{eq:number:operator})}\\
@@ -1188,7 +1188,7 @@ How do we label states? For one oscillator we have the occupation number. One wa
 
 \subsection{Non-relativistic Quantum Field Theory of Bosons}
 
-Particles are described by wave functions, which are functions of position, and sort od look like fields. Fields are degrees of freedom that depend on position and time, but we'll focus on position and freeze time for a while. The wave function of a particle, $\psi(x)$, the state vector in the position representation, is a function of position, but it isn't "the field". For one thing $\psi(x)$ is not Hermitian, hence it is not an observable; we observe position, momentum, angular momentum, etc, but not $\psi$.
+Particles are described by wave functions, which are functions of position, and sort of look like fields. Fields are degrees of freedom that depend on position and time, but we'll focus on position and freeze time for a while. The wave function of a particle, $\psi(x)$, the state vector in the position representation, is a function of position, but it isn't ''the field''. For one thing $\psi(x)$ is not Hermitian, hence it is not an observable; we observe position, momentum, angular momentum, etc, but not $\psi$.
 \begin{enumerate}
 	\item $\psi$ is not an observable;
 	\item for multiple particles, $\psi$ is a function of all positions--$\psi(x_1,x_2)$
@@ -1217,8 +1217,10 @@ A question was asked about using $i$ to label states. Let's go back to single pa
 Now imagine that we have many particles (bosons), some in state 1 (first energy level), some in second,..., which we will write: $\ket{n1,n2,n3,...}$. This is identical to the way we labelled states in a multi-oscillator system (We couldn't do this for Fermions!).  Because this is a complete parallel, we can \emph{invent} operators as in (\ref{eq:a:comm_i_plus}) - (\ref{eq:a:comm_i}) to \emph{literally} create and remove particles. NB $\set{1,2,3,...}$ are states, $\set{n_i}$ occupation numbers.
 
 \begin{align*}
-	a_1^+\ket{n_1,n_2,...} =& \sqrt{n_1+1} \ket{n_1+1,n_2,...}
+	a_1^+\ket{n_1,n_2,...} \triangleq& \sqrt{n_1+1} \ket{n_1+1,n_2,...}
 \end{align*}
+NB: this is a \emph{definition}, chosen so we can use all the apparatus of the harmonicq oscillator.
+
 We had a question about the physical significance of the square root. We know that
 \begin{align*}
 	a^+a^-\ket{n} = n \ket{n} \numberthis \label{eq:creator:annihil}
@@ -1267,7 +1269,7 @@ Quantum field theory is a book-keeping device for keeping track of many particle
 \subsubsection{Digression on History of  Quantum Field Theory }
 \begin{itemize}
 	\item Faraday invented Field Theory.
-	\item Maxwell invented modern Field Equations (there had been wave eqiations before him).
+	\item Maxwell invented modern Field Equations (there had been wave equations before him).
 	\item Planck introduced $\hslash$ (realized classical field theory not enough). He quantized the oscillators in cavity of black body: he didn't realize that field had to be quantized.
 	\item Einstein realized field had to be quantized.
 	\item Heisenberg, Pauli, Dirac put it all together around 1928.
@@ -1313,13 +1315,13 @@ Add vacuum to a state, we get probability of 0.5 of vacuum, 0.5 of original stat
 Let's make a two particle state, at $x$ and $y$. 
  
 \begin{align*}
-	\Psi^\dagger(y)\Psi^\dagger(y)\ket{0} =& \ket{y,x}\\
-	\Psi^\dagger(x)\Psi^\dagger(y)\ket{0} =& \ket{x,y} \text{, but from (\ref {eq:a:comm_i_plus})}\\
+	\Psi^\dagger(y)\Psi^\dagger(x)\ket{0} =& \ket{y,x}\\
+	\Psi^\dagger(x)\Psi^\dagger(y)\ket{0} =& \ket{x,y} \text{, but these commute-- \eqref {eq:a:comm_i_plus}}\\
 	\Psi^\dagger(y)\Psi^\dagger(x) =& \Psi^\dagger(x)\Psi^\dagger(y) \text{, so}\\
 	\ket{x,y} =& \ket{y,x} \text{, which is the defining property of Bosons.} 
 \end{align*}
 
-A given quantum field describes one type of Boson. There are two types of field for photons, as there are two polarizations. There is a separate field for each type of particle.
+A given quantum field describes one type of particle. There are two types of field for photons, as there are two polarizations. There is a separate field for each type of particle.
 
 We can handle situation where number of particles is a random variable: a laser wave is a superposition of different number of photons.
 

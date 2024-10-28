@@ -30,8 +30,8 @@ tm.bib|Bibliography for Theoretical Minimum
 File|Description
 ----------------|-------------------------------------------------------------
 gr-exercises.tex|Worked examples from [General Relativity](http://theoreticalminimum.com/courses/general-relativity/2012/fall)
-cosmo.ipynb|Use ptearcat to calculate einstein tensor for Friedmann-Lemaitre-Robinson-Walker metric
-schwartzchild.ipnb|Use ptearcat to calculate einstein tensor for Schwartzchild metric
+cosmo.ipynb|Use [pytearcat](https://arxiv.org/abs/2106.15016) to calculate einstein tensor for Friedmann-Lemaitre-Robinson-Walker metric
+schwartzchild.ipnb|Use pytearcat to calculate einstein tensor for Schwartzchild metric
 
 ## Helper programs
 

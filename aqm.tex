@@ -25,6 +25,7 @@
 \usepackage{glossaries-extra}
 \usepackage{etoolbox}
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\newcommand{\Schr}{{Schr\"odinger }} 
 
 % snarfed from https://tex.stackexchange.com/questions/283502/reset-counter-at-beginning-of-proof
 \newcounter{casecount}
@@ -56,6 +57,9 @@
 	name={\ensuremath{\mathbb{Z}}},
 	description={Set of all integers}
 }
+
+\newacronym{gls:QFT}{QFT}{Quantum Field Theory}
+\newacronym{gls:QM}{QM}{Quantum Mechanics}
 
 \maketitle
 
@@ -614,7 +618,7 @@ That is the classical physics. For the quantum physics we have a wave function w
 Figure \ref{fig:aqm-3-central} depicts the potential for the Coulomb force. The energy levels of (\ref{eq:schroedinger:central}) are characterized by the number of nodes--Definition \ref{defn:node} and Figures \ref{fig:aqm-3-central-0node}, \ref{fig:aqm-3-central-1node}, and \ref{fig:aqm-3-central-2nodes} (The more nodes, the faster the wiggle, hence higher momentum).
 
 \begin{figure}[H]
-	\caption{Solving Central Potential Schro\"dinger Equation (\ref{eq:schroedinger:central})}
+	\caption{Solving Central Potential \Schr Equation (\ref{eq:schroedinger:central})}
 	\begin{subfigure}[t]{0.30\textwidth}
 		\caption{No nodes}\label{fig:aqm-3-central-0node}
 		\includegraphics[width=\textwidth]{aqm-3-central-0node}
@@ -732,7 +736,7 @@ So $a^+$ acts as raising operator; we now show $a^-$ is lowering.
 	N a^-\ket{n} =&	(n-1)a^-\ket{n}
 \end{align*}
 
- Since the Hamiltonian is positive we can't ever get negative energy, so there must be a lowest energy state, $\ket{0}$--Figure \ref{fig:aqm-3-spectrum}. In QM there is a theorem that all the eigenvalues of $MM^\dagger$ are positive or zero, for any operator $M$. 
+ Since the Hamiltonian is positive we can't ever get negative energy, so there must be a lowest energy state, $\ket{0}$--Figure \ref{fig:aqm-3-spectrum}. In \gls{gls:QM} there is a theorem that all the eigenvalues of $MM^\dagger$ are positive or zero, for any operator $M$. 
 
 \begin{figure}[H]
 	\begin{center}
@@ -874,7 +878,7 @@ We define $J$, the total angular momentum:
 	J=&L+s \text{, where $L$ denotes the orbital angular momentum $\vec{r}\times\vec{P}$}
 \end{align*}
 
-There are QM rules for adding angular momenta, which we won't cover in this lecture.
+There are \gls{gls:QM} rules for adding angular momenta, which we won't cover in this lecture.
 
 
 The first experimental background came from spectroscopy and the periodic table. The goal of this lecture is to see how periodic table emerges from spin. Pauli realized spin was needed.
@@ -891,7 +895,7 @@ Pauli exclusion principle: no two electrons can ever get into the same state. Bu
 
 Lithium has 3 electrons, 2 in ground state, 3rd in 1st excited state. There is room for 8 states in first excited level, if we allow for spin. This explains 2nd row of periodic table. The fact that spin was angular momentum was checked with magnetic field (split energy levels).
 
-Pauli's Exclusion Principle is a \emph{postulate} of non-relativistic QM, but a \emph{consequence} of relativistic QM. There are two kinds of particles: ones that satisfy Pauli's Exclusion Principle (Fermions), and those that don't (Bosons).
+Pauli's Exclusion Principle is a \emph{postulate} of non-relativistic \gls{gls:QM}, but a \emph{consequence} of relativistic \gls{gls:QM}. There are two kinds of particles: ones that satisfy Pauli's Exclusion Principle (Fermions), and those that don't (Bosons).
 
 In statistical mechanics, how do we handle identical particles? Imagine that we are putting particles into boxes (real or phase space). In Figure \ref{fig:aqm-4-particles-boxen} we can imagine each particle having a name painted in "classical paint", so they are distinct. Or we can treat them as absolutely identical, so we usually count as if they were identical. In quantum mechanics, however, identical  particles are indistinguishable.
 
@@ -1331,9 +1335,9 @@ We can handle situation where number of particles is a random variable: a laser 
 
 The trick of introducing fields from particles can be done in two ways. We can start with particles and reconstruct why they can be described by fields, or start with wave fields and work out why they have quanta. Starting with particles we can describe 1 particle, 2 particles, etc, then move on to a variable number of particles. We'll start with one single type of particle. The number of photons in room changes constantly. A neutron can decay into a proton, an electron, and a neutrino. We can't rely on quantum mechanics of a single particle: we need to invent fields.
 
-We will start with single particle quantum mechanics, a state vector $\ket{\psi}$. We can construct the inner product $\braket{x|\psi}=\psi(x)$ and the probability density $\psi^*(x) \psi(x)$.  Normalization: $\int \psi^*(x) \psi(x) dx=1$ gives \textit{number of particles}: this isn't very interesting since we had only one particle to begin with.
+We will start with single particle quantum mechanics, a state vector $\ket{\psi}$. We can construct the inner product $\braket{x|\psi}=\psi(x)$ and the probability density $\psi^*(x) \psi(x)$.  Normalization: $\int \psi^*(x) \psi(x) dx=1$ gives \textit{number of particles}. This isn't very interesting since we had only one particle to begin with.
 
-We next introduced some a particle states that form an orthonormal basis. There are many ways to do this. For instance the x-states form an orthonormal basis. The eigenvectors of any Hermitian operator will form a basis. In particular the energy eigenstates of the particles in a box--Figure \ref{fig:aqm-6-sine} form an orthonormal basis. 
+We next introduced  a collection of particle states that form an orthonormal basis. There are many ways to do this. For instance the x-states form an orthonormal basis. The eigenvectors of any Hermitian operator will form a basis. In particular the energy eigenstates of the particles in a box--Figure \ref{fig:aqm-6-sine} form an orthonormal basis. 
 \begin{align*}
 		\int d(x) \psi^*_i(x) \psi_j(x) =& \delta_{i,j} \numberthis \label{eq:orthog:psi}
 \end{align*}
@@ -1362,10 +1366,10 @@ Now we move on to problem of studying many particles at the same time. How are w
 
 We want to change the numbers of particles, i.e. increase and decrease occupation numbers. We introduce an oscillator for each $i$: this has nothing to do with oscillation, it is just a bookkeeping trick. We introduce creation and annihilation operators, $a^+_i$ and $a^-_i$, and make them behave the same as the oscillator creation and annihilation operators. They are often written slightly differently.
 
-\begin{itemize}
-	\item $a^+_i=a^\dagger_i$
-	\item $a^-_i=a_i$
-\end{itemize} 
+\begin{align*}
+	a^+_i =& a^\dagger_i\\
+	a^-_i =& a_i
+\end{align*} 
 
 We will find it convenient to introduce the field operator, which operates on Fock space.
 \begin{align*}
@@ -1404,7 +1408,7 @@ So $\Psi^\dagger(x)$ is the operator that creates, out of the vacuum, a particle
 
 Dirac introduced the following terminology:
 \begin{itemize}
-	\item c-number (an ordinary number) commutes with everything;
+	\item c-number (an ordinary or classical number) commutes with everything;
 	\item q-number (quantum operator "number") does not always commute.
 \end{itemize}
 
@@ -1436,19 +1440,20 @@ We now determine the operator that gives the total energy. We'll assume that par
 	=& \sum_{i} a^\dagger_i a_i \omega_i
 \end{align*}
 
-We determine $\omega_i$ from eigenvalues of the time independent Schr\"odinger equation (ignoring interactions). Particles may interact with $V$, but not with each other.
+The $\omega_i$ from the eigenvalues of the time independent Schr\"odinger equation (ignoring interactions). Particles may interact with $V$, but not with each other.
 \begin{align*}
 	H \psi_i =& \omega_i \psi_i\\
-	\big[\frac{p^2}{2m} + V(x)\big]\psi_i(x)=& \omega_i \psi_i(x)\\
+	\big[\frac{P^2}{2m} + V(x)\big]\psi_i(x)=& \omega_i \psi_i(x) \text{, substituting}\\
+	P =& -i \frac{\partial}{\partial x} \text{, we get}\\
 	\big[-\frac{\nabla^2}{2m} + V(x)\big]\psi_i(x)=& \omega_i \psi_i(x) \numberthis \label{eq:schroedinger:psi}
 \end{align*}
 
 We will guess the solution. Start with the observation that the expectation of the energy for one particle is given by:
 \begin{align*}
-	\braket{\psi | H | \psi} =& \big[-\frac{\nabla^2}{2m} + V(x)\big]\psi_i(x)
+	\braket{\psi | H | \psi} =&\int dx \, \psi^*(x) \big[-\frac{\nabla^2}{2m} + V(x)\big]\psi(x)
 \end{align*}
 
-This suggests:
+This suggests replacing $\psi$ by $\Psi$:
 \begin{thm}[Energy of multi-particle system]
 	\begin{align*}
 		E=&\int dx \Psi^\dagger(x) \big[-\frac{\nabla^2}{2m} + V(x)\big] \Psi(x)
@@ -1468,20 +1473,32 @@ This suggests:
 
 Notes:
 \begin{itemize}
-	\item We can recover single particle QM from QFT: just go to states where total number of particles is one.
-	\item Behaves like classical theory if the number of particles in same state is very large. E.g. expectations follow  laws of classical particles.
-	\item If we don't split too many hairs,square of electromagnetic field is qualitatively related to density of photons.
+	\item We can recover single particle \gls{gls:QM} from \gls{gls:QFT}: just go to states where total number of particles is one.
+	\item \gls{gls:QFT} behaves like classical theory if the number of particles in the same state is very large. E.g. expectations follow  laws of classical particles.
+	\item If we don't split too many hairs, square of electromagnetic field is qualitatively related to density of photons.
 \end{itemize}
 
-You can imagine how confused everybody was before Dirac put it all together. People were confused by $psi$, which they thought was a field, like the electromagnetic field. Some thought it was just an auxiliary device for computing probabilities. If that was what is was, how was it connected with electromagnetic field? What was connection between particles and fields. The Scr\"odinger equation looked a bit like Maxwell's equations. But Maxwell's equations were not anything to do with probability amplitudes: they concerned measurable value of the field. But there was a connection, as the photons were quanta of the field. QFT is the resolution of that confusion.  
 
-For electromagnetic field:
+You can imagine how confused everybody was before Dirac put it all together. People were confused by $\psi$: some thought it was a field, like the electromagnetic field; others thought it was just an auxiliary device for computing probabilities. If that was what is was, how was it connected with the electromagnetic field? What was the connection between particles and fields? The \Schr equation looked a bit like Maxwell's equations. But Maxwell's equations were not anything to do with probability amplitudes: they concerned measurable values of the field. But there was a connection, as the field was made out of quanta called photons. \gls{gls:QFT} is the resolution of that confusion.  
+
+For the electromagnetic field:
 \begin{align*}
 	\vec{\Psi} =& \vec{E} + i \vec{B}\\
-	\vec{\Psi^*} =& \vec{E} - i \vec{B}\\
-	\vec{\Psi} \vec{\Psi^*} =&\text{ energy density of photons: $E^2+B^2$}
+	\vec{\Psi^{\dagger}} =& \vec{E} - i \vec{B}\\
+	\vec{\Psi} \vec{\Psi^{\dagger}} =& E^2+B^2 \text{, energy density of photons/}
 \end{align*}
 Density of photons isn't a good concept, but energy density is.
+
+\begin{align*}
+	P =& -i \frac{\partial}{\partial x}\\
+	\braket{\psi | P| \psi} =& -i \int dx \psi^*(x) \frac{\partial \psi(x)}{\partial x}
+\end{align*}
+
+What about the momentum operator? Do fields have momentum? A powerful laser beam will blow a hole in the wall, because it carries a lot of momentum. Fields have momentum. We will guess:
+
+\begin{align*}
+	 -i \int dx \Psi^*(x) \frac{\partial \Psi(x)}{\partial x}
+\end{align*}
 
 \section {Second Quantization}
 
@@ -1514,7 +1531,7 @@ Here is simple example. Imagine a particle trapped in the potential of Figure \r
 We know that for a potential like Figure \ref{fig:aqm-7-potential} the eigenstates are either symmetric or antisymmetric functions.
 
 \begin{thm}[If $V$ is an even function, $\psi$ is either even or odd.]
-	If  $\psi$  is a continuously differentiable solution to the time independent Schr\"odinger equation
+	If  $\psi$  is a continuously differentiable solution to the time independent \Schr equation
 	\begin{align*}
 	-\frac{\hslash^2}{2m}\frac{d^2 \psi(x)}{d x^2} + V(x)\psi(x) =& E\psi(x) \text{ and}\numberthis \label{eq:ti:schroedinger}\\
 	\forall x V(-x) =& V(x) \numberthis \label{eq:even_V}\\
@@ -1696,7 +1713,7 @@ Standard Model predicts a very small dipole moment that is too small to detect. 
 
 
 \subsection{Second Quantization of Bosons}
- How are fields connected with Fourier transforms? In ordinary QM we have wave functions; in the position representation, and the squares define probabilities of the particle being at a particular point. We can Fourier transform the wave functions, and the transform is the representation in momentum space.
+ How are fields connected with Fourier transforms? In ordinary \gls{gls:QM} we have wave functions; in the position representation, and the squares define probabilities of the particle being at a particular point. We can Fourier transform the wave functions, and the transform is the representation in momentum space.
 
 
 \begin{align*}
@@ -1868,7 +1885,7 @@ We now have a the basic rules of a simple version of quantum field theory:
 	\item We write down Hamiltonian with kinetic energies of particles and other concoctions. 
 \end{itemize}
 
-In the first round of QFT the concoctions largely came from experiment. A classic example it beta decay: a neutron decaying into a proton, an electron, and a neutrino--$g \int \Psi^\dagger_{\nu}(x) \Psi^\dagger_e(x) \Psi^\dagger_p(x) \Psi_n(x) dx$ (need to make Hermitian).
+In the first round of \gls{gls:QFT} the concoctions largely came from experiment. A classic example it beta decay: a neutron decaying into a proton, an electron, and a neutrino--$g \int \Psi^\dagger_{\nu}(x) \Psi^\dagger_e(x) \Psi^\dagger_p(x) \Psi_n(x) dx$ (need to make Hermitian).
 
 Let's go one step further. Imagine that we made $\epsilon$ a little larger in (\ref{eq:update:state}):
 

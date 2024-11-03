@@ -13,7 +13,7 @@
 \usepackage{thmtools}
 \usepackage{gensymb}
 \usepackage{braket}
-\usepackage{tikz-feynman}
+\usepackage[compat=1.0.0]{tikz-feynman}
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage{mathtools}
@@ -123,40 +123,57 @@ Particles have mass: maximum is Planck Mass - anything heavier would form a blac
 
 Without the Higgs Boson, the particles in Table \ref{table:standard-model} should all be \emph{massless} (see below). In part this explains why masses so small. Figure \ref{fig:sm:processes} depicts some processes from the Standard Model, which are relevant to this Lecture.
 
+
+
 \begin{figure}[H]
 	\caption{Processes of the Standard Model (not exhaustive)}\label{fig:sm:processes}
 	\begin{subfigure}[t]{0.3\textwidth}
 		\caption{Charged Fermion emits boson}
-		\includegraphics[width=0.9\textwidth]{2-a2-feynman1}
+		\feynmandiagram [horizontal=a to b] {
+			i1 -- [fermion] a -- [fermion] i2,
+			a -- [photon] b [particle=\(\gamma\)],
+		};
 	\end{subfigure}
 	\begin{subfigure}[t]{0.3\textwidth}
 		\caption{Quark emits gluon}
-		\includegraphics[width=0.9\textwidth]{2-a2-feynman2}
+		\feynmandiagram [horizontal=a to b] {
+			i1 [particle=\(q\)] -- [fermion] a -- [fermion] i2,
+			a -- [photon] b [particle=\(g\)],
+		};
 	\end{subfigure}
 	\begin{subfigure}[t]{0.3\textwidth}
 		\caption{Fermion(even neutrino) emits Z-boson}
-		\includegraphics[width=0.9\textwidth]{2-a2-feynman3}
+		\feynmandiagram [horizontal=a to b] {
+			i1 [particle=\(e\nu\)] -- [fermion] a -- [fermion] i2,
+			a -- [photon] b [particle=\(Z\)],
+		};
 	\end{subfigure}
 \end{figure} 
 
-We have a theory to account for the mass of the proton being zero, but it would leave the gluon and Z with zero mass also.
+We know why the photon is massless: it travels at the speed of light. So we have a theory to account for the mass of the photon being zero, but it would leave the gluon and Z with zero mass also.
 
-How might fields make different masses for different particles? Figure \ref{fig:2-a2-water-molecule} depicts an analogy, the water molecule. Notice that the mass does not depend on its orientation, because of the symmetry of space. Think of water molecules as particles, $up$ and $down$. In Figure \ref{fig:2-a2-water-molecule-in-field}, switching on the electric field makes the left hand molecules have less energy relative to right hand. We can think of them being two different molecules, "water", say, and "scotch". Since $E=mc^2$, they have different mass. Field exerts no nett force, but affects mass.  
+How might fields make different masses for different particles? Figure \ref{fig:2-a2-water-molecule} depicts an analogy, the water molecule. Notice that the mass does not depend on its orientation, because of the symmetry of space. Think of water molecules as particles, $up$ and $down$. In Figure \ref{fig:2-a2-water-molecule-in-field}, switching on the electric field makes the left hand molecules have less energy relative to right hand. We can think of them being two different molecules, ''water'', say, and ''scotch''. Since $E=mc^2$, they have different mass. Field exerts no nett force, but affects mass.  
 
 \begin{figure}[H]
-	\caption{Analogy: the water molecule and its mass}\label{fig:2-a2-water-molecule}
-	\begin{subfigure}[t]{0.4\textwidth}
-		\caption{Independent of orientation}
-		\includegraphics[width=0.9\textwidth]{2-a2-water-molecule}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.4\textwidth}
-		\caption{Depends on orientation relative to field}\label{fig:2-a2-water-molecule-in-field}
-		\includegraphics[width=0.9\textwidth]{2-a2-water-molecule-in-field}
-	\end{subfigure}
-	\begin{subfigure}[t]{\textwidth}
-		\caption{Water molecule moving through condensate. Cross indicates that emitted photon is lost in condensate.}\label{fig:2-a2-water-molecule-in-condensate}
-		\includegraphics[width=0.9\textwidth]{2-a2-water-molecule-in-condensate}
-	\end{subfigure}
+	\begin{center}
+		\caption{Analogy: the water molecule and its mass}\label{fig:2-a2-water-molecule}
+		\begin{subfigure}[t]{0.4\textwidth}
+			\caption{Independent of orientation}
+			\includegraphics[width=0.9\textwidth]{2-a2-water-molecule}
+		\end{subfigure}
+		\begin{subfigure}[t]{0.4\textwidth}
+			\caption{Depends on orientation relative to field}\label{fig:2-a2-water-molecule-in-field}
+			\includegraphics[width=0.9\textwidth]{2-a2-water-molecule-in-field}
+		\end{subfigure}
+
+	\end{center}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{center}
+		\caption[Water molecule moving through condensate.]{Water molecule moving through condensate. Cross indicates that emitted photon is lost in condensate.}\label{fig:2-a2-water-molecule-in-condensate}
+		\includegraphics[width=0.8\textwidth]{2-a2-water-molecule-in-condensate}
+	\end{center}
 \end{figure}
 
 Many printed accounts compare field to molasses. But field doesn't slow particles down! 
@@ -183,7 +200,7 @@ Is there any reason why a particle needs the Higgs phenomenon to have a  mass? F
 
 \section{The Dirac Electron}
 
-There are two kinds of electrons, right handed and left handed. They can flip, but not if they were travelling at the speed of light (time infinitely slow); in the Dirac theory, mass is the rate at which handedness flips. See Figure \ref{fig:2-a3-flipping-electron}. Figure \ref{fig:2-a3-Z-boson} depicts the Z boson, which can be emitted by electrons or neutrinos. The coupling isn't charge--it is called "weak hypercharge", or, as Prof Susskind says, "zilch". Zilch is like electric charge, but it isn't electric charge. When a particle with zilch accelerates, it emits a Z-boson.
+There are two kinds of electrons, right handed and left handed. They can flip, but not if they were travelling at the speed of light (time infinitely slow); in the Dirac theory, mass is the rate at which handedness flips. See Figure \ref{fig:2-a3-flipping-electron}. Figure \ref{fig:2-a3-Z-boson} depicts the Z boson, which can be emitted by electrons or neutrinos. The coupling isn't charge--it is called "weak hypercharge", or, as Prof Susskind says, ''zilch''. Zilch is like electric charge, but it isn't electric charge. When a particle with zilch accelerates, it emits a Z-boson.
 
 \begin{figure}[H]
 	\caption{Electron flipping between left and right}
@@ -193,11 +210,15 @@ There are two kinds of electrons, right handed and left handed. They can flip, b
 	\end{subfigure}
 	\begin{subfigure}[t]{0.3\textwidth}
 		\caption{Electron emitting Z-boson. }\label{fig:2-a3-Z-boson}
-		\includegraphics[width=0.9\textwidth]{2-a3-Z-boson}
+		\feynmandiagram [horizontal=a to b] {
+			i1 -- [fermion] a -- [fermion] i2,
+			a -- [photon] b [particle=\(Z\)],
+		};
 	\end{subfigure}	
 \end{figure} 
 
-Left-handed and right-handed electrons have the same charge but different zilch: LH +1, RH 0. So zilch changes as electron changes from left to right, which is impossible since it is conserved. So the standard model electron has zero mass.
+
+Left-handed and right-handed electrons have the same charge but different zilch: LH +1, RH 0. So zilch changes as electron changes from left to right, which is impossible since it is conserved. \emph{So the standard model electron has zero mass.}
 
 We get around this by introducing the Ziggs boson. This is related to the Mexican Hat, Figure \ref{fig:mexican-hat}, and forms a condensate. It has zilch. Figure \ref{fig:2-a3-zilch} shows an electron exchanging zilch with the condensate via Ziggs bosons. This is the mechanism by which electrons, quarks, and their partners get their mass.
 

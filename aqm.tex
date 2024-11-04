@@ -69,8 +69,6 @@ These are my notes from the Advanced Quantum Mechanics lectures  from Leonard Su
 Disclaimer: I have prepared these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended 
 as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
 
-The notes were prepared using TexStudio\cite{TexStudio}, the bibliography using JabRef\cite{Jabref}, commutative diagrams using tikz-cd\cite{stoffel2021tikz}, and Feynman diagrams using \emph{TikZ-Feynman} \cite{ellis2016tikz}.
-
 \end{abstract}
 
 \tableofcontents
@@ -1718,10 +1716,9 @@ Standard Model predicts a very small dipole moment that is too small to detect. 
 \subsection{Second Quantization of Bosons}
  How are fields connected with Fourier transforms? In ordinary \gls{gls:QM} we have wave functions; in the position representation, and the squares define probabilities of the particle being at a particular point. We can Fourier transform the wave functions, and the transform is the representation in momentum space.
 
-
 \begin{align*}
-	\psi(x) \rightarrow& \psi^*(x)\psi(x)=&P(x) \text{ in position representation}\\
-	\widetilde{\psi}(p) \rightarrow& \widetilde{\psi}^*(p) \widetilde{\psi}(p) =&P(p) \text{ in momentum representation, where}\\
+	\psi(x) \rightarrow& \psi^*(x)\psi(x)=P(x) \text{, probability in position representation}\\
+	\widetilde{\psi}(p) \rightarrow& \widetilde{\psi}^*(p) \widetilde{\psi}(p) =P(p) \text{, probability in momentum representation, where}\\
 	\widetilde{\psi}(p) =& \int \frac{dx}{\sqrt{2\pi}} \psi(x) e^{-i p x}\\
 	\psi(x) =& \int \frac{dp}{\sqrt{2\pi}} \widetilde{\psi}(p) e^{+i p x}
 \end{align*}
@@ -2016,10 +2013,10 @@ Imagine particle with two degrees of freedom, $x$ and $1/2$. Make second degree 
 We have fixed problem \ref{item:right:only}, particles moving to the right only. To fix problem \ref{item:speed:light}, absence of mass, Dirac added a term to give the electron mass. 
 
 \begin{align*}
-	H =& \alpha P + \beta m \text{, where $\beta$ is some matrix. Now} \numberthis \label{eq:dirac:1D:m}\\
+	H =& \alpha P + \beta m \text{, where $\beta$ is some matrix. Now} \numberthis \label{eq:dirac:1D:m}\\we 
 	E^2 =& P^2 + m^2 \text{, so}\\
 	E^2 =& \big(\alpha P + \beta m \big) \big(\alpha P + \beta m \big)\\
-	=& \underbrace{\alpha^2 P^2}_\text{(=1)} + \underbrace{\beta^2 m^2}_\text{set  $=1$} + (\alpha \beta + \beta \alpha) P m\\
+	=& \underbrace{\alpha^2}_\text{(=1)} P^2 + \underbrace{\beta^2 }_\text{  $(=1)$} m^2 + (\alpha \beta + \beta \alpha) P m \text{, if set $a^2=1$ and $b^2=1$}\\
 	=&  P^2 + m^2 + (\alpha \beta + \beta \alpha) P m \text{, so we want:}\\
 	\alpha \beta + \beta \alpha=&0 
 \end{align*}
@@ -2335,7 +2332,7 @@ It does a spiral movement called Zitterbewegung.
 Dirac discovered a multiplicity of different states of the electron, one had to do with chirality, the other to do with actual spin.
 
 \subsubsection{Dirac Electron  and negative energy}
-Dirac equation can have negative energy, even in 1 D case. We don't need 3D even for interesting effects.
+The Dirac equation can have negative energy, even in 1 D case. We don't need 3D even for interesting effects.
 
 \begin{align*}
 	H=P \text{, right moving electron, What if $P<0$?}
@@ -2352,13 +2349,13 @@ In Figure \ref{fig:ds} we have filled all negative energy levels, whch stabilize
 		\begin{subfigure}[t]{0.3\textwidth}
 			\begin{center}
 				\caption{Positive energy electron added}\label{fig:aqm-10-dirac-sea}
-				\includegraphics[width=0.5\textwidth]{aqm-10-dirac-sea}
+				\includegraphics[width=\textwidth]{aqm-10-dirac-sea}
 			\end{center}
 		\end{subfigure}
 		\begin{subfigure}[t]{0.3\textwidth}
 			\begin{center}
 				\caption{Pluck out negative energy electron and get +ve charge and +ve energy hole (positron)}\label{fig:dirac:sea}
-				\includegraphics[width=0.5\textwidth]{DiracSea}
+				\includegraphics[width=\textwidth]{DiracSea}
 			\end{center}
 		\end{subfigure}
 		\begin{subfigure}[t]{0.3\textwidth}

@@ -275,15 +275,20 @@ Figure \ref{fig:2-a3-higgs-decay} depicts the decay of the Higgs: heavy particle
 How about quarks? The usual ones are very light. Lightness of particles made production of Higgs unlikely. Best candidate is the top quark, the heaviest. Use top and antitop. But they aren't easy to find: they decay quickly. We have to make them. Figure \ref{fig:2-a3-gluons} depicts protons colliding at LHC: they contain gluons that make the top quark. 
 
 
-
-
-
 \begin{figure}[H]
 	\caption{How to make a Higgs}
-
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Gluons to top to Higgs. A gluon doesn't have enough energy to make a top anti-top pair, so we need 2 gluons moving past each other with high energy.}\label{fig:2-a3-gluons}
-		\includegraphics[width=\textwidth]{2-a3-gluons}
+		\feynmandiagram[horizontal = a to h2] {
+			a [particle = \(g\)] -- [gluon] b,
+			b -- [fermion] f1 [particle = \(t\)],
+			b -- [fermion] f2 [particle = \(\bar{t}\)],
+			f1 -- [fermion] h,
+			f2 -- [fermion] h,
+			c [particle = \(g\)] -- [gluon] f2,
+			h -- [boson] h2 [particle = \(H\)],
+			a -- [opacity=0.0] c,
+		};
 	\end{subfigure}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{More formal version of Figure \ref{fig:2-a3-gluons} }\label{fig:2-a3-higgs-neat}

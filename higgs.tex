@@ -276,10 +276,10 @@ How about quarks? The usual ones are very light. Lightness of particles made pro
 
 
 \begin{figure}[H]
-	\caption{How to make a Higgs}
+	\caption[How to make a Higgs]{How to make a Higgs A gluon doesn't have enough energy to make a top anti-top pair, so we need 2 gluons moving past each other with high energy.}
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Gluons to top to Higgs. A gluon doesn't have enough energy to make a top anti-top pair, so we need 2 gluons moving past each other with high energy.}\label{fig:2-a3-gluons}
-		\feynmandiagram[horizontal = a to h2] {
+		\caption{Gluons to top anti-top pair to Higgs. }\label{fig:2-a3-gluons}
+		\feynmandiagram[small,horizontal = a to h2] {
 			a [particle = \(g\)] -- [gluon] b,
 			b -- [fermion] f1 [particle = \(t\)],
 			b -- [fermion] f2 [particle = \(\bar{t}\)],
@@ -290,15 +290,34 @@ How about quarks? The usual ones are very light. Lightness of particles made pro
 			a -- [opacity=0.0] c,
 		};
 	\end{subfigure}
+	\em
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{More formal version of Figure \ref{fig:2-a3-gluons} }\label{fig:2-a3-higgs-neat}
-		\includegraphics[width=\textwidth]{2-a3-higgs-neat}
+		\caption{More formal version of (\subref{fig:2-a3-gluons}) }\label{fig:2-a3-higgs-neat}
+		\feynmandiagram[small,vertical=t2 to t3]{
+			a[particle=\(H\)]--[boson]t1--t2--t3--t1,
+			t2 -- [gluon] p1 [particle=\(g\)],
+			t3 -- [gluon] p2 [particle=\(g\)],
+		};
 	\end{subfigure}
 \end{figure}
 
+
+
 \section{The Near Future}
 
-The standard model is essentially correct. Is everything fitting together quantitatively? Figure \ref{fig:2-a3-higgs-neat} provides a hint. We should be able to run this backwards and decay Higgs, but it isn't easy to see gluons. Replace gluons with photons. Higgs can decay into photons. At the time of the lecture, Higgs appears to decay into photons a little too quickly--1.5 times. Maybe something else is going on: maybe some other heavy particle is there. Keep watching. 
+The standard model is essentially correct. Is everything fitting together quantitatively? Figure \ref{fig:2-a3-higgs-neat} provides a hint. We should be able to run this backwards and decay the Higgs, but it isn't easy to see gluons. Replace gluons with photons--Figure \ref{fig:Higgs:to:photons}. Higgs can decay into photons. 
+
+\begin{figure}[H]
+	\begin{center}
+		\caption{Higgs can decay into photons}\label{fig:Higgs:to:photons}
+		\feynmandiagram[small,horizontal'=a to t1]{
+			a[particle=\(H\)]--[boson]t1--t2--t3--t1,
+			p1 [particle=\(\gamma\)] -- [photon] t2 ,
+			p2 [particle=\(\gamma\)]-- [photon] t3 ,
+		};
+	\end{center}
+\end{figure}
+At the time of the lecture, the Higgs appears to decay into photons a little too quickly--1.5 times to fast. Maybe something else is going on: maybe some other heavy particle is there. Keep watching. 
 
 \bibliographystyle{unsrt}
 \addcontentsline{toc}{section}{Bibliography}

@@ -104,9 +104,16 @@ While this isn't true for empty space in the real world, it is exactly what we s
 Particles have mass: maximum is Planck Mass - anything heavier would form a black hole--Figure \ref{fig:higgs-masses}. Largest known particle is $\approxeq 10^{-17}$ Planck mass: why so light? To detect a really huge particle we need a humongous accelerator. Maybe there are heavier particles?
 
 \begin{figure}[H]
-	\caption{All known particles are clustered around left of this plot}\label{fig:higgs-masses}
-	\includegraphics[width=0.6\textheight]{higgs-masses}
+	\begin{center}
+		\caption[All known particles are clustered around left of this plot]{All known particles are clustered around left of this plot--so close to zero that we cannot resolve them.}\label{fig:higgs-masses}
+		\begin{tikzpicture}
+			\draw[black, thick] (-4,0) -- (4,0);
+			\filldraw[black] (-4,0) circle (2pt) node[anchor=east]{0};
+			\filldraw[black] (4,0) circle (2pt) node[anchor=west]{$m_p$};
+		\end{tikzpicture}
+	\end{center}
 \end{figure}
+
 
 \begin{table}[H]
 	\begin{center}

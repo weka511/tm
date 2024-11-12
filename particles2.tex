@@ -1,4 +1,25 @@
 % !TeX program = lualatex
+
+% Copyright (c) 2020-2024 Simon Crase
+
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+
 \documentclass[]{article}
 \usepackage{caption}
 \usepackage{subcaption}
@@ -37,6 +58,8 @@
 %opening
 \title{Theoretical Minimum\\Particle Physics 2\\Standard Model}
 \author{Simon Crase (compiler)\\simon@greenweaves.nz}
+\makeglossaries
+\loadglsentries{glossary-entries}
 
 \begin{document}
 
@@ -47,8 +70,6 @@
 	
 	Disclaimer: I have created these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended 
 	as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
-	
-	The notes were created using TexStudio\cite{TexStudio}, which I recommend for compiling them to a PDF, and the bibliography was created using JabRef\cite{Jabref}.
 \end{abstract}
 
 \tableofcontents
@@ -791,7 +812,7 @@ The first and simplest gauge theory is Maxwell's theory. This has six components
 	\item Magnetic field $\vec{B}=\nabla \times \vec{A}$
 \end{itemize}
 
-The electric and magnetic fields are combine to make the field tensor\cite{susskind2017special}:
+The electric and magnetic fields combine to make the field tensor\cite{susskind2017special}:
 \begin{align*}
 	F_{\mu,\nu} =&\begin{pmatrix} \numberthis \label{eq:field:tensor}
 		0&-E_x&-E_y&-E_z\\
@@ -1658,7 +1679,7 @@ Let's move the charges together, assuming charges are smaller than the clouds. M
 
 Now consider a dielectric. Electrons are bound to atoms, but there is some movement allowed. There will be some screening; diminished attraction from Coulomb law. We still have $e(R)$, but it doesn't go all the way to zero at infinity.
 
-This is exactly this happens in QFT. Vacuum is basically a dielectric. Charge that is felt at a large distance is not the bare electric charge in Lagrangian. Separation between members of a virtual pair depends on virtual energy. As you bring charged particles closer, screening from low energy virtual pairs will not be there--Figure \ref{fig:2-10-effective-charge}
+This is exactly what happens in \gls{gls:QFT}. Vacuum is basically a dielectric. Charge that is felt at a large distance is not the bare electric charge in Lagrangian. Separation between members of a virtual pair depends on virtual energy. As you bring charged particles closer, screening from low energy virtual pairs will not be there--Figure \ref{fig:2-10-effective-charge}
 
 \begin{figure}[H]
 	\caption{Running charges}
@@ -1708,7 +1729,8 @@ At what scale is gravitational force comparable to EM?
 This is the Planck length.
 
 
-
+% glossary: may need command makeglossaries.exe particles2
+\printglossaries
 
 \bibliographystyle{unsrt}
 \addcontentsline{toc}{section}{Bibliography}

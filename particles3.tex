@@ -2,12 +2,50 @@
 
 %% We need to use lualatex to make some features of tikz-feynman work properly 
 
+% Copyright (c) 2024 Simon Crase
+
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+
 \documentclass[]{article}
 
-\usepackage{mathtools,mathrsfs,caption,subcaption,graphicx,float,url,amsmath,amssymb,amsthm,tocloft,cancel,thmtools,gensymb,braket,bm,tikz-feynman}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{tocloft}
+\usepackage{cancel}
+\usepackage{thmtools}
+\usepackage{gensymb}
+\usepackage{braket}
+\usepackage{bm}
+\usepackage[compat=1.0.0]{tikz-feynman}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{colortbl}
 \usepackage[toc,nonumberlist]{glossaries}
 \usepackage{glossaries-extra}
-\usepackage[toc,page]{appendix}
 
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 \newcommand{\Lagr}{\mathscr{L}}
@@ -24,18 +62,18 @@
 %opening
 \title{Theoretical Minimum\\Particle Physics 3\\Supersymmetry \& Grand Unification}
 \author{Simon Crase (compiler)\\simon@greenweaves.nz}
-
+\makeglossaries
+\loadglsentries{glossary-entries}
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
-	These are my notes for the \emph{New Revolutions in Particle Physics 3--Supersymmetry and Grand Unification}\cite{susskind2010supersymmetry} lectures from Leonard Susskind's \emph{Theoretical Minimum} series\cite{susskind2007theoretical}. These notes follow on from \cite{susskind2010standard}. Feynman diagrams were prepared using \emph{TikZ-Feynman} \cite{ellis2016tikz}.
+	These are my notes for the \emph{New Revolutions in Particle Physics 3--Supersymmetry and Grand Unification} lectures from Leonard Susskind's \emph{Theoretical Minimum} series\cite{susskind2007theoretical}. 
 	
 	Disclaimer: I have created these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended 
 	as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
 	
-	The notes were created using TexStudio\cite{TexStudio}, which I recommend for compiling them to a PDF, and the bibliography was created using JabRef\cite{Jabref}.
 \end{abstract}
 
 \tableofcontents
@@ -47,7 +85,7 @@
 
 \subsection{Renormalization}
 
-Most of the basic ideas of this quarter originated out of questions having to do with renormalization. Sometimes puzzles, sometimes useful observations about the renormalization of the standard model. I thought it would be a good idea to explain what renormalization is. It  is a combination of two things:
+Most of the basic ideas of this quarter originated out of questions having to do with renormalization -- sometimes puzzles, sometimes useful observations about the renormalization of the standard model. I thought it would be a good idea to explain what renormalization is. It  is a combination of two things:
 \begin{itemize}
 	\item Learning how to eliminate out of the description of physics things arising from distances that are so small that they are irrelevant to the questions you are asking
 	\item Learning how to think about how dimensional analysis tells you how to answer some of the difficult questions of quantum field theory field theory that have to do with distances much smaller than you might be interested in.
@@ -55,7 +93,7 @@ Most of the basic ideas of this quarter originated out of questions having to do
 
 Examples of getting rid of things that are too small to be of interest.
 \begin{itemize}
-	\item Studying the nucleus as protons and neutrons instead of quarks. Use QCD to figure out properties of protons and neutrons and their forces. Nucleons move slowly, so we can ignore relativity. Nucleus can be described by the non-relativistic theory of neutrons and protons. All we need from quark theory is to find out what the properties of protons and neutrons are: masses, spins, and the forces between them.
+	\item Studying the nucleus as protons and neutrons instead of quarks. Use \gls{gls:QCD} to figure out properties of protons and neutrons and their forces. Nucleons move slowly, so we can ignore relativity. Nucleus can be described by the non-relativistic theory of neutrons and protons. All we need from quark theory is to find out what the properties of protons and neutrons are: masses, spins, and the forces between them.
 	\item For atoms, you might not be particularly interested in what makes up the nucleus. You use nuclear physics to calculate the properties of nuclei--which nuclei exist, their masses, and charges. Now we can forget protons and neutrons, but we need electrons.
 	\item Now move on to atoms and forget their contents.
 \end{itemize}
@@ -144,7 +182,7 @@ Since $[\Phi] = l^{-1}$ we can read off the dimensions of the coefficients:
 \begin{itemize}
 	\item $m$--mass;
 	\item $g$--mass;
-	\item $lambda$--dimensionless. Dimensionless coupling constants are very important in renormalization theory.
+	\item $\lambda$--dimensionless. Dimensionless coupling constants are very important in renormalization theory.
 \end{itemize}
 
 Feynman diagrams are built out of two types of elements:
@@ -170,7 +208,7 @@ Feynman diagrams are built out of two types of elements:
 \begin{itemize}
 	\item We can represent the propagator is  $\braket{0|\bar{\Phi}(y)\Phi(x)|0}$: create at $x$, annihilate at $y$.
 	\item Dimension of propagator is $[l^{-2}]$. If there is no mass, distance between $x$ and $y$ is the only length scale in the problem--$\frac{1}{\lVert x-y \Vert^2}$. 
-	\item If $x$ and $y$ close, propagator blows up--this is the source of all divergences in QFT.
+	\item If $x$ and $y$ close, propagator blows up--this is the source of all divergences in \gls{gls:QFT}.
 \end{itemize}
 
 Everything else is just building up Feynman diagrams, calculating them, and interpreting them.
@@ -473,7 +511,7 @@ The two fine-tuning problems are the biggest puzzles in particle physics at the 
  
 Supersymmetry is a potential problem to the fine tuning of the Higgs field, but it is not a potential solution to the fine-tuning of the cosmological constant.
 
-If you believe QFT down to scales that are many times smaller than the weak interaction scale, but only is we can solve renormalization problems at smaller scales. This section deals with a lower bound the the problems. They could be bigger.
+If you believe \gls{gls:QFT} down to scales that are many times smaller than the weak interaction scale, but only is we can solve renormalization problems at smaller scales. This section deals with a lower bound the the problems. They could be bigger.
 
 In order to cancel terms in (\ref{eq:sum:lambdas}), terms need to be very closely balanced. matching them is what Supersymmetry does. The simplest possible Feynman diagrams for Fermions have negative energy, the simplest for Bosons have positive. In principle if they had exactly the same mass they could cancel each other in the vacuum energy
 	
@@ -1119,7 +1157,7 @@ TBP
 
 TBP
 
-\section{Generalizing supersymmetry to 3+1 spacetime, and QFT}
+\section{Generalizing supersymmetry to 3+1 spacetime, and \gls{gls:QFT}}
 
 TBP
 
@@ -1127,11 +1165,12 @@ TBP
 
 TBP
 
-\section{GUTs, the SU(5) representation, proton decay}
+\section{\gls{gls:GUT}s, the SU(5) representation, proton decay}
 
 TBP
 
-
+% glossary: may need command makeglossaries particles3
+\printglossaries
 \bibliographystyle{unsrt}
 \addcontentsline{toc}{section}{Bibliography}
 \raggedright

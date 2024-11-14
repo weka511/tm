@@ -80,7 +80,7 @@
 
 Figure \ref{fig:particles:fields:forces} shows a triangle of concepts:
 \begin{itemize}
-	\item particles (quanta of fundamental fields)\footnote{We are going to have to think very hard about what is an elementary particles and what is composite; we will always be frustrated, always find some slippery region why our definition did not work.}
+	\item Particles (quanta of fundamental fields)\footnote{We are going to have to think very hard about what is an elementary particles and what is composite; we will always be frustrated, always find some slippery region why our definition did not work.}
 	\item Fields
 	\item Forces
 \end{itemize}
@@ -88,7 +88,14 @@ Figure \ref{fig:particles:fields:forces} shows a triangle of concepts:
 \begin{figure}[H]
 	\begin{center}
 		\caption{Triangle of concepts: particles, fields, and forces}\label{fig:particles:fields:forces}
-		\includegraphics[width=0.5\textwidth]{ParticlesFieldsForces}
+		\begin{tikzpicture}	
+			\filldraw[black] (-5, 2.0)  node[anchor=west]{Particles};
+			\filldraw[black] (3.624, 2.0)  node[anchor=west]{Fields};
+			\filldraw[black] (-0.55, 0.2)  node[anchor=west]{Forces};
+			\draw[ultra thick, <->] (-3.1,2.0) --(3.1,2.0);
+			\draw[ultra thick, <->] (-4.,1.8) --(-0.6,0.2);
+			\draw[ultra thick, <->] (0.6,0.2) --(4.,1.8);
+		\end{tikzpicture}
 	\end{center}
 \end{figure}
 
@@ -197,11 +204,11 @@ The Standard Model is a mess. We don't understand why the particles are as they 
 		\begin{tabular}{|l|l|l|r|l|r|}\hline
 			Name&Symbol&Type&Charge&B\#&Mass\\ \hline
 			photon&$\gamma$ A&B&0&0&0 \\ \hline
-			electron&$e+\pm \Psi_e\}$&F&-1&0&$0.15MeV$\\ \hline
+			electron&$e+\pm \Psi_e\}$&F&-1&0&$0.15\gls{gls:MeV}$\\ \hline
 			Quark&q&F&below&$\frac{1}{3}$&below\\ \hline
-			down&q(Q) $\Psi_q$&F&$-\frac{1}{3}$&$\frac{1}{3}$&10meV\\ \hline
-			up&&F&$\frac{2}{3}$&$\frac{1}{3}$&5meV\\ \hline
-			strange&&F&$-\frac{1}{3}$&$\frac{1}{3}$&100meV\\ \hline
+			down&q(Q) $\Psi_q$&F&$-\frac{1}{3}$&$\frac{1}{3}$&10\gls{gls:MeV}\\ \hline
+			up&&F&$\frac{2}{3}$&$\frac{1}{3}$&5\gls{gls:MeV}\\ \hline
+			strange&&F&$-\frac{1}{3}$&$\frac{1}{3}$&100\gls{gls:MeV}\\ \hline
 			charm&&F&$\frac{2}{3}$&$\frac{1}{3}$&1GeV\\ \hline
 			bottom&&F&$-\frac{1}{3}$&$\frac{1}{3}$&5Gev\\ \hline
 			top&&F&$\frac{2}{3}$&$\frac{1}{3}$&170Gev\\ \hline
@@ -256,10 +263,10 @@ Can we make an analogue of proton/neutron with strange quarks? Yes. E.g. $sdu$, 
 		\caption[Mesons: baryon number 0 - quark + anti-quark]{Mesons: baryon number 0 - quark + anti-quark. Note the two entangled pairs: $\frac{1}{\sqrt{2}}\big(\ket{\bar{u}u}\pm\ket{\bar{d}d}\big)$}\label{table:mesons}
 		\begin{tabular}{|l|l|l|r|} \hline
 			&Quarks&Charge&Mass\\ \hline
-			$\pi^-$&$\bar{u}d$&-1&$\approx140 meV$ \\ \hline
-			$\pi^+$&$u\bar{d}$&+1&$\approx140 meV$  \\ \hline
-			$\pi^0$&$\frac{1}{\sqrt{2}}\big(\ket{\bar{u}u}+\ket{\bar{d}d}\big)$&0&$\approx140 meV$  \\ \hline
-			$\eta$&$\frac{1}{\sqrt{2}}\big(\ket{\bar{u}u}-\ket{\bar{d}d}\big)$& 0&$\approx500 meV$ \\ \hline
+			$\pi^-$&$\bar{u}d$&-1&$\approx140 \gls{gls:MeV}$ \\ \hline
+			$\pi^+$&$u\bar{d}$&+1&$\approx140 \gls{gls:MeV}$  \\ \hline
+			$\pi^0$&$\frac{1}{\sqrt{2}}\big(\ket{\bar{u}u}+\ket{\bar{d}d}\big)$&0&$\approx140 \gls{gls:MeV}$  \\ \hline
+			$\eta$&$\frac{1}{\sqrt{2}}\big(\ket{\bar{u}u}-\ket{\bar{d}d}\big)$& 0&$\approx500 \gls{gls:MeV}$ \\ \hline
 			$K^-$&$\bar{u}s$&-1& \\ \hline
 			$K^+$&$u\bar{s}$&+1& \\ \hline
 			$\bar{K}^0$&$\bar{d}s$&0& \\ \hline
@@ -350,7 +357,7 @@ In a previous set of lectures, \cite[Particle Physics 1]{susskind2007theoretical
 
 \subsection{Isospin}
 
-The natural energy of the nucleus is a few hundred meV, which comes from up and down quarks. To a first approximation masses are close to each other, so they are analogous to spin. If we think of up and down quarks as isomorphic to up and down spins, we invent the concept of isospin.
+The natural energy of the nucleus is a few hundred \gls{gls:MeV}, which comes from up and down quarks. To a first approximation masses are close to each other, so they are analogous to spin. If we think of up and down quarks as isomorphic to up and down spins, we invent the concept of isospin.
 
 \begin{itemize}
 	\item $(\uparrow,\downarrow)$ gives ordinary spin;
@@ -373,12 +380,12 @@ The simplest object we can study is 3 quarks. We can make an object of isotopic 
 		\caption[Simplest object we can study is 3 quarks.]{Simplest object we can study is 3 quarks. We can make an object of isotopic spin $\frac{1}{2}$ or $\frac{3}{2}$.}\label{table:3quark}
 		\begin{tabular}{|c|c|c|c|r|r|}\hline
 			Isospin&Quarks&Spin&Name&Charge&Mass\\ \hline
-			$\frac{1}{2}$&$duu$&$\frac{1}{2}$&proton&$+1$&940meV\\ \hline
-			$\frac{1}{2}$&$udd$&$\frac{1}{2}$&neutron&0&940meV\\ \hline
-			$\frac{3}{2}$&$uuu$&$\frac{3}{2}$&$\Delta_\frac{3}{2}$&$+2$&1200meV\\ \hline
-			$\frac{3}{2}$&$ddd$&$\frac{3}{2}$&$\Delta_\frac{3}{2}$&-1&1200meV\\ \hline
-			$\frac{3}{2}$&$uud$&$\frac{3}{2}$&$\Delta_\frac{3}{2}$&+1&1200meV\\ \hline
-			$\frac{3}{2}$&$udd$&$\frac{3}{2}$&$\Delta_\frac{3}{2}$&0&1200meV\\ \hline
+			$\frac{1}{2}$&$duu$&$\frac{1}{2}$&proton&$+1$&940\gls{gls:MeV}\\ \hline
+			$\frac{1}{2}$&$udd$&$\frac{1}{2}$&neutron&0&940\gls{gls:MeV}\\ \hline
+			$\frac{3}{2}$&$uuu$&$\frac{3}{2}$&$\Delta_\frac{3}{2}$&$+2$&1200\gls{gls:MeV}\\ \hline
+			$\frac{3}{2}$&$ddd$&$\frac{3}{2}$&$\Delta_\frac{3}{2}$&-1&1200\gls{gls:MeV}\\ \hline
+			$\frac{3}{2}$&$uud$&$\frac{3}{2}$&$\Delta_\frac{3}{2}$&+1&1200\gls{gls:MeV}\\ \hline
+			$\frac{3}{2}$&$udd$&$\frac{3}{2}$&$\Delta_\frac{3}{2}$&0&1200\gls{gls:MeV}\\ \hline
 		\end{tabular}
 	\end{center}
 \end{table}
@@ -885,7 +892,7 @@ There is another set of interactions that are characterized by being quite slow.
 	\begin{center}
 		\caption{Examples of Weak decay}\label{table:ex:weak}
 		\begin{tabular}{|l|l|p{6cm}|}\hline
-			$n \rightarrow e + p +\bar{\nu}$&12 minutes&Barely enough energy: 940meV $\rightarrow$ 939meV + 0.5meV, but this isn't enough to explain the slowness.\\ \hline
+			$n \rightarrow e + p +\bar{\nu}$&12 minutes&Barely enough energy: 940\gls{gls:MeV} $\rightarrow$ 939\gls{gls:MeV} + 0.5\gls{gls:MeV}, but this isn't enough to explain the slowness.\\ \hline
 			$\pi^- \rightarrow e^- + \bar{\nu} $&$10nS$&Plenty of energy, but still slow.\\ \hline
 			$\pi^+ \rightarrow e^+ + \nu $&&\\ \hline
 		\end{tabular}

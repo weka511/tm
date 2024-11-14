@@ -66,10 +66,9 @@
 \maketitle
 
 \begin{abstract}
-	These are my notes for the \emph{New Revolutions in Particle Physics 2} lectures\cite{susskind2010standard} from Leonard Susskind's \emph{Theoretical Minimum} series\cite{susskind2007theoretical}.  Feynman diagrams were prepared using \emph{TikZ-Feynman} \cite{ellis2016tikz}.
+	These are my notes for the \emph{New Revolutions in Particle Physics 2:Standard Model} lectures from Leonard Susskind's \emph{Theoretical Minimum} series\cite{susskind2007theoretical}.
 	
-	Disclaimer: I have created these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended 
-	as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
+	Disclaimer: I have created these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
 \end{abstract}
 
 \tableofcontents
@@ -154,7 +153,7 @@ Can we think of Coulomb force in \gls{gls:QM} terms? Consider single proton and 
 
 \begin{itemize}
 	\item Classically we solve field equations;
-%#34	\item In \gls{gls:QM} we think of emission and absorption of photons; this is what the Lagrangian tells us. One way to think of this is that the electron is a \gls{gls:QM} superposition of states: no photons, one with photon emitted,  one with two photons emitted, photon reabsorbed--Figure \ref{fig:2-1-electron-photons}. In Figure \ref{fig:2-1-electron-photons}, when electrons very far apart, energies just add. When they get closer, fields interact, or, in the language of Feynman diagrams, one electron absorbs electron emitted by the other--Figure \ref{fig:2-1-electron-photons-feynmann}.  Energy is no longer sum of energies of individual electrons, which gives rise to Coulomb force.
+	\item In \gls{gls:QM} we think of emission and absorption of photons; this is what the Lagrangian tells us. One way to think of this is that the electron is a \gls{gls:QM} superposition of states: no photons, one with photon emitted,  one with two photons emitted, photon reabsorbed--Figure \ref{fig:2-1-electron-photons}. In Figure \ref{fig:2-1-electron-photons}, when electrons very far apart, energies just add. When they get closer, fields interact, or, in the language of Feynman diagrams, one electron absorbs electron emitted by the other--Figure \ref{fig:2-1-electron-photons-feynmann}.  Energy is no longer sum of energies of individual electrons, which gives rise to Coulomb force.
 \end{itemize}
 
 \begin{figure}[H]
@@ -294,14 +293,14 @@ This is the theory of Quarks and gluons, and the things that they make.
 \end{defn}
 
 \subsection{Spin without group theory}
-We start with the basic commutation relations for angular momentum:\cite{susskind2009particles}
+We start with the basic commutation relations for angular momentum:\cite[Particle Physics 1]{susskind2007theoretical}
 \begin{align*}
 	[L_x,L_y] =& i \hslash L_z\\
 	[L_y,L_z] =& i \hslash L_x\\
 	[L_z,L_x] =& i \hslash L_y
 \end{align*}
 
-In a previous set of lectures, \cite{susskind2009particles}, we saw that:
+In a previous set of lectures, \cite[Particle Physics 1]{susskind2007theoretical}, we saw that:
 
 \begin{itemize}
 	\item we can break the symmetry by focusing on $L_z$.
@@ -360,7 +359,7 @@ The natural energy of the nucleus is a few hundred meV, which comes from up and 
 
 Isospin isn't a precise symmetry of nature, as $u$ and $d$ have different masses and charges. But is is an approximate symmetry for strong forces only.
 
-%#34The simplest object we can study is 3 quarks. We can make an object of isotopic spin $\frac{1}{2}$ or $\frac{3}{2}$--Table \ref{table:3quark}.
+The simplest object we can study is 3 quarks. We can make an object of isotopic spin $\frac{1}{2}$ or $\frac{3}{2}$--Table \ref{table:3quark}.
 
 \begin{itemize}
 	\item Assume that we can label quarks--${1,2,3}$
@@ -428,7 +427,7 @@ B\bar{R}&B\bar{G}&B\bar{B}
 
 Figures \ref{fig:2-2-gluon3} and \ref{fig:2-2-gluon5} show the basic vertices for gluons. Figures \ref{fig:2-2-gluon4} and \ref{fig:2-2-gluon6} redraw them, using a fictitious quark-antiquark pair. Gluons can interact with each other--Figure \ref{fig:2-2-gluon6}.
 \begin{figure}[H]
-	\caption{The basic vertices of QCD -- Quarks}
+	\caption{The basic vertices of \gls{gls:QCD} -- Quarks}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Red quark changes to green: analogous to process with photon.}\label{fig:2-2-gluon3}
 		\includegraphics[width=0.9\textwidth]{2-2-gluon3}
@@ -442,9 +441,9 @@ Figures \ref{fig:2-2-gluon3} and \ref{fig:2-2-gluon5} show the basic vertices fo
 \end{figure}
 
 \begin{figure}[H]
-	\caption{The basic vertices of QCD--2 gluons}
+	\caption{The basic vertices of \gls{gls:QCD}--2 gluons}
 		\begin{subfigure}[t]{0.40\textwidth}
-		\caption{Second basic vertex, which has no analogue for photons. Fictitious quark-antiquark pairs represent gluons. This process makes QCD more complex and more interesting than QED.}\label{fig:2-2-gluon5}
+		\caption{Second basic vertex, which has no analogue for photons. Fictitious quark-antiquark pairs represent gluons. This process makes \gls{gls:QCD} more complex and more interesting than QED.}\label{fig:2-2-gluon5}
 		\includegraphics[width=0.9\textwidth]{2-2-gluon5}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.45\textwidth}
@@ -698,7 +697,7 @@ Gluon behaves a quark-antiquark under colour symmetry: it transforms under the 8
 
 \begin{table}[H]
 	\begin{center}
-		\caption{Postulates of QCD.}\label{table:postulates:QCD}
+		\caption{Postulates of \gls{gls:QCD}.}\label{table:postulates:QCD}
 		\begin{tabular}{|l|c|p{8cm}|} \hline
 			Particle&Group&Remarks \\ \hline
 			Quark&{\bfseries 3}& \\ \hline

@@ -1109,7 +1109,7 @@ Since $V$ is completely symmetric, there will be two ground states. Why can't sy
 	\end{subfigure}
 \end{figure}
 
-In both cases we have looked at breaking a discrete symmetry. What if we break a continuous symmetry, such as $U(1)$ or $SU(2)$? We will do one example of a continuous symmetry breaking, and the idea of a Goldstone boson (which replaces the idea of domain walls); we'll see how how the Goldstone boson can radically change it nature when the symmetry had to do with gauge bosons. It morphs from spontaneous symmetry breaking into the Higgs phenomenon. We will see how the Higgs mechanism allows the Z-boson yo have mass.
+In both cases we have looked at breaking a discrete symmetry. What if we break a continuous symmetry, such as $U(1)$ or $SU(2)$? We will do one example of a continuous symmetry breaking, and the idea of a Goldstone boson (which replaces the idea of domain walls); we'll see how how the Goldstone boson can radically change its nature when the symmetry had to do with gauge bosons. It morphs from spontaneous symmetry breaking into the Higgs phenomenon. We will see how the Higgs mechanism allows the Z-boson to have mass.
 
 
 Imagine a complex field, Figure \ref{fig:2-7-complex-phi}\footnote{The $\frac{1}{2}$ is normally omitted from $\mathcal{L}$ for complex fields.}.
@@ -1131,16 +1131,16 @@ For the time being assume $\theta$ constant--but we will relax this in Section \
 	\includegraphics[width=0.8\textwidth]{2-7-complex-phi}
 \end{figure}
 
-Let's add a potential that shares this symmetry. We will focus on two kinds of potentials: one of them spontaneously breaks the symmetry, the other doesn't.
+Let's add a potential that shares this symmetry. We will focus on two kinds of potentials: one of them spontaneously breaks the symmetry, the other doesn't. We define a Lagrangian that is symmetrical about rotation in $\Phi$ plane:
 \begin{align*}
-\mathcal{L} =&  \partial_\mu \Phi^* \partial^\mu \Phi -V(\Phi \Phi^*) \text{, symmetrical about rotation in $\Phi$ plane}\\
+\mathcal{L} =&  \partial_\mu \Phi^* \partial^\mu \Phi -V(\Phi \Phi^*) \text{, where}\\
 V =& \Phi \Phi^* \text{, completely symmetric--\text{, see Figure \ref{fig:2-7-V-quad}}, or} \numberthis \label{eq:symmetric}\\
 V=& -a \Phi \Phi^* + b (\Phi \Phi^*)^2 \text{, see Figure \ref{fig:2-7-V-quartic}} \text{, where $a>0,b>0$}\numberthis \label{eq:breakable:symmetric}
 \end{align*}
 
 \begin{itemize}
-	\item At the origin, V of (\ref{eq:symmetric}) is at a minimum. This is the ground state. There is no explicit or spontaneous breaking of symmetry.
-	\item Near the origin, V of (\ref{eq:breakable:symmetric}) is at a maximum. There are many ground states around the minimum circle. $\Phi$ wants to move away from zero, but not too far. It also doesn't want $\partial_\mu \Phi^* \partial^\mu \Phi$ to get too big, so we expect field to bunch \emph{somewhere} on minimum.
+	\item At the origin, $\Phi \Phi^*$  is at a minimum. This is the ground state. There is no explicit or spontaneous breaking of symmetry.
+	\item Near the origin, $-a \Phi \Phi^* + b (\Phi \Phi^*)^2$ is at a maximum. There are many ground states around the minimum circle. $\Phi$ wants to move away from zero, but not too far. It also doesn't want $\partial_\mu \Phi^* \partial^\mu \Phi$ to get too big, so we expect field to bunch \emph{somewhere} on minimum.
 \end{itemize}
 
 Are there domain walls? Figure \ref{fig:2-7-V-quartic-domain-wall} shows an attempt to check this. Note that we don't get an abrupt transition, as we need to keep $\partial_\mu \Phi^* \partial^\mu \Phi$ small.
@@ -1148,11 +1148,11 @@ Are there domain walls? Figure \ref{fig:2-7-V-quartic-domain-wall} shows an atte
 \begin{figure}[H]
 	\caption{Potentials}\label{fig:s-7-potentials}
 	\begin{subfigure}[t]{0.5\textwidth}
-		\caption{ (\ref{eq:symmetric})-- Minimum at origin.}\label{fig:2-7-V-quad}
+		\caption{ $V=\Phi \Phi^*$-- Minimum at origin.}\label{fig:2-7-V-quad}
 		\includegraphics[width=\textwidth]{2-7-V-quad}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.5\textwidth}
-		\caption{(\ref{eq:breakable:symmetric})--Minimum on circle of radius $f$.}\label{fig:2-7-V-quartic}
+		\caption{$V=-a \Phi \Phi^* + b (\Phi \Phi^*)^2$--Minimum on circle of radius $f$.}\label{fig:2-7-V-quartic}
 		\includegraphics[width=\textwidth]{2-7-V-quartic}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.5\textwidth}
@@ -1176,9 +1176,7 @@ It turn out that the field varies smoothly between $a$ and $b$.
 
  From the point of view of wave equations, a field with only gradient terms in energy is massless: quanta are massless. Also for field $e^{ikx}$, if $k=0$ makes energy $0$, then very long wavelength field has zero mass.
  
-
-
-We will look at various potentials, starting with $\frac{m^2 \phi^2}{2}$--  Figure \ref{fig:2-7-V-simple}. It clear that if you created a wave that varied from place to place, no matter how long that wavelength was, as long as there is  variation away from zero, there is going to be an appreciable cost of energy--Figure \ref{fig:2-7-variation-from-zero}. This is a massive particle: if there is no mass, the only energy comes from gradient, and that is small for a long wavelength particle. $\frac{m^2 \phi^2}{2}$ is called a mass term.
+We will look at various potentials, starting with $\frac{m^2 \phi^2}{2}$--  Figure \ref{fig:2-7-V-simple}. It clear that if you created a wave that varied from place to place, no matter how long that wavelength was, as long as there is  variation away from zero, there is going to be an appreciable cost of energy--Figure \ref{fig:2-7-variation-from-zero}. This is a massive particle: if there is no mass, the only energy comes from gradient, and that is small for a long wavelength particle; $\frac{m^2 \phi^2}{2}$ is called a mass term.
 
 \begin{figure}[H]
 	\begin{center}
@@ -1200,8 +1198,10 @@ Returning to \ref{fig:2-7-V-quartic}, let's try to identify why there is a massl
 If field stays in track, and oscillates very slowly, then it doesn't pay to change $\rho$; it is effectively a constant, $f$.
 
 \begin{align*}
-	\mathcal{L} =& (\partial \rho)^2 + \underbrace{f^2(\partial \alpha)^2}_\text{can absorb $f$ into $\alpha$: behaves like Lagrangian of massless field}   - V(\rho)
+	\mathcal{L} =& (\partial \rho)^2 + f^2(\partial \alpha)^2   - V(\rho)
 \end{align*}
+
+We can absorb $f$ into $\alpha$: it behaves like Lagrangian of massless field
 
 Choose ground-state at some point in groove. We can oscillate in 2 directions, $\alpha$ and $\rho$: the radial oscillation is similar to the way it would oscillate if there were a $\Phi^*\Phi$ term corresponding to a mass.
 
@@ -1216,42 +1216,47 @@ A mass is an energy that corresponds to zero momentum; zero momentum means that 
 This is also associated with $U(1)$ symmetry. Originally introduced for electric charge conservation, but it might be some other charge, e.g. for Z bosons. Earlier we associated $U(1)$ symmetry with conservation of electric charge carried by $\Phi$ field. In (\ref{eq:U1:theta}), can $\theta$ vary from one position to another? Let us test by applying to field, and seeing what happens to Lagrangian.
 
 \begin{align*}
-	\Phi^\prime =& e^{i \theta(x)} \Phi \\
-	{\Phi^\prime}^* =& e^{-i \theta(x)} \Phi^*\\
-	\partial \Phi^\prime =& \big[\partial \Phi + i \Phi \frac{\partial \theta}{\partial x}\big] e^{i \theta(x)}\\
-	\partial (\Phi^\prime)^* =& \big[\partial \Phi^* - i \Phi^* \frac{\partial \theta}{\partial x}\big] e^{-i \theta(x)}\\
-	\partial \Phi^\prime \partial {\Phi^\prime}^* =&\partial \Phi \partial \Phi^* + i[\Phi \partial \Phi^* -\Phi^* \partial \Phi] + \Phi^* \Phi (\frac{\partial \theta}{\partial x})^2
+	\phi^\prime =& e^{i \theta(x)} \phi \\
+	{\phi^\prime}^* =& e^{-i \theta(x)} \phi^*\\
+	\partial \phi^\prime =& \big[\partial \phi + i \phi \frac{\partial \theta}{\partial x}\big] e^{i \theta(x)}\\
+	\partial (\phi^\prime)^* =& \big[\partial \phi^* - i \phi^* \frac{\partial \theta}{\partial x}\big] e^{-i \theta(x)}
 \end{align*}
 
-So this is not at symmetry: if $V=V(\Phi^*\Phi)$, the Lagrangian is not the same in the transformed variable. We are picking up a little energy. Can we do anything to restore the symmetry? Yes, if we introduce gauge boson fields (e.g. electro magnetic field.)
+Is $\partial \phi^\prime \partial {\phi^\prime}^*$ the same as $\partial \phi \partial {\phi^\prime}$?
+\begin{align*}
+\partial \phi^\prime \partial {\phi^\prime}^* =&\partial \phi \partial \phi^* + i[\phi \partial \phi^* -\phi^* \partial \phi]\frac{\partial \theta}{\partial x} + \phi^* \phi (\frac{\partial \theta}{\partial x})^2
+\end{align*}
+
+So this is not a symmetry: if $V=V(\Phi^*\Phi)$, the Lagrangian is not the same in the transformed variable.  Can we do anything to restore the symmetry? Yes, if we introduce gauge boson fields (e.g. electromagnetic field.)
 
 \begin{defn}[Gauge symmetry]
 	A symmetry which depends on position is called a gauge symmetry.
 \end{defn}
 
-Can we do something to cancel $\frac{\partial \theta}{\partial}$? If so, why would be do this? \emph{It turns out all interesting symmetries are associated with gauge bosons.}
+When we make a transformation that varies from place to place it costs energy.
 
-Add a 4-vector of fields: in electrodynamics this would be the vector potential, $A_\mu$: $A_0$ is electric potential, and $\nabla \times A_i$ is the magnetic field. How does this new field transform under symmetry--$A \rightarrow a^\prime$? The following turns out to work.
+Can we do something to cancel $\frac{\partial \theta}{\partial x}$? If so, why would be do this? \emph{It turns out all interesting symmetries are associated with gauge bosons.}
+
+Add a 4-vector of fields. (In electrodynamics this would be the vector potential, $A_\mu$: $A_0$ is electric potential, and $\nabla \times A_i$ is the magnetic field.) How does this new field transform under symmetry--$A \rightarrow A^\prime$? The following turns out to work.
 \begin{align*}
 	A^\prime_\mu =& A_\mu - \partial_\mu \theta \numberthis \label{eq:gauge:field}
 \end{align*}
 
-
-
-\begin{align*}
-	D_\mu \Phi \triangleq& \partial_\mu \Phi + i A_\mu \Phi \text{, This would not make sense if $\Phi$ were real.} \numberthis \label{eq:covariant:derivative}\\
-	D_\mu \Phi^* =& \partial_\mu \Phi^* - i A_\mu \Phi^*
-\end{align*}
-
 We will modify the Lagrangian by replacing ordinary derivatives with covariant derivatives\footnote{Not General Relativistic covariant derivatives}.
 \begin{align*}
-	D_\mu \Phi^\prime =& \partial_\mu \Phi^\prime + i A_\mu^\prime \Phi^\prime\\
-	=& e^{i\theta}\big(\partial_\mu \Phi +\cancel{i\partial_\mu \theta \Phi} \big) + i \big(A_\mu -\cancel{ \partial_\mu \theta} \big) e^{i \theta(x)} \Phi\\
-	=& e^{i\theta} \big( \partial_\mu \Phi +i A_\mu \Phi \big)\\
-	=& (D_\mu \Phi)^\prime \text{, or, suppresing indices}\\
-	D \Phi^\prime =&  D \Phi  e^{i \theta} \text{, similarly}\\
-	D {\Phi^\prime}^* =& D {\Phi}^*  e^{-i \theta} \text{, and}\\
-	D \Phi^\prime D {\Phi^\prime}^*=& D \Phi D {\Phi}^* \text{, so the Lagrangian is invariant}
+	D_\mu \phi \triangleq& \partial_\mu \phi + i A_\mu \phi \text{, This would not make sense if $\phi$ were real.} \numberthis \label{eq:covariant:derivative}\\
+	D_\mu \phi^* =& \partial_\mu \phi^* - i A_\mu \phi^*
+\end{align*}
+
+We want to show that we can construct an invariant Lagrangian using covariant derivatives.
+\begin{align*}
+	D_\mu \phi^\prime =& \partial_\mu \phi^\prime + i A_\mu^\prime \phi^\prime\\
+	=& e^{i\theta}\big(\partial_\mu \phi +\cancel{i\partial_\mu \theta \phi} \big) + i \big(A_\mu -\cancel{ \partial_\mu \theta} \big) e^{i \theta(x)} \phi\\
+	=& e^{i\theta} \big( \partial_\mu \phi +i A_\mu \phi \big)\\
+	=& (D_\mu \phi)^\prime \text{, or, suppressing indices}\\
+	D \phi^\prime =&  D \phi  e^{i \theta} \text{, similarly}\\
+	D {\phi^\prime}^* =& D {\phi}^*  e^{-i \theta} \text{, and}\\
+	D \phi^\prime D {\phi^\prime}^*=& D \phi D {\phi}^* \text{, so the Lagrangian is invariant}
 \end{align*}
 
 Now this wouldn't be an interesting vector potential without some dynamics.
@@ -1268,7 +1273,7 @@ The energy of an Electromagnetic field is given by $E^2 + B^2$, and the Lagrangi
 
 We can construct a completely gauge invariant dynamics of the electromagnetic field coupled to a field whose quanta are charged particles.
 \begin{align*}
-	\mathcal{L} = D_\mu \Phi D_\mu \Phi^* -V(Phi\Phi^*) + F^2
+	\mathcal{L} = D_\mu \phi D_\mu \phi^* -V(\phi\phi^*) + F^2
 \end{align*}
 
 So we can promote $U(1)$ to a local symmetry, at the cost of an extra field, which can be included in a Maxwell style Lagrangian--Definition \ref{defn:gauge:field}.
@@ -1280,7 +1285,7 @@ What can't we add?
 	\item Terms like $\frac{m^2}{2}A_\mu A^\mu$, which would add mass to the photon (not gauge invariant).
 \end{itemize}
 
-Next week we'll look at breaking the $U(1)$ symmetry spontaneously by using a Mexican Hat potential: this will give photon a mass and remove Goldstaone boson. Of course a real photon doesn't have a mass, but the Z boson does. This is the Higgs phenomenon. It gives mass to a particle when we can't do it by hand.
+Next week we'll look at breaking the $U(1)$ symmetry spontaneously by using a Mexican Hat potential: this will give photon a mass and remove Goldstone boson. Of course a real photon doesn't have a mass, but the Z boson does. This is the Higgs phenomenon. It gives mass to a particle when we can't do it by hand.
 
 \section{The Higgs field}
 

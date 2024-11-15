@@ -78,6 +78,8 @@
 
 \section{Particles, Fields, and Forces}
 
+\subsection{Introduction}
+
 In  \cite[Particle Physics 1: Basic Concepts]{susskind2007theoretical} we discussed fields, \gls{gls:quanta} of  fields, the relationship of fields and particles, the relationship of fields and their \gls{gls:quanta} (\glsdesc{gls:quanta}), general properties of particles (having energy, momentum, spin, being a \gls{gls:fermion} or a \gls{gls:boson}). We have discussed wave equations and field equations, and how they can be generated from Lagrangians using an action principle. The quantum mechanical version of  the Lagrangian is a tool for codifying the interaction between particles. Products of terms correspond to vertices, as illustrated in Figure \ref{fig:phi:3:x}.
 \begin{figure}[H]
 	\caption[Products of terms correspond to vertices]{Products of terms correspond to vertices, e.g. $\phi^3(x)$ gives rise to many possible interactions.}\label{fig:phi:3:x}
@@ -106,6 +108,8 @@ Figure \ref{fig:particles:fields:forces} shows a triangle of concepts. We have d
 		\end{tikzpicture}
 	\end{center}
 \end{figure}
+
+\subsection{Forces from Particles}
 
 There must be a way of thinking about forces that depends on particles. We'll start by discussing it in classical electrodynamics. Suppose we put two electric charges into space, and we want to calculate the force between them. We could use Coulomb's law, or we could ask what they do to space--Figure \ref{fig:electric-field-due-to-first-charge}.
 
@@ -158,9 +162,7 @@ Where do molecular forces come from? There are several mechanisms: we will focus
 			\caption{Protons closer together: Figure \ref{fig:2proton1Electrona} still possible, but so is this; they have the same energy.}
 			\includegraphics[width=0.9\textwidth]{2proton1Electronb}\label{fig:2proton1Electronb}
 		\end{subfigure}
-
 	\end{center}
-
 \end{figure}
 
 \begin{figure}[H]
@@ -196,7 +198,15 @@ Can we think of Coulomb force in \gls{gls:QM} terms? Consider single proton and 
 
 \begin{itemize}
 	\item Classically we solve field equations;
-	\item In \gls{gls:QM} we think of emission and absorption of photons; this is what the Lagrangian tells us. One way to think of this is that the electron is a \gls{gls:QM} superposition of states: no photons, one with photon emitted,  one with two photons emitted, photon reabsorbed--Figure \ref{fig:2-1-electron-photons}. In Figure \ref{fig:2-1-electron-photons}, when electrons very far apart, energies just add. When they get closer, fields interact, or, in the language of Feynman diagrams, one electron absorbs electron emitted by the other--Figure \ref{fig:2-1-electron-photons-feynmann}.  Energy is no longer sum of energies of individual electrons, which gives rise to Coulomb force.
+	\item In \gls{gls:QM} we think of emission and absorption of photons; this is what the Lagrangian tells us. One way to think of this is that the electron is a \gls{gls:QM} superposition of states:
+	\begin{itemize}
+		\item first of all states where there are no photons;
+		\item a superposition of states in which a photon has been emitted;
+		\item a superposition of states  with two photons emitted;
+		\item photon reabsorbed, etc.
+	\end{itemize}
+	The net effect as a \gls{gls:QM} equilibrium of an electron surrounded by photons, which you can measure.
+	 In Figure \ref{fig:2-1-electron-photons}, when electrons very far apart, energies just add. When they get closer, fields interact, or, in the language of Feynman diagrams, one electron absorbs electron emitted by the other--Figure \ref{fig:2-1-electron-photons-feynmann}.  Energy is no longer sum of energies of individual electrons, which gives rise to Coulomb force.
 \end{itemize}
 
 \begin{figure}[H]
@@ -229,10 +239,12 @@ In summary we have three ways of looking at forces:
 \begin{itemize}
 	\item laws such as Coulomb;
 	\item classical field theory;
-	\item exchange of particles. Every particle can be exchanged, so every particle produces a force. Not just 4 forces! 
+	\item exchange of particles. Every particle can be exchanged, so every particle produces a force: there are not just 4 forces! 
 \end{itemize}
 
-The Standard Model is a mess. We don't understand why the particles are as they are. We understand some relationships. More types of particles than known relationships.
+\subsection{Particles of the Standard Model}
+
+The Standard Model is a mess. We don't understand why the particles are as they are. We understand some relationships, but there are more parameters, m More types of particles than known relationships.
 
 \begin{table}[H]
 	\begin{center}
@@ -253,7 +265,8 @@ The Standard Model is a mess. We don't understand why the particles are as they 
 \end{table}
 
 Notes:\begin{enumerate}
-	\item Particle and Field usually have the same name
+	\item Particle and Field usually have the same name, but there are a few exceptions, such as the vector potential $\boldsymbol{A}$.
+	\item The electron has an electrical charge, so it must have an antiparticle. 
 	\item Electric charge--electron is unit
 	\item Mass--unit is electron Volt--eV
 	\item Proton has Baryon number 1.

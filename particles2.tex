@@ -78,12 +78,20 @@
 
 \section{Particles, Fields, and Forces}
 
-Figure \ref{fig:particles:fields:forces} shows a triangle of concepts:
+In  \cite[Particle Physics 1: Basic Concepts]{susskind2007theoretical} we discussed fields, \gls{gls:quanta} of  fields, the relationship of fields and particles, the relationship of fields and their \gls{gls:quanta} (\glsdesc{gls:quanta}), general properties of particles (having energy, momentum, spin, being a \gls{gls:fermion} or a \gls{gls:boson}). We have discussed wave equations and field equations, and how they can be generated from Lagrangians using an action principle. The quantum mechanical version of  the Lagrangian is a tool for codifying the interaction between particles. Products of terms correspond to vertices, as illustrated in Figure \ref{fig:phi:3:x}.
+\begin{figure}[H]
+	\caption[Products of terms correspond to vertices]{Products of terms correspond to vertices, e.g. $\phi^3(x)$ gives rise to many possible interactions.}\label{fig:phi:3:x}
+	\includegraphics[width=0.8\textwidth]{phi-3-x}
+\end{figure}
+
+Figure \ref{fig:particles:fields:forces} shows a triangle of concepts. We have discussed two legs, Particles and Fields, but not the third, Forces.
 \begin{itemize}
-	\item Particles (quanta of fundamental fields)\footnote{We are going to have to think very hard about what is an elementary particles and what is composite; we will always be frustrated, always find some slippery region why our definition did not work.}
+	\item Particles (\gls{gls:quanta} of fundamental fields)\footnote{We are going to have to think very hard about what is an elementary particle and what is composite; we will always be frustrated, always find some slippery reason why our definition did not work.}
 	\item Fields
-	\item Forces
+	\item Forces. 
 \end{itemize}
+
+
 
 \begin{figure}[H]
 	\begin{center}
@@ -99,13 +107,33 @@ Figure \ref{fig:particles:fields:forces} shows a triangle of concepts:
 	\end{center}
 \end{figure}
 
-Consider two electric charges
+There must be a way of thinking about forces that depends on particles. We'll start by discussing it in classical electrodynamics. Suppose we put two electric charges into space, and we want to calculate the force between them. We could use Coulomb's law, or we could ask what they do to space--Figure \ref{fig:electric-field-due-to-first-charge}.
+
+\begin{figure}[H]
+	\begin{center}
+		\caption{Electric Field due to first Charge}\label{fig:electric-field-due-to-first-charge}
+		\includegraphics[width=0.8\textwidth]{electric-field-due-to-first-charge}
+	\end{center}
+\end{figure}
 
 \begin{align*}
-E=&\int (e_1 \vec{E_1})^2 dV \text{, energy for first chanrge}\\
-E=&\int (e_2 \vec{E_2})^2 dV \text{, energy for second chanrge}\\
-E=&\int (e_1\vec{E_1}+e_2 \vec{E_2})^2 dV\\
-=&\int \underbrace{(e_1\vec{E_1})^2}_\text{self energy}+ \underbrace{(e_2\vec{E_2})^2}_\text{self energy} + \underbrace{2e_1e_2\vec{E_1}.\vec{E_2}}_\text{interesting term}
+	E=&\int (e_1 \hat{E_1})^2 dV \text{, energy for first charge \emph{only}}
+\end{align*}
+
+\begin{itemize}
+	\item The energy does not depend on the position of the charge.
+	\item The energy contributes to the mass of the particle($E=mc^2$).
+\end{itemize}
+
+\begin{align*}
+	E=&\int (e_1 \hat{E_1})^2 dV \text{, energy for second charge \emph{only}}
+\end{align*}
+
+Now we calculate the total energy.
+
+\begin{align*}
+	E=&\int (e_1\vec{E_1}+e_2 \vec{E_2})^2 dV\\
+	=&\int \underbrace{(e_1\vec{E_1})^2}_\text{self energy}+ \underbrace{(e_2\vec{E_2})^2}_\text{self energy} + \underbrace{2e_1e_2\vec{E_1}.\vec{E_2}}_\text{interesting term}
 \end{align*}
 
 The first two terms represent self energy, which is included in mass; the last term is proportional to the charges.
@@ -170,7 +198,7 @@ Can we think of Coulomb force in \gls{gls:QM} terms? Consider single proton and 
 		\includegraphics[width=0.9\textwidth]{2-1-electron-photons0}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{The electron is a \gls{gls:QM} superposition of states}\label{fig:2-1-electron-photonst}
+		\caption{The electron is a \gls{gls:QM} superposition of states}\label{fig:2-1-electron-photons}
 		\includegraphics[width=0.9\textwidth]{2-1-electron-photons}
 	\end{subfigure}
 

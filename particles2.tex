@@ -287,10 +287,11 @@ Notes:\begin{enumerate}
 	\end{subfigure}
 	\em
 	\begin{subfigure}[t]{0.3\textwidth}
-		\caption{Electron absorbs photon}
-		\feynmandiagram[vertical = o2 to a]{
+		\caption{Photon absorbed}
+		\feynmandiagram[horizontal' = o2 to i1]{
 			i1[particle=e]--[fermion]a--[fermion]o1[particle=e],
-			a--[photon,edge label=$\gamma$]o2
+			a--[photon,edge label=$\gamma$]o2,
+			o2--[draw=none]i1,
 		};
 	\end{subfigure}
 	\em

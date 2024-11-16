@@ -251,52 +251,78 @@ The Standard Model is a mess. We don't understand why the particles are as they 
 		\caption{Some Particles and Fields}
 		\begin{tabular}{|l|l|l|r|l|r|}\hline
 			Name&Symbol&Type&Charge&B\#&Mass\\ \hline
-			photon&$\gamma$ A&B&0&0&0 \\ \hline
-			electron&$e+\pm \Psi_e\}$&F&-1&0&$0.15\gls{gls:MeV}$\\ \hline
-			Quark&q&F&below&$\frac{1}{3}$&below\\ \hline
-			down&q(Q) $\Psi_q$&F&$-\frac{1}{3}$&$\frac{1}{3}$&10\gls{gls:MeV}\\ \hline
-			up&&F&$\frac{2}{3}$&$\frac{1}{3}$&5\gls{gls:MeV}\\ \hline
-			strange&&F&$-\frac{1}{3}$&$\frac{1}{3}$&100\gls{gls:MeV}\\ \hline
-			charm&&F&$\frac{2}{3}$&$\frac{1}{3}$&1GeV\\ \hline
-			bottom&&F&$-\frac{1}{3}$&$\frac{1}{3}$&5Gev\\ \hline
-			top&&F&$\frac{2}{3}$&$\frac{1}{3}$&170Gev\\ \hline
+			photon&$\gamma$ A&boson&0&0&0 \\ \hline
+			electron&$e^\pm \Psi_e$&fermion&-1&0&$0.51\gls{gls:MeV}$\\ \hline
+			quark&q(Q) $\Psi_q$&fermion&below&$\frac{1}{3}$&see below\\ \hline
+			down&d&fermion&$-\frac{1}{3}$&$\frac{1}{3}$&10\gls{gls:MeV}\\ 
+			up&u&fermion&$\frac{2}{3}$&$\frac{1}{3}$&5\gls{gls:MeV}\\ \hline
+			strange&s&fermion&$-\frac{1}{3}$&$\frac{1}{3}$&100\gls{gls:MeV}\\ 
+			charm&c&fermion&$\frac{2}{3}$&$\frac{1}{3}$&1\gls{gls:GeV}\\ \hline
+			bottom&b&fermion&$-\frac{1}{3}$&$\frac{1}{3}$&5\gls{gls:GeV}\\ 
+			top&t&fermion&$\frac{2}{3}$&$\frac{1}{3}$&170\gls{gls:GeV}\\ \hline
 		\end{tabular}
 	\end{center}
 \end{table}
 
 Notes:\begin{enumerate}
 	\item Particle and Field usually have the same name, but there are a few exceptions, such as the vector potential $\boldsymbol{A}$.
-	\item The electron has an electrical charge, so it must have an antiparticle. 
+	\item The electron has an electrical charge, so it must have an antiparticle. It is purely a matter of convention whether electron is particle and positron antiparticle, or vice versa. 
 	\item Electric charge--electron is unit
 	\item Mass--unit is electron Volt--eV
-	\item Proton has Baryon number 1.
-	\item Why are there 3 families of quarks?
+	\item $B\#$ denotes the Baryon number. Proton has Baryon number 1, antiproton -1, neutron +1, antineutron -1 (by convention). It isn't clear that baryon number is absolutely conserved: a proton may decay to something with zero baryon number, with a half life of $10^{33}$ years: this is an important question.
+	\item Antiquarks have the charge and baryon number multiplied by -1.
+	\item Mass of proton greatly exceeds mass of the 3 quarks.
+	\item Mass of charmed quark exceeds mass of strange quark, reversing the behaviour of up and down. So different families have much the same behaviour, but widely different masses.
+	\item Why are there 3 families of quarks? Nobody knows.
 \end{enumerate}
 
-Figure \ref{fig:fep} shows how electromagnetic processes emerge from a Lagrangian.
-\begin{itemize}
-	\item Figure \ref{fig:fep1} depicts the Fundamental electromagnetic process. It can be rearranged in all legal ways.
-	\item Figure \ref{fig:fep2} depicts the Fundamental electromagnetic process--exchange of particle.
-\end{itemize}
-
 \begin{figure}[H]
-	\caption{Electromagnetic processes emerge from a Lagrangian: $\mathcal{L}$: $e \Psi_e^\dagger \Psi_e A$}\label{fig:fep}
-	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Fundamental  process.}\label{fig:fep1}
-		\feynmandiagram[vertical = o1 to i1]{
+	\caption[The basic process in electrodynamics]{The basic process in electrodynamics is the emission of a photon by an electron. Out of this we can build all the processes of quantum electrodynamics, in particular the one that corresponds to the force between charges--see Figure \ref{fig:fep2}.}\label{fig:fep}
+	\begin{subfigure}[t]{0.3\textwidth}
+		\caption{Electron emits photon}
+		\feynmandiagram[vertical = a to i1]{
 			i1[particle=e]--[fermion]a--[fermion]o1[particle=e],
 			a--[photon,edge label=$\gamma$]o2
 		};
 	\end{subfigure}
-	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Exchange of particle.}\label{fig:fep2}
-		\feynmandiagram[vertical = i2 to i1]{
-			i1 -- [fermion] a -- [fermion] i2,
-			a -- [photon,edge label=$\gamma$] b,
-			f1 -- [fermion] b -- [fermion] f2,
+	\em
+	\begin{subfigure}[t]{0.3\textwidth}
+		\caption{Electron absorbs photon}
+		\feynmandiagram[vertical = o2 to a]{
+			i1[particle=e]--[fermion]a--[fermion]o1[particle=e],
+			a--[photon,edge label=$\gamma$]o2
 		};
 	\end{subfigure}
+	\em
+	\begin{subfigure}[t]{0.3\textwidth}
+		\caption{An electron traveling back in time is a positron}
+		\feynmandiagram[vertical = a to o1]{
+			i1[particle=e]--[fermion]a--[fermion]o1[particle=e],
+			a--[photon,edge label=$\gamma$]o2
+		};
+	\end{subfigure}
+	
 \end{figure}
+
+
+\begin{figure}[H]
+	\begin{center}
+		\caption{The processes of Figure \ref{fig:fep} visualized as exchange of a photon.}\label{fig:fep2}
+		\feynmandiagram[vertical = i2 to i1]{
+				i1 -- [fermion] a -- [fermion] i2,
+				a -- [photon,edge label=$\gamma$] b,
+				f1 -- [fermion] b -- [fermion] f2,
+			};
+	\end{center}
+\end{figure}
+
+Another way to describe Electromagnetic processes is to use a Lagrangian.
+\begin{align*}
+	\mathcal{L} =& \underbrace{e}_\text{Electric charge of electron} \underbrace{\Psi_e^\dagger}_\text{Create electron} \underbrace{\Psi_e}_\text{Annihilate electron} \underbrace{A}_\text{photon}
+\end{align*}
+
+The electric charge of electron is associated with the amplitude to emit a photon.
+
 
 Three quarks build baryons; two quarks build mesons--Table \ref{table:mesons}.
 \begin{itemize}

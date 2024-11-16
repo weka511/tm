@@ -250,7 +250,7 @@ The Standard Model is a mess. We don't understand why the particles are as they 
 	\begin{center}
 		\caption{Some Particles and Fields}
 		\begin{tabular}{|l|l|l|r|l|r|}\hline
-			Name&Symbol&Type&Charge&B\#&Mass\\ \hline
+			Name&Symbol&Statistics&Charge&B\#&Mass\\ \hline
 			photon&$\gamma$ A&boson&0&0&0 \\ \hline
 			electron&$e^\pm \Psi_e$&fermion&-1&0&$0.51\gls{gls:MeV}$\\ \hline
 			quark&q(Q) $\Psi_q$&fermion&below&$\frac{1}{3}$&see below\\ \hline
@@ -360,8 +360,10 @@ We also have strange mesons ($K-mesons$).
 This is the theory of Quarks and gluons, and the things that they make.
 
 \begin{defn}[Hadron]
-	The things that Quarks and gluons make are called hadrons. There are 3 types of hadron: baryons, Definition \ref{defn:baryon}, mesons, Definition \ref{defn:meson}, and glueballs, Definition \ref{defn:glueball}.
+	The things that Quarks and gluons make are called hadrons. 
 \end{defn}
+
+There are 3 types of hadron: baryons, Definition \ref{defn:baryon}, mesons, Definition \ref{defn:meson}, and glueballs, Definition \ref{defn:glueball}.
 
 \begin{defn}[Baryon]\label{defn:baryon}
 	An object made of 3 quarks is called a baryon: they always have spin $\frac{1}{2}$, $\frac{3}{2},...$.
@@ -666,7 +668,30 @@ $U$ has 8 degrees of freedom, but (\ref{eq:unitary:2}) imposes 4 constraints, le
 		Any traceless Hermitian $2\times2$ matrix can be written as a linear combination of the Pauli  matrices.
 	\end{lemma}
 	\begin{proof}
-		TBP
+		The most general traceless Hermitian  $2\times2$ matrix can be written
+		\begin{align*}
+			\begin{pmatrix} 
+				\alpha&\beta - i\gamma\\
+				\beta + i\gamma&-\alpha
+			\end{pmatrix} \text{, for some $\alpha$ and some real $\beta$ and $\gamma$.}
+		\end{align*}
+		\begin{align*}
+			\begin{pmatrix} 
+				\alpha&\beta - i\gamma\\
+				\beta + i\gamma&-\alpha
+			\end{pmatrix} =& \alpha  \begin{pmatrix} 
+			1&0\\
+			0&-1
+			\end{pmatrix} +  \beta \begin{pmatrix} 
+			0&1\\
+			1&0
+			\end{pmatrix} +  \gamma \begin{pmatrix} 
+			0&-i\\
+			i&0
+			\end{pmatrix}\\
+			=& \alpha \sigma_z + \beta \sigma_z + \gamma \sigma_y
+		\end{align*}
+		
 	\end{proof}
 
 	For small rotations:

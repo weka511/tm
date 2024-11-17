@@ -658,12 +658,41 @@ $U$ has 8 degrees of freedom, but (\ref{eq:unitary:2}) imposes 4 constraints, le
 	We need two results, Lemmas \ref{lemma:det:Tr} and \ref{lemma:traceless:22}.
 	\begin{lemma}[Determinant and Trace]\label{lemma:det:Tr}
 		\begin{align*}
-		\det( I + i \epsilon M) =& 1 + i\epsilon(Tr(M)) + O(\epsilon^2)
+		\det( I + i \epsilon M) =& 1 + i\epsilon Tr(M) + O(\epsilon^2)
 		\end{align*}
 	\end{lemma}
 	\begin{proof}
-		TBP
+		We will prove by induction on $N$.
+		
+		
+		\emph{Case: $N=1$.}
+		\begin{align*}
+			M =&\begin{bmatrix}
+				M_{11}
+			\end{bmatrix}\\
+			\det( I + i \epsilon M) =& \det(\begin{bmatrix}
+				1 + i \epsilon M_{11}
+			\end{bmatrix}
+			)\\
+			=& 1 + i \epsilon M_{11}\\
+			=&  1 + i\epsilon Tr(M)
+		\end{align*}
+		\emph{Case: $N>1$ and the Lemma is true for $N-1$}. We can find a (N-1)\times(N-1)matrix $M^{\prime}$, and two vectors $O(\epsilon)$ such that:
+		\begin{align*}
+			M =& \begin{bmatrix}
+				1 + i \epsilon M_{11}&O(\epsilon)\\
+				O(\epsilon)&M^{\prime} 
+			\end{bmatrix}
+		\end{align*}
+		We will calculate the determinant by multiplying each element in the first row by its cofactor, then adding these terms. The first term is $(1 + i \epsilon M_{11})\det(M^{\prime})$. The other terms are products of $O(\epsilon)$ and a cofactor which includes a column of $O(\epsilon)$, so they are $O(\epsilon^2)$. Whence:
+		\begin{align*}
+			\det( I + i \epsilon M) =& 	(1 + i \epsilon M_{11}) \det(M^{\prime})+ O(\epsilon^2)\\ 
+			=& \big(1 + i \epsilon M_{11}\big)\big(1 + i\epsilon Tr(M^{\prime}) + O(\epsilon^2)\big) + O(\epsilon^2)\\
+			=& 1 + i \epsilon M_{11} + i\epsilon Tr(M^{\prime}) + O(\epsilon^2)\\
+			=&1 + i\epsilon Tr(M) + O(\epsilon^2)
+		\end{align*}
 	\end{proof}
+	
 	\begin{lemma}[Traceless Hermitian $2\times2$ matrix]\label{lemma:traceless:22}
 		Any traceless Hermitian $2\times2$ matrix can be written as a linear combination of the Pauli  matrices.
 	\end{lemma}

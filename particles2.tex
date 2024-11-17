@@ -357,13 +357,17 @@ We also have strange mesons ($K-mesons$).
 
 \section{Quantum Chromodynamics}\label{section:qcd}
 
-This is the theory of Quarks and gluons, and the things that they make.
+This is the theory of quarks and gluons, and the things that they make.
 
 \begin{defn}[Hadron]
-	The things that Quarks and gluons make are called hadrons. 
+	The things that quarks and gluons make are called hadrons. 
 \end{defn}
 
-There are 3 types of hadron: baryons, Definition \ref{defn:baryon}, mesons, Definition \ref{defn:meson}, and glueballs, Definition \ref{defn:glueball}.
+There are 3 types of hadron: \begin{itemize}
+	\item baryons, Definition \ref{defn:baryon};
+	\item mesons, Definition \ref{defn:meson};
+	\item glueballs, Definition \ref{defn:glueball}
+\end{itemize}.
 
 \begin{defn}[Baryon]\label{defn:baryon}
 	An object made of 3 quarks is called a baryon: they always have spin $\frac{1}{2}$, $\frac{3}{2},...$.
@@ -385,11 +389,11 @@ We start with the basic commutation relations for angular momentum:\cite[Particl
 	[L_z,L_x] =& i \hslash L_y
 \end{align*}
 
-In a previous set of lectures, \cite[Particle Physics 1]{susskind2007theoretical}, we saw that:
+In a previous set of lectures,  we saw that:
 
 \begin{itemize}
-	\item we can break the symmetry by focusing on $L_z$.
-	\item we can measure only one $L_i$ at a time.
+	\item we can break the symmetry by focusing on $L_z$
+	\item we can measure only one $L_i$ at a time (they don't commute);
 	\item $L_i$ is quantized--$\hslash$.
 \end{itemize}
 
@@ -409,12 +413,12 @@ In a previous set of lectures, \cite[Particle Physics 1]{susskind2007theoretical
 
 \begin{table}[H]
 	\begin{center}
-		\caption[Ways to put two spin $\frac{1}{2}$ particles together]{Ways to put two spin $\frac{1}{2}$ particles together. Consider whether particles could disappear with violating conservation of angular momentum.}
+		\caption[Ways to put two spin $\frac{1}{2}$ particles together]{Ways to put two spin $\frac{1}{2}$ particles together. Consider whether particles could disappear with violating conservation of angular momentum.} Notie the triplet and singlet.
 		\begin{tabular}{|l|l|l|l|}\hline
 			&$l$&$L_z$&Could disappear?\\ \hline
-			$\ket{\uparrow\uparrow}$ &1&1&no--has $L_z$\\ \hline
-			$\ket{\downarrow\downarrow}$&1&-1&no--has $L_z$ \\ \hline
-			$\frac{1}{\sqrt{2}}(\ket{\uparrow\downarrow}+\ket{\downarrow\uparrow})$ &1&0&no--has $L_x$\\ \hline
+			$\ket{\uparrow\uparrow}$ &1&1&no: has $L_z$\\ \hline
+			$\ket{\downarrow\downarrow}$&1&-1&no: has $L_z$ \\ \hline
+			$\frac{1}{\sqrt{2}}(\ket{\uparrow\downarrow}+\ket{\downarrow\uparrow})$ &1&0&no: has $L_x$\\ \hline
 			$\frac{1}{\sqrt{2}}(\ket{\uparrow\downarrow}-\ket{\downarrow\uparrow})$ &0&0&yes\\ \hline
 		\end{tabular}
 	\end{center}
@@ -435,7 +439,11 @@ In a previous set of lectures, \cite[Particle Physics 1]{susskind2007theoretical
 
 \subsection{Isospin}
 
-The natural energy of the nucleus is a few hundred \gls{gls:MeV}, which comes from up and down quarks. To a first approximation masses are close to each other, so they are analogous to spin. If we think of up and down quarks as isomorphic to up and down spins, we invent the concept of isospin.
+Isotopic spin was the first internal quantum number, the first analogu of spin, that did not have to do with the rotation of space. It had to do with the rotation of an internal space; it gave rise to a set of variables that were isomorphic to spin. You could imagine that it involves\d the rotation of some mathematical directions.
+
+There is a whole variety of different kinds of quarks, but most of them are rather heavy, and had considerable mass in \gls{gls:GeV}, when the natural mass scale for hadrons is hundreds of \gls{gls:GeV}. The mass of a typical meson is 200 \gls{gls:MeV}, as it a typical binding energy for the quarks in a neutron; then binding energy of a nucleus is typically a few \gls{gls:MeV}. There are only two quarls whose mass is less.
+
+The natural energy of the nucleus is a few hundred \gls{gls:MeV}, which comes from up and down quarks. To a first approximation masses are close to each other, so they are analogous to spin. We have a symmetry. If we think of up and down quarks as isomorphic to up and down spins, we invent the concept of isospin.
 
 \begin{itemize}
 	\item $(\uparrow,\downarrow)$ gives ordinary spin;

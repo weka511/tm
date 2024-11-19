@@ -513,7 +513,7 @@ The fundamental electromagnetic process is depicted in Figure \ref{fig:fep}. A p
 
 \end{figure}
 
-There appear to be 9 possible gluons: in Section \ref{sec:3:3:8} we will see that there are actually only 8, as the trace is not an independent state.
+There appear to be 9 possible gluons: in Section \ref{sec:3:3:8} we will see that there are actually only 8, as the superposition $R\bar{R}+G\bar{G}+B\bar{B}$ is not an independent state.
 \begin{align*}
 \begin{pmatrix}
 R\bar{R}&R\bar{G}&R\bar{B}\\
@@ -527,7 +527,11 @@ Figures \ref{fig:2-2-gluon3} and \ref{fig:2-2-gluon5} show the basic vertices fo
 	\caption{The basic vertices of \gls{gls:QCD} -- Quarks}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Red quark changes to green: analogous to process with photon.}\label{fig:2-2-gluon3}
-		\includegraphics[width=0.9\textwidth]{2-2-gluon3}
+		\feynmandiagram[horizontal'= o1 to o2]{
+			i[particle=\(R\)] -- [fermion]c,
+			c -- [fermion] o1[particle=\(G\)],
+			c -- [gluon]o2[particle=\(R\bar{G}\)],
+		};
 	\end{subfigure}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Red quark changes to green, using fictitious quark-antiquark pair}
@@ -538,14 +542,19 @@ Figures \ref{fig:2-2-gluon3} and \ref{fig:2-2-gluon5} show the basic vertices fo
 \end{figure}
 
 \begin{figure}[H]
-	\caption{The basic vertices of \gls{gls:QCD}--2 gluons}
+	\caption{Second basic vertex of \gls{gls:QCD}: gluons}
 		\begin{subfigure}[t]{0.40\textwidth}
 		\caption{Second basic vertex, which has no analogue for photons. Fictitious quark-antiquark pairs represent gluons. This process makes \gls{gls:QCD} more complex and more interesting than QED.}\label{fig:2-2-gluon5}
 		\includegraphics[width=0.9\textwidth]{2-2-gluon5}
 	\end{subfigure}
+	\em
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Second basic vertex, redrawn with gluons, instead of fictitious quark-antiquark pairs. Use Figure \ref{fig:2-2-gluon5} to determine which combinations don't break any lines.}\label{fig:2-2-gluon6}
-		\includegraphics[width=0.9\textwidth]{2-2-gluon6}
+		\feynmandiagram[horizontal'= o1 to o2]{
+			i[particle=\(R\bar{B}\)] -- [gluon]c,
+			c -- [gluon] o1[particle=\(R\bar{G}\)],
+			c -- [gluon]o2[particle=\(G\bar{B}\)],
+		};
 	\end{subfigure}
 \end{figure}
 

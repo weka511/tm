@@ -811,21 +811,24 @@ When we deal with spin $\frac{1}{2}$ particles, we \emph{represent} a rotation b
 
 $SU(2)$ is not exactly the same as 1D rotations: there is a $2\rightarrow1$ correspondence, not  $1\rightarrow1$, since $-U$ and $U$ correspond to the same rotation. This is why the electron wave function is called a doublet.
 
-Generators are closely connected to infinitesimal elements. If you know the structure of the generators you can work out the whole structure of the group. Generators let us figure out conservation laws.
+Generators are closely connected to infinitesimal elements. If you know the structure of the generators you can work out the whole structure of the group, since you can build big rotations out of small ones. Generators let us figure out conservation laws.
 
 \begin{align*}
 	U =& I + i \epsilon T\\
 	I =& U^\dagger U + 1\\
-	=& I + i\epsilon(T - T^\dagger) - \epsilon^2 T T^\dagger\\
-	T =& T^\dagger \text{. Hermitian -- observable}\\
+	=& I + i\epsilon(T - T^\dagger) - \epsilon^2 T T^\dagger \text{ ,so to $O(\epsilon)$}\\
+	i\epsilon(T - T^\dagger)=&0\text{, whence}\\
+	T =& T^\dagger \text{, so it is Hermitian, hence an observable}\\
 	\det(U) =& 1\\
-	\implies&\\
+	\implies&\text{ \{Lemma \ref{lemma:det:Tr}\}}\\
 	Tr(t)=&0
 \end{align*}
 
 Since the 3D rotation group has three parameters, the Ts span a 3D space. See (\ref{eq:pauli:x}), (\ref{eq:pauli:y}), and (\ref{eq:pauli:z}). We can figure out generators from commutation rules.
 
-In SU(3) we have $3\times3$ matrices, so $3\times3\times2=18$ real components; the matrix being unitary imposes 9 constraints, and unimodularity imposes one more, whence there are $18-9-1=8$ degrees of freedom.
+The generators for the group of rotations are the angular momentum operators for the system: you act with the angular momentum to rotate the system a little. The conserved quantities are the generators.
+
+In SU(3) we have $3\times3$ matrices, so $3\times3\times2=18$ real components; the matrix being unitary imposes 9 constraints, and unimodularity imposes one more, whence there are $18-9-1=8$ degrees of freedom: these matrices are the Gell-Mann 
 
 We can combine representations to form new representations. E.g. we might compose spins to make a composite. E.g. combine 2 spin $\frac{1}{2}$ objects. We have 4 possible states: a basis in that space can be thought of as a spin 0 object plus 3 spin 1 objects. We can make ${-1,0,+1}$, but the zero can be done in 2 ways: so one of the zero spins must not be part of the spin 1 multiplet, it can only be spin 0 (see ortho- and para-hydrogen).
 

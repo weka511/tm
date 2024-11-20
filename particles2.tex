@@ -588,6 +588,8 @@ Figure \ref{fig:2-2-mass1} shows that masses of objects are frequency dependent.
 
 \section{Group Theory I: Group Representations}
 
+\subsection{Group Representations}
+
 Rotations in space act on vectors: they rotate one vector to another. Rotations can be combined: they form a non-Abelian group. Figure \ref{fig:2-3-paramerize-rotation} depicts one way to parametrize rotation--axis $\vec{n}$ and angle $\theta$. Since $\vec{n}$ can be parametrized by two angles, latitude and longitude, we need 3 angles in total.
 
 \begin{figure}[H]
@@ -659,8 +661,8 @@ $U$ has 8 degrees of freedom, but (\ref{eq:unitary:2}) imposes 4 constraints, le
 	The subgroup of $U(N)$ with determinant 1.
 \end{defn}
 
-\begin{thm}[Infinitesimal generators of $SU(N)$]
-	Any small rotation in $SU(N)$ can be expressed as:
+\begin{thm}[Infinitesimal generators of $SU(2)$]
+	Any small rotation in $SU(2)$ can be expressed as:
 	\begin{align*}
 		U =& I + i \epsilon M \text{, where $M$ is a linear combination of the Pauli matrices $\sigma_i$}\\
 		\sigma_x =& \begin{pmatrix} \numberthis \label{eq:pauli:x}
@@ -768,7 +770,11 @@ $U$ has 8 degrees of freedom, but (\ref{eq:unitary:2}) imposes 4 constraints, le
 	
 \end{proof}
 
-State of quark can be Red, Green, or Blue. 
+
+\subsection{Quantum Chromodynamics}
+
+The state of a quark can be Red, Green, or Blue. We can assemble the states into a vector, and the associated fields into another vector.
+
 \begin{align*}
 	\begin{pmatrix}
 		\alpha_1\\
@@ -781,9 +787,12 @@ State of quark can be Red, Green, or Blue.
 	\end{pmatrix}
 \end{align*}
 
-We can multiply by a member of $SU(3)$. These have $18-9-1=8$ degrees of freedom\footnote{$3\times 3$ matrix of complex numbers gives 18 real numbers; being unitary imposes 9 constraints; unimodularity adds one more}. Every term in Lagrangian needs to be invariant under $SU(3)$.  
+ $SU(2)$ includes $\begin{pmatrix}
+	0&i\\
+	i&0
+\end{pmatrix}$, which exchanges $u$ and $d$, so it is a supergroup of the interchange group. Just as spins are rules by $SU(2)$, colour quarks are ruled by $SU(3)$. These have $18-9-1=8$ degrees of freedom\footnote{$3\times 3$ matrix of complex numbers gives 18 real numbers; being unitary imposes 9 constraints; unimodularity adds one more}. The $8$ is the same as the number of gluons.
 
-
+ Every term in the Lagrangian needs to be invariant under $SU(3)$.   
 \section{Group Theory – II}
 
 \subsection{Group Theory}

@@ -795,12 +795,19 @@ The state of a quark can be Red, Green, or Blue. We can assemble the states into
  Every term in the Lagrangian needs to be invariant under $SU(3)$.   
 \section{Group Theory – II}
 
-\subsection{Group Theory}
+
 
 There was a question about the relationship between the mathematical theory of groups, abstract structures with multiplication, and the way groups act in physics. LS started with spin. There is an abstract notion of rotations in space. Physics has to respect symmetry under rotation, so we have to ask how rotations act on the quantities that are physically relevant. If we were studying classical physics we might just say that an operation rotates the coordinates of an object, or rotates the direction of a magnet. In \gls{gls:QM} the states of a system are always represented by a linear vector space. There is the abstract representation, and the concrete representation by column vectors. How big are the column vectors? It depends on the system: it is the number of mutually orthogonal possibilities. If the system only consists of an electron spin, there are only two states; if there are two electrons there are four states. If we are interested in position and momentum, there are an infinite number of states. So there must be representations of the rotational group that are infinite dimensional.
 
-For the spin of an electron, rotations can be represented by $2\times 2$ matrices. A spin 1 particle has 3 mutually orthogonal states, so the rotations are represented by $3\times 3$ matrices. Spin 0 particles aren't affected by rotations. The same abstract group element may have many matric representations of different dimensionality.
+For the spin of an electron, rotations can be represented by $2\times 2$ matrices. A spin 1 particle has 3 mutually orthogonal states, so the rotations are represented by $3\times 3$ matrices. Spin 0 particles aren't affected by rotations. The same abstract group element may have many matrix representations of different dimensionality.
 
+\subsection{Group Representations}
+
+When we deal with spin $\frac{1}{2}$ particles, we \emph{represent} a rotation by a $2\times 2$ unitary matrix $U$ with determinant $1$: each matrix represents one element of the group. This representation exploits two facts concerning determinants, to ensure that the set of \emph{unimodular} unitary matrices is closed under multiplication and taking the inverse:
+\begin{align*}
+	\lvert AB\rvert=&\lvert A\rvert\lvert B\rvert\\
+	\lvert A^{\dagger}\rvert=&\lvert A\rvert
+\end{align*}
 
 $SU(2)$ is not exactly the same as 1D rotations: there is a $2\rightarrow1$ correspondence, not  $1\rightarrow1$, since $-U$ and $U$ correspond to the same rotation. This is why the electron wave function is called a doublet.
 

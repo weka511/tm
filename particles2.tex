@@ -607,10 +607,13 @@ How do we construct a matrix representation of rotations?
 	\forall \vec{V} \; \sum_i V_i^2 =& \sum_i (V_i^\prime)^2\\
 	\sum_{i,j,k} R_{ij} R_{ik} V_j V_k =& \sum_i V_i V_i \text{, i.e.}\\
 	\sum_{i} R_{ij} R_{ik} =& \delta_{j,k} \text{, or}\\
-	R^T R =& I
+	R^T R =& I\\
+	R^{-1} = R^T
 \end{align*}
 
-There are 3D representations of the rotation group. Can we think of them being related to quantum states? Spin describes angular momentum. A spin 1 particle (vector boson) can be described by a column vector containing amplitudes for the various components of spin. What about spin $\frac{1}{2}$ particle?
+These are 3D representations of the rotation group. Can we think of 3D representations of the rotation group being related to quantum states? Spin describes angular momentum. A spin 1 particle (vector boson) can be described by a column vector containing amplitudes for the various components of spin. Suppose you want to rotate that spin? You must multiply by a matrix. These matrices must form a 3D representation of the rotation group. This is why we often say that spin 1 particles are vector particles.
+
+What about spin $\frac{1}{2}$ particle?
 
 \begin{align*}
 	\begin{pmatrix}
@@ -645,7 +648,6 @@ We can represent rotation by a $2\times2$ matrix acting on spinors.
 	(U^T)^* U =& I \text{, which can be written} \\
 	U^\dagger U =& I \numberthis \label{eq:unitary:2}
 \end{align*}
-
 
 $U$ has 8 degrees of freedom, but (\ref{eq:unitary:2}) imposes 4 constraints, leaving 4 degrees of freedom. But 3D rotations only have 3 degrees of freedom. We set $\det(U)=1$ to give a 2 parameter group, $SU(2)$
 

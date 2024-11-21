@@ -828,24 +828,30 @@ Since the 3D rotation group has three parameters, the Ts span a 3D space. See (\
 
 The generators for the group of rotations are the angular momentum operators for the system: you act with the angular momentum to rotate the system a little. The conserved quantities are the generators.
 
-In SU(3) we have $3\times3$ matrices, so $3\times3\times2=18$ real components; the matrix being unitary imposes 9 constraints, and unimodularity imposes one more, whence there are $18-9-1=8$ degrees of freedom: these matrices are the Gell-Mann 
+In SU(3) we have $3\times3$ matrices, so $3\times3\times2=18$ real components; the matrix being unitary imposes 9 constraints, and unimodularity imposes one more, whence there are $18-9-1=8$ degrees of freedom: these matrices are the Gell-Mann matrices.
 
 We can combine representations to form new representations. E.g. we might compose spins to make a composite. E.g. combine 2 spin $\frac{1}{2}$ objects. We have 4 possible states: a basis in that space can be thought of as a spin 0 object plus 3 spin 1 objects. We can make ${-1,0,+1}$, but the zero can be done in 2 ways: so one of the zero spins must not be part of the spin 1 multiplet, it can only be spin 0 (see \gls{gls:ortho:hydrogen} and \gls{gls:para:hydrogen}).
 
 \subsection{Representations of $SU(3)$.}
-
-Triplet: $3\times3$ matrix acting on RGB vector, mixing up states, transforming to a quantum superposition.
+ 
+We want to jump so $SU(3)$ and discus some very specific representations. First there is the \emph{Triplet}, a $3\times3$ matrix acting on the three colours of a quark, mixing up states, transforming to a quantum superposition.
 
 There are 3 important representations: 
 
 \subsubsection{The \bfseries{3}}
+We can think of this operating on a quark, and mixing up the colours, or on the three field operators that generate a quark.
 
 \begin{align*}
+	\begin{pmatrix}
+		.&.&.\\
+		.&.&.\\
+		.&.&.
+	\end{pmatrix}
 	\begin{pmatrix}
 		q_r\\
 		q_g\\
 		q_b
-	\end{pmatrix} \text{ field operator--creation}
+	\end{pmatrix}
 \end{align*} 
 
 \subsubsection{$\bar{3}$}
@@ -866,7 +872,11 @@ Generators of $\bm{\bar{3}}$ are negatives of generators of {\bfseries 3}, so th
 Combine two quarks ${RR, RG, RB,...}$
 
 \begin{align*}
-	3 \otimes 3 =& \underbrace{\bar{3}}_\text{combine antisymmetrically} \oplus \underbrace{6}_\text{combine symmetrically}\\
+	3 \otimes 3 =& \underbrace{\bar{3}}_\text{combine antisymmetrically} \oplus \underbrace{6}_\text{combine symmetrically}
+\end{align*}
+Combine a quark and antiquark ${R\bar{R}, R\bar{RG}, R\bar{B},...}$
+
+\begin{align*}
 	3 \otimes \bar{3} =& \underbrace{1}_\text{singlet: $R\bar{R}+G\bar{G}+B\bar{B}$} \oplus \underbrace{8}_\text{8 dimensional representation--generators!}
 \end{align*}
 

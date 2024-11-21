@@ -953,7 +953,7 @@ The next 3 mix among themselves and behave like a spin 1 object, the {\bfseries 
 
 There are representations of $SU(2)$ of every dimensionality, but this isn't the case for $SU(3)$: there is the singlet, the triplets, the octet, a 10, a 15, a 20,... The really interesting point is the singlets, the ways to combine quarks that don't rotate, the analogs of electrically neutral--where all the phases cancel. The 3 quark singlet is $\epsilon_{ijk}q_{i}q_{j}q_{k}$. 
 
-In the  basis that sparates the singlet from the triplet, the matrices become:
+In the  basis that separates the singlet from the triplet, the matrices become:
 \begin{align*}
 	\begin{pmatrix}
 		1&0&0&0\\
@@ -963,7 +963,25 @@ In the  basis that sparates the singlet from the triplet, the matrices become:
 	\end{pmatrix}
 \end{align*}
 
+NB. If matrices have a block diagonal form in some basis, mixing occurs only within each block.
 
+Nambu wondered what we had to add to the theory of quarks in order to not have fractionally charged particles. He realized that if thye quarks carried a quantum number (which he did not call ''colour''), and you required that the colour be a singlet, you would never get fractionally charged particles.
+
+He had an answer to why particles should only occur in singlets. We need a postulate for the interaction between quarks and gluons: gluons play the same role in QCD that photons do in QED. But photons couple to the electric field: the source of the field is charge. What is the source of the 8 gluons? There must be 8 conserved quantities, similar yo electric charge, and each is the source of one species of gluon. What 8 things do we have available? The 8 generators of $SU(3)$, which are analogous to angular momentum in $SU(2)$. See Figure \ref{fig:2-4-quark-gluon-field}.
+
+In electrodynamics a charge and an anticharge attract each other: they have lower energy if they are close together, and a charged system has more energy than one that is neutral.
+
+\begin{figure}[H]
+	\caption{Pair of charges with electric field}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{There is field energy stored, as field has to go somewhere.}
+	 	\includegraphics[width=\textwidth]{particles-2-4-pair-charges}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{Opposite charges: no outside field}
+		\includegraphics[width=\textwidth]{particles-2-4-pair-opposite-charges.jpg}
+	\end{subfigure}
+\end{figure}
 
 The 8 gluons aren't neutral, as they have colour. The carry large amounts of energy, and don't appear as free particles. Gluons can interfere with each other, which is why QCD is more complicated than QED--see Figure \ref{fig:QCD:QED}.
  

@@ -881,13 +881,13 @@ Combine a quark and antiquark ${R\bar{R}, R\bar{RG}, R\bar{B},...}$
 \end{align*}
 
 \begin{align*}
-3 \otimes 3 \otimes 3 =& (3 \otimes 3) \otimes 3\\
-=& \big(\bar{3} \oplus 6 \big) \otimes 3\\
-=& \bar{3}   \otimes 3 + 6 \otimes 3\\
-=& \underbrace{1}_\text{anti-symmetrized superposed R, G, B} \oplus 8 \oplus 8 \oplus 10
+	3 \otimes 3 \otimes 3 =& (3 \otimes 3) \otimes 3\\
+	=& \big(\bar{3} \oplus 6 \big) \otimes 3\\
+	=& \bar{3}   \otimes 3 + 6 \otimes 3\\
+	=& \underbrace{1}_\text{antisymmetrized superposed R, G, B} \oplus 8 \oplus 8 \oplus 10
 \end{align*}
 
-Gluon behaves a quark-antiquark under colour symmetry: it transforms under the 8 (octet).
+A gluon is an object that behaves like a quark-antiquark under colour symmetry: it transforms under the 8 (octet), in the same way as the gene`rators.
 
 \subsection{Quantum Chromodynamics (resumed)}
 
@@ -899,7 +899,7 @@ Gluon behaves a quark-antiquark under colour symmetry: it transforms under the 8
 			Quark&{\bfseries 3}& \\ \hline
 			Antiquark&$\bm{\bar{3}}$& \\ \hline
 			gluon&{\bfseries 8}&$\bm{3}\otimes\bm{3}=\bm{8}\oplus\bm{1}$, but the $\bm{1}$ does not exist in nature. It also doesn't mix with other components, so it is consistent to throw it away \\ \hline
-			Free particles&{\bfseries 1}&All observable particles transform as singlets: quark+antiquark, or 3 quarks.\\ \hline
+			Free particles&{\bfseries 1}&All observable particles transform as singlets: quark+antiquark(meson), or 3 quarks (baryon).\\ \hline
 			&&Gluons play the same role in QCD as photons in QED, sourced from the 8 generators--Figure \ref{fig:2-4-quark-gluon-field}. Just as electric field of two particles has lower energy if total charge zero, gluon fields have lowest energy if total colour zero. But coupling constant higher, which is why we don't see free quarks.\\ \hline
 		\end{tabular}
 	\end{center}
@@ -907,11 +907,11 @@ Gluon behaves a quark-antiquark under colour symmetry: it transforms under the 8
 
 What if we combine gluons together, or gluons with quarks?
 
-\begin{defn}[Glueball][Baryon]\label{defn:glueball}
+\begin{defn}[Glueball]\label{defn:glueball}
 	Combine two gluons. $\bm{8} \otimes \bm{8} = \bm{63} \oplus \bm{1}$ -- 2 gluons. The singlet is known as a glueball.
 \end{defn}
 
-There are 3 kinds of Hadrons:
+There are 3 kinds of Hadrons (colour singlets):
 \begin{itemize}
 	\item Baryons
 	\item Mesons
@@ -920,7 +920,9 @@ There are 3 kinds of Hadrons:
 
 $SU(3)$ singlets also give integer charge, as phases cancel.
 
-Back to $SU(2)$. We have $\Psi_i$. To make two particles act twice: $\Psi_i\Psi_j$, or $\Psi_i\Phi_j$(two different particles). We have a tensor-like object, having repeated indices.
+\subsubsection{an illuminating digression involving $SU(2)$} 
+
+We have $\Psi_i$, where $i\in \{up,down\}$. Suppose we want to make two particles, we need to act twice: $\Psi_i\Psi_j$, or $\Psi_i\Phi_j$(two different particles, e.g. the proton and electron in a hydrogen atom). We have a tensor-like object, having repeated indices. $S2(2)$ can act on it.
 
 \begin{align*}
 	\begin{pmatrix}
@@ -928,16 +930,17 @@ Back to $SU(2)$. We have $\Psi_i$. To make two particles act twice: $\Psi_i\Psi_
 		.&.&.&.\\
 		.&.&.&.\\
 		.&.&.&.
-	\end{pmatrix} 	\begin{pmatrix}
-\Psi_u\Phi_u\\
-\Psi_u\Phi_d\\
-\Psi_d\Phi_u\\
-\Psi_d\Phi_d
-\end{pmatrix} 
+	\end{pmatrix} \begin{pmatrix}
+						\Psi_u\Phi_u\\
+						\Psi_u\Phi_d\\
+						\Psi_d\Phi_u\\
+						\Psi_d\Phi_d
+				\end{pmatrix} 
 \end{align*}
+
  The operator mixes things up, but we find
 \begin{align*}
-    \Psi_u\Phi_d-\Psi_d\Phi_u \text{, unchanged --singlet}	
+    \Psi_u\Phi_d-\Psi_d\Phi_u \text{, is unchanged, if forms a singlet}	
 \end{align*}
 The next 3 mix among themselves and behave like a spin 1 object, the {\bfseries 3}.
 \begin{align*}
@@ -947,6 +950,8 @@ The next 3 mix among themselves and behave like a spin 1 object, the {\bfseries 
 		\Psi_d\Phi_d
 	\end{cases}
 \end{align*}
+
+There are representations of $SU(2)$ of every dimensionality, but this isn't the case for $SU(3)$: there is the singlet, the triplets, the octet, a 10, a 15, a 20,... The really interesting point is the singlets, the ways to combine quarks that don't rotate, the analogs of electrically neutral--where all the phases cancel. 
 
 In the right basis:
 \begin{align*}

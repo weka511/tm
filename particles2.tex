@@ -544,7 +544,7 @@ Figures \ref{fig:2-2-gluon3} and \ref{fig:2-2-gluon5} show the basic vertices fo
 \begin{figure}[H]
 	\caption{Second basic vertex of \gls{gls:QCD}: gluons}
 		\begin{subfigure}[t]{0.40\textwidth}
-		\caption{Second basic vertex, which has no analogue for photons. Fictitious quark-antiquark pairs represent gluons. This process makes \gls{gls:QCD} more complex and more interesting than QED.}\label{fig:2-2-gluon5}
+		\caption{Second basic vertex, which has no analogue for photons. Fictitious quark-antiquark pairs represent gluons. This process makes \gls{gls:QCD} more complex and more interesting than \gls{gls:QED}.}\label{fig:2-2-gluon5}
 		\includegraphics[width=0.9\textwidth]{2-2-gluon5}
 	\end{subfigure}
 	\em
@@ -793,9 +793,8 @@ The state of a quark can be Red, Green, or Blue. We can assemble the states into
 \end{pmatrix}$, which exchanges $u$ and $d$, so it is a supergroup of the interchange group. Just as spins are rules by $SU(2)$, colour quarks are ruled by $SU(3)$. These have $18-9-1=8$ degrees of freedom\footnote{$3\times 3$ matrix of complex numbers gives 18 real numbers; being unitary imposes 9 constraints; unimodularity adds one more}. The $8$ is the same as the number of gluons.
 
  Every term in the Lagrangian needs to be invariant under $SU(3)$.   
-\section{Group Theory – II}
-
-
+ 
+\section{Group Theory II: Representations of $SU(3)$}
 
 There was a question about the relationship between the mathematical theory of groups, abstract structures with multiplication, and the way groups act in physics. LS started with spin. There is an abstract notion of rotations in space. Physics has to respect symmetry under rotation, so we have to ask how rotations act on the quantities that are physically relevant. If we were studying classical physics we might just say that an operation rotates the coordinates of an object, or rotates the direction of a magnet. In \gls{gls:QM} the states of a system are always represented by a linear vector space. There is the abstract representation, and the concrete representation by column vectors. How big are the column vectors? It depends on the system: it is the number of mutually orthogonal possibilities. If the system only consists of an electron spin, there are only two states; if there are two electrons there are four states. If we are interested in position and momentum, there are an infinite number of states. So there must be representations of the rotational group that are infinite dimensional.
 
@@ -900,7 +899,7 @@ A gluon is an object that behaves like a quark-antiquark under colour symmetry: 
 			Antiquark&$\bm{\bar{3}}$& \\ \hline
 			gluon&{\bfseries 8}&$\bm{3}\otimes\bm{3}=\bm{8}\oplus\bm{1}$, but the $\bm{1}$ does not exist in nature. It also doesn't mix with other components, so it is consistent to throw it away \\ \hline
 			Free particles&{\bfseries 1}&All observable particles transform as singlets: quark+antiquark(meson), or 3 quarks (baryon).\\ \hline
-			&&Gluons play the same role in QCD as photons in QED, sourced from the 8 generators--Figure \ref{fig:2-4-quark-gluon-field}. Just as electric field of two particles has lower energy if total charge zero, gluon fields have lowest energy if total colour zero. But coupling constant higher, which is why we don't see free quarks.\\ \hline
+			&&Gluons play the same role in \gls{gls:QCD} as photons in \gls{gls:QED}, sourced from the 8 generators--Figure \ref{fig:2-4-quark-gluon-field}. Just as electric field of two particles has lower energy if total charge zero, gluon fields have lowest energy if total colour zero. But coupling constant higher, which is why we don't see free quarks.\\ \hline
 		\end{tabular}
 	\end{center}
 \end{table}
@@ -967,7 +966,7 @@ NB. If matrices have a block diagonal form in some basis, mixing occurs only wit
 
 Nambu wondered what we had to add to the theory of quarks in order to not have fractionally charged particles. He realized that if thye quarks carried a quantum number (which he did not call ''colour''), and you required that the colour be a singlet, you would never get fractionally charged particles.
 
-He had an answer to why particles should only occur in singlets. We need a postulate for the interaction between quarks and gluons: gluons play the same role in QCD that photons do in QED. But photons couple to the electric field: the source of the field is charge. What is the source of the 8 gluons? There must be 8 conserved quantities, similar yo electric charge, and each is the source of one species of gluon. What 8 things do we have available? The 8 generators of $SU(3)$, which are analogous to angular momentum in $SU(2)$. See Figure \ref{fig:2-4-quark-gluon-field}.
+He had an answer to why particles should only occur in singlets. We need a postulate for the interaction between quarks and gluons: gluons play the same role in \gls{gls:QCD} that photons do in \gls{gls:QED}. But photons couple to the electric field: the source of the field is charge. What is the source of the 8 gluons? There must be 8 conserved quantities, similar yo electric charge, and each is the source of one species of gluon. What 8 things do we have available? The 8 generators of $SU(3)$, which are analogous to angular momentum in $SU(2)$. See Figure \ref{fig:2-4-quark-gluon-field}.
 
 In electrodynamics a charge and an anticharge attract each other: they have lower energy if they are close together, and a charged system has more energy than one that is neutral--Figure \ref{fig:particles:pair:charges}. The larger the charge of a particle, the more profitable it is to have a neutral system. If the coupling coefficient were mush higher than it is, it would be prohibitively expensive to have separate charges.
 
@@ -985,16 +984,16 @@ In electrodynamics a charge and an anticharge attract each other: they have lowe
 
 So Nambu realized that if colour is the source of the gluon field, and if the coupling constant is large enough, we won't be able to pull quarks apart into non-singlet states.
 
-The dynamics is more interesting than Nambu realized, because the 8 gluons aren't neutral: they have colour. The neutral piece was the 9th member, which we threw away. The carry large amounts of energy, and don't appear as free particles. Gluons can interfere with each other, which is why QCD is more complicated than QED--see Figure \ref{fig:QCD:QED}.
+The dynamics is more interesting than Nambu realized, because the 8 gluons aren't neutral: they have colour. The neutral piece was the 9th member, which we threw away. The carry large amounts of energy, and don't appear as free particles. Gluons can interfere with each other, which is why \gls{gls:QCD} is more complicated than \gls{gls:QED}--see Figure \ref{fig:QCD:QED}.
  
 \begin{figure}[H]
-	\caption{Why QCD is more complicated than QED}\label{fig:QCD:QED}
+	\caption{Why \gls{gls:QCD} is more complicated than \gls{gls:QED}}\label{fig:QCD:QED}
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption[Quark surrounded by Gluon Field]{Quark surrounded by Gluon Field: there are 8 such fields, which transform according to the {\bfseries 8}. If this were QED the field lines would not interact, but this is not true in QCD, as the lines are not neutral: they attract each other.}\label{fig:2-4-quark-gluon-field}
+		\caption[Quark surrounded by Gluon Field]{Quark surrounded by Gluon Field: there are 8 such fields, which transform according to the {\bfseries 8}. If this were \gls{gls:QED} the field lines would not interact, but this is not true in \gls{gls:QCD}, as the lines are not neutral: they attract each other.}\label{fig:2-4-quark-gluon-field}
 		\includegraphics[width=0.9\textwidth]{2-4-quark-gluon-field}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{If Figure \ref{fig:2-4-quark-gluon-field} were an electromagnetic field, field lines would not attract or repel each other. In QCD they have colour, so they attract each other and form tubes.}
+		\caption{If Figure \ref{fig:2-4-quark-gluon-field} were an electromagnetic field, field lines would not attract or repel each other. In \gls{gls:QCD} they have colour, so they attract each other and form tubes.}
 		\includegraphics[width=0.9\textwidth]{2-4-quark-gluon-field-tubes}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.45\textwidth}
@@ -1015,7 +1014,7 @@ The dynamics is more interesting than Nambu realized, because the 8 gluons aren'
 	\end{subfigure}
 \end{figure}
 
-QCD is a gauge field--Sections \ref{section:gauge:symmetry} and \ref{section:gauge:invariance}.
+\gls{gls:QCD} is a gauge field--Sections \ref{section:gauge:symmetry} and \ref{section:gauge:invariance}.
 
 \begin{defn}[Gauge field]\label{defn:gauge:field}
 	A gauge field is any theory where conserved quantities are coupled to a Maxwell-like field. They are always based on symmetries.
@@ -1024,12 +1023,12 @@ QCD is a gauge field--Sections \ref{section:gauge:symmetry} and \ref{section:gau
 Charges linked are linked by lines of force. In Figure \ref{fig:2-4-quark-gluon-field}, fields lines must end on charge; this means charge is conserved, which is related to symmetry. You cannot remove the charge, because it is anchored at infinity. Removing it would require propagating a signal at a speed faster then light.
 
 \section{Gauge Fields and Symmetry}\label{section:gauge:symmetry}
+ 
+We have studied \gls{gls:QED} and \gls{gls:QCD}: both are gauge theories. Just about all of nature as we know it is controlled by gauge theories of one kind or another. We will not get deeply into gauge symmetry; we'll cover the basis of gauge theory in a minimal mathematical way.
 
 \subsection{Gauge Fields and Symmetry}
 
-Just about all of nature is controlled by gauge theories.
-
-The first and simplest gauge theory is Maxwell's theory. This has six components, the electric and magnetic fields, which are generated from a potential $A_\mu=(A_0,\vec{A})$.
+The first and simplest gauge theory is Maxwell's theory. A gaige theory os a theory of fields that have all the properties of the electromagnetic field. This has six components, the electric and magnetic fields, which are generated from a potential $A_\mu=(A_0,\vec{A})$.
 \begin{itemize}
 	\item  $A_0$ is the electric potential: $F_i=e \frac{\partial A_0}{\partial x_i}$.
 	\item Electric field $\vec{E}=\nabla A_0$.
@@ -1047,10 +1046,18 @@ The electric and magnetic fields combine to make the field tensor\cite{susskind2
 \end{align*}
 
 \begin{figure}[H]
-	\caption[Electromagnetic waves, illustrating Polarization.]{Electromagnetic waves. Polarization is in direction of electric field.}
-	\includegraphics[width=0.8\textwidth]{2-5-EM-field}
+	\caption{The electromagnetic field}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{Electromagnetic waves. The polarization is in direction of electric field.}
+		\includegraphics[width=\textwidth]{2-5-EM-field}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{A charge acting a source for the electromagnetic field. By convention a positive charge gives rise to outward arrows.}
+		\includegraphics[width=\textwidth]{particles-2-5-electric-field}
+	\end{subfigure}
 \end{figure}
 
+There are sources for electromagnetic waves: they are charges and currents.
 The essence of a gauge theory: in Maxwell-like theories, with electric-like and magnetic-like fields, if gauge field is weakly coupled (interactions between parts don't interfere with each other), motion of a gauge field is exactly the same as a light wave; it moves at the speed of light unless something interferes.
 
 Gauge theories  always have conserved quantities, hence symmetries. Colour is an example.
@@ -1100,7 +1107,7 @@ Table \ref{table:ems} compares various properties of the Strong and Electromagne
 	\end{center}
 \end{table}
 
-Times for Hadrons less spread out: QCD version of $\alpha$ much closer to 1 ($\frac{1}{5}$). This is why strong interactions are called \emph{strong}.
+Times for Hadrons less spread out: \gls{gls:QCD} version of $\alpha$ much closer to 1 ($\frac{1}{5}$). This is why strong interactions are called \emph{strong}.
 
 \subsubsection{Weak Interactions}
 
@@ -1678,7 +1685,7 @@ Where do they get their mass?
 
 We go back to weak interactions.
 
-Reflection symmetry is not a good symmetry of elementary particles (1950s). This is a symmetry of \gls{gls:QM} and QCD, but it is not a symmetry of the weak interaction (mirror image of a weak interaction is not another possible process!). 
+Reflection symmetry is not a good symmetry of elementary particles (1950s). This is a symmetry of \gls{gls:QM} and \gls{gls:QCD}, but it is not a symmetry of the weak interaction (mirror image of a weak interaction is not another possible process!). 
 
 \begin{figure}[H]
 	\caption{The electron is always left handed in n weak interactions}

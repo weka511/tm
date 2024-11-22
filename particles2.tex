@@ -542,7 +542,7 @@ Figures \ref{fig:2-2-gluon3} and \ref{fig:2-2-gluon5} show the basic vertices fo
 \end{figure}
 
 \begin{figure}[H]
-	\caption{Second basic vertex of \gls{gls:QCD}: gluons}
+	\caption{Second basic vertex of \gls{gls:QCD}: gluons}\label{fig:2:basic:vertex}
 		\begin{subfigure}[t]{0.40\textwidth}
 		\caption{Second basic vertex, which has no analogue for photons. Fictitious quark-antiquark pairs represent gluons. This process makes \gls{gls:QCD} more complex and more interesting than \gls{gls:QED}.}\label{fig:2-2-gluon5}
 		\includegraphics[width=0.9\textwidth]{2-2-gluon5}
@@ -1064,20 +1064,14 @@ The essence of a gauge theory: in Maxwell-like theories, with electric-like and 
 This was the simplest example of a gauge theory, a gauge charge, and a symmetry that goes along with the conservation of that charge. We recall how this worked in \gls{gls:QCD}. We have Maxwell-like fields, labeled by indices, $A_{ij}$, which transform under $SU(3)$. We started with the quark field, $q_i$, indexed by colour, and transformed by a special unitary matrix: $q_i \rightarrow U_{ij} q_j$. This is a symmetry operation. The $q$ are called the fundamental representation of $SU(3)$.
 Antiparticles are represented by the complex-conjugate fields, and the representation is denoted $\bar{3}$.
 
-$A_{ij}$ has the same structure as a quark $g_j$ and an antiquark $q^*_i$, together with the assumption that $Tr(A)=0$. It transforms under $SU(3)$: photons do not transform under $SU(2)$, as they don't have electric charge.
-Gauge theories  always have conserved quantities, hence symmetries. Colour is an example, baryon number is not.
-\begin{itemize}
-	\item  Let $A_{ij}$ denote the potential, which transforms under $SU(3)$.
-	\item Symmetry: $U_{ij} q_j = q^\prime_i$ (indexed over colour).
-	\item The $q_i$ form a representation of $SU(3)$, known as the fundamental representation.
-	\item The antiparticles are represented $U^*_{ij} q^*_j = q_i^{\prime*}$. We have two distinct representations, {\bfseries 3} and $\bm{\bar{3}}$.
-	\item  $A_{ij}$ has same structure as $\bar{q}_i q_j$.
-	\item $A_{ij}$ transforms like quark/antiquark, and  trace vanished (adjoint representation).
-	\item $A_{ij}$ transforms according to $SU(3)$  (unlike photon--not charge).
-\end{itemize}
+$A_{ij}$ has the same structure as a quark $g_j$ and an antiquark $q^*_i$, together with the assumption that $Tr(A)=0$. It transforms under $SU(3)$: photons do not transform under $SU(2)$, as they don't have electric charge. Gluons have colour in what is known as they adjoint representation.
+
+
+Gauge theories  always have conserved quantities, hence symmetries. The group might be $SU(N)$, with $N$ particles, the same number of antiparticles, and $N^2-1$ gauge bosons--see Figure Figures \ref{fig:2-2-gluon3} and \ref{fig:2-2-gluon5}. But is q gluons acts like a quark-antiquark pair, the process of Figure \ref{fig:basic:interactions:gauge} is , which transforms a gluon to another. Unlike photons, gluons are charged particles and exert forces on each other.
+
 
 \begin{figure}[H]
-	\caption{Basic interactions of gauge theory}
+	\caption{Basic interactions of gauge theory}\label{fig:basic:interactions:gauge}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{i becomes j by emitting a quantum of field $A_{ji}$}
 		\includegraphics[width=0.9\textwidth]{2-change-charge} 

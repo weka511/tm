@@ -279,7 +279,7 @@ Notes:\begin{enumerate}
 \begin{figure}[H]
 	\caption[The basic process in electrodynamics]{The basic process in electrodynamics is the emission of a photon by an electron. Out of this we can build all the processes of quantum electrodynamics, in particular the one that corresponds to the force between charges--see Figure \ref{fig:fep2}.}\label{fig:fep}
 	\begin{subfigure}[t]{0.3\textwidth}
-		\caption{Electron emits photon}
+		\caption{Electron emits photon}\label{fig:fep:emit}
 		\feynmandiagram[vertical = a to i1]{
 			i1[particle=e]--[fermion]a--[fermion]o1[particle=e],
 			a--[photon,edge label=$\gamma$]o2
@@ -1084,7 +1084,7 @@ Gauge theories  always have conserved quantities, hence symmetries. The group mi
 
 \subsection{Strong and Weak Interactions}
 
-A Gauge theory also needs a coupling constant, analogous to the charge of the electron (amplitude for emitting photon). EM is weak: probability of emission is $\frac{1}{137}$.
+There is one other thing in a gauge theory, the coupling constant. The coupling constant is the analog of the charge of the electron, which is the coefficient in a Feynman diagram such as Figure \ref{fig:fep:emit}: when you emit an electron the amplitude is $e$. If you want to think about it operationally, imagine an electron slamming into an anode: the probability of emitting a photon is $e^2$, in suitable units: $\frac{P}{4\pi}=\frac{1}{137}$.
 
 Set $c=1$, $\hslash=1$, then energy is in units of $\frac{1}{T}$: $1eV^{-1}=10^{-7}M$.
 

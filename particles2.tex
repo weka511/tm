@@ -827,7 +827,77 @@ Since the 3D rotation group has three parameters, the Ts span a 3D space. See (\
 
 The generators for the group of rotations are the angular momentum operators for the system: you act with the angular momentum to rotate the system a little. The conserved quantities are the generators.
 
-In SU(3) we have $3\times3$ matrices, so $3\times3\times2=18$ real components; the matrix being unitary imposes 9 constraints, and unimodularity imposes one more, whence there are $18-9-1=8$ degrees of freedom: these matrices are the Gell-Mann matrices.
+In SU(3) we have $3\times3$ matrices, so $3\times3\times2=18$ real components; the matrix being unitary imposes 9 constraints, and unimodularity imposes one more, whence there are $18-9-1=8$ degrees of freedom: these matrices are known as the Gell-Mann matrices.
+
+\begin{align*}
+	\lambda_1=&\begin{pmatrix}
+		0&1&0\\
+		1&0&0\\
+		0&0&0
+	\end{pmatrix} \; \lambda_2=&\begin{pmatrix}
+		0&-i&0\\
+		i&0&0\\
+		0&0&0
+	\end{pmatrix}\;\lambda_3=&\begin{pmatrix}
+		1&0&0\\
+		0&-1&0\\
+		0&0&0
+	\end{pmatrix}\;	\lambda_4=&\begin{pmatrix}
+		0&0&1\\
+		0&0&0\\
+		1&0&0
+	\end{pmatrix}\\
+	\lambda_5=&\begin{pmatrix}
+		0&0&-i\\
+		0&0&0\\
+		i&0&0
+	\end{pmatrix}\;	\lambda_6=&\begin{pmatrix}
+		0&0&0\\
+		0&0&1\\
+		0&1&0
+	\end{pmatrix} \;	\lambda_7=&\begin{pmatrix}
+		0&0&0\\
+		0&0&-i\\
+		0&i&0
+	\end{pmatrix} \;	\lambda_8=&\frac{1}{\sqrt{3}} \begin{pmatrix}
+		1&0&0\\
+		0&1&0\\
+		0&0&-2
+	\end{pmatrix}
+\end{align*}
+
+\begin{thm}[Gell-Mann matrices]
+	The Gell-Mann matrices are a set of generators for $SU(3)$
+\end{thm}
+\begin{proof}
+	We need to establish 3 things:
+	\begin{enumerate}
+		\item The matrices are Hermitian
+		\item They trace of each matrix is 0.
+		\item They are linearly independent.
+	\end{enumerate}
+	The first two requirements are clear by inspection. We need only establish linear independence. Imagine that we have a collection of $\alpha_i$ such that:
+	\begin{align*}
+		\alpha_i \lambda_i =& \begin{pmatrix}
+			\alpha_3+\frac{\alpha_8}{\sqrt{3}}&\alpha_1-i\alpha_2&\alpha_4-i\alpha_5\\
+			\alpha_1+i\alpha_2&-\alpha_3 + \frac{\alpha_8}{\sqrt{3}}&\alpha_6-i\alpha_7\\
+			\alpha_4+i\alpha_5&\alpha_6+i\alpha_7&\frac{2\alpha_8}{\sqrt{3}}
+		\end{pmatrix}\\
+		=& \begin{pmatrix}
+			0&0&0\\
+			0&0&0\\
+			0&0&0
+		\end{pmatrix}
+	\end{align*}
+	We see from the bottom right hand element that:
+	\begin{align*}
+		\alpha_8=& 0 \text{, whence the other two diagonal elements give}\\
+		\alpha_3=&0\\
+		\alpha_1\pm i\alpha_2=&0\\
+		\alpha_1=&0\\
+		\alpha_2=&0
+	\end{align*}
+\end{proof}
 
 We can combine representations to form new representations. E.g. we might compose spins to make a composite. E.g. combine 2 spin $\frac{1}{2}$ objects. We have 4 possible states: a basis in that space can be thought of as a spin 0 object plus 3 spin 1 objects. We can make ${-1,0,+1}$, but the zero can be done in 2 ways: so one of the zero spins must not be part of the spin 1 multiplet, it can only be spin 0 (see \gls{gls:ortho:hydrogen} and \gls{gls:para:hydrogen}).
 
@@ -894,7 +964,7 @@ A gluon is an object that behaves like a quark-antiquark under colour symmetry: 
 	\begin{center}
 		\caption{Postulates of \gls{gls:QCD}.}\label{table:postulates:QCD}
 		\begin{tabular}{|l|c|p{8cm}|} \hline
-			Particle&Group&Remarks \\ \hline
+			\textbf{Particle}&\textbf{Group}&\textbf{Remarks} \\ \hline
 			Quark&{\bfseries 3}& \\ \hline
 			Antiquark&$\bm{\bar{3}}$& \\ \hline
 			gluon&{\bfseries 8}&$\bm{3}\otimes\bm{3}=\bm{8}\oplus\bm{1}$, but the $\bm{1}$ does not exist in nature. It also doesn't mix with other components, so it is consistent to throw it away \\ \hline

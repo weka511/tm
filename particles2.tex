@@ -866,15 +866,16 @@ In SU(3) we have $3\times3$ matrices, so $3\times3\times2=18$ real components; t
 			0&0&-2
 		\end{pmatrix}
 	\end{alignat*}
+	NB: the matrices have been normalized so that $Tr(\lambda_i^2)=2$; the Pauli matrices have the same property.
 \end{defn}
 
-\begin{thm}[The Gell-Mann matrices are a set of generators for $SU(3)$]
+\begin{thm}[The Gell-Mann matrices are generators for $SU(3)$]
 
 \end{thm}
 \begin{proof}
 	We need to establish that:
 	\begin{enumerate}
-		\item each  Gell-Mann matrix is Hermitian;
+		\item each Gell-Mann matrix is Hermitian;
 		\item the trace of each Gell-Mann matrix is 0;
 		\item the Gell-Mann matrices are linearly independent.
 	\end{enumerate}
@@ -1372,6 +1373,19 @@ Why are weak interactions so slow? One possibility is the coupling constant, but
 
 \section{The Weak Interaction}
 
+Let us get back to $SU(3)$ and $SU(3)$. $SU(3)$ was \gls{gls:QCD}. It is the symmetry that acted vertically in Table \ref{tab:QCD:rows} and took us from one colour to another, and mixed them up. The generators are associated with gluons: the physical phenomenon of emitting a gluon does the same thing as the symmetry group that mixes up colours. Gauge bosons are a manifestation of the symmetry group: emission of the boson does the same thing to a fermion as the symmetry group. When you apply a symmetry you do it to the entire set of quarks, not just to the $up$, say.
+
+\begin{figure}[H]
+	\caption[The same gluon changes the colour of a quark of any flavour]{The same gluon changes the colour of a quark of any flavour, without changing the flavour}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{A gluon turning a Red $u$ quark Green}
+		\includegraphics[width=\textwidth]{particles2-5-gluon-u}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{The same gluon turning a Red $t$ quark Gree}
+		\includegraphics[width=\textwidth]{particles2-5-gluon-t}
+	\end{subfigure}
+\end{figure}
 \subsection{Why is the weak interaction so slow?}
 
 In Table \ref{tab:QCD:rows} we have three symmetries: $SU(3) \otimes SU(2) \otimes U(1)$. We say that the Standard Model is a gauge theory based on  $SU(3) \otimes SU(2) \otimes U(1)$.

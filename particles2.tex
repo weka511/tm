@@ -1196,21 +1196,80 @@ There was a question about whether $ud$ and $cs$ involve the same $W$ boson, but
 	\caption{Examples of W boson mediated decays}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Pion decay. Don't worry about conservation of energy in intermediate states, such as the $W$ boson. Heisenberg uncertainty principle means that $W$ can exist for only a short time. We need only worry about energy and momentum in initial and final states.}
-		\includegraphics[width=\textwidth]{2-5-pion-decay}
+		\feynmandiagram[small,vertical = t1 to a]{
+			a [particle=\(\pi^{-}\)] -- [boson] t1 -- t2 --[opacity=0.1] t3 -- t1,
+			t2 -- [fermion,edge label=\(d\)] p1 ,
+			t3 -- [fermion,edge label'=\(\bar{u}\)] p1,
+			p1 -- [boson,edge label'=\(W^-\)] p2,
+			p2 -- [fermion,edge label'=\(e^-\)]  f1,
+			p2 -- [fermion,edge label'=\(\bar{\nu_e}\)]  f2,
+		};
 	\end{subfigure}
 	\em
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Pion decay to muon (for technical reasons this is more common than decay to electron)}
-		\includegraphics[width=\textwidth]{2-5-pion-decay-mu}
+		\feynmandiagram[small,vertical = t1 to a]{
+			a [particle=\(\pi^{-}\)] -- [boson] t1 -- t2 --[opacity=0.1] t3 -- t1,
+			t2 -- [fermion,edge label=\(d\)] p1 ,
+			t3 -- [fermion,edge label'=\(\bar{u}\)] p1,
+			p1 -- [boson,edge label'=\(W^-\)] p2,
+			p2 -- [fermion,edge label'=\(\mu^-\)]  f1,
+			p2 -- [fermion,edge label'=\(\bar{\nu_{\mu}}\)]  f2,
+		};
 	\end{subfigure}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Muon decay. Muon has much more energy that electron, so most of its energy becomes kinetic energy.}
-		\includegraphics[width=\textwidth]{2-5-muon-decay}
+		\begin{tikzpicture}
+			\begin{feynman}
+				\vertex (a) {\(\mu^{-}\)};
+				\vertex [right=of a] (b);
+				\vertex [above right=of b] (f1) {\(\nu_{\mu}\)};
+				\vertex [below right=of b] (c);
+				\vertex [above right=of c] (f2) {\(\overline \nu_{e}\)};
+				\vertex [below right=of c] (f3) {\(e^{-}\)};
+				\diagram* {
+					(a) -- [fermion] (b) -- [fermion] (f1),
+					(b) -- [boson, edge label'=\(W^{-}\)] (c),
+					(c) -- [anti fermion] (f2),
+					(c) -- [fermion] (f3),
+				};
+			\end{feynman}
+		\end{tikzpicture}
 	\end{subfigure}
 	\em
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Neutron decay. W doesn't have enough energy to make muon, unless we hit neutron really hard.}
-		\includegraphics[width=\textwidth]{2-5-neutron-decay}
+		\begin{tikzpicture}[x=15mm, y=15mm]
+			\begin{feynman}
+				\vertex (i1) {\(u\)};
+				\vertex[right=.15 of i1] (i2) {\(d\)};
+				\vertex[right=.15 of i2] (i3) {\(d\)};
+				\vertex[below=.3 of i2] (n) {\(n\)};
+				
+				\vertex[above=2 of i1] (f1) {\(u\)};
+				\vertex[right=.15 of f1] (f2) {\(d\)};
+				\vertex[right=.15 of f2] (f3) {\(u\)};
+				\vertex[above=.3 of f2] (p) {\(p\)};
+				
+				\vertex[above=1 of i3] (a);
+				\vertex[right=.15 of a] (b);
+				\vertex[right=.15 of b] (c);
+				
+				\vertex at ($(c) + (1,.25)$) (d);
+				\vertex at ($(d) + (.2, 1)$) (f4) {\(\bar{\nu}_e\)};
+				\vertex at ($(d) + (.9,.5)$) (f5) {\(e^-\)};
+				\diagram*{
+					(i1) -- [fermion] (a) -- [fermion] (f1),
+					(i2) -- [fermion] (b) -- [fermion] (f2),
+					(i3) -- [fermion, thick] (c) -- [fermion, thick] (f3),
+					(c) -- [boson, edge label'=\(W^-\), thick] (d) -- [fermion, thick] (f5),
+					(d) -- [anti fermion, thick] (f4),
+				};
+				
+				\draw[-stealth] (-.4,-.4) -- (-.4,2.2);
+				\node at (-.4,2.3) {\(t\)};
+			\end{feynman}
+		\end{tikzpicture}
 	\end{subfigure}
 \end{figure}
 

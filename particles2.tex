@@ -157,7 +157,7 @@ Where do molecular forces come from? There are several mechanisms: we will focus
 			\caption{Right hand proton is a long way from left. We show the Schr\"odinger wave function for electron near left hand.} 
 			\includegraphics[width=0.9\textwidth]{2proton1Electrona}\label{fig:2proton1Electrona}
 		\end{subfigure}
-		\em
+		\hfill
 		\begin{subfigure}[t]{0.45\textwidth}
 			\caption{Protons closer together: Figure \ref{fig:2proton1Electrona} still possible, but so is this; they have the same energy.}
 			\includegraphics[width=0.9\textwidth]{2proton1Electronb}\label{fig:2proton1Electronb}
@@ -285,7 +285,7 @@ Notes:\begin{enumerate}
 			a--[photon,edge label=$\gamma$]o2
 		};
 	\end{subfigure}
-	\em
+	\hfill
 	\begin{subfigure}[t]{0.3\textwidth}
 		\caption{Photon absorbed}
 		\feynmandiagram[horizontal' = o2 to i1]{
@@ -294,7 +294,7 @@ Notes:\begin{enumerate}
 			o2--[draw=none]i1,
 		};
 	\end{subfigure}
-	\em
+	\hfill
 	\begin{subfigure}[t]{0.3\textwidth}
 		\caption{An electron traveling back in time is a positron}
 		\feynmandiagram[vertical = a to o1]{
@@ -547,7 +547,7 @@ Figures \ref{fig:2-2-gluon3} and \ref{fig:2-2-gluon5} show the basic vertices fo
 		\caption{Second basic vertex, which has no analogue for photons. Fictitious quark-antiquark pairs represent gluons. This process makes \gls{gls:QCD} more complex and more interesting than \gls{gls:QED}.}\label{fig:2-2-gluon5}
 		\includegraphics[width=0.9\textwidth]{2-2-gluon5}
 	\end{subfigure}
-	\em
+	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Second basic vertex, redrawn with gluons, instead of fictitious quark-antiquark pairs. Use Figure \ref{fig:2-2-gluon5} to determine which combinations don't break any lines.}\label{fig:2-2-gluon6}
 		\feynmandiagram[horizontal'= o1 to o2]{
@@ -1299,7 +1299,7 @@ There was a question about whether $ud$ and $cs$ involve the same $W$ boson, but
 			p2 -- [fermion,edge label'=\(\bar{\nu_e}\)]  f2,
 		};
 	\end{subfigure}
-	\em
+	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Pion decay to muon (for technical reasons this is more common than decay to electron)}
 		\feynmandiagram[small,vertical = t1 to a]{
@@ -1330,7 +1330,7 @@ There was a question about whether $ud$ and $cs$ involve the same $W$ boson, but
 			\end{feynman}
 		\end{tikzpicture}
 	\end{subfigure}
-	\em
+	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Neutron decay. W doesn't have enough energy to make muon, unless we hit neutron really hard.}
 		\begin{tikzpicture}[x=15mm, y=15mm]
@@ -1390,18 +1390,19 @@ Let us get back to $SU(3)$ and $SU(3)$. $SU(3)$ was \gls{gls:QCD}. It is the sym
 We also have the electromagnetic symmetry and flavour symmetry: $u\leftrightarrow d$, $c\leftrightarrow s$, $t\leftrightarrow db$, keeping the colour unchanged. Figure \ref{fig:gluon:changing:colour} is a physical manifestation of the transform that takes us horizontally in Table \ref{tab:QCD:rows}.
 
 \begin{figure}[H]
-	\caption[Changing flavour of quark]{Changing flavour of quark. $W^+$ can swap  $u$ with $d$, $s$ with $c$, $t$ and $b$, but it cannot swap b etween generations, e.g. $u$ $s$.}\label{fig:uB:dB}
+	\caption[Changing flavour of quark]{Changing flavour of quark. $W^+$ can swap  $u$ with $d$, $s$ with $c$, $t$ and $b$, but it cannot swap between \glspl{gls:family}, e.g. $u$ $s$.}\label{fig:uB:dB}
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{$W^+$ changing $uB$ to $dB$}
+		\caption{$W^+$ changing (up,blue) to (down,blue)}
 		\feynmandiagram[horizontal' = f1 to f2]{	
 			i1 [particle = $uB$] -- [fermion]  a --[fermion] f1 [particle = $dB$],
 			a -- [boson] f2 [particle = $W^+$],
 		};
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{The same $W^+$ would change $sG$ to $cG$}
+		\caption{The same $W^+$ would change (charm,green) to (strange,green)}
 		\feynmandiagram[horizontal' = f1 to f2]{	
-			i1 [particle = $sG$] -- [fermion]  a --[fermion] f1 [particle = $cG$],
+			i1 [particle = $cG$] -- [fermion]  a --[fermion] f1 [particle = $sG$],
 			a -- [boson] f2 [particle = $W^+$],
 		};
 	\end{subfigure}

@@ -1376,7 +1376,7 @@ Why are weak interactions so slow? One possibility is the coupling constant, but
 Let us get back to $SU(3)$ and $SU(3)$. $SU(3)$ was \gls{gls:QCD}. It is the symmetry that acted vertically in Table \ref{tab:QCD:rows} and took us from one colour to another, and mixed them up. The generators are associated with gluons: the physical phenomenon of emitting a gluon does the same thing as the symmetry group that mixes up colours. Gauge bosons are a manifestation of the symmetry group: emission of the boson does the same thing to a fermion as the symmetry group. When you apply a symmetry you do it to the entire set of quarks, not just to the $up$, say.
 
 \begin{figure}[H]
-	\caption[The same gluon changes the colour of a quark of any flavour]{The same gluon changes the colour of a quark of any flavour, without changing the flavour}
+	\caption[The same gluon changes the colour of a quark of any flavour]{The same gluon changes the colour of a quark of any flavour, without changing the flavour}\label{fig:gluon:changing:colour}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{A gluon turning a Red $u$ quark Green}
 		\includegraphics[width=\textwidth]{particles2-5-gluon-u}
@@ -1387,10 +1387,10 @@ Let us get back to $SU(3)$ and $SU(3)$. $SU(3)$ was \gls{gls:QCD}. It is the sym
 	\end{subfigure}
 \end{figure}
  
-We also have the electromagnetic symmetry and flavour symmetry: $u\leftrightarrow d$, $c\leftrightarrow s$, $t\leftrightarrow db$, keeping the colour unchanged. Figure is a physical manifestation of the transform that takes us horizontally in Table \ref{tab:QCD:rows}.
+We also have the electromagnetic symmetry and flavour symmetry: $u\leftrightarrow d$, $c\leftrightarrow s$, $t\leftrightarrow db$, keeping the colour unchanged. Figure \ref{fig:gluon:changing:colour} is a physical manifestation of the transform that takes us horizontally in Table \ref{tab:QCD:rows}.
 
 \begin{figure}[H]
-	\caption{Changing flavour}\label{fig:uB:dB}
+	\caption[Changing flavour of quark]{Changing flavour of quark. $W^+$ can swap  $u$ with $d$, $s$ with $c$, $t$ and $b$, but it cannot swap b etween generations, e.g. $u$ $s$.}\label{fig:uB:dB}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{$W^+$ changing $uB$ to $dB$}
 		\feynmandiagram[horizontal' = f1 to f2]{	
@@ -1406,17 +1406,19 @@ We also have the electromagnetic symmetry and flavour symmetry: $u\leftrightarro
 		};
 	\end{subfigure}
 \end{figure}
-Gluons never move us horizontally; $W^+$ bosons never move vertically. This is the mathematical structure of $SU(3) \times SU(2)$. If we add the electromagnetic symmetry, photon emission changes the phase of every charge carrying field, you have the basic structure of  $SU(3) \times SU(2) \times U(1)$.
+Gluons never move us horizontally; $W^+$ bosons never move vertically. This is the mathematical structure of $SU(3) \times SU(2)$. If we add the electromagnetic symmetry (photon emission changes the phase of every charge carrying field), you have the basic ingredients of  $SU(3) \times SU(2) \times U(1)$.
 
 \subsection{Why is the weak interaction so slow?}
 
-In Table \ref{tab:QCD:rows} we have three symmetries: $SU(3) \otimes SU(2) \otimes U(1)$. We say that the Standard Model is a gauge theory based on  $SU(3) \otimes SU(2) \otimes U(1)$.
+The Standard Model is a gauge theory based on  $SU(3) \otimes SU(2) \otimes U(1)$ (It is not 100\% consistent for reasons that will become clear).
+
+What about the coupling constants that are involved in Figure \ref{fig:uB:dB}?
 
 \begin{table}[H]
 	\begin{center}
 		\caption{Coupling Constants}
 		\begin{tabular}{|l|l|l|} \hline
-			Group&Coupling Constant&Remarks \\ \hline
+			\textbf{Group}&\textbf{Coupling Constant}&\textbf{Remarks} \\ \hline
 			$U(1)$&e& \\ \hline
 			$SU(3)$&$g_s \approxeq 1$& \\ \hline
 			$SU(2)$&$g_w$& \\ \hline

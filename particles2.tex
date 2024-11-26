@@ -1450,12 +1450,49 @@ Leptons almost act as if they are a fourth colour--Table \ref{tab:QCD:rows}. Not
 	\caption[Possible fates of a W boson]{Possible fates of a W boson. Let $g_W$ denote the coupling constant for the emission of a $W$, so the amplitude of \subref{fig:decay:neutron} is $g_w^2$--except we to take the propagator into account.}
 	\begin{subfigure}[t]{0.5\textwidth}\label{fig:decay:neutron}
 		\caption{Decay of a neutron. The $W$ line is the \emph{propagator}. Feynman diagrams consist of vertices and propagator, the latter being concerned with motion from one point to another.}\label{fig:2-6-W1}
-		\includegraphics[width=\textwidth]{2-6-W1}
+			\begin{tikzpicture}[x=15mm, y=15mm]
+		\begin{feynman}
+			\vertex (i1) {\(u\)};
+			\vertex[right=.15 of i1] (i2) {\(d\)};
+			\vertex[right=.15 of i2] (i3) {\(d\)};
+			\vertex[below=.3 of i2] (n) {\(n\)};
+			
+			\vertex[above=2 of i1] (f1) {\(u\)};
+			\vertex[right=.15 of f1] (f2) {\(d\)};
+			\vertex[right=.15 of f2] (f3) {\(u\)};
+			\vertex[above=.3 of f2] (p) {\(p\)};
+			
+			\vertex[above=1 of i3] (a);
+			\vertex[right=.15 of a] (b);
+			\vertex[right=.15 of b] (c);
+			
+			\vertex at ($(c) + (1,.25)$) (d);
+			\vertex at ($(d) + (.2, 1)$) (f4) {\(\bar{\nu}_e\)};
+			\vertex at ($(d) + (.9,.5)$) (f5) {\(e^-\)};
+			\diagram*{
+				(i1) -- [fermion] (a) -- [fermion] (f1),
+				(i2) -- [fermion] (b) -- [fermion] (f2),
+				(i3) -- [fermion, thick] (c) -- [fermion, thick] (f3),
+				(c) -- [boson, edge label'=\(W^-\), thick] (d) -- [fermion, thick] (f5),
+				(d) -- [anti fermion, thick] (f4),
+			};
+			
+			\draw[-stealth] (-.4,-.4) -- (-.4,2.2);
+			\node at (-.4,2.3) {\(t\)};
+		\end{feynman}
+	\end{tikzpicture}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.4\textwidth}
-		\caption{A different fate for a W Boson: re-absorption}\label{fig:absorption:W:boson}
-		\includegraphics[width=\textwidth]{2-6-W2}
+		\caption{A different fate: re-absorption}\label{fig:absorption:W:boson}
+		\feynmandiagram[vertical = f1 to i1]{
+			i1[particle=$p$] -- [fermion]  a --[fermion,edge label=$n$] b--[fermion] f1 [particle=$p$],
+			a -- [boson, half right,edge label'=$W^+$] b, 
+		};
+		\feynmandiagram[vertical = f1 to i1]{
+			i1[particle=$n$] -- [fermion]  a --[fermion,edge label=$p$] b--[fermion] f1 [particle=$n$],
+			a -- [boson, half right,edge label'=$W^-$] b, 
+		};
 	\end{subfigure}
 \end{figure}
 

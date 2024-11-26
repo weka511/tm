@@ -1238,7 +1238,7 @@ These are very slow: clearly something else is going on! We need to understand s
 	\begin{center}
 		\caption[Weak and Strong interactions]{Colour symmetry operates on first three rows, not on columns. Weak interactions acts horizontally. They mix up with down, charm with strange, top with bottom. The fourth row is not normally considered to be a colour, but it too comprises doublets, which interchange under an $SU(2)$ symmetry.}\label{tab:QCD:rows}
 		\begin{tabular}{|l|c|c|c|} \hline
-			&u d&c s&t b \\ \hline
+			&\textbf{u d}&\textbf{c s}&\textbf{t b} \\ \hline
 			red&x x&x x&x x\\ \hline
 			green&x x&x x&x x\\ \hline
 			blue&x x&x x&x x\\ \hline
@@ -1423,7 +1423,7 @@ We also have the electromagnetic symmetry and flavour symmetry: $u\leftrightarro
 		};
 	\end{subfigure}
 \end{figure}
-Gluons never move us horizontally; $W^+$ bosons never move vertically. This is the mathematical structure of $SU(3) \times SU(2)$. If we add the electromagnetic symmetry (photon emission changes the phase of every charge carrying field), you have the basic ingredients of  $SU(3) \times SU(2) \times U(1)$.
+Gluons never move us horizontally; $W^+$ bosons never move vertically. This is the mathematical structure of $SU(3) \otimes SU(2)$. If we add the electromagnetic symmetry (photon emission changes the phase of every charge carrying field), you have the basic ingredients of  $SU(3) \otimes SU(2) \otimes U(1)$.
 
 \subsection{Why is the weak interaction so slow?}
 
@@ -1434,21 +1434,22 @@ What about the coupling constants that are involved in Figure \ref{fig:uB:dB}?
 \begin{table}[H]
 	\begin{center}
 		\caption{Coupling Constants}
-		\begin{tabular}{|l|l|l|} \hline
-			\textbf{Group}&\textbf{Coupling Constant}&\textbf{Remarks} \\ \hline
-			$U(1)$&e& \\ \hline
-			$SU(3)$&$g_s \approxeq 1$& \\ \hline
-			$SU(2)$&$g_w$& \\ \hline
+		\begin{tabular}{|l|l|p{10cm}|} \hline
+			\textbf{Group}&\textbf{Coupling}&\textbf{Remarks} \\ \hline
+			$U(1)$&$e=\frac{1}{\sqrt{137}}$&Quantum mechanical amplitude for the real or virtual emission of a photon \\ \hline
+			$SU(3)$&$g_s \approxeq 1$&Associated with emission or absorption of a gluon\\ \hline
+			$SU(2)$&$g_w$&We might expect this to be very small, but this is not the reason that weak interactions are slow: it is in fact close to the electromagnetic coupling constant. Yet neutron decal is very slow--12 minutes--so why is it so unlikely?\\ \hline
 		\end{tabular}
 	\end{center}
 \end{table}
 
 
+Leptons almost act as if they are a fourth colour--Table \ref{tab:QCD:rows}. Notice the difference in charges between $u$ and $d$ is one unit, which matches the difference between $\nu_e$ and $e$; the $W$ only cares about the difference between charges. (Incidentally, we don't know the masses of neutrinos very well.)
 
 \begin{figure}[H]
-	\caption{Possible fates of a W boson}
-	\begin{subfigure}[t]{0.5\textwidth}
-		\caption{Decay of a neutron. The $W$ line is the \emph{propagator}}\label{fig:2-6-W1}
+	\caption[Possible fates of a W boson]{Possible fates of a W boson. Let $g_W$ denote the coupling constant for the emission of a $W$, so the amplitude of \subref{fig:decay:neutron} is $g_w^2$--except we to take the propagator into account.}
+	\begin{subfigure}[t]{0.5\textwidth}\label{fig:decay:neutron}
+		\caption{Decay of a neutron. The $W$ line is the \emph{propagator}. Feynman diagrams consist of vertices and propagator, the latter being concerned with motion from one point to another.}\label{fig:2-6-W1}
 		\includegraphics[width=\textwidth]{2-6-W1}
 	\end{subfigure}
 	\hfill

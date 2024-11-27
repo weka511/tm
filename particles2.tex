@@ -1552,7 +1552,7 @@ A student asked a question about the difference between real and virtual particl
  
 Do we ever get to see the virtual photons that are present in an electron? Yes, if you hit the electron hard enough, you will knock the electron out, and the photon will be left. So, in that sense, you do get to see them. You see them if you put in enough energy. The same thing happens with W bosons.
 Figure \ref{fig:2-6-photons} shows a process where photons \emph{can} interact, via the creation of a virtual pair. Since probability is proportional to the inverse of the energy required, we don't see it in the lab. The same thing happens with W bosons. In Figure \ref{fig:proton:emits:W} you can think of a proton as an equilibrium between a proton and a neutron plus $W$, constantly going back and forth between the two things with a very fast oscillation. If you want to see that $W$, all you need to do it hit it hard enough with a photon whose frequency is high enough to resolve the short times the $W$ is out there, and that will have enough energy to knock out a $W$. Did we \emph{observe} the $W$ or did we \emph{create} it? If you hit it hard enough, all sorts of junk comes out.
- 
+
 \begin{figure}[H]
 	\begin{center}
 		 \caption[Proton emitting virtual $W^-$]{Proton emitting virtual $W^-$. You can think of a proton as an equilibrium between a proton and a neutron plus $W$, constantly going back and forth between the two things with a very fast oscillation}\label{fig:proton:emits:W}
@@ -1563,9 +1563,18 @@ Figure \ref{fig:2-6-photons} shows a process where photons \emph{can} interact, 
 	\end{center}
  \end{figure}
  
+ A question was asked about interaction between bosons, and more specifically, interactions between photons. The reason photons don't seem to interact with other photons is illustrated by Figure \ref{fig:2-6-photons}. Why don't we see this in the lab? Optical photons have too little energy. But if we use extremely high energy photons, the scattering of Figure \ref{fig:2-6-photons} will happen.
+ 
  \begin{figure}[H]
- 	\caption[Photon interaction via the creation of a virtual pair]{Process where photons \emph{can} interact, via the creation of a virtual pair}\label{fig:2-6-photons}
- 	\includegraphics[width=0.8\textwidth]{2-6-photons}
+ 	\begin{center}
+ 		\caption[Photon interaction via the creation of a virtual pair]{Process where photons create of a virtual electron-positron pair, which then interact to create two photons. If energy of photons is less that than of two electrons (say 2 \gls{gls:MeV})  there isn't enough energy to create real particles, but it can happen virtually, in which case there are propagators, and a cost in probability. Optical photons have energies measured in \gls{gls:eV}, so the process is very improbable.}\label{fig:2-6-photons}
+	 	\feynmandiagram[vertical= b to a]{
+	 		i1 --[boson] a -- [fermion,edge label=$e^-$] b--[boson]f1,
+	 		a--c,
+	 		b--d,
+	 		i2 -- [boson]c --[anti fermion,edge label=$e^+$] d --[boson]f2,
+	 	};
+	 \end{center}
  \end{figure}
 
 The up quark and down quark go into each other by emitting a W. What group are we talking about? SU(2). But SU(2) has 3 generators; we are missing a gauge boson, $Z$. [Check that this is discussed in a later lecture.]

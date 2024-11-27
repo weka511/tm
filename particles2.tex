@@ -1487,14 +1487,10 @@ Leptons almost act as if they are a fourth colour--Table \ref{tab:QCD:rows}. Not
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.4\textwidth}
-		\caption{A different fate for the $W$: re-absorption. The $W^+$ is very heavy, and so cannot live long(the neutron doesn't have enough mass to make a real $W$, so we have a virtual particle)--$\Delta T \Delta E<\hslash$. The $W^+$ is simply reabsorbed. Similarly a proton emits a virtual $W^-$.}\label{fig:absorption:W:boson}
+		\caption{A different fate for the $W$: re-absorption. The $W^+$ is very heavy, and so cannot live long(the neutron doesn't have enough mass to make a real $W$, so we have a virtual particle)--$\Delta T \Delta E<\hslash$. The $W^+$ is simply reabsorbed.}\label{fig:absorption:W:boson}
 		\feynmandiagram[vertical = f1 to i1]{
 			i1[particle=$n$] -- [fermion]  a --[fermion,edge label=$p$] b--[fermion] f1 [particle=$n$],
 			a -- [boson, half right,edge label'=$W^-$] b, 
-		};
-		\feynmandiagram[vertical = f1 to i1]{
-			i1[particle=$p$] -- [fermion]  a --[fermion,edge label=$n$] b--[fermion] f1 [particle=$p$],
-			a -- [boson, half right,edge label'=$W^+$] b, 
 		};
 	\end{subfigure}
 \end{figure}
@@ -1542,7 +1538,7 @@ A student asked a question about the suppression of  deuteron decay. A thing can
 The energy of the final state is the same as that of the initial state, so there really isn't enough energy to create the $W$ boson: the $W$ is produced virtually. According to the rules of quantum mechanics, conservation of energy can be violated briefly, as long as the time is short enough. If the apparent violation is $\Delta E$, it can only last for time $\Delta T$, where $\Delta T \Delta E<\hslash$. 
  
  \begin{figure}[H]
- 	\caption[Another illustration of a brief violation of conservation of energy]{Another illustration of a brief violation of conservation of energy: potential energy of an $\alpha$ particle in a nucleus. It doesn't have enough energy to escape over the hump, but it can tunnel out. It has zero kinetic energy before and after tunneling, but it appears to have a large potential energy in between. If you tried to measure in between, you would destroy the phenomenon of tunneling. How long does tunneling take? Again $\Delta T \Delta E<\hslash$}
+ 	\caption[Another illustration of a brief violation of conservation of energy]{Another illustration of a brief violation of conservation of energy: potential energy of an $\alpha$ particle in a nucleus. It doesn't have enough energy to escape over the hump, but it can tunnel out. It has zero kinetic energy before and after tunneling, but it appears to have a large potential energy in between. If you tried to measure in between, you would destroy the phenomenon of tunneling. How long does tunneling take? Again $\Delta T \Delta E<\hslash$}\label{fig:alpha:tunneling}
  	\includegraphics[width=0.8\textwidth]{particles2-6-pe}
  \end{figure}
  
@@ -1551,8 +1547,21 @@ The same thing happens in Figure \ref{fig:2-6-W1}. There is not enough energy in
 We can verify the propagator for real $W$ (\ref{eq:Delta}) by creating high momentum particles in an accelerator.
  
 NB: since the probability of a weak interaction is low, the lifetimes are high, which can be traced to the anomalous mass of the $W$. 
+
+A student asked a question about the difference between real and virtual particles: basically a real particle is an input to or an output from a Feynman diagram, while virtual particles are only intermediates. This led to a discussion of trying to detect virtual particles in an experiment, say the tunneling in Figure \ref{fig:alpha:tunneling}. We need to detect the particle during $\Delta t$. Imagine that we try sending in a photon during this time: we'd need a very short wavelength pulse, so its energy would have to be about $Delta E$ big, which means it would knock the $\alpha$ particle by the amount we were trying to measure. Same thing happens with virtual $W$ bosons: we would need to knock the system with enough energy to create real $W$ bosons!
  
- Figure \ref{fig:2-6-photons} shows a process where photons \emph{can} interact, via the creation of a virtual pair. Since probability is proportional to the inverse of the energy required, we don't see it in the lab. Same thing happens with W bosons.
+Do we ever get to see the virtual photons that are present in an electron? Yes, if you hit the electron hard enough, you will knock the electron out, and the photon will be left. So, in that sense, you do get to see them. You see them if you put in enough energy. The same thing happens with W bosons.
+Figure \ref{fig:2-6-photons} shows a process where photons \emph{can} interact, via the creation of a virtual pair. Since probability is proportional to the inverse of the energy required, we don't see it in the lab. The same thing happens with W bosons. In Figure \ref{fig:proton:emits:W} you can think of a proton as an equilibrium between a proton and a neutron plus $W$, constantly going back and forth between the two things with a very fast oscillation. If you want to see that $W$, all you need to do it hit it hard enough with a photon whose frequency is high enough to resolve the short times the $W$ is out there, and that will have enough energy to knock out a $W$. Did we \emph{observe} the $W$ or did we \emph{create} it? If you hit it hard enough, all sorts of junk comes out.
+ 
+\begin{figure}[H]
+	\begin{center}
+		 \caption[Proton emitting virtual $W^-$]{Proton emitting virtual $W^-$. You can think of a proton as an equilibrium between a proton and a neutron plus $W$, constantly going back and forth between the two things with a very fast oscillation}\label{fig:proton:emits:W}
+		 \feynmandiagram[vertical = f1 to i1]{
+		 	i1[particle=$p$] -- [fermion]  a --[fermion,edge label=$n$] b--[fermion] f1 [particle=$p$],
+		 	a -- [boson, half right,edge label'=$W^+$] b, 
+		 };
+	\end{center}
+ \end{figure}
  
  \begin{figure}[H]
  	\caption[Photon interaction via the creation of a virtual pair]{Process where photons \emph{can} interact, via the creation of a virtual pair}\label{fig:2-6-photons}

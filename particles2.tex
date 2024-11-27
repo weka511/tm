@@ -1,4 +1,4 @@
-% !TeX program = lualatex
+momentum m% !TeX program = lualatex
 
 % Copyright (c) 2020-2024 Simon Crase
 
@@ -1450,8 +1450,8 @@ Leptons almost act as if they are a fourth colour--Table \ref{tab:QCD:rows}. Not
 \end{enumerate}
 
 \begin{figure}[H]
-	\caption[Possible fates of a W boson]{Possible fates of a W boson. Let $g_W$ denote the coupling constant for the emission of a $W$, so the amplitude of \subref{fig:decay:neutron} is $g_w^2$--except we to take the propagator into account.}
-	\begin{subfigure}[t]{0.5\textwidth}\label{fig:decay:neutron}
+	\caption[Possible fates of a W boson]{Possible fates of a W boson. Let $g_W$ denote the coupling constant for the emission of a $W$, so the amplitude of \subref{fig:decay:neutron} is $g_w^2$--except we to take the propagator into account.}\label{fig:decay:neutron}
+	\begin{subfigure}[t]{0.5\textwidth}
 		\caption{Decay of a neutron. The $W$ line is the \emph{propagator}. Feynman diagrams consist of vertices and propagator, the latter being concerned with motion from one point to another.}\label{fig:2-6-W1}
 			\begin{tikzpicture}[x=15mm, y=15mm]
 		\begin{feynman}
@@ -1508,7 +1508,7 @@ The Propagator is a function of proper time between two points: $\Delta(ds)$, an
 	\includegraphics[width=0.8\textwidth]{2-6-propagator}
 \end{figure}
 
-There interesting question is where $\Delta$ decreases suddenly? At what point does the propgator realize that it is carrying too much mass? The answer comes from dimenional analysis. Choose units where $c=\hslash=1$:
+There interesting question is where $\Delta$ decreases suddenly? At what point does the propagator realize that it is carrying too much mass? The answer comes from dimensional analysis. Choose units where $c=\hslash=1$:
 \begin{align*}
 	[m] =& [E]\\
 	=& [L^{-1}]\\
@@ -1516,20 +1516,20 @@ There interesting question is where $\Delta$ decreases suddenly? At what point d
 \end{align*}
 Now, from Heisenberg's uncertainty principle, distance has inverse dimensions to momentum
 \begin{align*}
-[L]=& [\frac{1}{m}]\\
-distance \propto & \frac{1}{L} \text{, in fact:}\\
-distance \approxeq & \frac{\hslash}{mc} \text {, Compton wavelength}
+	[L]=& [\frac{1}{m}]\\
+	distance \propto & \frac{1}{L} \text{, in fact:}\\
+	distance \approxeq & \frac{\hslash}{mc} \text {, Compton wavelength}
 \end{align*}
 
 So at a distance inversely proportional to $m$, the propagator dies down.
 $\Delta^2(ds)$ is the probability particle can get that far. There is a sudden turn off of the probability, which is controlled by the mass of the particle.
 
-Usually what is prescribed in an experiment is not the position of the two particles, but the momenta.
+Usually what is prescribed in an experiment is not the position of the two particles, but the momenta. You measure the momentum of the neutron and proton, so the difference gives the momentum of the $W^+$, which in turn gives the momentum of the electron a neutrino. You don't now the distance between the vertices. But there is a relationship between momentum and distance, the Fourier transform. We can think of propagator as function of position, or momentum: what is the amplitude of emitting a $W$ of given momentum?
 
-In an experiment, we know the momenta. We can think of propagator as function of position, or momentum--using Fourier transform:
 \begin{align*}
-\tilde{\Delta}(k_w)=\frac{1}{k_w^2+m_w^2} \numberthis \label{eq:Delta}
+	\tilde{\Delta}(k_w)=\frac{1}{k_w^2+m_w^2} \numberthis \label{eq:Delta}
 \end{align*}
+
  $\tilde{\Delta}(k_w)$ will have its biggest value when $k_w=0$, so the most likely thing is to emit a low momentum W, which costs an amplitude of $\frac{1}{m_w^2}$. Amplitude for emitting $W$ and converting to electron plus neutrino is $\frac{g_w^2}{m_w^2}$: weak interactions are made weak because the mass of the W is large--about 100 protons! Probability is $\frac{g_w^4}{m_w^4}$.
  
  W is a virtual particle. From the energy-time uncertainty principle, energy conservation can be violated briefly: $\delta T \delta E<\hslash$. There is not enough energy in neutron to make a real W, but it can briefly make a virtual W, which must be destroyed again.\footnote{I have left out a discussion where Prof Susskind shows that trying to watch the virtual particle is doomed to failure: briefly the photon we send in to observe the phenomenon, need very high energy, as the phenomenon is very short lived; the high energy photon upsets the apple-cart.}

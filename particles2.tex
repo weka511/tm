@@ -1450,7 +1450,7 @@ Leptons almost act as if they are a fourth colour--Table \ref{tab:QCD:rows}. Not
 \end{enumerate}
 
 \begin{figure}[H]
-	\caption[Possible fates of a W boson]{Possible fates of a W boson. Let $g_W$ denote the coupling constant for the emission of a $W$, so the amplitude of \subref{fig:decay:neutron} is $g_w^2$--except we to take the propagator into account.}\label{fig:decay:neutron}
+	\caption[Possible fates of a W boson]{Possible fates of a W boson. Let $g_W$ denote the coupling constant for the emission of a $W$, so the amplitude of (\subref{fig:2-6-W1}) is $g_w^2$--except we to take the propagator into account.}\label{fig:decay:neutron}
 	\begin{subfigure}[t]{0.5\textwidth}
 		\caption{Decay of a neutron. The $W$ line is the \emph{propagator}. Feynman diagrams consist of vertices and propagator, the latter being concerned with motion from one point to another.}\label{fig:2-6-W1}
 			\begin{tikzpicture}[x=15mm, y=15mm]
@@ -1487,7 +1487,7 @@ Leptons almost act as if they are a fourth colour--Table \ref{tab:QCD:rows}. Not
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.4\textwidth}
-		\caption{A different fate for the $W$: re-absorption. The neutron emits a virtual $W^+$, changes to a proton, then reabsorbs the $W^+$ and changes back. Similarly a proton emits a virtual $W^-$.}\label{fig:absorption:W:boson}
+		\caption{A different fate for the $W$: re-absorption. The $W^+$ is very heavy, and so cannot live long(the neutron doesn't have enough mass to make a real $W$, so we have a virtual particle)--$\Delta T \Delta E<\hslash$. The $W^+$ is simply reabsorbed. Similarly a proton emits a virtual $W^-$.}\label{fig:absorption:W:boson}
 		\feynmandiagram[vertical = f1 to i1]{
 			i1[particle=$n$] -- [fermion]  a --[fermion,edge label=$p$] b--[fermion] f1 [particle=$n$],
 			a -- [boson, half right,edge label'=$W^-$] b, 
@@ -1499,7 +1499,7 @@ Leptons almost act as if they are a fourth colour--Table \ref{tab:QCD:rows}. Not
 	\end{subfigure}
 \end{figure}
 
-What is the probability of the process depicted in  Figure \ref{fig:decay:neutron}? This is a Feynman diagram, which consists of vertices and propagators. Propagators are the element that has to do with motion from one point to another. In this case the propagator runs from the point where the $W^+$ boson is emitted, to the point where the electron and neutrino are created. This process has two main ingredients that we can isolate. We have two factors of $g_W$, multiplied by the propagator $\Delta(ds)$, so $g_W^2\Delta(ds)$.
+What is the probability of the process depicted in  Figure \ref{fig:2-6-W1}? This is a Feynman diagram, which consists of vertices and propagators. Propagators are the element that has to do with motion from one point to another. In this case the propagator runs from the point where the $W^+$ boson is emitted, to the point where the electron and neutrino are created. This process has two main ingredients that we can isolate. We have two factors of $g_W$, multiplied by the propagator $\Delta(ds)$, so $g_W^2\Delta(ds)$.
 
 The Propagator is a function of proper time between two points: $\Delta(ds)$, and it depends crucially on the mass. Figure \ref{fig:2-6-propagator} shows the dependence. For small distance $\Delta(ds)$ is independent of mass, but the values differ after a certain distance: $\Delta(ds)$ falls sharply to zero.
 
@@ -1530,13 +1530,27 @@ Usually what is prescribed in an experiment is not the position of the two parti
 	\tilde{\Delta}(k_w)=\frac{1}{k_w^2+m_w^2} \numberthis \label{eq:Delta}
 \end{align*}
 
-Let us talk about photons for a moment. A photon has a mass of zero, an typically has a low momentum, so the propagator is quite large. In a weak interaction the propagator is much smaller. If the mass of with $W$ boson is large, the propagator will always be small. What if $k_w=0$? Propagator will be $\frac{1}{m_w^2}$, and that is a big as it gets. The most likely thing is to emit a low momentum W, which costs an amplitude of $\frac{1}{m_w^2}$. Amplitude for emitting $W$ and converting to electron plus neutrino is $\frac{g_w^2}{m_w^2}$: weak interactions are made weak because the mass of the W is large--about 100 protons! Probability is $\frac{g_w^4}{m_w^4}$.
+Let us talk about photons for a moment. A photon has a mass of zero, an typically has a low momentum, so the propagator is quite large. In a weak interaction the propagator is much smaller. If the mass of with $W$ boson is large, the propagator will always be small. What if $k_w=0$? Propagator will be $\frac{1}{m_w^2}$, and that is as big as it gets. The most likely thing is to emit a low momentum W, which costs an amplitude of $\frac{1}{m_w^2}$. Amplitude for emitting $W$ and converting to electron plus neutrino is $\frac{g_w^2}{m_w^2}$: weak interactions are made weak because the mass of the W is large--about 100 protons! Probability is $\frac{g_w^4}{m_w^4}$.
+
+A student asked a question about the suppression of  deuteron decay. A thing can't happen unless there is enough energy for it to happen. Rates are controlled by three things:
+\begin{enumerate}
+	\item coupling constants;
+	\item masses of particles in intermediate states (via propagators);
+	\item available energy: this has to do with the initial start and the final state. The thing can happen with low probability if the available energy is just enough.
+\end{enumerate}
+
+The energy of the final state is the same as that of the initial state, so there really isn't enough energy to create the $W$ boson: the $W$ is produced virtually. According to the rules of quantum mechanics, conservation of energy can be violated briefly, as long as the time is short enough. If the apparent violation is $\Delta E$, it can only last for time $\Delta T$, where $\Delta T \Delta E<\hslash$. 
  
- W is a virtual particle. From the energy-time uncertainty principle, energy conservation can be violated briefly: $\delta T \delta E<\hslash$. There is not enough energy in neutron to make a real W, but it can briefly make a virtual W, which must be destroyed again.\footnote{I have left out a discussion where Prof Susskind shows that trying to watch the virtual particle is doomed to failure: briefly the photon we send in to observe the phenomenon, need very high energy, as the phenomenon is very short lived; the high energy photon upsets the apple-cart.}
+ \begin{figure}[H]
+ 	\caption[Another illustration of a brief violation of conservation of energy]{Another illustration of a brief violation of conservation of energy: potential energy of an $\alpha$ particle in a nucleus. It doesn't have enough energy to escape over the hump, but it can tunnel out. It has zero kinetic energy before and after tunneling, but it appears to have a large potential energy in between. If you tried to measure in between, you would destroy the phenomenon of tunneling. How long does tunneling take? Again $\Delta T \Delta E<\hslash$}
+ 	\includegraphics[width=0.8\textwidth]{particles2-6-pe}
+ \end{figure}
  
- We can verify (\ref{eq:Delta}) by creating high momentum particles in an accelerator.
+The same thing happens in Figure \ref{fig:2-6-W1}. There is not enough energy in neutron to make a real $W$, but it can briefly make a virtual $W$, which cannot last very long-- $\Delta T \Delta E<\hslash$. One way to get rid of the $E$ is to reabsorb it, as in Figure \ref{fig:absorption:W:boson}, which is what happens most of the time. Emitting the electron and neutrino, as in Figure \ref{fig:2-6-W1}, is rare.
  
- Figure \ref{fig:absorption:W:boson} shows a different fate for a W-boson: re-absorption.
+We can verify the propagator for real $W$ (\ref{eq:Delta}) by creating high momentum particles in an accelerator.
+ 
+NB: since the probability of a weak interaction is low, the lifetimes are high, which can be traced to the anomalous mass of the $W$. 
  
  Figure \ref{fig:2-6-photons} shows a process where photons \emph{can} interact, via the creation of a virtual pair. Since probability is proportional to the inverse of the energy required, we don't see it in the lab. Same thing happens with W bosons.
  

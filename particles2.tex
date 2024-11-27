@@ -1444,7 +1444,10 @@ What about the coupling constants that are involved in Figure \ref{fig:uB:dB}?
 \end{table}
 
 
-Leptons almost act as if they are a fourth colour--Table \ref{tab:QCD:rows}. Notice the difference in charges between $u$ and $d$ is one unit, which matches the difference between $\nu_e$ and $e$; the $W$ only cares about the difference between charges. (Incidentally, we don't know the masses of neutrinos very well.)
+Leptons almost act as if they are a fourth colour--Table \ref{tab:QCD:rows}. Notice the difference in charges between $u$ and $d$ is one unit, which matches the difference between $\nu_e$ and $e$; the $W$ only cares about the difference between charges. This also true for $c$ and $s$, and for $\mu$ and $\nu_{\mu}$. \begin{enumerate}
+	\item The muon is no longer called the ''mu meson''.
+	\item Incidentally, we don't know the masses of neutrinos very well.
+\end{enumerate}
 
 \begin{figure}[H]
 	\caption[Possible fates of a W boson]{Possible fates of a W boson. Let $g_W$ denote the coupling constant for the emission of a $W$, so the amplitude of \subref{fig:decay:neutron} is $g_w^2$--except we to take the propagator into account.}
@@ -1484,35 +1487,44 @@ Leptons almost act as if they are a fourth colour--Table \ref{tab:QCD:rows}. Not
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.4\textwidth}
-		\caption{A different fate: re-absorption}\label{fig:absorption:W:boson}
-		\feynmandiagram[vertical = f1 to i1]{
-			i1[particle=$p$] -- [fermion]  a --[fermion,edge label=$n$] b--[fermion] f1 [particle=$p$],
-			a -- [boson, half right,edge label'=$W^+$] b, 
-		};
+		\caption{A different fate for the $W$: re-absorption. The neutron emits a virtual $W^+$, changes to a proton, then reabsorbs the $W^+$ and changes back. Similarly a proton emits a virtual $W^-$.}\label{fig:absorption:W:boson}
 		\feynmandiagram[vertical = f1 to i1]{
 			i1[particle=$n$] -- [fermion]  a --[fermion,edge label=$p$] b--[fermion] f1 [particle=$n$],
 			a -- [boson, half right,edge label'=$W^-$] b, 
 		};
+		\feynmandiagram[vertical = f1 to i1]{
+			i1[particle=$p$] -- [fermion]  a --[fermion,edge label=$n$] b--[fermion] f1 [particle=$p$],
+			a -- [boson, half right,edge label'=$W^+$] b, 
+		};
 	\end{subfigure}
 \end{figure}
 
-The Propagator is a function of proper time between two points: $\Delta(ds)$. Figure \ref{fig:2-6-propagator} shows the dependence. For small distance $\Delta(ds)$ is independent of mass, but the values differ  after a certain distance: $\Delta(ds)$ falls sharply to zero.
+What is the probability of the process depicted in  Figure \ref{fig:decay:neutron}? This is a Feynman diagram, which consists of vertices and propagators. Propagators are the element that has to do with motion from one point to another. In this case the propagator runs from the point where the $W^+$ boson is emitted, to the point where the electron and neutrino are created. This process has two main ingredients that we can isolate. We have two factors of $g_W$, multiplied by the propagator $\Delta(ds)$, so $g_W^2\Delta(ds)$.
+
+The Propagator is a function of proper time between two points: $\Delta(ds)$, and it depends crucially on the mass. Figure \ref{fig:2-6-propagator} shows the dependence. For small distance $\Delta(ds)$ is independent of mass, but the values differ after a certain distance: $\Delta(ds)$ falls sharply to zero.
 
 \begin{figure}[H]
-	\caption[Propagator $\Delta(ds)$ as a function of distance.]{Propagator $\Delta(ds)$ as a function of distance. Black line is for zero mass, $\frac{1}{ds}$, red for non-zero.}\label{fig:2-6-propagator}
+	\caption[Propagator $\Delta(ds)$ as a function of distance.]{Propagator $\Delta(ds)$ as a function of distance. Black line is for zero mass ($\propto \frac{1}{ds^2}$), $\frac{1}{ds}$, red for non-zero, which decreases exponentially fast.}\label{fig:2-6-propagator}
 	\includegraphics[width=0.8\textwidth]{2-6-propagator}
 \end{figure}
 
-Where does $\Delta$ decrease suddenly? Choose units where $c=\hslash=1$:
+There interesting question is where $\Delta$ decreases suddenly? At what point does the propgator realize that it is carrying too much mass? The answer comes from dimenional analysis. Choose units where $c=\hslash=1$:
 \begin{align*}
 	[m] =& [E]\\
 	=& [L^{-1}]\\
-	=& [P]\\
-	distance \propto & \frac{1}{L} \text{, in fact:}\\
-	distance \approxeq & \frac{\hslash}{mc} \text {, Compton wavelength}
+	=& [P]
+\end{align*}
+Now, from Heisenberg's uncertainty principle, distance has inverse dimensions to momentum
+\begin{align*}
+[L]=& [\frac{1}{m}]\\
+distance \propto & \frac{1}{L} \text{, in fact:}\\
+distance \approxeq & \frac{\hslash}{mc} \text {, Compton wavelength}
 \end{align*}
 
-$\Delta^2(ds)$ is the probability particle can get that far.
+So at a distance inversely proportional to $m$, the propagator dies down.
+$\Delta^2(ds)$ is the probability particle can get that far. There is a sudden turn off of the probability, which is controlled by the mass of the particle.
+
+Usually what is prescribed in an experiment is not the position of the two particles, but the momenta.
 
 In an experiment, we know the momenta. We can think of propagator as function of position, or momentum--using Fourier transform:
 \begin{align*}

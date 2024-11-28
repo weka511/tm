@@ -1577,17 +1577,29 @@ Figure \ref{fig:2-6-photons} shows a process where photons \emph{can} interact, 
 	 \end{center}
  \end{figure}
 
-The up quark and down quark go into each other by emitting a W. What group are we talking about? SU(2). But SU(2) has 3 generators; we are missing a gauge boson, $Z$. [Check that this is discussed in a later lecture.]
+REtrning to Figure \ref{fig:uB:dB}, the up quark and down quark go into each other by emitting a W. What group are we talking about? $SU(2)$. But $SU(2)$ has 3 generators, and they are in one to one correspondence with the gauge bosons; this is what happened with gluons--there are 8 generators for $SU(3)$ and 8 gluons. For $u$ and $d$ we have only two gauge bosons, but we are trying to postulate $SU(2)$; clearly we are missing a gauge boson. There is a third member of the family: $W^+$, $W^-$, and $Z$.
 
 \subsection{Spontaneous symmetry breaking}
+
+There is a famous illustration where a bunch of people sit down at a dinner table where there is on fork between each pair of places. Nobody can decide which fork to take, until one makes a small movement to the right... So we had symmetry, plus an instability.
  
- One example is a bunch of spins that can either be up or down, e.g. classical coins, with an interaction so that energy is less if spins parallel. There are two states of lowest energy, both ground states. Figure \ref{fig:2-6-sponteneous} shows how one spin can break symmetry. This is not the same as explicit symmetry breaking--having a bias, where H has different energy from T.
+One example is a bunch of spins that can either be up or down, e.g. classical coins, with an interaction so that energy is less if spins parallel. There are two states of lowest energy, both ground states. Figure \ref{fig:2-6-sponteneous} shows how one spin can break symmetry. This is not the same as explicit symmetry breaking--having a bias, where H has different energy from T.
  
- Spontaneous symmetry breaking is deficient from explicit symmetry breaking, as the former can introduce domain walls.
+ Spontaneous symmetry breaking is different from explicit symmetry breaking, as the former can introduce domain walls.
  \begin{figure}[H]
  	\begin{center}
  		\caption[Spontaneous symmetry breaking]{We have one coin, a long way from the other, in known state. This introduces a slight difference between two aligned states: it becomes expensive to add a Tail.}\label{fig:2-6-sponteneous}
- 		\includegraphics[width=0.8\textwidth]{2-6-sponteneous}
+ 		\begin{tikzpicture}
+ 			\foreach \x in {0,1,2,3,4}
+ 			\foreach \y in {0,1,2,3,4}
+ 			{
+ 				\draw (\x,\y) circle (0.3cm);
+ 			}
+ 			\draw (6,6) circle (0.3cm);
+ 			\fill (0,3) node {\textbf{H}};
+ 			\fill (1,3) node {\textbf{T}};
+ 			\fill (6,6) node {\textbf{H}};
+ 		\end{tikzpicture}
  	\end{center}
  \end{figure}
 

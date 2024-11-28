@@ -1577,7 +1577,7 @@ Figure \ref{fig:2-6-photons} shows a process where photons \emph{can} interact, 
 	 \end{center}
  \end{figure}
 
-REtrning to Figure \ref{fig:uB:dB}, the up quark and down quark go into each other by emitting a W. What group are we talking about? $SU(2)$. But $SU(2)$ has 3 generators, and they are in one to one correspondence with the gauge bosons; this is what happened with gluons--there are 8 generators for $SU(3)$ and 8 gluons. For $u$ and $d$ we have only two gauge bosons, but we are trying to postulate $SU(2)$; clearly we are missing a gauge boson. There is a third member of the family: $W^+$, $W^-$, and $Z$.
+Returning to Figure \ref{fig:uB:dB}, the up quark and down quark go into each other by emitting a W. What group are we talking about? $SU(2)$. But $SU(2)$ has 3 generators, and they are in one to one correspondence with the gauge bosons; this is what happened with gluons--there are 8 generators for $SU(3)$ and 8 gluons. For $u$ and $d$ we have only two gauge bosons, but we are trying to postulate $SU(2)$; clearly we are missing a gauge boson. There is a third member of the family: $W^+$, $W^-$, and $Z$.
 
 \subsection{Spontaneous symmetry breaking}
 
@@ -1654,19 +1654,62 @@ Since $V$ is completely symmetric, there will be two ground states. Why can't sy
 	\begin{subfigure}[t]{0.45\textwidth}
 		\vskip 0pt
 		\caption{Possible spontaneous symmetry breaking: two ground states. This is not a continuous symmetry, as we can't interpolate between minima.}\label{fig:2-7-V}
-		\includegraphics[width=0.8\textwidth]{2-7-V}
+		\begin{tikzpicture}
+			\begin{axis}[
+				ticks=none,
+				axis x line=none,
+				axis y line=none,
+				]
+				\addplot [
+				domain=-3:3, 
+				samples=100, 
+				color=black,
+				]
+				{x^4 - 5*x^2 -40};
+				\node[above,black] at (450,0) {\phi=f};
+				\node[above,black] at (150,0) {\phi=-f};
+			\end{axis}
+		\end{tikzpicture}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
 		\vskip 0pt
 		\caption{Potential without spontaneous symmetry breaking: only one ground state}\label{fig:2-7-V-simple}
-		\includegraphics[width=0.8\textwidth]{2-7-V-simple}
+		\begin{tikzpicture}
+			\begin{axis}[
+				ticks=none,
+				axis x line=none,
+				axis y line=none,
+				]
+				\addplot [
+				domain=-3:3, 
+				samples=100, 
+				color=black,
+				]
+				{x^2};
+				
+			\end{axis}
+		\end{tikzpicture}
 	\end{subfigure}
-	\hfill
+	
 	\begin{subfigure}[t]{0.9\textwidth}
 		\begin{center}
 			\caption{Domain wall for potential of Figure \ref{fig:2-7-V}}\label{fig:2-7-V-domain-wall}
-			\includegraphics[width=0.8\textwidth]{2-7-V-domain-wall}
+			\begin{tikzpicture}
+				\begin{axis}[
+					ticks=none,
+					axis x line=none,
+					axis y line=none,
+					]
+					\addplot [
+					domain=-20:20, 
+					samples=100, 
+					color=black,
+					]
+					{1/(1+pow(2,-x))};
+					
+				\end{axis}
+			\end{tikzpicture}
 		\end{center}
 	\end{subfigure}
 \end{figure}

@@ -1585,9 +1585,9 @@ There is a famous illustration where a bunch of people sit down at a dinner tabl
  
 One example is a bunch of spins that can either be up or down, e.g. classical coins, with an interaction so that energy is less if spins parallel. There are two states of lowest energy, both ground states. Figure \ref{fig:2-6-sponteneous} shows how one spin can break symmetry. This is not the same as explicit symmetry breaking--having a bias, where H has different energy from T.
  
- Spontaneous symmetry breaking is different from explicit symmetry breaking, as the former can introduce domain walls.
- \begin{figure}[H]
- 	\begin{center}
+
+\begin{figure}[H]
+	\begin{center}
  		\caption[Spontaneous symmetry breaking]{We have one coin, a long way from the other, in known state. This introduces a slight difference between two aligned states: it becomes expensive to add a Tail.}\label{fig:2-6-sponteneous}
  		\begin{tikzpicture}
  			\foreach \x in {0,1,2,3,4}
@@ -1601,8 +1601,25 @@ One example is a bunch of spins that can either be up or down, e.g. classical co
  			\fill (6,6) node {\textbf{H}};
  		\end{tikzpicture}
  	\end{center}
- \end{figure}
+\end{figure}
 
+\begin{figure}[H]
+	\caption[Domain Walls]{Spontaneous symmetry breaking is different from explicit symmetry breaking, as the former can introduce domain walls. In this case the left hand column is clamped to H, the right hand to T}
+	\begin{tikzpicture}
+		\foreach \x in {0,1,2,3,4,5,6,7,8,9,10}
+		\foreach \y in {0,1,2,3,4,5,6,7,8,9,10}
+		{
+			\draw (\x,\y) circle (0.3cm);
+		}
+		\foreach \x in {0,1,2,3,4}
+		\foreach \y in {0,1,2,3,4,5,6,7,8,9,10}
+		\fill (\x,\y) node {\textbf{H}};
+		\foreach \x in {5,6,7,8,9,10}	
+		\foreach \y in {0,1,2,3,4,5,6,7,8,9,10}
+		\fill (\x,\y) node {\textbf{T}};
+		\draw[dashed] (4.5,0) -- (4.5,10);
+	\end{tikzpicture}
+\end{figure}
 Spontaneous symmetry breaking has an instability that can let the system go one way or another.
 
 \section{Spontaneous symmetry breaking and Goldstone bosons}

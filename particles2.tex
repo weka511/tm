@@ -45,7 +45,7 @@
 \usepackage{glossaries-extra}
 
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
-
+\newcommand{\Lagr}{\mathscr{L}}
 \newtheorem{thm}{Theorem}
 \newtheorem{defn}[thm]{Definition}
 \newtheorem{cor}[thm]{Corollary}
@@ -1636,7 +1636,7 @@ We have to understand them if we want to know what is going on.
 In the last lecture we considered a system of spins that pointed up or down.
 There is no fundamental asymmetry between up and down. Two up spins have the same energy as two downs; and an up and a down has the same energy as a down and an up. Because it is energetically favourable for them to be parallel, the spins should be all up or all down. The direction can be controlled by one spin very far away that is frozen. We have symmetry, but it is broken spontaneously; it may take a finite time to propagate.
 
-Compare with explicit symmetry breaking, e.g. a magnetic field that is pointed up. Now energy will be lower for one direction. One location after another will align with the external field.
+Compare with explicit symmetry breaking, e.g. a magnetic field that is pointed up. Now energy will be lower for one direction. One location after another will align with the external field.\footnote{During the discussion LS mentioned that a neutron has a magnetic field, even though it has no charge.}
 
 What if we find aligned system, how do we know whether or not it is spontaneous? Domain walls: set one boundary to one direction, other to the other, and see what happens. If there is bias, then our change should not propagate in very far. If spontaneous we expect a domain wall to emerge.
 
@@ -1645,6 +1645,7 @@ We can imagine a real scalar field, $\Phi$, which behaves the same way. It has a
 \begin{align*}
 	\mathcal{L} =& \frac{1}{2} \partial_\mu \Phi \partial^\mu \Phi - V(\Phi) \numberthis \label{eq:spontaneous:symmetry:L}
 \end{align*}
+
 where V has the form of Figure \ref{fig:2-7-V}.
 
 Since $V$ is completely symmetric, there will be two ground states. Why can't system jump from $-f$ to $f$? A jump would make $\frac{\partial \Phi}{\partial x}$ very large. Figure \ref{fig:2-7-V-simple} shows a different potential, which does not lead to spontaneous symmetry breaking. Figure \ref{fig:2-7-V-domain-wall} shows how we can force a domain wall for Figure \ref{fig:2-7-V}, but not Figure \ref{fig:2-7-V-simple} (If temperature high there is lots of random fluctuation; domains appear when system cooled.).
@@ -1666,8 +1667,8 @@ Since $V$ is completely symmetric, there will be two ground states. Why can't sy
 				color=black,
 				]
 				{x^4 - 5*x^2 -40};
-				\node[above,black] at (450,0) {\phi=f};
-				\node[above,black] at (150,0) {\phi=-f};
+				\node[above,black] at (450,0) {\Phi=f};
+				\node[above,black] at (150,0) {\Phi=-f};
 			\end{axis}
 		\end{tikzpicture}
 	\end{subfigure}

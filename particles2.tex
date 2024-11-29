@@ -45,7 +45,6 @@
 \usepackage{glossaries-extra}
 
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
-\newcommand{\Lagr}{\mathscr{L}}
 \newtheorem{thm}{Theorem}
 \newtheorem{defn}[thm]{Definition}
 \newtheorem{cor}[thm]{Corollary}
@@ -1640,15 +1639,13 @@ Compare with explicit symmetry breaking, e.g. a magnetic field that is pointed u
 
 What if we find aligned system, how do we know whether or not it is spontaneous? Domain walls: set one boundary to one direction, other to the other, and see what happens. If there is bias, then our change should not propagate in very far. If spontaneous we expect a domain wall to emerge.
 
-We can imagine a real scalar field, $\Phi$, which behaves the same way. It has a Lagrangian:
+We can think of a field theory that has very similar behaviour. Imagine a real valued field, $\Phi$, with only one component, which can take on any real value in $[-\infty,+\infty]$. Its dynamics is controlled by a Lagrangian:
 
 \begin{align*}
 	\mathcal{L} =& \frac{1}{2} \partial_\mu \Phi \partial^\mu \Phi - V(\Phi) \numberthis \label{eq:spontaneous:symmetry:L}
 \end{align*}
 
-where V has the form of Figure \ref{fig:2-7-V}.
-
-Since $V$ is completely symmetric, there will be two ground states. Why can't system jump from $-f$ to $f$? A jump would make $\frac{\partial \Phi}{\partial x}$ very large. Figure \ref{fig:2-7-V-simple} shows a different potential, which does not lead to spontaneous symmetry breaking. Figure \ref{fig:2-7-V-domain-wall} shows how we can force a domain wall for Figure \ref{fig:2-7-V}, but not Figure \ref{fig:2-7-V-simple} (If temperature high there is lots of random fluctuation; domains appear when system cooled.).
+where V has the form of Figure \ref{fig:2-7-V}. It is completely symmetric under $\Phi\rightarrow-\Phi$, so there will be two ground states. Why can't system jump from $-f$ to $f$? A jump would make $\frac{\partial \Phi}{\partial x}$ very large. Figure \ref{fig:2-7-V-simple} shows a different potential, which does not lead to spontaneous symmetry breaking. Figure \ref{fig:2-7-V-domain-wall} shows how we can force a domain wall for Figure \ref{fig:2-7-V}, but not Figure \ref{fig:2-7-V-simple} (If temperature high there is lots of random fluctuation; domains appear when system cooled.).
 
 \begin{figure}[H]
 	\caption[$V(\Phi)$ with and without spontaneous symmetry breaking]{Potential for (\ref{eq:spontaneous:symmetry:L}), with and without spontaneous symmetry breaking}
@@ -1695,7 +1692,7 @@ Since $V$ is completely symmetric, there will be two ground states. Why can't sy
 	
 	\begin{subfigure}[t]{0.9\textwidth}
 		\begin{center}
-			\caption{Domain wall for potential of Figure \ref{fig:2-7-V}}\label{fig:2-7-V-domain-wall}
+			\caption{Using the potential of Figure \ref{fig:2-7-V}, if the value of $\Phi$ is clamped to $-f$ at one value of $x$, and to $f$ at another $x$ to the right, a domain wall will be formed. The derivative $\frac{\partial \Phi}{\partial x}$ will be unavoidably large near the wall.}\label{fig:2-7-V-domain-wall}
 			\begin{tikzpicture}
 				\begin{axis}[
 					ticks=none,
@@ -1708,7 +1705,9 @@ Since $V$ is completely symmetric, there will be two ground states. Why can't sy
 					color=black,
 					]
 					{1/(1+pow(2,-x))};
-					
+					\node[above,black] at (0,0) {\Phi=-f};
+					\node[above,black] at (400,900) {\Phi=f};
+					\draw[dashed] (200,0)--(200,1000) node[above]{$$};		
 				\end{axis}
 			\end{tikzpicture}
 		\end{center}

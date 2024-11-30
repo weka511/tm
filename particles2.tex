@@ -1645,8 +1645,8 @@ We can think of a field theory that has very similar behaviour. Imagine a real v
 	\mathcal{L} =& \frac{1}{2} \partial_\mu \Phi \partial^\mu \Phi - V(\Phi) \numberthis \label{eq:spontaneous:symmetry:L}
 \end{align*}
 
-where V has the form of Figure \ref{fig:2-7-V}. It is completely symmetric under $\Phi\rightarrow-\Phi$, so there will be two ground states. Why can't system jump from $-f$ to $f$? A jump would make $\frac{\partial \Phi}{\partial x}$ very large. Figure \ref{fig:2-7-V-simple} shows a different potential, which does not lead to spontaneous symmetry breaking. Figure \ref{fig:2-7-V-domain-wall} shows how we can force a domain wall for Figure \ref{fig:2-7-V}, but not Figure \ref{fig:2-7-V-simple} (If temperature high there is lots of random fluctuation; domains appear when system cooled.).
-
+where V has the form of Figure \ref{fig:2-7-V}. It is completely symmetric under $\Phi\rightarrow-\Phi$, so there will be two ground states. Why can't system jump from $-f$ to $f$? A jump would make $\frac{\partial \Phi}{\partial x}$ very large. Figure \ref{fig:2-7-V-simple} shows a different potential, which does not lead to spontaneous symmetry breaking. Figure \ref{fig:2-7-V-domain-wall} shows how we can force a domain wall for Figure \ref{fig:2-7-V}, but not Figure \ref{fig:2-7-V-simple} (If temperature high there is lots of random fluctuation; domains appear when system cooled).
+Figure \ref{fig:2-7-V-broken} illustrates breaking the symmetry of the two minima by introducing an asymmetry in the potential, hence in the Lagrangian.
 \begin{figure}[H]
 	\caption[$V(\Phi)$ with and without spontaneous symmetry breaking]{Potential for (\ref{eq:spontaneous:symmetry:L}), with and without spontaneous symmetry breaking}
 	\begin{subfigure}[t]{0.45\textwidth}
@@ -1690,7 +1690,7 @@ where V has the form of Figure \ref{fig:2-7-V}. It is completely symmetric under
 		\end{tikzpicture}
 	\end{subfigure}
 	
-	\begin{subfigure}[t]{0.9\textwidth}
+	\begin{subfigure}[t]{0.45\textwidth}
 		\begin{center}
 			\caption{Using the potential of Figure \ref{fig:2-7-V}, if the value of $\Phi$ is clamped to $-f$ at one value of $x$, and to $f$ at another $x$ to the right, a domain wall will be formed. The derivative $\frac{\partial \Phi}{\partial x}$ will be unavoidably large near the wall.}\label{fig:2-7-V-domain-wall}
 			\begin{tikzpicture}
@@ -1712,29 +1712,52 @@ where V has the form of Figure \ref{fig:2-7-V}. It is completely symmetric under
 			\end{tikzpicture}
 		\end{center}
 	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{Explicitly breaking the symmetry of Figure \ref{fig:2-7-V}, by making one minimum lower than another; now there is only one ground state.}\label{fig:2-7-V-broken}
+		\begin{tikzpicture}
+			\begin{axis}[
+				ticks=none,
+				axis x line=none,
+				axis y line=none,
+				]
+				\addplot [
+				domain=-3:3, 
+				samples=100, 
+				color=black,
+				]
+				{x^4 - 5*x^2 -2*x - 40};
+			\end{axis}
+		\end{tikzpicture}
+	\end{subfigure}
 \end{figure}
 
-In both cases we have looked at breaking a discrete symmetry. What if we break a continuous symmetry, such as $U(1)$ or $SU(2)$? We will do one example of a continuous symmetry breaking, and the idea of a Goldstone boson (which replaces the idea of domain walls); we'll see how how the Goldstone boson can radically change its nature when the symmetry had to do with gauge bosons. It morphs from spontaneous symmetry breaking into the Higgs phenomenon. We will see how the Higgs mechanism allows the Z-boson to have mass.
-
+In both cases we have looked at breaking a discrete symmetry. What if we break a continuous symmetry, where you can interpolate in continuously whatever configurations there are. $U(1)$ is a continuous symmetry, so are $SU(2)$ and $SU(3)$. You can interpolate configurations using the generators of the group. Real magnets often have continuous symmetries. Not only an you flip a spin, you can rotate a spin. Some ferromagnets not only prefer to be aligned (compared to flipped), but they can be rotated in between. We will do one example of a continuous symmetry breaking, and the idea of a Goldstone boson, which replaces the idea of domain walls; we'll see how how the Goldstone boson can radically change its nature when the symmetry has to do with gauge bosons. It morphs from spontaneous symmetry breaking into the Higgs phenomenon. We will see how the Higgs mechanism provides a mechanism to allow the Z-boson to have mass.
 
 Imagine a complex field, Figure \ref{fig:2-7-complex-phi}\footnote{The $\frac{1}{2}$ is normally omitted from $\mathcal{L}$ for complex fields.}.
+
+\begin{figure}[H]
+	\caption{A complex field (not necessarily an analytic function) $\Phi = \Phi_R + i \Phi_I$}\label{fig:2-7-complex-phi}
+	\begin{tikzpicture}
+		\draw[] (-5,0) -- (5,0) node[right] {$\Phi_R$};
+		\draw[] (0,-5) -- (0,5) node[above] {$\Phi_I$};
+	\end{tikzpicture}
+\end{figure}
+
 \begin{align*}
 	\Phi =& \Phi_R + i \Phi_I \\
 	\Phi^* =& \Phi_R - i \Phi_I\\
 	\mathcal{L} =&  \partial_\mu \Phi^* \partial^\mu \Phi 
 \end{align*}
 
-This is symmetric under U(1):
+This Lagrangian has a symmetru under U(1):
 \begin{align*}
 	\Phi \rightarrow \Phi^\prime=e^{i \theta} \Phi  \numberthis \label{eq:U1:theta}
 \end{align*}
 
 For the time being assume $\theta$ constant--but we will relax this in Section \ref{section:gauge:invariance}.
 
-\begin{figure}[H]
-	\caption{A complex field (not necessarily an analytic function)}\label{fig:2-7-complex-phi}
-	\includegraphics[width=0.8\textwidth]{2-7-complex-phi}
-\end{figure}
+
 
 Let's add a potential that shares this symmetry. We will focus on two kinds of potentials: one of them spontaneously breaks the symmetry, the other doesn't. We define a Lagrangian that is symmetrical about rotation in $\Phi$ plane:
 \begin{align*}

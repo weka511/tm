@@ -39,10 +39,13 @@ schwartzchild.ipnb|Use pytearcat to calculate einstein tensor for Schwartzchild 
 File|Description
 ----------------|-------------------------------------------------------------
 audit-images.py|Used to identify unreferenced image files
+broken-symmetry.py|Explore broken symmetry from lecture 7
 Ising.nlogo|Demonstration of Domain walls
 plot-quartic.py|Used to plot Mexican hat for Higgs boson
-tm.wpr|Python project for helper files
 plot_scale.py|Used to plot scale parameter
+template.py| Template for Python programs
+tm.wpr|Python project for helper files
+
 
 ## Proofs to supplement QFT in a Nutshell
 

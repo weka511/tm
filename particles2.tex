@@ -1737,11 +1737,15 @@ In both cases we have looked at breaking a discrete symmetry. What if we break a
 Imagine a complex field, Figure \ref{fig:2-7-complex-phi}\footnote{The $\frac{1}{2}$ is normally omitted from $\mathcal{L}$ for complex fields.}.
 
 \begin{figure}[H]
-	\caption{A complex field (not necessarily an analytic function) $\Phi = \Phi_R + i \Phi_I$}\label{fig:2-7-complex-phi}
+	\begin{center}
+		\caption[A complex field $\Phi = \Phi_R + i \Phi_I$]{A complex field (not necessarily an analytic function) $\Phi = \Phi_R + i \Phi_I$}, illustrating symmetry of Lagrangi under $U(1)$\label{fig:2-7-complex-phi}
 	\begin{tikzpicture}
 		\draw[] (-5,0) -- (5,0) node[right] {$\Phi_R$};
 		\draw[] (0,-5) -- (0,5) node[above] {$\Phi_I$};
+		\draw[dashed] (0,0) -- (1.5,2) node[right] {$\theta$};
+		\draw[->] (1.5,2) arc (0:30:1);
 	\end{tikzpicture}
+	\end{center}
 \end{figure}
 
 \begin{align*}
@@ -1750,42 +1754,40 @@ Imagine a complex field, Figure \ref{fig:2-7-complex-phi}\footnote{The $\frac{1}
 	\mathcal{L} =&  \partial_\mu \Phi^* \partial^\mu \Phi 
 \end{align*}
 
-This Lagrangian has a symmetru under U(1):
+This Lagrangian has a symmetry under U(1):
 \begin{align*}
 	\Phi \rightarrow \Phi^\prime=e^{i \theta} \Phi  \numberthis \label{eq:U1:theta}
 \end{align*}
 
 For the time being assume $\theta$ constant--but we will relax this in Section \ref{section:gauge:invariance}.
 
-
-
 Let's add a potential that shares this symmetry. We will focus on two kinds of potentials: one of them spontaneously breaks the symmetry, the other doesn't. We define a Lagrangian that is symmetrical about rotation in $\Phi$ plane:
 \begin{align*}
-\mathcal{L} =&  \partial_\mu \Phi^* \partial^\mu \Phi -V(\Phi \Phi^*) \text{, where}\\
-V =& \Phi \Phi^* \text{, completely symmetric--\text{, see Figure \ref{fig:2-7-V-quad}}, or} \numberthis \label{eq:symmetric}\\
-V=& -a \Phi \Phi^* + b (\Phi \Phi^*)^2 \text{, see Figure \ref{fig:2-7-V-quartic}} \text{, where $a>0,b>0$}\numberthis \label{eq:breakable:symmetric}
+	\mathcal{L} =&  \partial_\mu \Phi^* \partial^\mu \Phi -V(\Phi \Phi^*) \text{, where either}\\
+	V =& \Phi \Phi^* \text{, completely symmetric--see Figure \ref{fig:2-7-V-quad}, or} \numberthis \label{eq:symmetric}\\
+	V=& -a \Phi \Phi^* + b (\Phi \Phi^*)^2 \text{, where $a>0,b>0$--see Figure \ref{fig:2-7-V-quartic}} \numberthis \label{eq:breakable:symmetric}
 \end{align*}
 
 \begin{itemize}
 	\item At the origin, $\Phi \Phi^*$  is at a minimum. This is the ground state. There is no explicit or spontaneous breaking of symmetry.
-	\item Near the origin, $-a \Phi \Phi^* + b (\Phi \Phi^*)^2$ is at a maximum. There are many ground states around the minimum circle. $\Phi$ wants to move away from zero, but not too far. It also doesn't want $\partial_\mu \Phi^* \partial^\mu \Phi$ to get too big, so we expect field to bunch \emph{somewhere} on minimum.
+	\item Near the origin, $-a \Phi \Phi^* + b (\Phi \Phi^*)^2$ is at a maximum: the field wants to move away from the origin. There are many ground states around the minimum circle, all of the same energy. $\Phi$ wants to move away from zero, but not too far. It also doesn't want $\partial_\mu \Phi^* \partial^\mu \Phi$ to get too big, so we expect field to bunch \emph{somewhere} on minimum.
 \end{itemize}
 
 Are there domain walls? Figure \ref{fig:2-7-V-quartic-domain-wall} shows an attempt to check this. Note that we don't get an abrupt transition, as we need to keep $\partial_\mu \Phi^* \partial^\mu \Phi$ small.
 
 \begin{figure}[H]
-	\caption{Potentials}\label{fig:s-7-potentials}
+	\caption{Potentials symmetric under $U(1)$}\label{fig:s-7-potentials}
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{ $V=\Phi \Phi^*$-- Minimum at origin.}\label{fig:2-7-V-quad}
+		\caption{ $V=\Phi \Phi^*$-- Minimum at origin. As we move away the $U(1)$ symmetry ensures that the values doesn't depend on angle. There is no spontaneous symmetry breaking.}\label{fig:2-7-V-quad}
 		\includegraphics[width=\textwidth]{2-7-V-quad}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{$V=-a \Phi \Phi^* + b (\Phi \Phi^*)^2$--Minimum on circle of radius $f$.}\label{fig:2-7-V-quartic}
+		\caption{$V=-a \Phi \Phi^* + b (\Phi \Phi^*)^2$--Minimum on lies on a circle. We will call the radius $f$, in the complex plane.}\label{fig:2-7-V-quartic}
 		\includegraphics[width=\textwidth]{2-7-V-quartic}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Clamp values to try to produce domain wall}\label{fig:2-7-V-quartic-domain-wall-ab}
+		\caption{Clamp values to try to produce domain wall. Left hand side is set to value $a$, right to $b$--Figure (\subref{fig:2-7-V-quartic-domain-wall}). Is value unform until we get to some specified value? No: that has the effect of making the gradient terms large. It is cheaper to have the values vary gradually, which we not an option for a reflection symmetry.}\label{fig:2-7-V-quartic-domain-wall-ab}
 		\includegraphics[width=\textwidth]{2-7-V-quartic-domain-wall-ab}
 	\end{subfigure}
 	\hfill
@@ -1798,7 +1800,7 @@ Are there domain walls? Figure \ref{fig:2-7-V-quartic-domain-wall} shows an atte
 It turn out that the field varies smoothly between $a$ and $b$.
 
 \begin{thm}[Mexican Hat Potential]
-	Angle varies linearly
+	The way to go from $a$ to $b$ with the minimum energy is to have the angle vary linearly from one side to the other.
 \end{thm}
 \begin{proof}
 	TBP -- use calculus of variations.

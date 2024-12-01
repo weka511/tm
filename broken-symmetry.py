@@ -26,7 +26,7 @@ def parse_argumeents():
     parser = ArgumentParser (__doc__)
     parser.add_argument('--m',type=int,default=100,help='Number of spins')
     parser.add_argument('--n',type=int,default=1000,help='Number of iterations for fixed temperature')
-    parser.add_argument('--N',type=int,default=1,help='Number of steps in temperature')
+    parser.add_argument('--N',type=int,default=25,help='Number of steps in temperature')
     parser.add_argument('--seed',type=int,default=None,help='Seed for random number generator')
     parser.add_argument('--clamped',default=False, action='store_true',help='Clamp endsS')
     parser.add_argument('--T',type=float, default=0.001,help='Starting value of temperature in Bolzmann units')
@@ -46,10 +46,16 @@ if __name__=='__main__':
     S = rng.choice([-1,1], size=args.m)
     t = args.T
     fig = figure(figsize=(10,10))
-    ax = fig.add_subplot(1,1,1)
+    K1 = int(np.sqrt(args.N + 1))
+    K2 = args.N //K1
+    while K1 * K2 < args.N + 1:
+        K2 +=1
+
+    ax = fig.add_subplot(K1,K2,1)
+    ax.scatter(range(len(S)),S,c=S,s=1)
     for i in range(args.N):
         E = sum(get_energy(S,j) for j in range(len(S)))
-        print (E)
+
         for _ in range(args.n):
             low = 1 if args.clamped else 0
             high = len(S) - low
@@ -66,10 +72,10 @@ if __name__=='__main__':
                 if x < threshold:
                     S[j] *= -1
                     E += (E1-E0)
-        print (S)
-
+        ax = fig.add_subplot(K1,K2,i+2)
+        ax.scatter(range(len(S)),S,c=S,s=1)
         t /= (1+args.cool)
-    ax.plot(S)
+
     elapsed = time() - start
     minutes = int(elapsed/60)
     seconds = elapsed - 60*minutes

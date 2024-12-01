@@ -22,10 +22,17 @@ import numpy as np
 from matplotlib.pyplot import figure, show
 from time import time
 
+def parse_argumeents():
+    parser = ArgumentParser(__doc__)
+    parser.add_argument('--seed',type=int,default=None,help='Seed for random number generator')
+    return parser.parse_args()
+
 if __name__=='__main__':
     start  = time()
     parser = ArgumentParser(__doc__)
-    args = parser.parse_args()
+    parser.add_argument('--seed',type=int,default=None,help='Seed for random number generator')
+    args = parse_argumeents()
+    rng = np.random.default_rng(args.seed)
 
     elapsed = time() - start
     minutes = int(elapsed/60)

@@ -28,6 +28,7 @@ sm.tex|[Statistical Mechanics](http://theoreticalminimum.com/courses/statistical
 tm.bib|Bibliography for Theoretical Minimum
 
 ## Exercises
+
 File|Description
 ----------------|-------------------------------------------------------------
 gr-exercises.tex|Worked examples from [General Relativity](http://theoreticalminimum.com/courses/general-relativity/2012/fall)
@@ -43,7 +44,7 @@ broken-symmetry.py|Explore broken symmetry from lecture 7
 Ising.nlogo|Demonstration of Domain walls
 plot-quartic.py|Used to plot Mexican hat for Higgs boson
 plot_scale.py|Used to plot scale parameter
-template.py| Template for Python programs
+template.py|Template for Python programs
 tm.wpr|Python project for helper files
 
 

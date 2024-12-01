@@ -20,6 +20,7 @@
 from argparse import ArgumentParser
 import numpy as np
 from matplotlib.pyplot import figure, show
+from os.path import basename, join, splitext
 from time import time
 
 def parse_argumeents():
@@ -31,6 +32,7 @@ def parse_argumeents():
     parser.add_argument('--clamped',default=False, action='store_true',help='Clamp endsS')
     parser.add_argument('--T',type=float, default=0.001,help='Starting value of temperature in Bolzmann units')
     parser.add_argument('-cool',type=float, default=0.01,help='rate of cooling')
+    parser.add_argument('--figs', default = './figs')
     return parser.parse_args()
 
 def get_energy(S,i,flipped=False, clamped=False):
@@ -39,6 +41,9 @@ def get_energy(S,i,flipped=False, clamped=False):
     right = (+1 if clamped else 0) if i>= args.m-1 else S[i+1]
     return -1 *(left + right) * state
 
+def get_file_name():
+    return join(args.figs,basename(splitext(__file__)[0]))
+
 if __name__=='__main__':
     start  = time()
     args = parse_argumeents()
@@ -46,16 +51,15 @@ if __name__=='__main__':
     S = rng.choice([-1,1], size=args.m)
     t = args.T
     fig = figure(figsize=(10,10))
-    K1 = int(np.sqrt(args.N + 1))
-    K2 = args.N //K1
-    while K1 * K2 < args.N + 1:
-        K2 +=1
 
-    ax = fig.add_subplot(K1,K2,1)
-    ax.scatter(range(len(S)),S,c=S,s=1)
+    ax = fig.add_subplot(1,1,1)
+    Es = []
+    Ts = []
+
     for i in range(args.N):
         E = sum(get_energy(S,j) for j in range(len(S)))
-
+        Es.append(E)
+        Ts.append(t)
         for _ in range(args.n):
             low = 1 if args.clamped else 0
             high = len(S) - low
@@ -72,10 +76,14 @@ if __name__=='__main__':
                 if x < threshold:
                     S[j] *= -1
                     E += (E1-E0)
-        ax = fig.add_subplot(K1,K2,i+2)
-        ax.scatter(range(len(S)),S,c=S,s=1)
-        t /= (1+args.cool)
 
+        t /= (1+args.cool)
+    ax.scatter(Ts,Es,s=1,c='b')
+    ax.set_xlim(ax.get_xlim()[::-1])
+    ax.set_xlabel('t')
+    ax.set_ylabel('E')
+
+    fig.savefig(get_file_name())
     elapsed = time() - start
     minutes = int(elapsed/60)
     seconds = elapsed - 60*minutes

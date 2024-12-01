@@ -20,12 +20,17 @@
 from argparse import ArgumentParser
 import numpy as np
 from matplotlib.pyplot import figure, show
+from os.path import basename, join, splitext
 from time import time
 
 def parse_argumeents():
     parser = ArgumentParser(__doc__)
     parser.add_argument('--seed',type=int,default=None,help='Seed for random number generator')
+    parser.add_argument('--figs', default = './figs')
     return parser.parse_args()
+
+def get_file_name():
+    return join(args.figs,basename(splitext(__file__)[0]))
 
 if __name__=='__main__':
     start  = time()
@@ -34,6 +39,7 @@ if __name__=='__main__':
     args = parse_argumeents()
     rng = np.random.default_rng(args.seed)
 
+    fig.savefig(get_file_name())
     elapsed = time() - start
     minutes = int(elapsed/60)
     seconds = elapsed - 60*minutes

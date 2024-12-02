@@ -53,7 +53,7 @@ def parse_argumeents():
 def get_energy(S,i,flipped=False, clamped=False):
     state = - S[i] if flipped else S[i]
     left = (-1 if clamped else 0) if i==0 else S[i-1]
-    right = (+1 if clamped else 0) if i>= len(S)-1 else S[i+1]
+    right = (+1 if clamped else 0) if i == len(S)-1 else S[i+1]
     return -1 *(left + right) * state
 
 def get_file_name():
@@ -76,9 +76,7 @@ if __name__=='__main__':
         Es.append(E)
         Ts.append(t)
         for _ in range(args.n):
-            low = 1 if args.clamped else 0
-            high = len(S) - low
-            j = rng.integers(low,high=high)
+            j = rng.integers(0,high=len(S))
             E0 = get_energy(S,j,clamped=args.clamped)
             E1 = get_energy(S,j,flipped=True,clamped=args.clamped)
             if E1 < E0:

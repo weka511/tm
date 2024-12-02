@@ -15,7 +15,15 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-''' Explore broken symmetry from lecture 7'''
+'''
+Explore broken symmetry from lecture 7.
+
+The model consists of a row of spins, each of which can be up or down. The
+program repeatedly samples spins, and considers the effect of flipping one spin. If
+this would decrease the energy, flip the spin. Otherwise the spin may be flipped with
+probability exp(-deltaE/T), where deltaT is increase in energy, T is temperature.
+The temperature cools as the simulation progresses.
+'''
 
 from argparse import ArgumentParser
 import numpy as np
@@ -24,21 +32,28 @@ from os.path import basename, join, splitext
 from time import time
 
 def parse_argumeents():
+    m0 = 100
+    n0 = 1000
+    N0 = 25
+    T0 = 0.001
+    cooling_rate0 = 0.01
     parser = ArgumentParser (__doc__)
-    parser.add_argument('--m',type=int,default=100,help='Number of spins')
-    parser.add_argument('--n',type=int,default=1000,help='Number of iterations for fixed temperature')
-    parser.add_argument('--N',type=int,default=25,help='Number of steps in temperature')
+    parser.add_argument('--m',type=int,default=m0,help=f'Number of spins [{m0}]')
+    parser.add_argument('--n',type=int,default=n0,help=f'Number of iterations before temperature cools [{n0}]')
+    parser.add_argument('--N',type=int,default=N0,help=f'Number of cooling steps, each with reduced temperature [{N0}]')
     parser.add_argument('--seed',type=int,default=None,help='Seed for random number generator')
-    parser.add_argument('--clamped',default=False, action='store_true',help='Clamp endsS')
-    parser.add_argument('--T',type=float, default=0.001,help='Starting value of temperature in Bolzmann units')
-    parser.add_argument('-cool',type=float, default=0.01,help='rate of cooling')
-    parser.add_argument('--figs', default = './figs')
+    parser.add_argument('--clamped',default=False, action='store_true',
+                        help='If set, ends of row will be clamped, one up, the other down')
+    parser.add_argument('--T',type=float, default=T0,help=f'Starting value of temperature in Bolzmann units [{T0}]')
+    parser.add_argument('-cool',type=float, default=cooling_rate0,help=f'rate of cooling [{cooling_rate0}]')
+    parser.add_argument('--figs', default = './figs',help='Path for storing plots')
+    parser.add_argument('--show',default=False, action='store_true',help='If set plot will be shown')
     return parser.parse_args()
 
 def get_energy(S,i,flipped=False, clamped=False):
     state = - S[i] if flipped else S[i]
     left = (-1 if clamped else 0) if i==0 else S[i-1]
-    right = (+1 if clamped else 0) if i>= args.m-1 else S[i+1]
+    right = (+1 if clamped else 0) if i>= len(S)-1 else S[i+1]
     return -1 *(left + right) * state
 
 def get_file_name():
@@ -52,7 +67,7 @@ if __name__=='__main__':
     t = args.T
     fig = figure(figsize=(10,10))
 
-    ax = fig.add_subplot(1,1,1)
+    ax1 = fig.add_subplot(2,1,1)
     Es = []
     Ts = []
 
@@ -78,14 +93,18 @@ if __name__=='__main__':
                     E += (E1-E0)
 
         t /= (1+args.cool)
-    ax.scatter(Ts,Es,s=1,c='b')
-    ax.set_xlim(ax.get_xlim()[::-1])
-    ax.set_xlabel('t')
-    ax.set_ylabel('E')
+    ax1.scatter(Ts,Es,s=1,c='b')
+    ax1.set_xlim(ax1.get_xlim()[::-1])
+    ax1.set_xlabel('t')
+    ax1.set_ylabel('E')
+
+    ax2 = fig.add_subplot(2,1,2)
+    ax2.scatter(range(len(S)),S,s=1,c='b')
 
     fig.savefig(get_file_name())
     elapsed = time() - start
     minutes = int(elapsed/60)
     seconds = elapsed - 60*minutes
     print (f'Elapsed Time {minutes} m {seconds:.2f} s')
-    show()
+    if args.show:
+        show()

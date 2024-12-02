@@ -19,10 +19,10 @@
 Explore broken symmetry from lecture 7.
 
 The model consists of a row of spins, each of which can be up or down. The
-program repeatedly samples spins, and considers the effect of flipping one spin. If
-this would decrease the energy, flip the spin. Otherwise the spin may be flipped with
-probability exp(-deltaE/T), where deltaT is increase in energy, T is temperature.
-The temperature cools as the simulation progresses.
+program repeatedly samples spins, and considers the effect of flipping one spin.
+If this would decrease the energy, flip the spin. Otherwise the spin may be
+flipped with probability exp(-deltaE/T), where deltaT is increase in energy,
+T is temperature. The temperature cools as the simulation progresses.
 '''
 
 from argparse import ArgumentParser

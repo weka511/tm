@@ -45,7 +45,7 @@ def parse_argumeents():
     parser.add_argument('--clamped',default=False, action='store_true',
                         help='If set, ends of row will be clamped, one up, the other down')
     parser.add_argument('--T',type=float, default=T0,help=f'Starting value of temperature in Bolzmann units [{T0}]')
-    parser.add_argument('-cool',type=float, default=cooling_rate0,help=f'rate of cooling [{cooling_rate0}]')
+    parser.add_argument('--cool',type=float, default=cooling_rate0,help=f'rate of cooling [{cooling_rate0}]')
     parser.add_argument('--figs', default = './figs',help='Path for storing plots')
     parser.add_argument('--show',default=False, action='store_true',help='If set plot will be shown')
     return parser.parse_args()

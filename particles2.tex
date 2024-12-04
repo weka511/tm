@@ -1869,16 +1869,16 @@ So this is not a symmetry: if $V=V(\Phi^*\Phi)$, the Lagrangian is not the same 
 	A symmetry which depends on position is called a gauge symmetry.
 \end{defn}
 
-When we make a transformation that varies from place to place it costs energy.
+When we make a transformation that varies from place to place it costs energy: we are picking up some extra gradient.
 
 Can we do something to cancel $\frac{\partial \theta}{\partial x}$? If so, why would be do this? \emph{It turns out all interesting symmetries are associated with gauge bosons.}
 
-Add a 4-vector of fields. (In electrodynamics this would be the vector potential, $A_\mu$: $A_0$ is electric potential, and $\nabla \times A_i$ is the magnetic field.) How does this new field transform under symmetry--$A \rightarrow A^\prime$? The following turns out to work.
+Add a 4-vector of fields. (In electrodynamics this would be the vector potential, $A_\mu$: $A_0$ is electric potential, and $\nabla \times A_i$ is the magnetic field.) How does this new field transform under symmetry--$A \rightarrow A^\prime$? The following turns out to work\footnote{LS originally used $+$ sign, later changed to $-$.}.
 \begin{align*}
 	A^\prime_\mu =& A_\mu - \partial_\mu \theta \numberthis \label{eq:gauge:field}
 \end{align*}
 
-We will modify the Lagrangian by replacing ordinary derivatives with covariant derivatives\footnote{Not General Relativistic covariant derivatives}.
+We also need to modify the Lagrangian by replacing ordinary derivatives with covariant derivatives\footnote{Not General Relativistic covariant derivatives!}.
 \begin{align*}
 	D_\mu \phi \triangleq& \partial_\mu \phi + i A_\mu \phi \text{, This would not make sense if $\phi$ were real.} \numberthis \label{eq:covariant:derivative}\\
 	D_\mu \phi^* =& \partial_\mu \phi^* - i A_\mu \phi^*
@@ -1889,15 +1889,18 @@ We want to show that we can construct an invariant Lagrangian using covariant de
 	D_\mu \phi^\prime =& \partial_\mu \phi^\prime + i A_\mu^\prime \phi^\prime\\
 	=& e^{i\theta}\big(\partial_\mu \phi +\cancel{i\partial_\mu \theta \phi} \big) + i \big(A_\mu -\cancel{ \partial_\mu \theta} \big) e^{i \theta(x)} \phi\\
 	=& e^{i\theta} \big( \partial_\mu \phi +i A_\mu \phi \big)\\
-	=& (D_\mu \phi)^\prime \text{, or, suppressing indices}\\
+	=& (D_\mu \phi)^\prime e^{i\theta} \text{, or, suppressing indices}\\
 	D \phi^\prime =&  D \phi  e^{i \theta} \text{, similarly}\\
 	D {\phi^\prime}^* =& D {\phi}^*  e^{-i \theta} \text{, and}\\
 	D \phi^\prime D {\phi^\prime}^*=& D \phi D {\phi}^* \text{, so the Lagrangian is invariant}
 \end{align*}
 
-Now this wouldn't be an interesting vector potential without some dynamics.
+So the $A$ field was an invention to make the Lagrangian be gauge invariant, but we had to invent a transformation to make it work.
 
-The energy of an Electromagnetic field is given by $E^2 + B^2$, and the Lagrangian $E^2-B^2$.
+We are missing something in the Lagrangian
+Now this wouldn't be an interesting vector potential without some dynamics for the vector potential .
+
+The energy of an Electromagnetic field is given by $E^2 + B^2$, and the Lagrangian is $E^2-B^2$. Let's write it in terms of the electromagnetic tensor $F_{\mu,\nu}$.
 
 \begin{align*} 
 	F_{\mu,\nu} =& \partial_\mu A_\nu - \partial_\nu A_\mu \text{, see (\ref{eq:field:tensor})}\\
@@ -1914,7 +1917,7 @@ We can construct a completely gauge invariant dynamics of the electromagnetic fi
 
 So we can promote $U(1)$ to a local symmetry, at the cost of an extra field, which can be included in a Maxwell style Lagrangian--Definition \ref{defn:gauge:field}.
 
-What can't we add?
+What can't we add? (and remain gauge invariant)
 
 \begin{itemize}
 	\item Potentials that depend on something other than $\Phi^*\Phi$ 

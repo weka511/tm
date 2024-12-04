@@ -1897,17 +1897,20 @@ We want to show that we can construct an invariant Lagrangian using covariant de
 
 So the $A$ field was an invention to make the Lagrangian be gauge invariant, but we had to invent a transformation to make it work.
 
-We are missing something in the Lagrangian: this wouldn't be an interesting vector potential without some dynamics for the vector potential .
+We are missing something in the Lagrangian: this wouldn't be an interesting vector potential without some dynamics for the vector potential. Now the vector potential is really the thing with which you create the electric and magnetic fields\footnote{This is the first link I have found (in the lectures) between $A$ as electromagnetic potential, and the gauge field $A$}.
 
 The energy of an Electromagnetic field is given by $E^2 + B^2$, and the Lagrangian is $E^2-B^2$. Let's write it in terms of the electromagnetic tensor $F_{\mu,\nu}$.
-
 \begin{align*} 
 	F_{\mu,\nu} =& \partial_\mu A_\nu - \partial_\nu A_\mu \text{, see (\ref{eq:field:tensor})}\\
-	\mathcal{L} =& F_{\mu,\nu} F^{\mu,\nu} \text{. Is $F_{\mu,\nu}$ gauge invariant? }\\
+	\mathcal{L} =& F_{\mu,\nu} F^{\mu,\nu} 
+\end{align*}
+Is $F_{\mu,\nu}$ gauge invariant?
+\begin{align*}
 	F_{\mu,\nu}^\prime =&\partial_\mu A_\nu^\prime - \partial_\nu A_\mu^\prime\\
 	=& \partial_\mu A_\nu - \cancel{\partial_\mu \partial_\nu \theta}-\partial_\nu A_\mu + \cancel{\partial_\nu \partial_\mu \theta}\\
-	=& 	F_{\mu,\nu} \text{. So $F$, and hence the Lagrangian, is gauge invariant!}
+	=& 	F_{\mu,\nu}
 \end{align*}
+So $F$ is gauge invariant, hence the Lagrangian is too!
 
 We can construct a completely gauge invariant dynamics of the electromagnetic field coupled to a field whose quanta are charged particles.
 \begin{align*}

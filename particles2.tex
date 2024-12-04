@@ -43,7 +43,7 @@
 \usepackage{colortbl}
 \usepackage[toc,nonumberlist]{glossaries}
 \usepackage{glossaries-extra}
-
+\usepackage{mathtools}
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 \newtheorem{thm}{Theorem}
 \newtheorem{defn}[thm]{Definition}
@@ -1787,7 +1787,7 @@ Are there domain walls? Figure \ref{fig:2-7-V-quartic-domain-wall} shows an atte
 		\includegraphics[width=\textwidth]{2-7-V-quartic}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Clamp values to try to produce domain wall. Left hand side is set to value $a$, right to $b$--Figure (\subref{fig:2-7-V-quartic-domain-wall}). Is value unform until we get to some specified value? No: that has the effect of making the gradient terms large. It is cheaper to have the values vary gradually, which we not an option for a reflection symmetry.}\label{fig:2-7-V-quartic-domain-wall-ab}
+		\caption{Clamp values to try to produce domain wall. Left hand side is set to value $a$, right to $b$--Figure (\subref{fig:2-7-V-quartic-domain-wall}). Is value unform until we get to some specified value? No: that has the effect of making the gradient terms large. It is cheaper to have the values vary gradually, which was not an option for a reflection symmetry. But now we have the option of going from $a$ to $b$, staying in the track, so it never costs us any potential energy.}\label{fig:2-7-V-quartic-domain-wall-ab}
 		\includegraphics[width=\textwidth]{2-7-V-quartic-domain-wall-ab}
 	\end{subfigure}
 	\hfill
@@ -1797,7 +1797,7 @@ Are there domain walls? Figure \ref{fig:2-7-V-quartic-domain-wall} shows an atte
 	\end{subfigure}
 \end{figure}
 
-It turn out that the field varies smoothly between $a$ and $b$.
+Effectively there is a field in this system  for which it does not cost much energy to to vary smoothly from one place to another. The only energy cost is in having a gradient. A field with that character where there is only gradient enrgy is massless.
 
 \begin{thm}[Mexican Hat Potential]
 	The way to go from $a$ to $b$ with the minimum energy is to have the angle vary linearly from one side to the other.
@@ -1821,19 +1821,22 @@ Returning to \ref{fig:2-7-V-quartic}, let's try to identify why there is a massl
 
 \begin{align*}
 	\mathcal{L} =& \partial \Phi \partial \Phi^* - V(\Phi^*\Phi) \text{. Now, writing}\\
-	\Phi =& \rho e^{i \alpha} \text{, we find} \\
-	\partial \Phi =& e^{i \alpha} \big[\partial \rho + i \rho \partial \alpha\big]\\
+	\Phi =& \rho e^{i \alpha}
+\end{align*}
+Where $\rho$ and $\alpha$ are fields;  $\alpha$, but not $\rho$, varies along the track of least energy. We will rewrite the Lagrangian in terms of $\rho$ and $\alpha$.
+
+\begin{align*}
+	\partial \Phi =& e^{i \alpha} \big[\partial \rho + i \rho \partial \alpha\big] \\
 	\partial \Phi^* =& e^{-i \alpha} \big[\partial \rho - i \rho \partial \alpha\big]\\
 	\mathcal{L} =& (\partial \rho)^2 + \rho^2  (\partial \alpha)^2 - V(\rho) \text{, independent of $\alpha$, which is a symmetry.} 
 \end{align*}
-
-If field stays in track, and oscillates very slowly, then it doesn't pay to change $\rho$; it is effectively a constant, $f$.
+If field stays in track, and oscillates very slowly, then it doesn't pay to change $\rho$. In some approximation, where we don't excite any motion away from the track, we can think of $\rho$ as a constant, $f$.
 
 \begin{align*}
-	\mathcal{L} =& (\partial \rho)^2 + f^2(\partial \alpha)^2   - V(\rho)
+	\mathcal{L} =& (\partial \rho)^2 + \underbrace{f^2(\partial \alpha)^2 }_{\mathclap{\substack{\text{This looks like the Lagrangian of a}\\ \text{ field with no potential at all}}}}  - V(\rho)
 \end{align*}
 
-We can absorb $f$ into $\alpha$: it behaves like Lagrangian of massless field
+We can absorb $f$ into $\alpha$: it behaves like the Lagrangian of a massless field. If all you are allowed to do is vary the angles, the excitation behave loka a massless field.
 
 Choose ground-state at some point in groove. We can oscillate in 2 directions, $\alpha$ and $\rho$: the radial oscillation is similar to the way it would oscillate if there were a $\Phi^*\Phi$ term corresponding to a mass.
 

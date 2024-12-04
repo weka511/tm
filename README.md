@@ -40,7 +40,7 @@ schwartzchild.ipnb|Use pytearcat to calculate einstein tensor for Schwartzchild 
 File|Description
 ----------------|-------------------------------------------------------------
 audit-images.py|Used to identify unreferenced image files
-broken-symmetry.py|Explore broken symmetry from lecture 7
+ising1.py|Explore broken symmetry from lecture 7, using a 1 dimensional Ising model
 Ising.nlogo|Demonstration of Domain walls
 plot-quartic.py|Used to plot Mexican hat for Higgs boson
 plot_scale.py|Used to plot scale parameter

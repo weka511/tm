@@ -16,7 +16,7 @@
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 '''
-Explore broken symmetry from lecture 7.
+Explore broken symmetry from lecture 7, using a 1 dimensional Ising model.
 
 The model consists of a row of spins, each of which can be up or down. The
 program repeatedly samples spins, and considers the effect of flipping one spin.

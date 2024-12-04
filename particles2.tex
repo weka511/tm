@@ -1854,7 +1854,7 @@ This is also associated with $U(1)$ symmetry. In an earlier lecture, $U(1)$ symm
 \begin{align*}
 	\phi^\prime =& e^{i \theta(x)} \phi \\
 	{\phi^\prime}^* =& e^{-i \theta(x)} \phi^*\\
-	\partial \phi^\prime =& \big[\partial \phi + i \phi \frac{\partial \theta}{\partial x}\big] e^{i \theta(x)}\\
+	\partial \phi^\prime =& \big[\partial \phi + i \phi \frac{\partial \theta}{\partial x}\big] e^{i \theta(x)} \numberthis \label{eq:phi:dash:deriv}\\
 	\partial (\phi^\prime)^* =& \big[\partial \phi^* - i \phi^* \frac{\partial \theta}{\partial x}\big] e^{-i \theta(x)}
 \end{align*}
 
@@ -1863,7 +1863,7 @@ Is $\partial \phi^\prime \partial {\phi^\prime}^*$ the same as $\partial \phi \p
 \partial \phi^\prime \partial {\phi^\prime}^* =&\partial \phi \partial \phi^* + i[\phi \partial \phi^* -\phi^* \partial \phi]\frac{\partial \theta}{\partial x} + \phi^* \phi (\frac{\partial \theta}{\partial x})^2
 \end{align*}
 
-So this is not a symmetry: if $V=V(\Phi^*\Phi)$, the Lagrangian is not the same in the transformed variable.  The problem is that $\partial \phi^\prime$ and $\partial {\phi^\prime}^*$ do not cancel. Can we do anything to restore the symmetry? Yes, if we introduce new fields, and these will be the gauge boson fields (e.g. electromagnetic field.)
+So this is not a symmetry: if $V=V(\Phi^*\Phi)$, the Lagrangian is not the same in the transformed variable.  The problem is that $\partial \phi^\prime$ and $\partial {\phi^\prime}^*$ do not cancel. Can we do anything to restore the symmetry? Yes, if we introduce new fields; these will be the gauge boson fields (e.g. electromagnetic field.)
 
 \begin{defn}[Gauge symmetry]
 	A symmetry which depends on position is called a gauge symmetry.
@@ -1884,12 +1884,12 @@ We also need to modify the Lagrangian by replacing ordinary derivatives with cov
 	D_\mu \phi^* =& \partial_\mu \phi^* - i A_\mu \phi^*
 \end{align*}
 
-We want to show that we can construct an invariant Lagrangian using covariant derivatives.
+We want to show that we can construct an invariant Lagrangian using covariant derivatives. Applying the definition \eqref{eq:covariant:derivative} to the transformed field:
 \begin{align*}
-	D_\mu \phi^\prime =& \partial_\mu \phi^\prime + i A_\mu^\prime \phi^\prime\\
+	D_\mu \phi^\prime =& \partial_\mu \phi^\prime + i A_\mu^\prime \phi^\prime\text{, then using \eqref{eq:phi:dash:deriv} and  \eqref{eq:gauge:field}}\\
 	=& e^{i\theta}\big(\partial_\mu \phi +\cancel{i\partial_\mu \theta \phi} \big) + i \big(A_\mu -\cancel{ \partial_\mu \theta} \big) e^{i \theta(x)} \phi\\
 	=& e^{i\theta} \big( \partial_\mu \phi +i A_\mu \phi \big)\\
-	=& (D_\mu \phi)^\prime e^{i\theta} \text{, or, suppressing indices}\\
+	=& (D_\mu \phi)^\prime e^{i\theta} \text{, from \eqref{eq:covariant:derivative} again; or, suppressing indices}\\
 	D \phi^\prime =&  D \phi  e^{i \theta} \text{, similarly}\\
 	D {\phi^\prime}^* =& D {\phi}^*  e^{-i \theta} \text{, and}\\
 	D \phi^\prime D {\phi^\prime}^*=& D \phi D {\phi}^* \text{, so the Lagrangian is invariant}
@@ -1897,8 +1897,7 @@ We want to show that we can construct an invariant Lagrangian using covariant de
 
 So the $A$ field was an invention to make the Lagrangian be gauge invariant, but we had to invent a transformation to make it work.
 
-We are missing something in the Lagrangian
-Now this wouldn't be an interesting vector potential without some dynamics for the vector potential .
+We are missing something in the Lagrangian: this wouldn't be an interesting vector potential without some dynamics for the vector potential .
 
 The energy of an Electromagnetic field is given by $E^2 + B^2$, and the Lagrangian is $E^2-B^2$. Let's write it in terms of the electromagnetic tensor $F_{\mu,\nu}$.
 

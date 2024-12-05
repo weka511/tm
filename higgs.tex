@@ -271,11 +271,22 @@ Figure \ref{fig:2-a3-higgs-decay} depicts the decay of the Higgs: heavy particle
 \begin{figure}[H]
 	\begin{center}
 		\caption{Higgs decaying: probability $\propto$ mass of particles produced}\label{fig:2-a3-higgs-decay}
-		\feynmandiagram[horizontal = a to b] {
-			a [particle=\(H\)] --[boson] b,
-			b -- [fermion] f1 [particle = \(e^{-}\;q\)],
-			b -- [fermion] f2 [particle = \(e^{+}\;\bar{q}\)],
-		};
+		\begin{subfigure}[t]{0.45\textwidth}
+			\feynmandiagram[horizontal = a to b] {
+				a [particle=\(H\)] --[boson] b,
+				b -- [fermion] f1 [particle = \(e^{-}\)],
+				b -- [fermion] f2 [particle = \(e^{+}\)],
+			};
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[t]{0.45\textwidth}
+			\feynmandiagram[horizontal = a to b] {
+				a [particle=\(H\)] --[boson] b,
+				b -- [fermion] f1 [particle = \(q\)],
+				b -- [fermion] f2 [particle = \(\bar{q}\)],
+			};
+		\end{subfigure}
+
 	\end{center}
 \end{figure}
 

@@ -1623,6 +1623,38 @@ Spontaneous symmetry breaking has an instability that can let the system go one 
 
 \section{Spontaneous symmetry breaking and Goldstone bosons}
 
+(There is a question on the Youtube channel, whether there is a missing section of the lecture, dealing with the $Z$ boson. Figure \ref{fig:z:from:whiteboard} depicts Feynman diagrams that I copied from the whiteboard at the start of the video.) 
+
+\begin{figure}[H]
+	\caption[Feynman diagrams of Z boson from whiteboard]{Feynman diagrams of Z boson from whiteboard at the start of the video. These are consistent with the decay modes described in Wikipedia: $Z\rightarrow$ fermion plus its antiparticle.}\label{fig:z:from:whiteboard}
+	\begin{subfigure}[t]{0.2\textwidth}
+		\feynmandiagram[vertical = c to a]{
+			a[particle=\(u\)] --[fermion] b --[fermion] c[particle=\(u\)],
+			b--[boson] d [particle=\(Z\)],
+		};
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.2\textwidth}
+	\feynmandiagram[vertical = c to a]{
+		a[particle=\(d\)] --[fermion] b --[fermion] c[particle=\(d\)],
+		b--[boson] d [particle=\(Z\)],
+	};
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.2\textwidth}
+	\feynmandiagram[vertical = c to a]{
+		a[particle=\(e\)] --[fermion] b --[fermion] c[particle=\(e\)],
+		b--[boson] d [particle=\(Z\)],
+	};
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.2\textwidth}
+	\feynmandiagram[vertical = c to a]{
+		a[particle=\(\nu\)] --[fermion] b --[fermion] c[particle=\(\nu\)],
+		b--[boson] d [particle=\(Z\)],
+	};
+	\end{subfigure}
+\end{figure}
 Our goal is to show how a particle \emph{like} a photon can gain a mass from something called spontaneous symmetry breaking; how it can gain a mass from the Higgs mechanism. There are two important ingredients:
 
 \begin{itemize}
@@ -2068,7 +2100,7 @@ This is also what happens in super-conductance. There are charge bosons, "Cooper
 
 \subsection{Bosons}
 
-The gauge bosons, Z and W, get their mass from the Higgs mechanism. Keep in mind that we aren't really talking about the photon, but ut will be useful to develop the maths as if we were.
+The gauge bosons, Z and W, get their mass from the Higgs mechanism. Keep in mind that we aren't really talking about the photon, but it will be useful to develop the maths as if we were.
 
 There is a dynamics Maxwell's equations:
 \begin{align*}

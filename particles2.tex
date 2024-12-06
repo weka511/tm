@@ -1962,30 +1962,57 @@ Next week we'll look at breaking the $U(1)$ symmetry spontaneously by using a Me
 
 \section{The Higgs field}
 
-\subsection{Spontaneous continuous symmetry breaking}
-The symmetry group of the photon is not spontaneously broken. In this lecture we are going to talk about how it would give the photon a mass \emph{if the symmetry were broken}. This is exactly what happens with the Z and the W. Maybe the photon having no mass is an accident of nature? Maybe it has to do with the absence of an appropriate Higgs field.
+\subsection{The phenomena}
 
-We will talk about how gauge bosons, like the photon, get a mass when symmetry is spontaneously broken.
+There was a question from a student about ''giving mass to the photon'', since the photon, in fact, has no mass.
 
-$U(1)$ is the symmetry that goes with the conservation of charge. Remember that conservation is always connected to a symmetry. $U(1)$ multiplies the field by a phase. We will examine how that spontaneous symmetry breaking of that symmetry induces a mass for the photon.
+The symmetry group of the photon is not spontaneously broken. In this lecture we are going to talk about how it would give the photon a mass \emph{if the symmetry were broken}. This is exactly what happens with the Z and  W bosons. The photon is a little bit simpler; indeed it \emph{might} have had a mass. The fact that it doesn't have a mass is perhaps an accident of nature. Maybe it has to do with the absence of an appropriate Higgs field.
 
-The symmetry of the photon is broken in a superconductor: photons propagate with a mass \emph{in} the superconductor, and lose the mass when they leave. It doesn't happen in a prism, even though velocity is less than $c$.
+We will talk about how gauge bosons like the photon, get a mass when symmetry is spontaneously broken.
+
+$U(1)$ is the symmetry that goes with the conservation of charge. Remember that conservation is always connected to a symmetry. $U(1)$ multiplies the charged field by a phase: it is a kind of rotation in the plane of the complex field. We will see how that spontaneous symmetry breaking of that symmetry induces a mass for the photon.
+
+There is a situation in nature where the photon does get a mass, and the $U(1)$ symmetry is spontaneously broken. The symmetry of the photon is broken in a superconductor: photons propagate with a mass \emph{in} the superconductor, and lose the mass when they leave. It doesn't happen in a prism, even though its velocity is less than $c$: at infinite wavelength its energy is still zero.
+
+The relevant issue is the shape of a certain curve, either energy versus momentum, or frequency versus wave number.
+\begin{align*}
+	E =& \hbar\omega\\
+	p =& \hbar k \text{, and, for a wave in empty space}\\
+	\omega =& ck
+\end{align*}
+The last equations shows that the frequency is zero when the wave number of zero, which means that the energy is zero when the momentum is zero: we call such particles \emph{massless}.
 
 Figure \ref{fig:2-8-massless} shows the relationship between the frequency and wave number: in a prism, $c$ changes away from its value in empty space (wave number changes with constant frequency when $c$ changes). 
 
+For a particle with mass, $E=\sqrt{p^2 c^2 + m^2 c^4}$--Figure \ref{fig:2-8-massive}. Infinite wavelength still has non-zero $E=m$ (infinite wavelength means that the field is absolutely homogeneous. The whole field oscillates. Oscillations of a homogeneous field are what we call mass).
+
 \begin{figure}[H]
-	\caption[Dispersion relations for Massive and Massless particles]{Dispersion relations for Massive and Massless particles. The function $\omega(k)$ is known as the dispersion relation.}
+	\caption[Dispersion relations for Massive and Massless particles]{Dispersion relations for Massive and Massless particles. The function $\omega(k)$ is known as the dispersion relation. The velocity of a wave is $\frac{d\omega}{dk}$}
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Dispersion relation for massless particle. There is no dispersion if linear.}\label{fig:2-8-massless}
-		\includegraphics[width=\textwidth]{2-8-massless}
+		\caption{Dispersion relation for a massless particle. The frequency becomes zero when the wave number is zero. All that happens in a prism is that $c$, and hence $k$, changes, while $\omega$ remains the same.}\label{fig:2-8-massless}
+		\begin{tikzpicture}
+			\draw[] (-0.5,0) -- (5,0) node[right] {$k$};
+			\draw[] (0,-0.5) -- (0,5) node[above] {$\omega$};
+			\draw[] (0,0) -- (4,4) node[right] {$\omega=ck$};
+		\end{tikzpicture}
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{For a massive, $E$ is non-zero when $p=0$. Ws have a non-linear dispersion relation. Different wavelengths propagate with different velocities, so wave disperses.}\label{fig:2-8-massive}
-		\includegraphics[width=\textwidth]{2-8-massive}
+		\caption{For a massive particle, $E$ is non-zero when $p=0$. We have a non-linear dispersion relation. Different wavelengths propagate with different velocities, so wave disperses.}\label{fig:2-8-massive}
+		\begin{tikzpicture}[scale=0.75]
+			\draw[] (-4,0) -- (4,0) node[right] {$p$};
+			\draw[] (0,0) -- (0,4) node[above] {$E$};
+			\draw[scale=1.0, domain=-4:4, smooth, variable=\x] plot ({\x}, {sqrt(2+\x*\x)});
+			\draw[dashed] (0,0) -- (4,4) node[right] {$$};
+			\draw[dashed] (0,0) -- (-4,4) node[right] {$$};
+			\node(m) at (0,1.414) {};
+			\node(O) at (0,0) {};
+			\draw[<->,thick] (O) -- (m) node [pos=0.5,right] {m};
+		\end{tikzpicture}
 	\end{subfigure}
 \end{figure}
 
-For a particle with mass, $E=\sqrt{p^2 c^2 + m^2 c^4}$--Figure \ref{fig:2-8-massive}. Infinite wavelength still has non-zero $E$ (infinite wavelength means that the field is absolutely homogeneous). Whole field oscillates. Oscillations of a homogeneous field are what we call mass.
+
 
 \begin{figure}[H]
 	\caption{Mass is connected with the curvature of potential energy at the equilibrium point}\label{fig:2-8-pe}
@@ -2000,7 +2027,7 @@ Mass is connected with the curvature of potential energy at the equilibrium poin
 \begin{figure}[H]
 	\begin{center}
 		\caption[Mexican Hat potential]{Mexican Hat potential, with an unstable equilibrium at the origin.  The minimum is a circle centred on the origin: we can set a particle vibrating without expending any energy.}\label{fig:mexican-hat}
-		\includegraphics[width=0.6\textwidth]{mexican-hat}
+		\includegraphics[width=\textwidth]{mexican-hat}
 	\end{center}
 \end{figure}
 

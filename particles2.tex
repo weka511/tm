@@ -2043,7 +2043,7 @@ There is a collection of particles in the standard model that cannot have mass u
 
 \subsection{Boson Fields}
 
-The first class that cannot get a mass without spontaneous symmetry breaking are the gauge bosons. We'll start with a field:
+The first class that cannot get a mass without spontaneous symmetry breaking are the analogues of the proton, the gauge bosons. We'll start with a field:
 
 \begin{align*}
 	\Phi =& \Phi_R + i \Phi_I \text{, or}\\
@@ -2052,24 +2052,32 @@ The first class that cannot get a mass without spontaneous symmetry breaking are
 	=& \rho e^{-i \alpha}
 \end{align*}
 
-In Figure \ref{fig:mexican-hat}, $\alpha$ corresponds to angular motion (massless), $\rho$  to radial (massive).
+In Figure \ref{fig:mexican-hat}, $\alpha$ corresponds to angular motion (massless), $\rho$  to radial (massive). $\rho$ gets a mass,  $\alpha$ doesn't; $\rho$ corresponds to the Higgs boson,  $\alpha$ to the Goldstone boson. We'll write the Lagrangian for the field.
 
 \begin{align*}
-	\mathcal{L} =& \partial \Phi^* \partial \Phi - V(\Phi^*\Phi)  \numberthis \label{eq:mexican:LagrangeRI}\\
+	\mathcal{L} =& \partial \Phi^* \partial \Phi \\
+	=&(\partial \Phi_R)^2 + (\partial \Phi_I)^2\\
+	=& (\partial \rho)^2 + \rho^2 (\partial \alpha)^2 
+\end{align*} 
+
+\subsection{Potential Energy}
+We will add in a potential energy that is symmetric under rotations in the $\Phi$ plane, so it has a $U(1)$ symmetry.
+
+\begin{align*}
+	\mathcal{L}	=&(\partial \Phi_R)^2 + (\partial \Phi_I)^2 - V(\Phi^*\Phi)  \numberthis \label{eq:mexican:LagrangeRI}\\
 	=& (\partial \rho)^2 + \rho^2 (\partial \alpha)^2 - V(\rho) \numberthis \label{eq:mexican:Lagrange}
 \end{align*} 
 
-If we take the simplest V, $\rho^2$
+If we take the simplest V, $\rho^2$, \eqref{eq:mexican:LagrangeRI} becomes:
 \begin{align*}
 	\mathcal{L} = (\partial \Phi_R)^2 +  (\partial \Phi_I)^2 -(\Phi_R)^2  -(\Phi_I)^2
 \end{align*}
-which gives two uncoupled oscillations. This representation isn't so useful for Figure \ref{fig:mexican-hat}. In (\ref{eq:mexican:Lagrange}) we have two uncoupled oscillations. $V$ has a minimum at $f$. We let
+which gives two uncoupled oscillations, both with a mass term. This representation isn't so useful for Figure \ref{fig:mexican-hat}. In (\ref{eq:mexican:Lagrange}) we have two uncoupled oscillations. $V$ has a minimum at $f$. We let
 
 \begin{align*}
-	\rho = f + H \text{, the Higgs field}
+	\rho = \underbrace{f}_\text{Minimum energy} + \underbrace{H}_\text{, the Higgs field}
 \end{align*}
-
-We will say that the low energy behaviour of $\rho$ is frozen at $f$, and (\ref{eq:mexican:Lagrange}) becomes:
+The Higgs field is just the displacement of $\rho$ away from its equilibrium. It costs a lot of energy to excite $\rho$ away from its equilibrium, because the potential is rather sharp. To a very good approximation we can say that the low energy behaviour of $\rho$ is frozen at $f$, and (\ref{eq:mexican:Lagrange}) becomes:
 
 \begin{align*}
 	\mathcal{L} =& f^2(\partial \alpha)^2 \text{, at low energy.}\\

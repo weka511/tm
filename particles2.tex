@@ -2018,7 +2018,7 @@ For a particle with mass, $E=\sqrt{p^2 c^2 + m^2 c^4}$--Figure \ref{fig:2-8-mass
 Mass is connected with the curvature of potential energy at the equilibrium point--Figure \ref{fig:2-8-pe}. If we shift system away from the equilibrium point it starts to oscillate, and $\omega \ne 0$ at $k=0$; in fact $\omega = m$. The only way the energy will be zero is if potential energy is flat. If you shift the system along a flat direction, it won't respond, it will just sit there. You can spot a massless particle by it having a flat direction.
 
 \begin{figure}[H]
-	\caption{Mass is connected with the curvature of potential energy at the equilibrium point}\label{fig:2-8-pe}
+	\caption[Mass is connected with the curvature of potential energy]{Mass is connected with the curvature of potential energy at the equilibrium point}\label{fig:2-8-pe}
 	\includegraphics[width=0.8\textwidth]{2-8-pe}
 \end{figure}
 
@@ -2095,13 +2095,14 @@ That is half the story. The other half, which also has to do with varying the ph
 
 A complex number is a means of talking about pairs of numbers. Given two real fields I can assemble them into a single complex field. Don't confuse a complex scalar field with a vector field: we are dealing with different spaces.
 
-The Lagrangian of (\ref{eq:mexican:LagrangeRI})  does not change when we rotate the complex plan in the fictitious field by an constant angle. This is a global symmetry.
+Once you think of a complex scalar field as a pair of components, you might consider whether there are symmetries. The Lagrangian of (\ref{eq:mexican:LagrangeRI}) does not change when we rotate by an constant angle everywhere in space. This is a global symmetry.
 
 We saw in Section \ref{section:gauge:invariance} that it is not a  symmetry to rotate by an angle that varies from point to point:
 \begin{align*}
-	\Phi^\prime (x) = e^{i\theta(x)} \Phi(x) \text{, this adds $\theta$ to $\alpha$}
+	\Phi^\prime (x) = e^{i\theta(x)} \Phi(x) \text{, this adds $\theta(x)$ to $\alpha$}
 \end{align*}
 
+\subsection{Covariant Derivative}
 We saw that can fix this by introducing a vector potential $A_\mu$ and defining the covariant derivative $D$:
 \begin{align*}
 	A^\prime_\mu(x) =& A_\mu(x) + \partial_\mu \theta(x)\\

@@ -70,7 +70,11 @@ The other important idea is that of a field: whatever fills apace and characteri
 \begin{figure}[H]
 	\begin{center}
 		\caption[Fields cost energy]{Fields cost energy: space without a field has zero energy; with an electrical field we have energy. If we give it a push it vibrates. The vibrations are quantized, and the quanta are particles. }\label{fig:higgs-fields-cost-energy}
-		\includegraphics[width=0.6\textwidth]{higgs-fields-cost-energy}
+		\begin{tikzpicture}
+			\draw[] (-2.5,0) -- (2.5,0) node[right] {};
+			\draw[] (0,-0.5) -- (0,6.5) node[above] {$E$};
+			\draw[scale=1.0, domain=-2.5:2.5, smooth, variable=\x] plot ({\x}, {\x*\x});
+		\end{tikzpicture}
 	\end{center}
 \end{figure}
 

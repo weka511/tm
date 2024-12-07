@@ -1986,11 +1986,13 @@ Figure \ref{fig:2-8-massless} shows the relationship between the frequency and w
 
 For a particle with mass, $E=\sqrt{p^2 c^2 + m^2 c^4}$--Figure \ref{fig:2-8-massive}. Infinite wavelength still has non-zero $E=m$ (infinite wavelength means that the field is absolutely homogeneous. The whole field oscillates. Oscillations of a homogeneous field are what we call mass).
 
+\subsection{Dispersion relation}
+
 \begin{figure}[H]
 	\caption[Dispersion relations for Massive and Massless particles]{Dispersion relations for Massive and Massless particles. The function $\omega(k)$ is known as the dispersion relation. The velocity of a wave is $\frac{d\omega}{dk}$}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Dispersion relation for a massless particle. The frequency becomes zero when the wave number is zero. All that happens in a prism is that $c$, and hence $k$, changes, while $\omega$ remains the same.}\label{fig:2-8-massless}
-		\begin{tikzpicture}
+		\begin{tikzpicture}[scale=0.75]
 			\draw[] (-0.5,0) -- (5,0) node[right] {$k$};
 			\draw[] (0,-0.5) -- (0,5) node[above] {$\omega$};
 			\draw[] (0,0) -- (4,4) node[right] {$\omega=ck$};
@@ -1999,7 +2001,7 @@ For a particle with mass, $E=\sqrt{p^2 c^2 + m^2 c^4}$--Figure \ref{fig:2-8-mass
 	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{For a massive particle, $E$ is non-zero when $p=0$. We have a non-linear dispersion relation. Different wavelengths propagate with different velocities, so wave disperses.}\label{fig:2-8-massive}
-		\begin{tikzpicture}[scale=0.75]
+		\begin{tikzpicture}[scale=0.7]
 			\draw[] (-4,0) -- (4,0) node[right] {$p$};
 			\draw[] (0,0) -- (0,4) node[above] {$E$};
 			\draw[scale=1.0, domain=-4:4, smooth, variable=\x] plot ({\x}, {sqrt(2+\x*\x)});
@@ -2013,12 +2015,14 @@ For a particle with mass, $E=\sqrt{p^2 c^2 + m^2 c^4}$--Figure \ref{fig:2-8-mass
 \end{figure}
 
 
+Mass is connected with the curvature of potential energy at the equilibrium point--Figure \ref{fig:2-8-pe}. If we shift system away from the equilibrium point it starts to oscillate, and $\omega \ne 0$ at $k=0$; in fact $\omega = m$. The only way the energy will be zero is if potential energy is flat. If you shift the system along a flat direction, it won't respond, it will just sit there. You can spot a massless particle by it having a flat direction.
 
 \begin{figure}[H]
 	\caption{Mass is connected with the curvature of potential energy at the equilibrium point}\label{fig:2-8-pe}
 	\includegraphics[width=0.8\textwidth]{2-8-pe}
 \end{figure}
-Mass is connected with the curvature of potential energy at the equilibrium point--Figure \ref{fig:2-8-pe}. If we shift system away it starts to oscillate, and $\omega \ne 0$ at $k=0$; in fact $\omega = m$. The only way this doesn't happen is if potential energy is flat. You can spot a massless particle by it having a flat direction. In Figure \ref{fig:mexican-hat}, we have a flat direction along dip, but not along radius. We therefore have two kinds of quanta:
+
+In Figure \ref{fig:mexican-hat}, we have a flat direction along dip, but not along radius. We therefore have two kinds of quanta:
 \begin{itemize}
 	\item massive--the Higgs boson;
 	\item massless--the Goldstone boson. There is no massless Goldstone boson in nature, so something happened to it.
@@ -2026,14 +2030,18 @@ Mass is connected with the curvature of potential energy at the equilibrium poin
 
 \begin{figure}[H]
 	\begin{center}
-		\caption[Mexican Hat potential]{Mexican Hat potential, with an unstable equilibrium at the origin.  The minimum is a circle centred on the origin: we can set a particle vibrating without expending any energy.}\label{fig:mexican-hat}
+		\caption[Mexican Hat potential]{Mexican Hat potential, with an unstable equilibrium at the origin.  The minimum is a circle centred on the origin: we can set a particle vibrating without expending any energy. The Higgs boson is associated with motion along the radius, the Goldstone boson with motion along the trough.}\label{fig:mexican-hat}
 		\includegraphics[width=\textwidth]{mexican-hat}
 	\end{center}
 \end{figure}
 
 ''The Goldstone boson got eaten by the gauge boson, resulting in giving the Higgs boson a mass.''--this is the phenomenon which we want to do mathematically in this lecture.
 
-There is a collection of particles in the standard model that cannot have mass unless there is spontaneous symmetry breaking. Are there any that don't require spontaneous symmetry breaking? Yes, \emph{they are the particles that we don't see in the laboratory.} The natural mass may be very large, up by the Planck mass, beyond the range of our accelerators. These may be the dark matter particles.
+Question: is the Higgs the only spontaneous symmetry breaking in the Standard Model? Yes, as far as we know. It is a $SU(2)$ symmetry breaking, so more complicated that $U(1)$.
+
+There is a collection of particles in the standard model that cannot have mass unless the symmetry is spontaneously  broken. We will go through them, and see what the reasons are, and see why mass is disallowed without spontaneous symmetry breaking. Then, when the symmetry is spontaneously  broken they get mass, and they become the masses of the standard model particles. What about those that don't require spontaneous symmetry breaking to get a mass? Are there any that don't require spontaneous symmetry breaking to get a mass? Yes, \emph{they are the particles that we don't see in the laboratory.} The natural mass may be very large, up by the Planck mass, beyond the range of our accelerators. These may be the dark matter particles.
+
+\subsection{Boson Fields}
 
 The first class that cannot get a mass without spontaneous symmetry breaking are the gauge bosons. We'll start with a field:
 

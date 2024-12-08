@@ -35,7 +35,7 @@
 \usepackage{gensymb}
 \usepackage{braket}
 \usepackage{bm}
-\usepackage[compat=1.0.0]{tikz-feynman}
+\usepackage[compat=1.1.0]{tikz-feynman}
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage{mathtools}
@@ -2170,7 +2170,7 @@ You have not lost a degree of freedom: the Goldstone boson has become the other 
 
 The gauge bosons, Z and W, get their mass from the Higgs mechanism. Keep in mind that we aren't really talking about the photon, but it will be useful to develop the maths as if we were.
 
-There is a dynamics Maxwell's equations:
+There is a dynamics--Maxwell's equations:
 \begin{align*}
 	F_{\mu\nu}=&\frac{\partial A_\mu}{\partial x^\nu}-\frac{\partial A_\nu}{\partial x^\mu}\\
 	\mathcal{L} =& F_{\mu\nu} F^{\mu\nu} \text{, this has no energy from shift, so it is massless.}
@@ -2201,11 +2201,21 @@ Reflection symmetry is not a good symmetry of elementary particles (1950s). This
 	\caption{The electron is always left handed in n weak interactions}
 	\begin{subfigure}[t]{0.4\textwidth}
 		\caption{Beta decay of a neutron}\label{fig:2-9-beta-decay-neutron}
-		\includegraphics[width=0.8\textwidth]{2-9-beta-decay-neutron}
+		\feynmandiagram[vertical=out1 to in1]{
+			in1[particle=\(n\)]--[fermion] c --[fermion] out1[particle=\(p\)],
+			c --[fermion] out2[particle=\(e^-\)],
+			c --[fermion] out3[particle=\(\bar{\nu}\)],
+			out1--[opacity=0]out2--[opacity=0]out3,
+		};
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}[t]{0.4\textwidth}
 		\caption{W boson converting left handed electron to neutrino}\label{fig:2-9-W-boson}
-		\includegraphics[width=0.8\textwidth]{2-9-W-boson}
+		\feynmandiagram[vertical=out1 to in1]{
+			in1[particle=\(W\)]--[boson] c --[fermion] out1[particle=\(\nu\)],
+			in2[particle=\(e\)]--[fermion]c,
+			in1--[opacity=0.0]in2,
+		};
 	\end{subfigure}
 \end{figure}
 

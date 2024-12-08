@@ -2122,33 +2122,47 @@ That is the simplest gauge theory in a nutshell. All gauge theories have a simil
 
 \subsection{The Higgs phenomenon}
 
-What happens when the symmetry is spontaneously broken? This happens when there is a potential such as Figure \ref{fig:mexican-hat}. What new things happen?
+What happens when the symmetry is spontaneously broken? This happens when there is a potential such as Figure \ref{fig:mexican-hat}, so the ground state breaks the symmetry. What new things happen?
 
-Why is the photon massless? $F$ contains only derivatives: if we shift the potential everywhere there will be no change in energy. So we have two massless particles, the Goldstone boson and the photon. If photon had mass we would have a term proportional to $A^2$. This isn't gauge invariant: $A^2 \rightarrow (A+\partial \theta)^2$. Gauge invariance prohibits mass--or does it? Let's look at this Lagrangian a little more closely.
+In Figure \ref{fig:mexican-hat} the angular direction is a Goldstone boson, no mass; the radial direction, which we called the Higgs boson, has a mass. Furthermore, the photon does not have a mass.
+
+How do we know the photon is massless? $F$ contains only derivatives: if we shift the potential everywhere simultaneously there will be no change in energy. So we have two apparently massless particles, the Goldstone boson and the photon. What would a mass term look like for the photon? The mass term is always something that is quadratic in the field. If photon had mass we would have a term proportional to $A^2$. This isn't gauge invariant: $A^2 \rightarrow (A+\partial \theta)^2$. Gauge invariance prohibits mass--or does it? Let's look at this Lagrangian a little more closely.
 
 \begin{align*}
 	\mathcal{L} =& D\Phi^* D\Phi -V(\Phi^*\Phi) +F^2\\
 	=& \big(\partial \Phi^* - i A \Phi^*\big) \big(\partial \Phi + i A \Phi\big) -V(\Phi^*\Phi) +F^2
 \end{align*}
 
-Let us look at $\Phi = f$, where $f$ is real. The system is stuck at the minimum (unless excited a lot). Then the first term in the Lagrangian is $f^2A^2$, which behaves like a mass $\sqrt{2}f$.
+Let us look at $\Phi = f$, where $f$ is real, Figure \ref{fig:2-8-phi-f}. The most important term is $A^2 \lvert \Phi \rvert^2$. But $\Phi$ is stuck at the minimum, because it takes a lot of energy to shift away from the minimum. So unless we excite a lot of energy, the Lagrangian is dominated by $A^2 \Phi^*\Phi$. Then the first term in the Lagrangian is $f^2A^2=f^2A^2$, which behaves like a mass term for the photon. The mass is $\sqrt{2}f$: this is the energy when you shift the system homogeneously.
+\begin{figure}[H]
+	\begin{center}
+		\caption[$\Phi = f$, where $f$ is real]{$\Phi = f$, where $f$ is real, so the imaginary part is zero}\label{fig:2-8-phi-f}
+		\includegraphics[width=0.6\textwidth]{2-8-phi-f}
+	\end{center}
+\end{figure}
 
-When we spontaneously break symmetry and consider field near $f$, photon behaves as if it had a mass. Real photons don't behave like this, but the ones in this world with the spontaneously broken symmetry do have a mass.
+When we spontaneously break symmetry and consider field near $f$, the effect of one of the terms in the Lagrangian is to make a mass for the photon. Real photons don't behave like this, but the ones \emph{in this world} with the spontaneously broken symmetry do have a mass.
 
-The Goldstone boson disappears. The Goldstone boson is a slowly varying $\alpha$. We can make $\alpha$ vary by gauge transformation, which surely involves the Goldstone boson. But gauge transformation is a symmetry; it doesn't change energy and remains in the ground state. The Goldstone boson disappears, and the massless photon is replaced by a massive one. The Higgs boson now has a mass. That is the Higgs phenomenon.
+The Goldstone boson disappears. The Goldstone boson is a slowly varying $\alpha$. We can make $\alpha$ vary a different way, by gauge transformation: $\alpha\rightarrow\alpha+\theta(x)$; you might think that surely involves a Goldstone boson. But gauge transformation is a symmetry, i.e. it doesn't change energy and the system remains in the ground state. The Goldstone boson disappears, and just becomes a gauge transformation, and the vector potential gains a mass. WE have got rid of two massless bosons, and gained a massive photon. The Higgs boson now has a mass, and it oscillates about the dot in Figure \ref{fig:2-8-phi-f}.
 
+That is the Higgs phenomenon. Just by plugging in the Higgs field, $\Phi=f$, we generate a mass for the photon, which came from the covariant derivative.
 
-Freeze radial variable.
+Can we get rid of $\alpha$? We will freeze the radial variable.
 
 \begin{align*}
 	D \Phi = (\partial \alpha + iA)e^{i\alpha}f\\
 	D \Phi^* = (\partial \alpha - iA)e^{-i\alpha}f
 \end{align*}
 
-We make a gauge transformation to get rid of $\alpha$: we subtract $\theta$. All that is left of the Lagrangian is $F^2+f^2A^2$. The angular degree of freedom disappears, Goldstone is gone, photon gets a mass.
+We make a gauge transformation to get rid of $\alpha$: we set $\theta=-\alpha$. All that is left of the Lagrangian is $F^2+f^2A^2$, and $F$ is gauge invariant. The angular degree of freedom disappears, the Goldstone boson is gone, the photon gets a mass. The Higgs boson, which is a radial oscillation, is still there.
 
-This is also what happens in super-conductance. There are charge bosons, "Cooper pairs" of electrons. Charged boson field is shifted from origin, and gives rise to a broken symmetry.
+This is also the physics of super-conductance. In superconductors there are charged bosons, Cooper pairs of electrons. These are loosely bound pairs of electrons; each pair is a boson. The charged boson field is shifted away from origin by some complicated dynamics, which gives a condensate of charged bosons and it is equivalent to this kind of symmetry breaking. In the superconductor the photon also behaves like a massive particle.
 
+How can a degree of freedom disappear? It didn't disappear.
+
+A massless photon has two polarization states. Every photon carries with it a polarization vector, which is \emph{two} dimensional: the polarization vector never points along the direction of motion. Wow can that be? The photon moves with the speed of light, and can never be brought to rest. Supposing it could? Bring photon to rest. Supposing it has polarization along x-axis, accelerate it again along x-axis. So a massive photon has 3 direction of polarization. Since a massless particle can never be brought to rest, it is perfectly consistent for it to have 3 directions of polarization.
+
+You have not lost a degree of freedom: the Goldstone boson has become the other missing polarization of the photon. We started with 4 degrees of freedom, the two components of the charged scalar, and the two components of polarization of the photon: we are left with 3 components of polarization plus the Higgs boson; the Goldstone boson has turned into the longitudinal component of polarization. 
 
 \section{The Higgs field and fermions}
 

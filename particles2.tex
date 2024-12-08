@@ -81,7 +81,7 @@
 
 In  \cite[Particle Physics 1: Basic Concepts]{susskind2007theoretical} we discussed fields, \gls{gls:quanta} of  fields, the relationship of fields and particles, the relationship of fields and their \gls{gls:quanta} (\glsdesc{gls:quanta}), general properties of particles (having energy, momentum, spin, being a \gls{gls:fermion} or a \gls{gls:boson}). We have discussed wave equations and field equations, and how they can be generated from Lagrangians using an action principle. The quantum mechanical version of  the Lagrangian is a tool for codifying the interaction between particles. Products of terms correspond to vertices, as illustrated in Figure \ref{fig:phi:3:x}.
 \begin{figure}[H]
-	\caption[Products of terms correspond to vertices]{Products of terms correspond to vertices, e.g. $\phi^3(x)$ gives rise to many possible interactions.}\label{fig:phi:3:x}
+	\caption[Products of terms correspond to vertices]{Products of terms correspond to vertices, e.g. $\Phi^3(x)$ gives rise to many possible interactions.}\label{fig:phi:3:x}
 	\includegraphics[width=0.8\textwidth]{phi-3-x}
 \end{figure}
 
@@ -1840,7 +1840,7 @@ Effectively there is a field in this system  for which it does not cost much ene
 
  From the point of view of wave equations, a field with only gradient terms in its energy is massless: this means that its quanta are massless. Also if you imagine a wave with wave number $k$, a field whose wave function is $e^{ikx}$, it has wave number $k$; if $k=0$ makes energy $0$, so the energy of the quanta goes to zero, then very long wavelength field has zero mass. This corresponds to saying that the quanta are massless.
  
-We will look at various potentials, starting with $\frac{m^2 \phi^2}{2}$--  Figure \ref{fig:2-7-V-simple}. It clear that if you created a wave that varied from place to place, no matter how long that wavelength was, as long as there is  variation away from zero, there is going to be an appreciable cost of energy--Figure \ref{fig:2-7-variation-from-zero}. This is a massive particle, as there is energy no matter how long the wavelength is: if there is no $\frac{m^2 \phi^2}{2}$, the only energy comes from gradient, and that is small for a long wavelength particle; $\frac{m^2 \phi^2}{2}$ is called a mass term.
+We will look at various potentials, starting with $\frac{m^2 \Phi^2}{2}$--  Figure \ref{fig:2-7-V-simple}. It clear that if you created a wave that varied from place to place, no matter how long that wavelength was, as long as there is  variation away from zero, there is going to be an appreciable cost of energy--Figure \ref{fig:2-7-variation-from-zero}. This is a massive particle, as there is energy no matter how long the wavelength is: if there is no $\frac{m^2 \Phi^2}{2}$, the only energy comes from gradient, and that is small for a long wavelength particle; $\frac{m^2 \Phi^2}{2}$ is called a mass term.
 
 \begin{figure}[H]
 	\begin{center}
@@ -1884,18 +1884,18 @@ A mass is an energy that corresponds to zero momentum; zero momentum means that 
 This is also associated with $U(1)$ symmetry. In an earlier lecture, $U(1)$ symmetry was associated with electric charge conservation. It doesn't have to be electric charge. We will wind up with gauge bosons with mass. The phpn doesn't have amass, but we cold be thinking about some other boson, like the $Z$ boson which does have mass  Originally introduced for electric charge conservation, but it might be some other charge, e.g. for Z bosons. Earlier we associated $U(1)$ symmetry with conservation of electric charge carried by $\Phi$ For the moment we wall call the charge electric, but it might not be electric, but something with a different character. Charges are always carried by fields that are complex, and the conservation is associated with a symmetry under $U(1)$, multiplication by a phase.  In (\ref{eq:U1:theta}), can $\theta$ vary from one position to another? ($\theta$ is a parameter, not a field.) Let us test by applying to field, and seeing what happens to its Lagrangian (this is always the test for a suspected symmetry).
 
 \begin{align*}
-	\phi^\prime =& e^{i \theta(x)} \phi \\
-	{\phi^\prime}^* =& e^{-i \theta(x)} \phi^*\\
-	\partial \phi^\prime =& \big[\partial \phi + i \phi \frac{\partial \theta}{\partial x}\big] e^{i \theta(x)} \numberthis \label{eq:phi:dash:deriv}\\
-	\partial (\phi^\prime)^* =& \big[\partial \phi^* - i \phi^* \frac{\partial \theta}{\partial x}\big] e^{-i \theta(x)}
+	\Phi^\prime =& e^{i \theta(x)} \Phi \\
+	{\Phi^\prime}^* =& e^{-i \theta(x)} \Phi^*\\
+	\partial \Phi^\prime =& \big[\partial \Phi + i \Phi \frac{\partial \theta}{\partial x}\big] e^{i \theta(x)} \numberthis \label{eq:phi:dash:deriv}\\
+	\partial (\Phi^\prime)^* =& \big[\partial \Phi^* - i \Phi^* \frac{\partial \theta}{\partial x}\big] e^{-i \theta(x)}
 \end{align*}
 
-Is $\partial \phi^\prime \partial {\phi^\prime}^*$ the same as $\partial \phi \partial {\phi^\prime}$?
+Is $\partial \Phi^\prime \partial {\Phi^\prime}^*$ the same as $\partial \Phi \partial {\Phi^\prime}$?
 \begin{align*}
-\partial \phi^\prime \partial {\phi^\prime}^* =&\partial \phi \partial \phi^* + i[\phi \partial \phi^* -\phi^* \partial \phi]\frac{\partial \theta}{\partial x} + \phi^* \phi (\frac{\partial \theta}{\partial x})^2
+\partial \Phi^\prime \partial {\Phi^\prime}^* =&\partial \Phi \partial \Phi^* + i[\Phi \partial \Phi^* -\Phi^* \partial \Phi]\frac{\partial \theta}{\partial x} + \Phi^* \Phi (\frac{\partial \theta}{\partial x})^2
 \end{align*}
 
-So this is not a symmetry: if $V=V(\Phi^*\Phi)$, the Lagrangian is not the same in the transformed variable.  The problem is that $\partial \phi^\prime$ and $\partial {\phi^\prime}^*$ do not cancel. Can we do anything to restore the symmetry? Yes, if we introduce new fields; these will be the gauge boson fields (e.g. electromagnetic field.)
+So this is not a symmetry: if $V=V(\Phi^*\Phi)$, the Lagrangian is not the same in the transformed variable.  The problem is that $\partial \Phi^\prime$ and $\partial {\Phi^\prime}^*$ do not cancel. Can we do anything to restore the symmetry? Yes, if we introduce new fields; these will be the gauge boson fields (e.g. electromagnetic field.)
 
 \begin{defn}[Gauge symmetry]
 	A symmetry which depends on position is called a gauge symmetry.
@@ -1912,19 +1912,19 @@ Add a 4-vector of fields. (In electrodynamics this would be the vector potential
 
 We also need to modify the Lagrangian by replacing ordinary derivatives with covariant derivatives\footnote{Not General Relativistic covariant derivatives!}.
 \begin{align*}
-	D_\mu \phi \triangleq& \partial_\mu \phi + i A_\mu \phi \text{, This would not make sense if $\phi$ were real.} \numberthis \label{eq:covariant:derivative}\\
-	D_\mu \phi^* =& \partial_\mu \phi^* - i A_\mu \phi^*
+	D_\mu \Phi \triangleq& \partial_\mu \Phi + i A_\mu \Phi \text{, This would not make sense if $\Phi$ were real.} \numberthis \label{eq:covariant:derivative}\\
+	D_\mu \Phi^* =& \partial_\mu \Phi^* - i A_\mu \Phi^*
 \end{align*}
 
 We want to show that we can construct an invariant Lagrangian using covariant derivatives. Applying the definition \eqref{eq:covariant:derivative} to the transformed field:
 \begin{align*}
-	D_\mu \phi^\prime =& \partial_\mu \phi^\prime + i A_\mu^\prime \phi^\prime\text{, then using \eqref{eq:phi:dash:deriv} and  \eqref{eq:gauge:field}}\\
-	=& e^{i\theta}\big(\partial_\mu \phi +\cancel{i\partial_\mu \theta \phi} \big) + i \big(A_\mu -\cancel{ \partial_\mu \theta} \big) e^{i \theta(x)} \phi\\
-	=& e^{i\theta} \big( \partial_\mu \phi +i A_\mu \phi \big)\\
-	=& (D_\mu \phi)^\prime e^{i\theta} \text{, from \eqref{eq:covariant:derivative} again; or, suppressing indices}\\
-	D \phi^\prime =&  D \phi  e^{i \theta} \text{, similarly}\\
-	D {\phi^\prime}^* =& D {\phi}^*  e^{-i \theta} \text{, and}\\
-	D \phi^\prime D {\phi^\prime}^*=& D \phi D {\phi}^* \text{, so the Lagrangian is invariant}
+	D_\mu \Phi^\prime =& \partial_\mu \Phi^\prime + i A_\mu^\prime \Phi^\prime\text{, then using \eqref{eq:phi:dash:deriv} and  \eqref{eq:gauge:field}}\\
+	=& e^{i\theta}\big(\partial_\mu \Phi +\cancel{i\partial_\mu \theta \Phi} \big) + i \big(A_\mu -\cancel{ \partial_\mu \theta} \big) e^{i \theta(x)} \Phi\\
+	=& e^{i\theta} \big( \partial_\mu \Phi +i A_\mu \Phi \big)\\
+	=& (D_\mu \Phi)^\prime e^{i\theta} \text{, from \eqref{eq:covariant:derivative} again; or, suppressing indices}\\
+	D \Phi^\prime =&  D \Phi  e^{i \theta} \text{, similarly}\\
+	D {\Phi^\prime}^* =& D {\Phi}^*  e^{-i \theta} \text{, and}\\
+	D \Phi^\prime D {\Phi^\prime}^*=& D \Phi D {\Phi}^* \text{, so the Lagrangian is invariant}
 \end{align*}
 
 So the $A$ field was an invention to make the Lagrangian be gauge invariant, but we had to invent a transformation to make it work.
@@ -1946,7 +1946,7 @@ So $F$ is gauge invariant, hence the Lagrangian is too!
 
 We can construct a completely gauge invariant dynamics of the electromagnetic field coupled to a field whose quanta are charged particles.
 \begin{align*}
-	\mathcal{L} = D_\mu \phi D_\mu \phi^* -V(\phi\phi^*) + F^2
+	\mathcal{L} = D_\mu \Phi D_\mu \Phi^* -V(\Phi\Phi^*) + F^2
 \end{align*}
 
 So we can promote $U(1)$ to a local symmetry, at the cost of an extra field, which can be included in a Maxwell style Lagrangian--Definition \ref{defn:gauge:field}.
@@ -2113,24 +2113,27 @@ We saw that can fix this by introducing a vector potential $A_\mu$ and defining 
 	=& (D_\mu \Phi)^\prime \text{. The operators commute!}
 \end{align*}
 
-$\Phi$ is a charge carrying boson field, and $A_\mu$ is the electromagnetic potential: $F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu$ is gauge invariant. The Lagrangian has the form $D\Phi^* D\Phi -V(\Phi^*\Phi) +F^2$. 
+$\Phi$ is a charge carrying boson field, and $A_\mu$ is the electromagnetic potential: $F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu$ is gauge invariant. The Lagrangian of a charged scalar field has the form:
+\begin{align*}
+	\mathcal{L} =& D\Phi^* D\Phi -V(\Phi^*\Phi) +F^2
+\end{align*} 
 
-All gauge theories have a similar structure to this one.
+That is the simplest gauge theory in a nutshell. All gauge theories have a similar structure to this one.
 
 \subsection{The Higgs phenomenon}
 
-What happens when a potential such as Figure \ref{fig:mexican-hat} breaks the symmetry?
+What happens when the symmetry is spontaneously broken? This happens when there is a potential such as Figure \ref{fig:mexican-hat}. What new things happen?
 
-The $F$ is massless, as it contains only derivatives: it isn't changed by shifting in space. So we have two massless particles, the Goldstone boson and the photon. If photon had mass we have a term proportional to $A^2$. This isn't gauge invariant: $A^2 \rightarrow (A+\partial \theta)^2$. Gauge invariance prohibits mass
+Why is the photon massless? $F$ contains only derivatives: if we shift the potential everywhere there will be no change in energy. So we have two massless particles, the Goldstone boson and the photon. If photon had mass we would have a term proportional to $A^2$. This isn't gauge invariant: $A^2 \rightarrow (A+\partial \theta)^2$. Gauge invariance prohibits mass--or does it? Let's look at this Lagrangian a little more closely.
 
 \begin{align*}
 	\mathcal{L} =& D\Phi^* D\Phi -V(\Phi^*\Phi) +F^2\\
-	=& \big( \Phi^* - i A \Phi^*\big) \big( \Phi + i A \Phi\big) -V(\Phi^*\Phi) +F^2
+	=& \big(\partial \Phi^* - i A \Phi^*\big) \big(\partial \Phi + i A \Phi\big) -V(\Phi^*\Phi) +F^2
 \end{align*}
 
-Let us look at $\Phi = f$. Then the Lagrangian contains a term $f^2A^2$, which behaves like a mass $\sqrt{2}f$.
+Let us look at $\Phi = f$, where $f$ is real. The system is stuck at the minimum (unless excited a lot). Then the first term in the Lagrangian is $f^2A^2$, which behaves like a mass $\sqrt{2}f$.
 
-When we spontaneously break symmetry and consider field near $f$, photon behaves as if it had a mass.
+When we spontaneously break symmetry and consider field near $f$, photon behaves as if it had a mass. Real photons don't behave like this, but the ones in this world with the spontaneously broken symmetry do have a mass.
 
 The Goldstone boson disappears. The Goldstone boson is a slowly varying $\alpha$. We can make $\alpha$ vary by gauge transformation, which surely involves the Goldstone boson. But gauge transformation is a symmetry; it doesn't change energy and remains in the ground state. The Goldstone boson disappears, and the massless photon is replaced by a massive one. The Higgs boson now has a mass. That is the Higgs phenomenon.
 
@@ -2368,16 +2371,16 @@ This is all contained in Mexican Hat potential--Figure \ref{fig:2-10-MexicanHat}
 \end{figure}
 One such function is:
 \begin{align*}
-	V =& -\frac{\mu^2}{2} \phi^2 + \frac{\lambda}{4} \phi^4 \text{. The first term would represent mass if it were positive}
+	V =& -\frac{\mu^2}{2} \Phi^2 + \frac{\lambda}{4} \Phi^4 \text{. The first term would represent mass if it were positive}
 \end{align*}
 
-The "imaginary mass" isn't a problem; having the origin be unstable is odd, so we introduce the quartic coupling constant $\lambda$ to prevent $\phi$ falling indefinitely. It appears\footnote{Indirect evidence from weak interactions} that $\lambda$ is small, but not absurdly small, around 0.01 ($\mu$ has dimensions of mass).
+The "imaginary mass" isn't a problem; having the origin be unstable is odd, so we introduce the quartic coupling constant $\lambda$ to prevent $\Phi$ falling indefinitely. It appears\footnote{Indirect evidence from weak interactions} that $\lambda$ is small, but not absurdly small, around 0.01 ($\mu$ has dimensions of mass).
 
-We want to find $f$, the $\phi$ which gives the minimum of $V$.
+We want to find $f$, the $\Phi$ which gives the minimum of $V$.
 \begin{align*}
-	\frac{d V}{d \phi} =& -\mu^2 \phi + \lambda \phi^3\\
-	=& \phi \big(\lambda \phi^2 - \mu^2\big)\\
-	=& 0 \text{, at a minimum. Since $\phi=0$ is unstable}\\
+	\frac{d V}{d \Phi} =& -\mu^2 \Phi + \lambda \Phi^3\\
+	=& \Phi \big(\lambda \Phi^2 - \mu^2\big)\\
+	=& 0 \text{, at a minimum. Since $\Phi=0$ is unstable}\\
 	f =& \frac{\mu}{\sqrt{\lambda}}
 \end{align*}
 

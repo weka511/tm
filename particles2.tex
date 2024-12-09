@@ -2268,7 +2268,7 @@ Let's go back to the Dirac equation. The Dirac Field, $\Psi$, is a four componen
  	\Psi_R \rightarrow& \Psi_R \text{, because not charged}\\
  	\Phi \rightarrow& e^{i\theta} \Phi \text{, because charged}
  \end{align*}
- Clearly Dirac equation is not invariant under $U(a)$. We will rewrite to be invariant:
+ Clearly the Dirac equation is not invariant under $U(a)$. We will rewrite it to be invariant:
  
  \begin{align*}
 	 i \big(\frac{\partial \Psi_R}{\partial t} + \alpha_i \frac{\partial \Psi_R}{\partial 	x^i}\big) =& g \Phi^* \Psi_L \numberthis \label{eq:mod:Dirac:R}\\
@@ -2279,17 +2279,28 @@ Let's go back to the Dirac equation. The Dirac Field, $\Psi$, is a four componen
  \begin{figure}[H]
  	\caption{Interpretation of modified Dirac equation}\label{fig:modified:Dirac}
  	\begin{subfigure}[t]{0.3\textwidth}
- 		\caption{RH electron $\rightarrow$ LH + $\bar{\Phi}$--(\ref{eq:mod:Dirac:R})}
- 		\includegraphics[width=\textwidth]{2-9-RH}
+ 		\caption{RH $\rightarrow$ LH + $\bar{\Phi}$--(\ref{eq:mod:Dirac:R})}
+ 		\feynmandiagram[horizontal=in1 to c]{
+ 			in1[particle=\(e_R\)]--[fermion] c -- [fermion] out1[particle=\(e_L\)],
+ 			c -- [boson] out2[particle=\(\bar{\Psi}\)],
+ 		};
  	\end{subfigure}
+ 	\hfill
   	\begin{subfigure}[t]{0.3\textwidth}
-  		\caption{LH electron $\rightarrow$ RH + $\Phi$--(\ref{eq:mod:Dirac:L})}
-	 	\includegraphics[width=\textwidth]{2-9-LH}
+  		\caption{LH  $\rightarrow$ RH + $\Phi$--(\ref{eq:mod:Dirac:L})}
+	 	\feynmandiagram[horizontal=in1 to c]{
+	 		in1[particle=\(e_L\)]--[fermion] c -- [fermion] out1[particle=\(e_R\)],
+	 		c -- [boson] out2[particle=\(\Psi\)],
+	 	};
 	 \end{subfigure}
-   	\begin{subfigure}[t]{0.3\textwidth}
- 	\caption{LH electron $\rightarrow$ RH + Higgs--(\ref{eq:fermion:Higgs})}\label{fig:2-9-Higgs-boson}
- 	\includegraphics[width=\textwidth]{2-9-Higgs-boson}
- \end{subfigure}
+	 \hfill
+   	\begin{subfigure}[t]{0.35\textwidth}
+	 	\caption{LH $\rightarrow$ RH + Higgs--(\ref{eq:fermion:Higgs})}\label{fig:2-9-Higgs-boson}
+	 	\feynmandiagram[horizontal=in1 to c]{
+	 		in1[particle=\(e_R\)]--[fermion] c -- [fermion] out1[particle=\(e_L\)],
+	 		c -- [boson] out2[particle=\(H\)],
+	 	};
+	 \end{subfigure}
  \end{figure}
 
 What if $\Phi$ is a magical Higgs field, $\Phi=\rho e^{i\alpha}$? It has a spontaneous symmetry breaking $\Phi=f$ ($\alpha$ got eaten). (\ref{eq:mod:Dirac:R}) and (\ref{eq:mod:Dirac:L}) become:

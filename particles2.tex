@@ -2168,27 +2168,35 @@ You have not lost a degree of freedom: the Goldstone boson has become the other 
 
 \subsection{Bosons}
 
-The gauge bosons, Z and W, get their mass from the Higgs mechanism. Keep in mind that we aren't really talking about the photon, but it will be useful to develop the maths as if we were.
+The gauge bosons, Z and W, obtain masses from the shift of the Higgs field away from the most symmetric position. Keep in mind that we aren't really talking about the photon, but it will be useful to develop the maths as if we were.
 
-There is a dynamics--Maxwell's equations:
+We have the gauge bosons, Z and W, which are analogues of photons. The maths is a little more complicated, the symmetry group isn't $U(1)$ but $SU(2)$, but that isn't terribly important, and a dynamics that leads to Maxwell's equations. We start with the electromagnetic tensor:
 \begin{align*}
 	F_{\mu\nu}=&\frac{\partial A_\mu}{\partial x^\nu}-\frac{\partial A_\nu}{\partial x^\mu}\\
-	\mathcal{L} =& F_{\mu\nu} F^{\mu\nu} \text{, this has no energy from shift, so it is massless.}
+	\mathcal{L} =& F_{\mu\nu} F^{\mu\nu} \text{. This has no energy from shift, so it is massless.}\\
+	=& F^2
 \end{align*}
 
-Now we add the Higgs field:
+Now we add the Higgs field, which is charged (not electric charge, but the charge that couples to the weak field):
 \begin{align*}
 	\Phi =& \rho e^{i \alpha}\\
-	D \Phi =& \partial \Phi + i A \Phi\\
-	=& i \big( \partial \alpha + A \big) f e^{i \alpha} \text{, if $\rho$ frozen}\\
-	\mathcal{L} =& f^2 \big(\partial \alpha + A \big)^2 \text{, now make a gauge transformation}\\
+	D \Phi =& \partial \Phi + i A \Phi 
+\end{align*}
+
+There is an interaction with ''electromagnetic'' field. Now something interesting happens. The energetics of $\Phi$ favour something unusual: the minimum energy is not at $\Phi=0$, but at the bottom of the potential of Figure \ref{fig:2-8-phi-f}, say at $\Phi=f$. The curvature at the minimum is very steep, so it would cost a lot of energy to shift the field away from the bottom. To a first approximation:
+
+\begin{align*}
+	D \Phi =& i \big( \partial \alpha + A \big) f e^{i \alpha} \text{, if $\rho$ frozen}\\
+	\mathcal{L} =& f^2 \big(\partial \alpha + A \big)^2 \text{, now make a gauge transformation $A\rightarrow A - \partial \alpha$}\\
 	=& f^2 {A^\prime}^2
 \end{align*}
 
-If we shift $A^\prime$ everywhere, we'd get some energy from $f^2 {A^\prime}^2$. \emph{We have introduced mass!} Vacuum shifted to some new spontaneously broken, and excitations of field in that vacuum have a mass. $\alpha$ has disappeared.
+Now $F$ is gauge invariant, as is $F^2$. All we have done is to introduce a new term into the Lagrangian, which is proportional to the square of the vector potential. If we shift $A^\prime$ everywhere, we'd get some energy from $f^2 {A^\prime}^2$. \emph{We have introduced mass!} Vacuum shifted to some new spontaneously broken vacuum, and excitations of field in that vacuum have a mass. $\alpha$ has disappeared.
 
 There is still the thing that we froze in an approximation. What if we hit it hard enough to set it oscillating in radial direction? These are the Higgs bosons.
  
+In particle physics we identify the mass of a particle with an energy stored in shifting the field simultaneously everywhere.
+
 \subsection{Fermions}
 
 Where do they get their mass?

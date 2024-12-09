@@ -2137,7 +2137,12 @@ Let us look at $\Phi = f$, where $f$ is real, Figure \ref{fig:2-8-phi-f}. The mo
 \begin{figure}[H]
 	\begin{center}
 		\caption[$\Phi = f$, where $f$ is real]{$\Phi = f$, where $f$ is real, so the imaginary part is zero}\label{fig:2-8-phi-f}
-		\includegraphics[width=0.6\textwidth]{2-8-phi-f}
+		\begin{tikzpicture}
+			\draw[dashed] (0,-4) -- (0,2.25) node[above] {$$};
+			\draw[domain=-3:3, smooth, variable=\x] plot ({\x}, {0.25*\x*\x*\x*\x - 2*\x*\x});
+			\filldraw[black] (2,-4) circle (3pt) node[anchor=west]{};
+			\draw[->,dashed] (0,-4) -- (1.8,-4) node[midway,below] {$f$};
+		\end{tikzpicture}
 	\end{center}
 \end{figure}
 

@@ -2148,7 +2148,7 @@ Let us look at $\Phi = f$, where $f$ is real, Figure \ref{fig:2-8-phi-f}. The mo
 
 When we spontaneously break symmetry and consider field near $f$, the effect of one of the terms in the Lagrangian is to make a mass for the photon. Real photons don't behave like this, but the ones \emph{in this world} with the spontaneously broken symmetry do have a mass.
 
-The Goldstone boson disappears. The Goldstone boson is a slowly varying $\alpha$. We can make $\alpha$ vary a different way, by gauge transformation: $\alpha\rightarrow\alpha+\theta(x)$; you might think that surely involves a Goldstone boson. But gauge transformation is a symmetry, i.e. it doesn't change energy and the system remains in the ground state. The Goldstone boson disappears, and just becomes a gauge transformation, and the vector potential gains a mass. WE have got rid of two massless bosons, and gained a massive photon. The Higgs boson now has a mass, and it oscillates about the dot in Figure \ref{fig:2-8-phi-f}.
+The Goldstone boson disappears. The Goldstone boson is a slowly varying $\alpha$. We can make $\alpha$ vary a different way, by gauge transformation: $\alpha\rightarrow\alpha+\theta(x)$; you might think that surely involves a Goldstone boson. But gauge transformation is a symmetry, i.e. it doesn't change energy and the system remains in the ground state. The Goldstone boson disappears, and just becomes a gauge transformation, and the vector potential gains a mass. We have got rid of two massless bosons, and gained a massive photon. The Higgs boson now has a mass, and it oscillates about the dot in Figure \ref{fig:2-8-phi-f}.
 
 That is the Higgs phenomenon. Just by plugging in the Higgs field, $\Phi=f$, we generate a mass for the photon, which came from the covariant derivative.
 
@@ -2202,37 +2202,41 @@ There is still the thing that we froze in an approximation. What if we hit it ha
  
 In particle physics we identify the mass of a particle with an energy stored in shifting the field simultaneously everywhere.
 
+Here is an example of how mass can happen. If you have a crystal and move all the molecules simultaneously (a mathematical move, ignoring time derivatives), it doesn't cost any energy. Suppose your crystal lattice is composed of particles with some plus charges, some minus, e.g. ions. Now shift all electrons left uniformly, and the protons right. This would be a homogeneous shift. That would cost energy. The crystal would start to vibrate. So moving everything simultaneously would be a zero momentum \gls{gls:phonon}; moving positive and negative separately would be a \gls{gls:plasmon}. \Glspl{gls:phonon} have mass, \glspl{gls:plasmon} do not. 
+
 \subsection{Fermions}
 
-Where do they get their mass?
+Where do they get their mass? It turns out this is also from the Higgs phenomenon, spontaneous symmetry breaking.
 
-We go back to weak interactions.
+We go back to experimental data about weak interactions.
 
-Reflection symmetry is not a good symmetry of elementary particles (1950s). This is a symmetry of \gls{gls:QM} and \gls{gls:QCD}, but it is not a symmetry of the weak interaction (mirror image of a weak interaction is not another possible process!). 
+Reflection symmetry is not a good symmetry of nature (1950s). This is a symmetry of \gls{gls:QM} and \gls{gls:QCD}, but it is not a symmetry of the weak interaction: the mirror image of a weak interaction is not another possible process; left and right are fundamentally different, and as different as they can be. The experimental fact is that the decay of a neutron always produces left handed electrons.
+
+Is there a notion of handedness? Yes, we have spin and direction of motion. Either the electron rotates with direction of motion (right handed screw) or left handed. (you can build other directions as superpositions). You might think that Figure \ref{fig:2-9-beta-decay-neutron} could make right-handed or left-handed neutrons, but the electrons are always left handed. Moreover in scattering by a W-boson, it is only the left handed electron that interacts with a W-boson--e.g. Figure \ref{fig:2-9-W-boson}. It is an experimental fact that the left-handed electron scatters, and the right handed one doesn't. Similarly it is always the left-handed neutrino that interacts: it is \emph{questionable} whether there are right handed neutrinos.
 
 \begin{figure}[H]
-	\caption{The electron is always left handed in n weak interactions}
+	\caption[The electron is always left handed in weak interactions]{The electron is always left handed in weak interactions. in \gls{gls:QED} left handed electrons are as good as right handed: if there is a process to make a right handed electron in \gls{gls:QED}, there is a reflected process to make a left handed one. This isn't true in beta decay: we always observe left handed electrons irregardless of the handedness of the neutron. This is the case for weak interactions in general, not just beta decay.}
 	\begin{subfigure}[t]{0.4\textwidth}
 		\caption{Beta decay of a neutron}\label{fig:2-9-beta-decay-neutron}
 		\feynmandiagram[vertical=out1 to in1]{
 			in1[particle=\(n\)]--[fermion] c --[fermion] out1[particle=\(p\)],
-			c --[fermion] out2[particle=\(e^-\)],
-			c --[fermion] out3[particle=\(\bar{\nu}\)],
+			c --[fermion] out2[particle=\(e_L\)],
+			c --[fermion] out3[particle=\(\bar{\nu_L}\)],
 			out1--[opacity=0]out2--[opacity=0]out3,
 		};
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.4\textwidth}
-		\caption{W boson converting left handed electron to neutrino}\label{fig:2-9-W-boson}
+		\caption{In any process where a W boson interacts with an electron to produce a neutrino, or flip the lines any any other way, it is always a left-handed electron, never a right handed one.}\label{fig:2-9-W-boson}
 		\feynmandiagram[vertical=out1 to in1]{
-			in1[particle=\(W\)]--[boson] c --[fermion] out1[particle=\(\nu\)],
-			in2[particle=\(e\)]--[fermion]c,
+			in1[particle=\(W\)]--[boson] c --[fermion] out1[particle=\(\nu_L\)],
+			in2[particle=\(e_L\)]--[fermion]c,
 			in1--[opacity=0.0]in2,
 		};
 	\end{subfigure}
 \end{figure}
 
-Is there a notion of handedness? Yes, we have spin and direction of motion. Either the electron rotates with direction of motion (right handed screw) or left handed. You might think that Figure \ref{fig:2-9-beta-decay-neutron} could make right-handed or left-handed neutrons, but the electrons are always left handed. Moreover in scattering by a W-boson, it is only the left handed electron that interacts with a W-boson--e.g. Figure \ref{fig:2-9-W-boson}. It is an experimental fact that the left-handed electron scatters, and the right handed one doesn't. Similarly it is always the left-handed neutrino that interacts: it is \emph{questionable} whether there are right handed neutrinos.
+
 
 There is something asymmetric about weak interactions: it is as if left-handed particles carried "charge" associated with boson, but right don't.
 

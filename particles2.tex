@@ -2250,7 +2250,7 @@ Let's go back to the Dirac equation for electrons, neutrinos and quarks. The Dir
  
  What do you put on the right hand side if you want to have a mass for the field? There is a 4th Dirac matrix, $\beta$.
  \begin{align*}
- 	i \big(\frac{\partial \Psi}{\partial t} + \alpha_i \frac{\partial \Psi}{\partial 	x^i}\big) =&m \beta \Psi
+ 	i \big(\frac{\partial \Psi}{\partial t} + \alpha_i \frac{\partial \Psi}{\partial 	x^i}\big) =&m \beta \Psi \numberthis \label{eq:dirac}
  \end{align*}
  This is the Dirac equation.
  
@@ -2353,13 +2353,13 @@ Neutrons have no electric charge, but they have weak charge. A neutrino can mix 
 
 \subsection{Lagrangian for Dirac Equation}
 
-We want to derive the Dirac equation from a variational principle.
+We want to derive the Dirac equation \eqref{eq:dirac} from a variational principle.
  \begin{align*}
-	i \big(\frac{\partial \Psi}{\partial t} + \alpha_i \frac{\partial \Psi}{\partial 	x^i}\big) -m \beta \Psi =&0 \text{,  Dirac equation}
+	i \big(\frac{\partial \Psi}{\partial t} + \alpha_i \frac{\partial \Psi}{\partial 	x^i}\big) -m \beta \Psi =&0 
 \end{align*}
 We take as our Lagrangian:
 \begin{align*}
-	\mathcal{L}=&\Psi^\dagger i \big(\overbrace{\frac{\partial \Psi}{\partial t} + \alpha_i \frac{\partial \Psi}{\partial 	x^i}}^{\mathclap{\substack{\text{Absorbs particle and}\\\text{emits it somewhere else}}}} - \underbrace{m \beta \Psi}_{\mathclap{\substack{\text{Absorbs particle and}\\\text{emits in in same spot}}}}\big)
+	\mathcal{L}=&\Psi^\dagger i \big(\underbrace{\frac{\partial \Psi}{\partial t} + \alpha_i \frac{\partial \Psi}{\partial 	x^i}}_{\mathclap{\substack{\text{Absorbs particle and}\\\text{emits it somewhere else}}}} & - \underbrace{m \beta \Psi}_{\mathclap{\substack{\text{Absorbs particle and}\\\text{emits in in same spot}}}}\big)
 \end{align*}
 If we write:
 \begin{align*}

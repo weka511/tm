@@ -2208,6 +2208,8 @@ Here is an example of how mass can happen. If you have a crystal and move all th
 
 Where do they get their mass? It turns out this is also from the Higgs phenomenon, spontaneous symmetry breaking.
 
+\subsubsection{Weak Interactions
+}
 We go back to experimental data about weak interactions.
 
 Reflection symmetry is not a good symmetry of nature (1950s). This is a symmetry of \gls{gls:QM} and \gls{gls:QCD}, but it is not a symmetry of the weak interaction: the mirror image of a weak interaction is not another possible process; left and right are fundamentally different, and as different as they can be. The experimental fact is that the decay of a neutron always produces left handed electrons.
@@ -2236,33 +2238,37 @@ Is there a notion of handedness? Yes, we have spin and direction of motion. Eith
 	\end{subfigure}
 \end{figure}
 
+There is something asymmetric about weak interactions: it is as if left-handed particles carried ''charge'' associated with boson, but right don't. This is a very strange fact, which is also true of quarks.
 
+\subsubsection{The Dirac Equation}
 
-There is something asymmetric about weak interactions: it is as if left-handed particles carried "charge" associated with boson, but right don't.
-
-Let's go back to the Dirac equation. The Dirac Field, $\Psi$, is a four component object: particles can have spin along either direction, up or down, and positive or negative energy.
+Let's go back to the Dirac equation for electrons, neutrinos and quarks. The Dirac Field, $\Psi$, is a four component object: particles can have spin along either axis (up or down), and positive or negative energy (antiparticles).
 
 \begin{align*}
 	i \big(\frac{\partial \Psi}{\partial t} + \alpha_i \frac{\partial \Psi}{\partial 	x^i}\big) =&0
 \end{align*}
- This would be Dirac equation if electron massless, because equation only involves derivatives of the field. There is no restoring force, no tendency to oscillate.
+ This would be the Dirac equation if the particle were massless, because the dynamics only involves derivatives of the field. There is no restoring force, no tendency to oscillate. If you shift the field simultaneously, it does not create any energy.
  
+ What do you put on the right hand side if you want to have a mass for the field? There is a 4th Dirac matrix, $\beta$.
  \begin{align*}
- 	i \big(\frac{\partial \Psi}{\partial t} + \alpha_i \frac{\partial \Psi}{\partial 	x^i}\big) =&m \beta \Psi \text{, Dirac equation with mass.}
+ 	i \big(\frac{\partial \Psi}{\partial t} + \alpha_i \frac{\partial \Psi}{\partial 	x^i}\big) =&m \beta \Psi
  \end{align*}
+ This is the Dirac equation.
  
  The electron could be moving along with a momentum so there is a gradient, $\frac{\partial \Psi}{\partial x_i}$. Spin can be along or opposite to direction of motion. 
  
  \begin{align*}
- 	i \big(\frac{\partial \Psi_R}{\partial t} + \alpha_i \frac{\partial \Psi_R}{\partial 	x^i}\big) =& m \Psi_L \text{, since $\beta$ interchanges R and L}\\
- 	i \big(\frac{\partial \Psi_L}{\partial t} - \alpha_i \frac{\partial \Psi_L}{\partial 	x^i}\big) =& m \Psi_R \text{, mass couples L and R}
+ 	i \big(\frac{\partial \Psi_R}{\partial t} + \alpha_i \frac{\partial \Psi_R}{\partial 	x^i}\big) =& m \Psi_L \text{, since $\beta$ interchanges R and L} \numberthis \label{fig:dirac:mass1}\\
+ 	i \big(\frac{\partial \Psi_L}{\partial t} + \alpha_i \frac{\partial \Psi_L}{\partial 	x^i}\big) =& m \Psi_R \numberthis \label{fig:dirac:mass2}
  \end{align*}
  
- Let us suppose that only left-handed particle has a charge (True for weak, not for electro-magnetic). Then we can't have these equations because of charge conservation. Another way to look at is the gauge transformation $e^{i\theta}$. Charge conservation would forbid a mass for the electron if only left had charge.
+ The mass mixes up the left handed and right handed components. (You \emph{can think} of the Dirac electron oscillating between left and right. But let's not push that too hard, as it's not quite right.) But this is what the mass is for a Dirac electron.
  
- Meanwhile back in the real world this isn't true.
+ Let us suppose that only left-handed particle has a charge (True for weak, not for electromagnetic). Then we can't have these equations because the meaning of \eqref{fig:dirac:mass1} and \eqref{fig:dirac:mass2} is that a left handed particle moving along will turn into a right handed, and vice versa, so charge conservation would be violated. Another way to look at is the gauge transformation $e^{i\theta}$ for charged particles. Charge conservation would forbid a mass for the electron if only left had charge. Equations \eqref{fig:dirac:mass1} and \eqref{fig:dirac:mass2} cannot be symmetric if only $\Psi_L$ is multiplied by $e^{i\theta}$.
  
- Suppose there were only a left handed electron. If it has mass we could slow it down, bring it to rest, then send it back; handedness would have changed although spin hadn't. What if no mass? Then we can't do this.
+ Meanwhile back in the real world this isn't true. Right handed and left handed electrons have charge, and both have mass.
+ 
+ Suppose there were only a left handed electron: it would have to be massless. If it has mass we could slow it down, bring it to rest, then send it back; handedness would have changed although spin hadn't. What if no mass? Then we can't do this.
  
  How might electrons get a mass in this fake world where only left have electric charge? Imagine there is a Boson field, $\Phi$, whose quanta have positive charge.
  

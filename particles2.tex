@@ -2214,10 +2214,10 @@ We go back to experimental data about weak interactions.
 
 Reflection symmetry is not a good symmetry of nature (1950s). This is a symmetry of \gls{gls:QM} and \gls{gls:QCD}, but it is not a symmetry of the weak interaction: the mirror image of a weak interaction is not another possible process; left and right are fundamentally different, and as different as they can be. The experimental fact is that the decay of a neutron always produces left handed electrons.
 
-Is there a notion of handedness? Yes, we have spin and direction of motion. Either the electron rotates with direction of motion (right handed screw) or left handed. (you can build other directions as superpositions). You might think that Figure \ref{fig:2-9-beta-decay-neutron} could make right-handed or left-handed neutrons, but the electrons are always left handed. Moreover in scattering by a W-boson, it is only the left handed electron that interacts with a W-boson--e.g. Figure \ref{fig:2-9-W-boson}. It is an experimental fact that the left-handed electron scatters, and the right handed one doesn't. Similarly it is always the left-handed neutrino that interacts: it is \emph{questionable} whether there are right handed neutrinos.
+Is there a notion of handedness? Yes, we have spin and direction of motion. Either the electron rotates with direction of motion (right handed screw) or left handed. (you can build other directions as superpositions). You might think that Figure \ref{fig:2-9-beta-decay-neutron} could make right-handed or left-handed neutrons, but the electrons are always left handed. Moreover in scattering by a W-boson, it is only the left handed electron\footnote{This is reversed for antiparticles.} that interacts with a W-boson--e.g. Figure \ref{fig:2-9-W-boson}. It is an experimental fact that the left-handed electron scatters, and the right handed one doesn't. Similarly it is always the left-handed neutrino that interacts: it is \emph{questionable} whether there are right handed neutrinos.
 
 \begin{figure}[H]
-	\caption[The electron is always left handed in weak interactions]{The electron is always left handed in weak interactions. in \gls{gls:QED} left handed electrons are as good as right handed: if there is a process to make a right handed electron in \gls{gls:QED}, there is a reflected process to make a left handed one. This isn't true in beta decay: we always observe left handed electrons irregardless of the handedness of the neutron. This is the case for weak interactions in general, not just beta decay.}
+	\caption[The electron is always left handed in weak interactions]{The electron is always left handed in weak interactions. in \gls{gls:QED} left handed electrons are as good as right handed: if there is a process to make a right handed electron in \gls{gls:QED}, there is a reflected process to make a left handed one. This isn't true in beta decay: we always observe left handed electrons irregardless of the handedness of the neutron. This is the case for weak interactions in general, not just beta decay.}\label{fig:left:versus:right}
 	\begin{subfigure}[t]{0.4\textwidth}
 		\caption{Beta decay of a neutron}\label{fig:2-9-beta-decay-neutron}
 		\feynmandiagram[vertical=out1 to in1]{
@@ -2270,13 +2270,17 @@ Let's go back to the Dirac equation for electrons, neutrinos and quarks. The Dir
  
  Suppose there were only a left handed electron: it would have to be massless. If it has mass we could slow it down, bring it to rest, then send it back; handedness would have changed although spin hadn't. What if no mass? Then we can't do this.
  
- How might electrons get a mass in this fake world where only left have electric charge? Imagine there is a Boson field, $\Phi$, whose quanta have positive charge.
+ Is the difference between left and right--Figure \ref{fig:left:versus:right}--just an accident of nature? Probably not, but we will treat it as one.
+ 
+ \subsubsection{An accident of nature}
+ 
+ How might electrons get a mass in this fake world where only left have electric charge? (And where left and right can't mix). Imagine there is a Boson field, $\Phi$, whose quanta have positive charge.
  
  Under $U(a)$:
  \begin{align*}
- 	\Psi_L \rightarrow& e^{i\theta} \Psi_L \text{, because charged}\\
- 	\Psi_R \rightarrow& \Psi_R \text{, because not charged}\\
- 	\Phi \rightarrow& e^{i\theta} \Phi \text{, because charged}
+ 	\Psi_L \rightarrow& e^{i\theta} \Psi_L \text{, because $\Psi_L$ ischarged}\\
+ 	\Psi_R \rightarrow& \Psi_R \text{, because $\Psi_R$ is not charged}\\
+ 	\Phi \rightarrow& e^{i\theta} \Phi \text{, because $\Phi$ is charged}
  \end{align*}
  Clearly the Dirac equation is not invariant under $U(a)$. We will rewrite it to be invariant:
  
@@ -2285,42 +2289,36 @@ Let's go back to the Dirac equation for electrons, neutrinos and quarks. The Dir
 	 i \big(\frac{\partial \Psi_L}{\partial t} - \alpha_i \frac{\partial \Psi_L}{\partial 	x^i}\big) =& g \Psi_R \Phi \numberthis \label{eq:mod:Dirac:L}
  \end{align*}
  
- Figure \ref{fig:modified:Dirac} shows how to interpret these equations in terms of Feynman diagrams. Left and right change into each other, and the cost of emitting charged particles, with coupling constant $g$, the \emph{Yukawa coupling}.
+ Figures \ref{fig:modified:Dirac1} and \ref{fig:modified:Dirac2} show how to interpret these equations in terms of Feynman diagrams. Left and right change into each other, and with probability $g$, a new coupling constant, the \emph{Yukawa coupling}.
+ 
  \begin{figure}[H]
  	\caption{Interpretation of modified Dirac equation}\label{fig:modified:Dirac}
- 	\begin{subfigure}[t]{0.3\textwidth}
- 		\caption{RH $\rightarrow$ LH + $\bar{\Phi}$--(\ref{eq:mod:Dirac:R})}
+ 	\begin{subfigure}[t]{0.45\textwidth}
+ 		\caption{RH $\rightarrow$ LH + $\bar{\Phi}$--(\ref{eq:mod:Dirac:R})}\label{fig:modified:Dirac1}
  		\feynmandiagram[horizontal=in1 to c]{
  			in1[particle=\(e_R\)]--[fermion] c -- [fermion] out1[particle=\(e_L\)],
  			c -- [boson] out2[particle=\(\bar{\Psi}\)],
  		};
  	\end{subfigure}
  	\hfill
-  	\begin{subfigure}[t]{0.3\textwidth}
-  		\caption{LH  $\rightarrow$ RH + $\Phi$--(\ref{eq:mod:Dirac:L})}
+  	\begin{subfigure}[t]{0.45\textwidth}
+  		\caption{LH  $\rightarrow$ RH + $\Phi$--(\ref{eq:mod:Dirac:L})}\label{fig:modified:Dirac2}
 	 	\feynmandiagram[horizontal=in1 to c]{
 	 		in1[particle=\(e_L\)]--[fermion] c -- [fermion] out1[particle=\(e_R\)],
 	 		c -- [boson] out2[particle=\(\Psi\)],
 	 	};
 	 \end{subfigure}
-	 \hfill
-   	\begin{subfigure}[t]{0.35\textwidth}
-	 	\caption{LH $\rightarrow$ RH + Higgs--(\ref{eq:fermion:Higgs})}\label{fig:2-9-Higgs-boson}
-	 	\feynmandiagram[horizontal=in1 to c]{
-	 		in1[particle=\(e_R\)]--[fermion] c -- [fermion] out1[particle=\(e_L\)],
-	 		c -- [boson] out2[particle=\(H\)],
-	 	};
-	 \end{subfigure}
+	 
  \end{figure}
 
-What if $\Phi$ is a magical Higgs field, $\Phi=\rho e^{i\alpha}$? It has a spontaneous symmetry breaking $\Phi=f$ ($\alpha$ got eaten). (\ref{eq:mod:Dirac:R}) and (\ref{eq:mod:Dirac:L}) become:
+What if $\Phi$ is a magical Higgs field, $\Phi=\rho e^{i\alpha}$? Let us suppose that it gives rise to a spontaneous symmetry breaking $\Phi=f$ ($\alpha$ got eaten). (\ref{eq:mod:Dirac:R}) and (\ref{eq:mod:Dirac:L}) become:
 
  \begin{align*}
 i \big(\frac{\partial \Psi_R}{\partial t} + \alpha_i \frac{\partial \Psi_R}{\partial 	x^i}\big) =& g f \Psi_L \\
 i \big(\frac{\partial \Psi_L}{\partial t} - \alpha_i \frac{\partial \Psi_L}{\partial 	x^i}\big) =& g f \Psi_R  
 \end{align*}
 
-We use the mass of Z and W to determine $f$, so we can figure out $g$ from $m$. Since there are different masses for Fermions, there are multiple Yukawa couplings.
+We use the mass of Z and W to determine $f$, so we can figure out $g$ from $m$. Since there are different masses for Fermions, there are multiple Yukawa couplings (There is a whole spectrum that nobody understands).
 
 The Higgs particle is the fluctuation away from the frozen value. We should really write:
  \begin{align*}
@@ -2328,7 +2326,15 @@ i \big(\frac{\partial \Psi_R}{\partial t} + \alpha_i \frac{\partial \Psi_R}{\par
 i \big(\frac{\partial \Psi_L}{\partial t} - \alpha_i \frac{\partial \Psi_L}{\partial 	x^i}\big) =& g (f+H) \Psi_R  
 \end{align*}
 
-In (\ref{eq:fermion:Higgs}) and Figure \ref{fig:2-9-Higgs-boson} we see that RH can turn into LH + Higgs. When Higgs is found\footnote{This lecture predates the discovery at LHC.} we want to verify the relative rates of different Higgs interactions. 
+In (\ref{eq:fermion:Higgs}) and Figure \ref{fig:2-9-Higgs-boson} we see that RH can turn into LH + Higgs. When Higgs is found\footnote{This lecture predates the discovery at \gls{gls:LHC}} we want to verify the relative rates of different Higgs interactions, e.g. ones involving quarks and ones involving electrons. For example, \eqref{eq:fermion:Higgs} could be read as a preference for the Higgs decaying into the heaviest fermions, if it has enough energy to do so, based on the Yukawa couplings.
+
+\begin{figure}[H]
+	\caption{LH $\rightarrow$ RH + Higgs--\eqref{eq:fermion:Higgs}}\label{fig:2-9-Higgs-boson}
+	\feynmandiagram[horizontal=in1 to c]{
+		in1[particle=\(e_R\)]--[fermion] c -- [fermion] out1[particle=\(e_L\)],
+		c -- [boson] out2[particle=\(H\)],
+	};
+\end{figure}
 
 None of the particles in the Standard Model would have mass if it were not for the Higgs Field. Gauge Bosons normally don't have mass: the only way to give them mass is via spontaneous symmetry breaking, and this mass is proportional to $f$. The Fermions, because all their interactions are left handed, so they need $f$ to acquire mass (Positron is right handed, BTW).
 

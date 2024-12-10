@@ -2357,9 +2357,12 @@ We want to derive the Dirac equation from a variational principle.
  \begin{align*}
 	i \big(\frac{\partial \Psi}{\partial t} + \alpha_i \frac{\partial \Psi}{\partial 	x^i}\big) -m \beta \Psi =&0 \text{,  Dirac equation}
 \end{align*}
-
+We take as our Lagrangian:
 \begin{align*}
-	\mathcal{L}=&\Psi^\dagger i \big(\frac{\partial \Psi}{\partial t} + \alpha_i \frac{\partial \Psi}{\partial 	x^i} -m \beta \Psi\big)\text{. If we write}\\
+	\mathcal{L}=&\Psi^\dagger i \big(\overbrace{\frac{\partial \Psi}{\partial t} + \alpha_i \frac{\partial \Psi}{\partial 	x^i}}^{\mathclap{\substack{\text{Absorbs particle and}\\\text{emits it somewhere else}}}} - \underbrace{m \beta \Psi}_{\mathclap{\substack{\text{Absorbs particle and}\\\text{emits in in same spot}}}}\big)
+\end{align*}
+If we write:
+\begin{align*}
 	\bar{\Psi} \triangleq&\Psi^\dagger \beta  \\
 	\Psi^\dagger  =& \bar{\Psi} \beta \text{, since $\beta^2=1$}\\
 	\mathcal{L} =& \bar{\Psi}\beta \partial_t + \bar{\Psi}\beta \alpha_i \partial \Psi +m \bar{\Psi}  \Psi\\

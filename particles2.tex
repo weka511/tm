@@ -2329,18 +2329,22 @@ i \big(\frac{\partial \Psi_L}{\partial t} - \alpha_i \frac{\partial \Psi_L}{\par
 In (\ref{eq:fermion:Higgs}) and Figure \ref{fig:2-9-Higgs-boson} we see that RH can turn into LH + Higgs. When Higgs is found\footnote{This lecture predates the discovery at \gls{gls:LHC}} we want to verify the relative rates of different Higgs interactions, e.g. ones involving quarks and ones involving electrons. For example, \eqref{eq:fermion:Higgs} could be read as a preference for the Higgs decaying into the heaviest fermions, if it has enough energy to do so, based on the Yukawa couplings.
 
 \begin{figure}[H]
-	\caption{LH $\rightarrow$ RH + Higgs--\eqref{eq:fermion:Higgs}}\label{fig:2-9-Higgs-boson}
-	\feynmandiagram[horizontal=in1 to c]{
+	\begin{center}
+		\caption[RH $\rightarrow$ LH + Higgs]{Right Hand Electron $\rightarrow$ Left Hand  Electron + Higgs--Equation \eqref{eq:fermion:Higgs}}\label{fig:2-9-Higgs-boson}
+		\feynmandiagram[horizontal=in1 to c]{
 		in1[particle=\(e_R\)]--[fermion] c -- [fermion] out1[particle=\(e_L\)],
-		c -- [boson] out2[particle=\(H\)],
-	};
+			c -- [boson] out2[particle=\(H\)],
+		};
+	\end{center}
 \end{figure}
 
 None of the particles in the Standard Model would have mass if it were not for the Higgs Field. Gauge Bosons normally don't have mass: the only way to give them mass is via spontaneous symmetry breaking, and this mass is proportional to $f$. The Fermions, because all their interactions are left handed, so they need $f$ to acquire mass (Positron is right handed, BTW).
 
-Left handed neutrino, right handed anti-neutrino. Ettore Majorana particle.
+In the Standard Model, and on old time physics, it was thought that the neutrino was massless. The mass is very small, and, to within experimental error, they move at the speed of light, an that means it is possible for them to have only a single handedness. In the Standard Model, all neutrinos are left handed. Generalizations of the Standard Model have right handed neutrinos, but they typically have a very large mass. In the simple Standard Model, neutrinos are massless. Are they really massless? We know they are not, because of neutrino oscillations. 
 
-All particles of Standard Model trace their back to $f$; if $f$ were zero, they'd be massless. Why? Maybe we haven't found them because $f$ is around 250GeV, and that is the limit of what our current accelerators will do.
+What actually happens to neutrinos is really curious. A mass term makes trsnsitions between left handed and right handed. There are left handed neutrinos, and they go along with right handed antineutrinos: one way to have a mass is to have transitions between left handed neutrinos and right handed antineutrinos. Why could electron not do this? Charge conservation. A particle that mixes with its antiparticle is called a Majorana particle, after Ettore Majorana.
+
+All particles of Standard Model trace their back to $f$; if $f$ were zero, they'd be massless. Why haven't we found particles with energiesg reater than $f$? Maybe we haven't found them because $f$ is around 250\gls{gls:GeV}, and that is the limit of what our current accelerators will do.
 
 Imagine that a particle existed where L and R both had charge. Then there would be no limit on mass. Some people think that the limit on mass is much greater than $f$. Dark Energy?
 Neutrinos can mix with anti-neutrinos and produce a massive Majorana particle which is its own antiparticle.

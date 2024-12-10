@@ -2357,13 +2357,13 @@ We want to derive the Dirac equation \eqref{eq:dirac} from a variational princip
 \begin{align*}
 	\mathcal{L}=&\Psi^\dagger i \big(\underbrace{\frac{\partial \Psi}{\partial t} + \alpha_i \frac{\partial \Psi}{\partial 	x^i}}_{\mathclap{\substack{\text{Absorbs particle and}\\\text{emits it somewhere else}}}} & - \underbrace{m \beta \Psi}_{\mathclap{\substack{\text{Absorbs particle and}\\\text{emits in in same spot}}}}\big)
 \end{align*}
-If we write:
+If we define:
 \begin{align*}
 	\bar{\Psi} \triangleq&\Psi^\dagger \beta  \\
-	\Psi^\dagger  =& \bar{\Psi} \beta \text{, since $\beta^2=1$}\\
-	\mathcal{L} =& \bar{\Psi}\beta \partial_t + \bar{\Psi}\beta \alpha_i \partial \Psi +m \bar{\Psi}  \Psi\\
-	=& \bar{\Psi}\gamma_0 \partial_t + \bar{\Psi}\gamma_i \partial_i \Psi +m \bar{\Psi}  \Psi\\
-	=& \bar{\Psi}\big(\gamma^\mu \partial_\mu +m  \big) \Psi \text{. The term $\gamma^\mu \partial_\mu$ does not couple LH \& RH} \numberthis \label{eq:dirac:lagrange}
+	\Psi^\dagger  =& \bar{\Psi} \beta \text{, since $\beta^2=1$, and we can write:}\\
+	\mathcal{L} =& \bar{\Psi}\beta \partial_t \Psi+ \bar{\Psi}\beta \alpha_i \partial \Psi +m \bar{\Psi}  \Psi\\
+	=& \bar{\Psi}\gamma_0 \partial_t + \bar{\Psi}\gamma_i \partial_i \Psi +m \bar{\Psi}  \Psi\text{, where $\gamma_0 \triangleq \beta$ and $\gamma_i\triangleq\beta \alpha_i$}\\
+	=& \bar{\Psi}\big(\gamma^\mu \partial_\mu +m  \big) \Psi  \numberthis \label{eq:dirac:lagrange}
 \end{align*}
 There is a fifth Dirac matrix:
 \begin{align*}
@@ -2377,7 +2377,7 @@ Eigenvalues $\pm 1$--correspond to LH and RH.
 	$\gamma_5^2$ is called chirality.
 \end{defn}
 
-In (\ref{eq:dirac:lagrange}), we noted that $\gamma^\mu \partial_\mu$  does not couple LH and RH, i.e. the eigenvectors of $\gamma_5^2$ corresponding to $\pm 1$. But
+In (\ref{eq:dirac:lagrange}), we can show that $\gamma^\mu \partial_\mu$  does not couple LH and RH, i.e. the eigenvectors of $\gamma_5^2$ corresponding to $\pm 1$. But
 
 \begin{thm}[The mass term in  (\ref{eq:dirac:lagrange}) mixes up left and right]
 	\begin{align*}

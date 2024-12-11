@@ -492,8 +492,13 @@ Difference between group and phase velocities is connected to dispersion.
 Consider a bunch of operators action on an initial state to produce a final state. If Figure \ref{fig:particle:heavy:target} we derived conservation of energy. Figure \ref{fig:split:particle} show conservation of momentum for splitting a particle. 
  
 \begin{figure}[H]
-	\caption{Split Particle at any position $x$}\label{fig:split:particle}
-	\includegraphics[width=0.8\textwidth]{split-particle1}
+	\begin{center}
+		\caption{Split Particle at any position $x$}\label{fig:split:particle}
+		\feynmandiagram[vertical=out1 to in1]{
+			in1--[fermion]c--[fermion]out1,
+			c--[fermion]out2,
+		};
+	\end{center}
 \end{figure}
 
 \begin{align*}

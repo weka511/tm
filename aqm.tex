@@ -2067,13 +2067,13 @@ So
 	i\frac{\partial \psi_2}{\partial t} - i\frac{\partial \psi_2}{\partial x}=&m \psi_1
 \end{align*}
 
-So the mass term couples the two equations, and makes particle move slower then light. Dirac knew that mass is coupled to ability to move left or right.
+So the mass term couples the two equations, and makes the particle move slower then light. Dirac knew that mass is coupled to ability to move left or right.
 
 \section{Fermions and the Dirac equation}\label{section:fermions:dirac}
 
 \subsection{Second Quantization of Fermions}
 
-If you have two bosons, can put them into same state, and creation and annihilation operators commute. There is nothing strange about commuting, but anticommuting is odd. Suppose we have two particles, and we want to say that when we interchange them the wave function or state vector changes sign.  whose wave function changes sign when we interchange. Let $\ket{x,y}$ represent particles at x and y (two 3 dimensional positions). $\Psi^\dagger(x)\Psi^\dagger(y)\ket{0}$ will create.
+If you have two bosons, can put them into the same state, and the creation and annihilation operators commute. There is nothing strange about commuting, but anticommuting is odd. Suppose we have two particles, and we want to say that when we interchange them the wave function or state vector changes sign.  whose wave function changes sign when we interchange. Let $\ket{x,y}$ represent particles at x and y (two 3 dimensional positions). $\Psi^\dagger(x)\Psi^\dagger(y)\ket{0}$ will create.
 
 For bosons, operators commute and:
 \begin{align*}
@@ -2173,7 +2173,7 @@ Dirac needed three matrices that satisfy these equations; the three Pauli matric
 
 Spin is always $\pm 1$, so it looks as if we have two cases, where spin is either in the same direction as momentum, or the opposite; again we have a massless particle with positive and negative energy, and whose spin is locked so its axis is along the momentum vector.
 
-Dirac's logic, which was not necessarily unimpeachable, was that he wanted to write an equation for H in terms or P without having an insane square root. He wrote $	H = \vec{\alpha} \cdot \vec{P}$ because he wanted it to be linear in the momentum. He wondered what $\alpha$ was, because it couldn't just be a bunch of numbers. By requiring $H^2=P^2$ he found the Pauli matrices. He thought that he had discovered the origin of spin. He was not correct it that it is not the case that every particles has to have spin, but he was right for Fermions.
+Dirac's logic, which was not necessarily unimpeachable, was that he wanted to write an equation for H in terms or P without having an insane square root. He wrote $	H = \vec{\alpha} \cdot \vec{P}$ because he wanted it to be linear in the momentum. He wondered what $\alpha$ was, because it couldn't just be a bunch of numbers. By requiring $H^2=P^2$ he found the Pauli matrices. He thought that he had discovered the origin of spin. He was not correct: it is not the case that every particles has to have spin, but he was right for Fermions.
 
 We still have $H^2=P^2$, and we don't have a mass. So we try $H= H = \vec{\alpha} \cdot \vec{P}+\beta m$ for some $\beta$ such that $\beta^2=1$.
 
@@ -2190,7 +2190,7 @@ So $\beta$ anticommutes with all the Pauli matrices: unfortunately there is not 
 	We can find 3 $2 \times 2$ non-trivial matrices that anticommute, but not 4.
 \end{thm}
 \begin{proof}
-	The Pauli matrices anticommute, so the first part of the theorem is immediate. To show there as not a $4th$ matrix, try to find $\begin{pmatrix}
+	The Pauli matrices anticommute, so the first part of the theorem is immediate. To show there is not a $4th$ matrix, try to find $\begin{pmatrix}
 		a & b\\
 		c & d
 	\end{pmatrix}$ that anticommutes with the Pauli matrices. We start with $\sigma_1$.
@@ -2247,7 +2247,7 @@ So $\beta$ anticommutes with all the Pauli matrices: unfortunately there is not 
 		-b & 0
 	\end{pmatrix}$, which is a $\sigma_3$ multiplied by a scalar. The only way it can anticommute with $\sigma_3$ is if $b=0$, which is trivial.
 \end{proof}
-We have two choices: we can give up, or introduce another 2 valued degree of freedom, so we would use $4 \times 4$. It turns out that this will work: $4 \times 4$ \emph{has nothing to do with space being 4 dimensional; it is just a mathematical fact about anti-commuting matrices.} 
+We have two choices: we can give up, or we can introduce another 2 valued degree of freedom, so we would use $4 \times 4$. It turns out that this will work: $4 \times 4$ \emph{has nothing to do with space being 4 dimensional; it is just a mathematical fact about anti-commuting matrices.} 
 
 There are many different and equivalent representation of the Dirac matrices, which must satisfy:
 \begin{align*}
@@ -2309,7 +2309,7 @@ Here is one solution, the Pauli representation of the Dirac matrices. This is no
 	\end{pmatrix}
 \end{align*}
 
-When we tried $H= H = \vec{\alpha} \cdot \vec{P}+\beta m$, we found that for positive energy, $\sigma$ has to be aligned with momentum. We introduced another species which has its spin reversed: this is said to be the opposite \emph{chirality}.
+When we tried $H=\vec{\alpha} \cdot \vec{P}+\beta m$, we found that for positive energy, $\sigma$ has to be aligned with momentum. We introduced another species which has its spin reversed: this is said to be the opposite \emph{chirality}.
 
 \begin{defn}[Helicity]
 	 Physically, the helicity operator can be thought of as a projection operator of spin along the direction of motion $h=\frac{\vec{S}\cdot\vec{P}}{\lvert P \rvert}$.

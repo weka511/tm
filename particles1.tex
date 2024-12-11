@@ -269,8 +269,13 @@ For the time being we ignore conservation laws!
 
 Consider generating photon at a position where there is a pre-existing photon with momentum $l$--Figure \ref{fig:simple:decay}.
 \begin{figure}[H]
-	\caption[Generating photon  where there is a pre-existing photon]{Generating photon at a position where there is a pre-existing photon with momentum $l$.}\label{fig:simple:decay}
-	\includegraphics[width=0.8\textwidth]{decay}
+	\begin{center}
+		\caption[Generating photon  where there is a pre-existing photon]{Generating photon at a position where there is a pre-existing photon with momentum $l$.}\label{fig:simple:decay}
+		\feynmandiagram[layered layout,horizontal=in1 to out1]{
+			in1--[photon]c--[photon,edge label=\(l\)]out1,
+			c--[photon]out2,
+		};
+	\end{center}
 \end{figure}
 
 \begin{align*}

@@ -1966,16 +1966,18 @@ We have just seen the basic physics: the rest is technology and tricks.
 
 \subsection{The Dirac Equation}
 
-We will study the relativistic electron. We will start with an electron that moves in 1 direction along a line. Why did Dirac want to handle the relativistic case? Electrons in at atom move at a significant proportion of the speed of light. 
+We will study the relativistic electron. We will start with an electron that moves in one direction along a line. Why did Dirac want to handle the relativistic case? Electrons in an atom move at a significant proportion of the speed of light. 
 
 \begin{align*}
 	E =& \frac{p^2}{2m} \text {, classical}\\
 	P =& -i \frac{\partial}{\partial x} \text{, quantum}\\
 	H = & i \frac{\partial}{\partial t}\\
-	E^2 =& p^2 + m^2 \text{, relativistic($c^2=1$). It becomes:}\\
+	E^2 =& p^2 + m^2 \text{, relativistic($c^2=1$).}
+\end{align*}
+It becomes:
+\begin{align*}
 	-\frac{\partial^2}{\partial t^2} \phi(x) =& -\frac{\partial^2}{\partial x^2}\phi(x) + m^2 \phi(x) 
 \end{align*}
-
 This was already known; it is the Klein-Gordon equation. But Dirac wanted this:
 \begin{align*}
 	i \frac{\partial \psi}{\partial t} =& H\psi\\
@@ -1990,23 +1992,21 @@ What could this possibly mean? What is the operator on the right hand side? Dira
 	\frac{\partial \psi}{\partial t} + \frac{\partial \psi}{\partial x}=&0
 \end{align*}
 
-Any function of x-t will satisfy this  equation. It describes a wave, moving to the right.
-
-Three things are wrong with this equation:
+Any function of x-t will satisfy this  equation. It describes a wave, moving to the right. But three things are wrong with this equation:
 \begin{enumerate}
 	\item it allows particles with negative momentum, which have negative energy;\label{item:negative:energy}
 	\item it only has particles that move to the right;\label{item:right:only}
 	\item the electron has no mass, so it moves with the speed of light.\label{item:speed:light}
 \end{enumerate}
 
-Dirac solved second problem by imagining two species of electrons, one moving to the right, t'other to the left, labelled $\psi_1$ and $\psi_2$. Or a particle can be one or t'other, or a superposition.
+Dirac solved second problem by imagining two species of electrons, one moving to the right, t'other to the left, labeled $\psi_1$ and $\psi_2$. Or a particle can be one or t'other, or a superposition.
 
 \begin{align*}
 	\frac{\partial \psi_1}{\partial t} + \frac{\partial \psi_1}{\partial x}=&0 \text{, moving to right}\\
 	\frac{\partial \psi_2}{\partial t} - \frac{\partial \psi_2}{\partial x}=&0 \text{, moving to left}
 \end{align*}
 
-Imagine particle with two degrees of freedom, $x$ and $1/2$. Make second degree into matrix index. Introduce an observable, $\alpha$, to tell us whether particle is 1 or 2 (a bit like a spin). We thinks of the $\psi$s as a column vector, and introduce a matrix whose eigenvectors are $\psi_1$ or $\psi_2$. Here is such a matrix (observable).
+Imagine particle with two degrees of freedom, $x$ and $\{1,2\}$. Make the second degree into a matrix index, and introduce an observable, $\alpha$, to tell us whether particle is 1 or 2 (a bit like a spin). We thinks of the $\psi$s as a column vector, and introduce a matrix whose eigenvectors are $\psi_1$ or $\psi_2$. Here is such a matrix (observable).
 
 \begin{align*}
 	\underbrace{
@@ -2026,21 +2026,19 @@ Imagine particle with two degrees of freedom, $x$ and $1/2$. Make second degree 
 We have fixed problem \ref{item:right:only}, particles moving to the right only. To fix problem \ref{item:speed:light}, absence of mass, Dirac added a term to give the electron mass. 
 
 \begin{align*}
-	H =& \alpha P + \beta m \text{, where $\beta$ is some matrix. Now} \numberthis \label{eq:dirac:1D:m}\\we 
-	E^2 =& P^2 + m^2 \text{, so}\\
-	E^2 =& \big(\alpha P + \beta m \big) \big(\alpha P + \beta m \big)\\
-	=& \underbrace{\alpha^2}_\text{(=1)} P^2 + \underbrace{\beta^2 }_\text{  $(=1)$} m^2 + (\alpha \beta + \beta \alpha) P m \text{, if set $a^2=1$ and $b^2=1$}\\
+	H =& \alpha P + \beta m \text{, where $\beta$ is some matrix. Now} \numberthis \label{eq:dirac:1D:m}\\
+	E^2 =& P^2 + m^2 \text{, introduce $\alpha$ and  $\beta$ such that $\alpha^2=1$ and $\beta^2=1$}\\
+	=& \big(\alpha P + \beta m \big) \big(\alpha P + \beta m \big) \\
+	=& \underbrace{\alpha^2}_\text{(=1)} P^2 + \underbrace{\beta^2 }_\text{  $(=1)$} m^2 + (\alpha \beta + \beta \alpha) P m \\\
 	=&  P^2 + m^2 + (\alpha \beta + \beta \alpha) P m \text{, so we want:}\\
 	\alpha \beta + \beta \alpha=&0 
 \end{align*}
 
-Now $\alpha$ is a Pauli matrix, $\sigma_3$, so we can use any other Pauli matrix for $\beta$. We will use
-$
-	\begin{pmatrix}
-		0&1\\
-		1&0
-	\end {pmatrix}
-$.
+We know that the Pauli matrices anticommute, so choose:
+\begin{align*}
+	\alpha =& \sigma_3\\
+	\beta& \sigma_2.
+\end{align*}
 
 We have the 1-dimensional version of Dirac's equation.
 \begin{align*}

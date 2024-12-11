@@ -66,12 +66,11 @@
 These are my notes for \emph{New Revolutions in Particle Physics 1}  from Leonard Susskind's \emph{Theoretical Minimum} series \cite[Particle Physics 1: Basic Concepts]{susskind2007theoretical}.
 
 \begin{quotation}
-	Revolutionary new concepts about elementary particles, space and time, and the structure of matter began to emerge in the mid-1970s. Theory got far ahead of experiment with radical new ideas such as grand unification and supersymmetry, but the concepts have never been experimentally tested. Now all that is about to change. The Large Hadron Collider, or LHC, has finally been built and is about to confront theory with experiment. This course is devoted to these theoretical ideas and how they will be tested.
+	Revolutionary new concepts about elementary particles, space and time, and the structure of matter began to emerge in the mid-1970s. Theory got far ahead of experiment with radical new ideas such as grand unification and supersymmetry, but the concepts have never been experimentally tested. Now all that is about to change. The \glsdesc{gls:LHC}, or \gls{gls:LHC}, has finally been built and is about to confront theory with experiment. This course is devoted to these theoretical ideas and how they will be tested.
 \end{quotation}
 
 Disclaimer: I have created these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
 
-The notes were created using TexStudio\cite{TexStudio}, and the bibliography   using JabRef\cite{Jabref}.
 \end{abstract}
 
 \tableofcontents
@@ -110,8 +109,8 @@ We have
 
 A photon has energy:
 \begin{align*}
-E=&\hslash \omega \text{. Energy of single photon.} \numberthis\label{eq:E_omega}\\
-E_{ray}=&n \hslash \omega \text{. Energy of ray.}
+	E=&\hslash \omega \text{. Energy of single photon.} \numberthis\label{eq:E_omega}\\
+	E_{ray}=&n \hslash \omega \text{. Energy of ray.}
 \end{align*}
 
 (I learned quantum mechanics using Planck's constant, $h$, rather than Dirac's $\hbar$; $hf=\hbar\omega$.) 
@@ -125,9 +124,9 @@ Energy depends on the motion of the object as seen by the observer: it isn't a u
 Light has energy and momentum (not mass): 
 
 \begin{align*}
-\left|P\right|=&\frac{E}{c} \\
-=&\frac{\hslash \omega}{c} \text{, from (\ref{eq:E_omega})}\\
-=& \frac{2 \pi \hslash}{\lambda} \text{, from (\ref{eq:omega:lambda}). c.f. Harmonic Oscillator.}\numberthis\label{eq:P:lambda}
+	\left|P\right|=&\frac{E}{c} \\
+	=&\frac{\hslash \omega}{c} \text{, from (\ref{eq:E_omega})}\\
+	=& \frac{2 \pi \hslash}{\lambda} \text{, from (\ref{eq:omega:lambda}). c.f. Harmonic Oscillator.}\numberthis\label{eq:P:lambda}
 \end{align*}
 
 This is why we need larger and larger instruments to observe smaller particles!
@@ -142,8 +141,8 @@ Consider a classical wave $A \sin(kx)$. Energy is proportional to $A^2$, but als
 
 Generally, equations containing $c$ apply for photons only. For non-relativistic particles:
 \begin{align*}
-E=&\frac{p^2}{2m}\\
-f =& \frac{h}{2 m \lambda^2} \text{. c.f. Schr\"odinger equation!}
+	E=&\frac{p^2}{2m}\\
+	f =& \frac{h}{2 m \lambda^2} \text{. c.f. Schr\"odinger equation!}
 \end{align*}
 
 \begin{itemize}
@@ -166,9 +165,9 @@ Let's look at 1 dimensional waves. In order to get rid of infinities, we can res
 Now make into a real circle, radius $R$, and redefine $L=PR$ to be \emph{angular momentum}.
 
 \begin{align*}
-P =& \frac{h N}{2 \pi R}\\
-L =& N \frac{h}{2 \pi}\\
-=& N \hslash \text{ independent of $R$.}
+	P =& \frac{h N}{2 \pi R}\\
+	L =& N \frac{h}{2 \pi}\\
+	=& N \hslash \text{ independent of $R$.}
 \end{align*}
 
 \subsection{Quantum field theory}
@@ -178,12 +177,12 @@ Start with harmonic oscillator: a wave is a collection of harmonic oscillators. 
 Introduce operators:
 
 \begin{align*}
-a^+ \ket{n} =& \sqrt{n+1} \ket{n+1} \text{, creation operator} \numberthis \label{eq:creation}\\
-a^- \ket{n} =& \sqrt{n} \ket{n-1} \text{, annihilation operator} \numberthis \label{eq:annihilation} \\
-a^+ a^- \ket{n} =& n \ket{n} \text{, or}\\
-a^+ a^-  =& n \text{. Similarly}\\
-a^- a^+  =& n+1\\
-[a^-, a^+] =& 1
+	a^+ \ket{n} =& \sqrt{n+1} \ket{n+1} \text{, creation operator} \numberthis \label{eq:creation}\\
+	a^- \ket{n} =& \sqrt{n} \ket{n-1} \text{, annihilation operator} \numberthis \label{eq:annihilation} \\
+	a^+ a^- \ket{n} =& n \ket{n} \text{, or}\\
+	a^+ a^-  =& n \text{. Similarly}\\
+	a^- a^+  =& n+1\\
+	[a^-, a^+] =& 1
 \end{align*}
 
 Return to world on a circle--$\omega_N$--equivalent to oscillator. State is $\ket{n_1,n_2, n_3,...}$--occupation numbers. 
@@ -207,16 +206,16 @@ $a^+(k)$, $a^-(k)$ are quantum mechanical versions of the Fourier coefficients o
 
 Here is a classical wave:
 \begin{align*}
-\Psi(x) =& \sum_k \alpha(k) e^{ikx}\\
-\Psi^*(x) =& \sum_k \alpha^*(k) e^{-ikx}
+	\Psi(x) =& \sum_k \alpha(k) e^{ikx}\\
+	\Psi^*(x) =& \sum_k \alpha^*(k) e^{-ikx}
 \end{align*}
 
 We quantize as shown in (\ref{eq:q:1}) and (\ref{eq:q:2}) to produce a quantum field:
 \begin{align*}
-\alpha(k) \rightarrow& a^-(k) \numberthis \label{eq:q:1}\\
-\alpha^*(k) \rightarrow& a^+(k) \numberthis \label{eq:q:2}\\
-\Psi(x) =& \sum_k a^-(k) e^{ikx} \numberthis \label{eq:Psi}\\
-\Psi^\dagger(x) =& \sum_k a^+(k) e^{-ikx} \numberthis \label{eq:Psi:dagger}
+	\alpha(k) \rightarrow& a^-(k) \numberthis \label{eq:q:1}\\
+	\alpha^*(k) \rightarrow& a^+(k) \numberthis \label{eq:q:2}\\
+	\Psi(x) =& \sum_k a^-(k) e^{ikx} \numberthis \label{eq:Psi}\\
+	\Psi^\dagger(x) =& \sum_k a^+(k) e^{-ikx} \numberthis \label{eq:Psi:dagger}
 \end{align*}
 
 We need to justify (\ref{eq:q:1}) and (\ref{eq:q:2}) in some appropriate limit.
@@ -632,11 +631,11 @@ Electrons that are deep in Fermi Sea can't be excited by low energy photons. Onl
 
 \subsubsection{Dirac and antiparticles}
 
-We consider the 1-dimensional case. Imagine a wave propagating to the tight with speed $c$.
+We consider the 1-dimensional case. Imagine a wave propagating to the right with speed $c$.
 \begin{align*}
-\omega =& k\\
-\frac{\partial \psi}{\partial t} =& - \frac{\partial \psi}{\partial x}  \numberthis \label{eq:rh:dirac}\\
-\psi =& e^{i(kx-\omega t)} \numberthis \label{eq:rh:dirac:wave}
+	\omega =& k\\
+	\frac{\partial \psi}{\partial t} =& - \frac{\partial \psi}{\partial x}  \numberthis \label{eq:rh:dirac}\\
+	\psi =& e^{i(kx-\omega t)} \numberthis \label{eq:rh:dirac:wave}
 \end{align*}
 What if $k$ negative? Then we have negative energy. But if we had arbitrarily negative energies, particle could keep emitting photons all the way down. So (\ref{eq:rh:dirac}) would not make sense for Bosons.
 
@@ -648,18 +647,19 @@ Dirac said to fill all negative energy states: so lowest energy state has all ne
 
 The right-handed Dirac equation (\ref{eq:rh:dirac}) has the following solution:
 \begin{align*}
-\psi_R =& e^{i(kx-\omega t)} \text{, from (\ref{eq:rh:dirac:wave}), whence:}\\
-V_g =& \frac{\omega}{k} \text{, from which}\\
-\frac{\partial \psi_R}{\partial t} + \frac{\partial \psi_R}{\partial x} =&0
+	\psi_R =& e^{i(kx-\omega t)} \text{, from (\ref{eq:rh:dirac:wave}), whence the group velocity is:}\\
+	V_g =& \frac{\omega}{k} \text{, with the appropriate signs, from which}\\
+	\frac{\partial \psi_R}{\partial t} + \frac{\partial \psi_R}{\partial x} =&0 \text{, provided}\\
+	\omega =& k
 \end{align*}
 
-If $k<0$, $\omega<0$, i.e. negative energy, which is not a good thing. So we fill up the Dirac Sea. Then we can remove one electron, creating a hole in the Dirac Sea; particle and hole both have positive momentum and positive energy.
+If $k<0$, $\omega<0$, i.e. negative energy, which is not a good thing: electrons would not be stable. So we fill up the Dirac Sea. Then we can remove one electron, creating a hole in the Dirac Sea; particle and hole both have positive momentum and positive energy.
 
 We now introduce left moving electrons.
 
 \begin{align*}
-\frac{\partial \psi_L}{\partial t} =& \frac{\partial \psi_L}{\partial x} \numberthis \label{eq:lh:dirac:wave}\\
-\frac{\omega}{k} =& -1
+	\frac{\partial \psi_L}{\partial t} =& \frac{\partial \psi_L}{\partial x} \numberthis \label{eq:lh:dirac:wave}\\
+	\frac{\omega}{k} =& -1
 \end{align*}
 Fill sea with left moving negative energy.
 

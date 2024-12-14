@@ -316,21 +316,21 @@ The reflection of a magnetic field is not the same field, as it is an axial vect
 	then there are two or more independent eigenvectors of $H$ with the same eigenvalue (energy).
 \end{thm}
 \begin{proof}
-	Choose any  eigenvector $\ket{v}$ of $H$ with eigenvalue $E$. Then we can write
+	Choose any  eigenvector $\ket{v_1}$ of $H$ with eigenvalue $E_1$. Then we can write
 	\begin{align*}
-		H \ket{v} =& E \ket{v} \\
-		AH \ket{v} =& E A \ket{v}\\
-		HA \ket{v} =& E A\ket{v}  \text{, since $A$ commutes with $H$}
+		H \ket{v_1} =& E_1 \ket{v_1} \\
+		AH \ket{v_1} =& E_1 A \ket{v_1} \text{, since $E_1$ is a scalar}\\
+		HA \ket{v_1} =& E A\ket{v_1}  \text{, since $A$ commutes with $H$}
 	\end{align*}
-	Whence $A \ket{v}$ is also an eigenvector with eigenvalue $E$. Similarly $B \ket{v}$ is also an eigenvector with eigenvalue $E$.
+	Whence $A \ket{v_1}$ is also an eigenvector of $H$ with eigenvalue $E_1$. Similarly $B \ket{v_1}$ is also an eigenvector with eigenvalue $E_1$.
 	\begin{case}
-		If $A \ket{v}$, or $B \ket{v}$ is independent of $\ket{v}$, we have constructed an eigenvector that shares the same eigenvalue, and the result is proved.
+		If $A \ket{v}$, or $B \ket{v}$ is independent of $\ket{v}$, and of each other, we have constructed a pair of eigenvectors that share the same eigenvalue, and the result is proved.
 	\end{case}
 	\begin{case}
-		Otherwise choose another eigenvector $\ket{v}$. Continue until we have $A \ket{v}$, or $B \ket{v}$  independent of $\ket{v}$ as in the first case.
+		Otherwise choose another eigenvector $\ket{v_2}$. Continue ($\ket{v_i}$) until we have $A \ket{v_i}$, and $B \ket{v_i}$  independent  as in the first case.
 	\end{case}
 	\begin{case}
-		If we exhaust all eigenvectors, then $A$ and $B$ must be proportional, which is impossible since they don't commute.
+		If we exhaust all eigenvectors, then uses $\{v_i\}$ as a basis to diagonalize $A$ and $B$ simultaneously, so they commute. But this is impossible, by hypothesis.
 	\end{case}
 \end{proof}
 
@@ -373,7 +373,16 @@ Consider a classical orbit with energy $E$, Figure \ref{eq:aqm-2-1}. Is it degen
 	\end{subfigure}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Rotation in 2D by a small angle $\epsilon$}\label{fig:aqm-2-2}
-		\includegraphics[width=\textwidth]{aqm-2-2}
+		\begin{tikzpicture}
+			\draw[->] (-0.5,0) -- (4,0) node[right] {x};
+			\draw[->] (0,-0.5) -- (0,4) node[above] {y};
+			\draw (0,0) -- (3,3);
+			\filldraw[black] (3,3) circle (2pt) node[anchor=west]{};
+			\filldraw[black] (3.3,2.7) circle (2pt) node[anchor=west]{};
+			\node (c) at (3.3,3.0) {\Large $\epsilon$};
+			\draw[->] (3.6,2.4) -- (3.4,2.6);
+			\draw[->] (2.6,3.3) -- (2.9,3);
+		\end{tikzpicture}
 	\end{subfigure}
 \end{figure}
 

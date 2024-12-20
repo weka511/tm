@@ -1855,7 +1855,7 @@ The integrand in last term annihilates a proton and an electron if it finds them
 
 \begin{figure}[H]
 	\begin{center}
-		\caption[$\Psi^\dagger_e(x) \Psi^\dagger_e(x) \Psi_e(x) \Psi_p(x)$--scattering]{$\Psi^\dagger_e(x) \Psi^\dagger_e(x) \Psi_e(x) \Psi_p(x)$: annihilate and create an electron and proton if they are at the same place, then create again --i.e. scatter}\label{fig:scatter:e:p}
+		\caption[$\Psi^\dagger_e(x) \Psi^\dagger_e(x) \Psi_e(x) \Psi_p(x)$--scattering]{$\Psi^\dagger_e(x) \Psi^\dagger_e(x) \Psi_e(x) \Psi_p(x)$: annihilate and electron and proton if they are at the same place, then create an electron and a proton at the same place--i.e. scatter them.}\label{fig:scatter:e:p}
 		\feynmandiagram[vertical=o1 to i1]{
 			i1[particle=$e^-$]--[fermion]a--[fermion]o1[particle=$e^-$],
 			i2[particle=$p^+$]--[fermion]a--[fermion]o2[particle=$p^+$]
@@ -1865,24 +1865,25 @@ The integrand in last term annihilates a proton and an electron if it finds them
 
 \begin{itemize}
 	\item Total momentum is conserved, not that of individual particles.
-	\item Coulomb potential has been ignored.
+	\item Real electrons and protons interact through the Coulomb potential, but this has been ignored.
 	\item If experiment shows that particles interact, then there must be a term in the Hamiltonian.
 	\item This is the sort of term for a short range interaction.
 \end{itemize}
 
-Imagine we find particle decay in an experiment, as shown in Figure \ref{fig:particle:decay}. We might try a term: $\Psi^\dagger_b(x) \Psi^\dagger_c(x) \Psi_a(x)$. Since space it isotropic, the interaction can happen anywhere: $g \int \Psi^\dagger_b(x) \Psi^\dagger_c(x) \Psi_a(x) dx$. We can show that momentum is conserved.
+Imagine we find particle decay in an experiment, as shown in Figure \ref{fig:particle:decay}. We might try a term: $\Psi^\dagger_b(x) \Psi^\dagger_c(x) \Psi_a(x)$. Since space it isotropic, the interaction can happen anywhere: $\int \Psi^\dagger_b(x) \Psi^\dagger_c(x) \Psi_a(x) dx$, or $g \int \Psi^\dagger_b(x) \Psi^\dagger_c(x) \Psi_a(x) dx$, where we have introduced the \emph{coupling constant}, $g$. We can show that momentum is conserved.
 
 \begin{figure}[H]
 	\caption{$\Psi^\dagger_b(x) \Psi^\dagger_c(x) \Psi_a(x) dx +  \Psi^\dagger_a(x) \Psi_c(x) \Psi_b(x)$}\label{fig:particle:decay:and:reverse}
 	\begin{subfigure}{0.45\textwidth}
-		\caption{Particle Decay: $\Psi^\dagger_b(x) \Psi^\dagger_c(x) \Psi_a(x)$}\label{fig:particle:decay}
+		\caption{Particle $a$ decays to $b$ and $c$: $\Psi^\dagger_b(x) \Psi^\dagger_c(x) \Psi_a(x)$}\label{fig:particle:decay}
 		\feynmandiagram[horizontal' = b to c]{
 			a[particle=a]--[charged scalar]cc--[charged scalar]b[particle=b],
 			cc--[charged scalar]c[particle=c]
 		};
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}{0.45\textwidth}
-		\caption{Reverse: $\Psi^\dagger_a(x) \Psi_c(x) \Psi_b(x)$}\label{fig:particle:decay:reverse}
+		\caption{We need the reverse of (\subref{fig:particle:decay}) to make the Hamiltonian be Hermitian: $\Psi^\dagger_a(x) \Psi_c(x) \Psi_b(x)$}\label{fig:particle:decay:reverse}
 		\feynmandiagram[horizontal' = b to c]{
 			b[particle=b]--[charged scalar]cc--[charged scalar]a[particle=a],
 			c[particle=c]--[charged scalar]cc
@@ -1890,7 +1891,7 @@ Imagine we find particle decay in an experiment, as shown in Figure \ref{fig:par
 	\end{subfigure}
 \end{figure}
 
-Now what goes in the Hamiltonian must be Hermitian, so we need:
+Now what goes in the Hamiltonian must be Hermitian, so the evolution is unitary. This means we need:
 \begin{align*}
 	g \int \Psi^\dagger_b(x) \Psi^\dagger_c(x) \Psi_a(x) dx + g \int \Psi^\dagger_a(x) \Psi_c(x) \Psi_b(x)
 \end{align*}
@@ -1898,12 +1899,12 @@ which reverses the process of  Figure \ref{fig:particle:decay}: $b+c\rightarrow 
 
 We now have a the basic rules of a simple version of quantum field theory:
 \begin{itemize}
-	\item Creation and annihilation operators;
-	\item Fields made out of creation and annihilation operators;
-	\item Fields are functions of position;
-	\item The Fields can be thought of as creation and annihilation operators at a definite position;
-	\item Each type of particle has its own field;
-	\item We write down Hamiltonian with kinetic energies of particles and other concoctions. 
+	\item creation and annihilation operators;
+	\item fields made out of creation and annihilation operators;
+	\item fields are functions of position;
+	\item the fields can be thought of as creation and annihilation operators at a definite position;
+	\item each type of particle has its own field;
+	\item we write down the Hamiltonian with kinetic energies of particles and other concoctions. 
 \end{itemize}
 
 In the first round of \gls{gls:QFT} the concoctions largely came from experiment. A classic example it beta decay: a neutron decaying into a proton, an electron, and a neutrino--$g \int \Psi^\dagger_{\nu}(x) \Psi^\dagger_e(x) \Psi^\dagger_p(x) \Psi_n(x) dx$ (need to make Hermitian).

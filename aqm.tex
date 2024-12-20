@@ -1920,14 +1920,17 @@ What is the effect of $H^2$? We can multiply it out, but the easy way is to use 
 \begin{figure}[H]
 	\caption{$\Psi^\dagger_c\Psi^\dagger_b\Psi_a\Psi^\dagger_a\Psi_b\Psi_c$}
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{b and c scattering}\label{fig:scatter:annihilate}
-		\feynmandiagram[horizontal' = b to c]{
-			b[particle=b]--[charged scalar]cc--[charged scalar]a[particle=a],
-			c[particle=c]--[charged scalar]cc,
-			a--[charged scalar]ccc--[charged scalar]bb[particle=b],
-			ccc--[charged scalar]cccc[particle=c]
-		};
+		\begin{center}
+			\caption{b and c scattering}\label{fig:scatter:annihilate}
+			\feynmandiagram[vertical' = out2 to in1]{
+				in1[particle=b]--[charged scalar]cc--[charged scalar]a[particle=a],
+				in2[particle=c]--[charged scalar]cc,
+				a--[charged scalar]ccc--[charged scalar]out1[particle=b],
+				ccc--[charged scalar]out2[particle=c]
+			};
+		\end{center}
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Additional particle}\label{fig:additional:particle}
 		\feynmandiagram[vertical = cc to c]{
@@ -1952,12 +1955,13 @@ What about $a\rightarrow (b+c)\rightarrow a$? This is a self energy diagram for 
 				e1[particle=$e^-$]--[fermion]e2[particle=$e^-$]
 				--[fermion]e3[particle=$e^-$],
 				e2--[photon]x
-	};
-	\end{center}
+		};
+		\end{center}
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
 		\begin{center}
-			\caption{One other thing that can happen: emit photon and reabsorb. The photon is the electric field of the electron. If electron is moving at the speed of light it behaves like a suerposition of an electron and an electron+photon.}
+			\caption{One other thing that can happen: emit photon and reabsorb. The photon is the electric field of the electron. If electron is moving at the speed of light it behaves like a superposition of an electron and an electron+photon.}
 			\feynmandiagram[vertical=e4 to e1]{
 				e1[particle=$e^-$]--[fermion]e2--[fermion]e3
 				--[fermion]e4[particle=$e^-$],
@@ -1970,8 +1974,6 @@ What about $a\rightarrow (b+c)\rightarrow a$? This is a self energy diagram for 
 Energy isn't just the sum of the particles: it includes these interactions.
 
 We have just seen the basic physics: the rest is technology and tricks.
-
-
 
 \subsection{The Dirac Equation}
 

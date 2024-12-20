@@ -1915,13 +1915,13 @@ Let's go one step further. Imagine that we made $\epsilon$ a little larger in (\
 	\ket{\phi(t+\epsilon)} =& \ket{\phi(t)} -i \epsilon H \ket{\phi(t)} - \frac{\epsilon^2}{2} H^2 \ket{\phi(t)}
 \end{align*}
 
-What is the effect of $H^2$? We can multiply it out, but the easy way is to use the pictures. E.g., Figure \ref{fig:particle:decay} becomes a scatter: $b+c \rightarrow a \rightarrow b + c$. Or Figure \ref{fig:scatter:annihilate} shows a more complex situation. You can have a forest of interactions that are mediated by a single term in the Hamiltonian. 
+What is the effect of $H^2$? We can multiply it out, but the easy way is to use the pictures. E.g., Figure \ref{fig:particle:decay} becomes a scatter: $b+c \rightarrow a \rightarrow b + c$. Or Figure \ref{fig:scatter:annihilate} shows a more complex situation. You can have a forest of interactions that are mediated by a single term in the Hamiltonian. This is why \glsdesc{gls:QFT} is powerful: a small number of terms in the Hamiltonian can lead to a huge number of interactions, all with the same coupling constant.
 
 \begin{figure}[H]
-	\caption{$\Psi^\dagger_c\Psi^\dagger_b\Psi_a\Psi^\dagger_a\Psi_b\Psi_c$}
+	\caption{What is the effect of $H^2$?}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\begin{center}
-			\caption{b and c scattering}\label{fig:scatter:annihilate}
+			\caption{$\Psi^\dagger_c\Psi^\dagger_b\Psi_a\Psi^\dagger_a\Psi_b\Psi_c$: annihilate $c$ and $b$ to create an $a$, then annihilate the $a$ and create a $b$ and $c$: we have created a scattering, and the total momentum should remain the same.}\label{fig:scatter:annihilate}
 			\feynmandiagram[vertical' = out2 to in1]{
 				in1[particle=b]--[charged scalar]cc--[charged scalar]a[particle=a],
 				in2[particle=c]--[charged scalar]cc,
@@ -1932,22 +1932,36 @@ What is the effect of $H^2$? We can multiply it out, but the easy way is to use 
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Additional particle}\label{fig:additional:particle}
-		\feynmandiagram[vertical = cc to c]{
-			a[particle=a]--[charged scalar]cc--[charged scalar]b[particle=b],
+		\caption{Another possibility is for $a$ to come in, be annihilated producing a $b$ and a $c$. Suppose there is another $b$ around: if it can find another $c$ to annihilate with, it can produce a $a$. So iterating the Hamiltonian we also have a process where $a$ and $b$ scatter by exchanging a $c$: this is called an exchange diagram.}\label{fig:additional:particle}
+		\feynmandiagram[vertical=out1 to in1]{
+			in1[particle=a]--[charged scalar]cc--[charged scalar]out1[particle=b],
 			cc--[charged scalar]c[particle=c],
-			bb[particle=b]--[charged scalar]c,
-			c--[charged scalar]aa[particle=a]
+			in2[particle=b]--[charged scalar]c,
+			c--[charged scalar]out2[particle=a],
+			in1--[opacity=0.0]in2,
 		};
 	\end{subfigure}
 \end{figure}
 
-Figures \ref{fig:scatter:annihilate} and \ref{fig:additional:particle} have a coupling constant $g^2$.
+Figures \ref{fig:scatter:annihilate} and \ref{fig:additional:particle} have a coupling constant $g^2$, since there are two vertices.
 
-What about $a\rightarrow (b+c)\rightarrow a$? This is a self energy diagram for $a$. A real $a$ has a probability of being a $b+c$, and it behave like a $b+c$ close together some times. Figure \ref{fig:self:energy:electron} shows a self energy diagram for the electron.
+What about $a\rightarrow (b+c)\rightarrow a$? Fugure \ref{fig:self:energy:a} is a self energy diagram for $a$. A real $a$ has a probability of being a $b+c$, and it behave like a $b+c$ close together some times.
+\begin{figure}[H]
+	\begin{center}
+		\caption{Self energy diagram for $a$.}\label{fig:self:energy:a}
+		\feynmandiagram[vertical=bc to in1]{
+			in1[particle=a]--[charged scalar]bc--[charged scalar]b1[particle=b],
+			bc--[charged scalar]c1[particle=c],
+			b1--[charged scalar]a1,
+			c1--[charged scalar]a1,
+			a1--[charged scalar]out1[particle=a],
+		};
+	\end{center}
+\end{figure}
+One example of this would be an electron emitting a photon--Figure \ref{fig:self:energy:electron} shows a self energy diagram for the electron.
 
 \begin{figure}[H]
-	\caption[Scatter electron and emit photon]{Scatter electron and emit photon(field $A$):$A\Psi^+_e\Psi^-_e$. Sometimes what you thought was an electron behaves like an electron + photon. Don't take it too literally: this happens, then  this, then that. The pictures just come out of iterating the Hamiltonian twice. Low probability: think of as correction to structure of an electron, not a new process. If we look, we will screw up electron! Sometime you will see that what you thought was an electron is an electron + photon. Superposition.}\label{fig:self:energy:electron}
+	\caption[Scatter electron and emit photon]{Scatter electron and emit photon(field $A$):$A\Psi^+_e\Psi^-_e$. Sometimes what you thought was an electron behaves like an electron + photon. Don't take it too literally: this happens, then  this, then that. The pictures just come out of iterating the Hamiltonian twice. If we look, we will screw up electron! If you scatter another electron against this electron, you will find some of the time, you will see that what you thought was an electron is an electron + photon. The probability to find photon is small, about 1\%. It should be thought  of as a correction to the structure of an electron, not a new process.}\label{fig:self:energy:electron}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\begin{center}
 			\caption{Electron comes in and emits photon--$A\Psi^+_e\Psi^-_e$}
@@ -1971,9 +1985,9 @@ What about $a\rightarrow (b+c)\rightarrow a$? This is a self energy diagram for 
 	\end{subfigure}
 \end{figure}
 
-Energy isn't just the sum of the particles: it includes these interactions.
+Figure \ref{fig:self:energy:electron} doesn't depict what is literally happening; they are shorthands for the mathematics of squaring the Hamiltonian. What is actually happening is a superposition. Energy isn't just the sum of the particles: it includes these interactions.
 
-We have just seen the basic physics: the rest is technology and tricks.
+We have just seen the basic physics: the rest is technology and tricks to calculate things.
 
 \subsection{The Dirac Equation}
 

@@ -1786,8 +1786,6 @@ Fermions don't work like this! One measurement can kick another arbitrarily far 
 
 \section{Quantum Field Hamiltonian}
 
-
-
 \subsection{Particle Field Interactions}
 
 In the previous lectures we talked about Quantum Fields, the quanta of those fields, the creation and annihilation operators, and examined the Hamiltonian for a very simple field--non-interacting particles satisfying Schr\"odinger's equation. The second term counts particles, giving each energy $V(x)$.\footnote{We are not restricted to 3D: x may be a vector.}
@@ -1796,27 +1794,25 @@ In the previous lectures we talked about Quantum Fields, the quanta of those fie
 \end{align*}
 $\Psi^\dagger(x) \Psi(x)$ represents the density of particles at $x$, so $\Psi^\dagger(x) \Psi(x) V(x)$ counts particles at $x$, and gives each one energy $V(x)$.
 
-We restrict to the special case of constant potential energy
+We restrict to the special case of constant potential energy: each particle has energy $mc^2$.
 \begin{align*}
-H=&\int dx \big[\Psi^\dagger(x) \big(\frac{- \nabla^2}{2m} \Psi(x)\big) + mc^2 \Psi^\dagger(x) \Psi(x)\big]  \numberthis\label{eq:psi_mc2}
+	H=&\int dx \big[\Psi^\dagger(x) \big(\frac{- \nabla^2}{2m} \Psi(x)\big) + mc^2 \Psi^\dagger(x) \Psi(x)\big]  \numberthis\label{eq:psi_mc2}
 \end{align*}
 
-Each particle has energy $mc^2$.
-
-How do we see from (\ref{eq:psi_mc2}) that momentum is conserved?
-
-The Hamiltonian updates state, $\phi$, say.
+How do we see from (\ref{eq:psi_mc2}) that momentum is conserved? The role of the Hamiltonian is to update state, $\phi$, say.
 
 \begin{align*}
 	\ket{\phi(t+\epsilon)} =& (1-i \epsilon H) \ket{\phi(t)} \text{State}\\
 	=& \ket{\phi(t)} -i \epsilon H \ket{\phi(t)} \numberthis \label{eq:update:state}
 \end{align*}
 
-What would it mean to say momentum is conserved? It means Hamiltonian, when it acts on a state with definite momentum, doesn't change momentum. Whatever the Hamiltonian does, if it acts on a state with given momentum, it must give back the same momentum, \emph{if momentum is conserved.}  Let's see how this works with (\ref{eq:psi_mc2}). Rewrite 2nd term  using momentum variables (Fourier transform).
+What would it mean to say momentum is conserved? It means the Hamiltonian, when it acts on a state with definite momentum, doesn't change momentum. Whatever the Hamiltonian does, if it acts on a state with given momentum, it must give back the same momentum, \emph{if momentum is conserved.} It might change other things, but not the momentum. Let's see how this works with (\ref{eq:psi_mc2}). Rewrite 2nd term  using momentum variables (Fourier transform).
 
 \begin{align*}
-	\Psi(x) =& \int \frac{dp}{\sqrt{2\pi}} \underbrace{ \widetilde{\Psi}(p)}_\text{annihilation operator} e^{ipx}\\
-	\Psi^\dagger (x) =& \int \frac{dp}{\sqrt{2\pi}} \underbrace{ \widetilde{\Psi}(p)}_\text{creation operator} e^{-ipx} \numberthis \label{eq:psi:dagger}
+	\Psi(x) =& \int \frac{dp}{\sqrt{2\pi}} \underbrace{ \widetilde{\Psi}(p)}_{\mathclap{\substack{\text{annihilation }\\
+								\text{operator}}}} e^{ipx}\\
+	\Psi^\dagger (x) =& \int \frac{dp}{\sqrt{2\pi}} \underbrace{ \widetilde{\Psi}(p)}_{\mathclap{\substack{\text{creation} \\
+	\text{operator}}}} e^{-ipx} \numberthis \label{eq:psi:dagger}
 \end{align*}
  The factor is actually $\big(\frac{1}{\sqrt{2\pi}}\big)^n$ where $n$ is number of dimensions.
 \begin{align*}
@@ -1825,12 +1821,14 @@ What would it mean to say momentum is conserved? It means Hamiltonian, when it a
 	=& \frac{mc^2}{2 \pi} \int \widetilde{\Psi^\dagger}(p) \widetilde{\Psi}(p) dp
 \end{align*}
 
-This just removes a particle with momentum $p$ and puts it back with same momentum; momentum isn't changed. The key thing was the integration over $x$, which introduced $\delta$ for momentum. Before we repeat with the 1st term of (\ref{eq:psi_mc2}) we will see that this can be more general. Let's suppose we had a term in the Hamiltonian for a whole bunch of fields: $\Psi^\dagger(x) \Psi(x)\rightarrow \Psi^\dagger_A(x) \Psi_A(x) + \Psi^\dagger_B(x) \Psi_B(x)+...$. We would end up with an integral:
+This just removes a particle with momentum $p$ and puts it back with same momentum; momentum isn't changed. The key thing was the integration over \emph{space}, which introduced the $\delta$ function for momentum. Before we repeat with the 1st term of (\ref{eq:psi_mc2}) we will see that this can be more general. Let's suppose we had a term in the Hamiltonian for a whole bunch of fields: $\Psi^\dagger(x) \Psi(x)\rightarrow \Psi^\dagger_A(x) \Psi_A(x) + \Psi^\dagger_B(x) \Psi_B(x)+...$. We would end up with an integral:
 \begin{align*}
-	&\int dp_1A dp_1B...dp_2A dp 2B \Pi \Psi(p_1) \Pi \Psi(p_2) e^{i(\sum p_1-\sum p_2)x} dx\\
-	=&\int dp_1A dp_1B...dp_2A dp 2B \Pi \Psi(p_1) \Pi \Psi(p_2) \delta(\sum p_1-\sum p_2) 
+	&\int dp_{1A} dp_{1B}...dp_{2A} dp {2B} \Pi \Psi(p_1) \Pi \Psi(p_2) e^{i(\sum p_1-\sum p_2)x} dx\\
+	=&\int dp_{1A} dp_{1B}...dp_{2A} dp_{2B} \Pi \Psi(p_1) \Pi \Psi(p_2) \delta(\sum p_1-\sum p_2) 
 \end{align*}
-The first sum is the momentum we put in, the 2nd the momentum that we take out. Total that we take out = total that we put in. Whenever we see a Hamiltonian of this form we have sum of outgoing momentum = sum incoming.
+The first sum is the momentum we put in, the second the momentum that we take out. Total that we take out = total that we put in. Whenever we see a Hamiltonian of this form we have sum of outgoing momentum = sum incoming.
+
+What is really going on is the fact that the Hamiltonian is translation invariant. Notice that the integral over space that gives rise to the delta functions, and to momentum conservation. Notice that the momentum of each type of particle isn;t necessarily conserved, but the total momentum is.
 
 Let's look at derivatives. If we calculate $\nabla^2 \Psi^\dagger (x)$,  only one part of (\ref{eq:psi:dagger}) is affected, $e^{-ipx}$, since the remainder is doesn't involve $x$. 
 \begin{align*}
@@ -1976,13 +1974,13 @@ We have just seen the basic physics: the rest is technology and tricks.
 
 \subsection{The Dirac Equation}
 
-We will study the relativistic electron. We will start with an electron that moves in one direction along a line. Why did Dirac want to handle the relativistic case? Electrons in an atom move at a significant proportion of the speed of light. 
+We will study the relativistic electron. We will start with an electron that moves in one direction along a line. Why did Dirac want to handle the relativistic case? Electrons in an atom move at a significant proportion of the speed of light. Start with the classical equation for energy.
 
 \begin{align*}
 	E =& \frac{p^2}{2m} \text {, classical}\\
 	P =& -i \frac{\partial}{\partial x} \text{, quantum}\\
 	H = & i \frac{\partial}{\partial t}\\
-	E^2 =& p^2 + m^2 \text{, relativistic($c^2=1$).}
+	E^2 =& p^2 + m^2 \text{, relativistic, setting $c^2=1$.}
 \end{align*}
 It becomes:
 \begin{align*}
@@ -1996,7 +1994,7 @@ This was already known; it is the Klein-Gordon equation. But Dirac wanted this:
 What could this possibly mean? What is the operator on the right hand side? Dirac decided to start again. Imagine a particle moving along the x axis with the speed of light (massless).
 
 \begin{align*}
-	c P =& E \text{, moving to right. ($c=1$)}\\
+	c P =& E \text{, moving to right.  Setting $c^2=1$}\\
 	i \frac{\partial \psi}{\partial t} =& -i \frac{\partial \psi}{\partial x} \numberthis\label{eq:dirac1:R}\\
 	\implies&\\
 	\frac{\partial \psi}{\partial t} + \frac{\partial \psi}{\partial x}=&0

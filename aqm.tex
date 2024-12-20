@@ -1991,7 +1991,7 @@ We have just seen the basic physics: the rest is technology and tricks to calcul
 
 \subsection{The Dirac Equation}
 
-Before we start on Fermion \emph{fields} we will start with the Dirac equation, which uses relativity theory: we will study the relativistic electron. We will start with an electron that moves in one direction along a line: this isn't a realistic electron, since electrons move in 3 dimensions, but it is the easiest place to get started. Why did Dirac want to handle the relativistic case? In a hydrogen atom electrons move at an appreciable  proportion of the speed of light, about 1\% of the speed of light, so relativity is a significant correction. In a heavy atom, electrons ar closer to the nucleus and can be moving with even more appreciable velocities. 
+Before we start on Fermion \emph{fields} we will start with the Dirac equation, which uses relativity theory: we will study the relativistic electron. We will start with an electron that moves in one direction along a line: this isn't a realistic electron, since electrons move in 3 dimensions, but it is the easiest place to get started. Why did Dirac want to handle the relativistic case? In a hydrogen atom electrons move at an appreciable  proportion of the speed of light, about 1\% of the speed of light, so relativity is a significant correction. In a heavy atom, electrons are closer to the nucleus and can be moving with even more appreciable velocities. 
 
 In order to build a \Schr equation for the electron, we start with the classical relation for energy and momentum.
 
@@ -1999,10 +1999,7 @@ In order to build a \Schr equation for the electron, we start with the classical
 	E =& \frac{p^2}{2m} \text {. In order to go from classical to quantum we need operators}\\
 	P =& -i \frac{\partial}{\partial x} \\
 	H = & i \frac{\partial}{\partial t} \text{, and we'd get the \Schr equation. Relativistically}\\
-	E^2 =& p^2 + m^2 \text{, setting $c^2=1$.}
-\end{align*}
-This gives:
-\begin{align*}
+	E^2 =& p^2 + m^2 \text{, setting $c^2=1$. This gives:}\\
 	-\frac{\partial^2}{\partial t^2} \phi(x) =& -\frac{\partial^2}{\partial x^2}\phi(x) + m^2 \phi(x) 
 \end{align*}
 This was already known; it is the Klein-Gordon equation. But Dirac wanted this:
@@ -2010,30 +2007,29 @@ This was already known; it is the Klein-Gordon equation. But Dirac wanted this:
 	i \frac{\partial \psi}{\partial t} =& H\psi \text{, to suit his version of quantum mechanics.}\\
 	=& \big(\sqrt{- \frac{\partial^2}{\partial x^2} + m^2}\big) \psi  
 \end{align*}
-What could this possibly mean? What is the operator on the right hand side? Dirac decided to start again. Imagine a particle moving along the x axis with the speed of light (massless).
+What could this possibly mean? What is the operator on the right hand side? It looks ugly. Dirac decided to start again. Imagine a particle moving along the x axis with the speed of light (massless).
 
 \begin{align*}
 	c P =& E \text{, moving to right.  Setting $c^2=1$}\\
-	i \frac{\partial \psi}{\partial t} =& -i \frac{\partial \psi}{\partial x} \numberthis\label{eq:dirac1:R}\\
-	\implies&\\
+	i \frac{\partial \psi}{\partial t} =& -i \frac{\partial \psi}{\partial x} \numberthis\label{eq:dirac1:R} \text{, or}\\
 	\frac{\partial \psi}{\partial t} + \frac{\partial \psi}{\partial x}=&0
 \end{align*}
 
-Any function of x-t will satisfy this  equation. It describes a wave, moving to the right. But three things are wrong with this equation:
+Any function of x-t will satisfy this  equation: $\psi(x,t)=\psi(x-t)$. It describes a wave, moving to the right with the speed of light. But three things are wrong with this equation.
 \begin{enumerate}
-	\item it allows particles with negative momentum, which have negative energy;\label{item:negative:energy}
-	\item it only has particles that move to the right;\label{item:right:only}
-	\item the electron has no mass, so it moves with the speed of light.\label{item:speed:light}
+	\item It allows particles with negative momentum, which have negative energy. This sounds very dangerous. We can keep filling up the world with particles of negative energy, lowering the total energy without bound.\label{item:negative:energy}
+	\item It only has particles that move to the right; we can imagine a theory in which particles only move to the right, but it wouldn't look like our world. \label{item:right:only}
+	\item The electron has no mass, so it moves with the speed of light.\label{item:speed:light}
 \end{enumerate}
 
-Dirac solved second problem by imagining two species of electrons, one moving to the right, t'other to the left, labeled $\psi_1$ and $\psi_2$. Or a particle can be one or t'other, or a superposition.
+Dirac solved problem \ref{item:right:only} by imagining two species of electrons, one moving to the right, the other to the left, labeled $\psi_1$ and $\psi_2$. A particle can be one species or the other, \emph{or a superposition}.
 
 \begin{align*}
 	\frac{\partial \psi_1}{\partial t} + \frac{\partial \psi_1}{\partial x}=&0 \text{, moving to right}\\
 	\frac{\partial \psi_2}{\partial t} - \frac{\partial \psi_2}{\partial x}=&0 \text{, moving to left}
 \end{align*}
 
-Imagine particle with two degrees of freedom, $x$ and $\{1,2\}$. Make the second degree into a matrix index, and introduce an observable, $\alpha$, to tell us whether particle is 1 or 2 (a bit like a spin). We thinks of the $\psi$s as a column vector, and introduce a matrix whose eigenvectors are $\psi_1$ or $\psi_2$. Here is such a matrix (observable).
+Dirac then imagined a particle with two degrees of freedom, $x$ and $\{1,2\}$. Make the second degree into a matrix index, and introduce an observable, $\alpha$, to tell us whether particle is 1 or 2 (a bit like a spin). We think of the $\psi$s as a column vector, and introduce a matrix whose eigenvectors are $\psi_1$ or $\psi_2$. Here is such a matrix (observable).
 
 \begin{align*}
 	\underbrace{
@@ -2045,7 +2041,10 @@ Imagine particle with two degrees of freedom, $x$ and $\{1,2\}$. Make the second
 	\begin{pmatrix}
 		\psi_1\\
 		\psi_2
-	\end{pmatrix}\\
+	\end{pmatrix}
+\end{align*}
+Then he wrote:\footnote{LS said that Dirac didn't actually do this: he plunged right in and did it in 3 dimensions. Or maybe he did the 1 dimensional case first, and didn't write it up.}
+\begin{align*}
 	H =& \alpha P \numberthis \label{eq:dirac:1d:hp}\\
 	i\frac{\partial \psi}{\partial t} =& -i \alpha \frac{\partial \psi}{\partial x} \text{, matrix equation!}
 \end{align*}
@@ -2053,18 +2052,20 @@ Imagine particle with two degrees of freedom, $x$ and $\{1,2\}$. Make the second
 We have fixed problem \ref{item:right:only}, particles moving to the right only. To fix problem \ref{item:speed:light}, absence of mass, Dirac added a term to give the electron mass. 
 
 \begin{align*}
-	H =& \alpha P + \beta m \text{, where $\beta$ is some matrix. Now} \numberthis \label{eq:dirac:1D:m}\\
-	E^2 =& P^2 + m^2 \text{, introduce $\alpha$ and  $\beta$ such that $\alpha^2=1$ and $\beta^2=1$}\\
-	=& \big(\alpha P + \beta m \big) \big(\alpha P + \beta m \big) \\
-	=& \underbrace{\alpha^2}_\text{(=1)} P^2 + \underbrace{\beta^2 }_\text{  $(=1)$} m^2 + (\alpha \beta + \beta \alpha) P m \\\
-	=&  P^2 + m^2 + (\alpha \beta + \beta \alpha) P m \text{, so we want:}\\
-	\alpha \beta + \beta \alpha=&0 
+	H =& \alpha P + \beta m \text{, where $\beta$ is some matrix. Now we want} \numberthis \label{eq:dirac:1D:m}\\
+	E^2 =& P^2 + m^2\\
+	H^2=& \big(\alpha P + \beta m \big) \big(\alpha P + \beta m \big) \\
+	=& \underbrace{\cancel{\alpha^2}}_{\mathclap{\substack{\text{we know}\\
+		\text{$\alpha^2=1$}}}} P^2 + \underbrace{\bcancel{\beta^2} }_{\mathclap{\substack{\text{we need}\\
+	\text{ $\beta^2=1$}}}} m^2 + \underbrace{\xcancel{(\alpha \beta + \beta \alpha)}}_{\mathclap{\substack{\text{we  need}\\
+	\text{$\alpha \beta + \beta \alpha=0$}}}} P m \text{, then}\\
+	=&  P^2 + m^2 	\text{, as desired.} 
 \end{align*}
 
-We know that the Pauli matrices anticommute, so choose:
+We know that the Pauli matrices anticommute, and we know:
 \begin{align*}
-	\alpha =& \sigma_3\\
-	\beta& \sigma_2.
+	\alpha =& \sigma_3 \text{, so choose}\\
+	\beta=& \sigma_2.
 \end{align*}
 
 We have the 1-dimensional version of Dirac's equation.
@@ -2094,13 +2095,22 @@ So
 	i\frac{\partial \psi_2}{\partial t} - i\frac{\partial \psi_2}{\partial x}=&m \psi_1
 \end{align*}
 
-So the mass term couples the two equations, and makes the particle move slower then light. Dirac knew that mass is coupled to ability to move left or right.
+So the mass term couples the two equations, and makes the particle move slower then light. LS suspects that Dirac knew that mass is coupled to ability to move left or right. A Lorentz transformation will not convert a massless particle moving to the left to one moving right, or vice versa. A massive particle moves with a speed less that $c$, and  Lorentz transformation can convert it to one moving in the opposite direction.
+
+We still have two problems:
+
+\begin{enumerate}
+	\item We still have negative energy particles, left moving and right moving.
+	\item We need a 3 dimensional equation.
+\end{enumerate}
+
+We will deal with them in the next section.
 
 \section{Fermions and the Dirac equation}\label{section:fermions:dirac}
 
 \subsection{Second Quantization of Fermions}
 
-If you have two bosons, can put them into the same state, and the creation and annihilation operators commute. There is nothing strange about commuting, but anticommuting is odd. Suppose we have two particles, and we want to say that when we interchange them the wave function or state vector changes sign.  whose wave function changes sign when we interchange. Let $\ket{x,y}$ represent particles at x and y (two 3 dimensional positions). $\Psi^\dagger(x)\Psi^\dagger(y)\ket{0}$ will create.
+If you have two bosons, you can put them into the same state, and the creation and annihilation operators commute. There is nothing strange about commuting, but anticommuting is odd. Suppose we have two particles, and we want to say that when we interchange them the wave function or state vector changes sign.  whose wave function changes sign when we interchange. Let $\ket{x,y}$ represent particles at x and y (two 3 dimensional positions). $\Psi^\dagger(x)\Psi^\dagger(y)\ket{0}$ will create.
 
 For bosons, operators commute and:
 \begin{align*}

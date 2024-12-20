@@ -1991,21 +1991,23 @@ We have just seen the basic physics: the rest is technology and tricks to calcul
 
 \subsection{The Dirac Equation}
 
-We will study the relativistic electron. We will start with an electron that moves in one direction along a line. Why did Dirac want to handle the relativistic case? Electrons in an atom move at a significant proportion of the speed of light. Start with the classical equation for energy.
+Before we start on Fermion \emph{fields} we will start with the Dirac equation, which uses relativity theory: we will study the relativistic electron. We will start with an electron that moves in one direction along a line: this isn't a realistic electron, since electrons move in 3 dimensions, but it is the easiest place to get started. Why did Dirac want to handle the relativistic case? In a hydrogen atom electrons move at an appreciable  proportion of the speed of light, about 1\% of the speed of light, so relativity is a significant correction. In a heavy atom, electrons ar closer to the nucleus and can be moving with even more appreciable velocities. 
+
+In order to build a \Schr equation for the electron, we start with the classical relation for energy and momentum.
 
 \begin{align*}
-	E =& \frac{p^2}{2m} \text {, classical}\\
-	P =& -i \frac{\partial}{\partial x} \text{, quantum}\\
-	H = & i \frac{\partial}{\partial t}\\
-	E^2 =& p^2 + m^2 \text{, relativistic, setting $c^2=1$.}
+	E =& \frac{p^2}{2m} \text {. In order to go from classical to quantum we need operators}\\
+	P =& -i \frac{\partial}{\partial x} \\
+	H = & i \frac{\partial}{\partial t} \text{, and we'd get the \Schr equation. Relativistically}\\
+	E^2 =& p^2 + m^2 \text{, setting $c^2=1$.}
 \end{align*}
-It becomes:
+This gives:
 \begin{align*}
 	-\frac{\partial^2}{\partial t^2} \phi(x) =& -\frac{\partial^2}{\partial x^2}\phi(x) + m^2 \phi(x) 
 \end{align*}
 This was already known; it is the Klein-Gordon equation. But Dirac wanted this:
 \begin{align*}
-	i \frac{\partial \psi}{\partial t} =& H\psi\\
+	i \frac{\partial \psi}{\partial t} =& H\psi \text{, to suit his version of quantum mechanics.}\\
 	=& \big(\sqrt{- \frac{\partial^2}{\partial x^2} + m^2}\big) \psi  
 \end{align*}
 What could this possibly mean? What is the operator on the right hand side? Dirac decided to start again. Imagine a particle moving along the x axis with the speed of light (massless).

@@ -53,6 +53,9 @@
 \setcounter{casecount}{0}
 \newenvironment{case}{\refstepcounter{casecount}\textbf{\newline Case \arabic{casecount}:}}{}
 
+% snarfed from https://tex.stackexchange.com/questions/88949/curved-waved-lines-with-tikz
+\usetikzlibrary{decorations.pathmorphing}
+\tikzset{snake it/.style={decorate, decoration=snake}}
 
 \AtBeginEnvironment{proof}{\setcounter{casecount}{0}}
 
@@ -2385,36 +2388,57 @@ Dirac discovered a multiplicity of different states of the electron, one had to 
 Question: doesn't the failure to conserve velocity violate Newton's law? No: Newton's law is about conservation of \emph{momentum}.
 
 \subsubsection{Dirac Electron  and negative energy}
-The Dirac equation can have both positive and negative energy, even in the 1 dimensional case, with no $\alpha$ matrix and a right moving. We don't need 3 dimensions for interesting effects.
+
+The Dirac equation can have both positive and negative energy, even in the 1 dimensional case, with no $\alpha$ matrix and a right moving electron. We don't need 3 dimensions for interesting effects.
 
 \begin{align*}
 	H=P \text{, right moving electron; what if $P<0$?}
 \end{align*} 
 
-The ground state, the vacuum has the lowest energy (not fewest particles). The vacuum had better be the lowest possible energy. With negative energy can lower the energy indefinitely! What does -ve energy mean? They are very dangerous, because ground state is lowest energy: if we have negative energies could lower energy past vacuum! Or we could lower energy indefinitely. 
+The ground state, the vacuum has the lowest energy (not the fewest particles). The vacuum had better be the lowest possible energy. With negative energy we can lower the energy indefinitely! What does -ve energy mean? Negative energies are very dangerous, because the ground state is lowest energy: if we have negative energies could lower energy past vacuum! Or we could lower energy indefinitely. 
 
-Dirac \emph{defined} vacuum to have lowest energy. Dirac filled with negative energies (Fermions!) --only one in each state. Since they are Fermions, if state filled we can't keep going. Vacuum must have every negative state occupied; then there is no room to lower energy further. We can add positive energy electron, or move a negative energy electron to positive--Figure \ref{fig:dirac:sea}. (This was an intuitive way to describe some mathematics. Modern physicists don't like this line of reasoning, but we will follow it.)
+Dirac \emph{defined} the vacuum to have lowest energy. Dirac filled all the negative energies states, and called that the vacuum (Fermions!) --only one in each state. Since they are Fermions, if state filled we can't keep going. Vacuum must have every negative state occupied; then there is no room to lower energy further. We can add positive energy electron, or move a negative energy electron to positive--Figure \ref{fig:dirac:sea}. (This was an intuitive way to describe some mathematics. Modern physicists don't like this line of reasoning, but we will follow it.)
 
 In Figure \ref{fig:ds} we have filled all negative energy levels, which stabilizes vacuum. We can put in a positive energy electron, Figure \ref{fig:aqm-10-dirac-sea}, or take out a negative energy electron and leave a hole, Figure \ref{fig:dirac:sea}
 \begin{figure}[H]
 	\begin{center}
 		\caption{The Dirac Sea}\label{fig:ds}
-		\begin{subfigure}[t]{0.3\textwidth}
+		\begin{subfigure}[b]{0.3\textwidth}
 			\begin{center}
 				\caption{Positive energy electron added}\label{fig:aqm-10-dirac-sea}
-				\includegraphics[width=\textwidth]{aqm-10-dirac-sea}
+				\begin{tikzpicture}
+					\draw[->](0,0) -- (0,3) node[anchor=north west] {E};
+					\fill[gray] (-0.2,-5) rectangle (0.2,0);
+					\filldraw[black] (0,1) circle (3pt) node[anchor=west]{};
+				\end{tikzpicture}
 			\end{center}
 		\end{subfigure}
-		\begin{subfigure}[t]{0.3\textwidth}
+		\hfill
+		\begin{subfigure}[b]{0.3\textwidth}
 			\begin{center}
 				\caption{Pluck out negative energy electron and get +ve charge and +ve energy hole (positron)}\label{fig:dirac:sea}
-				\includegraphics[width=\textwidth]{DiracSea}
+				\begin{tikzpicture}
+					\draw[->](0,0) -- (0,3) node[anchor=north west] {E};
+					\fill[gray] (-0.2,-1.9) rectangle (0.2,0);
+					\fill[gray] (-0.2,-5) rectangle (0.2,-2.1);
+					\draw[->] (0.2,-2) .. controls (2,-1.4) and (2,-0.7) .. (0.1,0.9);
+					
+					\filldraw[black] (0,1) circle (3pt) node[anchor=west]{};
+				\end{tikzpicture}
 			\end{center}
 		\end{subfigure}
-		\begin{subfigure}[t]{0.3\textwidth}
+		\hfill
+		\begin{subfigure}[b]{0.3\textwidth}
 			\begin{center}
 				\caption{Photon displaces negative energy electron and produces +ve charge and +ve energy hole (positron)}\label{fig:dirac:sea:photon}
-				\includegraphics[width=\textwidth]{aqm-10-dirac-sea-photon}
+				\begin{tikzpicture}
+					\draw[->](0,0) -- (0,3) node[anchor=north west] {E};
+					\fill[gray] (-0.2,-1.9) rectangle (0.2,0);
+					\fill[gray] (-0.2,-5) rectangle (0.2,-2.1);
+					\draw[->] (0.2,-2) .. controls (2,-1.4) and (2,-0.7) .. (0.1,0.9);
+					\filldraw[black] (0,1) circle (3pt) node[anchor=west]{};
+					\draw[snake it] (3,-1) -- (0.2,-2);
+				\end{tikzpicture}
 			\end{center}
 	\end{subfigure}
 	\end{center}
@@ -2459,6 +2483,7 @@ But this also describes the interactions of  Figures \ref{fig:electron_scatterin
 			a--[photon]o2
 		};
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}{0.3\textwidth}
 		\caption{Positron annihilation}\label{fig:positron annihilating_dirac}
 		\feynmandiagram[vertical'=i2 to a]{
@@ -2467,6 +2492,7 @@ But this also describes the interactions of  Figures \ref{fig:electron_scatterin
 			d[particle=$e^+$]--[anti fermion]b
 		};
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}{0.3\textwidth}
 		\caption{Electron, photon, positron created}\label{fig:all3-created}
 		\feynmandiagram[vertical=o2 to i1]{

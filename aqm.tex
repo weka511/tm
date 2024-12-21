@@ -2108,7 +2108,9 @@ We still have two problems,  which we will deal with in the next section:
 
 \subsection{Second Quantization of Fermions}
 
-If you have two bosons, you can put them into the same state, and the creation and annihilation operators commute. There is nothing strange about commuting, but anticommuting is odd. Suppose we have two particles, and we want to say that when we interchange them the wave function or state vector changes sign.  whose wave function changes sign when we interchange. Let $\ket{x,y}$ represent particles at x and y (two 3 dimensional positions). $\Psi^\dagger(x)\Psi^\dagger(y)\ket{0}$ will create.
+We will generalize what we said earlier about second quantization. We made the fields that govern multiple particle systems out of creation and annihilation operators. What is the difference between fermions and bosons?
+
+If you have two bosons, you can put them into the same state, and the creation and annihilation operators commute. There is nothing strange about commuting, but anticommuting is odd. Suppose we have two particles, and we want to say that when we interchange them the wave function or state vector changes sign.  Let $\ket{x,y}$ represent a particle in slots 1, with position $x$ and one in slots 2 with position $y$, so we have two 3 dimensional positions. $\Psi^\dagger(x)\Psi^\dagger(y)\ket{0}$ will create. such a pair.
 
 For bosons, operators commute and:
 \begin{align*}
@@ -2131,11 +2133,11 @@ In general we can go from Bosons to Fermions by replacing the commutator with th
 NB  $\Psi^\dagger(x)\Psi^\dagger(x)=\frac{1}{2}\{\Psi^\dagger(x)\Psi^\dagger(x)\}=0$,  so we can't have two identical particles at same position.
 
 \begin{itemize}
-	\item For Bosons there is a clear distinction between creation and annihilation operators, since $[a,a^\dagger]=1$ (\ref{eq:a:comm_i}), and $[a^\dagger,a]=-1$. We can't confuse them because the spectrum of energies from $0$ to $\infty$ can't be turned upside down. Creation operators never give 0!.
+	\item For Bosons there is a clear distinction between creation and annihilation operators, since $[a,a^\dagger]=1$--Equation \eqref{eq:a:comm_i}, and $[a^\dagger,a]=-[a,a^\dagger]=-1$. We can't confuse them because the spectrum of energies from $0$ to $\infty$ can't be turned upside down. Creation operators never give 0!.
 	\item For Fermions $\{a^\dagger,a\}= \{a,a^\dagger\}=+1$: from the algebra there is no difference between creation and annihilation operators. They do different things, so they are different, but we can't see this from the algebra alone.
 \end{itemize}
 
-Consider occupation numbers of Fermion with only one state: creation operator takes $0$ to $1$; if we create again the operator  annihilates, leaving $0$. Complete symmetry between empty and filled, creation and annihilation (mathematically!--it doesn't mean they are the same).
+Consider occupation numbers of Fermion with only one state: creation operator takes $0$ to $1$; if we create again the operator  annihilates, leaving $0$. There is complete symmetry between empty and filled, between creation and annihilation (mathematically!--it doesn't mean they are the same).
 \begin{align*}
 	a^2=&0\\
 	(a^\dagger)^2=&0

@@ -2403,7 +2403,7 @@ In Figure \ref{fig:ds} we have filled all negative energy levels, which stabiliz
 \begin{figure}[H]
 	\begin{center}
 		\caption{The Dirac Sea}\label{fig:ds}
-		\begin{subfigure}[b]{0.3\textwidth}
+		\begin{subfigure}[b]{0.45\textwidth}
 			\begin{center}
 				\caption{Positive energy electron added}\label{fig:aqm-10-dirac-sea}
 				\begin{tikzpicture}
@@ -2414,46 +2414,49 @@ In Figure \ref{fig:ds} we have filled all negative energy levels, which stabiliz
 			\end{center}
 		\end{subfigure}
 		\hfill
-		\begin{subfigure}[b]{0.3\textwidth}
+		\begin{subfigure}[b]{0.45\textwidth}
 			\begin{center}
 				\caption{Pluck out negative energy electron and get +ve charge and +ve energy hole (positron)}\label{fig:dirac:sea}
 				\begin{tikzpicture}
 					\draw[->](0,0) -- (0,3) node[anchor=north west] {E};
 					\fill[gray] (-0.2,-1.9) rectangle (0.2,0);
 					\fill[gray] (-0.2,-5) rectangle (0.2,-2.1);
-					\draw[->] (0.2,-2) .. controls (2,-1.4) and (2,-0.7) .. (0.1,0.9);
-					
+					\draw[->] (0.2,-2) .. controls (2,-1.4) and (2,-0.7) .. (0.1,0.9);				
 					\filldraw[black] (0,1) circle (3pt) node[anchor=west]{};
 				\end{tikzpicture}
 			\end{center}
 		\end{subfigure}
-		\hfill
-		\begin{subfigure}[b]{0.3\textwidth}
-			\begin{center}
-				\caption{Photon displaces negative energy electron and produces +ve charge and +ve energy hole (positron)}\label{fig:dirac:sea:photon}
-				\begin{tikzpicture}
-					\draw[->](0,0) -- (0,3) node[anchor=north west] {E};
-					\fill[gray] (-0.2,-1.9) rectangle (0.2,0);
-					\fill[gray] (-0.2,-5) rectangle (0.2,-2.1);
-					\draw[->] (0.2,-2) .. controls (2,-1.4) and (2,-0.7) .. (0.1,0.9);
-					\filldraw[black] (0,1) circle (3pt) node[anchor=west]{};
-					\draw[snake it] (3,-1) -- (0.2,-2);
-				\end{tikzpicture}
-			\end{center}
-	\end{subfigure}
+
 	\end{center}
 \end{figure}
 
 Imagine photon coming along and hitting -ve energy electron in vacuum: we get an electron and a hole--Figures \ref{fig:dirac:sea:photon} and \ref{photon:dirac}.
 
 \begin{figure}[H]
-	\begin{center}
-		\caption[Photon$\rightarrow$ electrons + hole]{Photon$\rightarrow$ electons + hole. By convention positron points down. Can slice in time: upwards electron, down positrons.}\label{photon:dirac}
-		\feynmandiagram[vertical=n1 to i1]{
-			i1--[photon,edge label=$\gamma$]n1--[anti fermion]o1[particle=$e^+$],
-			n1--[fermion]o2[particle=$e^-$]
-		};
-	\end{center}
+	\caption{Photon hitting -ve energy electron in vacuum}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\begin{center}
+			\caption{Photon displaces negative energy electron and produces +ve charge and +ve energy hole (positron)}\label{fig:dirac:sea:photon}
+			\begin{tikzpicture}
+				\draw[->](0,0) -- (0,3) node[anchor=north west] {E};
+				\fill[gray] (-0.2,-1.9) rectangle (0.2,0);
+				\fill[gray] (-0.2,-5) rectangle (0.2,-2.1);
+				\draw[->] (0.2,-2) .. controls (2,-1.4) and (2,-0.7) .. (0.1,0.9);
+				\filldraw[black] (0,1) circle (3pt) node[anchor=west]{};
+				\draw[snake it] (3,-1) -- (0.2,-2);
+			\end{tikzpicture}
+		\end{center}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.45\textwidth}
+		\begin{center}
+			\caption{Feynman diagram. By convention positron points down.}\label{photon:dirac}
+			\feynmandiagram[vertical=n1 to i1]{
+				i1--[photon,edge label=$\gamma$]n1--[anti fermion]o1[particle=$e^+$],
+				n1--[fermion]o2[particle=$e^-$]
+			};
+		\end{center}
+	\end{subfigure}
 \end{figure}
 
 The wave function needs fermion operators, which anticommute.

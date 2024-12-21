@@ -2137,7 +2137,7 @@ NB  $\Psi^\dagger(x)\Psi^\dagger(x)=\frac{1}{2}\{\Psi^\dagger(x)\Psi^\dagger(x)\
 	\item For Fermions $\{a^\dagger,a\}= \{a,a^\dagger\}=+1$: from the algebra there is no difference between creation and annihilation operators. They do different things, so they are different, but we can't see this from the algebra alone.
 \end{itemize}
 
-Consider occupation numbers of Fermion with only one state: creation operator takes $0$ to $1$; if we create again the operator  annihilates, leaving $0$. There is complete symmetry between empty and filled, between creation and annihilation (mathematically!--it doesn't mean they are the same).
+Consider occupation numbers of Fermion with only one state: creation operator takes $0$ to $1$; if we create again the operator  annihilates, leaving $0$. There is complete symmetry between empty and filled, between creation and annihilation (you can exchange them mathematically: it doesn't mean they are the same; they have difference physical meanings).
 \begin{align*}
 	a^2=&0\\
 	(a^\dagger)^2=&0
@@ -2148,55 +2148,49 @@ Consider occupation numbers of Fermion with only one state: creation operator ta
 
 \subsubsection{Review of 1D Dirac Electron}
 
-Returning to the 1D Dirac equation for zero mass, (\ref{eq:dirac1:R}):
+We have already figured out how to deal with the fact that the simplest equation for an electron doesn't have a mass-- \eqref{eq:dirac1:R}. If $\psi$ is a wave function for a massless electron.
 \begin{align*}
-	i \frac{\partial \psi}{\partial t}=& -i \frac{\partial \psi}{\partial x} \\
-	H \Psi =& i \Psi
+	i \frac{\partial \psi}{\partial t}=& -i \frac{\partial \psi}{\partial x} \text{, from} \\
+	H \Psi =& P \Psi \text{, a massless relativistic particle}
 \end{align*}
-This was a failure as a theory of 1D electrons. We want a 2nd species that propagates to the left.
+This was a failure as a theory of 1 dimensional electrons. We introduced a 2nd species that propagates to the left.
 \begin{align*}
 	i \frac{\partial \psi_1}{\partial t}=& -i \frac{\partial \psi_1}{\partial x} \\
-	H \Psi_1 =& i \Psi_1\\
+	H \Psi_1 =& P \Psi_1\\
 	i \frac{\partial \psi_2}{\partial t}=& i \frac{\partial \psi_2}{\partial x} \\
-	H \Psi_2 =& -i \Psi_2
+	H \Psi_2 =& -P \Psi_2
 \end{align*}
-We combined into a vector, adding handedness, $\begin{pmatrix} \psi_1\\ \psi_2 \end{pmatrix}$, and defined the matrix $\alpha = \begin{pmatrix}
+We combined into these two wave functions into a column vector, adding a new degree of freedom, handedness, $\begin{pmatrix} \psi_1\\ \psi_2 \end{pmatrix}$. One component can have positive or negative energy, and it moves to the right;  the other component can have positive or negative energy, and it moves to the left. We invented a matrix,  $\alpha = \begin{pmatrix}
 1&0\\
 0&-1
-\end{pmatrix}$
-
-So we had (\ref{eq:dirac:1d:hp})
+\end{pmatrix}$, with $\psi_1$ and $\psi_2$ as eigenvectors, so we had \eqref{eq:dirac:1d:hp}.
 \begin{align*}
 	H \psi =& \alpha P \psi
 \end{align*}
-
-That didn't get us a mass, but it got stuff moving in both directions. We then invented another matrix $\beta=\begin{pmatrix}
+We have both wave functions in the same structure, at the cost of doubling the number of components of the field. That didn't get us a mass, but it got stuff moving in both directions. We then invented another matrix $\beta=\begin{pmatrix}
 0&1\\
 1&0
-\end{pmatrix}$ and in (\ref{eq:dirac:1D:m}) wrote $H = \alpha P + \beta m$. Note $\alpha^2=\beta^2=1$, and $\alpha\beta + \beta\alpha=1$, whence $H^2=P^2+m^2$. We combined left moving and right moving, then added coupling to give mass. It is in this sense that a mass term switches you from left moving to right moving.
+\end{pmatrix}$ and in (\ref{eq:dirac:1D:m}) wrote $H = \alpha P + \beta m$. Note\footnote{The fact that these are Pauli matrices is just incidental at this point.} $\alpha^2=\beta^2=1$, and $\alpha\beta + \beta\alpha=1$, whence $H^2=P^2+m^2$. We combined left moving and right moving, then added coupling to give mass. It is in this sense that a mass term switches you from left moving to right moving\footnote{It doesn't really, but you can think of it that way.}.
 
+ How do we do this in 3D?
+ 
 \subsubsection{The Dirac Equation in 3 dimensions}
 
- How do we do this in 3D? Let's  drop $m$ temporarily, make $\alpha$ a vector, $\vec{\alpha}$, so we can dot product with $\vec{P}$.
+ Let's  go back to the massless case. We drop $m$ temporarily. Next momentum is a 3 vector, $\vec{P}$, so we want $\alpha \vec{P}$ to be invariant under rotation. We make $\alpha$ a vector, $\vec{\alpha}$, so we can dot product with $\vec{P}$.
 \begin{align*}
 	H =& \vec{\alpha} \boldsymbol{\cdot} \vec{P}\\
-	=& \alpha_x P_x + \alpha_y P_y + \alpha_z P_z \text{. We want}\\
-	H^2 =& P_x^2 + P_y^2 + P_z^2
+	=& \alpha_x P_x + \alpha_y P_y + \alpha_z P_z 
 \end{align*}
-So we need
+
+What do the $\alpha_i$ have to do to make this sensible in the massless equation? We want:
 \begin{align*}
+	H^2 =& P_x^2 + P_y^2 + P_z^2 \text{, so we need}\\
 	\alpha_x^2 =&1\\
 	\alpha_y^2 =&1\\
-	\alpha_z^2 =&1
-\end{align*}
-and
-\begin{align*}
+	\alpha_z^2 =&1\\
 	\alpha_y\alpha_x + \alpha_x\alpha_y=&0\\
 	\alpha_z\alpha_x + \alpha_x\alpha_z=&0\\
-	\alpha_x\alpha_y + \alpha_y\alpha_z=&0
-\end{align*}
-which can be written:
-\begin{align*}
+	\alpha_x\alpha_y + \alpha_y\alpha_z=&0 \text{, which can be written:}\\
 	\{\alpha_y,\alpha_x\} =&0\\
 	\{\alpha_z,\alpha_x\} =&0\\
 	\{\alpha_x,\alpha_y\} =&0
@@ -2208,11 +2202,13 @@ Dirac needed three matrices that satisfy these equations; the three Pauli matric
 	H =& \vec{\sigma} \cdot \vec{P}
 \end{align*}
 
-Spin is always $\pm 1$, so it looks as if we have two cases, where spin is either in the same direction as momentum, or the opposite; again we have a massless particle with positive and negative energy, and whose spin is locked so its axis is along the momentum vector.
+You can think of this as a particles that has spin and momentum. Energy is the component of spin along the direction of motion. The spin is always $\pm 1$, so it looks as if we have two cases, where spin is either in the same direction as momentum, or the opposite; again we have a massless particle with positive and negative energy, and whose spin is locked so its axis is along the momentum vector.
 
-Dirac's logic, which was not necessarily unimpeachable, was that he wanted to write an equation for H in terms or P without having an insane square root. He wrote $	H = \vec{\alpha} \cdot \vec{P}$ because he wanted it to be linear in the momentum. He wondered what $\alpha$ was, because it couldn't just be a bunch of numbers. By requiring $H^2=P^2$ he found the Pauli matrices. He thought that he had discovered the origin of spin. He was not correct: it is not the case that every particles has to have spin, but he was right for Fermions.
+Spin ''drops into your lap'' for free in the Dirac equation!
 
-We still have $H^2=P^2$, and we don't have a mass. So we try $H= H = \vec{\alpha} \cdot \vec{P}+\beta m$ for some $\beta$ such that $\beta^2=1$.
+Dirac's logic, which was not necessarily unimpeachable, was that he wanted to write an equation for the Hamiltonian in terms of the momentum without having an insane square root. He wrote $	H = \vec{\alpha} \cdot \vec{P}$ because he wanted it to be linear in the momentum. He wondered what $\alpha$ was, because it couldn't just be a bunch of numbers. By requiring $H^2=P^2$ he found the Pauli matrices. He thought that he had discovered the origin of spin. He was not correct: it is not the case that \emph{every} particle has to have spin, but he was right for particles that satisfy the Dirac equation, i.e. Fermions.
+
+We still have $H^2=P^2$, and we don't have a mass. So we try $H= \vec{\alpha} \cdot \vec{P}+\beta m$ for some $\beta$ such that $\beta^2=1$.
 
 \begin{align*}
 	H^2 = P^2 +& m^2 \\
@@ -2221,7 +2217,7 @@ We still have $H^2=P^2$, and we don't have a mass. So we try $H= H = \vec{\alpha
 	+& P_z m (\sigma_z \beta + \beta \sigma_z)
 \end{align*}
 
-So $\beta$ anticommutes with all the Pauli matrices: unfortunately there is not matrix that anticommutes with all the Pauli matrices.
+So $\beta$ anticommutes with all the Pauli matrices: unfortunately there is no $2\times 2$ matrix that anticommutes with all the Pauli matrices.
 
 \begin{thm}[No $2 \times 2$ matrix  anticommutes with the Pauli matrices]
 	We can find 3 $2 \times 2$ non-trivial matrices that anticommute, but not 4.

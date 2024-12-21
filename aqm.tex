@@ -2178,7 +2178,7 @@ We have both wave functions in the same structure, at the cost of doubling the n
 
  Let's  go back to the massless case. We drop $m$ temporarily. Next momentum is a 3 vector, $\vec{P}$, so we want $\alpha \vec{P}$ to be invariant under rotation. We make $\alpha$ a vector, $\vec{\alpha}$, so we can dot product with $\vec{P}$.
 \begin{align*}
-	H =& \vec{\alpha} \boldsymbol{\cdot} \vec{P}\\
+	H =& \vec{\alpha} \boldsymbol{\cdot} \vec{P} \\
 	=& \alpha_x P_x + \alpha_y P_y + \alpha_z P_z 
 \end{align*}
 
@@ -2342,7 +2342,13 @@ Here is one solution, the Pauli representation of the Dirac matrices. This is no
 	\end{pmatrix}
 \end{align*}
 
-When we tried $H=\vec{\alpha} \cdot \vec{P}+\beta m$, we found that for positive energy, $\sigma$ has to be aligned with momentum. We introduced another species which has its spin reversed: this is said to be the opposite \emph{chirality}.
+We actually have a Hamiltonian whose square is $P^2+m^2$, the relativistic law.
+
+Questions:
+\begin{itemize}
+	\item For the 1 dimensional case we had to introduce an additional degree of freedom, ''spin''. Actually this spin-like thing isn't really spin, which requires 3 dimensions.
+	\item For the 3 dimensional case we have yet another additional degree of freedom. What is it? Something called ''helicity''. When we tried $H=\vec{\alpha} \cdot \vec{P}+\beta m$, we found that for positive energy, $\sigma$ has to be aligned with momentum. We introduced another species which has its spin reversed: this is said to be the opposite \emph{chirality}.
+\end{itemize}
 
 \begin{defn}[Helicity]
 	 Physically, the helicity operator can be thought of as a projection operator of spin along the direction of motion $h=\frac{\vec{S}\cdot\vec{P}}{\lvert P \rvert}$.
@@ -2353,7 +2359,7 @@ When we tried $H=\vec{\alpha} \cdot \vec{P}+\beta m$, we found that for positive
 
 We coupled the left and right handed particles using the off diagonal entries in $\beta$, and the mass. So mass is a coupling between left and right. For massless particles, chirality is conserved.[Sort out helicity]
 
-What is $\alpha$? Each component of $\alpha$ is a matrix, with two eigenvalues $+1$ and two $-1$. What physical quantity does it represent? They don't commute, so we can't measure them simultaneously. What is physical meaning of a component? It is the velocity, so the expectation value in any state is the velocity of the particle.
+What is $\alpha$? Each component of $\alpha$ is a matrix, with two eigenvalues $+1$ and two $-1$. What physical quantity does it represent? They don't commute, so we can't measure them simultaneously. What is the physical meaning of a component? It is the velocity, so the expectation value in any state is the velocity of the particle.
 
 For any operator $L$:
 \begin{align*}
@@ -2363,17 +2369,20 @@ For any operator $L$:
 	=&\alpha_x
 \end{align*}
 
-So it is the velocity of particle! Velocity is not the same as momentum for electron.
+So it is the velocity of particle! Velocity is not the same as momentum for electron: it can only be $\pm 1$ in any direction.
 
 \begin{align*}
 	\frac{d}{dt} \alpha_x=&[H,\alpha_x]\\
 	 \ne& 0 \text{ because H contains $\alpha_y$ and $\alpha_z$}
 \end{align*}
-so $\alpha_x$ is not conserved.
-
-It does a spiral movement called Zitterbewegung.
+so $\alpha_x$ is not conserved. The electron does a spiral movement called Zitterbewegung. (But the time average turns out to be what you'd expect). And $\alpha$ is not the spin. The actual spin turns out to be $\begin{pmatrix}
+	\vec{\sigma}&0 \\
+	0&\vec{\sigma}
+\end{pmatrix}$.
 
 Dirac discovered a multiplicity of different states of the electron, one had to do with chirality, the other to do with actual spin.
+
+Question: doesn't the failure to conserve velocity violate Newton's law? No: Newton's law is about conservation of \emph{momentum}.
 
 \subsubsection{Dirac Electron  and negative energy}
 The Dirac equation can have negative energy, even in 1 D case. We don't need 3D even for interesting effects.

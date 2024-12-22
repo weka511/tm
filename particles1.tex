@@ -374,10 +374,10 @@ Consider particle scattering from heavy target; we show it conserves energy, but
 We want the probability of emitting one particle in final state (Introduce coupling constant $g$)--$\big| \bra{k_f} g \int dt \Psi^\dagger(0,t)\Psi(0,t)\ket{k_i} \big|^2$
 
 \begin{align*}
-&\bra{k_f} g \int dt \sum_l \underbrace{a^+(l) e^{i \omega_l t}}_\text{contributes iff $l==k_f$} \sum_k \underbrace{a^-(k) e^{-i \omega_k t} \ket{k_i}}_\text{contributes iff $k==k_i$}\\
-=&\bra{k_f} g \int dt a^+(k_f) e^{i \omega_{k_f} t}  a^-(k_i) e^{-i \omega_{k_i} t} \ket{k_i}\\
-=& g \int dt e^{i(\omega_{k_f}-\omega_{k_i})}\cancel{<0|0>}\\
-=& 2 \pi g \delta(\omega_{k_f}-\omega_{k_i}) \text{--conservation of energy.} \numberthis \label{eq:conservation:energy}
+	&\bra{k_f} g \int dt \sum_l \underbrace{a^+(l) e^{i \omega_l t}}_\text{contributes iff $l==k_f$} \sum_k \underbrace{a^-(k) e^{-i \omega_k t} \ket{k_i}}_\text{contributes iff $k==k_i$}\\
+	=&\bra{k_f} g \int dt a^+(k_f) e^{i \omega_{k_f} t}  a^-(k_i) e^{-i \omega_{k_i} t} \ket{k_i}\\
+	=& g \int dt e^{i(\omega_{k_f}-\omega_{k_i})}\cancel{<0|0>}\\
+	=& 2 \pi g \delta(\omega_{k_f}-\omega_{k_i}) \text{--conservation of energy.} \numberthis \label{eq:conservation:energy}
 \end{align*}
 
 Conservation of energy works only because of time symmetry!
@@ -507,21 +507,29 @@ If $\omega\propto k$, the waves all have the same phase and group velocities irr
 
 \subsection{Momentum Conservation}\label{sec:momentum:conservation}
 
-Consider a bunch of operators acting on an initial state to produce a final state. If Figure \ref{fig:particle:heavy:target} we derived conservation of energy. Figure \ref{fig:split:particle} show conservation of momentum for splitting a particle. 
+In the discussion around Figure \ref{fig:particle:heavy:target}, leading to \eqref{eq:conservation:energy}, we saw how time invariance led to the conservation of energy. We integrated over all possible times; because the process could happen at any time:
+\begin{align*}
+	&\bra{k_f}  \int dt a^+(k_f) e^{i \omega_{k_f} t}  a^-(k_i) e^{-i \omega_{k_i} t} \ket{k_i}\\
+	=&  \int dt e^{i(\omega_{k_f}-\omega_{k_i})}\cancel{<0|0>}\\
+	=& 2 \pi  \delta(\omega_{k_f}-\omega_{k_i})
+\end{align*}
+Now we will show how a process that can occur anywhere in space leads to conservation of momentum.  Figure \ref{fig:split:particle} shows a particle splitting into two particles. 
  
 \begin{figure}[H]
 	\begin{center}
-		\caption{Split Particle at any position $x$}\label{fig:split:particle}
-		\feynmandiagram[vertical=out1 to in1]{
-			in1--[fermion]c--[fermion]out1,
-			c--[fermion]out2,
+		\caption[Split Particle at any position $x$]{Split Particle at any position $x$. A particles is eaten at $x$, and two particles are created at the same point: $\bra{k_1^\prime,k_2^\prime}\int \Psi^\dagger(x)\Psi^\dagger(x)\.\Psi(x) dx\ket{k}$}\label{fig:split:particle}
+		\feynmandiagram[horizontal'=out1 to out2]{
+			in1--[fermion, edge label=\(k\)]c--[fermion, edge label=\(k_1\)]out1,
+			c--[fermion, edge label=\(k_2\)]out2,
 		};
 	\end{center}
 \end{figure}
 
 \begin{align*}
-\bra{k_1^\prime,k_2^\prime}&\int \Psi^\dagger(x)\Psi^\dagger(x)\Psi(x) dx\ket{k}\\
-=&\bra{k_1^\prime,k_2^\prime}\int a^+(k_1^\prime) a^+(k_2^\prime) a^-(k) \underbrace{e^{ikx} e^{-i(k_1^\prime+k_2^\prime)x}}_\text{integrates to Dirac-$\delta$--(\ref{eq:conservation:energy})} dx\ket{k}
+	\bra{k_1^\prime,k_2^\prime}&\int \Psi^\dagger(x)\Psi^\dagger(x)\Psi(x) dx\ket{k}\\
+	=&\bra{k_1^\prime,k_2^\prime}\int \underbrace{a^+(k_1^\prime) a^+(k_2^\prime)}_{\mathclap{\substack{\text{Create 2}\\
+		\text{particles}}}} \underbrace{a^-(k)}_\text{Eat particle} \underbrace{e^{ikx} e^{-i(k_1^\prime+k_2^\prime)x}}_{\mathclap{\substack{\text{integrates to }\\
+	\text{Dirac-$\delta$--(\ref{eq:conservation:energy})}}}} dx\ket{k}
 \end{align*}
 
 So invariance under space translation yields conservation of momentum.

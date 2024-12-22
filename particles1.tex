@@ -453,41 +453,44 @@ Adding $c$ changes the phase velocity--but changing $E$ by an additive constant 
 \end{align*}
 Given a solution to the \Schr equation, adding a constant to the phase just multiplies $\Psi$ by $e^{-i c t}$. All of the quantities of physical interest that are made out of the \Schr field involve $\Psi\Psi^\dagger=\cancel{e^{-i c t}}\Psi \cancel{e^{+i c t}}\Psi^\dagger$: e.g. probability density, expectation values. There is no physical sense to adding a constant, but it does change the phase velocity. We see that the phase velocity isn't measurable; it is an artifact of the mathematics. On the other hand, the group velocity does mean something.
 
-We will try to follow where the constructive interference takes place between two waves.
+Given a bunch of plain waves, how can we get them to add up to a concentrated lump? (Which will turn out to move with something called the group velocity.) The answer is destructive interference: the waves add someplace, and cancel out in other places. If we have a bunch of waves, and are interested in how the waves of slightly different frequency reinforce each other, let's look at two waves, whose momenta are close, and try to see how it all works. We will try to follow where the constructive interference takes place between two waves.
 
 \begin{align*}
-	\sin(kx-\omega(k)t) +& \sin(k^\prime x-\omega(k^\prime)t)\text{ will reinforece each other when}\\
-	kx-\omega(k)t=&k^\prime x-\omega(k^\prime)t\\
+	\sin(kx-\omega(k)t) +& \sin(k^\prime x-\omega(k^\prime)t)\text{ will reinforce each other when}\\
+	kx-\omega(k)t=&k^\prime x-\omega(k^\prime)t\text{, i.e. when}\\
 	x =& \frac{\omega-\omega^\prime}{k-k^\prime}t\\
 	\rightarrow & \underbrace{\frac{d \omega}{dk}}_{\mathclap{\substack{\text{group  }\\
-	\text{velocity}}}} t \text{, as $k-k^\prime \rightarrow 0$}\\
-	\frac{d \omega}{dk}=&\frac{k}{m} \text{, from \eqref{fig:phase:c}}
+	\text{velocity}}}} t \text{, as $k-k^\prime \rightarrow 0$}
 \end{align*}
-
+The point where the waves reinforce each other will travel with the \emph{group velocity}:
+\begin{align*}
+	V_g\triangleq&\frac{d \omega}{dk}\\
+	=&\frac{k}{m} \text{, from \eqref{fig:phase:c}}
+\end{align*}
 \begin{itemize}
-	\item Group velocity does not depend on $c$
-	\item Group velocity matches velocity of relativistic particle.
+	\item The group velocity does not depend on $c$
+	\item The group velocity matches the velocity of a non-relativistic particle.
 \end{itemize}
 
 \subsubsection{Phase Velocity and Group Velocity of relativistic particles}
 
 \begin{align*}
-E =& \sqrt{P^2 + m^2}\\
-\omega =& \sqrt{k^2 + m^2}\\
-\omega =& \left| k \right| \text{ at speed of light(m=0), so}\\
-V_p =& \frac{\omega}{k} \text{ phase velocity of photon waves}\\
- =&1\\
- V_g =& \frac{d\omega}{dk} \text{ group velocity of photon waves}\\
- =&1 \text{. Now lets us make $m>0$}\\
- V_p =& \frac{\omega}{k}\\
- =&\sqrt{\frac{k^2+m^2}{k^2}}\\
- =&\sqrt{1+\frac{m^2}{k^2}}\\
- >&1 \\
- V_g =& \frac{d\omega}{dk} \\
- =& \frac{\cancel{2}k}{\cancel{2}\sqrt{k^2+m^2}}\\
- =& \frac{1}{\sqrt{1+\frac{m^2}{k^2}}}\\
- <&1\\
- V_p V_g =& 1
+	E =& \sqrt{P^2 + m^2}\\
+	\omega =& \sqrt{k^2 + m^2}\\
+	\omega =& \left| k \right| \text{ at speed of light(m=0), so}\\
+	V_p =& \frac{\omega}{k} \text{ phase velocity of photon waves}\\
+	 =&1\\
+	 V_g =& \frac{d\omega}{dk} \text{ group velocity of photon waves}\\
+	 =&1 \text{. Now lets us make $m>0$}\\
+	 V_p =& \frac{\omega}{k}\\
+	 =&\sqrt{\frac{k^2+m^2}{k^2}}\\
+	 =&\sqrt{1+\frac{m^2}{k^2}}\\
+	 >&1 \\
+	 V_g =& \frac{d\omega}{dk} \\
+	 =& \frac{\cancel{2}k}{\cancel{2}\sqrt{k^2+m^2}}\\
+	 =& \frac{1}{\sqrt{1+\frac{m^2}{k^2}}}\\
+	 <&1\\
+	 V_p V_g =& 1
 \end{align*}
 Difference between group and phase velocities is connected to dispersion.
 

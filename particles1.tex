@@ -472,31 +472,42 @@ The point where the waves reinforce each other will travel with the \emph{group 
 	\item The group velocity matches the velocity of a non-relativistic particle.
 \end{itemize}
 
-\subsubsection{Phase Velocity and Group Velocity of relativistic particles}
+\subsubsection{Phase Velocity and Group Velocity of Relativistic Particles}
+
+We will calculate the phase velocity and group velocity  of a relativistic particle, starting with the relationship between energy and momentum. 
 
 \begin{align*}
-	E =& \sqrt{P^2 + m^2}\\
-	\omega =& \sqrt{k^2 + m^2}\\
-	\omega =& \left| k \right| \text{ at speed of light(m=0), so}\\
+	E =& \sqrt{P^2 + m^2} \text{, which leads to the wave equation}\\
+	\omega =& \sqrt{k^2 + m^2}
+\end{align*}
+At speed of light(m=0), so
+\begin{align*}
+	\omega =& \left| k \right|\\
 	V_p =& \frac{\omega}{k} \text{ phase velocity of photon waves}\\
 	 =&1\\
 	 V_g =& \frac{d\omega}{dk} \text{ group velocity of photon waves}\\
-	 =&1 \text{. Now lets us make $m>0$}\\
-	 V_p =& \frac{\omega}{k}\\
-	 =&\sqrt{\frac{k^2+m^2}{k^2}}\\
-	 =&\sqrt{1+\frac{m^2}{k^2}}\\
-	 >&1 \\
-	 V_g =& \frac{d\omega}{dk} \\
-	 =& \frac{\cancel{2}k}{\cancel{2}\sqrt{k^2+m^2}}\\
-	 =& \frac{1}{\sqrt{1+\frac{m^2}{k^2}}}\\
-	 <&1\\
-	 V_p V_g =& 1
+	 =&1
 \end{align*}
-Difference between group and phase velocities is connected to dispersion.
+So the group velocity and phase velocity are the same for a massless particle. Now lets us make $m>0$
+\begin{align*}
+	V_p =& \frac{\omega}{k}\\
+	=&\sqrt{\frac{k^2+m^2}{k^2}}\\
+	=&\sqrt{1+\frac{m^2}{k^2}} \numberthis \label{eq:rel:phase:V}\\
+	>&1
+\end{align*}
+\begin{align*}
+	V_g =& \frac{d\omega}{dk} \\
+	=& \frac{\cancel{2}k}{\cancel{2}\sqrt{k^2+m^2}}\\
+	=& \frac{1}{\sqrt{1+\frac{m^2}{k^2}}} \numberthis \label{eq:rel:group:V}\\
+	<&1 \text{. Combining \eqref{eq:rel:phase:V} and \eqref{eq:rel:group:V}}\\
+	V_p V_g =& 1
+\end{align*}
+
+If $\omega\propto k$, the waves all have the same phase and group velocities irregardless of frequency: the difference between group and phase velocities is connected to dispersion.
 
 \subsection{Momentum Conservation}\label{sec:momentum:conservation}
 
-Consider a bunch of operators action on an initial state to produce a final state. If Figure \ref{fig:particle:heavy:target} we derived conservation of energy. Figure \ref{fig:split:particle} show conservation of momentum for splitting a particle. 
+Consider a bunch of operators acting on an initial state to produce a final state. If Figure \ref{fig:particle:heavy:target} we derived conservation of energy. Figure \ref{fig:split:particle} show conservation of momentum for splitting a particle. 
  
 \begin{figure}[H]
 	\begin{center}

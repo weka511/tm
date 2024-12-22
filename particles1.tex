@@ -311,10 +311,10 @@ Stimulated emission: higher probability of generating particles that are already
 \subsubsection{Dirac Delta function}
 
 \begin{align*}
-\text{For } k =& \frac{2 \pi n}{L}\\
-\int_{-\frac{L}{2}}^{\frac{L}{2}} e^{ikx} dx =& L \text{, if $k =0$}\\
-=& 0 \text{, otherwise}\\
-\rightarrow& 2 \pi \delta(k) \text{ as $k \rightarrow \infty$}
+	\text{For } k =& \frac{2 \pi n}{L}\\
+	\int_{-\frac{L}{2}}^{\frac{L}{2}} e^{ikx} dx =& L \text{, if $k =0$}\\
+	=& 0 \text{, otherwise}\\
+	\rightarrow& 2 \pi \delta(k) \text{ as $k \rightarrow \infty$}
 \end{align*}
 
 We will use \emph{ket} vectors for initial states, \emph{bra} for final. This will help with bookkeeping.
@@ -322,20 +322,20 @@ We will use \emph{ket} vectors for initial states, \emph{bra} for final. This wi
 \subsubsection{Creation and annihilation operators operating on bra vectors}
 
 \begin{align*}
-\braket{n|m} =& \delta_{n,m}\numberthis \label{eq:orthogonal} \text{. We want the following}\\
-\braket{n|(a^+|m)} =& \braket{(n|a^+)|m}  \numberthis \label{eq:consistency}\\
-=& \sqrt{m+1} \braket{n|m+1} \text{, from (\ref{eq:creation})}\\
-=& \sqrt{m+1} \delta_{n,m+1} \text{, from (\ref{eq:orthogonal})} \text{, so we define}\\
-\bra{n} a^+ \triangleq & \sqrt{n} \bra{n-1} \text{ to satisfy (\ref{eq:consistency}), and} \numberthis \label{eq:bra:create}\\
-\bra{n} a^= \triangleq & \sqrt{n+1} \bra{n-1} \numberthis \label{eq:bra:annihilate}
+	\braket{n|m} =& \delta_{n,m}\numberthis \label{eq:orthogonal} \text{. We want the following}\\
+	\braket{n|(a^+|m)} =& \braket{(n|a^+)|m}  \numberthis \label{eq:consistency}\\
+	=& \sqrt{m+1} \braket{n|m+1} \text{, from (\ref{eq:creation})}\\
+	=& \sqrt{m+1} \delta_{n,m+1} \text{, from (\ref{eq:orthogonal})} \text{, so we define}\\
+	\bra{n} a^+ \triangleq & \sqrt{n} \bra{n-1} \text{ to satisfy (\ref{eq:consistency}), and} \numberthis \label{eq:bra:create}\\
+	\bra{n} a^= \triangleq & \sqrt{n+1} \bra{n-1} \numberthis \label{eq:bra:annihilate}
 \end{align*}
 Example: calculate an expression two different ways.
 \begin{align*}
-\braket{n|(a^+a^-|n)} =& \sqrt{n}\braket{n|(a^+|n-1)}\\
-=& (\sqrt{n})^2 \braket{n|n} \text{ from (\ref{eq:bra:create})}\\
-=& n\\
-\braket{(n|a^+a^-)|n} =& \sqrt{n} \braket{(n-1|a^-)|n}\\
-=& n \braket{n|n} \text{ from (\ref{eq:bra:annihilate})}
+	\braket{n|(a^+a^-|n)} =& \sqrt{n}\braket{n|(a^+|n-1)}\\
+	=& (\sqrt{n})^2 \braket{n|n} \text{ from (\ref{eq:bra:create})}\\
+	=& n\\
+	\braket{(n|a^+a^-)|n} =& \sqrt{n} \braket{(n-1|a^-)|n}\\
+	=& n \braket{n|n} \text{ from (\ref{eq:bra:annihilate})}
 \end{align*}
 
 \subsection{Quantum Fields}
@@ -653,7 +653,7 @@ The right-handed Dirac equation (\ref{eq:rh:dirac}) has the following solution:
 	\omega =& k
 \end{align*}
 
-If $k<0$, $\omega<0$, i.e. negative energy, which is not a good thing: electrons would not be stable. So we fill up the Dirac Sea. Then we can remove one electron, creating a hole in the Dirac Sea; particle and hole both have positive momentum and positive energy.
+If $k<0$, $\omega<0$, i.e. negative energy, which is not a good thing: electrons would not be stable. So we fill up the Dirac Sea, so all negative energy states are filled. Then we can remove one electron, creating a hole in the Dirac Sea; particle and hole both have positive momentum and positive energy.
 
 We now introduce left moving electrons.
 
@@ -678,13 +678,15 @@ Define $\psi=\begin{pmatrix}
 \end{align*}
 
 Now we give the particles mass $m$.
-
 \begin{align*}
-	\omega^2 =& k^2 + m^2 \text{. Now we generalize (\ref{eq:dirac:1})}\\
-	\omega =& \alpha k + m \beta \text{. This is the 1D Dirac equation.} \numberthis \label{eq:Dirac:1D}\\
-	\omega^2 =& \alpha^2 k^2 + m^2 \beta^2 + m k (\alpha \beta + \beta \alpha) \text{, so we want:}\\
-	\alpha^2 =& 1 \text{, satsfied by (\ref{eq:alpha})}\\
-	\beta^2 =& 1 \numberthis \label{eq:beta2}\\ 
+	\omega^2 =& k^2 + m^2 \text{. Now we generalize (\ref{eq:dirac:1})} \numberthis \label{eq:omega:relativistic}\\
+	\omega =& \alpha k + m \beta  \numberthis \label{eq:Dirac:1D}
+\end{align*}
+This is the 1D Dirac equation, which gives:
+\begin{align*}
+	\omega^2 =& \alpha^2 k^2 + m^2 \beta^2 + m k (\alpha \beta + \beta \alpha) \text{, which agrees with \eqref{eq:omega:relativistic} iff:}\\
+	\alpha^2 =& 1 \text{, already satisfied by (\ref{eq:alpha})}\\
+	\beta^2 =& 1 \text{, and}\numberthis \label{eq:beta2}\\ 
 	\{\alpha,\beta\} =& 0 \numberthis \label{eq:alpha:beta}\\
 	\beta =& \begin{pmatrix}
 	0 & 1\\
@@ -692,7 +694,7 @@ Now we give the particles mass $m$.
 	\end{pmatrix} \text{ satisfies (\ref{eq:beta2}) and (\ref{eq:alpha:beta}).}
 \end{align*}
 
-The mass term couples equations for $\Psi_L$ and $\Psi_R$. Dirac equation is Lorentz covariant.
+The mass term couples equations for $\Psi_L$ and $\Psi_R$. The Dirac equation is Lorentz covariant.
 
 Let us make particle stand still, i.e. $k=0 \implies \omega = \beta m$.
 
@@ -710,8 +712,8 @@ So particle at rest still has positive and negative energies: throw latter in Di
 
 In the presence of the Higgs field, $\phi(x)$, the Dirac equation becomes:
 \begin{align*}
-i \dot{\psi_R} =& -i \partial_x \psi_R + g \phi \psi_L\\
-i \dot{\psi_L} =& i \partial_x \psi_L + g \phi \psi_R \text{, which gives massless electron if $\phi=0$}
+	i \dot{\psi_R} =& -i \partial_x \psi_R + g \phi \psi_L\\
+	i \dot{\psi_L} =& i \partial_x \psi_L + g \phi \psi_R \text{, which gives massless electron if $\phi=0$}
 \end{align*}
 What if the lowest energy of Higgs favours a non-zero value, $\phi(x)=\phi$? The $m=g\phi$. This could come about as the result of non-lienar interactions between Boson and Fermions.
 
@@ -735,17 +737,23 @@ If vacuum were symmetric--Figure \ref{fig:higgs:potential}-- $\phi$ would be zer
 
 \subsection{3+1 Dimensional Dirac Equation}
 
-Dirac started with generalization.
+Dirac started with a generalization of \eqref{eq:Dirac:1D}:
 
 \begin{align*}
-\omega =& \underbrace{\alpha . k}_{\alpha_1 k_1 + \alpha_2 k_2 + \alpha_3 k_3} +\beta m\\
-\omega =& \alpha_1 k_1 + \alpha_2 k_2 + \alpha_3 k_3 +\beta m\\
-\omega^2 =& k_1^2 + k_2^2 +k_3^2 +m^2\\
-\omega^2 =& (\alpha_1 k_1 + \alpha_2 k_2 + \alpha_3 k_3 +\beta m)(\alpha_1 k_1 + \alpha_2 k_2 + \alpha_3 k_3 +\beta m) \text{, whence}\\
-\alpha_i^2 =& 1  \text{ and} \numberthis \label{eq:dirac:ac1}\\
-\beta^2 =& 1 \text{ and} \numberthis \label{eq:dirac:ac2}\\
-\{\alpha_i,\alpha_j\} =& 2 \delta_{i,j} \numberthis \label{eq:dirac:ac3}\\
-\{\alpha_i,\beta\} =& 0 \numberthis \label{eq:dirac:ac4}
+	\omega =& \underbrace{\alpha . k}_{\alpha_1 k_1 + \alpha_2 k_2 + \alpha_3 k_3} +\beta m\\
+	=& \alpha_1 k_1 + \alpha_2 k_2 + \alpha_3 k_3 +\beta m \numberthis \label{eq:omega:3D}\\
+\end{align*}
+In 3 dimensions, \eqref{eq:omega:relativistic} generalizes to:
+\begin{align*}
+	\omega^2 =& k_1^2 + k_2^2 +k_3^2 +m^2 \text{, but \eqref{eq:omega:3D} gives}\\
+	=& (\alpha_1 k_1 + \alpha_2 k_2 + \alpha_3 k_3 +\beta m)(\alpha_1 k_1 + \alpha_2 k_2 + \alpha_3 k_3 +\beta m)
+\end{align*}
+These expressions agree iff:
+\begin{align*}
+	\alpha_i^2 =& 1  \text{ and} \numberthis \label{eq:dirac:ac1}\\
+	\beta^2 =& 1 \text{ and} \numberthis \label{eq:dirac:ac2}\\
+	\{\alpha_i,\alpha_j\} =& 2 \delta_{i,j} \numberthis \label{eq:dirac:ac3}\\
+	\{\alpha_i,\beta\} =& 0 \numberthis \label{eq:dirac:ac4}
 \end{align*}
 
 Theorem \ref{thm:dirac:anticommutation} shows 2 or 3 dimensional matrices cannot satisfy these equations; $4 \times 4$ is the first case.
@@ -987,8 +995,10 @@ So can ignore 1 degree of freedom. $\alpha$ and $\beta$ have 2 degrees of freedo
 Measured value is always $\pm \frac{1}{2}$; average may be zero; it behaves like a classical variable.
 
 \begin{thm}[Spin statistics]
-		All particles with half integral spin are Fermions;
-		All particles with  integral spin are Bosons.
+	\begin{enumerate}
+		\item All particles with half integral spin are Fermions;
+		\item All particles with  integral spin are Bosons.
+	\end{enumerate}
 \end{thm}
 
 \begin{proof}
@@ -1147,6 +1157,9 @@ Where the $\alpha_i$ and $\beta$ satisfy (\ref{eq:dirac:ac1}), (\ref{eq:dirac:ac
 \begin{thm}[Dirac anticommutation relations.]\label{thm:dirac:anticommutation} 
 	Equations (\ref{eq:dirac:ac1}), (\ref{eq:dirac:ac2}), (\ref{eq:dirac:ac3}), and (\ref{eq:dirac:ac4}) can be satisfied by suitably chosen $2\times4$ matrices, and they cannot be satisfied by $n \times n$ for $n<4$.
 \end{thm}
+\begin{proof}
+	TBP
+\end{proof}
 
 One set of solutions, which is not the same as (\ref{eq:beta:1}), (\ref{eq:alpha1:1}), (\ref{eq:alpha2:1}), and (\ref{eq:alpha3:1}):
 \begin{align*}

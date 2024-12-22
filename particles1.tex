@@ -43,7 +43,7 @@
 \usepackage[toc,nonumberlist]{glossaries}
 \usepackage{glossaries-extra}
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
-
+\newcommand{\Schr}{{Schr\"odinger }}
 \newtheorem{thm}{Theorem}
 \newtheorem{defn}[thm]{Definition}
 \newtheorem{cor}[thm]{Corollary}
@@ -142,7 +142,7 @@ Consider a classical wave $A \sin(kx)$. Energy is proportional to $A^2$, but als
 Generally, equations containing $c$ apply for photons only. For non-relativistic particles:
 \begin{align*}
 	E=&\frac{p^2}{2m}\\
-	f =& \frac{h}{2 m \lambda^2} \text{. c.f. Schr\"odinger equation!}
+	f =& \frac{h}{2 m \lambda^2} \text{. c.f. \Schr equation!}
 \end{align*}
 
 \begin{itemize}
@@ -361,7 +361,7 @@ We  determine the differential equation satisfied by $\Psi^\dagger(X)$.
  =& - \sum_k 2m \omega a^+(k) e^{-ikX} e^{i \omega(k) t} \text{ from (\ref{eq:omega:k})}\\
  \frac{1}{2m} \frac{\partial^2 \Psi^\dagger(X)}{\partial X^2} =& - \sum_k \omega a^+(k) e^{-ikX} e^{i \omega(k) t}\\
  =& -\frac{1}{i} \frac{\Psi^\dagger(X)}{\partial t}\\
-  i \frac{\Psi^\dagger(X)}{\partial t} =&  \frac{1}{2m} \frac{\partial^2 \Psi^\dagger(X)}{\partial X^2} \text{ From (\ref{eq:omega:dot}). This is Schr\"odinger's equation for field!}
+  i \frac{\Psi^\dagger(X)}{\partial t} =&  \frac{1}{2m} \frac{\partial^2 \Psi^\dagger(X)}{\partial X^2} \text{ From (\ref{eq:omega:dot}). This is \Schr's equation for field!}
 \end{align*}
 
 Consider particle scattering from heavy target; we show it conserves energy, but not momentum--Figure \ref{fig:particle:heavy:target}. Assume scattering probability independent of time.
@@ -431,23 +431,27 @@ Generally phase velocity doesn't have anything to do with measurable things in q
 
 Consider $\sin(kx-\omega t)$. The wave moves so that $kx-\omega t$ remains constant.
 \begin{align*}
-x =& \underbrace{\frac{\omega}{k}}_\text{phase velocity} t\\
-\omega =& \frac{2 \pi}{T}\\
-k =& \frac{2 \pi}{\lambda}
+	x =& \underbrace{\frac{\omega}{k}}_{\mathclap{\substack{\text{phase }\\
+															\text{velocity}}}} t\\
+	\omega =& \frac{2 \pi}{T}\\
+	k =& \frac{2 \pi}{\lambda}
 \end{align*}
 
-This is connected with Schr\"odinger equation, since $\omega$ is energy, and $k$ momentum, so:
+This is connected with the \Schr equation, since $\omega$ is energy, and $k$ momentum, so:
 \begin{align*}
-\omega=&\frac{k^2}{2m} \text{, whence}\\
-\frac{\omega}{k}=&\frac{k}{2m} \text{, phase velocity.}\\
-=& \frac{v}{2}  \text{, where $v$ is velocity of classical particle. Let's add a constant energy:}\\
-\omega=&\frac{k^2}{2m}+c \text{, changes phase velocity--but changing $E$ by an additive constant has no physical effect!} \numberthis \label{fig:phase:c}
+	\omega=&\frac{k^2}{2m} \text{, whence} \numberthis \label{fig:phase:c}\\
+	\frac{\omega}{k}=&\frac{k}{2m} \text{, phase velocity.}\\
+	=& \frac{v}{2}  \text{, where $v$ is velocity of classical particle.}
 \end{align*}
-Now we write:
+ Let's add a constant to frequency, hence to the energy:
+\begin{align*}
+	\omega=&\frac{k^2}{2m}+c 
+\end{align*}
+Adding $c$ changes the phase velocity--but changing $E$ by an additive constant has no physical effect! Now we write:
 \begin{align*}
 	\Psi =& \sum_k a^-(k) e^{ikx}e^{- i \omega(k) t} e^{-i c t}
 \end{align*}
-Given solution to Schr\"odinger equation, adding constant to phase just multiplies $\Psi$ by $e^{-i c t}$. Now all physical quantities depend on $\Psi\Psi^\dagger=\cancel{e^{-i c t}}\Psi \cancel{e^{+i c t}}\Psi^\dagger$: the phase velocity isn't physical.
+Given a solution to the \Schr equation, adding a constant to the phase just multiplies $\Psi$ by $e^{-i c t}$. All of the quantities of physical interest that are made out of the \Schr field involve $\Psi\Psi^\dagger=\cancel{e^{-i c t}}\Psi \cancel{e^{+i c t}}\Psi^\dagger$: e.g. probability density, expectation values. There is no physical sense to adding a constant, but it does change the phase velocity. We see that the phase velocity isn't measurable; it is an artifact of the mathematics. On the other hand, the group velocity does mean something.
 
 We will try to follow where the constructive interference takes place between two waves.
 
@@ -455,8 +459,9 @@ We will try to follow where the constructive interference takes place between tw
 	\sin(kx-\omega(k)t) +& \sin(k^\prime x-\omega(k^\prime)t)\text{ will reinforece each other when}\\
 	kx-\omega(k)t=&k^\prime x-\omega(k^\prime)t\\
 	x =& \frac{\omega-\omega^\prime}{k-k^\prime}t\\
-	\rightarrow & \big[\underbrace{\frac{d \omega}{dk}}_\text{group velocity}\big] t \text{, as $k-k^\prime \rightarrow 0$}\\
-	\frac{d \omega}{dk}=&\frac{k}{m} \text{, from (\ref{fig:phase:c})}
+	\rightarrow & \underbrace{\frac{d \omega}{dk}}_{\mathclap{\substack{\text{group  }\\
+	\text{velocity}}}} t \text{, as $k-k^\prime \rightarrow 0$}\\
+	\frac{d \omega}{dk}=&\frac{k}{m} \text{, from \eqref{fig:phase:c}}
 \end{align*}
 
 \begin{itemize}

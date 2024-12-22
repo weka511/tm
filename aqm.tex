@@ -2395,20 +2395,20 @@ The Dirac equation can have both positive and negative energy, even in the 1 dim
 	H=P \text{, right moving electron; what if $P<0$?}
 \end{align*} 
 
-The ground state, the vacuum has the lowest energy (not the fewest particles). The vacuum had better be the lowest possible energy. With negative energy we can lower the energy indefinitely! What does -ve energy mean? Negative energies are very dangerous, because the ground state is lowest energy: if we have negative energies could lower energy past vacuum! Or we could lower energy indefinitely. 
+Negative energies are very dangerous. The ground state, the vacuum, is not necessarily the state with no particles: it is the state with lowest energy. When you suck out all the energy from space, what is left is the vacuum. Clearly the vacuum had better be the lowest possible energy, otherwise you could lower the energy past the vacuum. With negative energy we can lower the energy indefinitely! What does negative energy mean? The vacuum is supposed to be empty space, so there should be nothing to remove, no way to lower its energy further.
 
-Dirac \emph{defined} the vacuum to have lowest energy. Dirac filled all the negative energies states, and called that the vacuum (Fermions!) --only one in each state. Since they are Fermions, if state filled we can't keep going. Vacuum must have every negative state occupied; then there is no room to lower energy further. We can add positive energy electron, or move a negative energy electron to positive--Figure \ref{fig:dirac:sea}. (This was an intuitive way to describe some mathematics. Modern physicists don't like this line of reasoning, but we will follow it.)
+Dirac \emph{defined} the vacuum to be the state of lowest energy. But what about all these negative energy particles? They lower energy past zero. Dirac knew that these particles were Fermions. The lowest energy would be if he filled all possible states with negative energy particles; every negative energy particles gives us negative energy, and if we fill all the negative energies states, that is as negative as it can get. Since they are Fermions, if state filled we can't keep going. Vacuum must have every negative state occupied; then there is no room to lower energy further.  We can add positive energy electron, or move a negative energy electron to positive--Figure \ref{fig:dirac:sea}. (This was an intuitive way to describe some mathematics. Modern physicists don't like this line of reasoning, but we will follow it.)
 
 In Figure \ref{fig:ds} we have filled all negative energy levels, which stabilizes vacuum. We can put in a positive energy electron, Figure \ref{fig:aqm-10-dirac-sea}, or take out a negative energy electron and leave a hole, Figure \ref{fig:dirac:sea}
 \begin{figure}[H]
 	\begin{center}
-		\caption{The Dirac Sea}\label{fig:ds}
+		\caption[The Dirac Sea]{The Dirac Sea: all negative energy states have been filled.}\label{fig:ds}
 		\begin{subfigure}[b]{0.45\textwidth}
 			\begin{center}
-				\caption{Positive energy electron added}\label{fig:aqm-10-dirac-sea}
+				\caption{The Dirac Sea, with one positive energy electron added}\label{fig:aqm-10-dirac-sea}
 				\begin{tikzpicture}
 					\draw[->](0,0) -- (0,3) node[anchor=north west] {E};
-					\fill[gray] (-0.2,-5) rectangle (0.2,0);
+					\fill[gray] (-0.2,-4) rectangle (0.2,0);
 					\filldraw[black] (0,1) circle (3pt) node[anchor=west]{};
 				\end{tikzpicture}
 			\end{center}
@@ -2416,21 +2416,20 @@ In Figure \ref{fig:ds} we have filled all negative energy levels, which stabiliz
 		\hfill
 		\begin{subfigure}[b]{0.45\textwidth}
 			\begin{center}
-				\caption{Pluck out negative energy electron and get +ve charge and +ve energy hole (positron)}\label{fig:dirac:sea}
+				\caption{Pluck out one negative energy electron from Dirac sea, and get positive charge and positive energy hole (positron)}\label{fig:dirac:sea}
 				\begin{tikzpicture}
 					\draw[->](0,0) -- (0,3) node[anchor=north west] {E};
 					\fill[gray] (-0.2,-1.9) rectangle (0.2,0);
-					\fill[gray] (-0.2,-5) rectangle (0.2,-2.1);
+					\fill[gray] (-0.2,-4) rectangle (0.2,-2.1);
 					\draw[->] (0.2,-2) .. controls (2,-1.4) and (2,-0.7) .. (0.1,0.9);				
 					\filldraw[black] (0,1) circle (3pt) node[anchor=west]{};
 				\end{tikzpicture}
 			\end{center}
 		\end{subfigure}
-
 	\end{center}
 \end{figure}
 
-Imagine photon coming along and hitting -ve energy electron in vacuum: we get an electron and a hole--Figures \ref{fig:dirac:sea:photon} and \ref{photon:dirac}.
+Imagine photon coming along and hitting negative energy electron in vacuum: we get an electron and a hole--Figures \ref{fig:dirac:sea:photon} and \ref{photon:dirac}.
 
 \begin{figure}[H]
 	\caption{Photon hitting -ve energy electron in vacuum}
@@ -2440,7 +2439,7 @@ Imagine photon coming along and hitting -ve energy electron in vacuum: we get an
 			\begin{tikzpicture}
 				\draw[->](0,0) -- (0,3) node[anchor=north west] {E};
 				\fill[gray] (-0.2,-1.9) rectangle (0.2,0);
-				\fill[gray] (-0.2,-5) rectangle (0.2,-2.1);
+				\fill[gray] (-0.2,-4) rectangle (0.2,-2.1);
 				\draw[->] (0.2,-2) .. controls (2,-1.4) and (2,-0.7) .. (0.1,0.9);
 				\filldraw[black] (0,1) circle (3pt) node[anchor=west]{};
 				\draw[snake it] (3,-1) -- (0.2,-2);
@@ -2450,7 +2449,7 @@ Imagine photon coming along and hitting -ve energy electron in vacuum: we get an
 	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
 		\begin{center}
-			\caption{Feynman diagram. By convention positron points down.}\label{photon:dirac}
+			\caption{Feynman diagram for (\subref{fig:dirac:sea:photon}). By convention, positron points down.}\label{photon:dirac}
 			\feynmandiagram[vertical=n1 to i1]{
 				i1--[photon,edge label=$\gamma$]n1--[anti fermion]o1[particle=$e^+$],
 				n1--[fermion]o2[particle=$e^-$]
@@ -2459,13 +2458,14 @@ Imagine photon coming along and hitting -ve energy electron in vacuum: we get an
 	\end{subfigure}
 \end{figure}
 
-The wave function needs fermion operators, which anticommute.
+This is the Dirac theory of electrons. Let us know talk about the field operators that describe them. They are built exactly the same way as the Boson field operators.
+
 \begin{align*}
-	\Psi =& \int_{-\infty}^{\infty} dp a^-(p) e^{-ipx}\\
+	\Psi =& \int_{-\infty}^{\infty} dp a^-(p) e^{-ipx} \text{Fermion operators anticommute.}\\
 	=& \underbrace{\int_{-\infty}^0 dp a^-(p) e^{-ipx}}_\text{negative energies}+ \underbrace{\int_0^{\infty} dp a^-(p) e^{-ipx}}_\text{positive energies}
 \end{align*}
 
-But the mathematics doesn't distinguish between Fermion creation and annihilation operators. Introducing $b^+(p)$, the creation operator for positirons:
+But the mathematics for Fermions doesn't distinguish  creation and annihilation operators, because they anticommute. Introducing $b^+(p)$, the creation operator for positrons:
 \begin{align*}
 	\Psi =&  \int_0^{\infty} dp  b^+(p) e^{ipx}+ \int_0^{\infty} dp a^-(p) e^{-ipx}
 \end{align*}
@@ -2479,15 +2479,15 @@ Consider the interaction of Figure \ref{fig:electron_scattering_dirac}.
 But this also describes the interactions of  Figures \ref{fig:electron_scattering_dirac}, \ref{fig:positron annihilating_dirac}, and \ref{fig:all3-created}.
 \begin{figure}[H]
 	\caption{Possible outcomes of $\Psi^\dagger(x)\Psi(x)A$: Feynman diagrams.}
-	\begin{subfigure}{0.3\textwidth}
-		\caption{Electron scattering}\label{fig:electron_scattering_dirac}
+	\begin{subfigure}[t]{0.3\textwidth}
+		\caption{Electron scattering: $a^+a^-A$}\label{fig:electron_scattering_dirac}
 		\feynmandiagram[vertical'=a to i1]{
 			i1[particle=$e^-$]--[fermion]a--[fermion]o1[particle=$e^-$],
 			a--[photon]o2
 		};
 	\end{subfigure}
 	\hfill
-	\begin{subfigure}{0.3\textwidth}
+	\begin{subfigure}[t]{0.3\textwidth}
 		\caption{Positron annihilation}\label{fig:positron annihilating_dirac}
 		\feynmandiagram[vertical'=i2 to a]{
 			a -- [boson]b,
@@ -2496,26 +2496,27 @@ But this also describes the interactions of  Figures \ref{fig:electron_scatterin
 		};
 	\end{subfigure}
 	\hfill
-	\begin{subfigure}{0.3\textwidth}
-		\caption{Electron, photon, positron created}\label{fig:all3-created}
-		\feynmandiagram[vertical=o2 to i1]{
-			a--[opacity=0.0]b,
-			a--[fermion]c[particle=$e^-$],
-			a--[anti fermion]d[particle=$e^+$],
-			a--[boson]e,
-			a--[opacity=0.0]f,
-			a--[opacity=0.0]g
-		};
+	\begin{subfigure}[t]{0.3\textwidth}
+		\caption{Electron, photon, and positron created}\label{fig:all3-created}
+		\feynmandiagram[vertical = out3 to in1]{
+			in1--[fermion]out1[particle=$e^-$],
+			in1--[anti fermion]out2[particle=$e^+$],
+			in1--[boson]out3,
+			out1--[opacity=0.0]out3,
+			out2--[opacity=0.0]out3,
+	};
 	\end{subfigure}
 \end{figure}
 
 This was pretty much the start of Feynman diagrams (back in Dirac's day)! But Feynman figured out how to evaluate them.
 
-How do modern physicists think of the Dirac Sea? They just forget the Dirac sea and replace creation operators for negative energy with annihilators for positive.
+How do modern physicists think of the Dirac Sea? They just forget the Dirac sea and replace creation operators for negative energy with annihilation operators for positive. Then the theory becomes completely symmetric for electrons and positrons.
 
-Same pattern in solid state physics. If you have crystal with lots of electrons, put all electrons into lowest available states--ground state. We have the Fermi sea. Can take an energy out of sea and kick into higher state, leaving a hole which behaves like a particle. But Dirac did this first!
+We have the same pattern in solid state physics. If you have crystal with lots of electrons, put all electrons into lowest available states--ground state. We have the Fermi sea. Now we can take an energy out of sea and kick into higher state, leaving a hole which behaves like a particle. But Dirac did this first!
 
-Question about Cosmological constant. Can think of it as energy in Dirac Sea, or zero point oscillation of field. Photons aren't thought of as part of Dirac sea, but they contribute $\frac{1}{2}\hslash\omega$ for every oscillating mode. For photons background energy is positive, for Fermions it is negative. You could think of them cancelling, but Fermions have mass, photons don't, so they don't cancel. You are always left with some huge amount of energy left over. 
+One way to look at the Dirac equation is that there are two spins and two charges (electron/positive); multiplying we get 4 components. This in't the whole story, but it can be useful.
+
+Question about Cosmological constant. You can think of it as energy in the Dirac Sea, or as the zero point oscillation of field. Photons aren't thought of as part of Dirac sea, but they contribute $\frac{1}{2}\hslash\omega$ for every oscillating mode. For photons background energy is positive, for Fermions it is negative. You could think of them canceling, but Fermions have mass, photons don't, so they don't cancel. You are always left with some huge amount of energy left over. 
 
 Keep in mind that the only time zero point energy comes into anything is when that energy is gravitating. For all other purposes we can ignore it because only differences matter.
 

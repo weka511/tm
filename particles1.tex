@@ -534,62 +534,67 @@ Now we will show how a process that can occur anywhere in space leads to conserv
 
 So invariance under space translation yields conservation of momentum.
 
-Another possible symmetry: $\Psi \rightarrow e^{i \lambda} \Psi$: no change to probabilities if number of $\Psi$s is same as number of $\Psi^\dagger$s. This is connected with conservation of charge.
+Another \emph{possible} symmetry: $\Psi \rightarrow e^{i \lambda} \Psi$. There is no change to probabilities if number of $\Psi$s is same as number of $\Psi^\dagger$s. This is connected with conservation of charge.
 
 \subsection{Fermions}
 
 \subsubsection{Introduction to Fermions}
 
 \begin{itemize}
-	\item Can have any number of Bosons in same state (same place);
-	\item They have a tendency to be in same state. E.g. particles decays and emits photon. If lots of other photons already on some state, decay will preferentially favour that state.
+	\item Can have any number of Bosons in any state (same place);
+	\item Bosons have a tendency to accumulate in the same state. E.g. consider a particle that decays and emits a photon. If lots of other photons already on some state, decay will preferentially favour that state.
 \end{itemize}
 
-Fermions cannot be in same state (Pauli Exclusion Principle).
+Fermions cannot be in same state (Pauli Exclusion Principle). We will start the same way we did with Bosons.
 
 \begin{align*}
-\Psi(x) =& \sum_k a^-(k) e^{ikx}\\
-State:& \ket{001...01010...} \text{, ones and zeroes only!}\\
-\Psi^\dagger(x) =& \sum_k a^+(k) e^{-ikx}
+	\Psi(x) =& \sum_k a^-(k) e^{ikx}
+\end{align*}
+The state of the system is once again a vector showing the number of particles in each state, but these numbers can be $0$ or $1$ only because of the Pauli exclusion principle: $\ket{001...01010...}$. Again we have:
+\begin{align*}
+	\Psi^\dagger(x) =& \sum_k a^+(k) e^{-ikx}
 \end{align*}
 
 Focus on one state, either full $(\ket{1})$ or empty $(\ket{0})$: those are only two possibilities. What are the algebraic rules for creation and annihilation operators?
 
 \begin{align*}
-c^+\ket{0} =& \ket{1} \text{ for Fermions use $c$ rather than $a$}\\
-c^+\ket{1} =& 0 \text{, i.e. $\psi(x) \equiv 0$}\\
-c^-\ket{1} =& \ket{0}\\
-c^-\ket{0} =& 0\\
+	c^+\ket{0} =& \ket{1} \text{, for Fermions use $c$ rather than $a$}\\
+	c^+\ket{1} =& 0 \text{, i.e. $\psi(x) \equiv 0$}\\
+	c^-\ket{1} =& \ket{0}\\
+	c^-\ket{0} =& 0\\
 \end{align*}
 
 We deduce:
 \begin{align*}
-c^+c^-\ket{0} =& 0\\
-c^-c^+\ket{0} =& \ket{0}\\
-(c^+c^-+c^-c^+)\ket{0} =& \ket{0}\\
-c^+c^-\ket{1} =& \ket{1} \\
-c^-c^+\ket{1} =&0 \\
-(c^+c^-+c^-c^+)\ket{1} =& \ket{1}\\
-\{c^+,c^-\} =& 1 \text{, where anticommutator is defined}\\
-\{c^+,c^-\} \triangleq(c^+c^-+c^-c^+)& \text{. We can also show}\\
-\{c^+,c^+\} =&0 \text{ and}\\
-\{c^-,c^-\} =&0
+	c^+c^-\ket{0} =& 0\\
+	c^-c^+\ket{0} =& \ket{0}\\
+	(c^+c^-+c^-c^+)\ket{0} =& \ket{0}\\
+	c^+c^-\ket{1} =& \ket{1} \\
+	c^-c^+\ket{1} =&0 \\
+	(c^+c^-+c^-c^+)\ket{1} =& \ket{1}
 \end{align*}
-
-So Fermions have parallel mathematics: $[,] \leftrightarrow \{,\}$. Cannot put two particles into same state, as $c^+c^+=0$.
+We define the anticommutator:
+\begin{align*}
+	\{c^+,c^-\} \triangleq& (c^+c^-+c^-c^+) \text{, then}\\
+	\{c^+,c^-\} =& 1\\
+	\{c^+,c^+\} =&0 \\
+	\{c^-,c^-\} =&0
+\end{align*}
+So Fermions have parallel mathematics to Bosons: $[,] \leftrightarrow \{,\}$. We cannot put two particles into the same state, as $c^+c^+=0$.
 
 What about different momenta? We can show that:
 \begin{align*}
-\{c^+_k,c^-_{k^\prime} \} =& \delta_{k,k^\prime} \\
-\{c^+_k,c^+_{k^\prime} \} =&0 \\
-\{c^-_k,c^-_{k^\prime} \} =&0
+	\{c^+_k,c^-_{k^\prime} \} =& \delta_{k,k^\prime} \\
+	\{c^+_k,c^+_{k^\prime} \} =&0 \\
+	\{c^-_k,c^-_{k^\prime} \} =&0
 \end{align*}
 
-Can we have two Fermions at the same position? Let's try to create them at the origin.
+This shows we can't put two Fermions into the same position state. Can we have two Fermions at the same position? Let's try to create them at the origin.
 
 \begin{align*}
-\Psi^\dagger(0) \Psi^\dagger(0) \ket{0} =& \sum_{k,k^\prime} c^+_k c^+_{k^\prime} \ket{0}\\
-=& 0
+	\Psi^\dagger(0) \Psi^\dagger(0) \ket{0} =& \sum_{k,k^\prime} c^+_k c^+_{k^\prime} \ket{0}\\
+	==& \frac{1}{2} \sum_{k,k^\prime} \{c^+_k, c^+_{k^\prime}\} \ket{0}\\
+	=& 0
 \end{align*}
 
 So the answer is no: we can't have two Fermions at the same position. So we can't have an electron laser.
@@ -598,11 +603,17 @@ So the answer is no: we can't have two Fermions at the same position. So we can'
 We now compare the ground state of a system of Bosons with the ground state of a system of Fermions. In Figure \ref{fig:electons:confined:momentum} we have some particles confined in momentum space.
 
 \begin{figure}[H]
-	\caption{Particles confined in momentum space (3D)}\label{fig:electons:confined:momentum}
-	\includegraphics[width=0.8\textwidth]{electons-confined-momentum}
+	\begin{center}
+		\caption{Particles confined in momentum space (3D)}\label{fig:electons:confined:momentum}
+		\begin{tikzpicture}
+			\draw(0,0)--(0,6)--(6,6)--(6,0)--(0,0);
+			\node[anchor=east] at (0,3) {$k_y$};
+			\node[anchor=north] at (3,0) {$k_x$};
+		\end{tikzpicture}
+	\end{center}
 \end{figure}
 
-Allowable values form a lattice.
+The allowable values form a lattice.
 \begin{itemize}
 	\item We can put lots and lots of Bosons in the lowest energy (zero momentum), giving a Bose condensate. Complete uncertainty of position.
 	\item Have to assign different momentum to electrons--Figure \ref{fig:adding:more:fermions}. Many Fermion configuration has much more energy that corresponding Boson configuration. 

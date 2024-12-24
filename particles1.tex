@@ -720,13 +720,88 @@ This is very different from what happens with Fermions. Let us try adding Fermio
 We can move Bosons and Fermions out of the ground state, as shown in Figures \ref{fig:bosons:move:ground:state} and \ref{fig:fermions:move:ground:state}.
 \begin{figure}[H]
 	\caption{Moving Bosons and Fermions from lowest state}
-	\begin{subfigure}{0.5\textwidth}
-		\caption{Bosons in Ground State}\label{fig:bosons:move:ground:state}
-		\includegraphics[width=0.9\textwidth]{bosons-ground-state}
+	\begin{subfigure}{0.45\textwidth}
+		\caption{Initially the Bosons are all in the Ground State. Then we move one up. Which one? It doesn't matter for Bosons.}\label{fig:bosons:move:ground:state}
+		\begin{tikzpicture}[scale=0.6, transform shape]
+			\draw(0,0)--(0,6)--(6,6)--(6,0)--(0,0);
+			\draw(1.5,3)--(4.5,3);
+			\draw(3,1.5)--(3,4.5);
+			\draw(4,2)--(2,2)--(2,4)--(4,4)--(4,2);
+			\filldraw[black] (3,4) circle (4pt);
+			\filldraw[black] (3,3) circle (8pt);
+			\draw[->](3,3)--(3,3.8);
+			\node[anchor=east] at (0,3) {$k_y$};
+			\node[anchor=north] at (3,0) {$k_x$};
+		\end{tikzpicture}
 	\end{subfigure}
-	\begin{subfigure}{0.5\textwidth}
-		\caption{Moving Fermions. Take from surface of Fermi Sphere to minimize energy required. Leaves hole behind.}\label{fig:fermions:move:ground:state}
-		\includegraphics[width=0.9\textwidth]{moving-outside-fermi}
+	\hfill
+	\begin{subfigure}{0.45\textwidth}
+		\caption{Moving Fermions. It would not be a good idea to move an electron from deep inside the Fermi sphere, as it would requires a lot of energy. }\label{fig:fermions:move:ground:state}
+		\begin{tikzpicture}[scale=0.6, transform shape]
+			\draw(0,0)--(0,6)--(6,6)--(6,0)--(0,0);
+			\draw(1,0)--(1,6);
+			\draw(2,0)--(2,6);
+			\draw(3,0)--(3,6);
+			\draw(4,0)--(4,6);
+			\draw(5,0)--(5,6);
+			\draw (6,1)--(0,1);
+			\draw (6,2)--(0,2);
+			\draw (6,3)--(0,3);
+			\draw (6,4)--(0,4);
+			\draw (6,5)--(0,5);
+			\draw (3,3) circle (5pt);
+			\filldraw[black] (4,3) circle (5pt);
+			\filldraw[black] (2,3) circle (5pt);
+			\filldraw[black] (3,2) circle (5pt);
+			\filldraw[black] (3,4) circle (5pt);
+			\filldraw[black] (5,3) circle (5pt);
+			\filldraw[black] (1,3) circle (5pt);
+			\filldraw[black] (3,1) circle (5pt);
+			\filldraw[black] (3,5) circle (5pt);
+			\filldraw[black] (4,4) circle (5pt);
+			\filldraw[black] (2,2) circle (5pt);
+			\filldraw[black] (2,4) circle (5pt);
+			\filldraw[black] (4,2) circle (5pt);
+			\draw(3,3) circle(2.0);
+			\filldraw[black](4,5) circle(5pt);
+			\draw[->](4.5,7.5)--(4,5.5);
+			\node[anchor=east] at (0,3) {$k_y$};
+			\node[anchor=north] at (3,0) {$k_x$};
+		\end{tikzpicture}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{Instead we take from surface of \gls{gls:fermi:sphere} to minimize energy required. Leaves hole behind.}
+		\begin{tikzpicture}[scale=0.6, transform shape]
+			\draw(0,0)--(0,6)--(6,6)--(6,0)--(0,0);
+			\draw(1,0)--(1,6);
+			\draw(2,0)--(2,6);
+			\draw(3,0)--(3,6);
+			\draw(4,0)--(4,6);
+			\draw(5,0)--(5,6);
+			\draw (6,1)--(0,1);
+			\draw (6,2)--(0,2);
+			\draw (6,3)--(0,3);
+			\draw (6,4)--(0,4);
+			\draw (6,5)--(0,5);
+			\filldraw[black] (3,3) circle (5pt);
+			\filldraw[black] (4,3) circle (5pt);
+			\filldraw[black] (2,3) circle (5pt);
+			\filldraw[black] (3,2) circle (5pt);
+			\filldraw[black] (3,4) circle (5pt);
+			\filldraw[black] (5,3) circle (5pt);
+			\filldraw[black] (1,3) circle (5pt);
+			\filldraw[black] (3,1) circle (5pt);
+			\filldraw[black] (3,5) circle (5pt);
+			\draw[black] (4,4) circle (5pt);
+			\filldraw[black] (2,2) circle (5pt);
+			\filldraw[black] (2,4) circle (5pt);
+			\filldraw[black] (4,2) circle (5pt);
+			\draw(3,3) circle(2.0);
+			\filldraw[black](4,5) circle(5pt);
+			\draw[->](4.5,7.5)--(4,5.5);
+			\node[anchor=east] at (0,3) {$k_y$};
+			\node[anchor=north] at (3,0) {$k_x$};
+		\end{tikzpicture}
 	\end{subfigure}
 \end{figure}
 
@@ -739,19 +814,22 @@ Consider an atom, with all electrons in their ground state. Low energy electron 
 	Electrons in Fermi Sphere are said to be in Fermi Sea.
 \end{defn}
 
-Electrons that are deep in Fermi Sea can't be excited by low energy photons. Only shallow electrons are accessible.
+Electrons that are deep in \gls{gls:fermi:sea} can't be excited by low energy photons. Only shallow electrons are accessible.
 
 \subsubsection{Dirac and antiparticles}
 
-We consider the 1-dimensional case. Imagine a wave propagating to the right with speed $c$.
+We start with the 1-dimensional case. Imagine a wave propagating to the right with speed $c$.
 \begin{align*}
 	\omega =& k\\
 	\frac{\partial \psi}{\partial t} =& - \frac{\partial \psi}{\partial x}  \numberthis \label{eq:rh:dirac}\\
 	\psi =& e^{i(kx-\omega t)} \numberthis \label{eq:rh:dirac:wave}
 \end{align*}
-What if $k$ negative? Then we have negative energy. But if we had arbitrarily negative energies, particle could keep emitting photons all the way down. So (\ref{eq:rh:dirac}) would not make sense for Bosons.
 
-Dirac said to fill all negative energy states: so lowest energy state has all negative energies filled. Now we can take an electron out, leaving hole. Now we have two positive energy objects, electron and positron.
+What if $k$ negative? Then we have negative energy. But if we had arbitrarily negative energies, particle could keep emitting photons all the way down. So (\ref{eq:rh:dirac}) would not make sense for Fermions.
+
+Dirac said to pretend that all the negative energy states were filled, just like filling the \gls{gls:fermi:sphere}: that is the lowest energy state, i.e. the \emph{vacuum}. Now we can take an electron out, leaving a hole. We then have two positive energy objects, electron and positron.
+
+This only makes sense for Bosons, only Fermions.
 
 \section{Dirac equation and Higgs particles}
 

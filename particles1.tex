@@ -159,7 +159,7 @@ Let's look at 1 dimensional waves. In order to get rid of infinities, we can res
 \begin{align*}
 	\lambda =& \frac{L}{N} \text{ for some integer $N$}\\
 	P =& \frac{h}{\lambda} \text{ allowable momenta}\\
-	=& \frac{h N}{L}
+	=& \frac{h N}{L} \numberthis \label{eq:momenta:finit:volume}
 \end{align*}
 
 Now make into a real circle, radius $R$, and redefine $L=PR$ to be \emph{angular momentum}.
@@ -601,49 +601,121 @@ So the answer is no: we can't have two Fermions in the same quantum state (e.g. 
 
 There was a question about whether two electrons in two different hydrogen atoms can have the same momentum. LS explained that the electrons are in energy states (not momentum), and each has a separate wave function. They are distinguishable by position.
 
+A system is a collection of degrees of freedom. In classical mechanics, a state is a a set of values for the degrees of freedom; in \glsdesc{gls:QM} a state is everything you have to specify to encompass everything that can be measured.
+
 \subsubsection{Ground State}
-We now compare the ground state of a system of Bosons with the ground state of a system of Fermions. In Figure \ref{fig:electons:confined:momentum} we have some particles confined in momentum space.
+We now compare the ground state of a system of Bosons with the ground state of a system of Fermions. In Figure \ref{fig:electons:confined:momentum} we have some particles confined in momentum space. If particles are confined to be within a given volume, then momenta are discrete--\eqref{eq:momenta:finit:volume}. The same thing happens if the momenta are confined.
 
 \begin{figure}[H]
 	\begin{center}
-		\caption{Particles confined in momentum space (3D)}\label{fig:electons:confined:momentum}
+		\caption[Particles confined in momentum space]{Allowable momenta of particles confined in periodic 3 dimensional box in momentum space}\label{fig:electons:confined:momentum}
 		\begin{tikzpicture}
 			\draw(0,0)--(0,6)--(6,6)--(6,0)--(0,0);
+			\draw(1,0)--(1,6);
+			\draw(2,0)--(2,6);
+			\draw(3,0)--(3,6);
+			\draw(4,0)--(4,6);
+			\draw(5,0)--(5,6);
+			\draw (6,1)--(0,1);
+			\draw (6,2)--(0,2);
+			\draw (6,3)--(0,3);
+			\draw (6,4)--(0,4);
+			\draw (6,5)--(0,5);
+			\filldraw[black] (3,3) circle (3pt);
 			\node[anchor=east] at (0,3) {$k_y$};
 			\node[anchor=north] at (3,0) {$k_x$};
 		\end{tikzpicture}
 	\end{center}
 \end{figure}
 
-The allowable values form a lattice.
-\begin{itemize}
-	\item We can put lots and lots of Bosons in the lowest energy (zero momentum), giving a Bose condensate. Complete uncertainty of position.
-	\item Have to assign different momentum to electrons--Figure \ref{fig:adding:more:fermions}. Many Fermion configuration has much more energy that corresponding Boson configuration. 
-\end{itemize}
+Let us take $N$ bosons, and put them into our box. Start with an empty box, and put one boson in. It will go to the state with lowest energy, zero momentum: $\frac{p^2}{m}=0$. Add another boson, in the same place, then another. We can put all $N$ bosons into the same momentum state, giving a \gls{gls:bose:conensate}. The wave function fills the box, and is uncertain about position.
 
-\begin{defn}[Bose condensate]
-	Many Bosons in the lowest energy  state.
-\end{defn}
+
+This is very different from what happens with Fermions. Let us try adding Fermions, ignoring spin, each one going into the lowest energy state. We can add the first one in the zero momentum state, as in Figure \ref{fig:electons:confined:momentum}. Once we have filled that state, the next Fermion has to go into the next higher energy level--Figure \ref{fig:electons:lowest:energy}. We can continue, but after 5 electrons have been added (2 dimensional case, 7 for 3 dimensional) the level will be full--Figure \ref{fig:electons:lowest:energy:filled}. Continuing, we want to add electrons to the smallest sphere hat we can--Figure \ref{fig:electons:crowd:into:sphere}. This will have a lot more energy than the corresponding Boson system. Moreover, th electrons will fill a sphere in momentum space, whose boundary depends on the number of electrons--the \gls{gls:fermi:sphere}. 
 
 \begin{figure}[H]
 	\caption{Adding more Fermions}\label{fig:adding:more:fermions}
 	\begin{subfigure}{0.32\textwidth}
 		\caption{Two electrons, lowest possible energy}\label{fig:electons:lowest:energy}
-		\includegraphics[width=0.9\textwidth]{electons-lowest-energy}
+		\begin{tikzpicture}[scale=0.6, transform shape]
+			\draw(0,0)--(0,6)--(6,6)--(6,0)--(0,0);
+			\draw(1,0)--(1,6);
+			\draw(2,0)--(2,6);
+			\draw(3,0)--(3,6);
+			\draw(4,0)--(4,6);
+			\draw(5,0)--(5,6);
+			\draw (6,1)--(0,1);
+			\draw (6,2)--(0,2);
+			\draw (6,3)--(0,3);
+			\draw (6,4)--(0,4);
+			\draw (6,5)--(0,5);
+			\filldraw[black] (3,3) circle (5pt);
+			\filldraw[black] (4,3) circle (5pt);
+			\node[anchor=east] at (0,3) {$k_y$};
+			\node[anchor=north] at (3,0) {$k_x$};
+		\end{tikzpicture}
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}{0.32\textwidth}
-		\caption{Filled lowest two energy levels.}
-		\includegraphics[width=0.9\textwidth]{5-electrons}
+		\caption{Filled lowest two energy levels. The arrow indicates where a particle might go in the third energy level.}\label{fig:electons:lowest:energy:filled}
+		\begin{tikzpicture}[scale=0.6, transform shape]
+			\draw(0,0)--(0,6)--(6,6)--(6,0)--(0,0);
+			\draw(1,0)--(1,6);
+			\draw(2,0)--(2,6);
+			\draw(3,0)--(3,6);
+			\draw(4,0)--(4,6);
+			\draw(5,0)--(5,6);
+			\draw (6,1)--(0,1);
+			\draw (6,2)--(0,2);
+			\draw (6,3)--(0,3);
+			\draw (6,4)--(0,4);
+			\draw (6,5)--(0,5);
+			\filldraw[black] (3,3) circle (5pt);
+			\filldraw[black] (4,3) circle (5pt);
+			\filldraw[black] (2,3) circle (5pt);
+			\filldraw[black] (3,2) circle (5pt);
+			\filldraw[black] (3,4) circle (5pt);
+			\filldraw[gray] (4,4) circle (5pt);
+			\draw[->] (5.5,5.5)--(4.3,4.3);
+			\node[anchor=east] at (0,3) {$k_y$};
+			\node[anchor=north] at (3,0) {$k_x$};
+		\end{tikzpicture}
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}{0.32\textwidth}
-		\caption{$E=\frac{k^2}{2m}$, so there are more positions in each energy level as energy increases.}
-		\includegraphics[width=0.9\textwidth]{more-fermions}
+		\caption{$E=\frac{k^2}{2m}$, so there are more positions in each energy level as energy increases.}\label{fig:electons:crowd:into:sphere}
+		\begin{tikzpicture}[scale=0.6, transform shape]
+			\draw(0,0)--(0,6)--(6,6)--(6,0)--(0,0);
+			\draw(1,0)--(1,6);
+			\draw(2,0)--(2,6);
+			\draw(3,0)--(3,6);
+			\draw(4,0)--(4,6);
+			\draw(5,0)--(5,6);
+			\draw (6,1)--(0,1);
+			\draw (6,2)--(0,2);
+			\draw (6,3)--(0,3);
+			\draw (6,4)--(0,4);
+			\draw (6,5)--(0,5);
+			\filldraw[black] (3,3) circle (5pt);
+			\filldraw[black] (4,3) circle (5pt);
+			\filldraw[black] (2,3) circle (5pt);
+			\filldraw[black] (3,2) circle (5pt);
+			\filldraw[black] (3,4) circle (5pt);
+			\filldraw[black] (5,3) circle (5pt);
+			\filldraw[black] (1,3) circle (5pt);
+			\filldraw[black] (3,1) circle (5pt);
+			\filldraw[black] (3,5) circle (5pt);
+			\filldraw[black] (4,4) circle (5pt);
+			\filldraw[black] (2,2) circle (5pt);
+			\filldraw[black] (2,4) circle (5pt);
+			\filldraw[black] (4,2) circle (5pt);
+			\draw(3,3) circle(2.0);
+			\node[anchor=east] at (0,3) {$k_y$};
+			\node[anchor=north] at (3,0) {$k_x$};
+		\end{tikzpicture}
 	\end{subfigure}
 \end{figure}
 
-\begin{defn}[Fermi Sphere]
-	Electrons fill a sphere in momentum space, whose radius depends on number of electrons. This is called the Fermi Sphere.
-\end{defn}
 
 We can move Bosons and Fermions out of the ground state, as shown in Figures \ref{fig:bosons:move:ground:state} and \ref{fig:fermions:move:ground:state}.
 \begin{figure}[H]

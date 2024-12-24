@@ -720,8 +720,8 @@ This is very different from what happens with Fermions. Let us try adding Fermio
 We can move Bosons and Fermions out of the ground state, as shown in Figures \ref{fig:bosons:move:ground:state} and \ref{fig:fermions:move:ground:state}.
 \begin{figure}[H]
 	\caption{Moving Bosons and Fermions from lowest state}
-	\begin{subfigure}{0.45\textwidth}
-		\caption{Initially the Bosons are all in the Ground State. Then we move one up. Which one? It doesn't matter for Bosons.}\label{fig:bosons:move:ground:state}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{Initially the Bosons are all in the Ground State. Then we move one up to the first excited state. Which one? It doesn't matter for Bosons.}\label{fig:bosons:move:ground:state}
 		\begin{tikzpicture}[scale=0.6, transform shape]
 			\draw(0,0)--(0,6)--(6,6)--(6,0)--(0,0);
 			\draw(1.5,3)--(4.5,3);
@@ -735,8 +735,8 @@ We can move Bosons and Fermions out of the ground state, as shown in Figures \re
 		\end{tikzpicture}
 	\end{subfigure}
 	\hfill
-	\begin{subfigure}{0.45\textwidth}
-		\caption{Moving Fermions. It would not be a good idea to move an electron from deep inside the Fermi sphere, as it would requires a lot of energy. }\label{fig:fermions:move:ground:state}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{Moving Fermions to an excited state. It would not be a good idea to move an electron from deep inside the \gls{gls:fermi:sphere} as it would requires a lot of energy. (We can't move it within \gls{gls:fermi:sphere}, as we are dealing with Fermions.)}\label{fig:fermions:move:ground:state}
 		\begin{tikzpicture}[scale=0.6, transform shape]
 			\draw(0,0)--(0,6)--(6,6)--(6,0)--(0,0);
 			\draw(1,0)--(1,6);
@@ -770,7 +770,7 @@ We can move Bosons and Fermions out of the ground state, as shown in Figures \re
 		\end{tikzpicture}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Instead we take from surface of \gls{gls:fermi:sphere} to minimize energy required. Leaves hole behind.}
+		\caption{Instead we take from near the surface of \gls{gls:fermi:sphere} to minimize energy required. This creates an electron with a little bit of energy above the \gls{gls:fermi:sphere}, but it also leaves a hole. Imagine a box full of positive charge, plus enough electrons to fill the \gls{gls:fermi:sphere}. It's electrically neutral, as the numbers of electrons and protons are equal. When we move an electron we have a little bit of energy above the \gls{gls:fermi:surface}, and a hole where the particle is missing: it can be thought of as a positive charged particle.}
 		\begin{tikzpicture}[scale=0.6, transform shape]
 			\draw(0,0)--(0,6)--(6,6)--(6,0)--(0,0);
 			\draw(1,0)--(1,6);
@@ -830,6 +830,12 @@ What if $k$ negative? Then we have negative energy. But if we had arbitrarily ne
 Dirac said to pretend that all the negative energy states were filled, just like filling the \gls{gls:fermi:sphere}: that is the lowest energy state, i.e. the \emph{vacuum}. Now we can take an electron out, leaving a hole. We then have two positive energy objects, electron and positron.
 
 This only makes sense for Bosons, only Fermions.
+
+There are some things wrong with this electron:
+\begin{itemize}
+	\item it only moves to the right;
+	\item it moves at the speed of light.
+\end{itemize}
 
 \section{Dirac equation and Higgs particles}
 

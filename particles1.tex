@@ -631,7 +631,7 @@ We now compare the ground state of a system of Bosons with the ground state of a
 Let us take $N$ bosons, and put them into our box. Start with an empty box, and put one boson in. It will go to the state with lowest energy, zero momentum: $\frac{p^2}{m}=0$. Add another boson, in the same place, then another. We can put all $N$ bosons into the same momentum state, giving a \gls{gls:bose:conensate}. The wave function fills the box, and is uncertain about position.
 
 
-This is very different from what happens with Fermions. Let us try adding Fermions, ignoring spin, each one going into the lowest energy state. We can add the first one in the zero momentum state, as in Figure \ref{fig:electons:confined:momentum}. Once we have filled that state, the next Fermion has to go into the next higher energy level--Figure \ref{fig:electons:lowest:energy}. We can continue, but after 5 electrons have been added (2 dimensional case, 7 for 3 dimensional) the level will be full--Figure \ref{fig:electons:lowest:energy:filled}. Continuing, we want to add electrons to the smallest sphere hat we can--Figure \ref{fig:electons:crowd:into:sphere}. This will have a lot more energy than the corresponding Boson system. Moreover, th electrons will fill a sphere in momentum space, whose boundary depends on the number of electrons--the \gls{gls:fermi:sphere}. 
+This is very different from what happens with Fermions. Let us try adding Fermions, ignoring spin, each one going into the lowest energy state. We can add the first one in the zero momentum state, as in Figure \ref{fig:electons:confined:momentum}. Once we have filled that state, the next Fermion has to go into the next higher energy level--Figure \ref{fig:electons:lowest:energy}. We can continue, but after 5 electrons have been added (2 dimensional case, 7 for 3 dimensional) the level will be full--Figure \ref{fig:electons:lowest:energy:filled}. Continuing, we want to add electrons to the smallest sphere hat we can--Figure \ref{fig:electons:crowd:into:sphere}. This will have a lot more energy than the corresponding Boson system. Moreover, the electrons will fill a sphere in momentum space, whose boundary depends on the number of electrons--the \gls{gls:fermi:sphere}. 
 
 \begin{figure}[H]
 	\caption{Adding more Fermions}\label{fig:adding:more:fermions}
@@ -716,10 +716,9 @@ This is very different from what happens with Fermions. Let us try adding Fermio
 	\end{subfigure}
 \end{figure}
 
-
 We can move Bosons and Fermions out of the ground state, as shown in Figures \ref{fig:bosons:move:ground:state} and \ref{fig:fermions:move:ground:state}.
 \begin{figure}[H]
-	\caption{Moving Bosons and Fermions from lowest state}
+	\caption[Moving Bosons and Fermions from lowest state]{Moving Bosons and Fermions from lowest state. We can think of  (\subref{fig:fermions:move:ground:state}) and (\subref{fig:fermi:surface}) as a low energy photon being absorbed by an electron,knocking it out and leaving a hole, or a photon annihilating to create an electron and a hole. }
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Initially the Bosons are all in the Ground State. Then we move one up to the first excited state. Which one? It doesn't matter for Bosons.}\label{fig:bosons:move:ground:state}
 		\begin{tikzpicture}[scale=0.6, transform shape]
@@ -770,7 +769,7 @@ We can move Bosons and Fermions out of the ground state, as shown in Figures \re
 		\end{tikzpicture}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Instead we take from near the surface of \gls{gls:fermi:sphere} to minimize energy required. This creates an electron with a little bit of energy above the \gls{gls:fermi:sphere}, but it also leaves a hole. Imagine a box full of positive charge, plus enough electrons to fill the \gls{gls:fermi:sphere}. It's electrically neutral, as the numbers of electrons and protons are equal. When we move an electron we have a little bit of energy above the \gls{gls:fermi:surface}, and a hole where the particle is missing: it can be thought of as a positive charged particle.}
+		\caption{Instead we take from near the surface of \gls{gls:fermi:sphere} to minimize energy required. This creates an electron with a little bit of energy above the \gls{gls:fermi:sphere}, but it also leaves a hole. Imagine a box full of positive charge, plus enough electrons to fill the \gls{gls:fermi:sphere} (The \gls{gls:fermi:sea}). It's electrically neutral, as the numbers of electrons and protons are equal. When we move an electron we have a little bit of energy above the \gls{gls:fermi:surface}, and a hole where the particle is missing: it can be thought of as a positive charged particle.}\label{fig:fermi:surface}
 		\begin{tikzpicture}[scale=0.6, transform shape]
 			\draw(0,0)--(0,6)--(6,6)--(6,0)--(0,0);
 			\draw(1,0)--(1,6);
@@ -803,16 +802,23 @@ We can move Bosons and Fermions out of the ground state, as shown in Figures \re
 			\node[anchor=north] at (3,0) {$k_x$};
 		\end{tikzpicture}
 	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{Energy required to move an electron from just below Fermi Surface to above. We need a little bit of energy to move to the surface from below, plus a little to move to position above. We an think of the second as the energy of the electron, and the first as the energy of the hole. The electron might move around, and then suddenly pop into the hole, emitting a photon that takes away the extra energy. The hole is a fake particle with the opposite charge to an electron. It can come together with the electron and annihilate.}
+		\begin{tikzpicture}[scale=0.6, transform shape]
+			\draw (-5,0) to (5,0) node[anchor=east]{Fermi Surface};
+			\filldraw[black] (3,2) circle (5pt);
+			\draw(-1,-2) circle(5pt);
+			\draw[->] (-1,-2) to (-1,-0.2);
+			\draw[->] (-1,0) to (2.8,1.8);
+		\end{tikzpicture}
+	\end{subfigure}
 \end{figure}
 
 In Figure \ref{fig:fermions:move:ground:state} a charged hole is left behind.
 If an electron drops into hole, a photon is emitted.
 
 Consider an atom, with all electrons in their ground state. Low energy electron is struck by photon, which takes electron to excited state.
-
-\begin{defn}[Fermi Sea]
-	Electrons in Fermi Sphere are said to be in Fermi Sea.
-\end{defn}
 
 Electrons that are deep in \gls{gls:fermi:sea} can't be excited by low energy photons. Only shallow electrons are accessible.
 
@@ -827,19 +833,15 @@ We start with the 1-dimensional case. Imagine a wave propagating to the right wi
 
 What if $k$ negative? Then we have negative energy. But if we had arbitrarily negative energies, particle could keep emitting photons all the way down. So (\ref{eq:rh:dirac}) would not make sense for Fermions.
 
-Dirac said to pretend that all the negative energy states were filled, just like filling the \gls{gls:fermi:sphere}: that is the lowest energy state, i.e. the \emph{vacuum}. Now we can take an electron out, leaving a hole. We then have two positive energy objects, electron and positron.
-
-This only makes sense for Bosons, only Fermions.
-
-There are some things wrong with this electron:
+Dirac said to pretend that all the negative energy states were filled, just like filling the \gls{gls:fermi:sphere}: that is the lowest energy state, i.e. the \emph{vacuum}. Now we can take an electron out, leaving a hole. We then have two positive energy objects, electron and positron.( This only makes sense for Bosons, only Fermions). There are some things wrong with this electron:
 \begin{itemize}
 	\item it only moves to the right;
 	\item it moves at the speed of light.
 \end{itemize}
 
-\section{Dirac equation and Higgs particles}
+\section{The Dirac equation and the Higgs particles}
 
-\subsection{Dirac equation}
+\subsection{The Dirac equation}
 
 The right-handed Dirac equation (\ref{eq:rh:dirac}) has the following solution:
 \begin{align*}

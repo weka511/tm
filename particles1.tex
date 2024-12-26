@@ -804,7 +804,7 @@ We can move Bosons and Fermions out of the ground state, as shown in Figures \re
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Energy required to move an electron from just below Fermi Surface to above. We need a little bit of energy to move to the surface from below, plus a little to move to position above. We an think of the second as the energy of the electron, and the first as the energy of the hole. The electron might move around, and then suddenly pop into the hole, emitting a photon that takes away the extra energy. The hole is a fake particle with the opposite charge to an electron. It can come together with the electron and annihilate.}
+		\caption{Energy required to move an electron from just below \gls{gls:fermi:surface} to above. We need a little bit of energy to move to the surface from below, plus a little to move to position above. We an think of the second as the energy of the electron, and the first as the energy of the hole. The electron might move around, and then suddenly pop into the hole, emitting a photon that takes away the extra energy. The hole is a fake particle with the opposite charge to an electron. It can come together with the electron and annihilate.}
 		\begin{tikzpicture}[scale=0.6, transform shape]
 			\draw (-5,0) to (5,0) node[anchor=east]{Fermi Surface};
 			\filldraw[black] (3,2) circle (5pt);
@@ -843,15 +843,20 @@ Dirac said to pretend that all the negative energy states were filled, just like
 
 \subsection{The Dirac equation}
 
-The right-handed Dirac equation (\ref{eq:rh:dirac}) has the following solution:
+The simplest version of the Dirac Equation  (\ref{eq:rh:dirac}), applies to both electrons and positrons, provided they are moving to the right. We will start with the following equation:
 \begin{align*}
-	\psi_R =& e^{i(kx-\omega t)} \text{, from (\ref{eq:rh:dirac:wave}), whence the group velocity is:}\\
-	V_g =& \frac{\omega}{k} \text{, with the appropriate signs, from which}\\
-	\frac{\partial \psi_R}{\partial t} + \frac{\partial \psi_R}{\partial x} =&0 \text{, provided}\\
-	\omega =& k
+	\psi_R =& e^{i(kx-\omega t)} \text{The group velocity is:} \numberthis \label{eq:rh:dirac:wave1}\\
+	V_g =& \frac{\omega}{k} \text{, assuming the relationship between $k$ and $\omega$ is linear.}
 \end{align*}
 
-If $k<0$, $\omega<0$, i.e. negative energy, which is not a good thing: electrons would not be stable. So we fill up the Dirac Sea, so all negative energy states are filled. Then we can remove one electron, creating a hole in the Dirac Sea; particle and hole both have positive momentum and positive energy.
+If $V_g>0$ the wave moves to the right, otherwise it moves to the left.
+
+Now, we write down another equation, c.f. \eqref{eq:rh:dirac}:
+\begin{align*}
+	\frac{\partial \psi_R}{\partial t} + \frac{\partial \psi_R}{\partial x} =&0 \text{. This has the solution \eqref{eq:rh:dirac:wave1}}, provided:\\
+	\omega =& k
+\end{align*}
+If $k<0$, $\omega<0$, i.e. negative energy, which is not a good thing: electrons would not be stable. So we fill up the \gls{gls:dirac:sea}, so all negative energy states are filled. Then we can remove one electron, creating a hole in the \gls{gls:dirac:sea}; particle and hole both have positive momentum and positive energy.
 
 We now introduce left moving electrons.
 

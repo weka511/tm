@@ -939,17 +939,19 @@ The mass term couples equations for $\Psi_L$ and $\Psi_R$. The solution is Loren
 \begin{align*}
 	i \frac{\partial \Psi}{\partial t} =& -i \alpha \frac{\partial \Psi}{\partial x} + m \beta \Psi
 \end{align*}
-Let us make particle stand still, i.e. $k=0 \implies \omega = \beta m$.
+Let us go to the limit and make the particle stand still, i.e. $k=0 \implies \omega = \beta m$.
 
 \begin{align*}
 	i \frac{\partial \Psi}{\partial t} =& \beta m \Psi\\
 	i \dot{\Psi_R} =& m \Psi_L\\
-	i \dot{\Psi_L} =&  m \Psi_R \\
-	i \dot{\Psi_+} =&  m \Psi_+ \text{, where $\Psi_+\triangleq\Psi_R + \Psi_L$--corresponds to $\omega=m$}\\
-	i \dot{\Psi_-} =&  m \Psi_- \text{, where $\Psi_-\triangleq\Psi_R - \Psi_L$--corresponds to $\omega=-m$}
+	i \dot{\Psi_L} =&  m \Psi_R \text{, now define}\\
+	\Psi_+\triangleq&\Psi_R + \Psi_L \text{, and}\\
+	\Psi_-\triangleq&\Psi_R - \Psi_L \text{, then} \\
+	i \dot{\Psi_+} =&  m \Psi_+ \text{, corresponds to $\omega=m$}\\
+	i \dot{\Psi_-} =&  -m \Psi_- \text{,corresponds to $\omega=-m$}
 \end{align*}
 
-So particle at rest still has positive and negative energies: throw latter in Dirac Sea.
+So particle at rest still has positive and negative energies: throw latter in\gls{gls:dirac:sea}. The linear superposition $Psi_+$ corresponds to a particle with positive energy at rest.
 
 \subsection{Higgs particles}
 

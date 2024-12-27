@@ -948,19 +948,21 @@ Let us go to the limit and make the particle stand still, i.e. $k=0 \implies \om
 	\Psi_+\triangleq&\Psi_R + \Psi_L \text{, and}\\
 	\Psi_-\triangleq&\Psi_R - \Psi_L \text{, then} \\
 	i \dot{\Psi_+} =&  m \Psi_+ \text{, corresponds to $\omega=m$}\\
-	i \dot{\Psi_-} =&  -m \Psi_- \text{,corresponds to $\omega=-m$}
+	i \dot{\Psi_-} =&  -m \Psi_- \text{, corresponds to $\omega=-m$}
 \end{align*}
 
 So particle at rest still has positive and negative energies: throw latter in\gls{gls:dirac:sea}. The linear superposition $Psi_+$ corresponds to a particle with positive energy at rest.
 
+What is the meaning of operators such as $\Psi_+$? What is the effect of $\Psi_+\ket{0}$? A single particle, which has equal probability of being a left mover or a right mover. In general a particle is a superposition of a left and a right mover.
+
 \subsection{Higgs particles}
 
-In the presence of the Higgs field, $\phi(x)$, the Dirac equation becomes:
+What is the connection between the notion of mass, as introduced above, and the notion that the Higgs field produces mass? In the presence of the Higgs field, $\Phi(x)$, the Dirac equation becomes:
 \begin{align*}
-	i \dot{\psi_R} =& -i \partial_x \psi_R + g \phi \psi_L\\
-	i \dot{\psi_L} =& i \partial_x \psi_L + g \phi \psi_R \text{, which gives massless electron if $\phi=0$}
+	i \dot{\Psi_R} =& -i \partial_x \Psi_R + g \Phi \Psi_L\\
+	i \dot{\Psi_L} =& i \partial_x \Psi_L + g \Phi \Psi_R
 \end{align*}
-What if the lowest energy of Higgs favours a non-zero value, $\phi(x)=\phi$? The $m=g\phi$. This could come about as the result of non-lienar interactions between Boson and Fermions.
+If $\Phi=0$ we once again have a massless electron. What if the lowest energy of Higgs favours a non-zero value, $\Phi(x)=\phi$? The $m=g\phi$. That is the connection. It could come about as the result of non-linear interactions between Boson and Fermions.
 
 The Higgs field is a Bosonic field, which has an energy from a potential, $V(\phi)$. There is a symmetry so $V(\phi)=V(-\phi)$.
 
@@ -968,11 +970,20 @@ The Higgs field is a Bosonic field, which has an energy from a potential, $V(\ph
 	\caption[Higgs potential]{Higgs potential: reason for shape not fully understood at time of lecture.}
 	\begin{subfigure}{0.5\textwidth}
 		\caption{Higgs potential, showing two minima. Either one gives rise to mass of $g\phi$}\label{fig:higgs:potential}
-		\includegraphics[width=0.8\textwidth]{higgs-potential}
+		\begin{tikzpicture}
+			\draw(-2,-1.8125)--(2,-1.8125) node[right] {$\Phi$};
+			\draw(0,-1.8125)--(0,2) node[above] {$V(\Phi)$};
+			\draw[domain=-2:2, smooth, variable=\x, ] plot ({\x}, {1-3*\x*\x+0.8*\x*\x*\x*\x});
+		\end{tikzpicture}
 	\end{subfigure}
 	\begin{subfigure}{0.5\textwidth}
 		\caption{Higgs field vibrating around vacuum. Frequency is related to mass of Higgs particle: Higgs corresponds to quanta of vibration.}
-		\includegraphics[width=0.8\textwidth]{higgs-vibrating}
+		\begin{tikzpicture}
+			\draw(-2,-1.8125)--(2,-1.8125) node[right] {$\Phi$};
+			\draw(0,-1.8125)--(0,2) node[above] {$V(\Phi)$};
+			\draw[domain=-2:2, smooth, variable=\x, ] plot ({\x}, {1-3*\x*\x+0.8*\x*\x*\x*\x});
+			\draw[domain=1.1:1.6,  line width=4pt, smooth, variable=\x, ] plot ({\x}, {1-3*\x*\x+0.8*\x*\x*\x*\x});
+		\end{tikzpicture}
 	\end{subfigure}
 \end{figure}
 

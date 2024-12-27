@@ -845,7 +845,7 @@ Dirac said to pretend that all the negative energy states were filled, just like
 
 The simplest version of the Dirac Equation  (\ref{eq:rh:dirac}), applies to both electrons and positrons, provided they are moving to the right. We will start with the following equation:
 \begin{align*}
-	\psi_R =& e^{i(kx-\omega t)} \text{The group velocity is:} \numberthis \label{eq:rh:dirac:wave1}\\
+	\Psi_R =& e^{i(kx-\omega t)} \text{The group velocity is:} \numberthis \label{eq:rh:dirac:wave1}\\
 	V_g =& \frac{\omega}{k} \text{, assuming the relationship between $k$ and $\omega$ is linear.}
 \end{align*}
 
@@ -853,26 +853,58 @@ If $V_g>0$ the wave moves to the right, otherwise it moves to the left.
 
 Now, we write down another equation, c.f. \eqref{eq:rh:dirac}:
 \begin{align*}
-	\frac{\partial \psi_R}{\partial t} + \frac{\partial \psi_R}{\partial x} =&0 \text{. This has the solution \eqref{eq:rh:dirac:wave1}}, provided:\\
+	\frac{\partial \Psi}{\partial t} + \frac{\partial \Psi}{\partial x} =&0 \text{. This has the solution \eqref{eq:rh:dirac:wave1}}, provided:\\
 	\omega =& k
 \end{align*}
-If $k<0$, $\omega<0$, i.e. negative energy, which is not a good thing: electrons would not be stable. So we fill up the \gls{gls:dirac:sea}, so all negative energy states are filled. Then we can remove one electron, creating a hole in the \gls{gls:dirac:sea}; particle and hole both have positive momentum (they move to the right) and positive energy.
+If $k<0$, $\omega<0$, energy is negative, which is not a good thing: electrons would not be stable--Figure \ref{fig:negative:energy:rh}. So we fill up the \gls{gls:dirac:sea}, so all negative energy states are filled. Then we can remove one electron, creating a hole in the \gls{gls:dirac:sea}; particle and hole both have positive momentum (they move to the right) and positive energy.
 
-We now introduce left moving electrons.
+\begin{figure}[H]
+	\caption{Negative energy is not a good thing: electrons would not be stable}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{If $k<0$, $\omega<0$, energy is negative}\label{fig:negative:energy:rh}
+		\begin{tikzpicture}[scale=0.45, transform shape]
+			\draw(-5,0)--(5,0) node[right] {k};
+			\draw(0,-5)--(0,5) node[above] {$\omega=E$};
+			\draw(0,0)--(5,5) node[right] {$\omega=k$};
+			\draw(2.5,2.5) node[midway] {$\\psi_R$};
+			\draw[dashed,->](0,0)--(-4,-4) node[midway] {$E<0$};
+			\draw(-4.5,-4.5) node {Electrons can slide down to $-\infty$};
+		\end{tikzpicture}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{Add in left handed electrons.}\label{fig:negative:energy:lh}
+		\begin{tikzpicture}[scale=0.45, transform shape]
+			\draw(-5,0)--(5,0) node[right] {k};
+			\draw(0,-5)--(0,5) node[above] {$\omega=E$};
+			\draw(0,0)--(5,5) node[right] {$\omega=k$};
+			\draw(2.5,2.5) node[midway] {$\\psi_R$};
+			\draw(-2.5,2.5) node[midway] {$\\psi_L$};
+			\draw[dashed,->](0,0)--(-4,-4) node[midway] {$E<0$};
+			\draw(0,0)--(-5,5) node[right] {$\omega=-k$};
+			\draw[dashed,->](0,0)--(4,-4) node[midway] {$E<0$};
+			\draw(-4.5,-4.5) node {Electrons can slide down to $-\infty$};
+			\draw(4.5,-4.5) node {Electrons can slide down to $-\infty$};
+		\end{tikzpicture}
+	\end{subfigure}
+\end{figure}
+
+We have strange situation: electrons that can only move to the right, plus an enormous negative momentum stored in the \gls{gls:dirac:sea}. What can we do tomake it more symmetric? We now introduce two kinds of electrons, right movers and left movers.
 
 \begin{align*}
-	\frac{\partial \psi_L}{\partial t} =& \frac{\partial \psi_L}{\partial x} \numberthis \label{eq:lh:dirac:wave}\\
-	\frac{\omega}{k} =& -1
+	\frac{\partial \Psi_R}{\partial t} =& -\frac{\partial \Psi_R}{\partial x} \numberthis \label{eq:rh:dirac:wave:1}\\
+	\frac{\partial \Psi_L}{\partial t} =& + \frac{\partial \Psi_L}{\partial x} \numberthis \label{eq:lh:dirac:wave}
 \end{align*}
-Fill sea with left moving negative energy.
 
-Define $\psi=\begin{pmatrix}
-	\psi_R\\
-	\psi_L
-\end{pmatrix}$, and write (\ref{eq:rh:dirac:wave}) and (\ref{eq:lh:dirac:wave}):
+So, as shown in Figure \ref{fig:negative:energy:lh}, we have a bunch of particles with positive energy, and another with negative. How do we balance them? Fill sea with left moving negative energy. Then we have right moving particles, and holes, and left moving particles and holes. They are massless, because they move with the speed of light.
+
+We will turn $\Psi_R$ and $\Psi_L$ into a columns vector. Define $\Psi=\begin{pmatrix}
+	\Psi_R\\
+	\Psi_L
+\end{pmatrix}$, and write \eqref{eq:rh:dirac:wave:1} and \eqref{eq:lh:dirac:wave}:
 
 \begin{align*}
-	\frac{\partial \psi}{\partial t} =& - \alpha \frac{\partial \psi}{\partial x} \text{, where}\\
+	\frac{\partial \Psi}{\partial t} =& - \alpha \frac{\partial \Psi}{\partial x} \text{, where}\\
 	\alpha =& \begin{pmatrix}
 		1&0\\
 		0&-1

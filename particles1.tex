@@ -962,39 +962,59 @@ What is the connection between the notion of mass, as introduced above, and the 
 	i \dot{\Psi_R} =& -i \partial_x \Psi_R + g \Phi \Psi_L\\
 	i \dot{\Psi_L} =& i \partial_x \Psi_L + g \Phi \Psi_R
 \end{align*}
-If $\Phi=0$ we once again have a massless electron. What if the lowest energy of Higgs favours a non-zero value, $\Phi(x)=\phi$? Then $m=g\phi$. That is the connection. It could come about as the result of non-linear interactions between Boson and Fermions.
+If $\Phi=0$ we once again have a massless electron. What if the lowest energy of Higgs favours a non-zero value, $\Phi(x)=\phi$? See Figure \ref{fig:higgs:potential}. Then $m=g\phi$. That is the connection. It could come about as the result of non-linear interactions between Boson and Fermions.
 
-The Higgs field is a Bosonic field, which has an energy from a potential, $V(\phi)$. There is a symmetry so $V(\phi)=V(-\phi)$.
+The Higgs field is a Bosonic field, which has an energy from a potential, $V(\phi)$.  It differs from the Maxwell field, whose potential that depends on gradients of the field. There is a symmetry so $V(\phi)=V(-\phi)$.
 
+The Higgs field can vibrate, as shown in Figure \ref{fig:vibrating:higgs:field}: the frequency is related to the mass of the Higgs particle, and the excitation, like that of any field, come in quanta. Those quanta are the Higgs particle.
 \begin{figure}[H]
 	\caption[The Higgs potential]{The Higgs potential: the reason for its shape was not fully understood at time of the lecture.}
-	\begin{subfigure}[t]{0.5\textwidth}
-		\caption{The Higgs potential, showing two minima, at $\pm\phi$. Either one gives rise to mass of $g\phi$}\label{fig:higgs:potential}
-		\begin{tikzpicture}
-			\draw(-2,-2)--(2,-2) node[right] {$\Phi$};
-			\draw(0,-2.3)--(0,2) node[above] {$V(\Phi)$};
-			\draw[domain=-2:2, smooth, variable=\x, ] plot ({\x}, {1-3*\x*\x+0.8*\x*\x*\x*\x});
-			\draw[dotted](1.3693,0)--(1.3693,-2.3) node[below] {$\phi$};
-		\end{tikzpicture}
+	\begin{subfigure}[t]{0.3\textwidth}
+		\begin{center}
+			\caption{The Higgs potential, showing two minima, at $\pm\phi$. Either one gives rise to mass of $g\phi$. If there were only one minimum we could take it to be zero, and it would not give rise to a mass term.}\label{fig:higgs:potential}
+			\begin{tikzpicture}[scale=0.5, transform shape]
+				\draw(-2,-2)--(2,-2) node[right] {$\Phi$};
+				\draw(0,-2.3)--(0,2) node[above] {$V(\Phi)$};
+				\draw[domain=-2:2, smooth, variable=\x, ] plot ({\x}, {1-3*\x*\x+0.8*\x*\x*\x*\x});
+				\draw[dotted](1.3693,0)--(1.3693,-2.3) node[below] {$\phi$};
+			\end{tikzpicture}
+		\end{center}
 	\end{subfigure}
 	\hfill
-	\begin{subfigure}[t]{0.5\textwidth}
-		\caption{The Higgs field vibrating around vacuum. The frequency is related to the mass of the Higgs particle: the Higgs corresponds to quanta of vibration.}
-		\begin{tikzpicture}
-			\draw(-2,-2)--(2,-2) node[right] {$\Phi$};
-			\draw(0,-2.3)--(0,2) node[above] {$V(\Phi)$};
-			\draw[domain=-2:2, smooth, variable=\x, ] plot ({\x}, {1-3*\x*\x+0.8*\x*\x*\x*\x});
-			\draw[domain=1.1:1.6,  line width=3pt, smooth, variable=\x, ] plot ({\x}, {1-3*\x*\x+0.8*\x*\x*\x*\x});
-			\filldraw[black] (1.3693,-1.8125) circle (4pt);
-		\end{tikzpicture}
+	\begin{subfigure}[t]{0.3\textwidth}
+		\begin{center}
+			\caption{The Higgs field vibrating around vacuum. The frequency is related to the mass of the Higgs particle: the Higgs corresponds to quanta of vibration.}\label{fig:vibrating:higgs:field}
+			\begin{tikzpicture}[scale=0.5, transform shape]
+				\draw(-2,-2)--(2,-2) node[right] {$\Phi$};
+				\draw(0,-2.3)--(0,2) node[above] {$V(\Phi)$};
+				\draw[domain=-2:2, smooth, variable=\x, ] plot ({\x}, {1-3*\x*\x+0.8*\x*\x*\x*\x});
+				\draw[domain=1.1:1.6,  line width=3pt, smooth, variable=\x, ] plot ({\x}, {1-3*\x*\x+0.8*\x*\x*\x*\x});
+				\filldraw[black] (1.3693,-1.8125) circle (4pt);
+			\end{tikzpicture}
+		\end{center}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.3\textwidth}
+		\begin{center}
+			\caption{The Higgs field vibrating around vacuum with enough energy to make electron massless; this energy is enormous, enough to create a black hole.}\label{fig:vibrating:higgs:field:massless:electron}
+			\begin{tikzpicture}[scale=0.5, transform shape]
+				\draw(-2,-2)--(2,-2) node[right] {$\Phi$};
+				\draw(0,-2.3)--(0,2) node[above] {$V(\Phi)$};
+				\draw[domain=-2:2, smooth, variable=\x, ] plot ({\x}, {1-3*\x*\x+0.8*\x*\x*\x*\x});
+				\draw[domain=0:1.92,  line width=3pt, smooth, variable=\x, ] plot ({\x}, {1-3*\x*\x+0.8*\x*\x*\x*\x});
+				\filldraw[black] (1.3693,-1.8125) circle (4pt);
+			\end{tikzpicture}
+		\end{center}
 	\end{subfigure}
 \end{figure}
 
-If the Higgs field is coupled in an interesting way to Fermions, Higgs will respond to collisions of Fermions and create Higgs particles. In the Standard Model there is only one Higgs, Supersymmetry has two.
+If the Higgs field is coupled in an interesting dynamical way to Fermions, the Higgs field will respond to collisions of Fermions by vibrating, and create Higgs particles. How much energy is needed? It depends on the mass of the Higgs particle. The vibration of the Higgs field can affect the mass of the electron--Fugure \ref{fig:vibrating:higgs:field:massless:electron}.
 
-If vacuum were symmetric--Figure \ref{fig:higgs:potential}-- $\phi$ would be zero: it is the breaking of the symmetry which gives electron its mass. All particles except photon get their mass through the Higgs Mechanism. Except for Higgs particle: it gets its mass from a different mechanism.
+In the Standard Model there is only one Higgs particle, one for all Fermions, Supersymmetry has two.
 
-\subsection{3+1 Dimensional Dirac Equation}
+If vacuum were symmetric--Figure \ref{fig:higgs:potential}-- $\phi$ would be zero: it is the breaking of the symmetry which gives electron its mass. All particles, except the photon and graviton\footnote{They aren't really exceptions: they have \emph{no} mass.}, get their mass through the Higgs Mechanism. Except for Higgs particle: it gets its mass from a totally different mechanism.
+
+\subsection{The 3+1 Dimensional Dirac Equation}
 
 Dirac started with a generalization of \eqref{eq:Dirac:1D}:
 

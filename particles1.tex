@@ -967,27 +967,30 @@ If $\Phi=0$ we once again have a massless electron. What if the lowest energy of
 The Higgs field is a Bosonic field, which has an energy from a potential, $V(\phi)$. There is a symmetry so $V(\phi)=V(-\phi)$.
 
 \begin{figure}[H]
-	\caption[Higgs potential]{Higgs potential: reason for shape not fully understood at time of lecture.}
-	\begin{subfigure}{0.5\textwidth}
-		\caption{Higgs potential, showing two minima. Either one gives rise to mass of $g\phi$}\label{fig:higgs:potential}
+	\caption[The Higgs potential]{The Higgs potential: the reason for its shape was not fully understood at time of the lecture.}
+	\begin{subfigure}[t]{0.5\textwidth}
+		\caption{The Higgs potential, showing two minima, at $\pm\phi$. Either one gives rise to mass of $g\phi$}\label{fig:higgs:potential}
 		\begin{tikzpicture}
-			\draw(-2,-1.8125)--(2,-1.8125) node[right] {$\Phi$};
-			\draw(0,-1.8125)--(0,2) node[above] {$V(\Phi)$};
+			\draw(-2,-2)--(2,-2) node[right] {$\Phi$};
+			\draw(0,-2.3)--(0,2) node[above] {$V(\Phi)$};
 			\draw[domain=-2:2, smooth, variable=\x, ] plot ({\x}, {1-3*\x*\x+0.8*\x*\x*\x*\x});
+			\draw[dotted](1.3693,0)--(1.3693,-2.3) node[below] {$\phi$};
 		\end{tikzpicture}
 	\end{subfigure}
-	\begin{subfigure}{0.5\textwidth}
-		\caption{Higgs field vibrating around vacuum. Frequency is related to mass of Higgs particle: Higgs corresponds to quanta of vibration.}
+	\hfill
+	\begin{subfigure}[t]{0.5\textwidth}
+		\caption{The Higgs field vibrating around vacuum. The frequency is related to the mass of the Higgs particle: the Higgs corresponds to quanta of vibration.}
 		\begin{tikzpicture}
-			\draw(-2,-1.8125)--(2,-1.8125) node[right] {$\Phi$};
-			\draw(0,-1.8125)--(0,2) node[above] {$V(\Phi)$};
+			\draw(-2,-2)--(2,-2) node[right] {$\Phi$};
+			\draw(0,-2.3)--(0,2) node[above] {$V(\Phi)$};
 			\draw[domain=-2:2, smooth, variable=\x, ] plot ({\x}, {1-3*\x*\x+0.8*\x*\x*\x*\x});
-			\draw[domain=1.1:1.6,  line width=4pt, smooth, variable=\x, ] plot ({\x}, {1-3*\x*\x+0.8*\x*\x*\x*\x});
+			\draw[domain=1.1:1.6,  line width=3pt, smooth, variable=\x, ] plot ({\x}, {1-3*\x*\x+0.8*\x*\x*\x*\x});
+			\filldraw[black] (1.3693,-1.8125) circle (4pt);
 		\end{tikzpicture}
 	\end{subfigure}
 \end{figure}
 
-If Higgs field is coupled in an interesting way to Fermions, Higgs will respond to collisions of Fermions and create Higgs particles. In the Standard Model there is only one Higgs, Supersymmetry has two.
+If the Higgs field is coupled in an interesting way to Fermions, Higgs will respond to collisions of Fermions and create Higgs particles. In the Standard Model there is only one Higgs, Supersymmetry has two.
 
 If vacuum were symmetric--Figure \ref{fig:higgs:potential}-- $\phi$ would be zero: it is the breaking of the symmetry which gives electron its mass. All particles except photon get their mass through the Higgs Mechanism. Except for Higgs particle: it gets its mass from a different mechanism.
 

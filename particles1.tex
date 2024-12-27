@@ -908,16 +908,21 @@ We will turn $\Psi_R$ and $\Psi_L$ into a columns vector. Define $\Psi=\begin{pm
 	\alpha =& \begin{pmatrix}
 		1&0\\
 		0&-1
-	\end{pmatrix} \text{. We will find the following useful:} \numberthis\label{eq:alpha}\\
+	\end{pmatrix} \text{,or, in operator language:} \numberthis\label{eq:alpha}\\
 	\omega =& \alpha k \numberthis \label{eq:dirac:1}
 \end{align*}
 
-Now we give the particles mass $m$.
+We have turned two equations into one, but we haven't done any new physics. Can we make our massless particles have mass? Remember the relationship between mass and energy.
+
 \begin{align*}
-	\omega^2 =& k^2 + m^2 \text{. Now we generalize (\ref{eq:dirac:1})} \numberthis \label{eq:omega:relativistic}\\
+	\omega =& \sqrt{k^2 + m^2}  \numberthis \label{eq:omega:relativistic}
+\end{align*}
+If $m$ = 0, this is reminiscent of \eqref{eq:dirac:1}. We will generalize for $m\ne0$.
+\begin{align*} 
 	\omega =& \alpha k + m \beta  \numberthis \label{eq:Dirac:1D}
 \end{align*}
-This is the 1D Dirac equation, which gives:
+
+This gives:
 \begin{align*}
 	\omega^2 =& \alpha^2 k^2 + m^2 \beta^2 + m k (\alpha \beta + \beta \alpha) \text{, which agrees with \eqref{eq:omega:relativistic} iff:}\\
 	\alpha^2 =& 1 \text{, already satisfied by (\ref{eq:alpha})}\\
@@ -929,16 +934,19 @@ This is the 1D Dirac equation, which gives:
 	\end{pmatrix} \text{ satisfies (\ref{eq:beta2}) and (\ref{eq:alpha:beta}).}
 \end{align*}
 
-The mass term couples equations for $\Psi_L$ and $\Psi_R$. The Dirac equation is Lorentz covariant.
+The mass term couples equations for $\Psi_L$ and $\Psi_R$. The solution is Lorentz covariant.
 
+\begin{align*}
+	i \frac{\partial \Psi}{\partial t} =& -i \alpha \frac{\partial \Psi}{\partial x} + m \beta \Psi
+\end{align*}
 Let us make particle stand still, i.e. $k=0 \implies \omega = \beta m$.
 
 \begin{align*}
-	i \frac{\partial \psi}{\partial t} =& \beta m \Psi\\
-	i \dot{\psi_R} =& m \psi_L\\
-	i \dot{\psi_L} =&  m \psi_R \\
-	i \dot{\psi_+} =&  m \psi_+ \text{, where $\psi_+\triangleq\psi_R + \psi_L$--corresponds to $\omega=m$}\\
-	i \dot{\psi_-} =&  m \psi_- \text{, where $\psi_-\triangleq\psi_R - \psi_L$--corresponds to $\omega=-m$}
+	i \frac{\partial \Psi}{\partial t} =& \beta m \Psi\\
+	i \dot{\Psi_R} =& m \Psi_L\\
+	i \dot{\Psi_L} =&  m \Psi_R \\
+	i \dot{\Psi_+} =&  m \Psi_+ \text{, where $\Psi_+\triangleq\Psi_R + \Psi_L$--corresponds to $\omega=m$}\\
+	i \dot{\Psi_-} =&  m \Psi_- \text{, where $\Psi_-\triangleq\Psi_R - \Psi_L$--corresponds to $\omega=-m$}
 \end{align*}
 
 So particle at rest still has positive and negative energies: throw latter in Dirac Sea.

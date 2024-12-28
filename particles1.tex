@@ -1367,7 +1367,7 @@ For the time being, we forget everything about the electron, except for spin, so
 \end{align*}
 
 
-The operators are $2\times 2$ matrices satisfying algebra (\ref{eq:sx:sy}), (\ref{eq:sy:sz}), and (\ref{eq:sz:sx}). They are not unique, but equivalent. We will use the Pauli spin\footnote{Without $\frac{1}{2}$ they are known as Pauli matrices.}:
+The operators are $2\times 2$ matrices satisfying algebra \eqref{eq:sx:sy}, \eqref{eq:sy:sz}, and \eqref{eq:sz:sx}. They are not unique, but all representations are equivalent. We will use the Pauli spin matrices\footnote{Without $\frac{1}{2}$ they are known as Pauli matrices.}:
 \begin{align*}
 	S_x =& \frac{1}{2}\begin{pmatrix} \numberthis \label{eq:pauli:x}
 		0&1\\
@@ -1383,9 +1383,11 @@ The operators are $2\times 2$ matrices satisfying algebra (\ref{eq:sx:sy}), (\re
 	\end{pmatrix}
 \end{align*}
 
+[I have omitted the discussion of eigenvectors of the $S_i$].
+
 \subsubsection{Spin 1}
 
-We have three states $\{-1,0,1\}$, a Boson. Are there $3\times3$ matrices satisfying (\ref{eq:sx:sy}), (\ref{eq:sy:sz}), and (\ref{eq:sz:sx})?
+We have  a Boson with three spin states $\{-1,0,1\}$. Are there $3\times3$ matrices satisfying \eqref{eq:sx:sy}, \eqref{eq:sy:sz}, and \eqref{eq:sz:sx}? Yes: they aren't unique, and here is one such set.
 
 \begin{align*}
 	S_z = i \begin{pmatrix}
@@ -1426,7 +1428,24 @@ Find eigenstates of $S_z$:
 		0
 	\end{pmatrix}
 \end{align*}
-
+So the eigenvectors are:
+\begin{align*}
+	\frac{1}{\sqrt(2)}\begin{pmatrix}
+		1\\
+		-i\\
+		0
+	\end{pmatrix}\\
+	\frac{1}{\sqrt(2)}\begin{pmatrix}
+		1\\
+		i\\
+		0
+	\end{pmatrix}\\
+	\begin{pmatrix}
+		0\\
+		0\\
+		1
+	\end{pmatrix}\\
+\end{align*}
 Return to real electron that can move in space. We turn the 2D spinors into functions of position: $\begin{pmatrix}
 \psi_u(x)\\
 \psi_d(x)

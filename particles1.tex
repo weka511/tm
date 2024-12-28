@@ -1293,35 +1293,42 @@ Take two half spin particles: composite behaves like a Boson--e.g. Hydrogen atom
 
 Paradox: if two Fermions make a Boson, can we have two of these composite Bosons in the same state?
 
-Wave function of Boson is supposed to be symmetric:
+Wave function of Bosons is supposed to be symmetric under interchange of two Bosons. Consider two Bosons, at positions $x$ and $y$. Since there is no difference between them:
 
 \begin{align*}
-	\psi(x,y) =&\psi(y,x) \text{ e.g. }\\
-	\psi(x,y) =& \phi(x)\phi(y)\\
-	\psi(x,y) =&-\psi(y,x) \text{ for Fermions}
+	\psi(x,y) =&\psi(y,x) \text{, e.g. a product}\\
+	\psi(x,y) =& \phi(x)\phi(y) \text{, which would correspond to two Bosons $\phi$}\\
+	\phi(x)\phi(y) =& \phi(y)\phi(x) \text{, wave functions aren't operators--they commute.}
+\end{align*}
+So we could have two Bosons in exactly the same state.
+
+The rule for Fermions is:
+\begin{align*}
+		\psi(x,y) =&-\psi(y,x)
 \end{align*}
 
-Now imagine a wave function, $\psi(x,y)$, that isn't symmetric:
+So we can't have two of them in the same state.
+
+Now imagine a wave function, $\psi(x,y)$, that isn't symmetric or antisymmetric. We construct symmetric and antisymmetric functions.
 \begin{align*}
-\psi(x,y)+& \psi(y,x) \text{ symmetric}\\
-\psi(x,y)-& \psi(y,x) \text{ antisymmetric}
+	\psi(x,y)+& \psi(y,x) \text{ symmetric--a possible wave function for Bosons}\\
+	\psi(x,y)-& \psi(y,x) \text{ antisymmetric--a possible wave function for Fermions}
 \end{align*}
 
-Now imagine 4 Fermions--2 electons(X) and 2 protons(Y).
+Now imagine four Fermions: two electrons, which we will call $x$, and two protons, which we will call $y$. Our wave function is a function of four variables: $\psi(x_1,x_2,y_1,y_2)$.
 
 \begin{align*}
-\psi(x_1,x_2,y_1,y_2) = &-\psi(x_2,x_1,y_1,y_2)\\
-=& \psi(x_1,x_2,y_2,y_1)
+	\psi(x_1,x_2,y_1,y_2) = &-\psi(x_2,x_1,y_1,y_2) \text{, electrons are Fermions}\\
+	=& - \psi(x_1,x_2,y_2,y_1) \text{, protons are Fermions}
 \end{align*} 
 
-Hydrogen atom at origin plus another hydrogen atom:$\psi(x_1,y_1) \phi(x_2,y_2)$.
-If we antisymmetrize:
+Imagine a hydrogen atom at the origin, $\psi(x_1,y_1)$ plus another hydrogen atom, $\phi(x_2,y_2)$, so the wavefunction for the system is $\psi(x_1,y_1)\phi(x_2,y_2)$. This isn't symmetric for the $x$s or the $y$s, so it isn't a good wavefunction for Fermions. Suppose we make it antisymmetric:
 \begin{align*}
 	\psi(x_1,y_1) \phi(x_2,y_2) -& \psi(x_2,y_1) \phi(x_1,y_2) 
 	-\psi(x_1,y_2) \phi(x_2,y_1) + \psi(x_2,y_2) \phi(x_1,y_1)\\
-	x_1 \leftrightarrow& x_2 \text{ changes sign, and}\\
-	y_1 \leftrightarrow& y_2 \text{ changes sign, but}\\
-	1 \leftrightarrow& 2 \text { preserves sign.}
+	x_1 \leftrightarrow& x_2 \text{ interchange electrons--changes sign, and}\\
+	y_1 \leftrightarrow& y_2 \text{ interchange protons--changes sign, but}\\
+	1 \leftrightarrow& 2 \text { interchange atoms--preserves sign.}
 \end{align*}
 
 What if both atoms have same wave function? Ignoring a factor of $2$:
@@ -1332,9 +1339,9 @@ What if both atoms have same wave function? Ignoring a factor of $2$:
 
 Both atoms can be in same place, but we can't find 2 electrons in same place.
 
-\subsection{Mathematics of Spin}
+\subsection{The Mathematics of Spin}
 
-Mathematics of Spin is needed for Colour, Isospin, etc.
+The mathematics of Spin is needed for Colour, Isospin, etc.
 
 \subsubsection{Half spin}
 
@@ -1427,15 +1434,18 @@ For spin 1: $\begin{pmatrix}
 \subsection{Dirac Equation: connection with Spin}
 
 \begin{align*}
-i \frac{\partial \psi}{\partial t} =& - i \alpha_i \frac{\partial \psi}{\partial x^i} + \beta m \psi\\
-\omega =& \sum_i \alpha_i k_i + \beta m\\
-\omega^2 =& k^2 + m^2
+	i \frac{\partial \psi}{\partial t} =& - i \alpha_i \frac{\partial \psi}{\partial x^i} + \beta m \psi\\
+	\omega =& \sum_i \alpha_i k_i + \beta m\\
+	\omega^2 =& k^2 + m^2
 \end{align*}
 Where the $\alpha_i$ and $\beta$ satisfy (\ref{eq:dirac:ac1}), (\ref{eq:dirac:ac2}), (\ref{eq:dirac:ac3}), and (\ref{eq:dirac:ac4}).
 
 
 \begin{thm}[Dirac anticommutation relations.]\label{thm:dirac:anticommutation} 
-	Equations (\ref{eq:dirac:ac1}), (\ref{eq:dirac:ac2}), (\ref{eq:dirac:ac3}), and (\ref{eq:dirac:ac4}) can be satisfied by suitably chosen $2\times4$ matrices, and they cannot be satisfied by $n \times n$ for $n<4$.
+	\begin{itemize}
+		\item Equations (\ref{eq:dirac:ac1}), (\ref{eq:dirac:ac2}), (\ref{eq:dirac:ac3}), and (\ref{eq:dirac:ac4}) can be satisfied by suitably chosen $4\times4$ matrices;
+		\item  they cannot be satisfied by $2 \times 2$ matrices or $3 \times 3$ matrices.
+	\end{itemize}
 \end{thm}
 \begin{proof}
 	TBP

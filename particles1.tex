@@ -1090,6 +1090,7 @@ A simpler notation is to divide into blocks of $2\times 2$ matrices, and use the
 \end{align*}
 
 Although $\Psi$ has 4 components, it is \emph{not} a 4-vector.
+
 \section{Angular momentum}
 
 Angular momentum is a vector, which points along the direction of rotation and follows right hand rule: fingers follow rotation, thumb points along vector.
@@ -1337,30 +1338,36 @@ What if both atoms have same wave function? Ignoring a factor of $2$:
 	\psi(x_1,y_1) \psi(x_2,y_2) -& \psi(x_2,y_1) \psi(x_1,y_2) 
 \end{align*}
 
-Both atoms can be in same place, but we can't find 2 electrons in same place.
+Both atoms can be in same place, although it costs a lot of energy, but we can't find 2 electrons in same place. In an atom the electron does not have a well defined position, 
 
 \subsection{The Mathematics of Spin}
 
-The mathematics of Spin is needed for Colour, Isospin, etc.
+The mathematics of Spin is needed for the study of Isospin, Colour, etc. We will start with half spin, and will call our particles ''electrons''. They could easily be muons, quarks, etc. 
 
 \subsubsection{Half spin}
 
-We have two values along the z axis: $S_z = m \hslash$. We will use $S$ for spin, $L$ for orbital angular momentum.
+We will call these particles ''electrons'', even though they might be muons, quarks, or whatever.
+
+We have two values along the z axis: $S_z = m \hslash$, although we will set $\hbar=1$ from now on (This is not the full angular momentum). We will use $S$ for spin, $L$ for orbital angular momentum. The mathematics of $S$ is the same as that of $L$--see \eqref{eq:lx:ly},  \eqref{eq:ly:lz}, and  \eqref{eq:lz:lx}.
 
 \begin{align*}
 	[S_x,S_y] =& i S_z \numberthis \label{eq:sx:sy}\\
 	[S_y,S_z] =& i S_x  \numberthis \label{eq:sy:sz}\\
-	[S_z,S_x] =& i S_y  \numberthis \label{eq:sz:sx}\\
-	S_\pm =& S_x \pm S_y
+	[S_z,S_x] =& i S_y \text{, and we define the raising and lowering operators} \numberthis \label{eq:sz:sx}\\
+	S_\pm \triangleq& S_x \pm S_y 
 \end{align*}
-Compare with (\ref{eq:lx:ly}),  (\ref{eq:ly:lz}), and  (\ref{eq:lz:lx}).
 
-Can express spin as $\begin{pmatrix}
-\alpha\\
-\beta
-\end{pmatrix}$ or $\alpha\ket{+} + \beta\ket{-}$ 
+For the time being, we forget everything about the electron, except for spin, so we have a space of two orthogonal states, which we can write as a column vector:
+\begin{align*}
+	\begin{pmatrix}
+		\alpha\\
+		\beta
+	\end{pmatrix} \text{, or}\\
+	\psi = \alpha\ket{+} + \beta\ket{-}
+\end{align*}
 
-Components are 2D matrices satisfying algebra (\ref{eq:sx:sy}), (\ref{eq:sy:sz}), and (\ref{eq:sz:sx}). They are not unique, but equivalent. We will use the Pauli spin\footnote{Without $\frac{1}{2}$ they are known as Pauli matrices.}:
+
+The operators are $2\times 2$ matrices satisfying algebra (\ref{eq:sx:sy}), (\ref{eq:sy:sz}), and (\ref{eq:sz:sx}). They are not unique, but equivalent. We will use the Pauli spin\footnote{Without $\frac{1}{2}$ they are known as Pauli matrices.}:
 \begin{align*}
 	S_x =& \frac{1}{2}\begin{pmatrix} \numberthis \label{eq:pauli:x}
 		0&1\\

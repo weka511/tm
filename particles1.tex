@@ -988,7 +988,7 @@ The Higgs field can vibrate, as shown in Figure \ref{fig:vibrating:higgs:field}:
 				\draw(-2,-2)--(2,-2) node[right] {$\Phi$};
 				\draw(0,-2.3)--(0,2) node[above] {$V(\Phi)$};
 				\draw[domain=-2:2, smooth, variable=\x, ] plot ({\x}, {1-3*\x*\x+0.8*\x*\x*\x*\x});
-				\draw[domain=1.1:1.6,  line width=3pt, smooth, variable=\x, ] plot ({\x}, {1-3*\x*\x+0.8*\x*\x*\x*\x});
+				\draw[domain=1.1:1.6,  line width=2pt, smooth, variable=\x, ] plot ({\x}, {1-3*\x*\x+0.8*\x*\x*\x*\x});
 				\filldraw[black] (1.3693,-1.8125) circle (4pt);
 			\end{tikzpicture}
 		\end{center}
@@ -1001,7 +1001,7 @@ The Higgs field can vibrate, as shown in Figure \ref{fig:vibrating:higgs:field}:
 				\draw(-2,-2)--(2,-2) node[right] {$\Phi$};
 				\draw(0,-2.3)--(0,2) node[above] {$V(\Phi)$};
 				\draw[domain=-2:2, smooth, variable=\x, ] plot ({\x}, {1-3*\x*\x+0.8*\x*\x*\x*\x});
-				\draw[domain=0:1.92,  line width=3pt, smooth, variable=\x, ] plot ({\x}, {1-3*\x*\x+0.8*\x*\x*\x*\x});
+				\draw[domain=0:1.92,  line width=2pt, smooth, variable=\x, ] plot ({\x}, {1-3*\x*\x+0.8*\x*\x*\x*\x});
 				\filldraw[black] (1.3693,-1.8125) circle (4pt);
 			\end{tikzpicture}
 		\end{center}
@@ -1016,13 +1016,14 @@ If vacuum were symmetric--Figure \ref{fig:higgs:potential}-- $\phi$ would be zer
 
 \subsection{The 3+1 Dimensional Dirac Equation}
 
-Dirac started with a generalization of \eqref{eq:Dirac:1D}:
+Particles are described by a frequency, and a wave vector, which replaces the wave number. The wave vector is proportional to the momentum. Dirac began by writing down a generalization of a generalization of \eqref{eq:Dirac:1D}:
 
 \begin{align*}
-	\omega =& \underbrace{\alpha . k}_{\alpha_1 k_1 + \alpha_2 k_2 + \alpha_3 k_3} +\beta m\\
-	=& \alpha_1 k_1 + \alpha_2 k_2 + \alpha_3 k_3 +\beta m \numberthis \label{eq:omega:3D}\\
+	\omega =& \alpha . k+\beta m\\
+	=& \alpha_1 k_1 + \alpha_2 k_2 + \alpha_3 k_3 +\beta m \numberthis \label{eq:omega:3D}
 \end{align*}
-In 3 dimensions, \eqref{eq:omega:relativistic} generalizes to:
+
+Given that $\vec{k}$ has 3 components, $\alpha$ needs 3 also. In 3 dimensions, \eqref{eq:omega:relativistic} generalizes to:
 \begin{align*}
 	\omega^2 =& k_1^2 + k_2^2 +k_3^2 +m^2 \text{, but \eqref{eq:omega:3D} gives}\\
 	=& (\alpha_1 k_1 + \alpha_2 k_2 + \alpha_3 k_3 +\beta m)(\alpha_1 k_1 + \alpha_2 k_2 + \alpha_3 k_3 +\beta m)
@@ -1066,7 +1067,7 @@ Here is a set of Dirac Matrices (not unique, but equivalent--Theorem \ref{thm:di
 	\end{pmatrix} \numberthis \label{eq:alpha3:1}
 \end{align*}
 
-Partitioning, and using the Pauli matrices (\ref{eq:pauli:x}), (\ref{eq:pauli:y}), and (\ref{eq:pauli:z}):
+A simpler notation is to divide into blocks of $2\times 2$ matrices, and use the Pauli matrices (\ref{eq:pauli:x}), (\ref{eq:pauli:y}), and (\ref{eq:pauli:z}):
 \begin{align*}
 	\beta = \begin{pmatrix}
 		I&0\\
@@ -1088,7 +1089,7 @@ Partitioning, and using the Pauli matrices (\ref{eq:pauli:x}), (\ref{eq:pauli:y}
 	i \frac{\partial \psi}{\partial t} =& -i \alpha_i \frac{\partial \psi}{\partial x^i} + \beta m \psi \text{, the famous Dirac equation} \numberthis \label{eq:famous:dirac}
 \end{align*}
 
-
+Although $\Psi$ has 4 components, it is \emph{not} a 4-vector.
 \section{Angular momentum}
 
 Angular momentum is a vector, which points along the direction of rotation and follows right hand rule: fingers follow rotation, thumb points along vector.

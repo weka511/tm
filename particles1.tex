@@ -1072,11 +1072,11 @@ A simpler notation is to divide into blocks of $2\times 2$ matrices, and use the
 	\beta = \begin{pmatrix}
 		I&0\\
 		0&I
-	\end{pmatrix}\\
+	\end{pmatrix} \numberthis \label{eq:dirac:block:1}\\
 	\alpha = \begin{pmatrix}
 		0&\sigma\\
 		-\sigma&0
-	\end{pmatrix}
+	\end{pmatrix} \numberthis \label{eq:dirac:block:2}
 \end{align*}
 
 \begin{align*}
@@ -1481,7 +1481,7 @@ Where the $\alpha_i$ and $\beta$ satisfy \eqref{eq:dirac:ac1}, \eqref{eq:dirac:a
 	TBP
 \end{proof}
 
-One set of solutions, which is not the same as (\ref{eq:beta:1}), (\ref{eq:alpha1:1}), (\ref{eq:alpha2:1}), and (\ref{eq:alpha3:1}):
+One set of solutions, which is not the same as \eqref{eq:dirac:block:1} and \eqref{eq:dirac:block:2}:
 \begin{align*}
 	\alpha_i=&\begin{pmatrix}
 		\sigma_i&0\\
@@ -1493,28 +1493,33 @@ One set of solutions, which is not the same as (\ref{eq:beta:1}), (\ref{eq:alpha
 	\end{pmatrix}
 \end{align*}
 
-There are two kinds of $2\times2$: 2 blocks of $2\times2$ matrices. This corresponds to the physics - there are two energies, positive and negative, and two spins.
+The difference between \eqref{eq:dirac:block:1} and \eqref{eq:dirac:block:2} and this set is a rotation in the 4 dimensional representational space: the 4 components are not a relativistic 4-vector!
+
+There are two kinds of $2\times2$ness, which corresponds to a doubling in the physics: one kind is to do with the fact that there are two energies, positive and negative, the other is spin. There are particles with positive energy and all sorts of spins, particles with nagative energy and all sorts of spins.
 The 4 components are not a relativistic 4-vector! The easiest way to see this is to set momentum to zero, then the $\alpha_i$ drop out.
 
+For a particle at rest.
+
 \begin{align*}
-i \frac{\partial \psi}{\partial t} =&  \beta m \psi \text{ for particle at rest.}\\
-i \frac{\partial}{\partial t}\begin{pmatrix}
-\psi_+\\
-\psi_-
-\end{pmatrix}=&m \begin{pmatrix}
-0&I\\
-I&0
-\end{pmatrix}\begin{pmatrix}
-\psi_+\\
-\psi_-
-\end{pmatrix}\\
-i \frac{\partial \psi_+}{\partial t} =&   m \psi_-\\
-i \frac{\partial \psi_-}{\partial t} =&   m \psi_+ \\
-i \frac{\partial (\psi_++\psi_-)}{\partial t} =&   m (\psi_++\psi_-) \text{ positive energy--$\omega=m$}\\
-i \frac{\partial (\psi_+-\psi_-)}{\partial t} =&   -m (\psi_+-\psi_-) \text{ negative energy--$\omega=-m$}
+	i \frac{\partial \psi}{\partial t} =&  \beta m \psi \text{. We decompose $\psi$ into 2 2 component objects.}\\
+	i \frac{\partial}{\partial t}\begin{pmatrix}
+		\psi_+\\
+		\psi_-
+	\end{pmatrix}=&m \begin{pmatrix}
+		0&I\\
+		I&0
+	\end{pmatrix}\begin{pmatrix}
+		\psi_+\\
+		\psi_-
+	\end{pmatrix} \text{, we get a pair of coupled equations}\\
+	i \frac{\partial \psi_+}{\partial t} =&   m \psi_-\\
+	i \frac{\partial \psi_-}{\partial t} =&   m \psi_+ \text{. Introduce new variables to uncouple.}\\
+	i \frac{\partial (\psi_++\psi_-)}{\partial t} =&   m (\psi_++\psi_-) \text{ Energy $\omega=m>0$}\\
+	i \frac{\partial (\psi_+-\psi_-)}{\partial t} =&   -m (\psi_+-\psi_-) \text{ Energy, $\omega=-m<0$}
 \end{align*}
 
-So we end up with two uncoupled equations! $2\times2$ is connected to positive and negative energies. $2\times2$ of $\psi_+$ arises from spin.
+So as with \eqref{eq:rh:dirac:wave:1} and \eqref{eq:rh:dirac:wave} we have positive and negative energy solutions, each of which is a 2 dimensional entity, which is spin.
+
 
 
 \section{Equations of motion of particles and fields}\label{sect:equation:motion}

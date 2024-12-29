@@ -889,7 +889,7 @@ If $k<0$, $\omega<0$, energy is negative, which is not a good thing: electrons w
 	\end{subfigure}
 \end{figure}
 
-We have strange situation: electrons that can only move to the right, plus an enormous negative momentum stored in the \gls{gls:dirac:sea}. What can we do tomake it more symmetric? We now introduce two kinds of electrons, right movers and left movers.
+We have strange situation: electrons that can only move to the right, plus an enormous negative momentum stored in the \gls{gls:dirac:sea}. What can we do to make it more symmetric? We now introduce two kinds of electrons, right movers and left movers.
 
 \begin{align*}
 	\frac{\partial \Psi_R}{\partial t} =& -\frac{\partial \Psi_R}{\partial x} \numberthis \label{eq:rh:dirac:wave:1}\\
@@ -1470,15 +1470,16 @@ The Dirac equation was given in \eqref{eq:famous:dirac}:
 \end{align*}
 Where the $\alpha_i$ and $\beta$ satisfy \eqref{eq:dirac:ac1}, \eqref{eq:dirac:ac2}, \eqref{eq:dirac:ac3}, and \eqref{eq:dirac:ac4}.
 
-
 \begin{thm}[Dirac anticommutation relations.]\label{thm:dirac:anticommutation} 
-	\begin{itemize}
-		\item Equations (\ref{eq:dirac:ac1}), (\ref{eq:dirac:ac2}), (\ref{eq:dirac:ac3}), and (\ref{eq:dirac:ac4}) can be satisfied by suitably chosen $4\times4$ matrices;
-		\item  they cannot be satisfied by $2 \times 2$ matrices or $3 \times 3$ matrices.
-	\end{itemize}
+	\begin{enumerate}
+		\item Equations \eqref{eq:dirac:ac1}, \eqref{eq:dirac:ac2}, \eqref{eq:dirac:ac3}, and \eqref{eq:dirac:ac4} can be satisfied by suitably chosen $4\times4$ matrices\label{eq:step1};
+		\item  they cannot be satisfied by $2 \times 2$ matrices or $3 \times 3$ matrices\label{eq:step2}.
+	\end{enumerate}
 \end{thm}
 \begin{proof}
-	TBP
+	 Part \ref{eq:step1}We exhibit a set of solutions in \eqref{eq:dirac:block:1} and \eqref{eq:dirac:block:2}.
+	 
+	 Part \ref{eq:step2} TBP.
 \end{proof}
 
 One set of solutions, which is not the same as \eqref{eq:dirac:block:1} and \eqref{eq:dirac:block:2}:
@@ -1518,10 +1519,9 @@ For a particle at rest.
 	i \frac{\partial (\psi_+-\psi_-)}{\partial t} =&   -m (\psi_+-\psi_-) \text{ Energy, $\omega=-m<0$}
 \end{align*}
 
-So as with \eqref{eq:rh:dirac:wave:1} and \eqref{eq:rh:dirac:wave} we have positive and negative energy solutions, each of which is a 2 dimensional entity, which is spin.
+So as with \eqref{eq:rh:dirac:wave:1} and \eqref{eq:lh:dirac:wave} we have positive and negative energy solutions, each of which is a 2 dimensional entity, which is spin. How do we see that this is really spin? We want to see that a positive energy pair is spin, we need to look at angular momentum. We can look at the connection between angular momentum and rotation symmetry, or at conservation of momentum.
 
-
-
+We want to show that in any form of collision, where an electron scatters of something else, that if you assign the electron an angular momentum whose description is in terms of the 2-foldness of $\sigma$, that total angular momentum would be conserved.
 \section{Equations of motion of particles and fields}\label{sect:equation:motion}
 
 The equations of motion of fields that describe  particles all come from a Lagrangian. In quantum field theory, Lagrangian describes everything.

@@ -1157,7 +1157,7 @@ Figure \ref{fig:two:particles:rotating} depicts two particles rotating: the cent
 	\end{subfigure}
 \end{figure}
 
-The orbital angular momentum of a point particle moving about origin is given by:
+Classically, and in \glsdesc{gls:QM}, the orbital angular momentum of a point particle moving about origin is given by:
 \begin{align*}
 	\vec{L} =& \vec{R} \times \vec{p} \\
 	L_x =& y P_z - z P_y\\
@@ -1165,7 +1165,7 @@ The orbital angular momentum of a point particle moving about origin is given by
 	L_z =& x P_y - y P_x
 \end{align*}
 
-Moving to \glsdesc{gls:QM}, we will determine commutation relations of angular momentum operators. They are all we need to work out everything else.
+Moving to \glsdesc{gls:QM}, we will determine commutation relations of angular momentum operators. Once we have them we can forget the definitions of the $Lx$.The commutators are all we need to work out everything else.
 
 \begin{thm}[Commutators for angular momentum]
 	\begin{align*}
@@ -1181,11 +1181,14 @@ Moving to \glsdesc{gls:QM}, we will determine commutation relations of angular m
 		[P_i,P_j]=& 0\\
 		[X_i,P_j]=& i \hslash \delta_{i,j}
 	\end{align*}
-	
+
 	\begin{align*}
-		[L_x,L_y]=& [y P_z - z P_y,z P_x - x P_z]\\
-		=&[y P_z, z P_x] -\cancel{[yP_z,xP_z]} -\bcancel{[zP_y,zP_x]} + [z P_y,x P_z] \\
-		=& y P_x[P_z,z] + P_y x[z,P_z]\\
+			[L_x,L_y]=& [y P_z - z P_y,z P_x - x P_z]\\
+	=&[y P_z, z P_x] -\cancel{[yP_z,xP_z]} -\bcancel{[zP_y,zP_x]} + [z P_y,x P_z]
+	\end{align*}
+	Where we have used $[yP_z,xP_z]=xy[P_z,P_z]=0$.
+	\begin{align*}
+		[L_x,L_y]=& y P_x[P_z,z] + P_y x[z,P_z]\\
 		=& -i \hslash y P_x + i \hslash P_y x\\
 		=& i \hslash L_z \text{, which is (\ref{eq:lx:ly})} 
 	\end{align*}
@@ -1196,21 +1199,30 @@ Moving to \glsdesc{gls:QM}, we will determine commutation relations of angular m
 \begin{itemize}
 	\item remain true if we add angular momenta for many particles;
 	\item are true for spin;
-	\item are relationally invariant'
+	\item are rotationally invariant;
 	\item explain why $\hslash$ appears in the quantum of angular momentum.
 \end{itemize}
 
-We focus on the $z$-axis ("quantization axis") and introduce two new quantities--raising and lowering operators. Choosing units where $\hslash=1$:
+We focus on the $z$-axis, which we call the ''quantization access''. There is nothing special about $z$; we could have used $x$ or $y$ and developed the same theory. We introduce two new  operators, which will turn out to be raising and lowering operators, analogous to those for the Harmonic Oscillator. Choosing units where $\hslash=1$:
 
 \begin{align*}
 	L_\pm \triangleq& L_x \pm i L_y \numberthis \label{eq:L_pm} \\
-	[L_+,L_z] =& [Lx+i L_y,L_z]\\
+\end{align*}
+We'll calculate some commutators:
+\begin{align*}
+	[L_+,L_z] =& [L_x+i L_y,L_z]\\
 	=& -iL_y + i^2 L_x \text{, from (\ref{eq:lz:lx}) and (\ref{eq:lx:ly})}\\
-	=& -L_+ \text{ from (\ref{eq:L_pm}). Similarly} \numberthis \label{eq:L+:Lz}\\
-	[L_-,L_z] =& + L_- \numberthis \label{eq:L-:Lz}
+	=& -L_+ \text{ from (\ref{eq:L_pm}).} \numberthis \label{eq:L+:Lz}\\
+\end{align*}
+Similarly
+\begin{align*}
+	[L_-,L_z]  =& [L_x-i L_y,L_z]\\
+	=&-iL_y - i^2 L_x\\
+	=& L_x-iL_y\\
+	=& L_- \numberthis \label{eq:L-:Lz}
 \end{align*}
 
-\begin{thm}[$L_+$ is a creation operator for $L_z$]\label{thm:angular:momentum:creation}
+\begin{thm}[$L_+$ is a creation operator for $L_z$] \label{thm:angular:momentum:creation}
 	\begin{align*}
 		L_z \ket{m} =& m \ket{m} \numberthis \label{eq:L:eigen}\\
 		\implies&\\

@@ -1093,48 +1093,77 @@ Although $\Psi$ has 4 components, it is \emph{not} a 4-vector.
 
 \section{Angular momentum}
 
-Our goal is to understand an important idea, spin.
+Our goal is to understand an important idea, \emph{spin}.
 
-Angular momentum is a vector, which points along the direction of rotation and follows the right hand rule: fingers follow rotation, thumb points along vector.
+Angular momentum is a vector, which points along the axis of rotation and follows the right hand rule: fingers follow rotation, thumb points along vector.
 
-There are two kinds of angular momentum for an object:
+An object has two kinds of angular momentum:
 \begin{itemize}
-	\item orbital angular momentum--motion of centre of mass relative to an axis, even of the object is not itself spinning about an internal axis;
-	\item spin angular momentum--the kind we are interested in--angular momentum in frame where the centre of mass is at rest.
+	\item orbital angular momentum--motion of centre of mass relative to an axis, even if the object is not itself spinning about an internal axis;
+	\item spin angular momentum, the kind we are interested in, is the angular momentum in a frame where the centre of mass is at rest.
 \end{itemize}
 
-If we start a basketball rotating, it remains the same basketball. In \gls{gls:QM} the amount of angular momentum is discrete, which can't interpolate between different amounts of angular momentum; is it the same object at each level? How much energy does it take to set it into rotation? Whether it is the same object or not is a matter of definition.
+If we start a basketball rotating, it remains the same basketball. In \glsdesc{gls:QM} the amount of angular momentum is discrete, which can't interpolate between different amounts of angular momentum; is it the same object at each level? How much energy does it take to set it into rotation? Whether it is the same object or not is a matter of definition.
 
 Is a rotating nucleus the same object as a non-rotating nucleus? Note that angular momentum is quantized, so it takes a discrete amount of energy to start rotation. Now an atom with too much rotation will fly apart, which is definitely different. 
 
-What about electron? Is it too small for us to rotate? The smaller the object, the more energy it needs to rotate with given amount of angular momentum.Maybe electron too small.
+What about electron? Is it too small for us to rotate? Does it make sense to talk about a point-like object rotating?  Maybe it isn't infinitely small? The smaller the object, the more energy it needs to rotate with a given amount of angular momentum. Maybe the electron is too small.
 
-Angular momentum for small object like electron \emph{characterizes} object.
+The angular momentum for a small object like an electron \emph{characterizes} the object, and it is fixed.
 
-Let us invent a particle with definite angular momentum, a "spintron". Can it point in any direction? Yes, since laws of physics are rotationally invariant. Angular momentum is quantized.
+Let us invent a particle with definite angular momentum, a ''spintron''. Can it point in any direction? Yes, since the laws of physics are rotationally invariant. But the amount of angular momentum is quantized.
 
-Theory is mathematical: it seems abstract, but corresponds to experiment.
+The theory is mathematical: it seems abstract, but corresponds to experiment.
 
-Classically:
+Classically we have the  moment of inertia, which depends on the  mass, and how it is distributed. The only thing new in \glsdesc{gls:QM} is the quantization of $L$.
 \begin{align*}
-I\triangleq&mr^2 \text{, moment of inertia}\\
-E=&\frac{L^2}{2I}\\
-=&\frac{L^2}{2mr^2}\\
-\rightarrow &\infty \text{ as } r \rightarrow 0 \text{ for discrete $L$}
+	I\triangleq&mr^2 \\
+	L\triangleq&mVr\text{, we can show}\\
+	E=&\frac{L^2}{2I}\\
+	=&\frac{L^2}{2mr^2}\\
+	I\rightarrow&0 \text{ as $r \rightarrow 0 $, whence } \\
+	\rightarrow &\infty \text{ as } r \rightarrow 0 \text{ for discrete $L$}
 \end{align*}
 
-Figure \ref{fig:two:particles:rotating} depicts two particles rotating: total momentum is zero, but there is angular momentum.
+Let us consider a single particle orbiting a centre--Figure \ref{fig:one:particle:rotating}. The Angular momentum is $pr$. it has angular momentum because it has momentum, and it has momentum because it has velocity. This is not spin.
+
+Figure \ref{fig:two:particles:rotating} depicts two particles rotating: the centre of mass is at rest, so the total momentum is zero, but there is angular momentum. This \emph{is} spin.
+
 \begin{figure}[H]
-	\caption{Two particles rotating.}\label{fig:two:particles:rotating}
-	\includegraphics[width=0.6\textwidth]{two-particles-rotating}
+	\caption{Angular momentum for rotating particles}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{A single particle rotating about a centre. The system has angular momentum $L=pr$, because it has momentum.}\label{fig:one:particle:rotating}
+		\begin{tikzpicture}
+			\draw(-2,0)--(2,0) node[right] {};
+			\draw(0,-2)--(0,2) node[right] {};
+			\draw (0,0) circle (2);
+			\filldraw (2,0) circle (0.1);
+			\draw[->] (2,0) arc [radius=2,start angle=0, end angle=20] node[right] {$p$};
+			\draw(1,0) node[above] {$r$};
+		\end{tikzpicture}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{Two particles rotating.}\label{fig:two:particles:rotating}
+		\begin{tikzpicture}
+			\draw(-2,0)--(2,0) node[right] {};
+			\draw(0,-2)--(0,2) node[right] {};
+			\draw (0,0) circle (2);
+			\filldraw (2,0) circle (0.1);
+			\filldraw (-2,0) circle (0.1);
+			\draw[->] (2,0) arc [radius=2,start angle=0, end angle=20] ;
+			\draw[->] (-2,0) arc [radius=2,start angle=180, end angle=200];
+		\end{tikzpicture}
+	\end{subfigure}
 \end{figure}
+
+
 
 Orbital angular momentum of a point particle moving about origin. 
 \begin{align*}
-\vec{L} =& \vec{R} \times \vec{p} \text{ accordng to convention -- c.f. right hand rule.}\\
-L_x =& y P_z - z P_y\\
-L_y =& z P_x - x P_z\\
-L_z =& x P_y - y P_x
+	\vec{L} =& \vec{R} \times \vec{p} \text{ according to convention -- c.f. right hand rule.}\\
+	L_x =& y P_z - z P_y\\
+	L_y =& z P_x - x P_z\\
+	L_z =& x P_y - y P_x
 \end{align*}
 
 We will determine commutation relations of angular momentum operators.

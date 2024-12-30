@@ -1226,19 +1226,19 @@ Similarly
 	\begin{align*}
 		L_z \ket{m} =& m \ket{m} \numberthis \label{eq:L:eigen}\\
 		\implies&\\
-		L_z (L_+ \ket{m}) =& (m+1) (L_+ \ket{m})
+		L_z (L_+ \ket{m}) =& (m+1) L_+ \ket{m}
 	\end{align*}	
 \end{thm}
 
 \begin{proof}
+	We use 	\eqref{eq:L+:Lz}
 	\begin{align*}
-		(\ref{eq:L+:Lz})\implies\\
 		L_+L_z-L_zL_+ =& -L_+ \text{, whence:}\\
 		L_zL_+ =& L_+L_z + L_+\ \text{ and}\\
 		L_z L_+ \ket{m} =& (L_+L_z + L_+)\ket{m}\\
 		=& L_+ (L_z + I)\ket{m}\\
 		=& L_+ (m + 1) \ket{m} \text{ from (\ref{eq:L:eigen})}\\
-		=&  (m + 1) (L_+ \ket{m})
+		=&  (m + 1) L_+ \ket{m}
 	\end{align*}
 \end{proof}
 
@@ -1246,10 +1246,19 @@ Similarly
 	\begin{align*}
 	L_z \ket{m} =& m \ket{m} \\
 	\implies&\\
-	L_z (L_- \ket{m}) =& (m-1) (L_- \ket{m})
+	L_z (L_- \ket{m}) =& (m-1) L_- \ket{m}
 	\end{align*}	
 \end{cor}
-
+\begin{proof}
+	We use \eqref{eq:L-:Lz}
+	\begin{align*}
+		L_-L_z - L_zL_-=&L_- \\
+		L_zL_- =& L_-L_z - L_- \\
+		L_zL_-\ket{m} =& L_-L_z\ket{m} - L_-\ket{m}\\
+		=& m L_-\ket{m} - L_-\ket{m}\\
+		 =& (m-1) L_- \ket{m}
+	\end{align*}
+\end{proof}
 The angular momentum spectrum is spaced by integers. How far can we bump it up before the object changes? Imagine a classical object with fixed $L^2$. We can maximize $L_z$  by pointing it upward.
 
 Theorem \ref{thm:angular:momentum:creation} ignores the possibility that $L^+m_{max}=0$ and $L^-m_{min}=0$. (c.f. harmonic oscillator). By relational invariance, $m_{min}=-m_{max}$: Spectrum must be symmetric about zero.

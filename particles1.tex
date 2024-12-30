@@ -1142,8 +1142,9 @@ Figure \ref{fig:two:particles:rotating} depicts two particles rotating: the cent
 			\draw(1,0) node[above] {$r$};
 		\end{tikzpicture}
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Two particles rotating.}\label{fig:two:particles:rotating}
+		\caption{Two particles rotating. the centre of mass is at rest, so the total momentum is zero, but there is angular momentum. This \emph{is} spin}\label{fig:two:particles:rotating}
 		\begin{tikzpicture}
 			\draw(-2,0)--(2,0) node[right] {};
 			\draw(0,-2)--(0,2) node[right] {};
@@ -1156,24 +1157,15 @@ Figure \ref{fig:two:particles:rotating} depicts two particles rotating: the cent
 	\end{subfigure}
 \end{figure}
 
-
-
-Orbital angular momentum of a point particle moving about origin. 
+The orbital angular momentum of a point particle moving about origin is given by:
 \begin{align*}
-	\vec{L} =& \vec{R} \times \vec{p} \text{ according to convention -- c.f. right hand rule.}\\
+	\vec{L} =& \vec{R} \times \vec{p} \\
 	L_x =& y P_z - z P_y\\
 	L_y =& z P_x - x P_z\\
 	L_z =& x P_y - y P_x
 \end{align*}
 
-We will determine commutation relations of angular momentum operators.
-
-We have \cite{susskind2014quantum}:
-\begin{align*}
-	[X_i,X_j] =& 0\\
-	[P_i,P_j]=& 0\\
-	[X_i,P_j]=& i \hslash \delta_{i,j}`
-\end{align*}
+Moving to \glsdesc{gls:QM}, we will determine commutation relations of angular momentum operators. They are all we need to work out everything else.
 
 \begin{thm}[Commutators for angular momentum]
 	\begin{align*}
@@ -1183,12 +1175,19 @@ We have \cite{susskind2014quantum}:
 	\end{align*}
 \end{thm}
 \begin{proof}
+	We have, from \cite{susskind2014quantum}:
 	\begin{align*}
-	[L_x,L_y]=& [y P_z - z P_y,z P_x - x P_z]\\
-	=&[y P_z, z P_x] -\cancel{[yP_z,xP_z]} -\bcancel{[zP_y,zP_x]} + [z P_y,x P_z] \\
-	=& y P_x[P_z,z] + P_y x[z,P_z]\\
-	=& -i \hslash y P_x + i \hslash P_y x\\
-	=& i \hslash L_z \text{, which is (\ref{eq:lx:ly})} 
+		[X_i,X_j] =& 0\\
+		[P_i,P_j]=& 0\\
+		[X_i,P_j]=& i \hslash \delta_{i,j}
+	\end{align*}
+	
+	\begin{align*}
+		[L_x,L_y]=& [y P_z - z P_y,z P_x - x P_z]\\
+		=&[y P_z, z P_x] -\cancel{[yP_z,xP_z]} -\bcancel{[zP_y,zP_x]} + [z P_y,x P_z] \\
+		=& y P_x[P_z,z] + P_y x[z,P_z]\\
+		=& -i \hslash y P_x + i \hslash P_y x\\
+		=& i \hslash L_z \text{, which is (\ref{eq:lx:ly})} 
 	\end{align*}
 	The other two equations, (\ref{eq:ly:lz}) and (\ref{eq:lz:lx}) follow by cyclically permuting indices.
 \end{proof}
@@ -1196,11 +1195,12 @@ We have \cite{susskind2014quantum}:
  These relationships:
 \begin{itemize}
 	\item remain true if we add angular momenta for many particles;
-	\item are true for spin
-	 \item are relationally invariant.
+	\item are true for spin;
+	\item are relationally invariant'
+	\item explain why $\hslash$ appears in the quantum of angular momentum.
 \end{itemize}
 
-We focus on the $z$-axis ("quantization axis") and introduce two new quantities--raising and lowering operators. Choosing units where $\hslash-1$:
+We focus on the $z$-axis ("quantization axis") and introduce two new quantities--raising and lowering operators. Choosing units where $\hslash=1$:
 
 \begin{align*}
 	L_\pm \triangleq& L_x \pm i L_y \numberthis \label{eq:L_pm} \\

@@ -1270,7 +1270,7 @@ There are two possibilities for the spectrum:
 \end{itemize}
 
 \begin{defn}[Spin]
-	$m_{max}$ is known as the spin. It can be 0. There are no elementary particles known with spin 3, but there are atoms. Similarly no half-spin particle over $\frac{3}{2}$.
+	$m_{max}$ is known as the spin. It can be 0. There are no elementary particles known with spin 3, but there are nuclei. Similarly no half-spin particle over $\frac{3}{2}$.
 \end{defn}
 
 What about $L^2$? If you know $L_z$ at maximum, there will be uncertainty in other two components, so $L^2$ is not quite $m_{max}^2$.
@@ -1279,16 +1279,22 @@ What about $L^2$? If you know $L_z$ at maximum, there will be uncertainty in oth
 	L_- L_+ =& (L_x-iL_y)(L_x+iL_y)\\
 	=& L_x^2 +i L_x L_y -i L_y L_x + L_y^2\\
 	=& L_x^2 + L_y^2 + i[L_x,L_y]\\
-	=& L^2 - L_z^2 + i[Lx,Ly] \numberthis \label{eq:L-:L+}\text{, hence}\\
-	L^2 =& L_- L_+ + L_z^2 \text{, classically, but this is not true for quantum world. }\\
-	(\ref{eq:L-:L+}) \implies& \\
-	 L^2 =& L_- L_+ + L_z^2 -\underbrace{i[Lx,Ly]}_\text{$i^2L_z$ from (\ref{eq:lx:ly})}\text{, in the quantum world}\\
-	 =& L_- L_+ + L_z^2 +L_z\\
+	=& L^2 - L_z^2 + i[L_x,L_y] \numberthis \label{eq:L-:L+}
+\end{align*}
+
+Hence, classically:
+\begin{align*}
+	L^2 =& L_- L_+ + L_z^2
+\end{align*}
+
+This is not true for quantum world! Instead \eqref{eq:L-:L+} implies:
+\begin{align*}
+	 L^2 =& L_- L_+ + L_z^2 -\underbrace{i[L_x,L_y]}_\text{$i^2L_z$ from (\ref{eq:lx:ly})}\text{, in the quantum world}\\
+	=& L_- L_+ + L_z^2 +L_z\\
 	L^2 \ket{m_{max}}=& L_- L_+ \ket{m_{max}} + L_z^2 \ket{m_{max}} +L_z \ket{m_{max}}\\
 	=& (0 +m_{max}^2 + m_{max})\ket{m_{max}} \\
 	=& m_{max} (m_{max}+1)\ket{m_{max}}
 \end{align*}
-
 All states have same value of $\braket{L^2}$. 
 
 \begin{thm}[$L^2$ commutes with all its components.]
@@ -1316,7 +1322,7 @@ All states have same value of $\braket{L^2}$.
 	=& -i L_y L_z -i L_z L_y \text{ from (\ref{eq:ly:lz}). Similarly}\\
 	[L_z^2,L_x] = &L_z [L_z,L_x] + [L_z,L_x] L_z\\
 	=& i L_z L_y  + i L_y L_z \text{ from (\ref{eq:lz:lx}), whence (\ref{eq:L2lx}) yields}\\
-	[L^2,L_x]=&\cancel{[L_x^2,L_x] }+\bcancel{ [L_y^2,L_x]} + \bcancel{[L_z^2,L_x]}
+	[L^2,L_x]=&\cancel{[L_x^2,L_x] }+\bcancel{ [L_y^2,L_x]} + \bcancel{[L_z^2,L_x]}\\
 	=& 0
 	\end{align*}
 \end{proof}
@@ -1325,9 +1331,9 @@ Consider spin $\frac{1}{2}$--call them $\ket{+}$ and  $\ket{-}$.
 \begin{align*}
 e^{i\theta} \alpha \ket{+} + e^{i\theta}\beta \ket{-} \text{, has probability $\alpha^2$ of being in $\ket{+}$}
 \end{align*}
-So can ignore 1 degree of freedom. $\alpha$ and $\beta$ have 2 degrees of freedom each. Phase eliminates one, and $\alpha^2+\beta^2=1$ eliminates one other, leaving two. This is the same as number of degrees of freedom in direction.
+So can ignore 1 degree of freedom. The parameters $\alpha$ and $\beta$ have 2 degrees of freedom each. Phase eliminates one, and $\alpha^2+\beta^2=1$ eliminates one other, leaving two. This is the same as number of degrees of freedom in direction.
 
-Measured value is always $\pm \frac{1}{2}$; average may be zero; it behaves like a classical variable.
+The measured value is always $\pm \frac{1}{2}$; average may be zero; it behaves like a classical variable.
 
 \begin{thm}[Spin statistics]
 	\begin{enumerate}

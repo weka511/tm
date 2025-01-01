@@ -1666,22 +1666,80 @@ The Lagrangian is what specifies a field theory.
 
 \subsection{Quantum Fields}
 
+\subsubsection{The Lagrangian codifies the interaction in the system.}
+
+We have already talked about the scattering of particles, and how it represented by products of fields. Fields are built up out of creation and annihilation operators. Let us start with a field  $\phi^3$, what does that represent in terms of creation and annihilation operators?The field will contain both creation and annihilation operators, $\phi = (a_+ + a_-)$, and, when it is cubed, we will have all sorts of terms, which can annihilate 3 particles, etc. So $\phi^3$ has a meaning in terms of particles coming in and particles going out.
+
 Imagine Lagrangian containing $\phi^3$, where $\phi = (a_+ + a_-)$.
-Figure \ref{fig:phi:3:x} shows the kinds of interaction that may occur. Quadratic terms in Lagrangian give rise to motion, higher powers to interactions: 1 particle $\rightarrow$ 2, 2 particles $\rightarrow$ 1, 0 particles $\rightarrow$ 3, 3 particles $\rightarrow$ 0.
+Figure \ref{fig:phi:3:x} shows the kinds of interaction that may occur.
  
 \begin{figure}[H]
 	\caption{$\phi^3(x)$ gives rise to many possible interactions.}\label{fig:phi:3:x}
-	\includegraphics[width=0.8\textwidth]{phi-3-x}
+	\begin{subfigure}[t]{0.2\textwidth}
+		\caption{One particle going in, two going out}
+		\feynmandiagram[scale=0.5,transform shape][vertical = out1 to in1]{
+			in1--[fermion]c[particle=\(x\)],
+			c--[fermion]out1,
+			c--[fermion]out2,
+		};
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.2\textwidth}
+		\caption{Two particles going in, one out}
+		\feynmandiagram[scale=0.5,transform shape][vertical = out2 to c]{
+			in1--[fermion]c[particle=\(x\)],
+			in2--[fermion]c,
+			c--[fermion]out2,
+			in1--[opacity=0.0]in2
+		};
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.2\textwidth}
+		\caption{Three particles going out from nothing}
+		\feynmandiagram[scale=0.5,transform shape][vertical = out1 to c]{
+		c[particle=\(x\)]--[fermion]out1,
+		c--[fermion]out2,
+		c--[fermion]out3,
+		out1--[opacity=0.0]out2,
+		out1--[opacity=0.0]out3
+	};
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.2\textwidth}
+		\caption{Three particles going in, nothing coming out}
+		\feynmandiagram[scale=0.5,transform shape][vertical = c to in1]{
+			in1--[fermion]c[particle=\(x\)],
+			in2--[fermion]c,
+			in3--[fermion]c,
+			in1--[opacity=0.0]in2,
+			in1--[opacity=0.0]in3
+		};
+	\end{subfigure}
 \end{figure}
+Quadratic terms in Lagrangian give rise to motion, higher powers to interactions. Let us see how the quadratic terms work.
 
-How to change position of particle. We need a pair of operators $\phi(x) \phi(x^\prime)$ to absorb particle at $x$, and re-emit at $x^\prime$--i.e. move particle
+How to change the position of a particle? We need a pair of operators $\phi(x) \phi(x^\prime)$ to absorb particle at $x$, and re-emit at $x^\prime$--i.e. move particle.
 
 \begin{align*}
-(\frac{\partial \phi}{\partial x})^2 =& \frac{\big( \phi(x) - \phi(x^\prime)\big)^2}{...}\\
-=& \frac{\phi(x)^2 + \phi(x^\prime)^2 - 2  \phi(x) \phi(x^\prime)}{...}
+	\frac{1}{2}(\frac{\partial \phi}{\partial x})^2 =& \frac{1}{2}\frac{\big( \phi(x) - \phi(x^\prime)\big)^2}{...}\\
+	=& \frac{\frac{1}{2}\phi(x)^2 + \frac{1}{2}\phi(x^\prime)^2 -  \phi(x) \phi(x^\prime)}{...}
 \end{align*}
 
-Electromagnetic field and Dirac electron.
+The first two terms on the right hand side are not very interesting: they remove a particle at a point, and put it back again. $\phi(x) \phi(x^\prime)$ absorbs a particle at one point and puts it back somewhere else: it \emph{moves} the particle. Quadratic terms move the undisturbed particle: they are connected with free motion. Higher powers bring particles together, to create and annihilate them.
+
+The Lagrangian codifies the interaction in the system.
+
+\begin{figure}[H]
+	\begin{center}
+		\caption[The mass term $m^2\phi^2$]{The mass term $m^2\phi^2$ absorbs particle and re=emits it from the same point: in effect it \emph{counts} particles.}
+		\feynmandiagram[vertical = out1 to in1]{
+			in1--[fermion]c[particle=\(x\)],
+			c--[fermion]out1
+		};
+	\end{center}
+\end{figure}
+
+\subsubsection{Electromagnetic field and Dirac electron.}
 
 \begin{align*}
 	\psi =& c_e^-(\text{+ve energy}) + c_e^-(\text{+ve energy}) \text{ Dirac field}\\
@@ -1871,9 +1929,9 @@ There are terms in the Lagrangian associated with pairs of boxes--the derivative
 (\ref{eq:phi:phi}) gives rise to terms such as:
 \begin{alignat*}{2}
 	e^{- i \sum_{neighbours} \phi(x) \phi(x^\prime)}=1& -&& i \sum_{neighbours} \underbrace{\phi(x) \phi(x^\prime)}_\text{Figure \ref{fig:path-integral5}}\\
-&-&& \frac{1}{2!}\underbrace{\sum_{neighbours} \phi(x) \phi(x^\prime)\sum_{neighbours} \phi(x^{\prime\prime}) \phi(x^{\prime\prime\prime})}_\text{Figure \ref{fig:path-integral7}}\\
-&+&&\underbrace{i\frac{1}{3!}\sum_{neighbours}\phi(..)\phi(..)\sum_{neighbours}\phi(..)\phi(..)\sum_{neighbours}\phi(..)\phi(..)}_\text{Figure \ref{fig:path-integral9}}\\
-&+&& ... \numberthis \label{eq:path:integral:expanded}
+	&-&& \frac{1}{2!}\underbrace{\sum_{neighbours} \phi(x) \phi(x^\prime)\sum_{neighbours} \phi(x^{\prime\prime}) \phi(x^{\prime\prime\prime})}_\text{Figure \ref{fig:path-integral7}}\\
+	&+&&\underbrace{i\frac{1}{3!}\sum_{neighbours}\phi(..)\phi(..)\sum_{neighbours}\phi(..)\phi(..)\sum_{neighbours}\phi(..)\phi(..)}_\text{Figure \ref{fig:path-integral9}}\\
+	&+&& ... \numberthis \label{eq:path:integral:expanded}
 \end{alignat*}
 
 

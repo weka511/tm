@@ -1582,16 +1582,23 @@ For a particle at rest.
 So as with \eqref{eq:rh:dirac:wave:1} and \eqref{eq:lh:dirac:wave} we have positive and negative energy solutions, each of which is a 2 dimensional entity, which is spin. How do we see that this is really spin? We want to see that a positive energy pair is spin, we need to look at angular momentum. We can look at the connection between angular momentum and rotation symmetry, or at conservation of momentum.
 
 We want to show that in any form of collision, where an electron scatters of something else, that if you assign the electron an angular momentum whose description is in terms of the 2-foldness of $\sigma$, that total angular momentum would be conserved.
-\section{Equations of motion of particles and fields}\label{sect:equation:motion}
 
-The equations of motion of fields that describe  particles all come from a Lagrangian. In quantum field theory, Lagrangian describes everything.
+\section{Equations of motion of particles and fields}\label{sect :equation:motion}
+
+A very important concept in particle physics are the field equations, the equations of motion of fields that describe particles, boson fields, fermionic fields, the electromagnetic fields. All these fields satisfy equations. These are more or less wave equations, which involve derivatives with respect to space and to time, and the field itself. How do we code these equations? They all come from a Lagrangian, which contains, in one compact expression, all the fields in a system, and all the degrees of freedom.
 
 \subsection{Review of classical fields}
 
+The Lagrangian of a system of fields
+
 \begin{align*}
-\mathcal{L}=& \mathcal{L}(\phi,\partial_t \phi, \partial_x \phi)\\
-=&\mathcal{L}(\phi,\partial_{\mu} \phi) \text{ in Minkowski space}\\
-\frac{\partial}{\partial t} \frac{\partial \mathcal{L}}{\partial \big(\frac{\partial \phi}{\partial t}\big)}+\sum_i \frac{\partial}{\partial x_i} \frac{\partial \mathcal{L}}{\partial \big(\frac{\partial \phi}{\partial x_i}\big)}=&\frac{\partial \mathcal{L}}{\partial \phi} \text{, equation of motion} \numberthis \label{eq:lagrange}
+	\mathcal{L}=& \mathcal{L}(\phi,\partial_t \phi, \partial_x \phi)\\
+	=&\mathcal{L}(\phi,\partial_{\mu} \phi) \text{ in Minkowski space}
+\end{align*}
+
+The equations of motion are:
+\begin{align*}
+	\frac{\partial}{\partial t} \frac{\partial \mathcal{L}}{\partial \big(\frac{\partial \phi}{\partial t}\big)}+\sum_i \frac{\partial}{\partial x_i} \frac{\partial \mathcal{L}}{\partial \big(\frac{\partial \phi}{\partial x_i}\big)}=&\frac{\partial \mathcal{L}}{\partial \phi} \numberthis \label{eq:lagrange}
 \end{align*}
 
 (If $\mathcal{L}$ depends on several fields, there will be a version of (\ref{eq:lagrange})  for each field.)
@@ -1604,7 +1611,11 @@ Example of $\mathcal{L}$.
 
 Substituting in (\ref{eq:lagrange}):
 \begin{align*}
-	\ddot{\phi} - \frac{\partial^2 \phi}{\partial x^2}  - \frac{\partial^2 \phi}{\partial y^2}  - \frac{\partial^2 \phi}{\partial z^2} =& - \frac{\partial V}{\partial \phi} \text{. The simplest interesting case is:}\\
+	\ddot{\phi} - \frac{\partial^2 \phi}{\partial x^2}  - \frac{\partial^2 \phi}{\partial y^2}  - \frac{\partial^2 \phi}{\partial z^2} =& - \frac{\partial V}{\partial \phi}
+\end{align*}
+
+The simplest interesting case is:
+\begin{align*}
 	V(\phi) =& \frac{m^2 \phi^2}{2}\\
 	\ddot{\phi} - \frac{\partial^2 \phi}{\partial x^2}  - \frac{\partial^2 \phi}{\partial y^2}  - \frac{\partial^2 \phi}{\partial z^2} =& - m^2 \phi \numberthis \label{eq:simplest:non:trivial}
 \end{align*}

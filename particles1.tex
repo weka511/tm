@@ -1741,45 +1741,91 @@ The Lagrangian codifies the interaction in the system.
 
 \subsubsection{Electromagnetic field and Dirac electron.}
 
+This is the basic process of \glsdesc{gls:QED}, which is a description of electrons and photons. Electrons are described by the Dirac field. $\Psi$ is built up from annihilation operators:
 \begin{align*}
-	\psi =& c_e^-(\text{+ve energy}) + c_e^-(\text{+ve energy}) \text{ Dirac field}\\
-	\psi =& c_e^-(\text{+ve energy}) + c_p^+(\text{+ve energy}) \text { Dirac sea--$p$ for positron}\\
-	\psi^\dagger =& c_e^+(\text{+ve energy}) + c_e^+(\text{+ve energy})\\
-	=& c_e^+(\text{+ve energy}) + c_p^-(\text{+ve energy})
+	\Psi =& c_e^-(\text{+ve energy}) + c_e^-(\text{-ve energy})\\
+	\Psi^\dagger =& c_e^+(\text{+ve energy}) + c_e^+(\text{-ve energy}
+\end{align*}
+Now an annihilation operator for a particle of negative energy can be relabeled as a creation operator for an antiparticle of positive energy (since a positron is a hole in the Dirac Sea).
+
+\begin{align*}
+	\Psi =& c_e^-(\text{+ve energy}) + c_p^+(\text{+ve energy}) \\
+	\Psi^\dagger =&  c_e^+(\text{+ve energy}) + c_p^-(\text{+ve energy})
 \end{align*}
 
-Basic interaction of electrodynamics.
+Now the basic interaction of electrodynamics is:
 \begin{align*}
-	e \big( \psi^\dagger \psi A_0 + 	\underbrace{\psi^\dagger \alpha_i  \psi}_\text{vector from $\psi$} A_i \big) \text{ polarization of photon $A$} \numberthis \label{eq:basic:interaction}
+	e \big( \psi^\dagger \psi A_0 + 	\psi^\dagger \alpha_i  \psi A_i \big)  \numberthis \label{eq:basic:interaction}
 \end{align*}
+Where $A$ is the field operator for photons. Photons have a directionality, their polarization. We take the inner product of $A$ and the 4-vector $(\psi^\dagger \psi, \psi^\dagger \alpha_i  \psi) $ to make a scalar. $A$ contains creation and annihilation operators for photons.
 
 \begin{figure}[H]
-	\caption{Interactions arising from Lagrangian (\ref{eq:basic:interaction})}
-	\begin{subfigure}{0.48\textwidth}
-		\caption{Annihilation + 2 creation: photon emitted}
-		\includegraphics[width=0.7\textwidth]{em-dirac1}
+	\caption{Examples of interactions arising from Lagrangian--Equation \eqref{eq:basic:interaction}}\label{fig:psi:daggee:psi:A}
+	\begin{subfigure}[t]{0.3\textwidth}
+		\begin{center}
+			\caption{Annihilation + 2 creation: photon emitted}
+			\feynmandiagram[scale=0.5,transform shape][vertical = out1 to in1]{
+			in1[particle=\(e\)]--[fermion]c,
+			c--[fermion]out1,
+			c--[photon]out2,
+			out1--[opacity=0.0]out2
+			};
+		\end{center}
 	\end{subfigure}
-	\begin{subfigure}{0.48\textwidth}
-		\caption{2 Annihilation +  creation: photon absorbed}
-		\includegraphics[width=0.7\textwidth]{em-dirac2}
+	\hfill
+	\begin{subfigure}[t]{0.3\textwidth}
+		\begin{center}
+			\caption{2 Annihilation +  creation: photon absorbed}
+			\feynmandiagram[scale=0.5,transform shape][vertical = out1 to in1]{
+				in1[particle=\(e\)]--[fermion]c,
+				c--[fermion]out1,
+				in2--[photon]c,
+				in1--[opacity=0.0]in2
+			};
+		\end{center}
 	\end{subfigure}
-	\begin{subfigure}{0.48\textwidth}
-		\caption{2 Annihilation +  creation: Electron + positron produces photon. NB, by convetion, positron is drawn with downward arrow.}
-		\includegraphics[width=0.7\textwidth]{em-dirac3}
+	\hfill
+	\begin{subfigure}[t]{0.3\textwidth}
+		\begin{center}
+			\caption{2 Annihilation +  creation: Electron + positron produce photon.}
+			\feynmandiagram[scale=0.5,transform shape][vertical = out1 to c]{
+				in1[particle=\(e^-\)]--[fermion]c,
+				in2[particle=\(e^+\)]--[anti fermion]c,
+				c--[photon]out1,
+				in1--[opacity=0.0]in2,
+			};
+		\end{center}
 	\end{subfigure}
-	\begin{subfigure}{0.48\textwidth}
-		\caption{Photon absorbed, electron and positron created.}
-		\includegraphics[width=0.7\textwidth]{em-dirac4}
+	\begin{subfigure}{0.3\textwidth}
+		\begin{center}
+			\caption{Photon absorbed, electron and positron created.}
+			\feynmandiagram[scale=0.5,transform shape][vertical = out1 to c]{
+				in1--[photon]c,
+				c--[fermion]out1[particle=\(e^-\)],
+				c--[anti fermion]out2[particle=\(e^+\)],
+				out1--[opacity=0.0]out2,
+			};
+		\end{center}
 	\end{subfigure}
-	\begin{subfigure}{0.48\textwidth}
-		\caption{Photon, electron and positron absorbed (energy and momentum not conserved!).}\label{fig:em:dirac5}
-		\includegraphics[width=0.7\textwidth]{em-dirac5}
+	\hfill
+	\begin{subfigure}{0.3\textwidth}
+		\begin{center}
+			\caption{Photon, electron and positron absorbed (energy and momentum not conserved!).}\label{fig:em:dirac5}
+			\feynmandiagram[scale=0.5,transform shape][vertical =c to in2]{
+				in1[particle=\(e^-\)]--[fermion]c,
+				in2[particle=\(e^+\)]--[anti fermion]c,
+				in3--[photon]c,
+				in1--[opacity=0.0]in2,
+				in2--[opacity=0.0]in3,
+			};
+		\end{center}
 	\end{subfigure}
 \end{figure}
 
-$e$ is strength of interaction, probability of interaction $e^2$.
+The processes depicted in Figure \ref{fig:psi:daggee:psi:A} are all produced by $ \psi^\dagger \psi A$, and they all have the same numerical coefficient:
+$e$, the electric charge of the electron, is the strength of interaction; the probability of interaction is $e^2$.
 
-Remember that energy conservation arose from integrating over all time, and momentum conservation from integrating over space. If we integrate (\ref{eq:basic:interaction}) over all space and all time,  energy and momentum will both be conserved, which rules out the process depicted in Figure \ref{fig:em:dirac5}.
+Remember that energy conservation arose from integrating over all time, and momentum conservation from integrating over space. If we integrate \eqref{eq:basic:interaction} over all space and all time,  energy and momentum will both be conserved, which rules out the process depicted in Figure \ref{fig:em:dirac5}.
 
 Protons, Neutrons, Pi mesons. Pions are scalar particles, and they come in 3 types, $\pi_+$, $\pi_-$, $\pi_0$.
 

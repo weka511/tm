@@ -1755,12 +1755,12 @@ Now an annihilation operator for a particle of negative energy can be relabeled 
 
 Now the basic interaction of electrodynamics is:
 \begin{align*}
-	e \big( \psi^\dagger \psi A_0 + 	\psi^\dagger \alpha_i  \psi A_i \big)  \numberthis \label{eq:basic:interaction}
+	e \big( \Psi^\dagger \Psi A_0 + 	\Psi^\dagger \alpha_i  \Psi A_i \big)  \numberthis \label{eq:basic:interaction}
 \end{align*}
-Where $A$ is the field operator for photons. Photons have a directionality, their polarization. We take the inner product of $A$ and the 4-vector $(\psi^\dagger \psi, \psi^\dagger \alpha_i  \psi) $ to make a scalar. $A$ contains creation and annihilation operators for photons.
+Where $A$ is the field operator for photons. Photons have a directionality, their polarization. We take the inner product of $A$ and the 4-vector $(\Psi^\dagger \Psi, \Psi^\dagger \alpha_i  \Psi) $ to make a scalar. $A$ contains creation and annihilation operators for photons.
 
 \begin{figure}[H]
-	\caption{Examples of interactions arising from Lagrangian--Equation \eqref{eq:basic:interaction}}\label{fig:psi:daggee:psi:A}
+	\caption{Examples of interactions arising from Lagrangian--Equation \eqref{eq:basic:interaction}}\label{fig:psi:dagger:psi:A}
 	\begin{subfigure}[t]{0.3\textwidth}
 		\begin{center}
 			\caption{Annihilation + 2 creation: photon emitted}
@@ -1822,41 +1822,58 @@ Where $A$ is the field operator for photons. Photons have a directionality, thei
 	\end{subfigure}
 \end{figure}
 
-The processes depicted in Figure \ref{fig:psi:daggee:psi:A} are all produced by $ \psi^\dagger \psi A$, and they all have the same numerical coefficient:
-$e$, the electric charge of the electron, is the strength of interaction; the probability of interaction is $e^2$.
+The processes depicted in Figure \ref{fig:psi:dagger:psi:A} are all produced by $ \Psi^\dagger \Psi A$, and they all have the same numerical coefficient:
+$e$, the electric charge of the electron, is the strength of interaction; the probability of interaction is $e^2$ (Consider an electron hitting a wall: $e$ is the dimensionless probability that it emits a photon).
 
-Remember that energy conservation arose from integrating over all time, and momentum conservation from integrating over space. If we integrate \eqref{eq:basic:interaction} over all space and all time,  energy and momentum will both be conserved, which rules out the process depicted in Figure \ref{fig:em:dirac5}.
+Remember that energy conservation arose from integrating over all time, and momentum conservation from integrating over space. If we integrate \eqref{eq:basic:interaction} over all space and all time,  energy and momentum will both be conserved, which rules out the process depicted in Figure \ref{fig:em:dirac5}. So once we have drawn Figure \ref{fig:psi:dagger:psi:A} and worked out the amplitudes, we still need to integrate over all time and space to ensure that energy and momentum will be conserved.
 
-Protons, Neutrons, Pi mesons. Pions are scalar particles, and they come in 3 types, $\pi_+$, $\pi_-$, $\pi_0$.
+\subsubsection{Protons, Neutrons, and Pi mesons}.
+
+Protons, neutrons, and pi mesons form a system that is similar to \glsdesc{gls:QED} in spirit. Protons and neutrons are Fermions. Pions are scalar particles, and they come in 3 varieties, $\pi_+$, $\pi_-$, and $\pi_0$.
 
 \begin{table}[H]
 	\begin{center}
 		\caption{Protons, Neutrons, Pi mesons}
 		\begin{tabular}{|l|l|} \hline
 			Operators &Description\\ \hline
-			$\psi_p$, $\psi^\dagger_p$& create and annihilate proton\\ \hline
-		    $\psi_n$, $\psi^\dagger_n$& create and annihilate neutron\\ \hline
+			$\Psi_p$, $\Psi^\dagger_p$& create and annihilate proton\\ \hline
+		    $\Psi_n$, $\Psi^\dagger_n$& create and annihilate neutron\\ \hline
 			$\pi_+$& annihilate pion\\ \hline
 			$\pi_-$&annihilate pion\\ \hline
 			$\pi_0$&annihilate pion\\ \hline
-			$\psi^\dagger_p \psi_n \pi_+$&Absorb pion and neutron, emit proton\\ \hline
-			$\psi^\dagger_n \psi_p \pi_-$&Absorb pion and proton, emit neutron\\ \hline
-			$\psi^\dagger_p \psi_p \pi_0$&Absorb pion and proton, emit proton\\ \hline
-			$\psi^\dagger_n \psi_n \pi_0$&Absorb pion and neutron, emit neutron \\ \hline
+			$\Psi^\dagger_p \Psi_n \pi_+$&Absorb pion and neutron, emit proton\\ \hline
+			$\Psi^\dagger_n \Psi_p \pi_-$&Absorb pion and proton, emit neutron\\ \hline
+			$\Psi^\dagger_p \Psi_p \pi_0$&Absorb pion and proton, emit proton\\ \hline
+			$\Psi^\dagger_n \Psi_n \pi_0$&Absorb pion and neutron, emit neutron \\ \hline
 		\end{tabular}
 	\end{center}
 \end{table}
-The fundamental process of course involve quarks; if energy is high enough to break up protons, cannot use proton fields..
+These aren't really fundamental processes; the real thing involve quarks, but the description with proton, neutron and mesons fields worked when we didn't know about quarks, or when energies are low enough. If the energy is high enough to break up protons, we cannot use proton fields.
 
 \begin{figure}[H]
-	\caption{Two processes from the same interaction.}
-	\begin{subfigure}{0.45\textwidth}
-		\caption{Proton $\rightarrow$ neutron + pion}
-		\includegraphics[width=0.8\textwidth]{pion1}
+	\caption{The same interaction can describe several processes: $\Psi^\dagger_n \pi^\dagger_+ \Psi_n$}
+	\begin{subfigure}[p]{0.45\textwidth}
+		\begin{center}
+			\caption{Proton $\rightarrow$ neutron + pion}
+			\feynmandiagram[vertical =out1 to in1]{
+				in1[particle=\(p\)]--[fermion]c,
+				c--[fermion]out1[particle=\(n\)],
+				c--[boson]out2[particle=\(\pi^+\)],
+				out1--[opacity=0.0]out2
+			};
+		\end{center}
 	\end{subfigure}
-	\begin{subfigure}{0.45\textwidth}
-		\caption{Proton + antineutron $\rightarrow$ pion}
-		\includegraphics[width=0.8\textwidth]{pion2}
+	\hfill
+	\begin{subfigure}[p]{0.45\textwidth}
+		\begin{center}
+			\caption{Proton + antineutron $\rightarrow$ pion}
+			\feynmandiagram[vertical =out1 to in1]{
+				in1[particle=\(p\)]--[fermion]c,
+				in2[particle=\(\bar{n}\)]--[anti fermion]c,
+				c--[boson]out1[particle=\(\pi^+\)],
+				in1--[opacity=0.1]in2
+			};
+		\end{center}
 	\end{subfigure}
 \end{figure}
 

@@ -1877,12 +1877,19 @@ These aren't really fundamental processes; the real thing involve quarks, but th
 	\end{subfigure}
 \end{figure}
 
-The Lagrangian describes things that happen at a point, or a pair of neighbouring points. Figure \ref{fig:proton:electron:photon} shows an interaction arising from a product of terms. There is no action at a distance.
+The Lagrangian describes things that happen at a point, or a pair of neighbouring points. Figure \ref{fig:proton:electron:photon} shows an interaction arising from a product of terms. There is no action at a distance in \glsdesc{gls:QFT}.
 \begin{figure}[H]
-	\caption[Proton photon electron interaction]{Proton photon electron interaction--product of two separate terms in Lagrangian}\label{fig:proton:electron:photon}
-	\includegraphics[width=0.8\textwidth]{proton-electron-photon}
+	\begin{center}
+		\caption[Proton photon electron interaction]{Proton photon electron interaction--product of two separate terms in Lagrangian. The interaction between the proton and the photon, and the electron and the photon, occur at two separate points: the proton needs to be moved from one point to the other by a quadratic term, which builds up (e.g.) $xy$ out of infinitesimal moves.}\label{fig:proton:electron:photon}
+		\feynmandiagram[vertical = out1 to in1]{
+			in1[particle=\(e\)]--[fermion]c1[particle=y]--[fermion]out1[particle=\(e\)],
+			in2[particle=\(p\)]--[fermion]c2[particle=x]--[fermion]out2[particle=\(p\)],
+			c1--[photon]c2,
+			in1--[opacity=0]in2
+		};
+	\end{center}
 \end{figure}
-
+ 
 NB: creation operators are functions of P or X, never both (uncertainty principle). They are related through Fourier transforms, which are the essence of the uncertainty principle.
 
 $\bra{0}\psi^\dagger\psi^\dagger\psi^\dagger...\mathcal{L}\mathcal{L}\mathcal{L}...\psi\psi\psi\ket{0}$
@@ -1896,7 +1903,7 @@ We get an infinite number of places where 1 thing, 2 things, etc, happen.
 
 The art form is figuring out the Lagrangian; then \gls{gls:QFT} becomes a precise tool.
 
-Often can ignore parts of Lagrangian: e.g. quarks don't have much to do with electrons. QFT may be a coarse grained description of something else.
+Often we can ignore parts of Lagrangian: e.g. quarks don't have much to do with electrons. \gls{gls:QFT} may be a coarse grained description of something else.
  
 
 \section{Field Lagrangians and Path Integrals}
@@ -2073,13 +2080,25 @@ This weights path by $m^2$--Figure \ref{fig:path:integral:mass}. If not used we 
 		\caption{Particle emitted and later reabsorbed.}\label{fig:path:integral:cubic:split}
 		\includegraphics[width=0.8\textwidth]{path-integral-cubic-split}
 	\end{subfigure}
-	\begin{subfigure}{0.4\textwidth}
-		\caption{Electron emits and absorbs photon.}\label{fig:path:integral:cubic:split1}
-		\includegraphics[width=0.5\textwidth]{path-integral-cubic-split1}
+	\begin{subfigure}[t]{0.4\textwidth}
+		\begin{center}
+			\caption{Electron emits and absorbs photon.}\label{fig:path:integral:cubic:split1}
+			\feynmandiagram[vertical = out1 to in1]{
+				in1--[fermion]a--[fermion]b--[fermion]out1,
+				a--[photon,half right]b,
+			};
+		\end{center}
 	\end{subfigure}
-	\begin{subfigure}{0.4\textwidth}
+	\hfill
+	\begin{subfigure}[t]{0.4\textwidth}
 		\caption{More complex version of Figure \ref{fig:path:integral:cubic:split1}.}\label{fig:path:integral:cubic:split2}
-		\includegraphics[width=0.5\textwidth]{path-integral-cubic-split2}
+		\feynmandiagram[vertical = d to a]{
+			in1--[fermion]a--[fermion]b--[fermion]c--[fermion]d--[fermion]out1,
+			b--[photon,half right]c,
+			a--[photon]e--[fermion,quarter right]f0--[fermion,quarter right]f1--[photon]d,
+			e--[anti fermion,quarter left,looseness=2]e1--[anti fermion,quarter left,looseness=2]f1,
+			f0--[photon]e1,
+		};
 	\end{subfigure}
 \end{figure}
 

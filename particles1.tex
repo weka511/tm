@@ -1897,7 +1897,11 @@ A single field can absorb \emph{or} spit out a particle; a product of two fields
 The Heisenberg uncertainty principle says that we either describe things in terms of position or momentum, not both. The creation operators and annihilation operators are functions of either position or momentum, never both. The creation operator $\Psi(x)=\sum_{p}a_pe^{ipx}$. We never have $\Psi(p,x)$, i.e. we never create at bth $p$ and $x$. The Fourier transform is the essence of the uncertainty principle.
 NB: creation operators are functions of P or X, never both (). They are related through Fourier transforms, which are the essence of the uncertainty principle.
 
-An experiment looks like this: $\bra{0}\psi^\dagger\psi^\dagger\psi^\dagger...\mathcal{L}\mathcal{L}\mathcal{L}...\psi\psi\psi\ket{0}$. We start with the vacuum, do stuff with Lagrangians, then detect the results. The interactions are coded in simple form in the Lagrangian. This makes it easy to deal with symmetries. For example, in \eqref{eq:basic:interaction}, we can multiply $\Psi$ by $e^{i\theta}$, $\Psi^\dagger$ by $e^{-i\theta}$, and the lagrangian remains unchanged.
+An experiment looks like this: $\bra{0}\psi^\dagger\psi^\dagger\psi^\dagger...\mathcal{L}\mathcal{L}\mathcal{L}...\psi\psi\psi\ket{0}$. We start with the vacuum, do stuff with Lagrangians, then detect the results. The interactions are coded in simple form in the Lagrangian. This makes it easy to deal with symmetries. For example, in \eqref{eq:basic:interaction}, we can multiply $\Psi$ by $e^{i\theta}$, $\Psi^\dagger$ by $e^{-i\theta}$, and the Lagrangian remains unchanged: this is a statement of charge conservation, equal numbers of $\Psi$  and  $\Psi^\dagger$. We multiply lots of Lagrangians.
+
+There was a question about eigenvalues and eigenvectors of the field operators. The eigenvectors of the electromagnetic field are measurable. Now creation and annihilation operators don't commute, so field operators don't commute. Now $[\Phi(x),\Phi(y)]\ne 0$ for $x\ne y$: you can not simultaneously measure the field operator at two different positions.
+
+Can we simplify the product of Lagrangians?
 
 \begin{align*}
 	\Pi_i& \big(1+\mathcal{L}_{interaction}(x_i)\big)\\
@@ -1906,9 +1910,9 @@ An experiment looks like this: $\bra{0}\psi^\dagger\psi^\dagger\psi^\dagger...\m
 
 We get an infinite number of places where 1 thing, 2 things, etc, happen.
 
-The art form is figuring out the Lagrangian; then \gls{gls:QFT} becomes a precise tool.
+The art form is figuring out the Lagrangian from experimental data; then \glsdesc{gls:QFT} becomes a precise tool.
 
-Often we can ignore parts of Lagrangian: e.g. quarks don't have much to do with electrons. \gls{gls:QFT} may be a coarse grained description of something else.
+Often we can ignore parts of Lagrangian: e.g. quarks don't have much to do with electrons, so we can ignore them in \glsdesc{gls:QED}. LS suggested that \glsdesc{gls:QFT} may be a coarse grained description of something else.
  
 
 \section{Field Lagrangians and Path Integrals}

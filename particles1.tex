@@ -2003,6 +2003,8 @@ There are two ways to think of quantum field theory, in terms of fields, and in 
 	\end{center}
 \end{figure}
 
+
+
 Now we have the following approximation for small $\epsilon$
 \begin{align*}
 	1 + \epsilon \approx &e^\epsilon= 1 + \frac{\epsilon}{1!} + \frac{\epsilon^2}{2!}  + \frac{\epsilon^3}{3!} +...\\
@@ -2017,12 +2019,18 @@ Let's forget particles for a moment and think of fields.
 
 Our question is now: if initial condition matches our initial configuration of particles, and final condition matches desired configuration, what is the amplitude? Figure \ref{fig:path-integral3} depicts a particle moving in one history.
 
+\subsection{Lattice Gauge Theory}
+
+This divides the world into a lattice. It is a very effective tool, but it took 30 years to develop the computer technology. The first part was setting up the rules. How do you know when you have sampled enough of the space?
+
 \begin{figure}[H]
 	\begin{center}
 		\caption[Particle moving]{The start of the arrow represents an annihilation operator in one cell, the head in its neighbour. Multiplying the actions amounts to movement from one cell to the next}\label{fig:path-integral3}
 		\begin{tikzpicture}
 			\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,5.5); 
 			\draw[->,thick] (1.25,4.25)--(1.75,4.25);
+			\filldraw (1.25,4.25) circle (3pt);
+			\filldraw (1.75,4.25) circle (3pt);
 		\end{tikzpicture}
 	\end{center}
 \end{figure}
@@ -2046,19 +2054,35 @@ where $x$ and $x^{\prime}$ are neighbouring points.
 
 \begin{figure}[H]
 	\caption{Rules for Path Integrals}
-	\begin{subfigure}{0.45\textwidth}
+	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Create at one point, annihilate at neighbour}\label{fig:path-integral5}
-		\includegraphics[width=1.0\textwidth]{path-integral5}
+		\begin{tikzpicture}
+			\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,5.5); 
+			\draw[->,thick] (1.25,4.25)--(1.75,4.25);
+			\filldraw (1.25,4.25) circle (3pt);
+			\filldraw (1.75,4.25) circle (3pt);
+		\end{tikzpicture}
 	\end{subfigure}
-	\begin{subfigure}{0.45\textwidth}
+	\hfill
+	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{A dangling endpoint is illegal unless one endpoint creates, other annihilates: since we are only putting particles in from initial state and removing from final, this is illegal.}\label{fig:path-integral4}
-		\includegraphics[width=1.0\textwidth]{path-integral4}
+		\begin{tikzpicture}
+			\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,5.5); 
+			\draw[->,thick] (1.25,4.25)--(1.75,4.25);
+			\draw[thick] (1.25,3.25)--(1.25,4.25);
+			\draw[thick] (0.75,3.25)--(1.25,3.25);
+			\draw[thick] (0.75,2.25)--(0.75,3.25);
+		\end{tikzpicture}
 	\end{subfigure}
-	\begin{subfigure}{0.45\textwidth}
-		\caption{The only way Figure \ref{fig:path-integral5} can contribute is if space is only two layers thick.}\label{fig:path-integral6}
-		\includegraphics[width=1.0\textwidth]{path-integral6}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{The only way Figure \ref{fig:path-integral4} can contribute is if space is only two layers thick.}\label{fig:path-integral6}
+		\begin{tikzpicture}
+			\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,1.0); 
+			\draw[->,thick] (4.25,0.25)--(4.25,0.75);
+		\end{tikzpicture}
 	\end{subfigure}
-	\begin{subfigure}{0.45\textwidth}
+	\hfill
+	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{What about thicker space? How to we get from \ref{fig:path-integral6} to here? We need the quadratic term in (\ref{eq:path:integral:expanded})}\label{fig:path-integral7}
 		\includegraphics[width=1.0\textwidth]{path-integral7}
 	\end{subfigure}

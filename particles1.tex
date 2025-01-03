@@ -1975,6 +1975,7 @@ Imagine starting systems with field $\phi(x)$, and asking for probability of $\p
 \end{align*}
 summed over all possible histories between $\phi(x)$ and $\phi^\prime(x)$.
 
+\subsection{The notion of a Path Integral}
 \begin{figure}[H]
 	\begin{center}
 		\caption[The notion of a Path Integral]{Start with an initial configuration of the field and look at some final configuration, and ask: if I start with $\phi(x)$, and detect the field at some later time, what is the probability of detecting $\phi^\prime(x)$. The amplitude is the sum, over all ways of interpolating between $\phi(x)$ and $\phi^\prime(x)$, i.e. the sum over all possible histories, of $e^{-\frac{i}{\hslash} \int dx dy dz dt\mathcal{L}(\phi,\partial \phi) }$. }\label{fig:path-integral1}
@@ -1990,22 +1991,9 @@ summed over all possible histories between $\phi(x)$ and $\phi^\prime(x)$.
 
 There are two ways to think of quantum field theory, in terms of fields, and in terms of particles. What if we specify field quanta (particles)? We ask the probability of some specified particle content at a later time. The answer involves a path integral. Start by partitioning space into cells--Figure \ref{fig:path-integral2}--and think about the value of the field in each cell. We compute:
 \begin{align*}
-	\Pi_{i\in cells}(1-\frac{i}{\hslash} \mathcal{L_i}a^4) \text{, where $a^4$ is volume of a cell.}
+	\Pi_{i\in cells}(1-\frac{i}{\hslash} \underbrace{\mathcal{L}_i a^4}_\text{action}) \text{, where $a^4$ is volume of a cell.}
 \end{align*}
  
-Now we have the following approximation for small $\epsilon$
-\begin{align*}
-	1 + \epsilon \approx &e^\epsilon\\
-	\approx& 1 + \frac{\epsilon}{1!} + \frac{\epsilon^2}{2!}  + \frac{\epsilon^3}{3!} +...\\
-\end{align*}
-
-\begin{align*}
-	\sum_{histories} e^{-\frac{i}{\hslash} \int dx dy dz dt\mathcal{L}(\phi,\partial \phi) } =& \sum_{histories} e^{-\frac{i}{\hslash} A_i } \text{, where $A_i$ is action in $i$th cell}\\
-	=& \sum_{histories} \Pi_i e^{-\frac{i}{\hslash} A_i }
-\end{align*}
-
-Let's forget particles for a moment and think of fields.
-
 \begin{figure}[H]
 	\begin{center}
 		\caption[Space partitioned into cells]{Space partitioned into cells. Initial conditions in bottom row, final in top. We consider all possible histories that match initial and final conditions. NB: functions aren't necessarily analytic or even continuous.}\label{fig:path-integral2}
@@ -2015,27 +2003,46 @@ Let's forget particles for a moment and think of fields.
 	\end{center}
 \end{figure}
 
+Now we have the following approximation for small $\epsilon$
+\begin{align*}
+	1 + \epsilon \approx &e^\epsilon= 1 + \frac{\epsilon}{1!} + \frac{\epsilon^2}{2!}  + \frac{\epsilon^3}{3!} +...\\
+\end{align*}
+
+\begin{align*}
+	\sum_{histories} e^{-\frac{i}{\hslash} \int dx dy dz dt\mathcal{L}(\phi,\partial \phi) } =& \sum_{histories} e^{-\frac{i}{\hslash} \sum_i A_i } \text{, where $A_i$ is action in $i$th cell}\\
+	=& \sum_{histories} \Pi_i e^{-\frac{i}{\hslash} A_i } \numberthis \label{eq:sum:actions}
+\end{align*}
+
+Let's forget particles for a moment and think of fields.
+
 Our question is now: if initial condition matches our initial configuration of particles, and final condition matches desired configuration, what is the amplitude? Figure \ref{fig:path-integral3} depicts a particle moving in one history.
 
 \begin{figure}[H]
-	\caption[Particle moving]{Creation operator in one cell, annihilation in neighbour amounts to movement}\label{fig:path-integral3}
-	\includegraphics[width=0.8\textwidth]{path-integral3}
+	\begin{center}
+		\caption[Particle moving]{The start of the arrow represents an annihilation operator in one cell, the head in its neighbour. Multiplying the actions amounts to movement from one cell to the next}\label{fig:path-integral3}
+		\begin{tikzpicture}
+			\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,5.5); 
+			\draw[->,thick] (1.25,4.25)--(1.75,4.25);
+		\end{tikzpicture}
+	\end{center}
 \end{figure}
-
-There are terms in the Lagrangian associated with pairs of boxes--the derivatives:
+ 
+There are terms in the Lagrangian associated with not one box but with pairs of boxes in Figure \ref{fig:path-integral3}--the derivatives. Think of \eqref{eq:sum:actions} being computed over pairs of cells, as well as cells.
 \begin{align*}
 	\frac{1}{2}(\partial_t \phi)^2 \rightarrow& \frac{1}{2}\frac{(\phi(t,x)-\phi(t^\prime,x))^2}{...}\\
 	\frac{1}{2}(\partial_x \phi)^2 \rightarrow& \frac{1}{2}\frac{(\phi(t,x)-\phi(t,x^\prime))^2}{...} \numberthis \label{eq:phi:phi}
 \end{align*}
-(\ref{eq:phi:phi}) gives rise to terms such as:
+
+\eqref{eq:phi:phi} gives rise to terms such as:
 \begin{alignat*}{2}
 	e^{- i \sum_{neighbours} \phi(x) \phi(x^\prime)}=1& -&& i \sum_{neighbours} \underbrace{\phi(x) \phi(x^\prime)}_\text{Figure \ref{fig:path-integral5}}\\
 	&-&& \frac{1}{2!}\underbrace{\sum_{neighbours} \phi(x) \phi(x^\prime)\sum_{neighbours} \phi(x^{\prime\prime}) \phi(x^{\prime\prime\prime})}_\text{Figure \ref{fig:path-integral7}}\\
 	&+&&\underbrace{i\frac{1}{3!}\sum_{neighbours}\phi(..)\phi(..)\sum_{neighbours}\phi(..)\phi(..)\sum_{neighbours}\phi(..)\phi(..)}_\text{Figure \ref{fig:path-integral9}}\\
 	&+&& ... \numberthis \label{eq:path:integral:expanded}
 \end{alignat*}
+where $x$ and $x^{\prime}$ are neighbouring points.
 
-
+\subsection{Rules for Path Integrals}
 
 \begin{figure}[H]
 	\caption{Rules for Path Integrals}

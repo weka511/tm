@@ -1917,7 +1917,13 @@ Often we can ignore parts of Lagrangian: e.g. quarks don't have much to do with 
 
 \section{Field Lagrangians and Path Integrals}
 
-The basic technique that Lecture \ref{sect:equation:motion} alluded to is called the \emph{path integral method of quantum mechanics}. It is the most direct route to the theory of particle interactions based on Feynman diagrams. The path integral is the quantum mechanical version of the Principle of Least Action\cite{susskind2013quantum}. If we think of a classical Newtonian particle, its motion from one point of space-time to another is determined by a Lagrangian $\mathcal{L}(\dot{X},X)$. We use the Lagrangian to construct the Action. 
+The basic technique that Lecture \ref{sect:equation:motion} alluded to is called the \emph{path integral method of quantum mechanics}. It is the most direct route to the theory of particle interactions based on Feynman diagrams. 
+
+\subsection{The Action Principle}
+
+The path integral is the quantum mechanical version of the Principle of Least Action\cite{susskind2013quantum}. If we think of a classical Newtonian particle, its motion from one point of space-time to another is determined by a Lagrangian $\mathcal{L}(\dot{X},X)$. We use the Lagrangian to construct the Action. 
+
+\subsubsection{Classical Action}
 
 \begin{defn}[Classical Action of Path]
 	For every trajectory, $P$ from the initial point to the final point, whether or not the trajectory is a solution to Newton's Laws of motion,  the Classical Action is: 
@@ -1927,7 +1933,11 @@ The basic technique that Lecture \ref{sect:equation:motion} alluded to is called
 \end{defn}
 
 
-The classical form of the Principle of Least Action is that the true trajectory minimizes the action. We can use the calculus of variations to derive differential equations which satisfy Newton's Laws. The same idea works in classical field theory, where $\mathcal{L}=\mathcal{L}(\phi,\partial_\mu\phi)$. The theory of relativity requires that the Lagrangian be a scalar\cite{susskind2017special}.
+The classical form of the Principle of Least Action is that the true trajectory minimizes the action. We can use the calculus of variations to derive differential equations which satisfy Newton's Laws.
+
+\subsubsection{Classical Action--Field Theory}
+
+The same idea works in classical field theory, where $\mathcal{L}=\mathcal{L}(\phi,\partial_\mu\phi)$. The theory of relativity requires that the Lagrangian be a scalar\cite{susskind2017special}.
 
 \begin{defn}[Action over Region]
 	For a region of spaces time, $R$,  the Action is: 
@@ -1936,7 +1946,9 @@ The classical form of the Principle of Least Action is that the true trajectory 
 	\end{align*}
 \end{defn}
 
-The analogue of the starting point for a particle is the initial value of the field. If we prescribe the starting and final values of the field, we can ask whether there is a solution that starts with starting values, and ask whether there is a solution that minimizes the action. The principle of least action states that the correct value of the field is the one that minimizes the action. So the original principal of least action gets extended to a space-time principal of least action, where the degrees of freedom are fields. NB, we are looking for a way to interpolate the field which minimizes the Action.
+The analogue of the starting point for a particle is the value of the field on the initial surface. If we prescribe the starting and final values of the field, we can ask whether there is a solution that starts with starting values, and ask whether there is a solution that minimizes the action. The principle of least action states that the correct value of the field is the one that minimizes the action. So the original principal of least action gets extended to a space-time principal of least action, where the degrees of freedom are fields. 
+
+\subsubsection{Action in Quantum Mechanics}
 
 We now look at the quantum mechanical use of Action: \emph{we won't attempt to derive the classical version from the quantum mechanical version.}
 
@@ -1948,14 +1960,14 @@ Feynman's rule is:
 	Amplitude =& \sum_{Histories} e^{-\frac{i}{\hslash} \int \mathcal{L} dt}
 \end{align*}
 
-where the sum is taken over all classically \emph{possible} histories--Figure \ref{fig:sum:histories}--i.e. they can not go back in time for non-relativistic QM. Probability is the square of the magnitude of the Amplitude.
+where the sum is taken over all classically \emph{possible} histories--Figure \ref{fig:sum:histories} (for non-relativistic \glsdesc{gls:QM} they can not go back in time). The probability is the square of the magnitude of the Amplitude.
 
 \begin{figure}[H]
 	\caption{Sum over histories}\label{fig:sum:histories}
 	\includegraphics[width=0.8\textwidth]{sum-histories}
 \end{figure}
 
-
+\subsubsection{Action Principle in Quantum Field Theory}
 
 Imagine starting systems with field $\phi(x)$, and asking for probability of $\phi^\prime(x)$ at some later time--Figure \ref{fig:path-integral1}. Again this is determined by an amplitude:
 \begin{align*}
@@ -1989,8 +2001,12 @@ Now we have the following approximation for small $\epsilon$
 Let's forget particles for a moment and think of fields.
 
 \begin{figure}[H]
-	\caption[Space partitioned into cells]{Space partitioned into cells. Initial conditions in bottom row, final in top. We consider all possible histories that match initial and final conditions. NB: functions aren't necessarily analytic or even continuous.}\label{fig:path-integral2}
-	\includegraphics[width=0.8\textwidth]{path-integral2}
+	\begin{center}
+		\caption[Space partitioned into cells]{Space partitioned into cells. Initial conditions in bottom row, final in top. We consider all possible histories that match initial and final conditions. NB: functions aren't necessarily analytic or even continuous.}\label{fig:path-integral2}
+		\begin{tikzpicture}
+			\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,5.5);
+		\end{tikzpicture}
+	\end{center}
 \end{figure}
 
 Our question is now: if initial condition matches our initial configuration of particles, and final condition matches desired configuration, what is the amplitude? Figure \ref{fig:path-integral3} depicts a particle moving in one history.

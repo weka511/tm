@@ -1976,8 +1976,14 @@ Imagine starting systems with field $\phi(x)$, and asking for probability of $\p
 summed over all possible histories between $\phi(x)$ and $\phi^\prime(x)$.
 
 \begin{figure}[H]
-	\caption{Initial and final conditions}\label{fig:path-integral1}
-	\includegraphics[width=0.8\textwidth]{path-integral1}
+	\begin{center}
+		\caption[The notion of a Path Integral]{Start with an initial configuration of the field and look at some final configuration, and ask: if I start with $\phi(x)$, and detect the field at some later time, what is the probability of detecting $\phi^\prime(x)$. The amplitude is the sum, over all ways of interpolating between $\phi(x)$ and $\phi^\prime(x)$, i.e. the sum over all possible histories, of $e^{-\frac{i}{\hslash} \int dx dy dz dt\mathcal{L}(\phi,\partial \phi) }$. }\label{fig:path-integral1}
+		\begin{tikzpicture}
+			\draw[->](0,0)--(0,5.5) node[above] {t}; 
+			\draw(0.5,0.5)--(5,0.5) node[midway,above] {$\phi(x)$};
+			\draw(0.5,5)--(5,5) node[midway,above] {$\phi^{\prime}(x)$};
+		\end{tikzpicture}
+	\end{center}
 \end{figure}
 
 (A question was asked about convergence: trajectories tend to cancel, and those with the least cancellation tend to be near the ones that have least action classically.)

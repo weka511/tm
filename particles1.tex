@@ -2132,13 +2132,25 @@ So we can sum up contributions $\frac{i^n}{n !}$ in (\ref{eq:path:integral:expan
 
 \begin{figure}[H]
 	\caption{Path going backwards in Time. We can think of it in two ways.}\label{fig:path:backward:time}
-	\begin{subfigure}{0.45\textwidth}
+	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{New rule allows particle to go back in time}
-		\includegraphics[width=0.8\textwidth]{path-backward-time}
+			\begin{tikzpicture}
+				\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,5.5);
+				\filldraw (2.25,0) circle (3pt);
+				\filldraw (4.75,5.5) circle (3pt);
+				\draw[->,thick](2.25,0)--(2.25,3.75)--(3.75,3.75)--(3.75,2.25)--(4.75,2.25)--(4.75,5.5);
+		\end{tikzpicture} 
 	\end{subfigure}
-	\begin{subfigure}{0.45\textwidth}
-		\caption{Particle anti-particle pair used instead.}
-		\includegraphics[width=0.8\textwidth]{path-backward-time1}
+	\hfill
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{Particle anti-particle pair used instead. Particle goes to final state, antiparticle annihilates original particle.}
+		\begin{tikzpicture}
+			\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,5.5);
+			\filldraw (2.25,0) circle (3pt);
+			\filldraw (4.75,5.5) circle (3pt);
+			\draw[->,thick](2.25,0)--(2.25,3.75)--(3.75,3.75)--(3.75,2.25)--(4.75,2.25)--(4.75,5.5);
+			\draw(3.25,2.75)--(5.25,2.75) node[midway,above] {particle/antiparticle pair};
+		\end{tikzpicture} 
 	\end{subfigure}
 \end{figure}
 

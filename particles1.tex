@@ -1996,14 +1996,12 @@ There are two ways to think of quantum field theory, in terms of fields, and in 
  
 \begin{figure}[H]
 	\begin{center}
-		\caption[Space partitioned into cells]{Space partitioned into cells. Initial conditions in bottom row, final in top. We consider all possible histories that match initial and final conditions. NB: functions aren't necessarily analytic or even continuous.}\label{fig:path-integral2}
+		\caption[Space partitioned into cells]{Space partitioned into cells. Initial conditions in bottom row, final in top. We consider all possible histories that match initial and final conditions. NB: functions aren't necessarily analytic or even continuous. Sum over all possible values for the fields.}\label{fig:path-integral2}
 		\begin{tikzpicture}
 			\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,5.5);
 		\end{tikzpicture}
 	\end{center}
 \end{figure}
-
-
 
 Now we have the following approximation for small $\epsilon$
 \begin{align*}
@@ -2021,7 +2019,9 @@ Our question is now: if initial condition matches our initial configuration of p
 
 \subsection{Lattice Gauge Theory}
 
-This divides the world into a lattice. It is a very effective tool, but it took 30 years to develop the computer technology. The first part was setting up the rules. How do you know when you have sampled enough of the space?
+This divides the world into a lattice. It is a very effective tool, but it took 30 years to develop the computer technology. The first part was setting up the rules. How do you know when you have sampled enough of the space? Much of the wisdom came from statistical mechanics.
+
+When we multiply the field in one box by that in a neighbouring box, as shown in Figure \ref{fig:path-integral3}, this may represent an annihilation operator being multiplied by a creation operator, i.e. a particle moving from one box to another. What things in the action correspond to a particle moving from one box to another?
 
 \begin{figure}[H]
 	\begin{center}
@@ -2038,17 +2038,16 @@ This divides the world into a lattice. It is a very effective tool, but it took 
 There are terms in the Lagrangian associated with not one box but with pairs of boxes in Figure \ref{fig:path-integral3}--the derivatives. Think of \eqref{eq:sum:actions} being computed over pairs of cells, as well as cells.
 \begin{align*}
 	\frac{1}{2}(\partial_t \phi)^2 \rightarrow& \frac{1}{2}\frac{(\phi(t,x)-\phi(t^\prime,x))^2}{...}\\
-	\frac{1}{2}(\partial_x \phi)^2 \rightarrow& \frac{1}{2}\frac{(\phi(t,x)-\phi(t,x^\prime))^2}{...} \numberthis \label{eq:phi:phi}
+	\frac{1}{2}(\partial_x \phi)^2 \rightarrow& \frac{1}{2}\frac{(\phi(t,x)-\phi(t,x^\prime))^2}{...} 
 \end{align*}
-
-\eqref{eq:phi:phi} gives rise to terms such as:
+which gives rise to terms such as:
 \begin{alignat*}{2}
-	e^{- i \sum_{neighbours} \phi(x) \phi(x^\prime)}=1& -&& i \sum_{neighbours} \underbrace{\phi(x) \phi(x^\prime)}_\text{Figure \ref{fig:path-integral5}}\\
-	&-&& \frac{1}{2!}\underbrace{\sum_{neighbours} \phi(x) \phi(x^\prime)\sum_{neighbours} \phi(x^{\prime\prime}) \phi(x^{\prime\prime\prime})}_\text{Figure \ref{fig:path-integral7}}\\
-	&+&&\underbrace{i\frac{1}{3!}\sum_{neighbours}\phi(..)\phi(..)\sum_{neighbours}\phi(..)\phi(..)\sum_{neighbours}\phi(..)\phi(..)}_\text{Figure \ref{fig:path-integral9}}\\
+	e^{- i \sum \phi(x) \phi(x^\prime)}=1& -&& i \sum \underbrace{\phi(x) \phi(x^\prime)}_\text{Figure \ref{fig:path-integral6}}\\
+	&-&& \frac{1}{2!}\underbrace{\sum \phi(x) \phi(x^\prime)\sum \phi(x^{\prime\prime}) \phi(x^{\prime\prime\prime})}_\text{Figure \ref{fig:path-integral7}}\\
+	&+&&\underbrace{i\frac{1}{3!}\sum\phi(x)\phi(x^\prime)\sum\phi(x^{\prime\prime}) \phi(x^{\prime\prime\prime})\sum\phi(x^{\prime\prime\prime\prime}) \phi(x^{\prime\prime\prime\prime\prime})}_\text{Figure \ref{fig:path-integral9}}\\
 	&+&& ... \numberthis \label{eq:path:integral:expanded}
 \end{alignat*}
-where $x$ and $x^{\prime}$ are neighbouring points.
+where $x$ and $x^{\prime}$ are neighbouring points, and so are $x^{\prime}$ and $x^{\prime\prime}$, etc..
 
 \subsection{Rules for Path Integrals}
 
@@ -2079,23 +2078,56 @@ where $x$ and $x^{\prime}$ are neighbouring points.
 		\begin{tikzpicture}
 			\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,1.0); 
 			\draw[->,thick] (4.25,0.25)--(4.25,0.75);
+			\filldraw (4.25,0.25) circle (3pt);
+			\filldraw (4.25,0.75) circle (3pt);
 		\end{tikzpicture}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{What about thicker space? How to we get from \ref{fig:path-integral6} to here? We need the quadratic term in (\ref{eq:path:integral:expanded})}\label{fig:path-integral7}
-		\includegraphics[width=1.0\textwidth]{path-integral7}
+		\caption{What about thicker space? How to we get from \ref{fig:path-integral6} to here? We need the $\phi(x) \phi(x^\prime) \phi(x^{\prime\prime}) \phi(x^{\prime\prime\prime})$ terms in \eqref{eq:path:integral:expanded}}\label{fig:path-integral7}
+		\begin{tikzpicture}
+			\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,1.5); 
+			\draw[->,thick] (4.25,0.25)--(4.25,0.75);
+			\draw[->,thick] (4.25,0.75)--(4.25,1.25);
+			\filldraw (4.25,0.25) circle (3pt);
+			\filldraw (4.25,0.75) circle (3pt);
+			\filldraw (4.25,1.25) circle (3pt);
+		\end{tikzpicture}
 	\end{subfigure}
-	\begin{subfigure}{0.45\textwidth}
-		\caption{How to avoid dangling ends in \ref{fig:path-integral7}? Restrict to 3 layers. This allows us to find $x^\prime=x^{\prime\prime}$ in (\ref{eq:path:integral:expanded})}\label{fig:path-integral8}
-		\includegraphics[width=1.0\textwidth]{path-integral8}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{Another use of $\phi(x) \phi(x^\prime) \phi(x^{\prime\prime}) \phi(x^{\prime\prime\prime})$ terms in \eqref{eq:path:integral:expanded}, to move to right}\label{fig:path-integral8}
+		\begin{tikzpicture}
+			\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,1.0); 
+			\draw[->,thick] (4.25,0.25)--(4.25,0.75);
+			\draw[->,thick] (4.25,0.75)--(4.55,0.75);
+			\filldraw (4.25,0.25) circle (3pt);
+			\filldraw (4.55,0.75) circle (3pt);
+		\end{tikzpicture}
 	\end{subfigure}
-	\begin{subfigure}{0.45\textwidth}
-		\caption{Including the cubic term in (\ref{eq:path:integral:expanded}) allows us to find two 3-step paths in (\ref{eq:path:integral:expanded}).}\label{fig:path-integral9}
-		\includegraphics[width=1.0\textwidth]{path-integral9}
+	\hfill
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{Including the $\phi(x)\phi(x^\prime)\phi(x^{\prime\prime}) \phi(x^{\prime\prime\prime})\phi(x^{\prime\prime\prime\prime}) \phi(x^{\prime\prime\prime\prime\prime})$ terms in \eqref{eq:path:integral:expanded} allows us to find a 3-step path, which gives the same endpoint as  (\subref{fig:path-integral6}). All such amplitudes need to be added.}\label{fig:path-integral9}
+		\begin{tikzpicture}
+			\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,1.0); 
+			\draw[->,thick] (4.25,0.25)--(4.75,0.25);
+			\draw[->,thick] (4.75,0.25)--(4.75,0.75);
+			\draw[->,thick] (4.75,0.75)--(4.25,0.75);
+			\filldraw (4.25,0.25) circle (3pt);
+			\filldraw (4.25,0.75) circle (3pt);
+		\end{tikzpicture}
 	\end{subfigure}
 \end{figure}
 
+\begin{figure}[H]
+	\begin{center}
+		\caption[Calculating the amplitude of going from an initial to a final configuration]{To calculate the amplitude of going from an initial to a final configuration, sum the coefficients of all terms in \eqref{eq:path:integral:expanded} that take us from the initial to the final configuration. In general this will be a complex number.}
+		\begin{tikzpicture}
+			\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,5.5);
+			\filldraw (2.25,0.25) circle (3pt);
+			\filldraw (4.25,5.25) circle (3pt);
+		\end{tikzpicture}
+	\end{center} 
+\end{figure}
 So we can sum up contributions $\frac{i^n}{n !}$ in (\ref{eq:path:integral:expanded}) to determine complex amplitude. We include backward paths from special relativity--Figure \ref{fig:path:backward:time}.
 
 \begin{figure}[H]
@@ -2109,8 +2141,6 @@ So we can sum up contributions $\frac{i^n}{n !}$ in (\ref{eq:path:integral:expan
 		\includegraphics[width=0.8\textwidth]{path-backward-time1}
 	\end{subfigure}
 \end{figure}
-
-Two particles.
 
 \begin{figure}[H]
 	\caption{Two particles}\label{fig:path:integral:2particles:1}

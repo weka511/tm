@@ -2154,13 +2154,23 @@ So we can sum up contributions $\frac{i^n}{n !}$ in (\ref{eq:path:integral:expan
 	\end{subfigure}
 \end{figure}
 
+Let us suppose that we put in two particles, and we want to know what the probability to go to two other particles is. Figure \ref{fig:2particles} how \eqref{eq:path:integral:expanded} includes this case, as well as many others/
 \begin{figure}[H]
 	\caption{Two particles}\label{fig:path:integral:2particles:1}
-	\begin{subfigure}{0.45\textwidth}
-		\caption{Quadratic term in (\ref{eq:path:integral:expanded}) used to advance two particles by one box}
-		\includegraphics[width=0.8\textwidth]{path-integral-2particles-1}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\caption{Previously $\phi(x) \phi(x^\prime) \phi(x^{\prime\prime}) \phi(x^{\prime\prime\prime})$ term in \eqref{eq:path:integral:expanded} was used to advance one particle three steps; here it advances two particles one step.}\label{fig:2particles}
+		\begin{tikzpicture}
+			\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,1.0); 
+			\draw[->,thick] (4.25,0.25)--(4.25,0.75);
+			\draw[->,thick] (1.25,0.25)--(1.25,0.75);
+			\filldraw (4.25,0.25) circle (3pt);
+			\filldraw (4.25,0.75) circle (3pt);
+			\filldraw (1.25,0.25) circle (3pt);
+			\filldraw (1.25,0.75) circle (3pt);
+		\end{tikzpicture}
 	\end{subfigure}
-	\begin{subfigure}{0.45\textwidth}
+	\hfill
+	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Weight particle by $m^2$ from $\frac{m}{2}\phi^2$}\label{fig:path:integral:mass}
 		\includegraphics[width=0.8\textwidth]{path-integral-mass}
 	\end{subfigure}

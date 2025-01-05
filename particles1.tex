@@ -2095,13 +2095,13 @@ where $x$ and $x^{\prime}$ are neighbouring points, and so are $x^{\prime}$ and 
 		\end{tikzpicture}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Another use of $\phi(x) \phi(x^\prime) \phi(x^{\prime\prime}) \phi(x^{\prime\prime\prime})$ terms in \eqref{eq:path:integral:expanded}, to move to right}\label{fig:path-integral8}
+		\caption{Another use of $\phi(x) \phi(x^\prime) \phi(x^{\prime\prime}) \phi(x^{\prime\prime\prime})$ terms in \eqref{eq:path:integral:expanded}, to move to right. There are two separate paths; the amplitudes for both need to be added.}\label{fig:path-integral8}
 		\begin{tikzpicture}
 			\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,1.0); 
-			\draw[->,thick] (4.25,0.25)--(4.25,0.75);
-			\draw[->,thick] (4.25,0.75)--(4.55,0.75);
+			\draw[->,thick,red] (4.25,0.25)--(4.25,0.75)--(4.75,0.75);
+			\draw[->,thick,blue] (4.25,0.25)--(4.75,0.25)--(4.75,0.75);
 			\filldraw (4.25,0.25) circle (3pt);
-			\filldraw (4.55,0.75) circle (3pt);
+			\filldraw (4.75,0.75) circle (3pt);
 		\end{tikzpicture}
 	\end{subfigure}
 	\hfill
@@ -2109,15 +2109,17 @@ where $x$ and $x^{\prime}$ are neighbouring points, and so are $x^{\prime}$ and 
 		\caption{Including the $\phi(x)\phi(x^\prime)\phi(x^{\prime\prime}) \phi(x^{\prime\prime\prime})\phi(x^{\prime\prime\prime\prime}) \phi(x^{\prime\prime\prime\prime\prime})$ terms in \eqref{eq:path:integral:expanded} allows us to find a 3-step path, which gives the same endpoint as  (\subref{fig:path-integral6}). All such amplitudes need to be added.}\label{fig:path-integral9}
 		\begin{tikzpicture}
 			\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,1.0); 
-			\draw[->,thick] (4.25,0.25)--(4.75,0.25);
-			\draw[->,thick] (4.75,0.25)--(4.75,0.75);
-			\draw[->,thick] (4.75,0.75)--(4.25,0.75);
+			\draw[->,thick,blue] (4.25,0.25)--(4.75,0.25);
+			\draw[->,thick,blue] (4.75,0.25)--(4.75,0.75);
+			\draw[->,thick,blue] (4.75,0.75)--(4.25,0.75);
+			\draw[->,thick,red] (4.25,0.25)--(4.25,0.75);
 			\filldraw (4.25,0.25) circle (3pt);
 			\filldraw (4.25,0.75) circle (3pt);
 		\end{tikzpicture}
 	\end{subfigure}
 \end{figure}
 
+If you expand \eqref{eq:path:integral:expanded} to arbitrary order, there will be terms for each possible path. The Lagrangian contains all the information we need to go from any point to any other point.
 \begin{figure}[H]
 	\begin{center}
 		\caption[Calculating the amplitude of going from an initial to a final configuration]{To calculate the amplitude of going from an initial to a final configuration, sum the coefficients of all terms in \eqref{eq:path:integral:expanded} that take us from the initial to the final configuration. In general this will be a complex number.}

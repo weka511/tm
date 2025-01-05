@@ -2025,7 +2025,7 @@ When we multiply the field in one box by that in a neighbouring box, as shown in
 
 \begin{figure}[H]
 	\begin{center}
-		\caption[Particle moving]{The start of the arrow represents an annihilation operator in one cell, the head in its neighbour. Multiplying the actions amounts to movement from one cell to the next}\label{fig:path-integral3}
+		\caption[Particle moving from one box to another]{The start of the arrow represents an annihilation operator in one cell, the head in its neighbour. Multiplying the actions amounts to movement from one cell to the next}\label{fig:path-integral3}
 		\begin{tikzpicture}
 			\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,5.5); 
 			\draw[->,thick] (1.25,4.25)--(1.75,4.25);
@@ -2122,7 +2122,7 @@ where $x$ and $x^{\prime}$ are neighbouring points, and so are $x^{\prime}$ and 
 If you expand \eqref{eq:path:integral:expanded} to arbitrary order, there will be terms for each possible path. The Lagrangian contains all the information we need to go from any point to any other point.
 \begin{figure}[H]
 	\begin{center}
-		\caption[Calculating the amplitude of going from an initial to a final configuration]{To calculate the amplitude of going from an initial to a final configuration, sum the coefficients of all terms in \eqref{eq:path:integral:expanded} that take us from the initial to the final configuration. In general this will be a complex number.}
+		\caption[The amplitude of going from an initial to a final configuration]{To calculate the amplitude of going from an initial to a final configuration, sum the coefficients of all terms in \eqref{eq:path:integral:expanded} that take us from the initial to the final configuration. In general this will be a complex number.}
 		\begin{tikzpicture}
 			\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,5.5);
 			\filldraw (2.25,0.25) circle (3pt);
@@ -2158,7 +2158,7 @@ So we can sum up contributions $\frac{i^n}{n !}$ in (\ref{eq:path:integral:expan
 
 Let us suppose that we put in two particles, and we want to know what the probability to go to two other particles is. Figure \ref{fig:2particles} shows how \eqref{eq:path:integral:expanded} includes this case, as well as many others.
 \begin{figure}[H]
-	\caption{Two particles}\label{fig:path:integral:2particles:1}
+	\caption{Calculating the probability for two particles}\label{fig:path:integral:2particles:1}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Previously $\phi(x) \phi(x^\prime) \phi(x^{\prime\prime}) \phi(x^{\prime\prime\prime})$ term in \eqref{eq:path:integral:expanded} was used to advance one particle three steps; here it advances two particles one step.}\label{fig:2particles}
 		\begin{tikzpicture}

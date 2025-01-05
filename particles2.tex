@@ -2353,9 +2353,17 @@ Neutrons have no electric charge, but they have weak charge. A neutrino can mix 
 
 \subsection{Lagrangian for Dirac Equation}
 
-We want to derive the Dirac equation \eqref{eq:dirac} from a variational principle. We take as our Lagrangian:
+We want to derive the Dirac equation \eqref{eq:dirac} from a variational principle. We rewrite to put all terms on the left.
+
 \begin{align*}
-	\mathcal{L}=&\Psi^\dagger i \big(\underbrace{\frac{\partial \Psi}{\partial t} + \alpha_i \frac{\partial \Psi}{\partial 	x^i}}_{\mathclap{\substack{\text{Absorbs particle and}\\\text{emits it somewhere else}}}} & - \underbrace{m \beta \Psi}_{\mathclap{\substack{\text{Absorbs particle and}\\\text{emits in in same spot}}}}\big)
+	i \big(\frac{\partial \Psi}{\partial t} + \alpha_i \frac{\partial \Psi}{\partial x^i}\big) -m \beta \Psi =& 0
+\end{align*}
+
+We multiply by $\Psi^\dagger$ to obtain our Lagrangian:
+\begin{align*}
+	\mathcal{L}=&\Psi^\dagger i \big(\overbrace{\frac{\partial \Psi}{\partial t} + \alpha_i \frac{\partial \Psi}{\partial 	x^i}}^{\mathclap{\substack{\text{Absorbs particle}\\
+				\text{and emits it}\\
+			\text{somewhere else}}}}  - \underbrace{m \beta \Psi}_{\mathclap{\substack{\text{Absorbs particle and}\\\text{emits in in same spot}}}}\big)
 \end{align*}
 If we define:
 \begin{align*}

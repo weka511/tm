@@ -2156,7 +2156,7 @@ So we can sum up contributions $\frac{i^n}{n !}$ in (\ref{eq:path:integral:expan
 	\end{subfigure}
 \end{figure}
 
-Let us suppose that we put in two particles, and we want to know what the probability to go to two other particles is. Figure \ref{fig:2particles} how \eqref{eq:path:integral:expanded} includes this case, as well as many others/
+Let us suppose that we put in two particles, and we want to know what the probability to go to two other particles is. Figure \ref{fig:2particles} shows how \eqref{eq:path:integral:expanded} includes this case, as well as many others.
 \begin{figure}[H]
 	\caption{Two particles}\label{fig:path:integral:2particles:1}
 	\begin{subfigure}[t]{0.45\textwidth}
@@ -2173,28 +2173,59 @@ Let us suppose that we put in two particles, and we want to know what the probab
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Weight particle by $m^2$ from $\frac{m}{2}\phi^2$}\label{fig:path:integral:mass}
-		\includegraphics[width=0.8\textwidth]{path-integral-mass}
+		\caption{There are other things that go into the Lagrangian: the derivative terms, then possibly other terms that involve powers of $\phi$. Here $\phi^2$ weights particle by $m^2$ (absorb and re-emit at same spot) from $\frac{m}{2}\phi^2$, then other terms move particle.}\label{fig:path:integral:mass}
+		\begin{tikzpicture}
+			\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,2.5); 
+			\draw[->,thick] (0.75,0.25)--(0.75,0.75)--((1.25,0.75)--(1.25,1.25);
+			\draw[->,dotted] (1.25,1.25)--(1.25,1.75);
+			\filldraw (0.75,0.25) circle (3pt);
+			\filldraw (0.75,0.75) circle (3pt);
+			\filldraw (1.25,0.75) circle (3pt);
+			\filldraw (1.25,1.25) circle (3pt);
+		\end{tikzpicture}
 	\end{subfigure}
 \end{figure}
+ 
 
-What goes in Lagrangian?
 
 \begin{align*}
-\mathcal{L}=& \frac{1}{2} (\partial_t \phi)^2 - \frac{1}{2} (\partial_x \phi)^2 + \underbrace{\frac{m}{2}\phi^2}_\text{ absorb and emit at same point} +\underbrace{g \phi^3}_\text{Figure \ref{fig:path:integral:cubic}}
+	\mathcal{L}=& \frac{1}{2} (\partial_t \phi)^2 - \frac{1}{2} (\partial_x \phi)^2 + \underbrace{\frac{m}{2}\phi^2}_{\mathclap{\substack{\text{absorb and}\\
+				\text{emit at}\\
+				\text{same point}}}} +\underbrace{g \phi^3}_\text{Figure \ref{fig:path:integral:cubic}}
 \end{align*}
 
-This weights path by $m^2$--Figure \ref{fig:path:integral:mass}. If not used we have theory of massless particles.
+This weights path by $m^2$--Figure \ref{fig:path:integral:mass}. If not used we have theory of massless particles. What about $\phi^3$?
 
 \begin{figure}[H]
 	\caption{Some possibilities from $\phi^3$}
-	\begin{subfigure}{0.4\textwidth}
-	\caption{Particle absorbed and two new particles created.}\label{fig:path:integral:cubic}
-		\includegraphics[width=0.8\textwidth]{path-integral-cubic}
+	\begin{subfigure}[t]{0.4\textwidth}
+		\caption{The $\phi^3$ term acts in the heavy box. A particle is absorbed and two new particles are created.}\label{fig:path:integral:cubic}
+		\begin{tikzpicture}
+			\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,2.5); 
+			\filldraw (0.75,0.25) circle (3pt);
+			\draw(0.75,0.25)--(0.75,0.75)--(1.25,0.75)--(1.25,1.25)--(1.25,1.75);
+			\draw(1.25,0.75)--(1.75,0.75)--(1.75,1.75);
+			\filldraw (1.25,0.75) circle (3pt);
+			\filldraw (1.25,1.75) circle (3pt);
+			\filldraw (1.75,0.75) circle (3pt);
+			\filldraw (1.75,1.75) circle (3pt);
+			\draw[line width=3pt] (1,0.5)--(1.5,0.5)--(1.5,1.0)--(1,1.0)--(1,0.5);
+		\end{tikzpicture}
 	\end{subfigure}
-	\begin{subfigure}{0.4\textwidth}
-		\caption{Particle emitted and later reabsorbed.}\label{fig:path:integral:cubic:split}
-		\includegraphics[width=0.8\textwidth]{path-integral-cubic-split}
+	\hfill
+	\begin{subfigure}[t]{0.4\textwidth}
+		\caption{The $\phi^3$ term acts twice: a particle is absorbed, and two emitted; later two particles are absorbed, and one emitted. The amplitude of one particle going to a final position is complicated by this diagram, and other more complicated ones.}\label{fig:path:integral:cubic:split}
+		\begin{tikzpicture}
+			\draw[step=0.5,black,thin] (0.0,0.0) grid (5.5,5.5); 
+			\draw(1.75,0.25)--(1.75,1.25)--(0.75,1.25)--(0.75,2.25)--(0.75,3.25)--(1.75,3.25)--(1.75,4.25)--(2.75,4.25);
+			\draw(1.75,1.25)--(2.25,1.25)--(2.25,1.25)--(2.25,2.25)--(2.25,3.25)--(2.75,3.25)--(2.75,5.25);
+			\filldraw (1.75,0.25) circle (3pt);
+			\filldraw (1.75,1.25) circle (3pt);
+			\filldraw (0.75,1.25) circle (3pt);
+			\filldraw (2.25,1.25) circle (3pt);
+			\filldraw(2.75,4.25)  circle (3pt);
+			\filldraw(2.75,5.25)  circle (3pt);
+		\end{tikzpicture}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.4\textwidth}
 		\begin{center}

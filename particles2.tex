@@ -79,7 +79,7 @@
 
 \subsection{Introduction}
 
-In  \cite[Particle Physics 1: Basic Concepts]{susskind2007theoretical} we discussed fields, \gls{gls:quanta} of  fields, the relationship of fields and particles, the relationship of fields and their \gls{gls:quanta} (\glsdesc{gls:quanta}), general properties of particles (having energy, momentum, spin, being a \gls{gls:fermion} or a \gls{gls:boson}). We have discussed wave equations and field equations, and how they can be generated from Lagrangians using an action principle. The quantum mechanical version of  the Lagrangian is a tool for codifying the interaction between particles. Products of terms correspond to vertices, as illustrated in Figure \ref{fig:phi:3:x}.
+In  \cite[Particle Physics 1: Basic Concepts]{susskind2007theoretical} we discussed fields, \glspl{gls:quantum} of  fields, the relationship of fields and particles, the relationship of fields and their \glspl{gls:quantum} (\glsdesc{gls:quantum}), general properties of particles (having energy, momentum, spin, being a \gls{gls:fermion} or a \gls{gls:boson}). We have discussed wave equations and field equations, and how they can be generated from Lagrangians using an action principle. The quantum mechanical version of  the Lagrangian is a tool for codifying the interaction between particles. Products of terms correspond to vertices, as illustrated in Figure \ref{fig:phi:3:x}.
 \begin{figure}[H]
 	\caption[Products of terms correspond to vertices]{Products of terms correspond to vertices, e.g. $\Phi^3(x)$ gives rise to many possible interactions.}\label{fig:phi:3:x}
 	\includegraphics[width=0.8\textwidth]{phi-3-x}
@@ -2363,15 +2363,26 @@ We multiply by $\Psi^\dagger$ to obtain our Lagrangian:
 \begin{align*}
 	\mathcal{L}=&\Psi^\dagger i \big(\overbrace{\frac{\partial \Psi}{\partial t} + \alpha_i \frac{\partial \Psi}{\partial 	x^i}}^{\mathclap{\substack{\text{Absorbs particle}\\
 				\text{and emits it}\\
-			\text{somewhere else}}}}  - \underbrace{m \beta \Psi}_{\mathclap{\substack{\text{Absorbs particle and}\\\text{emits in in same spot}}}}\big)
+			\text{somewhere else}}}}  - \underbrace{m \beta \Psi}_{\mathclap{\substack{\text{Absorbs particle}\\\text{and emits it}\\\text{in the same spot}}}}\big)
 \end{align*}
 If we define:
 \begin{align*}
 	\bar{\Psi} \triangleq&\Psi^\dagger \beta  \\
-	\Psi^\dagger  =& \bar{\Psi} \beta \text{, since $\beta^2=1$, and we can write:}\\
-	\mathcal{L} =& \bar{\Psi}\beta \partial_t \Psi+ \bar{\Psi}\beta \alpha_i \partial \Psi +m \bar{\Psi}  \Psi\\
-	=& \bar{\Psi}\gamma_0 \partial_t + \bar{\Psi}\gamma_i \partial_i \Psi +m \bar{\Psi}  \Psi\text{, where $\gamma_0 \triangleq \beta$ and $\gamma_i\triangleq\beta \alpha_i$}\\
+	\Psi^\dagger  =& \bar{\Psi} \beta 
+\end{align*}
+since $\beta^2=1$, and we can write:
+\begin{align*}
+	\mathcal{L} =& \bar{\Psi}\beta \partial_t \Psi+ \bar{\Psi}\beta \alpha_i \partial \Psi +m \bar{\Psi}  \Psi \text{. We introduce new Dirac matrices:}\\
+	\gamma_0 \triangle&q \beta\\
+	\gamma_i\triangleq&\beta \alpha_i \text{, then}\\
+	\mathcal{L} =& \bar{\Psi}\gamma_0 \partial_t + \bar{\Psi}\gamma_i \partial_i \Psi +m \bar{\Psi}  \Psi\\
 	=& \bar{\Psi}\big(\gamma^\mu \partial_\mu +m  \big) \Psi  \numberthis \label{eq:dirac:lagrange}
+\end{align*}
+In modern physics $\alpha$ and $\beta$ have been abandoned, and we use $\gamma$.
+
+Note that $\bar{\Psi} \Psi$ is a scalar. We can write the Dirac equation in terms of $\gamma$.
+\begin{align*}
+	\big(\gamma^\mu \partial_\mu +m  \big) \Psi =& 0
 \end{align*}
 There is a fifth Dirac matrix:
 \begin{align*}
@@ -2379,10 +2390,10 @@ There is a fifth Dirac matrix:
 	\gamma_5^2 =&1
 \end{align*}
 
-Eigenvalues $\pm 1$--correspond to LH and RH.
+Its eigenvalues are $\pm 1$--corresponding to Left Handedness and Right handedness of the particles.
 
 \begin{defn}[chirality]
-	$\gamma_5^2$ is called chirality.
+	$\gamma_5$ is called chirality.
 \end{defn}
 
 In (\ref{eq:dirac:lagrange}), we can show that $\gamma^\mu \partial_\mu$  does not couple LH and RH, i.e. the eigenvectors of $\gamma_5^2$ corresponding to $\pm 1$. But
@@ -2520,7 +2531,6 @@ $\frac{1}{R^3}$ at small distances.
 \end{align*}
 
 Let's bring them close (Compton Length), so $P\approxeq\frac{\hslash}{R}$
-
 
 \begin{align*}
 	E =& Pc\\

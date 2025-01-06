@@ -2411,36 +2411,39 @@ so the mass term in  (\ref{eq:dirac:lagrange}) mixes up left and right. A Dirac 
 
 \subsection{The W boson and mass scale for Higgs boson}
 
-We talked about weak interactions, in particular the emission and absorption of W and Z bosons. For some reason the W boson is emitted only by left handed particles (not true for photons, more complicated for Z, which has asymmetric couplings to LH and RH). So for $SU(2)$ the left handed particles are "charged". The term (\ref{eq:LR}) is not legal in a Lagrangian if it would take charged to uncharged.
+We talked about weak interactions, in particular the emission and absorption of W and Z bosons. For some reason the W boson is emitted only by left handed particles (not true for photons, more complicated for Z, which has asymmetric couplings to LH and RH). So for $SU(2)$ the left handed particles are ''charged''. In \eqref{eq:LR}, $\Psi^\dagger_L$ is charged, $\Psi_R$. The term (\ref{eq:LR}) is not legal in a Lagrangian that had a gauge symmetry that only coupled to particles of one handedness.
 
-So how do we get a mass for Fermions? Higgs also plays role as charged object for $SU(2)$ for weak interactions. In fact it is a doublet, like electron/neutrino. Higgs transforms under $SU(2)$. We need to multiply term in (\ref{eq:LR}) by Higgs field; the Higgs either has no charge or the opposite charge to particle. Figure \ref{fig:2-10-Higgs-emitted} and (\ref{eq:higgs:emitted}) illustrate the process of Higgs, $\Phi$, carrying off the weak charge.
+So how do we get a mass for Fermions? The Higgs boson also plays role as charged object for $SU(2)$ for weak interactions. In fact it is a doublet, like electron/neutrino. The Higgs  transforms under $SU(2)$. We need to multiply terms in \eqref{eq:LR} by the Higgs field; the Higgs either has no charge or a weak charge opposite  to the particle. Figure \ref{fig:2-10-Higgs-emitted} and \eqref{eq:higgs:emitted} illustrate the process of Higgs, $\Phi$, carrying off the weak charge.
 
 \begin{align*}
-	g_y \bar{\Psi}\Psi =& g_y \Psi^\dagger_L \Phi \Psi_R + g_y \Psi^\dagger_R \Psi_L \Phi^\dagger \text{, where $g_y$ is the Yukawa coupling} \numberthis \label{eq:higgs:emitted}
+	g_y \bar{\Psi}\Psi =& g_y \Psi^\dagger_L \Phi \Psi_R + g_y \Psi^\dagger_R \Psi_L \Phi^\dagger  \numberthis \label{eq:higgs:emitted}
 \end{align*}
 
+The coupling constant, $g_y$, the Yukawa coupling, is different for each \gls{gls:fermion}.
 \begin{figure}[H]
 	\caption[Higgs interacting with Fermions]{Higgs interacting with Fermions: two forms of the same diagram}
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Higgs carries off weak charge}\label{fig:2-10-Higgs-emitted}
-		\feynmandiagram[vertical=i2 to i1]{
-			i1[particle=L] -- [fermion] a -- [fermion] i2[particle=R],
-			a--[charged scalar,edge label=weak charge] b[particle=$\Phi$]
+		\caption{Higgs carries off weak charge form $\Psi_L$}\label{fig:2-10-Higgs-emitted}
+		\feynmandiagram[vertical=a to i1]{
+			i1[particle=L] -- [fermion,edge label=weak charge] a -- [fermion] o1[particle=R],
+			a--[charged scalar,edge label=weak charge] o2[particle=$\Phi$]
 		};
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Higgs decaying into electron + positron}\label{fig:2-10-Higgs-decaying}
-		\feynmandiagram[vertical=o1 to i1]{
+		\feynmandiagram[vertical=a to i1]{
 			i1[particle=$\Phi$]--[charged scalar] a --[fermion] o1 [particle=$e^-$],
 			a --[anti fermion] o2 [particle=$e^+$]
 		};
 	\end{subfigure}
 \end{figure}
 
-That would be the end of the story, except that Nature has chosen a Mexican Hat potential for the Higgs field, so we have a fluctuation, $\Phi=f+H$.
+That would be the end of the story, except that Nature has chosen a Mexican Hat potential for the Higgs field, Figure \ref{fig:mexican-hat}, so we have a fluctuation, $\Phi=f+H$.
 
 \begin{align*}
-	g_y \bar{\Psi}\Psi =& g_y f \big(\Psi^\dagger_L  \Psi_R +  \Psi^\dagger_R \Psi_L  \big) + g_y\underbrace{ H \big(\Psi^\dagger_L  \Psi_R +  \Psi^\dagger_R \Psi_L  \big)}_\text{Emit electron and re-emit it plus Higgs}
+	g_y \bar{\Psi}\Psi =& g_y f \big(\Psi^\dagger_L  \Psi_R +  \Psi^\dagger_R \Psi_L  \big) + g_y\underbrace{ H \big(\Psi^\dagger_L  \Psi_R +  \Psi^\dagger_R \Psi_L  \big)}_{\mathclap{\substack{\text{Emit electron and}\\
+									\text{re-emit it plus Higgs}}}}
 \end{align*}
 
 The same $f$ is used for the Z and W bosons ($\approxeq200GeV$), so we can use observed masses to determine $g_y$ (different for each type of particle). Figure \ref{fig:2-10-Higgs-emitted} can be redrawn as a single Higgs decaying, Figure \ref{fig:2-10-Higgs-decaying}, so, once we can find a Higgs in the laboratory, we should be able to predict decay rates.

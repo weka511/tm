@@ -2313,16 +2313,16 @@ Let's go back to the Dirac equation for electrons, neutrinos and quarks. The Dir
 What if $\Phi$ is a magical Higgs field, $\Phi=\rho e^{i\alpha}$? Let us suppose that it gives rise to a spontaneous symmetry breaking $\Phi=f$ ($\alpha$ got eaten). (\ref{eq:mod:Dirac:R}) and (\ref{eq:mod:Dirac:L}) become:
 
  \begin{align*}
-i \big(\frac{\partial \Psi_R}{\partial t} + \alpha_i \frac{\partial \Psi_R}{\partial 	x^i}\big) =& g f \Psi_L \\
-i \big(\frac{\partial \Psi_L}{\partial t} - \alpha_i \frac{\partial \Psi_L}{\partial 	x^i}\big) =& g f \Psi_R  
+	i \big(\frac{\partial \Psi_R}{\partial t} + \alpha_i \frac{\partial \Psi_R}{\partial 	x^i}\big) =& g f \Psi_L \\
+	i \big(\frac{\partial \Psi_L}{\partial t} - \alpha_i \frac{\partial \Psi_L}{\partial 	x^i}\big) =& g f \Psi_R  
 \end{align*}
 
 We use the mass of Z and W to determine $f$, so we can figure out $g$ from $m$. Since there are different masses for Fermions, there are multiple Yukawa couplings (There is a whole spectrum that nobody understands).
 
 The Higgs particle is the fluctuation away from the frozen value. We should really write:
  \begin{align*}
-i \big(\frac{\partial \Psi_R}{\partial t} + \alpha_i \frac{\partial \Psi_R}{\partial 	x^i}\big) =& g (f+H) \Psi_L  \numberthis \label{eq:fermion:Higgs}\\
-i \big(\frac{\partial \Psi_L}{\partial t} - \alpha_i \frac{\partial \Psi_L}{\partial 	x^i}\big) =& g (f+H) \Psi_R  
+	i \big(\frac{\partial \Psi_R}{\partial t} + \alpha_i \frac{\partial \Psi_R}{\partial 	x^i}\big) =& g (f+H) \Psi_L  \numberthis \label{eq:fermion:Higgs}\\
+	i \big(\frac{\partial \Psi_L}{\partial t} - \alpha_i \frac{\partial \Psi_L}{\partial 	x^i}\big) =& g (f+H) \Psi_R  
 \end{align*}
 
 In (\ref{eq:fermion:Higgs}) and Figure \ref{fig:2-9-Higgs-boson} we see that RH can turn into LH + Higgs. When Higgs is found\footnote{This lecture predates the discovery at \gls{gls:LHC}} we want to verify the relative rates of different Higgs interactions, e.g. ones involving quarks and ones involving electrons. For example, \eqref{eq:fermion:Higgs} could be read as a preference for the Higgs decaying into the heaviest fermions, if it has enough energy to do so, based on the Yukawa couplings.
@@ -2453,12 +2453,12 @@ At the time of the lecture the Higgs had not been found: however there seems to 
 
 \subsection{Dynamics of the Higgs boson}
 
-This is all contained in Mexican Hat potential--Figure \ref{fig:2-8-phi-f}. One such function is:
+This is all contained in Mexican Hat potential--Figure \ref{fig:2-8-phi-f}. You can make up potentials that have this shape. One such function, which actually has some physical significance, is:
 \begin{align*}
-	V =& -\frac{\mu^2}{2} \Phi^2 + \frac{\lambda}{4} \Phi^4 \text{. The first term would represent mass if it were positive}
+	V =& -\frac{\mu^2}{2} \Phi^2 + \frac{\lambda}{4} \Phi^4 
 \end{align*}
 
-The "imaginary mass" isn't a problem; having the origin be unstable is odd, so we introduce the quartic coupling constant $\lambda$ to prevent $\Phi$ falling indefinitely. It appears\footnote{Indirect evidence from weak interactions} that $\lambda$ is small, but not absurdly small, around 0.01 ($\mu$ has dimensions of mass).
+The first term would represent mass if it were positive (or $\mu$ would represent mass). The imaginary mass is a little weird, but it isn't a problem; having the origin be unstable is strange, as (on its own) it would make the vacuum be unstable. We introduce the quartic coupling constant $\lambda$ to prevent $\Phi$ falling indefinitely. We want the equation to remain symmetric, and a quartic is the simplest way to achieve this. It appears, from indirect evidence from weak interactions, that $\lambda$ is small, but not absurdly small, around 0.01 ($\lambda$ is dimensionless, $\mu$ has dimensions of mass).
 
 We want to find $f$, the $\Phi$ which gives the minimum of $V$.
 \begin{align*}
@@ -2468,9 +2468,9 @@ We want to find $f$, the $\Phi$ which gives the minimum of $V$.
 	f =& \frac{\mu}{\sqrt{\lambda}}
 \end{align*}
 
-$f$ is mass of Z or W Bosons, and it comes into mass of Fermion. It controls the masses of all the particles we know about: why are they all controlled by the same phenomenon? Why are there no particles whose mass doesn't involve spontaneous symmetry breaking? E.g. we can imagine a particle whose left and right variants both have weak charge: we wouldn't need $\Phi$. Or particles without weak interactions?
+Now $f$ is controlled by $\mu$. It is also $f$ is the mass of Z or W Bosons, and it comes into the mass of Fermions. All the particles have masses $\propto f$. It controls the masses of all the particles we know about: why are they all controlled by the same phenomenon? Why are there no particles whose mass doesn't involve spontaneous symmetry breaking? E.g. we can imagine a particle whose left and right variants both have weak charge, so we wouldn't need $\Phi$, or particles without weak interactions.
 
-The general thinking (i.e. a widespread \emph{belief}) is that the mass scale is enormous, much higher that those of the known particles, and that the only small mass parameter is $f$; only those particles that are this light have been detected. But why is $f$ so small? (compared with what?) 
+The general thinking (i.e. a widespread \emph{belief}) is that the mass scale is enormous, much higher than the masses of the known particles. The only small mass parameter is $f$. Those particles that have to have masses proportional to $f$ (because their mathematics dictates that they would have no mass otherwise) are the only  particles that are light enough have been detected so far. But why is $f$ so small? (compared with what? What is the natural mass scale for elementary particle physics?) 
 
 The Planck Mass and Unification Mass are about 15 orders of magnitude larger than $f$.
 

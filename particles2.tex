@@ -2476,25 +2476,55 @@ The Planck Mass and Unification Mass are about 15 orders of magnitude larger tha
 
 Superfluidity, is a condensation of Helium atoms. A Helium atom is not an elementary particle, but, at some scale it can be treated as one. There is a Helium field, that is normally zero. Spontaneous symmetry breaking can happen and create a Bose condensate, giving rise to superfluidity. If the Helium atom were charged (the atom, not the nucleus), it would behave like a Higgs boson, and give a mass to the photon. In a superconductor, electrons can pair up, and each ''Cooper pair'' has a charge of 2. They condense, shifting the field, creating a condensate, a super-fluid of Cooper Pairs: this is superconductivity. This phenomenon was originally discovered for superconductivity, and later rediscovered by Higgs et al.
 
-\subsection{What is the normal mass scale for elementary particle physics?}
+\subsection{The normal mass scale for elementary particle physics}
 
-We start with the Lagrangian, which includes a bunch of parameters--such as mass and charges. But when we measure, we get numbers that are a product of a whole lot of interactions between high and low frequency modes, which renormalize values of parameters.
+When you describe elementary particles you start with the Lagrangian, which includes a collection of parameters, such as mass and charges, but these are rarely the actual measured quantities. When we measure, we get numbers that are a product of a whole lot of interactions between the high frequency modes and low frequency modes of the system, which renormalize values of parameters. What is the normal mass scale for elementary particle physics?
 
-One example is electric charge. The normally observed charge is determined by Coulomb law for things at a large distance: $V=\frac{e^2}{R}$. This is asymptotically true for large $R$.
+One example is electric charge. The normally observed charge is determined by Coulomb's law for things at a large distance: $V=\frac{e^2}{R}$. This is asymptotically true for large $R$.
 
-If you do this in a material you will get a different value; you will get a slightly reduced value (except in a vacuum). What if we put a charge into a conductor? Field causes motion of charges until charges flow to boundary--Figure \ref{fig:2-10-charged-conductor}. Figure \ref{fig:2-10-neg-charged-conductor} shows the same thing with a negative charge. We find that there is no attraction: experimental charge is not what we put in.
+If you do this in a material you will get a different value; you will get a slightly reduced value (except in a vacuum). What if we put a charge into a conductor? The charge causes a field, which causes a current, until it is completely discharged, i.e. until all charges have flowed to the boundary--left side of Figure \ref{fig:2-10-charged-conductor}--and original charge is surrounded by a cloud of opposite charge. These charges are bound to the original source, and the whole thing forms a neutral structure. The right hand shows the same thing with a negative charge. We find that there is no attraction: the experimental charge is not what we put in.
 
 \begin{figure}[H]
-	\caption{Charged conductor}
-	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Charged flows out to distant boundary, and get surrounded by opposite charge.}\label{fig:2-10-charged-conductor}
-		\includegraphics[width=\textwidth]{2-10-charged-conductor}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Negative charge}\label{fig:2-10-neg-charged-conductor}
-		\includegraphics[width=\textwidth]{2-10-neg-charged-conductor}
-	\end{subfigure}
+	\begin{center}
+		\caption[Charged conductor: charge flows out to distant boundary]{Charged conductor. Charge flows out to distant boundary, let's assume this is at Alpha Centauri, and gets surrounded by a cloud of opposite charge.}\label{fig:2-10-charged-conductor}
+		\begin{tikzpicture}
+			\draw (0,0) circle (10pt);
+			\draw (0,0) circle (12pt);
+			\draw (0,0) node {\large \bf $+$};
+			
+			\draw (0.7,0) node {-};
+			\draw (0.61,0.35) node {-};
+			\draw (0.35,0.61) node {-};
+			\draw (0,0.7) node {-};
+			\draw (-0.35,0.61) node {-};
+			\draw (-0.61,0.35) node {-};
+			\draw (-0.7,0) node {-};
+			\draw (0.61,-0.35) node {-};
+			\draw (0.35,-0.61) node {-};
+			\draw (0,-0.7) node {-};
+			\draw (-0.61,-0.35) node {-};
+			\draw (-0.35,-0.61) node {-};
+			
+			\draw (5,0) circle (10pt);
+			\draw (5,0) circle (12pt);
+			\draw (5,0) node {\large \bf $-$};
+			
+			\draw (5.7,0) node {+};
+			\draw (5.61,0.35) node {+};
+			\draw (5.35,0.61) node {+};
+			\draw (5,0.7) node {+};
+			\draw (5-0.35,0.61) node {+};
+			\draw (5-0.61,0.35) node {+};
+			\draw (5-0.7,0) node {+};
+			\draw (5.61,-0.35) node {+};
+			\draw (5.35,-0.61) node {+};
+			\draw (5,-0.7) node {+};
+			\draw (5-0.61,-0.35) node {+};
+			\draw (5-0.35,-0.61) node {+};
+		\end{tikzpicture}
+	\end{center}
 \end{figure}
+	
 
 Let's move the charges together, assuming charges are smaller than the clouds. Make them be closer than cloud, then we do feel coulomb force. We could say that charge is a function of distance, and $V=\frac{e(R)^2}{R}$, where $e(R)$ is the \emph{running charge}.
 

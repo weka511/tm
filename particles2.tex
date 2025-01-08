@@ -2526,18 +2526,85 @@ If you do this in a material you will get a different value; you will get a slig
 \end{figure}
 	
 
-Let's move the charges together, assuming charges are smaller than the clouds. Make them be closer than cloud, then we do feel coulomb force. We could say that charge is a function of distance, and $V=\frac{e(R)^2}{R}$, where $e(R)$ is the \emph{running charge}.
+Let's move the charges together, assuming charges are smaller than the clouds. Make them be closer than the clouds around them, then we do feel Coulomb force. The scale of the screening cloud is controlled by the dynamics of the electrons in the system. When the sources are closer than the screening cloud they feel each other's raw charge. We could say that charge is a function of distance, and $V=\frac{e(R)^2}{R}$, where $e(R)$ is the \emph{running charge}.
 
-Now consider a dielectric. Electrons are bound to atoms, but there is some movement allowed. There will be some screening; diminished attraction from Coulomb law. We still have $e(R)$, but it doesn't go all the way to zero at infinity.
+Now consider something less extreme than a conductor, a dielectric. In a dielectric, electrons are bound to atoms, but there is some movement allowed; think of the electrons being attached by springs. Ordinarily the electron vibrates symmetrically, so, on average, the dipole moment is zero. But now we put the electron into an electric field, and the electron field shifts a little bit, leaving a dipole left over; current doesn't flow, but the charges shift a little.
+If you put a charge into a dielectric, there is a similar phenomenon: the ions are heavy, so they won't move much, but the electrons shift out a little.
+There will be some screening; diminished attraction from Coulomb law. We still have $e(R)$, but it doesn't go all the way to zero at infinity.
 
-This is exactly what happens in \gls{gls:QFT}. Vacuum is basically a dielectric. Charge that is felt at a large distance is not the bare electric charge in Lagrangian. Separation between members of a virtual pair depends on virtual energy. As you bring charged particles closer, screening from low energy virtual pairs will not be there--Figure \ref{fig:2-10-effective-charge}
+\begin{figure}[H]
+	\begin{center}
+		\caption[we put the dielectric into an electric field]{we put the dielectric into an electric field, and the electron field shifts a little bit, leaving a dipole left over; current doesn't flow, but the charges shift a little.}
+		\begin{tikzpicture}
+			\draw (5,0) circle (10pt);
+			\draw (5,0) circle (12pt);
+			\draw (5,0) node {\large \bf $-$};
+			
+			\draw (5.7,0) node {+};
+			\draw (5.61,0.35) node {+};
+			\draw (5.35,0.61) node {+};
+			\draw (5,0.7) node {+};
+			\draw (5-0.35,0.61) node {+};
+			\draw (5-0.61,0.35) node {+};
+			\draw (5-0.7,0) node {+};
+			\draw (5.61,-0.35) node {+};
+			\draw (5.35,-0.61) node {+};
+			\draw (5,-0.7) node {+};
+			\draw (5-0.61,-0.35) node {+};
+			\draw (5-0.35,-0.61) node {+};
+			
+			\draw[->](5-0.61,-0.35)--(5-1.2,-0.7) node[left] {-};
+			\draw[->](5-0.35,-0.61)--(5-0.7,-1.2) node[left] {-};
+		\end{tikzpicture}
+	\end{center}
+\end{figure}
+
+Exactly this phenomenon happens in \glsdesc{gls:QFT}. In \glsdesc{gls:QED} the vacuum is full of electron-positron pairs. There are Feynman diagrams for {Electron-positron pairs being created--Figure \ref{fig:feynman:vaccum}; they inhabit the Vacuum.
+
+\begin{figure}[H]
+	\begin{center}
+		\caption{Feynman diagrams for the vacuum}\label{fig:feynman:vaccum}
+		\begin{subfigure}[t]{0.45\textwidth}
+			\caption{Electron-positron pairs being created from photons}
+				\feynmandiagram[vertical = a to i1]{
+				i1--[photon]a,
+				a--[fermion,half left,edge label=$e^-$]i1,
+				a--[anti fermion,half right,edge label=$e^+$]i1,
+			};
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[t]{0.45\textwidth}
+			\caption{Electron-positron loops}
+			\feynmandiagram[vertical = a to i1]{
+				a--[fermion,half left,edge label=$e^-$]i1,
+				a--[anti fermion,half right,edge label=$e^+$]i1,
+			};
+		\end{subfigure}
+	\end{center}
+\end{figure}
+
+You can also think about the vacuum as Dirac's negative energy sea.
+
+What happens when an electric field comes along?
+
+\begin{itemize}
+	\item The field will shift the electrons one way, the positrons the other, so the pairs will become polarized, the same way that atoms become polarized.
+	\item You put in what you thought was a bare charge $e$. The vacuum is basically a dielectric, negative charges are screened by a little bit of positive, and vice versa.
+\end{itemize}
+
+The upshot is that the  charge that is felt at a large distance is not the bare electric charge that you put into the Lagrangian. The separation between members of a virtual pair depends on virtual energy. As you bring charged particles closer, screening from low energy virtual pairs will reduce--Figure \ref{fig:2-10-effective-charge}--but this time there is no distance at which screening will totally disappear.
 
 \begin{figure}[H]
 	\caption{Running charges}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{EM Running charge increasing logarithmically with $\frac{1}{R}$}\label{fig:2-10-effective-charge}
-		\includegraphics[width=\textwidth]{2-10-effective-charge}
+		\begin{tikzpicture}[scale=0.5]
+			\draw[->](0,0)--(0,5) node[above] {Running Charge};
+			\draw[->](0,0)--(7,0) node[right] {$1/R$};
+			\draw plot [domain=1.5:7,samples=100] (\x,{log2(\x)});
+		\end{tikzpicture}
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Weak, Strong and EM Running charge}\label{fig:2-10-effective-charge-esw}
 		\includegraphics[width=\textwidth]{2-10-effective-charge-esw}

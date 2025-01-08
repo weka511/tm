@@ -13,7 +13,7 @@
 \usepackage{thmtools}
 \usepackage{gensymb}
 \usepackage{braket}
-\usepackage[compat=1.0.0]{tikz-feynman}
+\usepackage[compat=1.1.0]{tikz-feynman}
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage{mathtools}
@@ -97,7 +97,7 @@ Figure \ref{fig:mexican-hat} shows a different potential, with an unstable equil
 
 The true lowest energy should be a stationary state on circle, to avoid kinetic energy. But the uncertainty principle prohibits standing still with zero momentum: if we know that the field is zero, we don't know the velocity. The vacuum must be filled with an uncertain amount of charge.  We can't have empty space with no charge in it.
 
-If this were true with electric chage, there would be an equal proability of the charge at a point being -2, -1, 0, 1, 2, 3...
+If this were true with electric charge, there would be an equal probability of the charge at a point being -2, -1, 0, 1, 2, 3...
 
 Now imagine that we throw in an extra charge, which displaces vacuum charge by one unit. Charge is uncertain, and we don't notice that we've added or subtracted one! This is part of the weirdness of condensates.
 
@@ -137,26 +137,31 @@ Without the Higgs Boson, the particles in Table \ref{table:standard-model} shoul
 
 
 \begin{figure}[H]
-	\caption{Processes of the Standard Model (not exhaustive)}\label{fig:sm:processes}
+	\caption{Some processes from the Standard Model (not exhaustive)}\label{fig:sm:processes}
 	\begin{subfigure}[t]{0.3\textwidth}
-		\caption{Charged Fermion emits boson}
-		\feynmandiagram [horizontal=a to b] {
-			i1 -- [fermion] a -- [fermion] i2,
+		\caption{Charged Fermion emits photon}
+		\feynmandiagram [vertical=o1 to i1] {
+			i1 -- [fermion] a -- [fermion] o1,
 			a -- [photon] b [particle=\(\gamma\)],
+			b--[opacity=0.0]o1,
 		};
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}[t]{0.3\textwidth}
 		\caption{Quark emits gluon}
-		\feynmandiagram [horizontal=a to b] {
-			i1 [particle=\(q\)] -- [fermion] a -- [fermion] i2,
-			a -- [photon] b [particle=\(g\)],
+		\feynmandiagram [vertical=o1 to i1] {
+			i1 [particle=\(q\)] -- [fermion] a -- [fermion] o1,
+			a -- [gluon] b [particle=\(g\)],
+			b--[opacity=0.0]o1,
 		};
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}[t]{0.3\textwidth}
-		\caption{Fermion(even neutrino) emits Z-boson}
-		\feynmandiagram [horizontal=a to b] {
-			i1 [particle=\(e\nu\)] -- [fermion] a -- [fermion] i2,
-			a -- [photon] b [particle=\(Z\)],
+		\caption{Fermion (including neutrino) emits Z-boson}
+		\feynmandiagram [vertical=o1 to i1] {
+			i1 [particle=\(e\,\nu\)] -- [fermion] a -- [fermion] o1,
+			a -- [boson] b [particle=\(Z\)],
+			b--[opacity=0.0]o1,
 		};
 	\end{subfigure}
 \end{figure} 
@@ -211,7 +216,7 @@ Is there any reason why a particle needs the Higgs phenomenon to have a  mass? F
 
 \section{The Dirac Electron}
 
-There are two kinds of electrons, right handed and left handed. They can flip, but not if they were travelling at the speed of light (time infinitely slow); in the Dirac theory, mass is the rate at which handedness flips. See Figure \ref{fig:2-a3-flipping-electron}. Figure \ref{fig:2-a3-Z-boson} depicts the Z boson, which can be emitted by electrons or neutrinos. The coupling isn't charge--it is called ''weak hypercharge'', or, as Prof Susskind says, ''zilch''. Zilch is like electric charge, but it isn't electric charge. When a particle with zilch accelerates, it emits a Z-boson.
+There are two kinds of electrons, right handed and left handed. They can flip, but not if they were traveling at the speed of light (time infinitely slow); in the Dirac theory, mass is the rate at which handedness flips. See Figure \ref{fig:2-a3-flipping-electron}. Figure \ref{fig:2-a3-Z-boson} depicts the Z boson, which can be emitted by electrons or neutrinos. The coupling isn't charge--it is called ''weak hypercharge'', or, as Prof Susskind says, ''zilch''. Zilch is like electric charge, but it isn't electric charge. When a particle with zilch accelerates, it emits a Z-boson.
 
 \begin{figure}[H]
 	\caption{Electron flipping between left and right}
@@ -219,11 +224,13 @@ There are two kinds of electrons, right handed and left handed. They can flip, b
 		\caption{The faster the electron travels, the slower it flips. Probability of jumping is measure of mass}\label{fig:2-a3-flipping-electron}
 		\includegraphics[width=0.9\textwidth]{2-a3-flipping-electron}
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}[t]{0.3\textwidth}
 		\caption{Electron emitting Z-boson. }\label{fig:2-a3-Z-boson}
-		\feynmandiagram [horizontal=a to b] {
-			i1 -- [fermion] a -- [fermion] i2,
+		\feynmandiagram [vertical=o1 to i1] {
+			i1 -- [fermion] a -- [fermion] o1,
 			a -- [photon] b [particle=\(Z\)],
+			b--[opacity=0.0]o1,
 		};
 	\end{subfigure}	
 \end{figure} 
@@ -239,9 +246,15 @@ We get around this by introducing the Ziggs boson. This is related to the Mexica
 		\caption{Electron exchanging zilch with the condensate via Ziggs bosons}\label{fig:2-a3-zilch}
 		\includegraphics[width=\textwidth]{2-a3-zilch}
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}[t]{0.4\textwidth}
 		\caption{Z-boson becoming a Ziggs by absorbing zilch from the condensate, and then re-emitting it.}\label{fig:2-a3-zilch-Z}
-		\includegraphics[width=\textwidth]{2-a3-zilch-Z}
+		\feynmandiagram[layered layout,horizontal= o1 to in1]{
+			in1--[boson]a--b--[boson]o1,
+			in2[particle=\(X\)]--a,
+			b--o2[particle=\(X\)],
+			in2--[opacity=0.0]o2,
+		};
 	\end{subfigure}
 \end{figure}
 
@@ -276,18 +289,20 @@ Figure \ref{fig:2-a3-higgs-decay} depicts the decay of the Higgs: heavy particle
 	\begin{center}
 		\caption{Higgs decaying: probability $\propto$ mass of particles produced}\label{fig:2-a3-higgs-decay}
 		\begin{subfigure}[t]{0.45\textwidth}
-			\feynmandiagram[horizontal = a to b] {
-				a [particle=\(H\)] --[boson] b,
-				b -- [fermion] f1 [particle = \(e^{-}\)],
-				b -- [fermion] f2 [particle = \(e^{+}\)],
+			\feynmandiagram[vertical = out1 to in1] {
+				in1[particle=\(H\)] --[boson] b,
+				b -- [fermion] out1 [particle = \(e^{-}\)],
+				b -- [fermion] out2 [particle = \(e^{+}\)],
+				out1--[opacity=0.0]out2,
 			};
 		\end{subfigure}
 		\hfill
 		\begin{subfigure}[t]{0.45\textwidth}
-			\feynmandiagram[horizontal = a to b] {
-				a [particle=\(H\)] --[boson] b,
-				b -- [fermion] f1 [particle = \(q\)],
-				b -- [fermion] f2 [particle = \(\bar{q}\)],
+			\feynmandiagram[vertical = out1 to in1] {
+				in1 [particle=\(H\)] --[boson] b,
+				b -- [fermion] out1 [particle = \(q\)],
+				b -- [fermion] out2 [particle = \(\bar{q}\)],
+				out1--[opacity=0.0]out2
 			};
 		\end{subfigure}
 
@@ -298,27 +313,36 @@ How about quarks? The usual ones are very light. Lightness of particles made pro
 
 
 \begin{figure}[H]
-	\caption[How to make a Higgs]{How to make a Higgs A gluon doesn't have enough energy to make a top anti-top pair, so we need 2 gluons moving past each other with high energy.}
-	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Gluons to top anti-top pair to Higgs. }\label{fig:2-a3-gluons}
-		\feynmandiagram[small,horizontal = a to h2] {
-			a [particle = \(g\)] -- [gluon] b,
+	\caption{How to make a Higgs from gluons}
+	\begin{subfigure}[t]{0.3\textwidth}
+		\caption{A gluon doesn't have enough energy to make a top anti-top pair (at least it won't last very long)}
+		\feynmandiagram[small,layered layout,horizontal = in1 to b] {
+			in1 [particle = \(g\)] -- [gluon] b,
+			b -- [fermion] out1 [particle = \(t\)],
+			b -- [fermion] out2 [particle = \(\bar{t}\)]
+		};
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.3\textwidth}
+		\caption{Use a pair of gluons that are moving very fast relative to each other. One makes a top anti-top pair, then the other is absorbed; then the top quarks come together to make a Higgs.}\label{fig:2-a3-gluons}
+		\feynmandiagram[small,layered layout,horizontal = in1 to b] {
+			in1 [particle = \(g\)] -- [gluon] b,
 			b -- [fermion] f1 [particle = \(t\)],
 			b -- [fermion] f2 [particle = \(\bar{t}\)],
 			f1 -- [fermion] h,
 			f2 -- [fermion] h,
-			c [particle = \(g\)] -- [gluon] f2,
-			h -- [boson] h2 [particle = \(H\)],
-			a -- [opacity=0.0] c,
+			in2[particle = \(g\)] -- [gluon] f2,
+			h -- [boson] out1 [particle = \(H\)]
 		};
 	\end{subfigure}
-	\em
-	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{More formal version of (\subref{fig:2-a3-gluons}) }\label{fig:2-a3-higgs-neat}
-		\feynmandiagram[small,vertical=t2 to t3]{
-			a[particle=\(H\)]--[boson]t1--t2--t3--t1,
-			t2 -- [gluon] p1 [particle=\(g\)],
-			t3 -- [gluon] p2 [particle=\(g\)],
+	\hfill
+	\begin{subfigure}[t]{0.3\textwidth}
+		\caption{Figure (\subref{fig:2-a3-gluons}) is usually drawn like this, with top quarks going round the loop. }\label{fig:2-a3-higgs-neat}
+		\feynmandiagram[small,vertical=out1 to in1]{
+			in1 -- [gluon] p2 [particle=\(g\)],
+			in2 -- [gluon] p3 [particle=\(g\)],
+			p1--p2--p3--p1--[boson]out1[particle=\(H\)],
+			in1--[opacity=0.1]in2,
 		};
 	\end{subfigure}
 \end{figure}
@@ -327,15 +351,16 @@ How about quarks? The usual ones are very light. Lightness of particles made pro
 
 \section{The Near Future}
 
-The standard model is essentially correct. Is everything fitting together quantitatively? Figure \ref{fig:2-a3-higgs-neat} provides a hint. We should be able to run this backwards and decay the Higgs, but it isn't easy to see gluons. Replace gluons with photons--Figure \ref{fig:Higgs:to:photons}. Higgs can decay into photons. 
+The standard model is essentially correct. Is everything fitting together quantitatively? Figure \ref{fig:2-a3-higgs-neat} provides a hint. We should be able to run this backwards and decay the the Higgs, but it isn't easy to see gluons. Replace gluons with photons--Figure \ref{fig:Higgs:to:photons}. The Higgs can decay into photons. 
 
 \begin{figure}[H]
 	\begin{center}
-		\caption{Higgs can decay into photons}\label{fig:Higgs:to:photons}
-		\feynmandiagram[small,horizontal'=a to t1]{
-			a[particle=\(H\)]--[boson]t1--t2--t3--t1,
-			p1 [particle=\(\gamma\)] -- [photon] t2 ,
-			p2 [particle=\(\gamma\)]-- [photon] t3 ,
+		\caption{The Higgs can decay into photons}\label{fig:Higgs:to:photons}
+		\feynmandiagram[small,vertical=out1 to in1]{
+			in1[particle=\(H\)]--[boson]t1--t2--t3--t1,
+			t2 -- [photon] out1  [particle=\(\gamma\)],
+			t3 -- [photon] out2  [particle=\(\gamma\)],
+			out1--[opacity=0.0]out2,
 		};
 	\end{center}
 \end{figure}

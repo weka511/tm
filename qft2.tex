@@ -1,10 +1,49 @@
 % !TeX program = lualatex
-\documentclass[]{article}
 
-\usepackage{caption,subcaption,graphicx,float,url,amsmath,amssymb,amsthm,tocloft,cancel,thmtools,gensymb,braket,tikz-feynman,mathtools,color, colortbl}
+% Copyright (c) 2020-2025 Simon Crase
+
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+
+\documentclass[]{article}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{tocloft}
+\usepackage{cancel}
+\usepackage{thmtools}
+\usepackage{gensymb}
+\usepackage{braket}
+\usepackage{bm}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{colortbl}
 \usepackage[toc,nonumberlist]{glossaries}
 \usepackage{glossaries-extra}
-\usepackage[toc,page]{appendix}
+\usepackage{mathtools}
 
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
@@ -65,6 +104,24 @@ This document contains derivations of equations from \cite[Part II: Dirac and th
 	\gamma^0 =& I \otimes \tau_3\\
 	\gamma^j =& i \sigma^j \otimes \tau_2
 \end{align*}
+
+\subsection{Cousins of the Gamma Matrices}
+
+From \cite[II,(2)]{zee2010quantum}
+\begin{align*}
+	\{\gamma^\mu,\gamma^\nu\}=&2\eta^{\mu\nu} \numberthis \label{eq:gamma:anti}
+\end{align*}
+Expanding
+\begin{align*} 
+	\gamma^\mu\gamma^\nu + \gamma^\nu\gamma^\mu=&2\eta^{\mu\nu}\\
+	\gamma^\mu\gamma^\nu =& \eta^{\mu\nu} + \eta^{\mu\nu} -\gamma^\nu\gamma^\mu\\
+	=&\eta^{\mu\nu}-i\sigma^{\mu\nu} \text{, where}\\
+	\sigma^{\mu\nu}=&i \big(\eta^{\mu\nu} -\gamma^\nu\gamma^\mu\big) \text{. Now apply \eqref{eq:gamma:anti} again}\\
+	=&i\big(\frac{1}{2}(\gamma^\mu\gamma^\nu + \gamma^\nu\gamma^\mu)-\gamma^\nu\gamma^\mu\big)\\
+	=&i\big(\frac{1}{2}(\gamma^\mu\gamma^\nu - \gamma^\nu\gamma^\mu)\big)\\
+	=&\frac{i}{2}[\gamma^\mu,\gamma^\nu]
+\end{align*}
+
 
 \subsection{Isomorphism $\frac{SU(2)}{Z^2} \cong SO(3)$}
 In \cite[Section 3]{westra2008SU2} a $2\times 2$ unimodular unitary matrix has the form:

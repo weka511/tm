@@ -109,9 +109,13 @@ This document contains derivations of equations from \cite[Part II: Dirac and th
 
 From \cite[II,(2)]{zee2010quantum}
 \begin{align*}
-	\{\gamma^\mu,\gamma^\nu\}=&2\eta^{\mu\nu} \numberthis \label{eq:gamma:anti}
+	\{\gamma^\mu,\gamma^\nu\}=&2\eta^{\mu\nu} \numberthis \label{eq:gamma:anti}\\
+	\{\gamma^0,\gamma^0\}=&2\eta^{00}\\
+	\gamma^0\gamma^0=&I  \numberthis \label{eq:gamma:00}\\
+	\{\gamma^i,\gamma^i\}=&2\eta^{ii}\\
+	\gamma^i\gamma^i=&-I	 \numberthis \label{eq:gamma:ii}
 \end{align*}
-Expanding
+Expanding \eqref{eq:gamma:anti}
 \begin{align*} 
 	\gamma^\mu\gamma^\nu + \gamma^\nu\gamma^\mu=&2\eta^{\mu\nu}\\
 	\gamma^\mu\gamma^\nu =& \eta^{\mu\nu} + \eta^{\mu\nu} -\gamma^\nu\gamma^\mu\\
@@ -122,8 +126,31 @@ Expanding
 	=&\frac{i}{2}[\gamma^\mu,\gamma^\nu]
 \end{align*}
 
+From \cite[II,(7)]{zee2010quantum}
+\begin{align*}
+	\gamma^5 =& i \gamma^0 \gamma^1 \gamma^2 \gamma^3 \numberthis \label{eq:gamma:5}
+\end{align*}
+
+\begin{align*}
+	\gamma^0 (\gamma^1 \gamma^2 \gamma^3) =& -i \gamma^5\\
+	(\gamma^0)^2 (\gamma^1 \gamma^2 \gamma^3) =& -i \gamma^0 \gamma^5\\
+	I \gamma^1 \gamma^2 \gamma^3 =& -i \gamma^0 \gamma^5\\
+	\gamma^1 \gamma^2 \gamma^3 =& -i \gamma^0 \gamma^5
+\end{align*}
+
+From \eqref{eq:gamma:anti}:
+\begin{align*}
+	\gamma^0 \gamma_i =& \eta^{0i}-\gamma^i \gamma^0\\
+	=& - \gamma^i\gamma^0 \text{, so \eqref{eq:gamma:5} becomes:}\\
+	\gamma^5 =& - i \gamma^1 \gamma^0 \gamma^2 \gamma^3\\
+	\gamma^1 \gamma^5 =& - i (\gamma^1)^2 \gamma^0 \gamma^2 \gamma^3\\
+	i \gamma^0 \gamma^2 \gamma^3 =&\gamma^1 \gamma^5 \text{, from \eqref{eq:gamma:ii}}\\
+	\gamma^0 \gamma^2 \gamma^3 =&-i\gamma^1 \gamma^5\\
+\end{align*}
 
 \subsection{Isomorphism $\frac{SU(2)}{Z^2} \cong SO(3)$}
+
+
 In \cite[Section 3]{westra2008SU2} a $2\times 2$ unimodular unitary matrix has the form:
 \begin{align*}
 	U =& \begin{bmatrix}

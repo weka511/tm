@@ -106,8 +106,53 @@ This document contains derivations of equations from \cite[Part II: Dirac and th
 \end{align*}
 
 \subsection{Cousins of the Gamma Matrices}
+We collect some properties of the Pauli matrices.
+\begin{align*}
+	\sigma^x =& \begin{bmatrix} \numberthis \label{eq:pauli:x}
+		0&1\\
+		1&0
+	\end{bmatrix}\\
+	\sigma^y =& \begin{bmatrix} \numberthis \label{eq:pauli:y}
+		0&-i\\
+		i&0
+	\end{bmatrix}\\
+	\sigma^z =& \begin{bmatrix} \numberthis \label{eq:pauli:z}
+		1&0\\
+		0&-1
+	\end{bmatrix}\\
+	\sigma^x \sigma^y \sigma^z =& \begin{bmatrix} 
+		0&1\\
+		1&0
+	\end{bmatrix} \begin{bmatrix} 
+		0&-i\\
+		i&0
+	\end{bmatrix}\begin{bmatrix} 
+		1&0\\
+		0&-1
+	\end{bmatrix}\\
+	=& \begin{bmatrix}
+		i&0\\
+		0&-i\\
+	\end{bmatrix}\begin{bmatrix} 
+		1&0\\
+		0&-1
+	\end{bmatrix}\\
+	=& i I
+\end{align*}
 
-From \cite[II,(2)]{zee2010quantum}
+The Dirac gamma matrices have the following representation.
+\begin{align*}
+	\gamma^0 =& \begin{bmatrix} \numberthis \label{eq:gamma:0}
+	I&0\\
+	0&-I
+\end{bmatrix}\\
+\gamma^i =& \begin{bmatrix}  \numberthis \label{eq:gamma:i}
+	0&\sigma^i\\
+	-\sigma^i&0
+\end{bmatrix}	
+\end{align*}
+
+From \cite[II.1,(2)]{zee2010quantum}
 \begin{align*}
 	\{\gamma^\mu,\gamma^\nu\}=&2\eta^{\mu\nu} \numberthis \label{eq:gamma:anti}\\
 	\{\gamma^0,\gamma^0\}=&2\eta^{00}\\
@@ -131,6 +176,38 @@ From \cite[II,(7)]{zee2010quantum}
 	\gamma^5 =& i \gamma^0 \gamma^1 \gamma^2 \gamma^3 \numberthis \label{eq:gamma:5}
 \end{align*}
 
+Using the representation \eqref{eq:gamma:0} and \eqref{eq:gamma:i}.
+\begin{align*}
+	\gamma^5=& i \begin{bmatrix}
+		I&0\\
+		0&-I
+	\end{bmatrix} \begin{bmatrix}
+		0&\sigma^1\\
+		-\sigma^1&0
+	\end{bmatrix} \begin{bmatrix}
+		0&\sigma^2\\
+		-\sigma^2&0
+	\end{bmatrix} \begin{bmatrix}
+		0&\sigma^3\\
+		-\sigma^3&0
+	\end{bmatrix}\\
+	=& i \begin{bmatrix}
+		0&\sigma^1\\
+		\sigma^1&0
+	\end{bmatrix} \begin{bmatrix*}
+		-\sigma^2 \sigma^3&0\\
+		0&-\sigma^2 \sigma^3
+	\end{bmatrix*}\\
+	=& i \begin{bmatrix}
+		0&-\sigma^1 \sigma^2 \sigma^3\\
+		-\sigma^1 \sigma^2 \sigma^3&0
+	\end{bmatrix}\\
+	=& \begin{bmatrix}
+		0&I\\
+		I&0
+	\end{bmatrix}
+\end{align*}
+Which agrees with \cite[II,(8)]{zee2010quantum}.
 \begin{align*}
 	\gamma^0 (\gamma^1 \gamma^2 \gamma^3) =& -i \gamma^5\\
 	(\gamma^0)^2 (\gamma^1 \gamma^2 \gamma^3) =& -i \gamma^0 \gamma^5\\
@@ -396,8 +473,139 @@ Collecting \eqref{eq:U:sigma1:expanded}, \eqref{eq:U:sigma2:expanded}, and \eqre
 
 \section{Quantizing the Dirac Field}
 \section{Lorentz Group and Weyl Spinors}
+
+From \cite[II.3,(2,5,6)]{zee2010quantum}
+\begin{align*}
+	J_1 =& \begin{bmatrix}
+		0&0&0&0\\
+		0&0&0&0\\
+		0&0&0&-i\\
+		0&0&i&0\\
+	\end{bmatrix}\;
+	J_2 =& \begin{bmatrix}
+		0&0&0&0\\
+		0&0&0&i\\
+		0&0&0&0\\
+		0&-i&0&0\\
+	\end{bmatrix}\;
+	J_3 =& \begin{bmatrix}
+		0&0&0&0\\
+		0&0&-i&0\\
+		0&i&0&0\\
+		0&0&0&0\\
+	\end{bmatrix} \numberthis \label{eq:Js}\\
+	i K_1 =& \begin{bmatrix}
+		0&1&0&0\\
+		1&0&0&0\\
+		0&0&0&0\\
+		0&0&0&0\\
+	\end{bmatrix}\;
+	i K_2 =& \begin{bmatrix}
+		0&0&1&0\\
+		0&0&0&0\\
+		1&0&0&0\\
+		0&0&0&0\\
+	\end{bmatrix}\;
+	i K_3 =& \begin{bmatrix}
+		0&0&0&1\\
+		0&0&0&0\\
+		0&0&0&0\\
+		1&0&0&0\\
+	\end{bmatrix} \numberthis \label{eq:Ks}
+\end{align*}
+
+\begin{thm}[$J_{+}$ and $J_{-}$ form two separate $SU(2)$ algebras]
+	If we define:
+	\begin{align*}
+		J_{\pm i} \equiv & \frac{1}{2}\big(J_i\pm i K_i\big)\text{, then}\\
+		\big[J_{\pm i},J_{\pm j}\big] =& i \epsilon_{ijk} J_{\pm k} \text{, and} \numberthis \label{eq:J:pm}\\
+		\big[J_{+i},J_{-j}\big] =& 0 \numberthis \label{eq:J:pm1}
+	\end{align*}
+\end{thm}
+\begin{proof}
+	From \eqref{eq:Js}:
+	\begin{align*}
+		[J_1, J_2] =& \begin{bmatrix}
+			0&0&0&0\\
+			0&0&0&0\\
+			0&-1&0&0\\
+			0&0&0&0
+		\end{bmatrix} - \begin{bmatrix}
+							0&0&0&0\\
+							0&0&-1&0\\
+							0&0&0&0\\
+							0&0&0&0\\
+						\end{bmatrix}\\
+		 =& \begin{bmatrix}
+				0&0&0&0\\
+				0&0&1&0\\
+				0&-1&0&0\\
+				0&0&0&0
+			\end{bmatrix}\\
+			=&i J_3
+	\end{align*}
+	
+	From \eqref{eq:Ks}:
+	\begin{align*}
+		[K_1,K_2] =& -[i K_1, i K_2] \\
+		=& [i K_2,i K_1] \\
+		=& \begin{bmatrix}
+			0&0&0&0\\
+			0&0&0&0\\
+			0&1&0&0\\
+			0&0&0&0\\
+		\end{bmatrix} -  \begin{bmatrix}
+								0&0&0&0\\
+								0&0&1&0\\
+								0&0&0&0\\
+								0&0&0&0\\
+						 \end{bmatrix}\\
+		 =&\begin{bmatrix}
+			0&0&0&0\\
+			0&0&-1&0\\
+			0&1&0&0\\
+			0&0&0&0\\
+		\end{bmatrix}\\
+		=& -i J_3 \text{, using \eqref{eq:Js}.}
+	\end{align*}
+	
+
+	
+	\begin{align*}
+		\big[J_{+ i},	J_{+ j}\big]  = & \frac{1}{4}\big[J_i+ i K_i,J_j+ i K_j\big]\\
+		 = & \frac{1}{4} \big[\big(J_i+ i K_i\big)\big(J_j+ i K_j\big)-\big(J_j+ i K_j\big)\big(J_i+ i K_i\big)\big]\\
+		 = & \frac{1}{4} \big[J_iJ_j + i J_iK_j + iK_iJ_j - K_iK_j - J_jJ_i - i J_j K_i -i K_j J_i +K_jK_i\big]\\
+		 = & \frac{1}{4} \big[[J_i,J_j] - [K_i,K_j] + i[J_i,K_j]-i[J_j,K_i] \big] \\
+		 = & \frac{1}{4} \big[i\epsilon_{ijk}J_k +i\epsilon_{ijk}J_k + i^2\epsilon_{ijk}K_k-i^2\epsilon_{jik}K_k] \big]\\
+		 =& \frac{i}{2} \big[\epsilon_{ijk}J_k+i \epsilon_{ijk}K_k\big]\\
+		 =& \frac{i}{2} \epsilon_{ijk}J_{+ k}
+	\end{align*}
+	
+	Which is the $+$ case of \eqref{eq:J:pm}. Define
+	\begin{align*}
+		K_i^\prime =& - K_i\\
+		J_{+i}^\prime =& J_i +  K_i^\prime
+	\end{align*}
+	We see that the argument for \eqref{eq:J:pm} suffices to establish:
+	\begin{align*}
+		\big[J_{+ i}^\prime, J_{+ j}^\prime\big] =&  \frac{i}{2} \epsilon_{ijk}J_{+ k} ^\prime \text{, but}\\
+		J_{+i}^\prime =& J_{-i}\text{, whence}\\
+		\big[J_{- i}, J_{- j} \big] =&  \frac{i}{2} \epsilon_{ijk}J_{- k}
+	\end{align*}
+	Which is the $-$ case of \eqref{eq:J:pm}. Finally:
+	\begin{align*}
+		\big[J_{+ i},	J_{- j}\big]  = & \frac{1}{4}\big[J_i+ i K_i,J_j- i K_j\big]\\
+		= & \frac{1}{4} \big[\big(J_i+ i K_i\big)\big(J_j- i K_j\big)-\big(J_j- i K_j\big)\big(J_i+ i K_i\big)\big]\\
+		= & \frac{1}{4} \big[J_iJ_j -i J_iK_j +iK_iJ_j+K_iK_j - J_jJ_i -iJ_j K_i+iK_jJ_i-K_jK_i\big] \\
+		= & \frac{1}{4} \big[[J_i,J_j] +[K_i,K_j]  -i[J_i,K_j] +i \underbrace{[K_i,J_j]}_\text{$-[J_j,K_i]$}\big] \\
+		= & \frac{1}{4} \big[\cancel{i\epsilon_{ijk}J_k} - \cancel{i\epsilon_{ijk}J_k} -\bcancel{i^2\epsilon_{ijk}K_k} -\bcancel{i^2\epsilon_{jik}K_k}\big]\\
+		=& 0
+	\end{align*}
+	Which establishes \eqref{eq:J:pm1}.
+\end{proof}
+
 \section{Spin-Statistics Connection}
-\section{Vacuum Energy, etc}
+\section{Vacuum Energy, Grassman Integrals, and Feynman Diagrams for Fermions}
 \section{Electron Scattering and Gauge Invariance}
 \section{Diagrammatic Proof of Gauge Invariance}
 \section{Photon-Electron Scattering}

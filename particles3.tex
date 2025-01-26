@@ -673,10 +673,7 @@ We'll be dealing with diagrams that are very simple. They are just Feynman diagr
 \end{thm}
 
 \begin{proof}
-	You can think of a loop as the production and annihilation of a particle-antiparticle pair, or as a single particle looping in space-time. The sign of a particle in a loop can be either positive or negative. What about two loops--Figures \ref{fig:two:loops:fermion} and \ref{fig:two:loops:boson}? This is the product of two separate loops. \begin{itemize}
-		\item So if there is a plus sign for one loop, there will be a plus sign for the product.
-		\item iI there is a minus sign for one loop, there will still be a plus sign for the product.
-	\end{itemize} So there will  be a plus sign for the product either way.
+	You can think of a loop as the production and annihilation of a particle-antiparticle pair, or as a single particle looping in space-time. The sign of a particle in a loop can be either positive or negative. What about two loops--Figures \ref{fig:two:loops:fermion} and \ref{fig:two:loops:boson}? The Feynman diagram is just the product of two separate loops.
 	
 	\begin{figure}[H]
 		\caption{Two loops: each is a product of two separate loops.}\label{fig:two:loops}
@@ -709,6 +706,12 @@ We'll be dealing with diagrams that are very simple. They are just Feynman diagr
 		\end{subfigure}
 
 	\end{figure}
+
+	\begin{itemize}
+		\item So if there is a plus sign for one loop, there will be a plus sign for the product.
+		\item iI there is a minus sign for one loop, there will still be a plus sign for the product.
+	\end{itemize} 
+	So there will  be a plus sign for the product of two disconnected loops either way.
 	
 	Let's assume our particles are Fermions: we will break the loop and look in the middle at t=0--Figure \ref{fig:two:loops:split}. 
 		
@@ -725,7 +728,7 @@ We'll be dealing with diagrams that are very simple. They are just Feynman diagr
 		\end{subfigure}
 		\hfill
 		\begin{subfigure}[t]{0.45\textwidth}
-			\caption{One Fermion loop, built by interchanging particles }\label{fig:two:loops:interchange}
+			\caption{Before closing loops again, we interchange particles }\label{fig:two:loops:interchange}
 			\begin{equation*}t=0
 				\feynmandiagram[inline=(c.base),vertical=in1 to out1,scale=0.9, transform shape]{
 					in1-- [fermion]c--[fermion]out1,
@@ -753,83 +756,76 @@ The consequences are profound:
 	\item the contribution to the vacuum of a Boson loop is positive;
 	\item the contribution to the vacuum of a Fermion loop is negative.
 \end{itemize}
-We have this strange puzzle about the vacuum energy, which was introduced in Section \ref{sect:vacuum:energy:renormalization}; it is extremely small, and we call it Dark Energy. The naive calculation in quantum field theory would give an answer 123 orders of magnitude larger. It is interesting that the answer can be positive or negative: it depends on all sorts of things, such as mass and charge. We can at least get positive and negative signs. The fact that they cancel to 123 order of magnitude is bizarre, but at least we have the possibility canceling contributions. All things being equal, a boson and a fermion will give exactly the same contribution to the vacuum energy, except one with a plus sign and one with a minus sign.
+We have this strange puzzle about the vacuum energy, which was introduced in Section \ref{sect:vacuum:energy:renormalization}; it is extremely small, and we call it Dark Energy. The naive calculation in \glsdesc{gls:QFT} would give an answer 123 orders of magnitude larger. It is interesting that the \glsdesc{gls:QFT} answer can be positive or negative: it depends on all sorts of things, such as mass and charge. We can at least get positive and negative signs. The fact that they cancel to 123 order of magnitude is bizarre, but at least we have the possibility of canceling contributions. All things being equal, a boson and a fermion will give exactly the same contribution to the vacuum energy, except one with a plus sign and one with a minus sign.
 
-That doesn't explain why the vacuum energy is zero, it may create a thought in your head: perhaps there is a lot of cancellation. To get an exact cancellation, we'd need for every boson with the same mass and same properties in every other respect, then we could conceive that the particles would cancel out the vacuum energy. That is one of the things that a supersymmetric theory can do: they can cancel out the contributions for the vaccum energy.
+That doesn't explain why the vacuum energy is zero, it may create a thought in your head: perhaps there is a lot of cancellation between Fermions and Bosons. To get an exact cancellation, we'd need every Boson to have a Fermion with the exactly the same mass and the same properties in every other respect; then we could conceive that the particles might cancel out the vacuum energy. That is one of the things that supersymmetric theories can do: they can cancel out the contributions for the vacuum energy.
 
-We know that there isn't an exact Boson for each Fermion and vice versa. For example, the electron: there isn't a Boson equivalent to the electron: if there were, the partners could be produced--Figure \ref{fig:partners}-- with exactly the same probability as an electron-positron pair--Figure \ref{fig:re:emit}. We know this isn't the case: Nature does not have a Boson$\leftrightarrow$Fermion symmetry. We know this because it doesn't happen in the laboratory; there is no Boson--Fermion reflection.  
+We know that there isn't an exact Boson for each Fermion and vice versa. For example, there isn't a Boson equivalent to the electron: if there were, the partners could be produced--Figure \ref{fig:partners}-- with exactly the same probability as an electron-positron pair--Figure \ref{fig:re:emit}. We know this isn't the case: Nature does not have a Boson$\leftrightarrow$Fermion symmetry. We know this because it doesn't happen in the laboratory; there is no Boson--Fermion reflection.  
 
 \begin{figure}[H]
 	\begin{center}
 		\caption{Why there isn't a Boson equivalent to the electron}
 		\begin{subfigure}{0.45\textwidth}
-			\caption{Producing the partners}\label{fig:partners}
+			\caption{Producing the partners with exactly the same probability as an electron-positron pair--(\subref{fig:re:emit})}\label{fig:partners}
 			\feynmandiagram[vertical'=b to a]{
 				i1 [particle=\(e^{-}\)]
 				-- [fermion] a
-				-- [fermion] f1 [particle=\(e^{-}\)],
+				-- [fermion] f1 [particle=\(e^{+}\)],
 				a -- [photon,edge label=\(\gamma\)] b,
 				i2 [particle=\(e^{+}\)]
 				-- [boson] b
-				-- [boson] f2 [particle=\(e^{+}\)],
+				-- [boson] f2 [particle=\(e^{-}\)],
 			};
 		\end{subfigure}
+		\hfill
 		\begin{subfigure}{0.45\textwidth}
-			\caption{Reemitting the Fermions}\label{fig:re:emit}
+			\caption{Re-emitting the Fermions}\label{fig:re:emit}
 			\feynmandiagram[vertical'=b to a]{
 				i1 [particle=\(e^{-}\)]
 				-- [fermion] a
-				-- [fermion] f1 [particle=\(e^{-}\)],
+				-- [fermion] f1 [particle=\(e^{+}\)],
 				a -- [photon,edge label=\(\gamma\)] b,
 				i2 [particle=\(e^{+}\)]
 				-- [fermion] b
-				-- [anti fermion] f2 [particle=\(e^{+}\)],
+				-- [anti fermion] f2 [particle=\(e^{-}\)],
 			};
 		\end{subfigure}
 	\end{center}
 \end{figure}
 
-We know it isn't true, but still it interesting to contemplate the fact that,  if we had a theory which was sufficiently symmetrical between Fermions and Bosons, we would at least have a chance of cancelling the vacuum energy. Keep this thought in mind.
- Keep these two thoughts in mind.
-
-Another thought to keep in mind: can this also help with the self-energy of Bosons: we have Feynman diagrams which give rise to quadratic divergences in the mass of a Boson. Even if the initial mass is zero, we have diagrams that give us a huge mass--Section \ref{sect:renormalization:lambda}. We would like to create a theory which doesn't give rise to these huge masses from renormalization.
-
+We know it isn't true, but still it interesting to contemplate the fact that,  if we had a theory which was sufficiently symmetrical between Fermions and Bosons, we would at least have a chance of canceling the vacuum energy. Keep this thought in mind.
+ 
+Another thought to keep in mind: can this also help with the self-energy of Bosons? We have Feynman diagrams which give rise to quadratic divergences in the mass of a Boson. Even if the initial mass is zero, we have diagrams that give us a huge mass--Section \ref{sect:renormalization:lambda}. We would like to create a theory which doesn't give rise to these huge masses from renormalization.
 
 We already have theory in which Fermions don't get these enormous masses: we discussed this above. Because of the left-right switch, Fermions in many situation will not be get this big mass. For example, if you start with a zero mass it remains zero. Imagine that, for some reason, your theory was concocted in such a way that, after all this renormalization takes place, after the worst looking Feynman diagrams you can imagine, there was enough symmetry, enough structure in the theory, that made certain that the Fermions and Bosons travelled in pairs, and always had exactly the same mass (they are partners); then, since the Fermions didn't start with any mass, it must also be true of the Bosons.
 
 Why? LS isn't saying that we can make such a theory. Obviously the Bosons do get big masses from self-interaction, and the Fermions don't, but here is what you can imagine as an example.    
 
-Take the various Feynman digrams that contribute to the self energy of a Boson. You might have Feynman diagram such as  Figure \ref{fig:2loops:bosons}, where we have a Boson going round the loop. But we might have another Feynman diagram such as Figure \ref{fig:2loops:fermions}, where what runs around the loop is a Fermion. Fermions and Bosons always have opposites signs for these loops, so we can imagine, if everything were absolutely symmetrical, we might imagine things cancelling, so that self energy of the Bosons is no longer large.
+Take the various Feynman digrams that contribute to the self energy of a Boson. You might have Feynman diagram such as  Figure \ref{fig:2loops:bosons}, where we have a Boson going round the loop. But we might have another Feynman diagram such as Figure \ref{fig:2loops:fermions}, where what runs around the loop is a Fermion. Fermions and Bosons always have opposites signs for these loops, so, if everything were absolutely symmetrical, we might imagine things canceling, so that self energy of the Bosons is no longer large.
 
 \begin{figure}[H]
 	\caption{Some illustrative Feynman Diagrams for a Boson}\label{fig:2loops}
 	\begin{subfigure}{0.45\textwidth}
 		\caption{Boson going around loop}\label{fig:2loops:bosons}
 		\feynmandiagram[vertical=b to d]{
-			i--[boson]b,
-			a --[boson,quarter left]
-			b-- [boson,quarter left]
-			c-- [boson,quarter left]
-			d-- [boson,quarter left] a,
-			ii--[photon]d	
+			in--[boson]b,
+			b-- [boson,half left]d,
+			b-- [boson,half right]d,
+			d--[boson]out
 		};
 	\end{subfigure}
 	\begin{subfigure}{0.45\textwidth}
 		\caption{Fermion going round loop}\label{fig:2loops:fermions}
 		\feynmandiagram[vertical=b to d]{
-			i--[boson]b,
-			a --[quarter left]
-			b-- [quarter left]
-			c-- [quarter left]
-			d-- [quarter left] a,
-			ii--[photon]d	
+			in--[boson]b,
+			b-- [fermion,half left]d,
+			b-- [anti fermion,half right]d,
+			d--[boson]out
 		};
 	\end{subfigure}
 \end{figure}
 
-If there were such a theory which was rigidly enforced by the mathematics of the theory some how, then we could imagine that there are theories where the Bosons do not get these huge energies.
-
-That, in itself, is not good enough. We know there is not an exact mass equivalence between  Fermions and Bosons, but it is a start.
+If there were such a theory which was rigidly enforced by its mathematics somehow, then we could imagine that there are theories where the Bosons do not get these huge energies. That, in itself, is not good enough. We know there is not an exact mass equivalence between  Fermions and Bosons, but it is a start.
 
 To $0^{th}$ order the hypothesis is that to every particle in nature there is a partner of the opposite Fermi-Boson-ness, and the same charge. LS would say the same mass, except that we know that isn't true. This would involve doubling that spectrum of elementary particels. How about the fact that they don't have exactly the same masses? If the masses were equal we'd find that all this bad junk cancels exactly. If the masses were close but not equal, we'd still get an approximate cancellation. We don't care that there might be some self energy, we just don't want it to be huge. If the masses running around the loops in Figure \ref{fig:2loops} are similar, but not exactly the same, we might get an approximate cancellation, enough to avoid an explosively huge answer.
 

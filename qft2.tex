@@ -474,7 +474,7 @@ Collecting \eqref{eq:U:sigma1:expanded}, \eqref{eq:U:sigma2:expanded}, and \eqre
 \section{Quantizing the Dirac Field}
 \section{Lorentz Group and Weyl Spinors}
 
-From \cite[II.3,(2,5,6)]{zee2010quantum}
+The generators of the Lorentz Group are defined in \cite[II.3,(2,5,6)]{zee2010quantum}:
 \begin{align*}
 	J_1 =& \begin{bmatrix}
 		0&0&0&0\\
@@ -514,12 +514,11 @@ From \cite[II.3,(2,5,6)]{zee2010quantum}
 	\end{bmatrix} \numberthis \label{eq:Ks}
 \end{align*}
 
-\begin{thm}[$J_{+}$ and $J_{-}$ form two separate $SU(2)$ algebras]
-	If we define:
+\begin{thm}
 	\begin{align*}
-		J_{\pm i} \equiv & \frac{1}{2}\big(J_i\pm i K_i\big)\text{, then}\\
-		\big[J_{\pm i},J_{\pm j}\big] =& i \epsilon_{ijk} J_{\pm k} \text{, and} \numberthis \label{eq:J:pm}\\
-		\big[J_{+i},J_{-j}\big] =& 0 \numberthis \label{eq:J:pm1}
+		[J_i,J_j] =& i \epsilon_{ijk} J_k \numberthis \label{eq:J:J}\\
+		[J_i,K_j] =& i \epsilon_{ijk} K_k \numberthis \label{eq:J:K}\\
+		[K_i,K_j] =& - i \epsilon_{ijk} J_k \numberthis \label{eq:K:K}
 	\end{align*}
 \end{thm}
 \begin{proof}
@@ -531,18 +530,18 @@ From \cite[II.3,(2,5,6)]{zee2010quantum}
 			0&-1&0&0\\
 			0&0&0&0
 		\end{bmatrix} - \begin{bmatrix}
-							0&0&0&0\\
-							0&0&-1&0\\
-							0&0&0&0\\
-							0&0&0&0\\
-						\end{bmatrix}\\
-		 =& \begin{bmatrix}
-				0&0&0&0\\
-				0&0&1&0\\
-				0&-1&0&0\\
-				0&0&0&0
-			\end{bmatrix}\\
-			=&i J_3
+			0&0&0&0\\
+			0&0&-1&0\\
+			0&0&0&0\\
+			0&0&0&0\\
+		\end{bmatrix}\\
+		=& \begin{bmatrix}
+			0&0&0&0\\
+			0&0&1&0\\
+			0&-1&0&0\\
+			0&0&0&0
+		\end{bmatrix}\\
+		=&i J_3
 	\end{align*}
 	
 	From \eqref{eq:Ks}:
@@ -555,12 +554,12 @@ From \cite[II.3,(2,5,6)]{zee2010quantum}
 			0&1&0&0\\
 			0&0&0&0\\
 		\end{bmatrix} -  \begin{bmatrix}
-								0&0&0&0\\
-								0&0&1&0\\
-								0&0&0&0\\
-								0&0&0&0\\
-						 \end{bmatrix}\\
-		 =&\begin{bmatrix}
+			0&0&0&0\\
+			0&0&1&0\\
+			0&0&0&0\\
+			0&0&0&0\\
+		\end{bmatrix}\\
+		=&\begin{bmatrix}
 			0&0&0&0\\
 			0&0&-1&0\\
 			0&1&0&0\\
@@ -568,15 +567,23 @@ From \cite[II.3,(2,5,6)]{zee2010quantum}
 		\end{bmatrix}\\
 		=& -i J_3 \text{, using \eqref{eq:Js}.}
 	\end{align*}
-	
+\end{proof}
 
-	
+\begin{thm}[$J_{+}$ and $J_{-}$ form two separate $SU(2)$ algebras]
+	If we define:
+	\begin{align*}
+		J_{\pm i} \equiv & \frac{1}{2}\big(J_i\pm i K_i\big)\text{, then}\\
+		\big[J_{\pm i},J_{\pm j}\big] =& i \epsilon_{ijk} J_{\pm k} \text{, and} \numberthis \label{eq:J:pm}\\
+		\big[J_{+i},J_{-j}\big] =& 0 \numberthis \label{eq:J:pm1}
+	\end{align*}
+\end{thm}
+\begin{proof}
 	\begin{align*}
 		\big[J_{+ i},	J_{+ j}\big]  = & \frac{1}{4}\big[J_i+ i K_i,J_j+ i K_j\big]\\
 		 = & \frac{1}{4} \big[\big(J_i+ i K_i\big)\big(J_j+ i K_j\big)-\big(J_j+ i K_j\big)\big(J_i+ i K_i\big)\big]\\
 		 = & \frac{1}{4} \big[J_iJ_j + i J_iK_j + iK_iJ_j - K_iK_j - J_jJ_i - i J_j K_i -i K_j J_i +K_jK_i\big]\\
 		 = & \frac{1}{4} \big[[J_i,J_j] - [K_i,K_j] + i[J_i,K_j]-i[J_j,K_i] \big] \\
-		 = & \frac{1}{4} \big[i\epsilon_{ijk}J_k +i\epsilon_{ijk}J_k + i^2\epsilon_{ijk}K_k-i^2\epsilon_{jik}K_k] \big]\\
+		 = & \frac{1}{4} \big[i\epsilon_{ijk}J_k +i\epsilon_{ijk}J_k + i^2\epsilon_{ijk}K_k-i^2\epsilon_{jik}K_k] \big]\text{, from \eqref{eq:J:J},\eqref{eq:J:K},\eqref{eq:K:K}}\\
 		 =& \frac{i}{2} \big[\epsilon_{ijk}J_k+i \epsilon_{ijk}K_k\big]\\
 		 =& \frac{i}{2} \epsilon_{ijk}J_{+ k}
 	\end{align*}
@@ -598,7 +605,7 @@ From \cite[II.3,(2,5,6)]{zee2010quantum}
 		= & \frac{1}{4} \big[\big(J_i+ i K_i\big)\big(J_j- i K_j\big)-\big(J_j- i K_j\big)\big(J_i+ i K_i\big)\big]\\
 		= & \frac{1}{4} \big[J_iJ_j -i J_iK_j +iK_iJ_j+K_iK_j - J_jJ_i -iJ_j K_i+iK_jJ_i-K_jK_i\big] \\
 		= & \frac{1}{4} \big[[J_i,J_j] +[K_i,K_j]  -i[J_i,K_j] +i \underbrace{[K_i,J_j]}_\text{$-[J_j,K_i]$}\big] \\
-		= & \frac{1}{4} \big[\cancel{i\epsilon_{ijk}J_k} - \cancel{i\epsilon_{ijk}J_k} -\bcancel{i^2\epsilon_{ijk}K_k} -\bcancel{i^2\epsilon_{jik}K_k}\big]\\
+		= & \frac{1}{4} \big[\cancel{i\epsilon_{ijk}J_k} - \cancel{i\epsilon_{ijk}J_k} -\bcancel{i^2\epsilon_{ijk}K_k} -\bcancel{i^2\epsilon_{jik}K_k}\big]\text{, from \eqref{eq:J:J},\eqref{eq:J:K},\eqref{eq:K:K}} \\
 		=& 0
 	\end{align*}
 	Which establishes \eqref{eq:J:pm1}.

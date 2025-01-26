@@ -631,33 +631,33 @@ We'll be dealing with diagrams that are very simple. They are just Feynman diagr
 
 
 \begin{figure}[H]
-	\caption{Closed Loops Feynman diagrams}
-	\begin{subfigure}[t]{0.45\textwidth}
+	\caption{A few Feynman diagrams}
+	\begin{subfigure}[t]{0.3\textwidth}
 		\caption{Fermion Closed Loop}\label{fig:particles3-2-loops}
 		\feynmandiagram{
 			b-- [fermion,half left]
 			c-- [fermion,half left] b
 		};
 	\end{subfigure}
-	\begin{subfigure}[t]{0.45\textwidth}
+	\hfill
+	\begin{subfigure}[t]{0.3\textwidth}
 		\caption{Boson Closed Loop}\label{fig:particles3-2-loops-boson}
 		\feynmandiagram{
 			b-- [photon,half left]
 			c-- [photon,half left] b
 		};
 	\end{subfigure}
-\end{figure}
-
-\begin{figure}[h]
-	\begin{center}
+	\hfill
+	\begin{subfigure}[t]{0.3\textwidth}
 		\caption{Loop which contributes to the energy of the particle}\label{fig:particles3-2-loops-p}
 		\feynmandiagram[vertical=e4 to e1]{
-			e1[particle=$e^-$]--[fermion]e2--[fermion]e3
-			--[fermion]e4[particle=$e^-$],
+			e1[particle=$e^-$]--[fermion]e2--[fermion]e3		--[fermion]e4[particle=$e^-$],
 			e2--[photon,looseness=3.0,half left]e3
-		};
-	\end{center}
+	};
+	\end{subfigure}
 \end{figure}
+
+
 
 \begin{thm}[Contribution of loops to vacuum energy]\label{thm:contribution:loops}
 	
@@ -668,32 +668,47 @@ We'll be dealing with diagrams that are very simple. They are just Feynman diagr
 \end{thm}
 
 \begin{proof}
-	You can think of a loop as the production and annihilation of a pair, or as a single particle looping in space-time. The sign of a particle in a loop can be either positive or negative. What about two loops--Figures \ref{fig:two:loops:fermion} and \ref{fig:two:loops:boson}? This is the product of two separate loops. So if there is a plus sign for one loop, there will be a plus sign for the product: if there is a minus sign for one loop, there will still be a plus sign for the product. So there will  be a plus sign for the product either way.
+	You can think of a loop as the production and annihilation of a particle-antiparticle pair, or as a single particle looping in space-time. The sign of a particle in a loop can be either positive or negative. What about two loops--Figures \ref{fig:two:loops:fermion} and \ref{fig:two:loops:boson}? This is the product of two separate loops. \begin{itemize}
+		\item So if there is a plus sign for one loop, there will be a plus sign for the product.
+		\item iI there is a minus sign for one loop, there will still be a plus sign for the product.
+	\end{itemize} So there will  be a plus sign for the product either way.
 	
 	\begin{figure}[H]
-		\caption{Two loops}\label{fig:two:loops}
-		\begin{subfigure}[t]{0.5\textwidth}
-			\caption{Two Fermion loops}\label{fig:two:loops:fermion}
-			\feynmandiagram{
-				b-- [fermion,half left]
-				c-- [fermion,half left] b
-			};
-			\feynmandiagram{
-				b-- [fermion,half left]
-				c-- [fermion,half left] b
-			};
+		\caption{Two loops: each is a product of two separate loops.}\label{fig:two:loops}
+		\begin{subfigure}[t]{0.45\textwidth}
+			\begin{center}
+				\caption{Two Fermion loops}\label{fig:two:loops:fermion}
+				\feynmandiagram[scale=0.9, transform shape]{
+					b-- [fermion,half left]
+					c-- [fermion,half left] b
+				};
+				\feynmandiagram[scale=0.9, transform shape]{
+					b-- [fermion,half left]
+					c-- [fermion,half left] b
+				};
+			\end{center}
 		\end{subfigure}
-		\begin{subfigure}[t]{0.5\textwidth}
-			\caption{Two Boson loops}\label{fig:two:loops:boson}
-			\feynmandiagram{
-				b-- [boson,half left]
-				c-- [boson,half left] b
-			};
-			\feynmandiagram{
-				b-- [boson,half left]
-				c-- [boson,half left] b
-			};
+		\hfill
+		\begin{subfigure}[t]{0.45\textwidth}
+			\begin{center}
+				\caption{Two Boson loops}\label{fig:two:loops:boson}
+				\feynmandiagram[scale=0.9, transform shape]{
+					b-- [boson,half left]
+					c-- [boson,half left] b
+				};
+				\feynmandiagram[scale=0.9, transform shape]{
+					b-- [boson,half left]
+					c-- [boson,half left] b
+				};
+			\end{center}
 		\end{subfigure}
+
+	\end{figure}
+	
+	Let's assume our particles are Fermions: we will break the loop and look in the middle at t=0--Figure \ref{fig:two:loops:split}. 
+		
+	\begin{figure}[H]
+		\caption{Breaking a Fermion loop and looking in the middle at t=0.}
 		\begin{subfigure}[t]{0.45\textwidth}
 			\caption{Two Fermion loops, split at t=0}\label{fig:two:loops:split}
 			\begin{equation*}t=0
@@ -711,6 +726,7 @@ We'll be dealing with diagrams that are very simple. They are just Feynman diagr
 				};
 			\end{equation*}		
 		\end{subfigure}
+		\hfill
 		\begin{subfigure}[t]{0.45\textwidth}
 			\caption{One Fermion loop, built by interchanging particles }\label{fig:two:loops:interchange}
 			\begin{equation*}t=0
@@ -727,9 +743,9 @@ We'll be dealing with diagrams that are very simple. They are just Feynman diagr
 					d-- [anti fermion] a,
 				};
 			\end{equation*}		
-	\end{subfigure}
+		\end{subfigure}
 	\end{figure}
-	Let's assume our particles are Fermions: lets break the loop and look in the middle at t=0--Figure \ref{fig:two:loops:split}. 
+
 	\begin{itemize}
 		\item What happens for amplitude of a system if we exchange two Bosons? We get a plus sign. 
 		\item What happens for amplitude of a system if we exchange two Fermions? We get a minus sign. 

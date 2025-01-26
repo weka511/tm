@@ -98,7 +98,7 @@ Examples of getting rid of things that are too small to be of interest.
 	\item Now move on to atoms and forget their contents.
 \end{itemize}
 
-At each stage we eliminated the things what are smaller than we are really interested. The result is a coarse-grained description that is less accurate but more useful for our purposes.
+At each stage we eliminated the things that are smaller than we are really interested. The result is a coarse-grained description that is less accurate but more useful for our purposes.
 
 The same thing is true in field theory. Each possible wavelength represents a degree of freedom. In describing things at one length scale we don't want to deal with shorter scales. We find a way to sum up the shorter stuff and replace by effective new parameters. That is all that renormalization is (plus some dimensional analysis).
 
@@ -518,6 +518,7 @@ In order to cancel terms in (\ref{eq:sum:lambdas}), terms need to be very closel
 \section{Fermions and bosons}
 
 \subsection{Difference between Fermions and bosons}
+
 Supersymmetry has to do with Fermions and Bosons, and their symmetries. We will talk again about Fermions and Bosons; I want to tell you some odd and peculiar facts about Fermions, but, before that, we'll look at rotations in space.
 
 Normally we are told that a rotation of $2\pi$ is equivalent to no rotation at all, but it is not true.
@@ -526,12 +527,12 @@ Normally we are told that a rotation of $2\pi$ is equivalent to no rotation at a
 	Take a box, put a basketball in, and connect it to the walls with flexible but unbreakable strings. A rotation by $2\pi$ tangles the strings; a rotation by $4\pi$ is equivalent to no rotation.
 \end{thm}
 
-Imagine that we have a particles, Fermions or Bosons, and we are interested in the spin of the particle only, and the spin is described by a quantum state $\bra{s}$. What happens to the state when you rotate the particle by $2\pi$?
+Imagine that we have a particle, a Fermion or a Boson. We are interested in the spin of the particle only, and the spin is described by a quantum state $\bra{s}$. What happens to the state when you rotate the particle by $2\pi$?
 
 How would you rotate an electron by $2\pi$?
 
 \begin{itemize}
-	\item apply strong magnetic field and rotate magnetic field around;
+	\item apply strong magnetic field and rotate magnetic field around, or;
 	\item use field to precess particle.
 \end{itemize}
 
@@ -547,10 +548,10 @@ Can we detect this experimentally? It was long thought that we could not. If we 
 We can, however, do a 2 slit experiment\cite{aharonov1967observability}--Figure \ref{fig:particles3-2-2slit}.
 
 \begin{figure}[H]
-	\caption{A 2 slit experiment to detect rotation by $2\pi$}
-	\begin{subfigure}[t]{0.45\textwidth}
+	\caption{A 2 slit experiment to detect rotation by $2\pi$. We feed the electrons through one by one, without looking to see which slit they go through, and we place a magnetic field behind each slit.}
+	\begin{subfigure}[t]{\textwidth}
 		\begin{center}
-			\caption{There is a magnetic field behind each slit, which traps electron temporarily. While an electron is trapped we rotate one field or the other, which can be detected in the interference pattern.}\label{fig:particles3-2-2slit}
+			\caption{There is a magnetic field behind each slit, which traps electron temporarily. While an electron is trapped we rotate one field or the other, so wave function may be multiplied by $-1$ which shifts the interference pattern by half a wavelength. If you rotate the whole setup, then you detect nothing. Also, if you rotate one beam by $4\pi$ you detect nothing.}\label{fig:particles3-2-2slit}
 			\begin{tikzpicture}
 				\draw (0,-3) -- (0,-1.1);
 				\draw (0,-1.0) -- (0,-0.1);
@@ -569,8 +570,53 @@ We can, however, do a 2 slit experiment\cite{aharonov1967observability}--Figure 
 	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
 		\begin{center}
-			\caption{We create a superposition of two states, electron going through slit 1 or slit 2. In either case electron is in one box or the other. Now we rotate 2nd box by $2\pi$. The wave function for an electron changes sign, but this has no physical consequence on it own. For the superposition, if we rotate one electron wave function, we can never find electron at centre. $\psi_1$ and $\psi_2$ will interfere.}\label{fig:particles3-2-2slit-wave-function-2-2slit}
-			\includegraphics[width=\textwidth]{particles3-2-2slit-wave-function}
+			\caption{We create a superposition of two states, electron going through slit 1 or slit 2. In either case electron is in one box or the other.}\label{fig:particles3-2-2slit-wave-function-2-2slit}
+				\begin{tikzpicture}[scale=0.5, transform shape]
+				\newcommand\gauss[2]{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))} 
+				\begin{axis}[every axis plot post/.append style={
+						mark=none,domain=-10:10,samples=50,smooth},
+					clip=false,
+					axis y line=none,
+					axis x line=none,
+					ymin=0,
+					xtick=\empty,
+					]
+					\addplot [dashed,draw=black] {\gauss{-7}{1}};
+					\addplot [dashed,draw=black] {\gauss{7}{1}};
+				\end{axis}
+				\draw (1.5,1) node {$\Psi_1$};
+				\draw [draw=black] (0.5,0) rectangle (2.5,5.5);
+				\draw (5.75,1) node {$\Psi_2$};
+				\draw [draw=black] (4.25,0) rectangle (6.25,5.5);
+				\draw [->] (0,-3)--(3.4,-0.1) node[midway,below] {Electron starts in middle};
+				\draw (3.4,1.25) node {$\Psi=\Psi_1+\Psi_2$};
+			\end{tikzpicture}
+		\end{center}
+	\end{subfigure}
+		\hfill
+	\begin{subfigure}[t]{0.45\textwidth}
+		\begin{center}
+			\caption{Now we rotate 2nd box by $2\pi$. The wave function for an electron changes sign, but this has no physical consequence on it own. For the superposition, if we rotate one electron wave function, we can never find the electron at the centre, as $\psi_1$ and $\psi_2$ will interfere. This is true for Fermions, with an odd wave function, but not for Bosons.}
+			\begin{tikzpicture}[scale=0.5, transform shape]
+				\newcommand\gauss[2]{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))} 
+				\begin{axis}[every axis plot post/.append style={
+						mark=none,domain=-10:10,samples=50,smooth},
+					clip=false,
+					axis y line=none,
+					axis x line=none,
+					ymin=0,
+					xtick=\empty,
+					]
+					\addplot [dashed,draw=black] {\gauss{-7}{1}};
+					\addplot [dashed,draw=black] {\gauss{7}{1}};
+				\end{axis}
+				\draw (1.5,1) node {$\Psi_1$};
+				\draw [draw=black] (0.5,0) rectangle (2.5,5.5);
+				\draw (5.75,1) node {$-\Psi_2$};
+				\draw [draw=black] (4.25,0) rectangle (6.25,5.5);
+				\draw [->] (0,-3)--(3.4,-0.1) node[midway,below] {$\Psi=0$ in middle.};
+				\draw (3.4,1.25) node {$\Psi=\Psi_1-\Psi_2$};
+			\end{tikzpicture}
 		\end{center}
 	\end{subfigure}
 \end{figure}

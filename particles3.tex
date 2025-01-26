@@ -69,10 +69,9 @@
 \maketitle
 
 \begin{abstract}
-	These are my notes for the \emph{New Revolutions in Particle Physics 3--Supersymmetry and Grand Unification} lectures from Leonard Susskind's \emph{Theoretical Minimum} series\cite{susskind2007theoretical}. 
+	These are my notes for the \emph{New Revolutions in Particle Physics 3 -- Supersymmetry and Grand Unification} lectures from Leonard Susskind's \emph{Theoretical Minimum} series\cite{susskind2007theoretical}. 
 	
-	Disclaimer: I have created these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended 
-	as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
+	Disclaimer: I have created these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
 	
 \end{abstract}
 
@@ -662,7 +661,7 @@ We'll be dealing with diagrams that are very simple. They are just Feynman diagr
 	\end{subfigure}
 \end{figure}
 
-
+\subsection{Contributions to vacuum energy}
 
 \begin{thm}[Contribution of loops to vacuum energy]\label{thm:contribution:loops}
 	\hfill
@@ -704,7 +703,6 @@ We'll be dealing with diagrams that are very simple. They are just Feynman diagr
 				};
 			\end{center}
 		\end{subfigure}
-
 	\end{figure}
 
 	\begin{itemize}
@@ -758,6 +756,8 @@ The consequences are profound:
 \end{itemize}
 We have this strange puzzle about the vacuum energy, which was introduced in Section \ref{sect:vacuum:energy:renormalization}; it is extremely small, and we call it Dark Energy. The naive calculation in \glsdesc{gls:QFT} would give an answer 123 orders of magnitude larger. It is interesting that the \glsdesc{gls:QFT} answer can be positive or negative: it depends on all sorts of things, such as mass and charge. We can at least get positive and negative signs. The fact that they cancel to 123 order of magnitude is bizarre, but at least we have the possibility of canceling contributions. All things being equal, a boson and a fermion will give exactly the same contribution to the vacuum energy, except one with a plus sign and one with a minus sign.
 
+\subsection{Do Fermions and Bosons come in pairs?}
+
 That doesn't explain why the vacuum energy is zero, it may create a thought in your head: perhaps there is a lot of cancellation between Fermions and Bosons. To get an exact cancellation, we'd need every Boson to have a Fermion with the exactly the same mass and the same properties in every other respect; then we could conceive that the particles might cancel out the vacuum energy. That is one of the things that supersymmetric theories can do: they can cancel out the contributions for the vacuum energy.
 
 We know that there isn't an exact Boson for each Fermion and vice versa. For example, there isn't a Boson equivalent to the electron: if there were, the partners could be produced--Figure \ref{fig:partners}-- with exactly the same probability as an electron-positron pair--Figure \ref{fig:re:emit}. We know this isn't the case: Nature does not have a Boson$\leftrightarrow$Fermion symmetry. We know this because it doesn't happen in the laboratory; there is no Boson--Fermion reflection.  
@@ -797,53 +797,69 @@ We know it isn't true, but still it interesting to contemplate the fact that,  i
  
 Another thought to keep in mind: can this also help with the self-energy of Bosons? We have Feynman diagrams which give rise to quadratic divergences in the mass of a Boson. Even if the initial mass is zero, we have diagrams that give us a huge mass--Section \ref{sect:renormalization:lambda}. We would like to create a theory which doesn't give rise to these huge masses from renormalization.
 
-We already have theory in which Fermions don't get these enormous masses: we discussed this above. Because of the left-right switch, Fermions in many situation will not be get this big mass. For example, if you start with a zero mass it remains zero. Imagine that, for some reason, your theory was concocted in such a way that, after all this renormalization takes place, after the worst looking Feynman diagrams you can imagine, there was enough symmetry, enough structure in the theory, that made certain that the Fermions and Bosons travelled in pairs, and always had exactly the same mass (they are partners); then, since the Fermions didn't start with any mass, it must also be true of the Bosons.
+We already have a theory in which Fermions don't get these enormous masses: we discussed this above. Because of the left-right switch, Fermions in many situation will not be get this big mass. For example, if you start with a zero mass it remains zero. Imagine that, for some reason, your theory was concocted in such a way that, after all this renormalization takes place, after the worst looking Feynman diagrams you can imagine, there was enough symmetry, enough structure in the theory, that made certain that the Fermions and Bosons travelled in pairs, and always had exactly the same mass (they are partners); then, since the Fermions didn't start with any mass, it must also be true of the Bosons.
 
 Why? LS isn't saying that we can make such a theory. Obviously the Bosons do get big masses from self-interaction, and the Fermions don't, but here is what you can imagine as an example.    
 
-Take the various Feynman digrams that contribute to the self energy of a Boson. You might have Feynman diagram such as  Figure \ref{fig:2loops:bosons}, where we have a Boson going round the loop. But we might have another Feynman diagram such as Figure \ref{fig:2loops:fermions}, where what runs around the loop is a Fermion. Fermions and Bosons always have opposites signs for these loops, so, if everything were absolutely symmetrical, we might imagine things canceling, so that self energy of the Bosons is no longer large.
+Take the various Feynman diagrams that contribute to the self energy of a Boson. You might have Feynman diagram such as  Figure \ref{fig:2loops:bosons}, where we have a Boson going round the loop. But we might have another Feynman diagram such as Figure \ref{fig:2loops:fermions}, where what runs around the loop is a Fermion. Fermions and Bosons always have opposites signs for these loops, so, if everything were absolutely symmetrical, we might imagine things canceling, so that self energy of the Bosons is no longer large.
 
 \begin{figure}[H]
 	\caption{Some illustrative Feynman Diagrams for a Boson}\label{fig:2loops}
 	\begin{subfigure}{0.45\textwidth}
-		\caption{Boson going around loop}\label{fig:2loops:bosons}
-		\feynmandiagram[vertical=b to d]{
-			in--[boson]b,
-			b-- [boson,half left]d,
-			b-- [boson,half right]d,
-			d--[boson]out
-		};
+		\begin{center}
+			\caption{Boson going around loop}\label{fig:2loops:bosons}
+			\feynmandiagram[vertical=b to d]{
+				in--[boson]b,
+				b-- [boson,half left]d,
+				b-- [boson,half right]d,
+				d--[boson]out
+			};
+		\end{center}
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}{0.45\textwidth}
-		\caption{Fermion going round loop}\label{fig:2loops:fermions}
-		\feynmandiagram[vertical=b to d]{
-			in--[boson]b,
-			b-- [fermion,half left]d,
-			b-- [anti fermion,half right]d,
-			d--[boson]out
-		};
+		\begin{center}
+			\caption{Fermion going round loop}\label{fig:2loops:fermions}
+			\feynmandiagram[vertical=b to d]{
+				in--[boson]b,
+				b-- [fermion,half left]d,
+				b-- [anti fermion,half right]d,
+				d--[boson]out
+			};
+		\end{center}
 	\end{subfigure}
 \end{figure}
 
 If there were such a theory which was rigidly enforced by its mathematics somehow, then we could imagine that there are theories where the Bosons do not get these huge energies. That, in itself, is not good enough. We know there is not an exact mass equivalence between  Fermions and Bosons, but it is a start.
 
-To $0^{th}$ order the hypothesis is that to every particle in nature there is a partner of the opposite Fermi-Boson-ness, and the same charge. LS would say the same mass, except that we know that isn't true. This would involve doubling that spectrum of elementary particels. How about the fact that they don't have exactly the same masses? If the masses were equal we'd find that all this bad junk cancels exactly. If the masses were close but not equal, we'd still get an approximate cancellation. We don't care that there might be some self energy, we just don't want it to be huge. If the masses running around the loops in Figure \ref{fig:2loops} are similar, but not exactly the same, we might get an approximate cancellation, enough to avoid an explosively huge answer.
+To $0^{th}$ order the hypothesis is that to every particle in nature there is a partner of the opposite Fermi-Boson-ness, and the same charge. LS would say the same mass, except that we know that isn't true. This would entail doubling that spectrum of elementary particles. How about the fact that they don't have exactly the same masses? If the masses were equal we'd find that all this bad junk cancels exactly. If the masses were close but not equal, we'd still get an approximate cancellation. We don't care that there might be some self energy for Bosons, we just don't want it to be huge. If the masses running around the loops in Figure \ref{fig:2loops} are similar, but not exactly the same, we might get an approximate cancellation, enough to avoid an explosively huge answer.
 
-Super Symmetry is tghe idea that every particle has a partner of the opposite statistics: every Boson has its Fermionic super partners, and vice versa: they come in super pairs. With precise equivalence of masses we'd have precise cancellation; with almost degenercay we'd have approximate cancellation. That is the working hypothesis, that the thing that prevents the masses being enormous is cancellation.
+Super Symmetry is the idea that every particle has a partner of the opposite statistics: every Boson has its Fermionic super partners, and vice versa: they come in super pairs. With precise equivalence of masses we'd have precise cancellation; with almost degeneracy (equality of masses) we'd have approximate cancellation. That is the working hypothesis, that the thing that prevents the masses being enormous is cancellation between Fermions and Bosons.
 
 Superpartners have never been discovered in the laboratory: not a single one of them. The implication is they must be a good deal heavier. Figure \ref{fig:partners} shows the process of producing partners for the electron and positron; the fact that they have never been discovered means that no experiment has used enough energy to  create the super-partners. They are at the edges of detectability--hundreds of GeV. This sounds far-fetched. 
 
-It's really not that bad, because when you look at the supersymmetric theories, some of the particles can get mass only from the Higgs phenomenon. Others can have mass without the Higgs phenomenon. It turns out in these theories, mathematically, exactly half the particles, some Fermions, some Bosons, necessarily owe their mass to the Higgs phenomenon, which is another way of saying they must be massless until there is spontaneous symmetry breaking of the electroweak interaction via the Higgs phenomenon, and the other half are allowed to have mass without that. So maybe half the particles are naturally more massive than the other half. LS says that for most of us it is a little bit of a stretch, it's a bit too lucky that we haven't seen any of it yet. On the other hand there is some rationale for why the particles we have seen have low enough mass, and the other much higher mass. We have to wait to find out, but this is what LHC was designed to find out.
+It's really not that bad, because when you look at the supersymmetric theories, some of the particles can get mass only from the Higgs phenomenon. Others can have mass without the Higgs phenomenon. It turns out in these theories, mathematically, exactly half the particles, some Fermions, some Bosons, necessarily owe their mass to the Higgs phenomenon, which is another way of saying they must be massless until there is spontaneous symmetry breaking of the electroweak interaction via the Higgs phenomenon, and the other half are allowed to have mass without that. So maybe half the particles are naturally more massive than the other half. LS says that for most of us it is a little bit of a stretch, it's a bit too lucky that we haven't seen any of it yet. On the other hand there is some rationale for why the particles we have seen happen to be the ones that have low enough mass to be seen, and the others happen to have much higher mass. We have to wait to find out, but this is what \gls{gls:LHC} was designed to find out.
 
-How do we know that they aren't way off at enormous mass? What would happen to the cancellation if half the partners were at enormous mass, say the Planck mass? Cancellation would be extremely bad, and we'd get self energies comparable to the Plank mass. If yiou want the partners to protect you against enormous self energies, then the partners can't be too big -- not beyond 200GeV. If the role of Supersymmetry is to keep the Higgs Boson from being enormous, then the masses of superpartners cannot be too big: it has to be wihting the range of the LHC.
+How do we know that they aren't way off at enormous mass? What would happen to the cancellation if half the partners were at enormous mass, say the Planck mass? Cancellation would be extremely bad, and we'd get self energies comparable to the Plank mass. If you want the partners to protect you against enormous self energies, then the partners can't be too big -- not beyond 200\gls{gls:GeV}. If the role of Supersymmetry is to keep the Higgs Boson from being enormous, then the masses of superpartners cannot be too big: it has to be within the range of the \gls{gls:LHC}.
 
-We had a question about cancellation in aggregate. This would look like a coincidence: Supersymmetry is about cancellation of individual particles. Is there a mathematical framework which contains these symmetries, which can explain the differences in masses in a reasonable way, that would be more satisfying than saying that things cancel in aggregate.
+The audience asked a question about cancellation in aggregate. This would look like a coincidence: Supersymmetry is about cancellation of individual particles. Is there a mathematical framework which contains these symmetries, which can explain the differences in masses in a natural way, as a consequence of some reasonable mathematics, that would be more satisfying than saying that things cancel in aggregate.
 
-Can we detect super partners indirectly, as in Figure \ref{fig:particles3-2-superpartners}? Can we detect such a process by high precision electroweak measurements? These have been done. They constrain things and are pushing us to the edge of the parameter space. It's looking difficult to fit in Supersymmetry, but it's by no means ruled out. A 1GeV electron-positron collide would probably answer the questions. 
+Can we detect super partners indirectly, as in Figure \ref{fig:particles3-2-superpartners}? Can we detect such a process by high precision electroweak measurements? These have been done. They constrain things and are pushing us to the edge of the parameter space. It's looking difficult to fit in Supersymmetry, but it's by no means ruled out. A 1\gls{gls:GeV} electron-positron collide would probably answer the questions. 
 
 \begin{figure}[H]
-	\caption[Annihilate electron-positron pair]{Annihilate electron-positron pair. Boson produces super-partner pair, but there isn't enough energy and they remain virtual. Conservation of energy is violated for a very short time.}\label{fig:particles3-2-superpartners}
-	\includegraphics{particles3-2-superpartners}
+	\begin{center}
+		\caption[Annihilate electron-positron pair]{Annihilate electron-positron pair. Boson produces super-partner pair, but there isn't enough energy and they remain virtual. Conservation of energy is violated for a very short time.}\label{fig:particles3-2-superpartners}
+		\feynmandiagram[vertical = b to a]{
+			in1[particle=$e^-$] -- [fermion]a,
+			in2[particle=$e^+$] -- [anti fermion]a,
+			a -- [boson]b,
+			b -- [boson,half left]c,
+			b -- [boson,half right]c,
+			c -- [boson]d,
+			d -- [fermion]out1[particle=$e^-$],
+			d -- [anti fermion]out2[particle=$e^+$],
+		};
+	\end{center}
 \end{figure}
 
 Superpartners are expected to be unstable, so we must make them. But one might be stable--dark matter? \glsdesc{gls:LSP}, \gls{gls:LSP}, is likely to be uncharged.

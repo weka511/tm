@@ -527,16 +527,14 @@ Normally we are told that a rotation of $2\pi$ is equivalent to no rotation at a
 	Take a box, put a basketball in, and connect it to the walls with flexible but unbreakable strings. A rotation by $2\pi$ tangles the strings; a rotation by $4\pi$ is equivalent to no rotation.
 \end{thm}
 
-Imagine that we have a particle, a Fermion or a Boson. We are interested in the spin of the particle only, and the spin is described by a quantum state $\bra{s}$. What happens to the state when you rotate the particle by $2\pi$?
-
-How would you rotate an electron by $2\pi$?
+Imagine that we have a particle, a Fermion or a Boson. We are interested in the spin of the particle only, and the spin is described by a quantum state $\bra{s}$. What happens to the state when you rotate the particle by $2\pi$? First, how would you rotate an electron by $2\pi$?
 
 \begin{itemize}
 	\item apply strong magnetic field and rotate magnetic field around, or;
-	\item use field to precess particle.
+	\item use the field to precess the particle.
 \end{itemize}
 
-What happens to the state when you rotate the particle by $2\pi$? Normally we'd expect it to come back to itself, but we know that $2\pi$ is not the identity. Perhaps it multiplies by a number, $\bra{s} \rightarrow \xi \bra{s}$. If we multiply by a phase, $\xi$, we won't be able to detect it. Multiplication by $4\pi$ squares phase, since it does nothing, so $\xi^2=1$, or $\xi=\pm1$.
+What happens to the state when you rotate the particle by $2\pi$? Normally we'd expect it to come back to itself, but we know that $2\pi$ is not the identity. Perhaps it multiplies by a number, $\bra{s} \rightarrow \xi \bra{s}$. If we multiply by a phase $\xi$, we won't be able to detect it. Multiplication by $4\pi$ squares the phase; since this does nothing, we know $\xi^2=1$, or $\xi=\pm1$.
 
 \begin{align*}
 	\ket{s} \rightarrow& +\ket{s} \text{, or}\\
@@ -548,11 +546,18 @@ Can we detect this experimentally? It was long thought that we could not. If we 
 We can, however, do a 2 slit experiment\cite{aharonov1967observability}--Figure \ref{fig:particles3-2-2slit}.
 
 \begin{figure}[H]
-	\caption{A 2 slit experiment to detect rotation by $2\pi$. We feed the electrons through one by one, without looking to see which slit they go through, and we place a magnetic field behind each slit.}
-	\begin{subfigure}[t]{\textwidth}
+	\captionsetup{singlelinecheck=off}
+	\caption[A 2 slit experiment to detect rotation by $2\pi$.]{A 2 slit experiment to detect rotation by $2\pi$.
+		\begin{itemize}
+			\item  We feed the electrons through one by one, without looking to see which slit they go through, and we place a magnetic field behind each slit--(\subref{fig:particles3-2-2slit}). While an electron is trapped we rotate one field or the other, so wave function may be multiplied by $-1$ which shifts the interference pattern by half a wavelength. If you rotate the whole setup, then you detect nothing. Also, if you rotate one beam by $4\pi$ you detect nothing.
+			\item We create a superposition of two states--(\subref{fig:particles3-2-2slit-wave-function-2-2slit})--electron going through slit 1 or slit 2. In either case electron is in one box or the other.
+			\item  Finally--(\subref{fig:2slit:rotate})-- we rotate 2nd box by $2\pi$. The wave function for an electron changes sign, but this has no physical consequence on it own. For the superposition, if we rotate one electron wave function, we can never find the electron at the centre, as $\psi_1$ and $\psi_2$ will interfere. This is true for Fermions, with an odd wave function, but not for Bosons.
+		\end{itemize}
+		 }
+	\begin{subfigure}[t]{0.3\textwidth}
 		\begin{center}
-			\caption{There is a magnetic field behind each slit, which traps electron temporarily. While an electron is trapped we rotate one field or the other, so wave function may be multiplied by $-1$ which shifts the interference pattern by half a wavelength. If you rotate the whole setup, then you detect nothing. Also, if you rotate one beam by $4\pi$ you detect nothing.}\label{fig:particles3-2-2slit}
-			\begin{tikzpicture}
+			\caption{The experimental setup}\label{fig:particles3-2-2slit}
+			\begin{tikzpicture}[scale=0.6,transform shape]
 				\draw (0,-3) -- (0,-1.1);
 				\draw (0,-1.0) -- (0,-0.1);
 				\draw (0,0) -- (0,2);
@@ -568,9 +573,9 @@ We can, however, do a 2 slit experiment\cite{aharonov1967observability}--Figure 
 		\end{center}
 	\end{subfigure}
 	\hfill
-	\begin{subfigure}[t]{0.45\textwidth}
+	\begin{subfigure}[t]{0.3\textwidth}
 		\begin{center}
-			\caption{We create a superposition of two states, electron going through slit 1 or slit 2. In either case electron is in one box or the other.}\label{fig:particles3-2-2slit-wave-function-2-2slit}
+			\caption{Superposition of two states, electron going through either slit.}\label{fig:particles3-2-2slit-wave-function-2-2slit}
 				\begin{tikzpicture}[scale=0.5, transform shape]
 				\newcommand\gauss[2]{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))} 
 				\begin{axis}[every axis plot post/.append style={
@@ -593,10 +598,10 @@ We can, however, do a 2 slit experiment\cite{aharonov1967observability}--Figure 
 			\end{tikzpicture}
 		\end{center}
 	\end{subfigure}
-		\hfill
-	\begin{subfigure}[t]{0.45\textwidth}
+	\hfill
+	\begin{subfigure}[t]{0.3\textwidth}
 		\begin{center}
-			\caption{Now we rotate 2nd box by $2\pi$. The wave function for an electron changes sign, but this has no physical consequence on it own. For the superposition, if we rotate one electron wave function, we can never find the electron at the centre, as $\psi_1$ and $\psi_2$ will interfere. This is true for Fermions, with an odd wave function, but not for Bosons.}
+			\caption{Rotate 2nd box by $2\pi$.}\label{fig:2slit:rotate}
 			\begin{tikzpicture}[scale=0.5, transform shape]
 				\newcommand\gauss[2]{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))} 
 				\begin{axis}[every axis plot post/.append style={

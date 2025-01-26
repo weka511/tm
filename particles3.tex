@@ -711,36 +711,22 @@ We'll be dealing with diagrams that are very simple. They are just Feynman diagr
 		\caption{Breaking a Fermion loop and looking in the middle at t=0.}
 		\begin{subfigure}[t]{0.45\textwidth}
 			\caption{Two Fermion loops, split at t=0}\label{fig:two:loops:split}
-			\begin{equation*}t=0
-				\feynmandiagram[inline=(c.base),horizontal'=a to c]{
-					a -- [quarter left]
-					b-- [quarter left]
-					c-- [quarter left]
-					d-- [quarter left] a,
-				};\,\,
-				\feynmandiagram[inline=(c.base),horizontal'=a to c]{
-					a --[quarter left]
-					b-- [quarter left]
-					c-- [quarter left]
-					d-- [quarter left] a,
-				};
-			\end{equation*}		
+				\begin{tikzpicture}
+				\draw[->] (0.5,0) arc [radius=1, start angle=355, end angle= 5];
+				\draw[->] (0.8,0.1) arc [radius=1, start angle=535, end angle= 185]; 
+				\draw[dashed] (-2,0.05)--(3,0.05);
+				\draw (-2.5,0.1)  node {$t=0$};
+			\end{tikzpicture}	
 		\end{subfigure}
 		\hfill
 		\begin{subfigure}[t]{0.45\textwidth}
 			\caption{One Fermion loop, built by interchanging particles }\label{fig:two:loops:interchange}
 			\begin{equation*}t=0
-				\feynmandiagram[inline=(c.base),horizontal'=a to c]{
-					a -- [quarter left]
-					b-- [fermion]
-					c-- [fermion]
-					d-- [quarter left] a,
-				};
-				\feynmandiagram[inline=(c.base),horizontal'=a to c]{
-					a --[anti fermion]
-					b-- [quarter left]
-					c-- [quarter left]
-					d-- [anti fermion] a,
+				\feynmandiagram[inline=(c.base),vertical=in1 to out1,scale=0.9, transform shape]{
+					in1-- [fermion]c--[fermion]out1,
+					in2-- [fermion]c--[fermion]out2,
+					out1--[half left]in1,
+					out2--[half right]in2,
 				};
 			\end{equation*}		
 		\end{subfigure}

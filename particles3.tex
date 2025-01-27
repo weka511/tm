@@ -844,17 +844,17 @@ How do we know that they aren't way off at enormous mass? What would happen to t
 
 The audience asked a question about cancellation in aggregate. This would look like a coincidence: Supersymmetry is about cancellation of individual particles. Is there a mathematical framework which contains these symmetries, which can explain the differences in masses in a natural way, as a consequence of some reasonable mathematics, that would be more satisfying than saying that things cancel in aggregate.
 
-Can we detect super partners indirectly, as in Figure \ref{fig:particles3-2-superpartners}? Can we detect such a process by high precision electroweak measurements? These have been done. They constrain things and are pushing us to the edge of the parameter space. It's looking difficult to fit in Supersymmetry, but it's by no means ruled out. A 1\gls{gls:GeV} electron-positron collide would probably answer the questions. 
+Can we detect super partners indirectly, as in Figure \ref{fig:particles3-2-superpartners}? We might ask whether this diagram modifies slightly what the electron-positron process is like. Can we detect such a process by high precision electroweak measurements? These have been done. They do constrain things and are pushing us to the edge of the parameter space. It's looking difficult to fit in Supersymmetry, but it's by no means ruled out. A 1 \gls{gls:GeV} electron-positron collider\footnote{Colliding hadrons in the \gls{gls:LHC} is messy, as they consist of multiple quarks. Electrons enable better precision.} would probably answer the questions. 
 
 \begin{figure}[H]
 	\begin{center}
-		\caption[Annihilate electron-positron pair]{Annihilate electron-positron pair. Boson produces super-partner pair, but there isn't enough energy and they remain virtual. Conservation of energy is violated for a very short time.}\label{fig:particles3-2-superpartners}
+		\caption[Annihilate electron-positron pair]{Annihilate electron-positron pair. The resulting Boson produces a super-partner pair, but there isn't enough energy and they remain virtual. Conservation of energy is violated for a very short time.}\label{fig:particles3-2-superpartners}
 		\feynmandiagram[vertical = b to a]{
 			in1[particle=$e^-$] -- [fermion]a,
 			in2[particle=$e^+$] -- [anti fermion]a,
 			a -- [boson]b,
-			b -- [boson,half left]c,
-			b -- [boson,half right]c,
+			b -- [scalar,half left]c,
+			b -- [scalar,half right,edge label=\(Superpartners\)]c,
 			c -- [boson]d,
 			d -- [fermion]out1[particle=$e^-$],
 			d -- [anti fermion]out2[particle=$e^+$],
@@ -862,7 +862,7 @@ Can we detect super partners indirectly, as in Figure \ref{fig:particles3-2-supe
 	\end{center}
 \end{figure}
 
-Superpartners are expected to be unstable, so we must make them. But one might be stable--dark matter? \glsdesc{gls:LSP}, \gls{gls:LSP}, is likely to be uncharged.
+Superpartners are expected to be unstable, so we must make them, and they will decay quickly to known particles. We can't expect to find them floating around in space. But one \emph{might} be stable: the \glsdesc{gls:LSP}. The \gls{gls:LSP} is likely to be uncharged. A question was asked about dark energy, and \gls{gls:LS} confirmed that the \gls{gls:LSP} is a possibility.
 
 Is the coupling constant stopping us from seeing superpartners?
 
@@ -870,11 +870,30 @@ Is the coupling constant stopping us from seeing superpartners?
 	\caption{Is the coupling constant stopping us from seeing superpartners?}
 	\begin{subfigure}[t]{0.45\textwidth}
 		\caption{Electron and Superpartner. Will they cancel? Yes.}\label{fig:particles3-2-2loops}
-		\includegraphics[width=\textwidth]{particles3-2-2loops}
+			\feynmandiagram[horizontal = b to c]{
+			b -- [scalar,half left]c,
+			b -- [scalar,half right]c,
+		};
+		$\;$
+		\feynmandiagram[horizontal = b to c]{
+			b -- [half left]c,
+			b -- [half right]c,
+		};
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Add photon. Will they cancel? Only if charges of electron and super partner are equal. Otherwise there will be a big discrepency that will lead to a divergent answer.}\label{fig:particles3-2-2loops-photons}
-		\includegraphics{particles3-2-2loops-photons}
+		\caption{Add photon. Will they cancel? Only if charges of electron and super partner are equal. Otherwise there will be a big discrepancy that will lead to a divergent answer.}\label{fig:particles3-2-2loops-photons}
+			\feynmandiagram[horizontal = b to c]{
+			b -- [scalar,half left]c,
+			b -- [scalar,half right]c,
+			b -- [photon]c,
+		};
+		$\;$
+		\feynmandiagram[horizontal = b to c]{
+			b -- [half left]c,
+			b -- [half right]c,
+			b -- [photon]c,
+		};
 	\end{subfigure}
 \end{figure}
 
@@ -883,14 +902,13 @@ It is important that you follow through and ensure that things match at every le
 The super partner of a photon would be have mass. Supersymmetry is not an exact theory.
 
 \begin{itemize}
-	\item Superpartner of a Boson is an "-ino": e.g. the superpartner of a photon is a photino, graviton gravitino.
+	\item Superpartner of a Boson is an "-ino": e.g. the superpartner of a photon is a photino, superpartner of a graviton is agravitino.
 	\item Superpartners of Fermions, have prefix "S-", e.g. Selectron, squark.
 \end{itemize}
 
-What would the World be if it were supersymmetric? Would Chemistry \& biology work?
+What would the World be like if it were supersymmetric? Would Chemistry \& biology work if we had exact supersymmetry?
 
-Atoms have electrons. There would be partners to photons and electrons--photinos and selectrons. Now chemistry is what valence electrons do. They are stuck in the outermost shell because of the Pauli Exclusion principle. If we had perfect sypersymmetry, electyron can emit a photino and turn into a selectron. Being a Boson the selectron can then drop to lower energy levels. We'd end up with a Bose-Einsteain condensate of selectrons.
-
+Atoms have electrons. There would be partners to photons and electrons--photino and selectrons. Now chemistry is what valence electrons do. They are stuck in the outermost shell because of the Pauli Exclusion principle. If we had perfect supersymmetry, electron can emit a photino and turn into a selectron. Being a Boson the selectron can then drop to lower energy levels. We'd end up with a Bose-Einstein condensate of ''slithium''. We would not have \emph{our} chemistry.
 
 \section{Propagators and renormalization of mass}
 

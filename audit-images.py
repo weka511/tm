@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-#   Copyright (C) 2024 Simon Crase
+#   Copyright (C) 2024-2025 Simon Crase
 
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -23,11 +23,13 @@
     If not, construct git rm command.
 '''
 
+from argparse import ArgumentParser
+
 from os import listdir
 from os.path import isfile, join, splitext
 from time import time
 
-def create_included_images():
+def create_included_images(verbose):
     '''
     Create set of images that have been included with a tex includegraphics command
     '''
@@ -37,14 +39,16 @@ def create_included_images():
         '''
         Product = []
         with open(file_name) as file:
-            print (file_name)
+            if verbose:
+                print (file_name)
             for line in file:
                 trimmed = line.strip()
                 if trimmed.startswith(r'\includegraphics'):
                     j = trimmed.find('{')
                     k = trimmed.find('}')
                     name = trimmed[j+1:k].strip()
-                    print(f'\t{name}')
+                    if verbose:
+                        print(f'\t{name}')
                     Product.append(name)
 
         return Product
@@ -53,21 +57,27 @@ def create_included_images():
                    if isfile(file_name) and splitext(file_name)[1]=='.tex']
     return set([file_name for image_list in image_files for file_name in image_list])
 
+def parse_arguments():
+    parser = ArgumentParser(__doc__)
+    parser.add_argument('--verbose',default=False,action='store_true',help='Used to list names of text files as they are processed')
+    parser.add_argument('--figs', default = './figs')
+    return parser.parse_args()
+
 if __name__=='__main__':
-    print (__doc__)
     start  = time()
+    args = parse_arguments()
     count_referenced = 0
     count_unreferenced = 0
-    image_lookup = create_included_images()
+    image_lookup = create_included_images(args.verbose)
     unreferenced = False
     with open('rm.sh','w') as out:
-        if unreferenced:
+        if not unreferenced:
             print ('Unreferenced images')
             unreferenced = True
-        for image in listdir('figs'):
+        for image in listdir(args.figs):
             if splitext(image)[0] not in image_lookup:
-                print (image)
-                out.write(f'git rm figs/{image}\n')
+                print (f'\t{image}')
+                out.write(f'git rm {args.figs}/{image}\n')
                 count_unreferenced += 1
             else:
                 count_referenced += 1

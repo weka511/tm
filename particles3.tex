@@ -46,7 +46,7 @@
 \usepackage{colortbl}
 \usepackage[toc,nonumberlist]{glossaries}
 \usepackage{glossaries-extra}
-
+\usetikzlibrary{shapes.symbols,patterns}
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 \newcommand{\Lagr}{\mathscr{L}}
 \newtheorem{thm}{Theorem}
@@ -92,7 +92,7 @@ Most of the basic ideas of this quarter originated out of questions having to do
 
 Examples of getting rid of things that are too small to be of interest.
 \begin{itemize}
-	\item Studying the nucleus as protons and neutrons instead of quarks. Use \gls{gls:QCD} to figure out properties of protons and neutrons and their forces. Nucleons move slowly, so we can ignore relativity. Nucleus can be described by the non-relativistic theory of neutrons and protons. All we need from quark theory is to find out what the properties of protons and neutrons are: masses, spins, and the forces between them.
+	\item Studying the nucleus as protons and neutrons instead of quarks. Use \gls{gls:QCD} to figure out properties of protons and neutrons and their forces. Nucleons move slowly, so we can ignore relativity. The nucleus can be described by the non-relativistic theory of neutrons and protons. All we need from quark theory is to find out what the properties of protons and neutrons are: masses, spins, and the forces between them.
 	\item For atoms, you might not be particularly interested in what makes up the nucleus. You use nuclear physics to calculate the properties of nuclei--which nuclei exist, their masses, and charges. Now we can forget protons and neutrons, but we need electrons.
 	\item Now move on to atoms and forget their contents.
 \end{itemize}
@@ -110,7 +110,26 @@ Consider two atoms, each including a cloud of electrons. We want to get rid of t
 \begin{figure}[H]
 	\begin{center}
 		\caption{Two atoms with clouds of electrons}\label{fig:3-2-atoms}
-		\includegraphics[width=0.5\textwidth]{3-2-atoms}
+			\begin{tikzpicture}
+			\node[
+			draw,
+			cloud,
+			cloud puffs = 10,
+			pattern=north east lines,
+			minimum width=3cm,
+			minimum height=3cm
+			] at (0,0){};
+			\draw[fill=black] (0,0) circle (1.5ex);
+			\node[
+			draw,
+			cloud,
+			cloud puffs = 10,
+			pattern=north east lines,
+			minimum width=3cm,
+			minimum height=3cm
+			] at (4,0) {};
+			\draw[fill=black] (4,0) circle (1.5ex);
+		\end{tikzpicture}
 	\end{center}
 \end{figure}
 
@@ -799,7 +818,7 @@ Another thought to keep in mind: can this also help with the self-energy of Boso
 
 We already have a theory in which Fermions don't get these enormous masses: we discussed this above. Because of the left-right switch, Fermions in many situation will not be get this big mass. For example, if you start with a zero mass it remains zero. Imagine that, for some reason, your theory was concocted in such a way that, after all this renormalization takes place, after the worst looking Feynman diagrams you can imagine, there was enough symmetry, enough structure in the theory, that made certain that the Fermions and Bosons travelled in pairs, and always had exactly the same mass (they are partners); then, since the Fermions didn't start with any mass, it must also be true of the Bosons.
 
-Why? LS isn't saying that we can make such a theory. Obviously the Bosons do get big masses from self-interaction, and the Fermions don't, but here is what you can imagine as an example.    
+Why? \gls{gls:LS} isn't saying that we can make such a theory. Obviously the Bosons do get big masses from self-interaction, and the Fermions don't, but here is what you can imagine as an example.    
 
 Take the various Feynman diagrams that contribute to the self energy of a Boson. You might have Feynman diagram such as  Figure \ref{fig:2loops:bosons}, where we have a Boson going round the loop. But we might have another Feynman diagram such as Figure \ref{fig:2loops:fermions}, where what runs around the loop is a Fermion. Fermions and Bosons always have opposites signs for these loops, so, if everything were absolutely symmetrical, we might imagine things canceling, so that self energy of the Bosons is no longer large.
 
@@ -832,13 +851,13 @@ Take the various Feynman diagrams that contribute to the self energy of a Boson.
 
 If there were such a theory which was rigidly enforced by its mathematics somehow, then we could imagine that there are theories where the Bosons do not get these huge energies. That, in itself, is not good enough. We know there is not an exact mass equivalence between  Fermions and Bosons, but it is a start.
 
-To $0^{th}$ order the hypothesis is that to every particle in nature there is a partner of the opposite Fermi-Boson-ness, and the same charge. LS would say the same mass, except that we know that isn't true. This would entail doubling that spectrum of elementary particles. How about the fact that they don't have exactly the same masses? If the masses were equal we'd find that all this bad junk cancels exactly. If the masses were close but not equal, we'd still get an approximate cancellation. We don't care that there might be some self energy for Bosons, we just don't want it to be huge. If the masses running around the loops in Figure \ref{fig:2loops} are similar, but not exactly the same, we might get an approximate cancellation, enough to avoid an explosively huge answer.
+To $0^{th}$ order the hypothesis is that to every particle in nature there is a partner of the opposite Fermi-Boson-ness, and the same charge. \gls{gls:LS} would say the same mass, except that we know that isn't true. This would entail doubling that spectrum of elementary particles. How about the fact that they don't have exactly the same masses? If the masses were equal we'd find that all this bad junk cancels exactly. If the masses were close but not equal, we'd still get an approximate cancellation. We don't care that there might be some self energy for Bosons, we just don't want it to be huge. If the masses running around the loops in Figure \ref{fig:2loops} are similar, but not exactly the same, we might get an approximate cancellation, enough to avoid an explosively huge answer.
 
 Super Symmetry is the idea that every particle has a partner of the opposite statistics: every Boson has its Fermionic super partners, and vice versa: they come in super pairs. With precise equivalence of masses we'd have precise cancellation; with almost degeneracy (equality of masses) we'd have approximate cancellation. That is the working hypothesis, that the thing that prevents the masses being enormous is cancellation between Fermions and Bosons.
 
 Superpartners have never been discovered in the laboratory: not a single one of them. The implication is they must be a good deal heavier. Figure \ref{fig:partners} shows the process of producing partners for the electron and positron; the fact that they have never been discovered means that no experiment has used enough energy to  create the super-partners. They are at the edges of detectability--hundreds of GeV. This sounds far-fetched. 
 
-It's really not that bad, because when you look at the supersymmetric theories, some of the particles can get mass only from the Higgs phenomenon. Others can have mass without the Higgs phenomenon. It turns out in these theories, mathematically, exactly half the particles, some Fermions, some Bosons, necessarily owe their mass to the Higgs phenomenon, which is another way of saying they must be massless until there is spontaneous symmetry breaking of the electroweak interaction via the Higgs phenomenon, and the other half are allowed to have mass without that. So maybe half the particles are naturally more massive than the other half. LS says that for most of us it is a little bit of a stretch, it's a bit too lucky that we haven't seen any of it yet. On the other hand there is some rationale for why the particles we have seen happen to be the ones that have low enough mass to be seen, and the others happen to have much higher mass. We have to wait to find out, but this is what \gls{gls:LHC} was designed to find out.
+It's really not that bad, because when you look at the supersymmetric theories, some of the particles can get mass only from the Higgs phenomenon. Others can have mass without the Higgs phenomenon. It turns out in these theories, mathematically, exactly half the particles, some Fermions, some Bosons, necessarily owe their mass to the Higgs phenomenon, which is another way of saying they must be massless until there is spontaneous symmetry breaking of the electroweak interaction via the Higgs phenomenon, and the other half are allowed to have mass without that. So maybe half the particles are naturally more massive than the other half. \gls{gls:LS} says that for most of us it is a little bit of a stretch, it's a bit too lucky that we haven't seen any of it yet. On the other hand there is some rationale for why the particles we have seen happen to be the ones that have low enough mass to be seen, and the others happen to have much higher mass. We have to wait to find out, but this is what \gls{gls:LHC} was designed to find out.
 
 How do we know that they aren't way off at enormous mass? What would happen to the cancellation if half the partners were at enormous mass, say the Planck mass? Cancellation would be extremely bad, and we'd get self energies comparable to the Plank mass. If you want the partners to protect you against enormous self energies, then the partners can't be too big -- not beyond 200\gls{gls:GeV}. If the role of Supersymmetry is to keep the Higgs Boson from being enormous, then the masses of superpartners cannot be too big: it has to be within the range of the \gls{gls:LHC}.
 
@@ -864,7 +883,7 @@ Can we detect super partners indirectly, as in Figure \ref{fig:particles3-2-supe
 
 Superpartners are expected to be unstable, so we must make them, and they will decay quickly to known particles. We can't expect to find them floating around in space. But one \emph{might} be stable: the \glsdesc{gls:LSP}. The \gls{gls:LSP} is likely to be uncharged. A question was asked about dark energy, and \gls{gls:LS} confirmed that the \gls{gls:LSP} is a possibility.
 
-Is the coupling constant stopping us from seeing superpartners?
+Audience question: is the coupling constant stopping us from seeing superpartners?
 
 \begin{figure}[H]
 	\caption{Is the coupling constant stopping us from seeing superpartners?}

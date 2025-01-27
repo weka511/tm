@@ -23,7 +23,7 @@ from matplotlib.pyplot import figure, show
 from os.path import basename, join, splitext
 from time import time
 
-def parse_argumeents():
+def parse_arguments():
     parser = ArgumentParser(__doc__)
     parser.add_argument('--seed',type=int,default=None,help='Seed for random number generator')
     parser.add_argument('--figs', default = './figs')
@@ -36,7 +36,7 @@ if __name__=='__main__':
     start  = time()
     parser = ArgumentParser(__doc__)
     parser.add_argument('--seed',type=int,default=None,help='Seed for random number generator')
-    args = parse_argumeents()
+    args = parse_arguments()
     rng = np.random.default_rng(args.seed)
 
     fig.savefig(get_file_name())

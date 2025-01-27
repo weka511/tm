@@ -151,8 +151,8 @@ To a first approximation fix the protons and treat the Hamiltonian as being for 
 
 
 \begin{align*}
-E=& \underbrace{\frac{P_1^2}{M} + \frac{P_2^2}{M} + \frac{e^2}{R_{12}}}_\text{protons} +\underbrace{ E_{electrons}(R_1,R_2)}_\text{Part of potential energy}\\
-=& \frac{P_1^2}{M} + \frac{P_2^2}{M} + \frac{e^2}{R_{12}}+ E_{electrons}(R_1-R_2)
+	E=& \underbrace{\frac{P_1^2}{M} + \frac{P_2^2}{M} + \frac{e^2}{R_{12}}}_\text{protons} +\underbrace{ E_{electrons}(R_1,R_2)}_\text{Part of potential energy}\\
+	=& \frac{P_1^2}{M} + \frac{P_2^2}{M} + \frac{e^2}{R_{12}}+ E_{electrons}(R_1-R_2)
 \end{align*}
 
 We don't have to think about electrons again. All renormalization is based on this idea: getting rid of fast degrees of freedom, and replacing them with a renormalized Hamiltonian. 
@@ -214,11 +214,44 @@ Feynman diagrams are built out of two types of elements:
 		\caption{Elements of a Feynman diagram}
 		\begin{subfigure}[t]{0.45\textwidth}
 			\caption{Feynman Vertices for (\ref{eq:potential}). Cross in left hand vertex indicates absorption/re-emission. A Feynman diagram has a value, which corresponds to the amplitude for a process to happen.}\label{fig:3-1-feynman-vertices}
-			\includegraphics[width=\textwidth]{3-1-feynman-vertices}
+			\begin{tikzpicture}[scale=0.6,transform shape]
+				\begin{feynman}
+					\vertex (a) at (-2,-2);
+					\vertex (b) at (2,2) ;
+					\diagram*{		
+						(a)--[insertion=0.5,edge label={\huge $\frac{m^2}{2}$}](b),
+					};
+				\end{feynman}
+			\end{tikzpicture}
+			
+			\begin{equation*}
+				\feynmandiagram[baseline=(b.base),vertical = b to a,scale=0.6,transform shape]{
+					a--b,
+					b--c,
+					b--d
+				};
+				g
+				\feynmandiagram[baseline=(b.base),horizontal = in1 to in2,scale=0.6,transform shape]{
+					in1--b,
+					in2--b,
+					b--out1,
+					b--out2,
+				};
+				\lambda
+			\end{equation*}
 		\end{subfigure}
+		\hfill
 		\begin{subfigure}[t]{0.45\textwidth}
 			\caption{Propagator--amplitude that particle created at $x$ found at $y$. The line should not be read as a path along which particles moves, but rather as joining points where particle detected.}\label{fig:3-1-feynman-propagator}
-			\includegraphics[width=\textwidth]{3-1-feynman-propagator}
+			\begin{tikzpicture}[scale=0.6,transform shape]
+				\begin{feynman}
+					\vertex (a) at (-2,-2) {\Huge x};
+					\vertex (b) at (2,2) {\Huge y};
+					\diagram*{		
+						(a)--(b),
+					};
+				\end{feynman}
+			\end{tikzpicture}
 		\end{subfigure}
 	\end{center}
 \end{figure}

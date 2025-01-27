@@ -69,7 +69,7 @@
 \maketitle
 
 \begin{abstract}
-	These are my notes for the \emph{New Revolutions in Particle Physics 3 -- Supersymmetry and Grand Unification} lectures from Leonard Susskind's \emph{Theoretical Minimum} series\cite{susskind2007theoretical}. 
+	These are my notes for the lectures \emph{New Revolutions in Particle Physics 3 -- Supersymmetry and Grand Unification} from Leonard Susskind's \emph{Theoretical Minimum} series\cite{susskind2007theoretical}. 
 	
 	Disclaimer: I have created these notes as an aide-m\'emoire for my own use; if you find them useful, you are welcome, but I'd appreciate hearing from you. They are not intended as a substitute for listening to the lectures. The intellectual property for all material derived from the lectures belongs, of course, to Professor Susskind; any mistakes, however, are my own.
 	
@@ -84,22 +84,24 @@
 
 \subsection{Renormalization}
 
+\subsubsection{The Idea of Renormalization}
+
 Most of the basic ideas of this quarter originated out of questions having to do with renormalization -- sometimes puzzles, sometimes useful observations about the renormalization of the standard model. I thought it would be a good idea to explain what renormalization is. It  is a combination of two things:
 \begin{itemize}
-	\item Learning how to eliminate out of the description of physics things arising from distances that are so small that they are irrelevant to the questions you are asking
-	\item Learning how to think about how dimensional analysis tells you how to answer some of the difficult questions of quantum field theory field theory that have to do with distances much smaller than you might be interested in.
+	\item learning how to eliminate, out of the description of physics, things having to do with distances that are so small that they are irrelevant to the questions you are asking;
+	\item learning how to think about how dimensional analysis tells you how to answer some of the very difficult questions of quantum field theory field theory that have to do with distances much smaller than you might be interested in.
 \end{itemize}
 
 Examples of getting rid of things that are too small to be of interest.
 \begin{itemize}
-	\item Studying the nucleus as protons and neutrons instead of quarks. Use \gls{gls:QCD} to figure out properties of protons and neutrons and their forces. Nucleons move slowly, so we can ignore relativity. The nucleus can be described by the non-relativistic theory of neutrons and protons. All we need from quark theory is to find out what the properties of protons and neutrons are: masses, spins, and the forces between them.
+	\item Studying the nucleus as protons and neutrons instead of quarks. Use \gls{gls:QCD} to figure out properties of protons and neutrons, their masses, spins,  and the forces between them. Nucleons move slowly, so we can ignore relativity. The nucleus can be described by the non-relativistic \glsdesc{gls:QM} of neutrons and protons. All we need from quark theory is to find out what the properties of protons and neutrons are: masses, spins, and the forces between them.
 	\item For atoms, you might not be particularly interested in what makes up the nucleus. You use nuclear physics to calculate the properties of nuclei--which nuclei exist, their masses, and charges. Now we can forget protons and neutrons, but we need electrons.
 	\item Now move on to atoms and forget their contents.
 \end{itemize}
 
-At each stage we eliminated the things that are smaller than we are really interested. The result is a coarse-grained description that is less accurate but more useful for our purposes.
+At each stage we eliminated the things that are smaller than we are really interested. The result is a more coarse-grained description that is less accurate but more useful for our purposes.
 
-The same thing is true in field theory. Each possible wavelength represents a degree of freedom. In describing things at one length scale we don't want to deal with shorter scales. We find a way to sum up the shorter stuff and replace by effective new parameters. That is all that renormalization is (plus some dimensional analysis).
+The same thing is true in \glsdesc{gls:QFT}. Each possible wavelength represents a degree of freedom. In describing things at one length scale we don't want to deal with shorter scales. We find a way to sum up effects of the shorter stuff and replace by effective new parameters. That is all that renormalization is (plus some dimensional analysis).
 
 \subsubsection{Example: atoms and atomic forces--going from atoms to molecules.}
 
@@ -391,8 +393,15 @@ You might expect the theory to work the same for Fermions, but it doesn't. Fermi
 Let's recall what we know about the mass term of the Higgs Boson. The Higgs field has a potential that looks like Figure \ref{fig:higgs-potential}. Near the origin it looks like $\Phi^2$, but with a negative coefficient ($m_0^2$ can be negative!). We assume that $\lambda<1$, as otherwise sequence of power would be intractable. Assume $\lambda$ is modestly small, but not humungously so. Experimentally we know it's about $1\%$.
 
 \begin{figure}[H]
-	\caption[Higgs potential]{Higgs potential after \cite{susskind2010standard}: Near the origin it looks like $\Phi^2$, but with a negative coefficient }\label{fig:higgs-potential}
-	\includegraphics{higgs-potential}
+	\begin{center}
+		\caption[The Higgs potential]{The Higgs potential after \cite{susskind2010standard}: Near the origin it looks like $\Phi^2$, but with a negative coefficient }\label{fig:higgs-potential}
+		\begin{tikzpicture}
+			\draw(-2,-2)--(2,-2) node[right] {$\Phi$};
+			\draw(0,-2.3)--(0,2) node[above] {$V(\Phi)$};
+			\draw[domain=-2:2, smooth, variable=\x, ] plot ({\x}, 						{1-3*\x*\x+0.8*\x*\x*\x*\x});
+			\draw[dotted](1.3693,0)--(1.3693,-2.3) node[below] {$\phi$};
+		\end{tikzpicture}
+	\end{center}
 \end{figure}
 
 \begin{align*}

@@ -167,9 +167,9 @@ To a first approximation, fix the protons and treat the Hamiltonian as being for
 
 We don't have to think about electrons again. All renormalization is based on this idea: getting rid of fast degrees of freedom, and replacing them with a renormalized Hamiltonian. 
 
-What do we get rid of in Quantum Field Theory? Things associated with very small distances, or things associated with high frequencies, or very short wave lengths (high energies). But first let's take a break and work on dimensional analysis.
+What do we get rid of in Quantum Field Theory? Things associated with very small distances, or things associated with high frequencies, or very short wave lengths (high energies).
 
-\subsection{Dimensional Analysis}
+\subsubsection{Dimensional Analysis}
 
 In physics we have three scales, distance, time, and mass, and we can get rid of two of them by setting:
 \begin{align*}
@@ -184,20 +184,21 @@ but we still need one dimension, which we will take to be a length (we could hav
 \end{align*}
 
 \subsection{Vacuum energy renormalization}
+
 \subsubsection{A typical quantum field theory}
 
 Renormalizing a scalar field $\Phi$. It has a Lagrangian, from which we derive Feynman diagrams. Our Lagrangian is:
 
 \begin{align*}
 	\mathcal{L} =& (\partial_\mu \Phi)^2 - V(\Phi) \text{, which we use to determine the \emph{action}}\\
-	S =& \int d^4 x \mathcal{L} \text{, which has the same units as $\hslash=1$}
+	S =& \int d^4 x \mathcal{L} \text{, which has the same units as $\hslash=1$} \numberthis \label{eq:action}
 \end{align*}
 
 This means that $\mathcal{L}$ has dimensions $[l^{-4}]$
 
 \begin{align*}
-	[(\frac{\partial \Phi}{\partial x})^2]=l^{-4} \text{, whence}\\
-	[\Phi] = l^{-1}
+	[(\frac{\partial \Phi}{\partial x})^2]=&l^{-4} \text{, so it can cancel in \eqref{eq:action}, whence}\\
+	[\Phi] =& l^{-1}
 \end{align*}
 
 \subsubsection{Feynman diagrams}

@@ -101,13 +101,13 @@ Examples of getting rid of things that are too small to be of interest.
 
 At each stage we eliminated the things that are smaller than we are really interested. The result is a more coarse-grained description that is less accurate but more useful for our purposes.
 
-The same thing is true in \glsdesc{gls:QFT}. Each possible wavelength represents a degree of freedom. In describing things at one length scale we don't want to deal with shorter scales. We find a way to sum up effects of the shorter stuff and replace by effective new parameters. That is all that renormalization is (plus some dimensional analysis).
+The same thing is true in \glsdesc{gls:QFT}. Each possible wavelength represents a degree of freedom. In describing things at one length scale we don't want to deal with shorter scales. We find a way to sum up the effects of the shorter stuff and replace by effective new parameters. That is all that renormalization is (plus some dimensional analysis).
 
 \subsubsection{Example: atoms and atomic forces--going from atoms to molecules.}
 
-Or going from nuclei + electrons to atoms, and how you deal with atomic forces: where do atomic forces come from? This isn't usually thought of as renormalization, but it is renormalization. Getting rid of the very small degrees of freedom, and also the very fast degrees of freedom: small usually goes with fast. The smaller a system is, typically the faster its motion is. So we are getting rid of small things and fast things.
+We'll look at going from nuclei + electrons to atoms, and how you deal with atomic forces: where do atomic forces come from? This isn't usually thought of as renormalization, but it is renormalization. Getting rid of the very small degrees of freedom, and also the very fast degrees of freedom: small usually goes with fast. The smaller a system is, typically the faster its motion is. So we are getting rid of small things and fast things.
 
-Consider two atoms, each including a cloud of electrons. We want to get rid of the cloud of electrons, and all that very complicated stuff. We'd like to replace Figure \ref{fig:3-2-atoms} with two simple atoms with forces between them. The advantage is that the electrons are very fast compared to the nuclei. Nuclei are very heavy, starting at 2000 times the mass of the electron, so we could almost think of atom as a bowling ball with little flies surrounding it.
+Consider two atoms, each including a cloud of electrons. We want to describe the dynamics of the atoms, getting rid of the cloud of electrons, and all that very complicated stuff. We'd like to replace Figure \ref{fig:3-2-atoms} with two simple atoms with forces between them. The advantage is that the electrons are very fast compared to the nuclei. Nuclei are very heavy, starting at 2000 times the mass of the electron, so we could almost think of atom as a bowling ball with little flies surrounding it.
 
 \begin{figure}[H]
 	\begin{center}
@@ -135,22 +135,30 @@ Consider two atoms, each including a cloud of electrons. We want to get rid of t
 	\end{center}
 \end{figure}
 
-First approximation: the atoms are so heavy that they don't move at all. We want to calculate the effective potential between the two nuclei, in a way that gets rid of the electrons. Start by writing down Hamiltonian (ignore relativity, and some factors of $2\pi$).
+First approximation: the bowling ball nuclei  are so heavy that they don't move at all. We want to calculate the effective potential between the two nuclei, in a way that gets rid of the electrons. Start by writing down Hamiltonian (ignore relativity, and some factors of $2\pi$).
 
 \begin{align*}
-	E=& \underbrace{\frac{P_1^2}{2M} + \frac{P_2^2}{2M} + \frac{e^2}{R_{12}}}_\text{protons} + \underbrace{\sum_i \frac{q_i^2}{2m} + \sum_{i,j}\frac{e^2}{r_{ij}}- \sum_i \frac{e^2}{R_{1i}} - \sum_i \frac{e^2}{R_{2i}}}_\text{things that involve electrons} \numberthis \label{eq:hamiltonian:H2}
+	E=& \underbrace{\frac{P_1^2}{2M} + \frac{P_2^2}{2M} + \frac{e^2}{R_{12}}}_\text{protons} + \underbrace{\sum_i \frac{q_i^2}{2m} + \sum_{i\ne j}\frac{e^2}{r_{ij}}- \sum_i \frac{e^2}{R_{1i}} - \sum_i \frac{e^2}{R_{2i}}}_\text{things that involve electrons} \numberthis \label{eq:hamiltonian:H2}
 \end{align*}
-
+Where:
+\begin{align*}
+	P_1,P_2 =& \text{Momentum of first or second nucleus}\\
+	M =& \text{Mass of  nucleus}\\
+	e=& \text{Charge of an electron}\\
+	R_{12}=& \text{Distance between nucleons}\\
+	q_i=& \text{Momentum of $ith$ electron}\\
+	r_{ij}=& \text{Distance between two electrons}\\
+	R_{1,i},R_{2,i}=& \text{Distance between an electron and a nucleus}
+\end{align*}
 Intuitively there are two time scales here:
-\begin{itemize}
+\begin{enumerate}
 	\item slow for nuclei, which are heavy;
 	\item fast for electrons, which are a blur.
-\end{itemize}
+\end{enumerate}
 
 We'd like to get rid of the blur of electrons. This is easy to do \emph{in principle.} Take everything in the Hamiltonian that involves electrons; group them and think of them as the Hamiltonian for the electrons alone. Since the nuclei move slowly compared to electrons, treat them as fixed: to a first approximation nuclei are stationary.
 
-To a first approximation fix the protons and treat the Hamiltonian as being for electrons in a fixed background from nuclei. We solve the Schr\"odinger equation for the lowest energy eigenvalue, $E_{electrons}(R_1,R_2)$. Then (\ref{eq:hamiltonian:H2}) becomes:
-
+To a first approximation, fix the protons and treat the Hamiltonian as being for electrons in a fixed background from nuclei. We solve the Schr\"odinger equation for the lowest energy eigenvalue as a function of the position of the nuclei, $E_{electrons}(R_1,R_2)$. Then (\ref{eq:hamiltonian:H2}) becomes:
 
 \begin{align*}
 	E=& \underbrace{\frac{P_1^2}{M} + \frac{P_2^2}{M} + \frac{e^2}{R_{12}}}_\text{protons} +\underbrace{ E_{electrons}(R_1,R_2)}_\text{Part of potential energy}\\

@@ -222,7 +222,7 @@ Feynman diagrams are built out of two types of elements:
 
 \begin{figure}[H]
 	\begin{center}
-		\caption[Elements of a Feynman diagram.]{Elements of a Feynman diagram. A Feynman diagram has a value, which corresponds to the amplitude for a process to happen. The cross at the vertex in (\subref{fig:3-1-feynman-vertices}) indicates absorption/re-emission. The line in (\subref{fig:3-1-feynman-propagator}) should not be read as motion from $x$ to $y$, but rather as an indication that the particle is observed at $x$ and $y$.}
+		\caption[Elements of a Feynman diagram.]{Elements of a Feynman diagram. A Feynman diagram has a value, which corresponds to the amplitude for a process to happen. The cross at the vertex in (\subref{fig:3-1-feynman-vertices}) indicates absorption/re-emission. The line in (\subref{fig:3-1-feynman-propagator}) should not be read as motion along a straight line from $x$ to $y$, but rather as an indication that the particle is emitted at $x$ and detected at $y$.}
 		\begin{subfigure}[t]{0.3\textwidth}
 			\caption{Feynman Vertices for (\ref{eq:potential}).}\label{fig:3-1-feynman-vertices}
 			\begin{tikzpicture}[scale=0.6,transform shape]
@@ -272,7 +272,7 @@ Feynman diagrams are built out of two types of elements:
 \end{figure}
 
 \begin{itemize}
-	\item We can represent the propagator is  $\braket{0|\bar{\Phi}(y)\Phi(x)|0}$: create at $x$, annihilate at $y$.
+	\item The propagator is the amplitude that if you create a particle at $x$, you will detect it at $y$. We can represent it as $\braket{0|\bar{\Phi}(y)\Phi(x)|0}$.
 	\item The dimension of the propagator is $[l^{-2}]$. If there is no mass, distance between $x$ and $y$ is the only length scale in the problem--$\frac{1}{\lVert x-y \Vert^2}$. 
 	\item If $x$ and $y$ close, propagator blows up--this is the source of all divergences in \gls{gls:QFT}.
 \end{itemize}

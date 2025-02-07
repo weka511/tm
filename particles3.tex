@@ -211,20 +211,20 @@ Since $[\Phi] = l^{-1}$ we can read off the dimensions of the coefficients:
 \begin{itemize}
 	\item $m$--mass;
 	\item $g$--mass;
-	\item $\lambda$--dimensionless. Dimensionless coupling constants are very important in renormalization theory.
+	\item $\lambda$--dimensionless (Dimensionless coupling constants are very important in renormalization theory). 
 \end{itemize}
 
 Feynman diagrams are built out of two types of elements:
 \begin{itemize}
-	\item vertices, read off from V--(\ref{eq:potential})-- see Figure \ref{fig:3-1-feynman-vertices}
+	\item vertices, read off from V--(\ref{eq:potential})-- see Figures \ref{fig:3-1-feynman-vertices} and \ref{fig:3-1-feynman-vertices-continued}.
 	\item propagators: represent motion from one point to another--Figure \ref{fig:3-1-feynman-propagator}.
 \end{itemize}
 
 \begin{figure}[H]
 	\begin{center}
-		\caption{Elements of a Feynman diagram}
-		\begin{subfigure}[t]{0.45\textwidth}
-			\caption{Feynman Vertices for (\ref{eq:potential}). Cross in left hand vertex indicates absorption/re-emission. A Feynman diagram has a value, which corresponds to the amplitude for a process to happen.}\label{fig:3-1-feynman-vertices}
+		\caption[Elements of a Feynman diagram.]{Elements of a Feynman diagram. A Feynman diagram has a value, which corresponds to the amplitude for a process to happen. The cross at the vertex in (\subref{fig:3-1-feynman-vertices}) indicates absorption/re-emission. The line in (\subref{fig:3-1-feynman-propagator}) should not be read as motion from $x$ to $y$, but rather as an indication that the particle is observed at $x$ and $y$.}
+		\begin{subfigure}[t]{0.3\textwidth}
+			\caption{Feynman Vertices for (\ref{eq:potential}).}\label{fig:3-1-feynman-vertices}
 			\begin{tikzpicture}[scale=0.6,transform shape]
 				\begin{feynman}
 					\vertex (a) at (-2,-2);
@@ -234,9 +234,13 @@ Feynman diagrams are built out of two types of elements:
 					};
 				\end{feynman}
 			\end{tikzpicture}
-			
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[t]{0.3\textwidth}
+			\caption{Feynman Vertices for (\ref{eq:potential}), continued.}\label{fig:3-1-feynman-vertices-continued}
 			\begin{equation*}
-				\feynmandiagram[baseline=(b.base),vertical = b to a,scale=0.6,transform shape]{
+				\feynmandiagram[baseline=(b.base),
+				vertical = b to a,scale=0.6,transform shape]{
 					a--b,
 					b--c,
 					b--d
@@ -248,12 +252,12 @@ Feynman diagrams are built out of two types of elements:
 					b--out1,
 					b--out2,
 				};
-				\lambda
-			\end{equation*}
+			\lambda
+		\end{equation*}
 		\end{subfigure}
 		\hfill
-		\begin{subfigure}[t]{0.45\textwidth}
-			\caption{Propagator--amplitude that particle created at $x$ found at $y$. The line should not be read as a path along which particles moves, but rather as joining points where particle detected.}\label{fig:3-1-feynman-propagator}
+		\begin{subfigure}[t]{0.3\textwidth}
+			\caption{Propagator}\label{fig:3-1-feynman-propagator}
 			\begin{tikzpicture}[scale=0.6,transform shape]
 				\begin{feynman}
 					\vertex (a) at (-2,-2) {\Huge x};
@@ -269,7 +273,7 @@ Feynman diagrams are built out of two types of elements:
 
 \begin{itemize}
 	\item We can represent the propagator is  $\braket{0|\bar{\Phi}(y)\Phi(x)|0}$: create at $x$, annihilate at $y$.
-	\item Dimension of propagator is $[l^{-2}]$. If there is no mass, distance between $x$ and $y$ is the only length scale in the problem--$\frac{1}{\lVert x-y \Vert^2}$. 
+	\item The dimension of the propagator is $[l^{-2}]$. If there is no mass, distance between $x$ and $y$ is the only length scale in the problem--$\frac{1}{\lVert x-y \Vert^2}$. 
 	\item If $x$ and $y$ close, propagator blows up--this is the source of all divergences in \gls{gls:QFT}.
 \end{itemize}
 

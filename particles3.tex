@@ -333,7 +333,7 @@ But we haven't finished. We haven't evaluated every possible Feynman diagram tha
 	\begin{center}
 		\caption{More diagrams from Figure \ref{fig:mimicking:vertex}}
 		\begin{subfigure}[t]{0.45\textwidth}
-			\caption{Another Diagram. Particle is absorbed where the heavy dot is. We need to integrate over all the places where it could be re-emitted. This derives from the third part of Figure \ref{fig:3-1-feynman-vertices}--4 things coming together at a vertex.}\label{fig:particles3-another-Feynman}
+			\caption{Particle is absorbed at $X$. We need to integrate over all the places where it could be re-emitted, all the $X+\Delta$. This derives from the second part of Figure \ref{fig:3-1-feynman-vertices-continued}--4 things coming together at a vertex.}\label{fig:particles3-another-Feynman}
 			\feynmandiagram[vertical = out to in]{
 				in--a[particle=X]--c[particle=\(X+\Delta\)]--out,
 				a--[half left]c,
@@ -342,19 +342,32 @@ But we haven't finished. We haven't evaluated every possible Feynman diagram tha
 		\end{subfigure}
 		\hfill
 		\begin{subfigure}[t]{0.45\textwidth}
-			\caption{Diagram giving $\lambda^4$}\label{fig:particles3-yet-another-Feynman}
-			\includegraphics{particles3-yet-another-Feynman}
+		\begin{center}
+				\caption{Diagram giving $\lambda^4$}\label{fig:particles3-yet-another-Feynman}
+				\begin{tikzpicture}
+					\begin{feynman}
+						\diagram [vertical = out to in]{
+							in--a--c--out,
+							a--[half left]c,
+							a--[half right]c,
+						};
+						\vertex (s) at ($(a)!0.5!(c)$);
+						\draw (s) node[fill=black, circle, inner sep=1pt] node[below, red] {} arc(-0:360:0.36);
+					\end{feynman}
+				\end{tikzpicture}
+		\end{center}
 		\end{subfigure}
 	\end{center}
 \end{figure}
 
-Coefficient is of order $\lambda^2$, so it is a second order Feynman diagram. It also has three propagators, each with coefficient $\frac{1}{\Delta^2}$, so $\frac{1}{\Delta^6}$. We need to integrate over all $\delta s$ 
+The coefficient is of order $\lambda^2$, so Figure \ref{fig:particles3-another-Feynman} is a second order Feynman diagram. It also has three propagators, each with coefficient $\frac{1}{\Delta^2}$, so we have $\frac{1}{\Delta^6}$. We need to integrate over all $\delta s$--over all possible nearby points. Since the integral is dominated by the cases where the points are close, we will integrate from the cutoff $\delta$ out to $\infty$.
 
 \begin{align*}
 	\lambda^2 \int_{\delta}^\infty \frac{1}{\Delta^6} d^4 \Delta \propto& \frac{\lambda^2}{\delta^2} \text{, by dimensional analysis.}
 \end{align*}
 
-There are many other Feynman diagrams, which will also contribute higher powers of $\lambda$. There is an infinite series of terms of order $\frac{1}{\Delta^2}$, with higher powers of $\lambda$. There are other terms that we haven't used, from $\Phi^3$.
+Combining Figures \ref{fig:3-1-feynman-vertices-continued} and  \ref{fig:mimicking:vertex}, we get $\frac{\lambda}{\delta^2} + \frac{\lambda^2}{\delta^2}$, ignoring constant coefficients in each term.
+There are many other Feynman diagrams, which will also contribute higher powers of $\lambda$, such as Figure \ref{fig:particles3-yet-another-Feynman}. There is an infinite series of terms of order $\frac{1}{\Delta^2}$, with higher powers of $\lambda$. There are other terms that we haven't used, from $\Phi^3$.
 
 Consider:
 \begin{align*}
@@ -365,8 +378,11 @@ Dimensional analysis would suggest this is dimensionless, but we have to be care
 Consider Figure \ref{fig:particles3-1-two-cubic-vertices}. There are two propagators, giving $\frac{1}{\Delta^4}$.
 \begin{figure}[H]
 	\begin{center}
-		\caption{Two cubic vertices, with 3 particles at each vertex.}\label{fig:particles3-1-two-cubic-vertices}
-		\includegraphics{particles3-1-two-cubic-vertices}
+		\caption[Two cubic vertices, with 3 particles at each vertex.]{Two cubic vertices, with 3 particles at each vertex. There are two propagators, giving $\frac{1}{\Delta^4}$, and there is a $g$ from each vertex.}\label{fig:particles3-1-two-cubic-vertices}
+		\feynmandiagram[vertical = out to in]{
+			in--a--[half left]b--out,
+			a--[half right]b,
+		};
 	\end{center}
 \end{figure}
 
@@ -391,12 +407,15 @@ From an operational point of view, $\lambda \Phi^4$ is nothing but two particles
 	\begin{center}
 		\caption{Renormalization of $\lambda \Phi^4$}
 		\begin{subfigure}[t]{0.45\textwidth}
-			\caption{Feynman Diagram for $\lambda \Phi^4$}\label{fig:lambda:phi:4}
-			\feynmandiagram[horizontal=i1 to f1]{
-				i1--[fermion]a--i2,
-				f1--[fermion]a--f2
-			};
+			\begin{center}
+				\caption{Feynman Diagram for $\lambda \Phi^4$}\label{fig:lambda:phi:4}
+				\feynmandiagram[horizontal=i1 to f1]{
+					i1--[fermion]a--i2,
+					f1--[fermion]a--f2
+				};
+			\end{center}
 		\end{subfigure}
+		\hfill
 		\begin{subfigure}[t]{0.45\textwidth}
 			\begin{center}
 				\caption{This will also contribute a renormalization to $\lambda \Phi^4$}\label{fig:lambda:phi:4x}

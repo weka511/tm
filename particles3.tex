@@ -86,7 +86,7 @@
 
 \subsubsection{The Idea of Renormalization}
 
-Most of the basic ideas of this quarter originated out of questions having to do with renormalization -- sometimes puzzles, sometimes useful observations about the renormalization of the standard model. I thought it would be a good idea to explain what renormalization is. It  is a combination of two things:
+Most of the basic ideas of this quarter originated out of questions having to do with renormalization -- sometimes puzzles, sometimes useful observations about the renormalization of the standard model. \gls{gls:LS} thought it would be a good idea to explain what renormalization is. It  is a combination of two things:
 \begin{itemize}
 	\item learning how to eliminate, out of the description of physics, things having to do with distances that are so small that they are irrelevant to the questions you are asking;
 	\item learning how to think about how dimensional analysis tells you how to answer some of the very difficult questions of quantum field theory field theory that have to do with distances much smaller than you might be interested in.
@@ -334,8 +334,13 @@ But we haven't finished. We haven't evaluated every possible Feynman diagram tha
 		\caption{More diagrams from Figure \ref{fig:mimicking:vertex}}
 		\begin{subfigure}[t]{0.45\textwidth}
 			\caption{Another Diagram. Particle is absorbed where the heavy dot is. We need to integrate over all the places where it could be re-emitted. This derives from the third part of Figure \ref{fig:3-1-feynman-vertices}--4 things coming together at a vertex.}\label{fig:particles3-another-Feynman}
-			\includegraphics{particles3-another-Feynman}
+			\feynmandiagram[vertical = out to in]{
+				in--a[particle=X]--c[particle=\(X+\Delta\)]--out,
+				a--[half left]c,
+				a--[half right]c,
+			};
 		\end{subfigure}
+		\hfill
 		\begin{subfigure}[t]{0.45\textwidth}
 			\caption{Diagram giving $\lambda^4$}\label{fig:particles3-yet-another-Feynman}
 			\includegraphics{particles3-yet-another-Feynman}

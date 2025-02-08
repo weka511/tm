@@ -273,7 +273,7 @@ Feynman diagrams are built out of two types of elements:
 
 \begin{itemize}
 	\item The propagator is the amplitude that if you create a particle at $x$, you will detect it at $y$. We can represent it as $\braket{0|\bar{\Phi}(y)\Phi(x)|0}$.
-	\item The dimension of the propagator is $[l^{-2}]$. If there is no mass, distance between $x$ and $y$ is the only length scale in the problem--$\frac{1}{\lVert x-y \Vert^2}$. 
+	\item The dimension of the propagator is $[l^{-2}]$. If there is no mass, Lorentz distance between $x$ and $y$ is the only length scale in the problem--$\frac{1}{\lVert x-y \Vert^2}$. 
 	\item If $x$ and $y$ close, propagator blows up--this is the source of all divergences in \gls{gls:QFT}.
 \end{itemize}
 
@@ -281,25 +281,42 @@ Everything else is just building up Feynman diagrams, calculating them, and inte
 
 \subsubsection{Renormalization of Mass}
 
-Let's start with renormalization, and how it works in this very simple context.
-Let's start with renormalization of the mass. Notice that (\ref{eq:potential}) contains $m^2$ -- usually mass only appears as $\sqrt{m^2}$. This is connected with $E=\sqrt{p^2 + m^2}$. So what is renormalization of $m^2$? What does it mean, and how do we do it? In Figure \ref{fig:3-1-feynman-vertices} we see that the interpretation of a mass term is just a basic simple Feynman diagram, a vertex in the diagram where a particles is absorbed at a point and emitted from the same point. Does it have to be exactly the same point? If we have a microscope, an accelerator, which can resolve down to $10^{-17}m$, say, we aren't really interested in things that happen on smaller scales; so if we can find a process in nature that would mimic that vertex,  even if blurred, any process that absorbs and re-emits at a nearby point would be counted as part of mass term in an effective description in which we don't look too closely.
+We will see how renormalization works in this very simple context. Let's start with renormalization of the mass. Notice that (\ref{eq:potential}) contains $m^2$ -- usually mass only appears as $\sqrt{m^2}$. This is connected with $E=\sqrt{p^2 + m^2}$. So what is renormalization of $m^2$? What does it mean, and how do we do it? In Figure \ref{fig:3-1-feynman-vertices} we see that the interpretation of a mass term is just a basic simple Feynman diagram, a vertex in the diagram where a particles is absorbed at a point and emitted from the same point. Does it have to be exactly the same point? If we have a microscope, an accelerator, which can resolve down to $10^{-17}m$, say, we aren't really interested in things that happen on smaller scales; so if we can find a process in nature that would mimic that vertex,  even if blurred, any process that absorbs and re-emits at a nearby point would be counted as part of mass term in an effective description in which we don't look too closely.
 
-Are there any Feynman diagrams that we can build that will mimic a particle going in and a particle going out? We will build it out of the $\Phi^4$ vertex in Figure \ref{fig:3-1-feynman-vertices}, the $\lambda$ vertex--see Figure \ref{fig:3-1-feynman-mimic}.
+Are there any Feynman diagrams that we can build that will mimic a particle going in and a particle going out? We will build it out of the $\Phi^4$ vertex in Figure \ref{fig:3-1-feynman-vertices-continued}, the $\lambda$ vertex,--see Figure \ref{fig:3-1-feynman-mimic}.
 
 
 \begin{figure}[H]
 	\caption{Mimicking the Vertex}\label{fig:mimicking:vertex}
 	\begin{subfigure}[t]{0.32\textwidth}
 		\caption{Particle emitted and returns to same point: scale so small we don't notice. Particle isn't going anywhere!}\label{fig:3-1-feynman-mimic}
-		\includegraphics[width=\textwidth]{3-1-feynman-mimic}
+		\feynmandiagram[vertical = a to d,scale=0.8, transform shape]{
+			a--b--[half left]c--[half left]b--d,
+			a--[opacity=0.0]d,
+		};
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}[t]{0.32\textwidth}
-		\caption{Amplitude following cut-off. We have reinstated $\lambda$ from $\Phi^4$ term.}\label{fig:3-1-cutoff}
-		\includegraphics[width=\textwidth]{3-1-cutoff}
+		\caption{Amplitude following cut-off. We have a propagator of amplitude $\delta^2$, and we have reinstated $\lambda$ from $\Phi^4$ term.}\label{fig:3-1-cutoff}
+		\begin{equation*}
+			\feynmandiagram[vertical = a to d,scale=0.8, transform shape]{
+				a--b--[half left]c--[half left]b--d,
+				a--[opacity=0.0]d,
+			};\frac{\lambda}{\delta^2}
+		\end{equation*}
 	\end{subfigure}
-		\begin{subfigure}[t]{0.32\textwidth}
+	\hfill
+	\begin{subfigure}[t]{0.32\textwidth}
 		\caption{Original mass term}\label{fig:3-1-original}
-		\includegraphics[width=\textwidth]{3-1-original}
+		\begin{tikzpicture}[scale=0.6,transform shape]
+			\begin{feynman}
+				\vertex (a) at (-2,-2);
+				\vertex (b) at (2,2) ;
+				\diagram*{		
+					(a)--[insertion=0.5,edge label={\huge $\frac{m_0^2}{2}$}](b),
+				};
+			\end{feynman}
+		\end{tikzpicture}
 	\end{subfigure}
 \end{figure}
 

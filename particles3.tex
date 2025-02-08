@@ -401,7 +401,7 @@ That is the idea of mass renormalization.
 
 It's not just mass that gets renormalized: every term in the Lagrangian can get renormalized.
 
-From an operational point of view, $\lambda \Phi^4$ is nothing but two particles being absorbed and re-emitted--Figure \ref{fig:lambda:phi:4}. If everything happens on a scale that is too small to see, we lump it in to $\lambda \Phi^4$. Now Figure \ref{fig:lambda:phi:4x} will also contribute a renormalzation to $\lambda \Phi^4$.
+From an operational point of view, $\lambda \Phi^4$ is nothing but the amplitude for two particles being absorbed and re-emitted--Figure \ref{fig:lambda:phi:4}. If everything happens on a scale that is too small to see, we lump it in to $\lambda \Phi^4$. Now Figure \ref{fig:lambda:phi:4x} will also contribute a renormalization to $\lambda \Phi^4$.
 
 \begin{figure}[H]
 	\begin{center}
@@ -420,14 +420,12 @@ From an operational point of view, $\lambda \Phi^4$ is nothing but two particles
 			\begin{center}
 				\caption{This will also contribute a renormalization to $\lambda \Phi^4$}\label{fig:lambda:phi:4x}
 				\feynmandiagram[horizontal=i1 to i2]{
-					a--[quarter right]b
-					--[quarter right]c
-					--[quarter right]d
-					--[quarter right]a,
+					a--[half left]b,
+					a--[half right]b,
 					i1--[fermion]a,
 					i2--[fermion]a,
-					c--[fermion]o1,
-					c--[fermion]o2
+					b--[fermion]o1,
+					b--[fermion]o2
 				};
 			\end{center}
 		\end{subfigure}

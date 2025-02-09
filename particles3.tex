@@ -436,10 +436,9 @@ Each one of these terms can be renormalized. The effect of very small scale phys
 
 \subsubsection{Renormalization of the mass of a Fermion}
 
-
-You might expect the theory to work the same for Fermions, but it doesn't. Fermions are better behaved than Bosons, which are badly behaved in the following sense. Imagine that the cutoff distance is very, very small, e.g. the Planck scale. The $\delta \approx l_p = \sqrt{\frac{\hslash G}{\c{^3}}}$--20 order of magnitude smaller than a proton, 16 orders of magnitude smaller than the resolution of our best accelerators! If we are working on the Higgs Boson, we'd need the expressions in (\ref{eq:sum:lambdas}) to cancel to 34 digits, leaving the answer in the 35th. This is known as the "fine-tuning problem of the Higgs Boson".
+You might expect the theory to work the same for Fermions, but it doesn't. Fermions are better behaved than Bosons, which are badly behaved in the following sense. Imagine that the cutoff distance is very, very small, e.g. the Planck scale. The $\delta \approx l_p = \sqrt{\frac{\hslash G}{c^3}}$, which is 20 order of magnitude smaller than a proton, 16 orders of magnitude smaller than the resolution of our best accelerators! If we are working on the Higgs Boson, we'd need the expressions in (\ref{eq:sum:lambdas}) to cancel to 34 digits, leaving the answer in the $35^{th}$. This is known as the "fine-tuning problem of the Higgs Boson".
 \begin{align*}
-	\frac{m_0^2}{2} + \frac{\lambda}{\delta^2} +  + \frac{\lambda^2}{\delta^2}  + \frac{\lambda^3}{\delta^2} =& \frac{m^2}{2}\numberthis\label{eq:sum:lambdas}
+	\frac{m_0^2}{2} + \frac{\lambda}{\delta^2} +  \frac{\lambda^2}{\delta^2}  + \frac{\lambda^3}{\delta^2} =& \frac{m^2}{2}\numberthis\label{eq:sum:lambdas}
 \end{align*}
 
 Let's recall what we know about the mass term of the Higgs Boson. The Higgs field has a potential that looks like Figure \ref{fig:higgs-potential}. Near the origin it looks like $\Phi^2$, but with a negative coefficient ($m_0^2$ can be negative!). We assume that $\lambda<1$, as otherwise sequence of power would be intractable. Assume $\lambda$ is modestly small, but not humungously so. Experimentally we know it's about $1\%$.
@@ -458,45 +457,48 @@ Let's recall what we know about the mass term of the Higgs Boson. The Higgs fiel
 
 \begin{align*}
 	V(\Phi) =& - \frac{\mu^2}{2} \Phi^2 + \lambda \Phi^4\\
-	\Phi_{min}^2 =& f^2 = \frac{\mu_2}{\lambda} \numberthis \label{eg:higgs:minimum}
+	\Phi_{min}^2 =& f^2 = \frac{\mu2}{\lambda} \numberthis \label{eg:higgs:minimum}
 \end{align*}
 
-Now experimentally we know that $f\approxeq200GeV$, and $\lambda$ is of order 1, so $\mu^2$ is of order 200GeV, yet it is computed by (\ref{eq:sum:lambdas}), every term being 38 orders of magnitude bigger! This is known as the "fine-tuning problem", or the "gauge hierarchy problem", or the "hierarchy problem", the hierarchy being the hierarchy of mass scales from Planck scale to the scale of ordinary particle physics. There are many finely tuned pieces, which have to add up to something small. We know that this is ridiculous: what do we do about that.
+Now experimentally we know that $f\approxeq200GeV$, and $\lambda$ is of order 1, so $\mu^2$ is of order 200GeV, yet it is computed by (\ref{eq:sum:lambdas}), every term being 38 orders of magnitude bigger! This is known as the "fine-tuning problem", or the ''gauge hierarchy problem'', or the ''hierarchy problem'', the hierarchy being the hierarchy of mass scales from Planck scale to the scale of ordinary particle physics. There are many finely tuned pieces, which have to add up to something small. We know that this is ridiculous: what do we do about that?
 
 There is no such problem with other particles in the Standard Model. Why doesn't the electron have the same kind of problem? Let's talk about Fermions.
 
 The mass term of a Fermion involves the mass, not the mass squared. The Lagrangian contains a term $m \bar{\Psi} \Psi$. Figure \ref{fig:Fermion:feynman} shows the Feynman diagram. What kind of thing could renormalize electron?
 
 \begin{figure}[H]
-	\begin{center}
-		\caption{Feynman diagram for $m \bar{\Psi} \Psi$}
-		\begin{subfigure}[t]{0.3\textwidth}
+	\caption{Feynman diagram for $m \bar{\Psi} \Psi$}
+	\begin{subfigure}[t]{0.3\textwidth}
+		\begin{center}
 			\caption{$m \bar{\Psi} \Psi$ flips helicity}\label{fig:Fermion:feynman}
 			\feynmandiagram[vertical=b to a]{
-				a--[fermion,edge label=L]b
+				a--[fermion,edge label=L,insertion=1]b
 				--[fermion,edge label=R]c
 			};
-		\end{subfigure}
-		\begin{subfigure}[t]{0.3\textwidth}
-				\caption{Emit scalar boson}\label{fig:emit:scalar}
-				\feynmandiagram[vertical=b to a]{
-					a--[fermion,edge label=L]b
-					--[fermion,edge label=R]c,
-					b--[scalar]d
-				};
-		\end{subfigure}
-		\begin{subfigure}[t]{0.3\textwidth}
-			\caption{Emit gauge boson}\label{fig:emit:gauge}
+		\end{center}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.3\textwidth}
+			\caption{Emit scalar boson--flips helicity}\label{fig:emit:scalar}
 			\feynmandiagram[vertical=b to a]{
 				a--[fermion,edge label=L]b
-				--[fermion,edge label=L]c,
-				b--[photon]d
+				--[fermion,edge label=R]c,
+				b--[scalar]d
 			};
-		\end{subfigure}
-	\end{center}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.3\textwidth}
+		\caption{Emit gauge boson--does no tflip helicity}\label{fig:emit:gauge}
+		\feynmandiagram[vertical=b to a]{
+			a--[fermion,edge label=L]b
+			--[fermion,edge label=L]c,
+			b--[photon]d
+		};
+	\end{subfigure}
+
 \end{figure}
 
-We recall that $m \bar{\Psi} \Psi$ always absorbs a left handed particle and emits right handed, or vice versa[find reference to this in earlier lecture]--it flips helicity. What sort of thing could renormalize the electron? We could emit a boson, Figures \ref{fig:emit:scalar} and \ref{fig:emit:gauge}. In QED the only thing that can happen is to emit a photon, Figure \ref{fig:emit:gauge}. What happens to the handedness of the electron when it emits a gauge boson? The answer is nothing: the handedness doesn't change: The emission of a gauge boson doesn't flip helicity--Figures \ref{fig:emit:gauge:no:flip}.
+We recall from \cite[Advanced Quantum Mechanics]{susskind2007theoretical} that $m \bar{\Psi} \Psi$ always absorbs a left handed particle and emits right handed, or vice versa--it flips helicity. What sort of thing could renormalize the electron? We could emit a boson, Figures \ref{fig:emit:scalar} and \ref{fig:emit:gauge}. In \gls{gls:QED} the only thing that can happen is to emit a photon, Figure \ref{fig:emit:gauge}. What happens to the handedness of the electron when it emits a gauge boson? The answer is nothing: the handedness doesn't change: The emission of a gauge boson doesn't flip helicity--Figures \ref{fig:emit:gauge:no:flip}.
 [Work this out from Lagrangian]
 \begin{figure}[H]
 	\begin{center}
@@ -543,7 +545,7 @@ What about a scalar boson? It turns out they do flip--Figure \ref{fig:emit:scala
 	\end{center}
 \end{figure}
 
-We'll look at processes that can renormalize the mass of an electron. Suppose that electron starts with no mass. In the Boson case, if particle starts with no mass it gets humongous contribution from the $\lambda s$ and $\delta s$ in (\ref{eq:sum:lambdas}). So renormalized mass is independent of original. Now let's take the electron. It could emit and absorb a photon--Figure \ref{fig:emit:absorb:photon}. Now, by definition, a mass term is recognized as an amplitude to change from L to R or vice versa--an oscillation. Can this happen, as in Figure \ref{fig:can:this:happen}? Photons can't do this. The conslusion is that in QED, or any theory with gauge bosons only, electrons get no mass renormalization at all, so the correction to a massless electron would be zero. In pure QED (not the Standard Model) a massless electron is a consistent thing. What about scalar bosons? Figure \ref{fig:higgs:doesnt:help} shows why they don't help. No matter how complex the Feynman diagram, it is always going to involve an even number of vertices.
+We'll look at processes that can renormalize the mass of an electron. Suppose that electron starts with no mass. In the Boson case, if particle starts with no mass it gets humongous contribution from the $\lambda s$ and $\delta s$ in (\ref{eq:sum:lambdas}). So renormalized mass is independent of original. Now let's take the electron. It could emit and absorb a photon--Figure \ref{fig:emit:absorb:photon}. Now, by definition, a mass term is recognized as an amplitude to change from L to R or vice versa--an oscillation. Can this happen, as in Figure \ref{fig:can:this:happen}? Photons can't do this. The conclusion is that in \gls{gls:QED}, or any theory with gauge bosons only, electrons get no mass renormalization at all, so the correction to a massless electron would be zero. In pure \gls{gls:QED} (not the Standard Model) a massless electron is a consistent thing. What about scalar bosons? Figure \ref{fig:higgs:doesnt:help} shows why they don't help. No matter how complex the Feynman diagram, it is always going to involve an even number of vertices.
 
 \begin{figure}[H]
 		\caption{Electron emits and absorbs boson}\label{fig:emit:absorb:photon}
@@ -556,6 +558,7 @@ We'll look at processes that can renormalize the mass of an electron. Suppose th
 				b--[photon,half left,looseness=1.5]c
 			};
 		\end{subfigure}
+		\hfill
 		\begin{subfigure}[t]{0.3\textwidth}
 			\caption{Can this happen? Is there any way to go from L to R?}\label{fig:can:this:happen}
 			\feynmandiagram[vertical=b to a]{
@@ -565,6 +568,7 @@ We'll look at processes that can renormalize the mass of an electron. Suppose th
 				b--[photon,half left,looseness=1.5]c
 			};
 		\end{subfigure}
+		\hfill
 		\begin{subfigure}[t]{0.3\textwidth}
 			\caption{Scalar bosons don't help, as the helicity gets flipped twice}\label{fig:higgs:doesnt:help}
 			\feynmandiagram[vertical=b to a]{
@@ -576,17 +580,18 @@ We'll look at processes that can renormalize the mass of an electron. Suppose th
 		\end{subfigure}
 	\end{figure}
 
-Can you ever get a shift in the mass of an electron in QED? Yes--if you \emph{start} with a mass. Figure \ref{fig:renormalization:massive:electron} shows a mass insertion which takes electron from $L$ to $R$. 
+Can you ever get a shift in the mass of an electron in \gls{gls:QED}? Yes--if you \emph{start} with a mass. Figure \ref{fig:renormalization:massive:electron} shows a mass insertion which takes electron from $L$ to $R$. 
  
 \begin{figure}[H]
-	\caption{Mass Renormalization of massive electron via $ \bar{\Psi} \Psi$}\label{fig:renormalization:massive:electron}
-	\feynmandiagram[vertical=e to a]{
-		a--[fermion,edge label=L]b
-		 --[fermion,edge label=L]c[particle=\( \bar{\Psi} \Psi  \)]
-		 --[fermion,edge label=R]d
-		 --[fermion,edge label=R]e,
-		 b--[photon,half left,looseness=3.0]d
-	};
+	\begin{center}
+		\caption{Mass Renormalization of massive electron via $ \bar{\Psi} \Psi$}\label{fig:renormalization:massive:electron}
+		\feynmandiagram[vertical=e to a]{
+			a--[fermion,edge label=L]b
+			--[insertion=0.5]d
+			--[fermion,edge label=R]e,
+			b--[photon,half left,looseness=3.0]d
+		};
+	\end{center}
 \end{figure}
 
 The value of this Feynman diagram contains three terms:
@@ -607,13 +612,16 @@ What about gauge bosons? They have the same property: if they start massless the
 \subsubsection{Renormalization of vacuum energy}\label{sect:vacuum:energy:renormalization}
 There is one other extreme fine-tuning problem, but it only comes in to play when we start thinking about gravity. It is the problem of renormalization of vacuum energy.
 
-For most physics the vacuum energy isn't a problem, as it is an additive constant: normally when we add a particles we care only that it adds the right energy. Energy differences are all that is important. Don't think of the energy of an electron, think of the energy we have to add to the vacuum. Who cares if we add a large amount of energy to the vacuum, as long as everything is shifted with it? 
+For most physics the vacuum energy isn't a problem, as it is an additive constant: normally when we add a particle we care only that it adds the right energy. Energy differences are all that is important. Don't think of the energy of an electron, think of the energy we have to add to the vacuum. Who cares if we add a large amount of energy to the vacuum, as long as everything is shifted with it? 
 
 Vacuum is renormalized by diagrams that have no inputs and no outputs. Figure \ref{fig:particles3-1-5-4-theory} shows a such a diagram from the 5-4 theory
 \begin{figure}[H]
 	\begin{center}
 		\caption{5-4 theory: value $\lambda \frac{1}{\delta^2} \frac{1}{\delta^2}= \frac{\lambda}{\delta^4}$}\label{fig:particles3-1-5-4-theory}
-		\includegraphics{particles3-1-5-4-theory}
+		\feynmandiagram[horizontal= a to c]{
+			a--[half right]b--[half right]a,
+			b--[half left]c--[half left]b,
+		};
 	\end{center}
 \end{figure}
 
@@ -621,9 +629,9 @@ There are more complicated diagrams. Vacuum energy gets renormalized, so if you 
 
 The two fine-tuning problems are the biggest puzzles in particle physics at the present time. Maybe it will turn out that they are a misstatement of the problem, but it has been a long time and nobody knows what the solution is.
  
-Supersymmetry is a potential problem to the fine tuning of the Higgs field, but it is not a potential solution to the fine-tuning of the cosmological constant.
+Supersymmetry is a potential solution to the fine tuning of the Higgs field, but it is not a potential solution to the fine-tuning of the cosmological constant.
 
-If you believe \gls{gls:QFT} down to scales that are many times smaller than the weak interaction scale, but only is we can solve renormalization problems at smaller scales. This section deals with a lower bound the the problems. They could be bigger.
+If you believe \gls{gls:QFT} down to scales that are many times smaller than the weak interaction scale, we need to solve renormalization problems at smaller scales. This section deals with a lower bound to the problems. They could be bigger.
 
 In order to cancel terms in (\ref{eq:sum:lambdas}), terms need to be very closely balanced. matching them is what Supersymmetry does. The simplest possible Feynman diagrams for Fermions have negative energy, the simplest for Bosons have positive. In principle if they had exactly the same mass they could cancel each other in the vacuum energy
 	

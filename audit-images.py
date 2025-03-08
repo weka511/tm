@@ -27,6 +27,7 @@ from argparse import ArgumentParser
 
 from os import listdir
 from os.path import isfile, join, splitext
+from shutil import copy
 from time import time
 
 def create_included_images(verbose):
@@ -60,12 +61,30 @@ def create_included_images(verbose):
 def parse_arguments():
     parser = ArgumentParser(__doc__)
     parser.add_argument('--verbose',default=False,action='store_true',help='Used to list names of text files as they are processed')
+    parser.add_argument('--install',default=False,action='store_true',help='Used to list install this program')
     parser.add_argument('--figs', default = './figs')
     return parser.parse_args()
+
+def install(destination =r'C:\Program Files\Git\usr\bin'):
+    '''
+    Install this script in a known loaction
+    '''
+    try:
+        copy(__file__,destination)
+        print (f'{__file__} copied to {destination}')
+        return 0
+    except (FileNotFoundError,PermissionError) as error:
+        print(error)
+        return 1
+    except Exception as e:
+        print (f'Unexpected Error\n{e}')
+        return 2
 
 if __name__=='__main__':
     start  = time()
     args = parse_arguments()
+    if args.install:
+        exit(install())
     count_referenced = 0
     count_unreferenced = 0
     image_lookup = create_included_images(args.verbose)
